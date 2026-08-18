@@ -87,7 +87,7 @@ If you are having issues setting up these requirements, you should:
 Below you can see a minimal example of a `.qmd` file running Python
 
 ```{r echo = FALSE, comment = ""}
-cat(readr::read_file("_minimal_example_python.qmd"))
+cat(readr::read_file("minimal_example_python.qmd"))
 ```
 
 It contains three important types of content:
@@ -97,6 +97,8 @@ It contains three important types of content:
 -   Chunks of R code surrounded by \`\`\`.
 
 -   Text mixed with simple text formatting like \# heading and *italics*.
+
+You can view the output [at this page](lecture_notes/week-1/intro-to-quarto.qmd)(lecture_notes/week-1/minimal_example_python.qmd)
 
 ### YAML Header
 
@@ -110,7 +112,7 @@ The basic syntax of YAML uses key-value pairs in the format `key: value.` The av
 
 -   [DOC](https://quarto.org/docs/reference/formats/docx.html)
 
-### Code Chuncks
+### Code Chunks
 
 To run code inside a Quarto document, you need to insert a code block (aka chunck). There are three ways to do so:
 

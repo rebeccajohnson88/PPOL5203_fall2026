@@ -1,5 +1,5 @@
 ---
-title: "Minimal Example Python"
+title: "Python via Quarto"
 execute: 
   error: true
 format:
