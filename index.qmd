@@ -48,7 +48,7 @@ After completing this course, the students will be able to:
 
 ### Course Infra-structure
 
-**Class Website**: A class website ADD LINK  will be used throughout the course and should be checked on a regular basis for lecture materials and required readings.
+**Class Website**: A class website <https://rebeccajohnson88.github.io/PPOL5203_fall2026/> will be used throughout the course and should be checked on a regular basis for lecture materials and required readings.
 
 <!--
 **Class Slack Channel**: The class also has a dedicated slack channel. You can join on clicking [here](https://join.slack.com/t/ppol5203-fall2025/shared_invite/zt-3cmg2zqoz-uFHOG_a9tsxBBBm2wCz~zg). The channel serves as an open forum to discuss, collaborate, pose problems/questions, and offer solutions. Students are encouraged to pose any questions they have there as this will provide the professor and TA the means of answering the question so that all can see the response. If you're unfamiliar with, please consult the following start-up tutorial (https://get.slack.help/hc/en-us/articles/218080037-Getting-started-for-new-members). Please follow the [***invite link***](https://join.slack.com/t/ppol5203-fall2025/shared_invite/zt-3cmg2zqoz-uFHOG_a9tsxBBBm2wCz~zg) to be added to the Slack channel.

@@ -6,11 +6,21 @@ project:
 
 website:
   title: ""
-  navbar:
-    left:
+  sidebar:
+    background: light
+    logo: "images/mccourt.png"
+    pinned: true
+    align: center
+    style: docked
+    contents:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: syllabus.qmd
+        text: Syllabus
+      - href: schedule.qmd
+        text: Schedule
+      - href: course_infrastructure.qmd
+        text: Course Technology Tools
 
 format:
   html:
