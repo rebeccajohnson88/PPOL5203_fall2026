@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "",
+    "text": "This first course in the core data science sequence teaches Data Science for Public Policy (DSPP) students how to synthesize disparate, possibly unstructured data in order to draw meaningful insights. Topics covered include the fundamentals of object-oriented programming in Python; literate programming; an introduction to algorithms and data types; data wrangling, visualization, and extraction; an introduction to machine learning methods, and text analysis. In addition, students will be exposed to Git and Github for version control and reproducible research. The objective of the course is to teach students how to incorporate data into their decision-making and analysis. No prior programming experience is assumed or required.\nData Science I is a collective effort among DSPP faculty. For this reason, the materials heavily draw from Dr. Tiago Ventura’s version of the course, with some also drawn from materials created by Dr. Eric Dunford"
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "",
+    "text": "This first course in the core data science sequence teaches Data Science for Public Policy (DSPP) students how to synthesize disparate, possibly unstructured data in order to draw meaningful insights. Topics covered include the fundamentals of object-oriented programming in Python; literate programming; an introduction to algorithms and data types; data wrangling, visualization, and extraction; an introduction to machine learning methods, and text analysis. In addition, students will be exposed to Git and Github for version control and reproducible research. The objective of the course is to teach students how to incorporate data into their decision-making and analysis. No prior programming experience is assumed or required.\nData Science I is a collective effort among DSPP faculty. For this reason, the materials heavily draw from Dr. Tiago Ventura’s version of the course, with some also drawn from materials created by Dr. Eric Dunford"
+  },
+  {
+    "objectID": "index.html#goals",
+    "href": "index.html#goals",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "Goals",
+    "text": "Goals\nAfter completing this course, the students will be able to:\n\nGeneral understanding of python’s object oriented programming syntax and data structures.\nCompetency using version control (Git/Github).\nLearn to manipulate and explore data with Pandas and other tools.\nGeneral understanding of analyzing algorithms and data structures.\nLearn to extract and process data from structured and unstructured sources.\nGet some intuition of modeling text data in Python.\nLearn the basics of machine learning as a modeling approach.\nLearn how to use Generative AI for multiple applied tasks.\nLearn basics of using SQL to query databases."
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "Instructor",
+    "text": "Instructor\n\nProfessor: Dr. Rebecca Johnson\nEmail: rj545@georgetown.edu\nOffice hours:\n\nTime: Every Wednesday, 1130am - 130pm\nLocation - either:\nIn person: 125E, Office Number 768\nRemote: see Calendly link\n\n\nSign up: on Calendly"
+  },
+  {
+    "objectID": "index.html#teaching-assistant-tbd",
+    "href": "index.html#teaching-assistant-tbd",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "Teaching Assistant: TBD",
+    "text": "Teaching Assistant: TBD\n\nCourse Infra-structure\nClass Website: A class website ADD LINK will be used throughout the course and should be checked on a regular basis for lecture materials and required readings.\n\nCanvas: A Canvas site (http://canvas.georgetown.edu) will be used throughout the course and should be checked on a regular basis for announcements. All announcements for the assignments and classes will be posted on Canvas; they will not be distributed in class or by e-mail. Support for Canvas is available at (202) 687-4949\nNOTE: Students are encouraged to run lecture code on their own machines. If you do not have access to a laptop on which you can install python3, please contact the professor and/or TA for assistance. Only python3 will be used in this course."
+  }
+]
