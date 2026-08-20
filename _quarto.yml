@@ -22,6 +22,10 @@ website:
         text: Schedule
       - href: course_infrastructure.qmd
         text: Course Technology Tools
+      - section: "Materials"
+        contents:
+          - href: weeks/week-01.qmd
+            text: "Week 1: Intro to Course and Tools"
 
 format:
   html:

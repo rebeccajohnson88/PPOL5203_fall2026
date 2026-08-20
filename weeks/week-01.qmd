@@ -56,4 +56,4 @@ To be added!
 
 # DataCamp
 
-Optional (but highly recommended) module: Introduction to Shell > Manipulating Files and Directories
+- Optional (but highly recommended) module: Introduction to Shell > Manipulating Files and Directories
