@@ -98,7 +98,7 @@ It contains three important types of content:
 
 -   Text mixed with simple text formatting like \# heading and *italics*.
 
-You can view the output [at this page](lecture_notes/week-1/intro-to-quarto.qmd)(lecture_notes/week-1/minimal_example_python.qmd)
+You can view the output [at this page](minimal_example_python.qmd)
 
 ### YAML Header
 
