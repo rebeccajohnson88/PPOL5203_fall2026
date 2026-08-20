@@ -42,11 +42,11 @@ To be added!
 
 -   [Instructions for setting up the course infra-structure](/course_infrastructure.qmd).
 
--   Using Jupyter Notebooks: [web page](/lecture_notes/week-1/using_jupyter_notebooks.html), <a href="/lecture_notes/week-01/using_jupyter_notebooks.ipynb" download> .ipynb file </a>
+-   Using Jupyter Notebooks: [web page](/lecture_notes/week-1/_using_jupyter_notebooks.html), <a href="/lecture_notes/week-1/_using_jupyter_notebooks.ipynb" download> .ipynb file </a>
 
 -   Using Quarto for Python and R [web page](/lecture_notes/week-1/intro_to_quarto.html), <a href="/lecture_notes/week-01/intro_to_quarto.qmd" download> .qmd file </a>
 
--   Basics of Command Line: [web page](/lecture_notes/week-1/basics_of_cmd.html), <a href="/lecture_notes/week-01/basics_of_cmd.ipynb" download> .ipynb file </a>
+-   Basics of Command Line: [web page](/lecture_notes/week-1/_basics_of_cmd.html), <a href="/lecture_notes/week-01/_basics_of_cmd.ipynb" download> .ipynb file </a>
 
 # Readings
 
