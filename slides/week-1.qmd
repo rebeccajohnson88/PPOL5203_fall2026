@@ -1,0 +1,379 @@
+---
+title: "PPOL 5203 - Data Science I: Foundations"
+subtitle: "<span style = 'font-size: 200%;'> <br>Week 1: Introductions, Installations, IDEs, Command line </span>"
+author: "<span style = 'font-size: 150%;'> Professor: Rebecca Johnson </span>"
+execute: 
+  echo: false
+  error: true
+format:
+  revealjs: 
+    transition: slide
+    background-transition: fade
+    width: 1300 #1050
+    height: 900 #700
+    center: true
+    slide-number: true
+    incremental: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    #logo: images/quarto.png
+    footer: "Data science I: Foundations"
+    theme: [simple,custom.scss]
+---
+
+# Welcome to Data Science I {background-color="#447099"}
+
+## Plans for Today
+
+-   Motivating [Data Science for Public Policy]{.blue}.
+
+-   Goals of the course
+
+-   Introductions
+
+-   Course Logistics
+
+-   IDEs
+
+    -   Jupyter
+
+-   Introduction to command line
+
+# Motivation: Digital Information Age {background-color="#447099"}
+
+## Abundance of data
+
+```{r  echo=FALSE, out.width = "80%", fig.align="center"}
+knitr::include_graphics("week1_figs/digital.jpeg") 
+```
+
+## Powerful and Cheap Computing Power
+
+```{r  echo=FALSE, out.width = "80%", fig.align="center"}
+knitr::include_graphics("week1_figs/collab.png") 
+```
+
+## World of Generative AI Models
+
+```{r  echo=FALSE, out.width = "80%", fig.align="center"}
+knitr::include_graphics("https://diplo-media.s3.eu-central-1.amazonaws.com/2025/03/openai-chatgpt-surge-deepseek.jpg") 
+```
+
+## As a consequence, we live in a world:
+
+::: nonincremental
+::: fragment
+-   **With** abundance of data we can use for research and to recommend policy decisions:
+
+    -   Internet data, social media, geo-tracking tools, etc...
+:::
+
+::: fragment
+-   **With** easily available technologies to analyze this data at scale
+
+    -   Your laptops, cloud computing, ChatBots...
+:::
+
+::: fragment
+-   **But** with new technologies that also have novel social implications:
+
+    -   Privacy issues
+
+    -   Use of technology by bad actors.
+
+    -   Use of technology by governments to censor/monitor citizens.
+:::
+
+::: fragment
+-   Policy scholars (but pretty much any researcher) need to be equipped to properly **work** with this data and **understand** the effects of these news technologies
+:::
+:::
+
+## Data Science for Public Policy
+
+[Data Scientist for Public Policy]{.red} focuses on **computational approaches** to solve/understand **policy problems**.
+
+-   It is part of a larger and new field called [computational social science](https://en.wikipedia.org/wiki/Computational_social_science)
+
+::: nonincremental
+::: fragment
+-   **Social science**
+
+    -   Understands human behavior: human psychology, language, economic behavior, political systems, policy problems
+    -   Involve many **approaches**: qualitative interviews, statistical analysis, simulations
+:::
+
+::: fragment
+-   **Data Science**:
+
+    -   Tools to work with large-scale data + learning models + novel data sources
+:::
+:::
+
+# Computational Social Science in Practice
+
+## Polarization in K-12 School Board Meetings 
+
+```{r  echo=FALSE, out.width = "100%", fig.align="center"}
+knitr::include_graphics("week1_figs/whatsappmotivation.png") 
+```
+
+## Steps + Tools 
+
+-   [Step 1]{.blue}: Recruiting participants online (SS)
+
+    -   Online Panels + Facebook Ads
+
+-   [Step 2]{.blue}: Running online surveys (SS)
+
+    -   Qualtrics + R
+
+-   [Step 3]{.blue}: Development of data donation pipeline (with MDI) (DS/CS)
+
+    -   JavaScript (JS) + Python
+
+-   [Step 4]{.blue}: Analyze the data (SS/DS)
+
+    -   SQL + Python + R
+
+
+## Goals of the course
+
+<br>
+
+The goal of this course is to teach you:
+
+-   **Computational thinking**: how to approach problems and devise solutions from a computational perspective.
+
+-   Get you started on **Python**, introduce some useful tools (scrapping, text analysis and API applications of GenAI models), and bit of **SQL** for applied data science; lay the foundations for the remainder of the core DS sequence
+
+-   **Workflows and tools:** Git/GitHub + command line
+
+# PPOL 5203 - Data Science I: Foundations {background-color="#447099"}
+
+## Course Schedule {style="font-size: .7em;"}
+
+| Week    | Topic                                                                             | Date               |
+|------------------------|------------------------|------------------------|
+| Week 01 | Introduction, Installations, IDEs, Command line                                   | August 27, 2026    |
+| Week 02 | Version Control, Workflow and Reproducibility: Or a bit of Git & GitHub           | September 3, 2026  |
+| Week 03 | Intro to Python - OOP, Data Types, Control Statements and Functions               | September 10, 2026 |
+| Week 04 | Intro to Python II: Scaling up your code - Iteration, Comprehension and Functions | September 17, 2026 |
+| Week 05 | From Nested lists to Dataframes: Numpy and Intro to Pandas                        | September 24, 2026 |
+| Week 06 | Pandas II: Data Wrangling                                                         | October 1, 2026    |
+| Week 07 | Joining, Tidying and Visualizing Data                                             | October 8, 2026    |
+| Week 08 | Scraping + APIs                                                                   | October 15, 2026   |
+| Week 09 | Statistical Learning                                                              | October 22, 2026   |
+| Week 10 | Text as Data I: Discovery and Topics                                              | October 29, 2026   |
+| Week 11 | Text as Data II: Supervised Learning                                              | November 5, 2026   |
+| Week 12 | Generative AI                                                                     | November 12, 2026  |
+| Week 13 | SQL                                                                               | November 19, 2026  |
+| Week 14 | Presentations of Final Projects                                                   | December 03, 2026  |
+
+
+# Introductions
+
+## 
+
+::: nonincremental
+::: fragment
+**Professor Rebecca Johnson**
+
+-   Assistant Professor at McCourt School.
+-   Demography, Sociology, and Social Policy PhD
+-   Previously an Assistant Professor at Dartmouth College, teaching in their major in Quantitative Social Science
+:::
+
+::: fragment
+**My Research: How social service agencies use a mix of data and discretion to allocate scarce resources:**
+
+- Ranking of categories (e.g., disability; veteran) on waitlists for housing vouchers
+- Parent perceptions of the fairness of using predictive modeling to determine which students need help most urgently versus older methods (e.g., income thresholds; counselor discretion)
+- Database of K-12 school board meetings
+
+:::
+
+:::
+
+
+## Your turn!
+
+-   Name
+
+-   (Briefly) what you were up to prior to the DSPP
+
+-   If you could have any data source at your disposal, what would it be?
+
+## Logistics {.center}
+
+::: incremental
+-   **Communication**: via slack. Join the [workspace!](https://compethicslawlabgu.slack.com/archives/C0BRR7LGB8U)
+
+-   **All materials**: hosted on the class website: <https://rebeccajohnson88.github.io/PPOL5203_fall2026/>
+
+-   **Syllabus**: also on the website.
+
+-   **My Office Hours**: Wednesdays 11:30AM-1:30PM. Sign up on Calendly
+
+-   **Canvas**: Only for official communication! Materials will be hosted in the website
+
+-   **Datacamp**: Additional exercises (not graded). Access our free account [here](https://www.datacamp.com/groups/shared_links/63a4d32b3c706ed0a6fdb79245c95f84c9487b004a29163f4cc34e8331c3eec9)
+
+-   **Task:** go on slack and send me a message about the data source you choose in the last answer, and if you feel comfortable add a picture to your profile
+
+```{r}
+library(countdown)
+countdown(minutes = 5, seconds = 0, 
+          right = 0, , top=0, 
+          font_size = "2em")
+```
+:::
+
+
+## Evaluation
+
+| **Assignment**           | **Percentage of Grade** |
+|--------------------------|:-----------------------:|
+| Participation/Attendance |           5%            |
+| Coding Discussion        |           5%            |
+| Problem Sets             |           35%           |
+| In-class Python Exam     |           15%           |
+| Final Project            |           40%           |
+
+## Problem Sets
+
+Individual submission through GitHub.
+
+| Assignment | Date Assigned |             Date Due             |
+|:----------:|:-------------:|:--------------------------------:|
+|   No. 1    |    Week 2     |  Before EOD of Friday of Week 3  |
+|   No. 2    |    Week 4     |  Before EOD of Friday of Week 5  |
+|   No. 3    |    Week 6     |  Before EOD of Friday of Week 7  |
+|   No. 4    |    week 8     |  Before EOD of Friday of Week 9  |
+|   No. 5    |  November 10  | Before EOD of Friday of Week 111 |
+
+# [EOD = 11:59pm!]{.red}
+
+## Final Project
+
+-   [You will work on **groups!**]{.red}
+
+-   The project is composed of three parts:
+
+    -   a 2 page project proposal: (which should be discussed and approved by me)
+    -   an in-class presentation,
+    -   A 10-page project report.
+
+## Due dates and Points:
+
+| **Requirement**  | **Due**     | **Length**    | **Percentage** |
+|------------------|-------------|---------------|----------------|
+| Project Proposal | October 31  | 2 pages       | 5%             |
+| Presentation     | December 09 | 10-15 minutes | 10%            |
+| Project Report   | December 16 | 10 pages      | 25%            |
+
+## GenAI
+
+You are allowed to use GenAI as you would use google in this class. This means:
+
+-   Do not copy the responses from GenAI Chatbots -- a lot of them are wrong or will just not run on your computer
+
+-   Use GenAI Chatbots as a auxiliary source.
+
+-   If your entire homework comes straight from GenAI Chatbots, I will consider it plagiarism.
+
+-   If you use GenAI Chatbots, I ask you to mention on your code how chatgpt worked for you.
+
+## In-class Python Exam
+
+This will take place after the Python content (after week 11). This will be a short exam, either using pen or paper or on a computer without accessing LLMs. It will be easy to complete if you have engaged with the content. 
+
+# Let's take a break!
+
+```{r}
+library(countdown)
+countdown(minutes = 10, seconds = 0, 
+          left = 0, right = 0,
+          top=0,
+          padding = "100px",
+          margin = "10%",
+          font_size = "6em")
+```
+
+# `r fontawesome::fa("book-open")` Survey Results
+
+## Summary of the survey
+
+-   Most of you have [some]{.red} experience with Python.
+
+-   [Very few]{.red} of you were using primarily Python in your work before!
+
+    -   Most others are using R and Excel!
+
+-   Most of you have Python in your laptops, some still do not have a github account. If you are having issues after today, talk to your TAs.
+
+-   Main Policy Areas:
+
+    -   Social Media/Tech (Talk to me!)
+    -   Election (Talk to Professor Warshaw, Bailey or Ladd)
+    -   Education (Talk with Professor Johnson)
+
+## Open Ended
+
+-   this is a big group of international students, and some are concerned about not having english as you first language!
+
+    -   THIS IS FINE ! I hope my non-native and strongly accented English will encourage you to participate in class and speak up!
+
+::: fragment
+> "That's just what translation is, I think. That's all speaking is. Listening to the other and trying to see past your own biases to glimpse what they're trying to say. Showing yourself to the world, and hoping someone else understands." - R.F. Kuang, Babel
+:::
+
+## Open Ended
+
+Some of you are slightly anxious about Python and the pace of the class
+
+::: incremental
+-   Python is definitely harder than excel and stata.
+
+-   But you will be fine!
+
+-   **Our approach**: We start slow, cover the basics, and move fast!
+:::
+
+# `r fontawesome::fa("laptop-code")` Transiton: Coding!
+
+## Set up your course infra-structure
+
+[See Course Website](https://rebeccajohnson88.github.io/PPOL5203_fall2026/course_infrastructure.html)
+
+-   Install Python
+
+-   Install Jupyter
+
+-   Setup your Git/GitHub account
+
+    -   Homework: Try to make one successful Git push before class next week.
+
+## Jupyter:
+
+[Jupyter Notebook Tutorial in the Class Website](https://tiagoventura.github.io/ppol5203/weeks/week-01.html)
+
+**Note on my approach on Notebooks:** I will go over quite quickly through the notebooks. You should run them by yourselves at a later point!
+
+## Command Line
+
+[Command Line Tutorial in the Class Website](https://tiagoventura.github.io/ppol5203/weeks/week-01.html)
+
+## Datacamp Course
+
+-   Join our team
+-   Manipulating files and directories in  [Introduction to Shell](https://app.datacamp.com/learn/courses/introduction-to-shell)
+
+## Additional Materials: Quarto
+
+Totally optional to use! 
+
+[Quarto tutorial on class website]()
+
+# See you next week!
