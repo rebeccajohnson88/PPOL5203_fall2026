@@ -1,1 +1,51 @@
 /* css styles */
+
+/* --- Sidebar -------------------------------------------------------------
+   Background color is set in _quarto.yml (sidebar.background: "#012169").
+   Do NOT set background-color on #quarto-sidebar here, or the two sources
+   will fight and you'll be debugging which one won.
+   ------------------------------------------------------------------------ */
+
+/* Link colors. Cosmo's defaults are tuned for a light sidebar, so they need
+   overriding for every state, not just the resting one. */
+#quarto-sidebar .sidebar-link,
+#quarto-sidebar .sidebar-item-text {
+  color: #FFFFFF;
+}
+
+#quarto-sidebar .sidebar-link:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+/* Current page: weight + a rule, since color alone can't distinguish it
+   when the resting state is already white. */
+#quarto-sidebar .sidebar-link.active,
+#quarto-sidebar .sidebar-item-text.active {
+  color: #FFFFFF;
+  font-weight: 600;
+  border-left: 3px solid #FFFFFF;
+  padding-left: 0.6rem;
+}
+
+/* Logo sits on an opaque white PNG backing, so give it a deliberate white
+   card instead of letting a ragged white box read as a rendering bug. */
+#quarto-sidebar .sidebar-header {
+  background-color: #FFFFFF;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 0.75rem 0.75rem 1.25rem 0.75rem;
+}
+
+#quarto-sidebar .sidebar-header img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Search box inside the sidebar also inherits light-theme styling. */
+#quarto-sidebar .aa-Input,
+#quarto-sidebar .aa-DetachedSearchButtonPlaceholder {
+  color: #FFFFFF;
+}

@@ -1,6 +1,6 @@
 ---
 title: "Syllabus: PPOL 5203 - Data Science I: Foundations - Fall 2026"
-subtitle: "Data Science and Public Policy, McCourt School for Public Polcy, Georgetown University"
+subtitle: "Data Science and Public Policy, McCourt School for Public Policy, Georgetown University"
 ---
 
 ## Course Description
@@ -275,8 +275,8 @@ More information about reporting options and resources can be found on the [Sexu
 
 Georgetown University promotes respect for all religions. Any student who is unable to attend classes or to participate in any examination, presentation, or assignment on a given day because of the observance of a major religious holiday or related travel shall be excused and provided with the opportunity to make up, without unreasonable burden, any work that has been missed for this reason and shall not in any other way be penalized for the absence or rescheduled work. Students will remain responsible for all assigned work. Students should notify professors in writing at the beginning of the semester of religious observances that conflict with their classes. The Office of the Provost, in consultation with Campus Ministry and the Registrar, will publish, before classes begin for a given term, a list of major religious holidays likely to affect Georgetown students. The Provost and the Main Campus Executive Faculty encourage faculty to accommodate students whose bona fide religious observances in other ways impede normal participation in a course. Students who cannot be accommodated should discuss the matter with an advising dean.
 
-### **The McCourt Policy-Writing Center (MPWC)** 
+### **The McCourt Policy-Writing Center (MPWC)**
 
-The McCourt Policy-Writing Center (MPWC) offers services and resources for students to help improve policy-writing skills. These include workshops, peer review facilitation, open houses, lectures, [**online modules**](https://georgetown.instructure.com/courses/160413), and [**individual appointments**](https://mccourt.georgetown.edu/life-at-mccourt/resources-for-current-students/writingcenter/). Click [**here** ](https://mccourt.georgetown.edu/life-at-mccourt/resources-for-current-students/writingcenter/news-events/)for the full calendar of events, and email mpwc\@georgetown.edu for general inquiries.
+The McCourt Policy-Writing Center (MPWC) offers services and resources for students to help improve policy-writing skills. These include workshops, peer review facilitation, open houses, lectures, [**online modules**](https://georgetown.instructure.com/courses/160413), and [**individual appointments**](https://mccourt.georgetown.edu/life-at-mccourt/resources-for-current-students/writingcenter/). Click [**here**](https://mccourt.georgetown.edu/life-at-mccourt/resources-for-current-students/writingcenter/news-events/)for the full calendar of events, and email mpwc\@georgetown.edu for general inquiries.
 
 \
