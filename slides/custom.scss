@@ -1,13 +1,15 @@
 /*-- scss:defaults --*/
-@import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 $presentation-font-size-root: 32px;
 $presentation-heading-color: #012169;
 $code-block-bg:#F0F0F0;
-$font-family-sans-serif: "Palatino Linotype", "Book Antiqua", Palatino,
-  FreeSerif, serif !default;
-$font-family-sans-serif: "Palatino Linotype", "Book Antiqua", Palatino,
-  FreeSerif, serif !default;
+$link-color: #E6007E;
+
+/* Lato - the stack oes.gsa.gov declares. Quarto's $presentation-heading-font
+   defaults to $font-family-sans-serif, so headings follow automatically. */
+$font-family-sans-serif: 'Lato', 'Helvetica Neue', Helvetica, 'Roboto', Arial,
+  sans-serif !default;
 
 /*-- scss:rules --*/
 
@@ -20,11 +22,22 @@ body {
   font-family: $font-family-sans-serif;
 }
 
-/* make bold red */
+/* links: bright magenta-pink */
 
-.reveal b, 
+.reveal a {
+  color: #E6007E;
+}
+
+.reveal a:hover {
+  color: #E6007E;
+  text-decoration: underline;
+}
+
+/* make bold teal */
+
+.reveal b,
 .reveal strong {
-  color: #D50032;
+  color: #007A85;
 }
 .blue {
   color: #041E42;

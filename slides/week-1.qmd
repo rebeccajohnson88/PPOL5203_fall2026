@@ -1,7 +1,7 @@
 ---
 title: "PPOL 5203 - Data Science I: Foundations"
 subtitle: "<span style = 'font-size: 200%;'> <br>Week 1: Introductions, Installations, IDEs, Command line </span>"
-author: "<span style = 'font-size: 150%;'> Professor: Rebecca Johnson </span>"
+author: "<span style = 'font-size: 150%;'> Professor: Rebecca A. Johnson </span>"
 execute: 
   echo: false
   error: true
@@ -18,7 +18,7 @@ format:
       buttons: false
     preview-links: auto
     #logo: images/quarto.png
-    footer: "Data science I: Foundations"
+    footer: "Data Science I: Foundations"
     theme: [simple,custom.scss]
 ---
 
@@ -92,7 +92,7 @@ knitr::include_graphics("https://diplo-media.s3.eu-central-1.amazonaws.com/2025/
 
 ## Data Science for Public Policy
 
-[Data Scientist for Public Policy]{.red} focuses on **computational approaches** to solve/understand **policy problems**.
+**Data Scientist for Public Policy** focuses on **computational approaches** to solve/understand **policy problems**.
 
 -   It is part of a larger and new field called [computational social science](https://en.wikipedia.org/wiki/Computational_social_science)
 
@@ -113,29 +113,50 @@ knitr::include_graphics("https://diplo-media.s3.eu-central-1.amazonaws.com/2025/
 
 # Computational Social Science in Practice
 
-## Polarization in K-12 School Board Meetings 
+## Turning the intro survey into usable data
 
-```{r  echo=FALSE, out.width = "100%", fig.align="center"}
-knitr::include_graphics("week1_figs/whatsappmotivation.png") 
+```{r  echo=FALSE, out.width = "80%", fig.align="center"}
+knitr::include_graphics("week1_figs/intro_survey.png") 
 ```
 
-## Steps + Tools 
+## Step 1: Get credentials for APIs for Google Drive and Google Sheets
 
--   [Step 1]{.blue}: Recruiting participants online (SS)
+```{r  echo=FALSE, out.width = "80%", fig.align="center"}
+knitr::include_graphics("week1_figs/google_api_serviceaccount.png") 
+```
 
-    -   Online Panels + Facebook Ads
+## Step 2: Use those credentials in Python code to pull the data 
 
--   [Step 2]{.blue}: Running online surveys (SS)
+```{r  echo=FALSE, out.width = "80%", fig.align="center"}
+knitr::include_graphics("week1_figs/pull_data.png") 
+```
 
-    -   Qualtrics + R
+## Step 3: clean data and view the head
 
--   [Step 3]{.blue}: Development of data donation pipeline (with MDI) (DS/CS)
+```{r  echo=FALSE, out.width = "80%", fig.align="center"}
+knitr::include_graphics("week1_figs/clean_data.png") 
+```
 
-    -   JavaScript (JS) + Python
+## Step 4: preprocess to visualize responses to policy question 
 
--   [Step 4]{.blue}: Analyze the data (SS/DS)
+```{r  echo=FALSE, out.width = "80%", fig.align="center"}
+knitr::include_graphics("week1_figs/viz_preprocess.png") 
+```
 
-    -   SQL + Python + R
+
+## Step 5: plotting code 
+
+```{r  echo=FALSE, out.width = "80%", fig.align="center"}
+knitr::include_graphics("week1_figs/plotting_code.png") 
+```
+
+
+## Step 6: result
+
+```{r  echo=FALSE, out.width = "70%", fig.align="center"}
+knitr::include_graphics("week1_figs/ppol5203_policyareas.png") 
+```
+
 
 
 ## Goals of the course
@@ -257,7 +278,7 @@ Individual submission through GitHub.
 
 ## Final Project
 
--   [You will work on **groups!**]{.red}
+-   You will work on in **groups!**
 
 -   The project is composed of three parts:
 
@@ -285,6 +306,8 @@ You are allowed to use GenAI as you would use google in this class. This means:
 
 -   If you use GenAI Chatbots, I ask you to mention on your code how chatgpt worked for you.
 
+-   I will be transparent about my own use of GenAI (e.g. to aid in grading)
+
 ## In-class Python Exam
 
 This will take place after the Python content (after week 11). This will be a short exam, either using pen or paper or on a computer without accessing LLMs. It will be easy to complete if you have engaged with the content. 
@@ -305,43 +328,24 @@ countdown(minutes = 10, seconds = 0,
 
 ## Summary of the survey
 
--   Most of you have [some]{.red} experience with Python.
+-   About half of you have **some** experience with Python.
 
--   [Very few]{.red} of you were using primarily Python in your work before!
+-   Less exposure to SQL 
 
-    -   Most others are using R and Excel!
-
--   Most of you have Python in your laptops, some still do not have a github account. If you are having issues after today, talk to your TAs.
-
--   Main Policy Areas:
-
-    -   Social Media/Tech (Talk to me!)
-    -   Election (Talk to Professor Warshaw, Bailey or Ladd)
-    -   Education (Talk with Professor Johnson)
-
-## Open Ended
-
--   this is a big group of international students, and some are concerned about not having english as you first language!
-
-    -   THIS IS FINE ! I hope my non-native and strongly accented English will encourage you to participate in class and speak up!
-
-::: fragment
-> "That's just what translation is, I think. That's all speaking is. Listening to the other and trying to see past your own biases to glimpse what they're trying to say. Showing yourself to the world, and hoping someone else understands." - R.F. Kuang, Babel
-:::
 
 ## Open Ended
 
 Some of you are slightly anxious about Python and the pace of the class
 
 ::: incremental
--   Python is definitely harder than excel and stata.
+-   The goal of the class is to bring everyone up to the same level of working Python proficiency
 
--   But you will be fine!
+-   That means some content will be review for some of you and I appreciate you helping out your classmates
 
--   **Our approach**: We start slow, cover the basics, and move fast!
+-   **Our approach**: We will start slow and build up from Python fundamentals -- so learning about the building blocks of dataframes before we actually work with data
 :::
 
-# `r fontawesome::fa("laptop-code")` Transiton: Coding!
+# `r fontawesome::fa("laptop-code")` Transition: Setting up Course Tools!
 
 ## Set up your course infra-structure
 
@@ -357,13 +361,13 @@ Some of you are slightly anxious about Python and the pace of the class
 
 ## Jupyter:
 
-[Jupyter Notebook Tutorial in the Class Website](https://tiagoventura.github.io/ppol5203/weeks/week-01.html)
+[Jupyter Notebook Tutorial in the Class Website](https://rebeccajohnson88.github.io/PPOL5203_fall2026/lecture_notes/week-1/_using_jupyter_notebooks.html)
 
 **Note on my approach on Notebooks:** I will go over quite quickly through the notebooks. You should run them by yourselves at a later point!
 
 ## Command Line
 
-[Command Line Tutorial in the Class Website](https://tiagoventura.github.io/ppol5203/weeks/week-01.html)
+[Command Line Tutorial in the Class Website](https://rebeccajohnson88.github.io/PPOL5203_fall2026/lecture_notes/week-1/_basics_of_cmd.html)
 
 ## Datacamp Course
 
@@ -374,6 +378,6 @@ Some of you are slightly anxious about Python and the pace of the class
 
 Totally optional to use! 
 
-[Quarto tutorial on class website]()
+[Quarto tutorial on class website](https://rebeccajohnson88.github.io/PPOL5203_fall2026/lecture_notes/week-1/intro_to_quarto.html)
 
 # See you next week!

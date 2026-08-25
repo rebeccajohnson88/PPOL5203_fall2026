@@ -95,7 +95,7 @@
     "href": "weeks/week-01.html",
     "title": "Week 01",
     "section": "",
-    "text": "Slides\nTo be added!\n\n\nHandouts\n\nInstructions for setting up the course infra-structure.\nUsing Jupyter Notebooks: web page,  .ipynb file \nUsing Quarto for Python and R web page,  .qmd file \nBasics of Command Line: web page,  .ipynb file \n\n\n\nReadings\nRequired Readings\n\nJupyter Notebook for Beginners: A tutorial Pryke, Benjamin - www.dataquest.io\n\n\n\nDataCamp\n\nOptional (but highly recommended) module: Introduction to Shell &gt; Manipulating Files and Directories",
+    "text": "Slides\nTo be added!\n\n\nHandouts\n\nInstructions for setting up the course infrastructure.\nUsing Jupyter Notebooks: web page,  .ipynb file \nUsing Quarto for Python and R web page,  .qmd file \nBasics of Command Line: web page,  .ipynb file \n\n\n\nReadings\nRequired Readings\n\nJupyter Notebook for Beginners: A tutorial Pryke, Benjamin - www.dataquest.io\n\n\n\nDataCamp\n\nOptional (but highly recommended) module: Introduction to Shell &gt; Manipulating Files and Directories",
     "crumbs": [
       "Materials",
       "Week 1: Intro to Course and Tools"
@@ -225,18 +225,53 @@
     "text": "Data Science for Public Policy\nData Scientist for Public Policy focuses on computational approaches to solve/understand policy problems.\n\nIt is part of a larger and new field called computational social science\n\n\n\n\nSocial science\n\nUnderstands human behavior: human psychology, language, economic behavior, political systems, policy problems\nInvolve many approaches: qualitative interviews, statistical analysis, simulations\n\n\n\n\n\nData Science:\n\nTools to work with large-scale data + learning models + novel data sources"
   },
   {
-    "objectID": "slides/week-1.html#polarization-in-k-12-school-board-meetings",
-    "href": "slides/week-1.html#polarization-in-k-12-school-board-meetings",
+    "objectID": "slides/week-1.html#turning-the-intro-survey-into-usable-data",
+    "href": "slides/week-1.html#turning-the-intro-survey-into-usable-data",
     "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Polarization in K-12 School Board Meetings",
-    "text": "Polarization in K-12 School Board Meetings\n\n\nError in knitr::include_graphics(\"week1_figs/whatsappmotivation.png\"): Cannot find the file(s): \"week1_figs/whatsappmotivation.png\""
+    "section": "Turning the intro survey into usable data",
+    "text": "Turning the intro survey into usable data"
   },
   {
-    "objectID": "slides/week-1.html#steps-tools",
-    "href": "slides/week-1.html#steps-tools",
+    "objectID": "slides/week-1.html#step-1-get-credentials-for-apis-for-google-drive-and-google-sheets",
+    "href": "slides/week-1.html#step-1-get-credentials-for-apis-for-google-drive-and-google-sheets",
     "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Steps + Tools",
-    "text": "Steps + Tools\n\nStep 1: Recruiting participants online (SS)\n\nOnline Panels + Facebook Ads\n\nStep 2: Running online surveys (SS)\n\nQualtrics + R\n\nStep 3: Development of data donation pipeline (with MDI) (DS/CS)\n\nJavaScript (JS) + Python\n\nStep 4: Analyze the data (SS/DS)\n\nSQL + Python + R"
+    "section": "Step 1: Get credentials for APIs for Google Drive and Google Sheets",
+    "text": "Step 1: Get credentials for APIs for Google Drive and Google Sheets"
+  },
+  {
+    "objectID": "slides/week-1.html#step-2-use-those-credentials-in-python-code-to-pull-the-data",
+    "href": "slides/week-1.html#step-2-use-those-credentials-in-python-code-to-pull-the-data",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Step 2: Use those credentials in Python code to pull the data",
+    "text": "Step 2: Use those credentials in Python code to pull the data"
+  },
+  {
+    "objectID": "slides/week-1.html#step-3-clean-data-and-view-the-head",
+    "href": "slides/week-1.html#step-3-clean-data-and-view-the-head",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Step 3: clean data and view the head",
+    "text": "Step 3: clean data and view the head"
+  },
+  {
+    "objectID": "slides/week-1.html#step-4-preprocess-to-visualize-responses-to-policy-question",
+    "href": "slides/week-1.html#step-4-preprocess-to-visualize-responses-to-policy-question",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Step 4: preprocess to visualize responses to policy question",
+    "text": "Step 4: preprocess to visualize responses to policy question"
+  },
+  {
+    "objectID": "slides/week-1.html#step-5-plotting-code",
+    "href": "slides/week-1.html#step-5-plotting-code",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Step 5: plotting code",
+    "text": "Step 5: plotting code"
+  },
+  {
+    "objectID": "slides/week-1.html#step-6-result",
+    "href": "slides/week-1.html#step-6-result",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Step 6: result",
+    "text": "Step 6: result"
   },
   {
     "objectID": "slides/week-1.html#goals-of-the-course",
@@ -292,7 +327,7 @@
     "href": "slides/week-1.html#final-project",
     "title": "PPOL 5203 - Data Science I: Foundations",
     "section": "Final Project",
-    "text": "Final Project\n\nYou will work on groups!\nThe project is composed of three parts:\n\na 2 page project proposal: (which should be discussed and approved by me)\nan in-class presentation,\nA 10-page project report."
+    "text": "Final Project\n\nYou will work on in groups!\nThe project is composed of three parts:\n\na 2 page project proposal: (which should be discussed and approved by me)\nan in-class presentation,\nA 10-page project report."
   },
   {
     "objectID": "slides/week-1.html#due-dates-and-points",
@@ -306,7 +341,7 @@
     "href": "slides/week-1.html#genai",
     "title": "PPOL 5203 - Data Science I: Foundations",
     "section": "GenAI",
-    "text": "GenAI\nYou are allowed to use GenAI as you would use google in this class. This means:\n\nDo not copy the responses from GenAI Chatbots – a lot of them are wrong or will just not run on your computer\nUse GenAI Chatbots as a auxiliary source.\nIf your entire homework comes straight from GenAI Chatbots, I will consider it plagiarism.\nIf you use GenAI Chatbots, I ask you to mention on your code how chatgpt worked for you."
+    "text": "GenAI\nYou are allowed to use GenAI as you would use google in this class. This means:\n\nDo not copy the responses from GenAI Chatbots – a lot of them are wrong or will just not run on your computer\nUse GenAI Chatbots as a auxiliary source.\nIf your entire homework comes straight from GenAI Chatbots, I will consider it plagiarism.\nIf you use GenAI Chatbots, I ask you to mention on your code how chatgpt worked for you.\nI will be transparent about my own use of GenAI (e.g. to aid in grading)"
   },
   {
     "objectID": "slides/week-1.html#in-class-python-exam",
@@ -320,21 +355,14 @@
     "href": "slides/week-1.html#summary-of-the-survey",
     "title": "PPOL 5203 - Data Science I: Foundations",
     "section": "Summary of the survey",
-    "text": "Summary of the survey\n\nMost of you have some experience with Python.\nVery few of you were using primarily Python in your work before!\n\nMost others are using R and Excel!\n\nMost of you have Python in your laptops, some still do not have a github account. If you are having issues after today, talk to your TAs.\nMain Policy Areas:\n\nSocial Media/Tech (Talk to me!)\nElection (Talk to Professor Warshaw, Bailey or Ladd)\nEducation (Talk with Professor Johnson)"
+    "text": "Summary of the survey\n\nAbout half of you have some experience with Python.\nLess exposure to SQL"
   },
   {
     "objectID": "slides/week-1.html#open-ended",
     "href": "slides/week-1.html#open-ended",
     "title": "PPOL 5203 - Data Science I: Foundations",
     "section": "Open Ended",
-    "text": "Open Ended\n\nthis is a big group of international students, and some are concerned about not having english as you first language!\n\nTHIS IS FINE ! I hope my non-native and strongly accented English will encourage you to participate in class and speak up!\n\n\n\n\n“That’s just what translation is, I think. That’s all speaking is. Listening to the other and trying to see past your own biases to glimpse what they’re trying to say. Showing yourself to the world, and hoping someone else understands.” - R.F. Kuang, Babel"
-  },
-  {
-    "objectID": "slides/week-1.html#open-ended-1",
-    "href": "slides/week-1.html#open-ended-1",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Open Ended",
-    "text": "Open Ended\nSome of you are slightly anxious about Python and the pace of the class\n\n\nPython is definitely harder than excel and stata.\nBut you will be fine!\nOur approach: We start slow, cover the basics, and move fast!"
+    "text": "Open Ended\nSome of you are slightly anxious about Python and the pace of the class\n\n\nThe goal of the class is to bring everyone up to the same level of working Python proficiency\nThat means some content will be review for some of you and I appreciate you helping out your classmates\nOur approach: We will start slow and build up from Python fundamentals – so learning about the building blocks of dataframes before we actually work with data"
   },
   {
     "objectID": "slides/week-1.html#set-up-your-course-infra-structure",

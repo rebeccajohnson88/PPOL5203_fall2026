@@ -40,7 +40,7 @@ To be added!
 
 # Handouts
 
--   [Instructions for setting up the course infra-structure](/course_infrastructure.qmd).
+-   [Instructions for setting up the course infrastructure](/course_infrastructure.qmd).
 
 -   Using Jupyter Notebooks: [web page](/lecture_notes/week-1/_using_jupyter_notebooks.html), <a href="/lecture_notes/week-1/_using_jupyter_notebooks.ipynb" download> .ipynb file </a>
 
