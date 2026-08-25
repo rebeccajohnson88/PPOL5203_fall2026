@@ -2,3 +2,28 @@
 .DS_Store
 .Rhistory
 .Rproj.user/
+
+# ---------------------------------------------------------------------------
+# Credentials - never commit these.
+#
+# Blanket-ignore JSON and un-ignore the specific files that genuinely belong in
+# the repo. Safer than listing key filenames one by one: a key you did not
+# anticipate is ignored by default rather than committed by default.
+# ---------------------------------------------------------------------------
+*.json
+credentials.json
+service_account.json
+authorized_user.json
+client_secret*.json
+
+# Quarto's own JSON output still needs to be tracked for GitHub Pages.
+!docs/**/*.json
+
+# Environments and keys
+.env
+*.pem
+*.key
+
+# Data pulled from the intro survey - contains student names and emails
+policy_area_counts.csv
+*Form Responses*.csv
