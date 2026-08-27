@@ -295,6 +295,13 @@
     "text": "Professor Rebecca Johnson\n\nAssistant Professor at McCourt School.\nDemography, Sociology, and Social Policy PhD\nPreviously an Assistant Professor at Dartmouth College, teaching in their major in Quantitative Social Science\n\n\n\nMy Research: How social service agencies use a mix of data and discretion to allocate scarce resources:\n\nRanking of categories (e.g., disability; veteran) on waitlists for housing vouchers\nParent perceptions of the fairness of using predictive modeling to determine which students need help most urgently versus older methods (e.g., income thresholds; counselor discretion)\nDatabase of K-12 school board meetings"
   },
   {
+    "objectID": "slides/week-1.html#ta",
+    "href": "slides/week-1.html#ta",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "TA",
+    "text": "TA\nDSPP Alum Rebecca Wagner. Will share details on background and office hours in the coming days!"
+  },
+  {
     "objectID": "slides/week-1.html#your-turn",
     "href": "slides/week-1.html#your-turn",
     "title": "PPOL 5203 - Data Science I: Foundations",
@@ -306,7 +313,7 @@
     "href": "slides/week-1.html#logistics",
     "title": "PPOL 5203 - Data Science I: Foundations",
     "section": "Logistics",
-    "text": "Logistics\n\n\nCommunication: via slack. Join the workspace!\nAll materials: hosted on the class website: https://rebeccajohnson88.github.io/PPOL5203_fall2026/\nSyllabus: also on the website.\nMy Office Hours: Wednesdays 11:30AM-1:30PM. Sign up on Calendly\nCanvas: Only for official communication! Materials will be hosted in the website\nDatacamp: Additional exercises (not graded). Access our free account here\nTask: go on slack and send me a message about the data source you choose in the last answer, and if you feel comfortable add a picture to your profile"
+    "text": "Logistics\n\n\nCommunication: via slack. Join the workspace!\nAll materials: hosted on the class website: https://rebeccajohnson88.github.io/PPOL5203_fall2026/\nSyllabus: also on the website.\nMy Office Hours: Wednesdays 11:30AM-1:30PM. Sign up on Calendly\nCanvas: Only for official communication! Materials will be hosted in the website\nDatacamp: Additional exercises (not graded unless we explicitly include as part of a problem set). Access our free account here\nTask: go on slack and send me a message about the data source you choose in the last answer, and if you feel comfortable add a picture to your profile"
   },
   {
     "objectID": "slides/week-1.html#evaluation",
@@ -365,11 +372,11 @@
     "text": "Open Ended\nSome of you are slightly anxious about Python and the pace of the class\n\n\nThe goal of the class is to bring everyone up to the same level of working Python proficiency\nThat means some content will be review for some of you and I appreciate you helping out your classmates\nOur approach: We will start slow and build up from Python fundamentals – so learning about the building blocks of dataframes before we actually work with data"
   },
   {
-    "objectID": "slides/week-1.html#set-up-your-course-infra-structure",
-    "href": "slides/week-1.html#set-up-your-course-infra-structure",
+    "objectID": "slides/week-1.html#set-up-your-course-infrastructure",
+    "href": "slides/week-1.html#set-up-your-course-infrastructure",
     "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Set up your course infra-structure",
-    "text": "Set up your course infra-structure\nSee Course Website\n\nInstall Python\nInstall Jupyter\nSetup your Git/GitHub account\n\nHomework: Try to make one successful Git push before class next week."
+    "section": "Set up your course infrastructure",
+    "text": "Set up your course infrastructure\nSee Course Website\n\nInstall Python and Jupyter (recommend bundling together by installing Anaconda distribution)\nInstall Jupyter\nSetup your Git/GitHub account and add your username to this sheet - will also distribute the sheet via Canvas"
   },
   {
     "objectID": "slides/week-1.html#jupyter",

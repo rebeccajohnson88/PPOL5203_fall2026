@@ -217,6 +217,10 @@ The goal of this course is to teach you:
 
 :::
 
+## TA
+
+DSPP Alum Rebecca Wagner. Will share details on background and office hours in the coming days!
+
 
 ## Your turn!
 
@@ -239,7 +243,7 @@ The goal of this course is to teach you:
 
 -   **Canvas**: Only for official communication! Materials will be hosted in the website
 
--   **Datacamp**: Additional exercises (not graded). Access our free account [here](https://www.datacamp.com/groups/shared_links/63a4d32b3c706ed0a6fdb79245c95f84c9487b004a29163f4cc34e8331c3eec9)
+-   **Datacamp**: Additional exercises (not graded unless we explicitly include as part of a problem set). Access our free account [here](https://www.datacamp.com/groups/shared_links/63a4d32b3c706ed0a6fdb79245c95f84c9487b004a29163f4cc34e8331c3eec9)
 
 -   **Task:** go on slack and send me a message about the data source you choose in the last answer, and if you feel comfortable add a picture to your profile
 
@@ -312,17 +316,6 @@ You are allowed to use GenAI as you would use google in this class. This means:
 
 This will take place after the Python content (after week 11). This will be a short exam, either using pen or paper or on a computer without accessing LLMs. It will be easy to complete if you have engaged with the content. 
 
-# Let's take a break!
-
-```{r}
-library(countdown)
-countdown(minutes = 10, seconds = 0, 
-          left = 0, right = 0,
-          top=0,
-          padding = "100px",
-          margin = "10%",
-          font_size = "6em")
-```
 
 # `r fontawesome::fa("book-open")` Survey Results
 
@@ -347,17 +340,15 @@ Some of you are slightly anxious about Python and the pace of the class
 
 # `r fontawesome::fa("laptop-code")` Transition: Setting up Course Tools!
 
-## Set up your course infra-structure
+## Set up your course infrastructure
 
 [See Course Website](https://rebeccajohnson88.github.io/PPOL5203_fall2026/course_infrastructure.html)
 
--   Install Python
+-   Install Python and Jupyter (recommend bundling together by installing Anaconda distribution)
 
 -   Install Jupyter
 
--   Setup your Git/GitHub account
-
-    -   Homework: Try to make one successful Git push before class next week.
+-   Setup your Git/GitHub account and add your username [to this sheet](https://docs.google.com/spreadsheets/d/1vMIFgJej0SAY8_BfCmaXcAGl_pgZcAJehhV9WdPHWas/edit?usp=sharing) - will also distribute the sheet via Canvas
 
 ## Jupyter:
 
