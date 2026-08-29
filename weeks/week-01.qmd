@@ -48,6 +48,8 @@ tbl-colwidths: [10,50,40]
 
 -   Basics of Command Line: [web page](/lecture_notes/week-1/_basics_of_cmd.html), <a href="/lecture_notes/week-01/_basics_of_cmd.ipynb" download> .ipynb file </a>
 
+- Practice Notebook to Check Installations: [web page](/lecture_notes/week-1/_practice_notebook.html), <a href="/lecture_notes/week-1/_practice_notebook.ipynb" download> .ipynb file </a>
+
 # Readings
 
 **Required Readings**

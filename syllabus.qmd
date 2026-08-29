@@ -155,7 +155,7 @@ The follow schedule lays out when each assignment will be assigned.
 
 | Assignment | Date Assigned |            Date Due             |
 |:----------:|:-------------:|:-------------------------------:|
-|   No. 1    |    Week 2     | Before EOD of Friday of Week 3  |
+|   No. 1    |    Week 2     | Wednesday September 16th 11:59 PM   |
 |   No. 2    |    Week 4     | Before EOD of Friday of Week 5  |
 |   No. 3    |    Week 6     | Before EOD of Friday of Week 7  |
 |   No. 4    |    Week 8     | Before EOD of Friday of Week 10 |
