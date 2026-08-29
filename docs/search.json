@@ -116,7 +116,7 @@
     "href": "weeks/week-01.html",
     "title": "Week 01",
     "section": "",
-    "text": "Slides\nWeek 01:Introduction, Installations, IDEs, Command line\n\n\nHandouts\n\nInstructions for setting up the course infrastructure.\nUsing Jupyter Notebooks: web page,  .ipynb file \nUsing Quarto for Python and R web page,  .qmd file \nBasics of Command Line: web page,  .ipynb file \nPractice Notebook to Check Installations: web page,  .ipynb file \n\n\n\nReadings\nRequired Readings\n\nJupyter Notebook for Beginners: A tutorial Pryke, Benjamin - www.dataquest.io\n\n\n\nDataCamp\n\nOptional (but highly recommended) module: Introduction to Shell &gt; Manipulating Files and Directories",
+    "text": "Slides\nWeek 01:Introduction, Installations, IDEs, Command line\n\n\nHandouts\n\nInstructions for setting up the course infrastructure.\nUsing Jupyter Notebooks: web page,  .ipynb file \nUsing Quarto for Python and R web page,  .qmd file \nBasics of Command Line: web page,  .ipynb file \nPractice Notebook to Check Installations:  .ipynb file \n\n\n\nReadings\nRequired Readings\n\nJupyter Notebook for Beginners: A tutorial Pryke, Benjamin - www.dataquest.io\n\n\n\nDataCamp\n\nOptional (but highly recommended) module: Introduction to Shell &gt; Manipulating Files and Directories",
     "crumbs": [
       "Materials",
       "Week 1: Intro to Course and Tools"
