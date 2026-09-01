@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -322,8 +387,6 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../site_libs/countdown-0.6.0/countdown.css" rel="stylesheet">
-  <script src="../site_libs/countdown-0.6.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -331,7 +394,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">PPOL 5203 - Data Science I: Foundations</h1>
-  <p class="subtitle"><span style="font-size: 200%;"> <br>Week 1: Introductions, Installations, IDEs, Command line </span></p>
+  <p class="subtitle"><span style="font-size: 200%;"> <br>Week 2: Git and GitHub </span></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -342,503 +405,365 @@
 </div>
 
 </section>
+<section id="plans-for-today" class="title-slide slide level1 center" data-background-color="#447099">
+<h1>Plans for Today</h1>
+<ul>
+<li class="fragment"><p>Course logistics</p></li>
+<li class="fragment"><p>Motivation for version control</p></li>
+<li class="fragment"><p>Git and GitHub</p></li>
+<li class="fragment"><p>In-class activity to prep for pset 1</p></li>
+</ul>
+</section>
+
 <section>
-<section id="welcome-to-data-science-i" class="title-slide slide level1 center" data-background-color="#447099">
-<h1>Welcome to Data Science I</h1>
+<section id="motivation" class="title-slide slide level1 center">
+<h1>Motivation</h1>
 
 </section>
-<section id="plans-for-today" class="slide level2 center">
-<h2>Plans for Today</h2>
-<ul>
-<li class="fragment"><p>Motivating <span class="blue">Data Science for Public Policy</span>.</p></li>
-<li class="fragment"><p>Goals of the course</p></li>
-<li class="fragment"><p>Introductions</p></li>
-<li class="fragment"><p>Course Logistics</p></li>
-<li class="fragment"><p>IDEs</p>
-<ul>
-<li class="fragment">Jupyter</li>
-</ul></li>
-<li class="fragment"><p>Introduction to command line</p></li>
-</ul>
-</section></section>
+<section id="workflow-and-reproducibility" class="slide level2 center">
+<h2>Workflow and reproducibility</h2>
+
+<img data-src="week2_figs/bad-version-control.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section></section>
 <section>
-<section id="motivation-digital-information-age" class="title-slide slide level1 center" data-background-color="#447099">
-<h1>Motivation: Digital Information Age</h1>
+<section id="git-and-github" class="title-slide slide level1 center">
+<h1>Git and GitHub</h1>
 
 </section>
-<section id="abundance-of-data" class="slide level2 center">
-<h2>Abundance of data</h2>
-
-<img data-src="week1_figs/digital.jpeg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="powerful-and-cheap-computing-power" class="slide level2 center">
-<h2>Powerful and Cheap Computing Power</h2>
-
-<img data-src="week1_figs/collab.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="world-of-generative-ai-models" class="slide level2 center">
-<h2>World of Generative AI Models</h2>
-
-<img data-src="https://diplo-media.s3.eu-central-1.amazonaws.com/2025/03/openai-chatgpt-surge-deepseek.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="as-a-consequence-we-live-in-a-world" class="slide level2 center">
-<h2>As a consequence, we live in a world:</h2>
-<div>
-<div class="fragment">
+<section id="what-is-git" class="slide level2 center">
+<h2>What is Git?</h2>
 <ul>
-<li><p><strong>With</strong> abundance of data we can use for research and to recommend policy decisions:</p>
-<ul>
-<li>Internet data, social media, geo-tracking tools, etc…</li>
-</ul></li>
+<li class="fragment">Set of command line tools for version control (aka avoid finalfinal, finalrealthistime, etc.)</li>
+<li class="fragment">``Distributed,’’ or means that files/code, rather than only stored one place centrally, can be stored on all collaborators’ machines</li>
 </ul>
-</div>
-<div class="fragment">
-<ul>
-<li><p><strong>With</strong> easily available technologies to analyze this data at scale</p>
-<ul>
-<li>Your laptops, cloud computing, ChatBots…</li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><p><strong>But</strong> with new technologies that also have novel social implications:</p>
-<ul>
-<li><p>Privacy issues</p></li>
-<li><p>Use of technology by bad actors.</p></li>
-<li><p>Use of technology by governments to censor/monitor citizens.</p></li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Policy scholars (but pretty much any researcher) need to be equipped to properly <strong>work</strong> with this data and <strong>understand</strong> the effects of these news technologies</li>
-</ul>
-</div>
-</div>
 </section>
-<section id="data-science-for-public-policy" class="slide level2 center">
-<h2>Data Science for Public Policy</h2>
-<p><strong>Data Scientist for Public Policy</strong> focuses on <strong>computational approaches</strong> to solve/understand <strong>policy problems</strong>.</p>
+<section id="what-is-github" class="slide level2 center">
+<h2>What is GitHub?</h2>
 <ul>
-<li class="fragment">It is part of a larger and new field called <a href="https://en.wikipedia.org/wiki/Computational_social_science">computational social science</a></li>
-</ul>
-<div>
-<div class="fragment">
+<li class="fragment">Web-based repository for code that utilizes version control system (VCS) for tracking changes</li>
+<li class="fragment">Has additional features useful for collaboration, some of which we’ll review today (repos; issues; push/pulling recent changes) and others of which we’ll review as the course progresses (branches; pull requests)</li>
+<li class="fragment">Why GitHub rather than Dropbox/Google Drive?
 <ul>
-<li><p><strong>Social science</strong></p>
-<ul>
-<li>Understands human behavior: human psychology, language, economic behavior, political systems, policy problems</li>
-<li>Involve many <strong>approaches</strong>: qualitative interviews, statistical analysis, simulations</li>
+<li class="fragment">Explicit features that help with simultaneous editing of the same file</li>
+<li class="fragment">Public-facing record, or a portfolio of code/work (if you make it public)</li>
+<li class="fragment">Ways to comment on and have discussions about code specifically through the interface</li>
 </ul></li>
 </ul>
-</div>
-<div class="fragment">
-<ul>
-<li><p><strong>Data Science</strong>:</p>
-<ul>
-<li>Tools to work with large-scale data + learning models + novel data sources</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section></section>
-<section>
-<section id="computational-social-science-in-practice" class="title-slide slide level1 center">
-<h1>Computational Social Science in Practice</h1>
-
 </section>
-<section id="turning-the-intro-survey-into-usable-data" class="slide level2 center">
-<h2>Turning the intro survey into usable data</h2>
+<section id="example-repo-private-repo" class="slide level2 center">
+<h2>Example repo: private repo</h2>
 
-<img data-src="week1_figs/intro_survey.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-1-get-credentials-for-apis-for-google-drive-and-google-sheets" class="slide level2 center">
-<h2>Step 1: Get credentials for APIs for Google Drive and Google Sheets</h2>
+<img data-src="week2_figs/private_repo.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p>If you go to the url, get 404 error unless you’re added as a collaborator: <a href="https://github.com/gsa-oes/2003-SBA-RFASmallBizRelie">https://github.com/gsa-oes/2003-SBA-RFASmallBizRelief</a></p>
+</section>
+<section id="example-tracked-changes-in-code-when-you-push-updated-version" class="slide level2 center">
+<h2>Example: tracked changes in code when you ``push’’ updated version</h2>
 
-<img data-src="week1_figs/google_api_serviceaccount.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-2-use-those-credentials-in-python-code-to-pull-the-data" class="slide level2 center">
-<h2>Step 2: Use those credentials in Python code to pull the data</h2>
+<img data-src="week2_figs/track_change.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<section id="example-repo-public-repo" class="slide level2 center">
+<h2>Example repo: public repo</h2>
+<p>Look familiar? <a href="https://github.com/rebeccajohnson88/PPOL5203_fall2026">https://github.com/rebeccajohnson88/PPOL5203_fall2026</a></p>
+</section>
+<section id="ingredients-of-a-repo-readme" class="slide level2 center">
+<h2>Ingredients of a repo: README</h2>
+<p>Should be more informative than the one for our class repo, e.g.:</p>
 
-<img data-src="week1_figs/pull_data.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-3-clean-data-and-view-the-head" class="slide level2 center">
-<h2>Step 3: clean data and view the head</h2>
+<img data-src="week2_figs/info_readme.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p>Might have installation instructions, directions on where to download data, etc.</p>
+</section>
+<section id="ingredients-of-a-repo-files-and-directories" class="slide level2 center">
+<h2>Ingredients of a repo: files and directories</h2>
+<p>Command line commands we reviewed last week are useful for organizing and reorganizing repos. Example directory structure:</p>
+<pre><code>├── /data
+│   ├── /raw      
+│   ├── /processed  
+├── /docs 
+├── /code
+|   |── 01_clean_xxx.py
+|   |── 01_analysis_xxx.py
 
-<img data-src="week1_figs/clean_data.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-4-preprocess-to-visualize-responses-to-policy-question" class="slide level2 center">
-<h2>Step 4: preprocess to visualize responses to policy question</h2>
+├── /literature      
 
-<img data-src="week1_figs/viz_preprocess.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-5-plotting-code" class="slide level2 center">
-<h2>Step 5: plotting code</h2>
-
-<img data-src="week1_figs/plotting_code.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-6-result" class="slide level2 center">
-<h2>Step 6: result</h2>
-
-<img data-src="week1_figs/ppol5203_policyareas.png" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
-<section id="goals-of-the-course" class="slide level2 center">
-<h2>Goals of the course</h2>
+├── /output      
+│   ├── /tables      
+│   ├── /figures  
+├── /misc 
+└── readme.txt    </code></pre>
+</section>
+<section id="for-these-files-and-directories" class="slide level2 center">
+<h2>For these files and directories</h2>
+<ul>
+<li class="fragment"><p>File names should be meaningful</p></li>
+<li class="fragment"><p>DO NOT USE SPACES. Use snake case (_) style for you files and code</p></li>
+<li class="fragment"><p>Also allows you to avoid capitalization (<code>FileName</code> → <code>file_name</code>)</p></li>
+</ul>
 <p><br></p>
-<p>The goal of this course is to teach you:</p>
-<ul>
-<li class="fragment"><p><strong>Computational thinking</strong>: how to approach problems and devise solutions from a computational perspective.</p></li>
-<li class="fragment"><p>Get you started on <strong>Python</strong>, introduce some useful tools (scrapping, text analysis and API applications of GenAI models), and bit of <strong>SQL</strong> for applied data science; lay the foundations for the remainder of the core DS sequence</p></li>
-<li class="fragment"><p><strong>Workflows and tools:</strong> Git/GitHub + command line</p></li>
-</ul>
-</section></section>
-<section>
-<section id="ppol-5203---data-science-i-foundations" class="title-slide slide level1 center" data-background-color="#447099">
-<h1>PPOL 5203 - Data Science I: Foundations</h1>
-
-</section>
-<section id="course-schedule" class="slide level2 center" style="font-size: .7em;">
-<h2>Course Schedule</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Topic</th>
-<th>Date</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Week 01</td>
-<td>Introduction, Installations, IDEs, Command line</td>
-<td>August 27, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 02</td>
-<td>Version Control, Workflow and Reproducibility: Or a bit of Git &amp; GitHub</td>
-<td>September 3, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 03</td>
-<td>Intro to Python - OOP, Data Types, Control Statements and Functions</td>
-<td>September 10, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 04</td>
-<td>Intro to Python II: Scaling up your code - Iteration, Comprehension and Functions</td>
-<td>September 17, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 05</td>
-<td>From Nested lists to Dataframes: Numpy and Intro to Pandas</td>
-<td>September 24, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 06</td>
-<td>Pandas II: Data Wrangling</td>
-<td>October 1, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 07</td>
-<td>Joining, Tidying and Visualizing Data</td>
-<td>October 8, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 08</td>
-<td>Scraping + APIs</td>
-<td>October 15, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 09</td>
-<td>Statistical Learning</td>
-<td>October 22, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 10</td>
-<td>Text as Data I: Discovery and Topics</td>
-<td>October 29, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 11</td>
-<td>Text as Data II: Supervised Learning</td>
-<td>November 5, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 12</td>
-<td>Generative AI</td>
-<td>November 12, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 13</td>
-<td>SQL</td>
-<td>November 19, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 14</td>
-<td>Presentations of Final Projects</td>
-<td>December 03, 2026</td>
-</tr>
-</tbody>
-</table>
-</section></section>
-<section>
-<section id="introductions" class="title-slide slide level1 center">
-<h1>Introductions</h1>
-
-</section>
-<section id="section" class="slide level2 center">
-<h2></h2>
-<div>
 <div class="fragment">
-<p><strong>Professor Rebecca Johnson</strong></p>
-<ul>
-<li>Assistant Professor at McCourt School.</li>
-<li>Demography, Sociology, and Social Policy PhD</li>
-<li>Previously an Assistant Professor at Dartmouth College, teaching in their major in Quantitative Social Science</li>
-</ul>
+<blockquote>
+<p><code>data analysis 2.py</code> → <code>data_analysis_2.py</code></p>
+</blockquote>
 </div>
+<p><br></p>
 <div class="fragment">
-<p><strong>My Research: How social service agencies use a mix of data and discretion to allocate scarce resources:</strong></p>
-<ul>
-<li>Ranking of categories (e.g., disability; veteran) on waitlists for housing vouchers</li>
-<li>Parent perceptions of the fairness of using predictive modeling to determine which students need help most urgently versus older methods (e.g., income thresholds; counselor discretion)</li>
-<li>Database of K-12 school board meetings</li>
-</ul>
-</div>
+<blockquote>
+<p><code>model_analysis.py</code> → <code>model_analysis_het_treatment_effects_main_paper.py</code></p>
+</blockquote>
 </div>
 </section>
-<section id="ta" class="slide level2 center">
-<h2>TA</h2>
-<p>DSPP Alum Rebecca Wagner. Will share details on background and office hours in the coming days!</p>
-</section>
-<section id="your-turn" class="slide level2 center">
-<h2>Your turn!</h2>
+<section id="ingredients-of-a-repo-data" class="slide level2 center">
+<h2>Ingredients of a repo: data?</h2>
+<p>Depending on the context, you store data, but</p>
 <ul>
-<li class="fragment"><p>Name</p></li>
-<li class="fragment"><p>(Briefly) what you were up to prior to the DSPP</p></li>
-<li class="fragment"><p>If you could have any data source at your disposal, what would it be?</p></li>
+<li class="fragment">GitHub has file size limits (though can pay to override these)</li>
+<li class="fragment">Sensitive data should generally not be put in a repo, even if the repo is private since employees at the company have access to private repo content</li>
+<li class="fragment">Instead, read directly directly from its source or have download instructions</li>
 </ul>
 </section>
-<section id="logistics" class="slide level2 center">
-<h2>Logistics</h2>
-<div>
+<section id="ingredients-of-a-repo-issues" class="slide level2 center">
+<h2>Ingredients of a repo: issues</h2>
 <ul>
-<li class="fragment"><p><strong>Communication</strong>: via slack. Join the <a href="https://compethicslawlabgu.slack.com/archives/C0BRR7LGB8U">workspace!</a></p></li>
-<li class="fragment"><p><strong>All materials</strong>: hosted on the class website: <a href="https://rebeccajohnson88.github.io/PPOL5203_fall2026/" class="uri">https://rebeccajohnson88.github.io/PPOL5203_fall2026/</a></p></li>
-<li class="fragment"><p><strong>Syllabus</strong>: also on the website.</p></li>
-<li class="fragment"><p><strong>My Office Hours</strong>: Wednesdays 11:30AM-1:30PM. Sign up on Calendly</p></li>
-<li class="fragment"><p><strong>Canvas</strong>: Only for official communication! Materials will be hosted in the website</p></li>
-<li class="fragment"><p><strong>Datacamp</strong>: Additional exercises (not graded unless we explicitly include as part of a problem set). Access our free account <a href="https://www.datacamp.com/groups/shared_links/63a4d32b3c706ed0a6fdb79245c95f84c9487b004a29163f4cc34e8331c3eec9">here</a></p></li>
-<li class="fragment"><p><strong>Task:</strong> go on slack and send me a message about the data source you choose in the last answer, and if you feel comfortable add a picture to your profile</p></li>
+<li class="fragment">Can assign to specific collaborators or leave as a “note to self” to look back at something</li>
+<li class="fragment">Can use checklist features</li>
+<li class="fragment">Can include code excerpts</li>
+<li class="fragment">Easy to link to a specific commit (change to code)</li>
+<li class="fragment">Need to be logged into GitHub to write</li>
+</ul>
+
+<img data-src="week2_figs/issue_example.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<section id="general-steps-in-workflow" class="slide level2 center">
+<h2>General steps in workflow</h2>
+<ol type="1">
+<li class="fragment">Either <strong>create a repository locally</strong> and link to GitHub OR <strong>create a repository on GitHub</strong> and clone</li>
+<li class="fragment"><strong>Make changes</strong> to code or other files</li>
+<li class="fragment"><strong>Add changes</strong>: tells the computer to move changes to a temporary staging area</li>
+<li class="fragment"><strong>Commit changes</strong>: tells the computer to ``save’’ those staged changes, taking a permanent snapshot of what the changes are</li>
+<li class="fragment"><strong>Push changes</strong>: tells the computer to push those saved changes to GitHub (if file exists already, will overwrite file, but all previous versions of that file are accessible/retrievable)</li>
+</ol>
+</section>
+<section id="step-one-two-paths-to-getting-started" class="slide level2 center">
+<h2>Step one: two paths to getting started</h2>
+<ol type="1">
+<li class="fragment"><p><strong>Create a repository locally</strong> and then <strong>link it to GitHub</strong>: use when you have an existing folder/set of files and you want to move it to git/GitHub-based version control</p></li>
+<li class="fragment"><p><strong>Create a repository on GitHub</strong> and then <strong>create a linked copy locally</strong>: my preferred way when starting a new project; what you’ll do for problem sets</p></li>
+</ol>
+</section>
+<section id="step-one-path-one-linking-a-local-directory-to-gitgithub" class="slide level2 center">
+<h2>Step one path one: linking a local directory to git/GitHub</h2>
+<p>Create an empty directory called <code>gitexample</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="co"># check where you are</span></span>
+<span id="cb2-2"><a></a>pwd </span>
+<span id="cb2-3"><a></a><span class="co"># create dir</span></span>
+<span id="cb2-4"><a></a>mkdir gitexample</span>
+<span id="cb2-5"><a></a><span class="co"># change cd</span></span>
+<span id="cb2-6"><a></a>cd gitexample</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Check if you have a git</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>git <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Start a repository within <code>gitexample</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>git init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="what-you-should-see-after-git-init" class="slide level2 center">
+<h2>What you should see after git init</h2>
+
+<img data-src="week2_figs/initialized_repo.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p>Modify the contents of the directory by adding an (empty) README</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>touch README.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>List files to make sure it was added</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="step-one-path-one-linking-a-local-directory-to-gitgithub-1" class="slide level2 center">
+<h2>Step one path one: linking a local directory to git/GitHub</h2>
+<p>Three steps:</p>
+<ol type="1">
+<li class="fragment"><p><code>git add</code>: prepares the changes you made locally to be “sent up” to the repository. Can repeat many times as you work.</p></li>
+<li class="fragment"><p><code>git commit</code>: permanently saves those changes to your local history but doesn’t yet send them to the remote repository for permanent record</p></li>
+<li class="fragment"><p><code>git push</code>: uploads the changes you made locally to the remote repository</p></li>
+</ol>
+</section>
+<section id="add-versus-commit-versus-push-visualization" class="slide level2 center">
+<h2>Add versus commit versus push visualization</h2>
+
+<img data-src="week2_figs/git_flow.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><a href="https://cosimameyer.com/post/git-the-perks-of-collaboration-and-version-control/">Source</a></p>
+</section>
+<section id="implementing-in-practice" class="slide level2 center">
+<h2>Implementing in practice</h2>
+<p>Add the file</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>git add README.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>First commit</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>git commit <span class="op">-</span>m <span class="st">"add readme"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Check your log</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>git log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="how-can-we-link-these-local-changes-to-our-remote-github-account" class="slide level2 center">
+<h2>How can we link these local changes to our remote GitHub account?</h2>
+<p>Easiest way: set up an empty repository on GitHub. To avoid errors, do not initialize the new repository with README, license, or gitignore files.</p>
+<p><a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository">How to</a></p>
+</section>
+<section id="once-we-have-the-link-following-steps" class="slide level2 center">
+<h2>Once we have the link, following steps</h2>
+<p>Tell it the url for the repository (will differ for you)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>git remote add origin https:<span class="op">//</span>github.com<span class="op">/</span>rebeccajohnson88<span class="op">/</span>gitexample.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Push</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>git push <span class="op">-</span>u origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Should see it appear on your GitHub profile</p>
+
+<img data-src="week2_figs/github_remoteappear.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<section id="if-you-run-into-an-issue-at-the-push-step-configuring-your-identity" class="slide level2 center">
+<h2>If you run into an issue at the push step, configuring your identity</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>git config <span class="op">--</span><span class="kw">global</span> user.name <span class="st">"Your Name"</span> </span>
+<span id="cb12-2"><a></a>git config <span class="op">--</span><span class="kw">global</span> user.email <span class="st">"your-email@example.com"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens" class="slide level2 center">
+<h2>If you run into an issue at the push step, configuring personal access tokens</h2>
+<ol type="1">
+<li class="fragment">Go to settings on right hand side under your profile</li>
+</ol>
+
+<img data-src="week2_figs/gh_settings.png" class="quarto-figure quarto-figure-center r-stretch" style="width:20.0%"></section>
+<section id="if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens-1" class="slide level2 center">
+<h2>If you run into an issue at the push step, configuring personal access tokens</h2>
+<ol start="2" type="1">
+<li class="fragment">Scroll down to “Developer settings” on left hand side</li>
+</ol>
+
+<img data-src="week2_figs/devsettings.png" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%"></section>
+<section id="if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens-2" class="slide level2 center">
+<h2>If you run into an issue at the push step, configuring personal access tokens</h2>
+<ol start="3" type="1">
+<li class="fragment">Click on personal access token and generate a personal access token</li>
+</ol>
+
+<img data-src="week2_figs/pat.png" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%"></section>
+<section id="putting-it-all-together-and-your-own-practice" class="slide level2 center">
+<h2>Putting it all together and your own practice</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>mkdir gitexample</span>
+<span id="cb13-2"><a></a>git init </span>
+<span id="cb13-3"><a></a>touch README.md</span>
+<span id="cb13-4"><a></a>git add README.md</span>
+<span id="cb13-5"><a></a>git commit <span class="op">-</span>m <span class="st">"add readme"</span></span>
+<span id="cb13-6"><a></a>git remote add origin YOUR_URL.git</span>
+<span id="cb13-7"><a></a>git push <span class="op">-</span>u origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Activity:</p>
+<ul>
+<li class="fragment">Complete the above steps</li>
+<li class="fragment">After you’re done with the above steps, open jupyter notebook and create a new notebook called <code>notebook.ipynb</code> with some small amount of content</li>
+<li class="fragment">Complete the following steps to push that code to your remote repository</li>
 </ul>
 <div class="cell">
-<div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_c112ad3b" minutes="5" seconds="0" update-every="1" tabindex="0" style="top:0;right:0;--countdown-font-size:2em;"></countdown-timer>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>git add notebook.ipynb</span>
+<span id="cb14-2"><a></a>git commit <span class="op">-</span>m <span class="st">"add code"</span></span>
+<span id="cb14-3"><a></a>git push </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="returning-to-the-github-workflow-steps" class="slide level2 center">
+<h2>Returning to the GitHub workflow steps</h2>
+<ol type="1">
+<li class="fragment">Either:</li>
+</ol>
+<ul>
+<li class="fragment"><del>Create a repository locally and link to GitHub</del></li>
+<li class="fragment"><strong>Create a repository on GitHub</strong> and clone</li>
+</ul>
+<ol start="2" type="1">
+<li class="fragment"><strong>Make changes</strong> to code or other files</li>
+<li class="fragment"><strong>Commit changes</strong>: tells the computer to ``save’’ the changes</li>
+<li class="fragment"><strong>Push changes</strong>: tells the computer to push those saved changes to GitHub (if file exists already, will overwrite file, but all previous versions of that file are accessible/retrievable)</li>
+</ol>
+</section>
+<section id="cloning-a-repo" class="slide level2 center">
+<h2>Cloning a repo</h2>
+<ul>
+<li class="fragment">Open your local terminal and navigate to where you want the repo’s files to be stored</li>
+<li class="fragment">Go to GitHub.com and create the repo; recommend include a README and a Python .gitignore file</li>
+<li class="fragment">Go to the green “Code” button to find the name of the repo</li>
+<li class="fragment">In your terminal, use the following command to clone</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>git clone reponame.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="once-its-cloned-same-process-as-earlier" class="slide level2 center">
+<h2>Once it’s cloned, same process as earlier</h2>
+<ul>
+<li class="fragment">Edit files locally</li>
+<li class="fragment">Either add specific files, e.g.:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>git add notebook.ipynb</span>
+<span id="cb16-2"><a></a>git commit <span class="op">-</span>m <span class="st">"add code"</span></span>
+<span id="cb16-3"><a></a>git push </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li class="fragment">Or add all changes</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>git add .</span>
+<span id="cb17-2"><a></a>git commit <span class="op">-</span>m <span class="st">"add all contents"</span></span>
+<span id="cb17-3"><a></a>git push </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="evaluation" class="slide level2 center">
-<h2>Evaluation</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><strong>Assignment</strong></th>
-<th style="text-align: center;"><strong>Percentage of Grade</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Participation/Attendance</td>
-<td style="text-align: center;">5%</td>
-</tr>
-<tr class="even">
-<td>Coding Discussion</td>
-<td style="text-align: center;">5%</td>
-</tr>
-<tr class="odd">
-<td>Problem Sets</td>
-<td style="text-align: center;">35%</td>
-</tr>
-<tr class="even">
-<td>In-class Python Exam</td>
-<td style="text-align: center;">15%</td>
-</tr>
-<tr class="odd">
-<td>Final Project</td>
-<td style="text-align: center;">40%</td>
-</tr>
-</tbody>
-</table>
+<section id="activity-clone-a-repo-from-our-github-classroom-page" class="slide level2 center">
+<h2>Activity: clone a repo from our GitHub classroom page</h2>
+<p><a href="https://classroom50.org/ppol5203-fall2026/ppol-5203-fall-2026/assignments/week-2-in-class-activity/accept">Access the activity here</a></p>
+<p>Also linked here: TODO ADD LINK TO WEEK PAGE</p>
 </section>
-<section id="problem-sets" class="slide level2 center">
-<h2>Problem Sets</h2>
-<p>Individual submission through GitHub.</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Assignment</th>
-<th style="text-align: center;">Date Assigned</th>
-<th style="text-align: center;">Date Due</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">No.&nbsp;1</td>
-<td style="text-align: center;">Week 2</td>
-<td style="text-align: center;">Before EOD of Friday of Week 3</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">No.&nbsp;2</td>
-<td style="text-align: center;">Week 4</td>
-<td style="text-align: center;">Before EOD of Friday of Week 5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">No.&nbsp;3</td>
-<td style="text-align: center;">Week 6</td>
-<td style="text-align: center;">Before EOD of Friday of Week 7</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">No.&nbsp;4</td>
-<td style="text-align: center;">week 8</td>
-<td style="text-align: center;">Before EOD of Friday of Week 9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">No.&nbsp;5</td>
-<td style="text-align: center;">November 10</td>
-<td style="text-align: center;">Before EOD of Friday of Week 111</td>
-</tr>
-</tbody>
-</table>
-</section></section>
-<section>
-<section id="eod-1159pm" class="title-slide slide level1 center">
-<h1><span class="red">EOD = 11:59pm!</span></h1>
-
-</section>
-<section id="final-project" class="slide level2 center">
-<h2>Final Project</h2>
+<section id="pulling-remote-changes" class="slide level2 center">
+<h2>Pulling remote changes</h2>
 <ul>
-<li class="fragment"><p>You will work on in <strong>groups!</strong></p></li>
-<li class="fragment"><p>The project is composed of three parts:</p>
-<ul>
-<li class="fragment">a 2 page project proposal: (which should be discussed and approved by me)</li>
-<li class="fragment">an in-class presentation,</li>
-<li class="fragment">A 10-page project report.</li>
-</ul></li>
+<li class="fragment">Within your <code>ppol5203_f26_activities</code> repo, make a change locally (e.g., adding a comment to the code)</li>
+<li class="fragment">Try pushing (add, commit, push) the changes</li>
+<li class="fragment">If you edited the README remotely, you likely get an error that updates were rejected before the remote contains work that you do not have locally</li>
 </ul>
 </section>
-<section id="due-dates-and-points" class="slide level2 center">
-<h2>Due dates and Points:</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><strong>Requirement</strong></th>
-<th><strong>Due</strong></th>
-<th><strong>Length</strong></th>
-<th><strong>Percentage</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Project Proposal</td>
-<td>October 31</td>
-<td>2 pages</td>
-<td>5%</td>
-</tr>
-<tr class="even">
-<td>Presentation</td>
-<td>December 09</td>
-<td>10-15 minutes</td>
-<td>10%</td>
-</tr>
-<tr class="odd">
-<td>Project Report</td>
-<td>December 16</td>
-<td>10 pages</td>
-<td>25%</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="genai" class="slide level2 center">
-<h2>GenAI</h2>
-<p>You are allowed to use GenAI as you would use google in this class. This means:</p>
-<ul>
-<li class="fragment"><p>Do not copy the responses from GenAI Chatbots – a lot of them are wrong or will just not run on your computer</p></li>
-<li class="fragment"><p>Use GenAI Chatbots as a auxiliary source.</p></li>
-<li class="fragment"><p>If your entire homework comes straight from GenAI Chatbots, I will consider it plagiarism.</p></li>
-<li class="fragment"><p>If you use GenAI Chatbots, I ask you to mention on your code how chatgpt worked for you.</p></li>
-<li class="fragment"><p>I will be transparent about my own use of GenAI (e.g.&nbsp;to aid in grading)</p></li>
-</ul>
-</section>
-<section id="in-class-python-exam" class="slide level2 center">
-<h2>In-class Python Exam</h2>
-<p>This will take place after the Python content (after week 11). This will be a short exam, either using pen or paper or on a computer without accessing LLMs. It will be easy to complete if you have engaged with the content.</p>
-</section></section>
-<section>
-<section id="survey-results" class="title-slide slide level1 center">
-<h1><svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Survey Results</h1>
-
-</section>
-<section id="summary-of-the-survey" class="slide level2 center">
-<h2>Summary of the survey</h2>
-<ul>
-<li class="fragment"><p>About half of you have <strong>some</strong> experience with Python.</p></li>
-<li class="fragment"><p>Less exposure to SQL</p></li>
-</ul>
-</section>
-<section id="open-ended" class="slide level2 center">
-<h2>Open Ended</h2>
-<p>Some of you are slightly anxious about Python and the pace of the class</p>
-<div>
-<ul>
-<li class="fragment"><p>The goal of the class is to bring everyone up to the same level of working Python proficiency</p></li>
-<li class="fragment"><p>That means some content will be review for some of you and I appreciate you helping out your classmates</p></li>
-<li class="fragment"><p><strong>Our approach</strong>: We will start slow and build up from Python fundamentals – so learning about the building blocks of dataframes before we actually work with data</p></li>
-</ul>
+<section id="how-to-address-always-pull-before-making-local-changes" class="slide level2 center">
+<h2>How to address: ALWAYS pull before making local changes</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>git pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section></section>
-<section>
-<section id="transition-setting-up-course-tools" class="title-slide slide level1 center">
-<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 96c0-35.3 28.7-64 64-64H512c35.3 0 64 28.7 64 64V352H512V96H128V352H64V96zM0 403.2C0 392.6 8.6 384 19.2 384H620.8c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8H76.8C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"></path></svg> Transition: Setting up Course Tools!</h1>
-
+<p>Either: - There are no merge conflicts with the pull (the things you edited locally don’t conflict with what you edited on the GitHub website) -&gt; you can proceed with git push - There are merge conflicts with the pull</p>
 </section>
-<section id="set-up-your-course-infrastructure" class="slide level2 center">
-<h2>Set up your course infrastructure</h2>
-<p><a href="https://rebeccajohnson88.github.io/PPOL5203_fall2026/course_infrastructure.html">See Course Website</a></p>
+<section id="what-to-do-in-the-case-of-merge-conflicts" class="slide level2 center">
+<h2>What to do in the case of merge conflicts</h2>
 <ul>
-<li class="fragment"><p>Install Python and Jupyter (recommend bundling together by installing Anaconda distribution)</p></li>
-<li class="fragment"><p>Install Jupyter</p></li>
-<li class="fragment"><p>Setup your Git/GitHub account and add your username <a href="https://docs.google.com/spreadsheets/d/1vMIFgJej0SAY8_BfCmaXcAGl_pgZcAJehhV9WdPHWas/edit?usp=sharing">to this sheet</a> - will also distribute the sheet via Canvas</p></li>
+<li class="fragment"><p>Open your text editor and navigate to the file that has merge conflicts (can use <code>vim</code> or other command line editor)</p></li>
+<li class="fragment"><p>Solve the conflict and delete the conflict markers</p></li>
+<li class="fragment"><p>Stage your changes (git add)</p></li>
+<li class="fragment"><p>Commit your changes (git commit)</p></li>
 </ul>
 </section>
-<section id="jupyter" class="slide level2 center">
-<h2>Jupyter:</h2>
-<p><a href="https://rebeccajohnson88.github.io/PPOL5203_fall2026/lecture_notes/week-1/_using_jupyter_notebooks.html">Jupyter Notebook Tutorial in the Class Website</a></p>
-<p><strong>Note on my approach on Notebooks:</strong> I will go over quite quickly through the notebooks. You should run them by yourselves at a later point!</p>
+<section id="activity-2" class="slide level2 center">
+<h2>Activity 2</h2>
+<p>See activity 2 in your notebook</p>
 </section>
-<section id="command-line" class="slide level2 center">
-<h2>Command Line</h2>
-<p><a href="https://rebeccajohnson88.github.io/PPOL5203_fall2026/lecture_notes/week-1/_basics_of_cmd.html">Command Line Tutorial in the Class Website</a></p>
-</section>
-<section id="datacamp-course" class="slide level2 center">
-<h2>Datacamp Course</h2>
-<ul>
-<li class="fragment">Join our team</li>
-<li class="fragment">Manipulating files and directories in <a href="https://app.datacamp.com/learn/courses/introduction-to-shell">Introduction to Shell</a></li>
-</ul>
-</section>
-<section id="additional-materials-quarto" class="slide level2 center">
-<h2>Additional Materials: Quarto</h2>
-<p>Totally optional to use!</p>
-<p><a href="https://rebeccajohnson88.github.io/PPOL5203_fall2026/lecture_notes/week-1/intro_to_quarto.html">Quarto tutorial on class website</a></p>
-</section></section>
-<section id="see-you-next-week" class="title-slide slide level1 center">
-<h1>See you next week!</h1>
+<section id="activity-3" class="slide level2 center">
+<h2>Activity 3</h2>
+<p>Cloning the repo with your problem set</p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Data Science I: Foundations</p>
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

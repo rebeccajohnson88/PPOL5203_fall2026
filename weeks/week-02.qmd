@@ -1,0 +1,49 @@
+---
+title: "Week 02"
+subtitle: "Git and GitHub"
+description: ""
+author: "Rebecca Johnson"
+date: "09/04/26"
+#listing:
+  # - id: slides
+  #   contents:
+  #     - ../slides/week-01/*.qmd
+  #   type: table
+  #   fields: [title, date]
+  #   date-format: "ddd, MMM DD"
+  #   field-display-names:
+  #     title: "Topic"
+  #     date: "Date"
+  #   sort: [filename]
+  #   sort-ui: false
+  #   filter-ui: false
+  # - id: assignments
+  #   contents:
+  #     - ../hw/w1-*.qmd
+  #     - ../labs/w1-*.qmd
+  #   type: table
+  #   fields: [categories, title, date]
+  #   date-format: "ddd, MMM DD"
+  #   field-display-names:
+  #     categories: "Assignment"
+  #     title: "Title"
+  #     date: "Due"
+  #   sort: [date]
+  #   sort-ui: false
+  #   filter-ui: false
+tbl-colwidths: [10,50,40]
+---
+
+# Slides
+
+[Week 01:Git and GitHub](/slides/week-2.qmd)
+
+# In-class activity
+
+[GitHub classroom link](https://classroom50.org/ppol5203-fall2026/ppol-5203-fall-2026/assignments/week-2-in-class-activity/accept)
+
+# Resources (optional)
+
+[GitHub Cheatsheet](https://training.github.com/downloads/github-git-cheat-sheet.pdf)
+
+[Another GitHub Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf)

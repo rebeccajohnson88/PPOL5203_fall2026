@@ -27,169 +27,6 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
-    "section": "",
-    "text": "This first course in the core data science sequence teaches Data Science for Public Policy (DSPP) students how to synthesize disparate, possibly unstructured data in order to draw meaningful insights. Topics covered include the fundamentals of object-oriented programming in Python; literate programming; an introduction to algorithms and data types; data wrangling, visualization, and extraction; an introduction to machine learning methods, and text analysis. In addition, students will be exposed to Git and Github for version control and reproducible research. The objective of the course is to teach students how to incorporate data into their decision-making and analysis. No prior programming experience is assumed or required.\nData Science I is a collective effort among DSPP faculty. For this reason, the materials heavily draw from Dr. Tiago Ventura’s version of the course, with some also drawn from materials created by Dr. Eric Dunford",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
-    "section": "",
-    "text": "This first course in the core data science sequence teaches Data Science for Public Policy (DSPP) students how to synthesize disparate, possibly unstructured data in order to draw meaningful insights. Topics covered include the fundamentals of object-oriented programming in Python; literate programming; an introduction to algorithms and data types; data wrangling, visualization, and extraction; an introduction to machine learning methods, and text analysis. In addition, students will be exposed to Git and Github for version control and reproducible research. The objective of the course is to teach students how to incorporate data into their decision-making and analysis. No prior programming experience is assumed or required.\nData Science I is a collective effort among DSPP faculty. For this reason, the materials heavily draw from Dr. Tiago Ventura’s version of the course, with some also drawn from materials created by Dr. Eric Dunford",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#goals",
-    "href": "index.html#goals",
-    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
-    "section": "Goals",
-    "text": "Goals\nAfter completing this course, the students will be able to:\n\nGeneral understanding of python’s object oriented programming syntax and data structures.\nCompetency using version control (Git/Github).\nLearn to manipulate and explore data with Pandas and other tools.\nGeneral understanding of analyzing algorithms and data structures.\nLearn to extract and process data from structured and unstructured sources.\nGet some intuition of modeling text data in Python.\nLearn the basics of machine learning as a modeling approach.\nLearn how to use Generative AI for multiple applied tasks.\nLearn basics of using SQL to query databases.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#instructor",
-    "href": "index.html#instructor",
-    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
-    "section": "Instructor",
-    "text": "Instructor\n\nProfessor: Dr. Rebecca Johnson\nEmail: rj545@georgetown.edu\nOffice hours:\n\nTime: Every Wednesday, 1130am - 130pm\nLocation - either:\nIn person: 125E, Office Number 768\nRemote: see Calendly link\n\n\nSign up: on Calendly",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#teaching-assistant-tbd",
-    "href": "index.html#teaching-assistant-tbd",
-    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
-    "section": "Teaching Assistant: TBD",
-    "text": "Teaching Assistant: TBD\n\nCourse Infra-structure\nClass Website: A class website https://rebeccajohnson88.github.io/PPOL5203_fall2026/ will be used throughout the course and should be checked on a regular basis for lecture materials and required readings.\n\nCanvas: A Canvas site (http://canvas.georgetown.edu) will be used throughout the course and should be checked on a regular basis for announcements. All announcements for the assignments and classes will be posted on Canvas; they will not be distributed in class or by e-mail. Support for Canvas is available at (202) 687-4949\nNOTE: Students are encouraged to run lecture code on their own machines. If you do not have access to a laptop on which you can install python3, please contact the professor and/or TA for assistance. Only python3 will be used in this course.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "lecture_notes/week-1/intro_to_quarto.html",
-    "href": "lecture_notes/week-1/intro_to_quarto.html",
-    "title": "Week 1: Introduction to Quarto for Python",
-    "section": "",
-    "text": "The purpose of this notebook is to show case the use of Quarto notebooks. It will cover:\n\nBrief introduction to Quarto Notebooks\nRunning R with Quarto Notebooks\nRunning Python with Quarto Notebooks + reticulate\n\nSee Quarto’s website for a more in-depth coverage of the framework."
-  },
-  {
-    "objectID": "lecture_notes/week-1/intro_to_quarto.html#quick-tutorial-for-rstudio",
-    "href": "lecture_notes/week-1/intro_to_quarto.html#quick-tutorial-for-rstudio",
-    "title": "Week 1: Introduction to Quarto for Python",
-    "section": "Quick tutorial for RStudio",
-    "text": "Quick tutorial for RStudio\nThis is what RStudio looks like when you open it for the first time.\n\n\n\n\n\n\n\n\n\nTop left pane (input/script)\nThis is your code editor. Here you enter code in any file type (.py, .r, .qmd) you are working on. If not working with notebooks, this is just gonna be a plain text file but with a extension that run the commands.\nFor example, enter 2 + 2 in your script and run a line of code by pressing command + enter (Mac) or Ctrl + enter (PC). This is a huge advantage of Rstudio over Jupyter. You can run your code line by line, instead of running the entire cell.\nBottom left pane (output/console)\nThis is the console. It is pretty much like when you open Python/R from the Command line.\nIn the console, the prompt &gt; looks like a greater than symbol. If your prompt begins to look like a + symbol by mistake, simply click in your console and press the esc key on your keyboard as many times as necessary to return to the prompt.\nRstudio uses + when code is broken up across multiple lines and is still expecting more code. A line of code does not usually end until Rstudio finds an appropriate stop parameter or punctuation that completes some code such as a closed round parenthesis ), square bracket ], curly brace }, or quotation mark '.\nIf the output in your console gets too messy, you can clear it by pressing control + l on both Mac and PC. This will not erase any saved data - it will simply make your console easier to read.\nTop right pane (global environment)\nThis is your environment pane. All objects you create will be displayed here.\nBottom right pane (files, plots, packages, and help)\nHere you find useful tabs for navigating your file system, displaying plots, installing packages, and viewing help pages. Press the control key and a number (1 through 9) on your keyboard to shortcut between these panes and tabs."
-  },
-  {
-    "objectID": "lecture_notes/week-1/minimal_example_python.html",
-    "href": "lecture_notes/week-1/minimal_example_python.html",
-    "title": "Python via Quarto",
-    "section": "",
-    "text": "Here you add your text as markdown."
-  },
-  {
-    "objectID": "lecture_notes/week-1/minimal_example_python.html#minimal-example-of-using-python-with-quarto",
-    "href": "lecture_notes/week-1/minimal_example_python.html#minimal-example-of-using-python-with-quarto",
-    "title": "Python via Quarto",
-    "section": "",
-    "text": "Here you add your text as markdown."
-  },
-  {
-    "objectID": "lecture_notes/week-1/minimal_example_python.html#code",
-    "href": "lecture_notes/week-1/minimal_example_python.html#code",
-    "title": "Python via Quarto",
-    "section": "Code",
-    "text": "Code\nYou will use the same code block for any language. You just need to change language inside of the brackets {}\n\nlibrary(reticulate)\n\nWarning: package 'reticulate' was built under R version 4.2.3\n\nreticulate::py_config()\n\npython:         /Users/rj545/.virtualenvs/r-reticulate/bin/python\nlibpython:      /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/config-3.9-darwin/libpython3.9.dylib\npythonhome:     /Users/rj545/.virtualenvs/r-reticulate:/Users/rj545/.virtualenvs/r-reticulate\nversion:        3.9.6 (default, Sep 26 2022, 11:37:49)  [Clang 14.0.0 (clang-1400.0.29.202)]\nnumpy:          /Users/rj545/.virtualenvs/r-reticulate/lib/python3.9/site-packages/numpy\nnumpy_version:  2.0.2\n\nuse_python(\"/Users/rj545/.virtualenvs/r-reticulate/bin/python\")\n\nusethis::edit_r_environ()\n\n• Edit '/Users/rj545/.Renviron'\n• Restart R for changes to take effect\n\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport scipy.stats as stats\nimport math\n\n## generate normal distribution \nmu = 0\nvariance = 1\nsigma = math.sqrt(variance)\nx = np.linspace(mu - 3*sigma, mu + 3*sigma, 100)\ny = stats.norm.pdf(x, mu, sigma)\n\n## plot using Georgetown Blue colors\nGU_BLUE = '#041E42'\nplt.plot(x, y, color = GU_BLUE)\nplt.fill_between(x, y, color= GU_BLUE, alpha=0.4)\n\n\n\n\n\n\n\n\n\nplt.show()"
-  },
-  {
-    "objectID": "weeks/week-01.html",
-    "href": "weeks/week-01.html",
-    "title": "Week 01",
-    "section": "",
-    "text": "Slides\nWeek 01:Introduction, Installations, IDEs, Command line\n\n\nHandouts\n\nInstructions for setting up the course infrastructure.\nUsing Jupyter Notebooks: web page,  .ipynb file \nUsing Quarto for Python and R web page,  .qmd file \nBasics of Command Line: web page,  .ipynb file \nPractice Notebook to Check Installations:  .ipynb file \n\n\n\nReadings\nRequired Readings\n\nJupyter Notebook for Beginners: A tutorial Pryke, Benjamin - www.dataquest.io\n\n\n\nDataCamp\n\nOptional (but highly recommended) module: Introduction to Shell &gt; Manipulating Files and Directories",
-    "crumbs": [
-      "Materials",
-      "Week 1: Intro to Course and Tools"
-    ]
-  },
-  {
-    "objectID": "lecture_notes/week-1/Untitled1.html",
-    "href": "lecture_notes/week-1/Untitled1.html",
-    "title": "",
-    "section": "",
-    "text": "#"
-  },
-  {
-    "objectID": "course_infrastructure.html",
-    "href": "course_infrastructure.html",
-    "title": "Week 1: Course Infrastructure",
-    "section": "",
-    "text": "Throughout the semester, we will use a combination of computational tools. This a summary of the main tools:\n\nCommand line: primarily to interact with git, install programs and run a few scripts\nPython3: for programming taks\nGit/GitHub: for version control, reproucibility and for sharing materials\nJupyter Notebooks: as a main IDE to work with Python\nQuarto via RStudio: as a secondary IDE (you can make your primary if you prefer) to coding in Python/R/SQL\n\nLet’s cover how to set up each of these tools in your local machines.\n\n\n\n\n\n\nWarning\n\n\n\nIf you run into issues, please set up an office hours appointment for assistance\n\n\n\n\nAt times, we’ll use a unix-based command line. The command line will feature into our discussion on using git and also running Python programs. If you use a Mac or a Linux operating system, then a functioning command line comes with your operating system. For Apple machines, this is the Terminal.\nFor Windows (specifically Windows 10), you can enable Linux Bash shell. The following offers a tutorial on how to do this.\nIf you’re using a version of Windows that pre-dates version 10, then Git Bash offers a program will allow you to use git commands from your windows machine.\nLater in the first class, we will cover some concepts of working with the command line. You can get a full notebook with a intro to command line in the materials for week 1\n\n\n\nWe’ll use Python3 throughout this course. Below are instructions for downloading Python3 using command line packages manager (Homebrew for mac, Chocolatey for windows).\n\nInstalling Python3 using Homebrew on a Mac (Apple)\nInstalling Python3 using Chocolatey on a PC (Windows)\n\nAn alternative way to install Python3 is to download an Anaconda distribution. I will use pip rather than conda in the instruction for downloading Python modules. These are simply two ways of downloading and managing open-source software packages. Choose which ever works best for you\nSome computers already have python3 installed. You can check if that is your case through your command line\npython3 --version\nOn some versions of Windows, you may need to use py instead of python3:\npy --version\nIn either case, the output of this command should be something like Python 3.9.13\n\n\n\nOnce you have Python3 on your computer, you can install a Jupyter Notebook. If you downloaded Python3 using Anaconda, then Jupyter Notebook comes with the distribution and requires no further installation on your part. If you are not using Anaconda, you can install Jupyter notebook running the following code using your command line.\n# on your command line\npip install jupyter\nYou can then activate a Jupyter Notebook from the command line by typing:\n# on your command line\njupyter notebook\n\n\nHere is my workflow to open Jupyter Notebooks using the commandline.\n\nOpen the terminal\nNavigate (using cd) to the folder you want to be the root of your jupyter notebook\nOpen the notebook (jupyter notebook)\n\nIt looks like this if I were to open a notebook in the folder I have for this course\n# open terminal\ncd ppol_5203_fall2026\njupyter notebook\n\n\n\nIf you installed Python using Anaconda distribution system (here: https://www.anaconda.com/products/individual). You can open Jupyter through a point-and-click system.\nIn the lecture notes, you can also find a Introduction to Jupyter notebook. We will cover this in the first class of the course.\n\n\n\n\nIn your classes that are focused on using R, RStudio will be your main IDE. However, RStudio isn’t just for R. It can handle a number of different languages. We can use Python in RStudio using the reticulate package.\nHere’s a notebook to teach you how to use Python in Rstudio. Check out the intro to quarto notebook. Let’s cover some of the installation steps here:\n\nTo install RStudio, download from the following link . reticulate is an R package that allows one run a Python REPL in the R console. In addition, it allows one to read in and use Python code, and pass data between R and and Python. The following provides instructions on installing reticulate.\nWith reticulate, you can use Rstudio as a IDE for Python. Another option is to use Quarto (the next-generation version of R Markdown) as an unified framework to generate notebooks with text + code. If you’re an R Markdown user, you will see how Quarto is just an extension of the capabilities that were previously provided by R Markdown. Now, instead of .rmd files, we have .qmd files. Quarto is already installed with RStudio.\n\n\n\n\nWe’ll go over more Git/GitHub instructions during the second class session. Before that session:\n\nInstall Git if it’s not installed already\nCreate a GitHub account if you don’t have one already (any email and free subscription is fine)",
-    "crumbs": [
-      "Course Technology Tools"
-    ]
-  },
-  {
-    "objectID": "course_infrastructure.html#command-line",
-    "href": "course_infrastructure.html#command-line",
-    "title": "Week 1: Course Infrastructure",
-    "section": "",
-    "text": "At times, we’ll use a unix-based command line. The command line will feature into our discussion on using git and also running Python programs. If you use a Mac or a Linux operating system, then a functioning command line comes with your operating system. For Apple machines, this is the Terminal.\nFor Windows (specifically Windows 10), you can enable Linux Bash shell. The following offers a tutorial on how to do this.\nIf you’re using a version of Windows that pre-dates version 10, then Git Bash offers a program will allow you to use git commands from your windows machine.\nLater in the first class, we will cover some concepts of working with the command line. You can get a full notebook with a intro to command line in the materials for week 1",
-    "crumbs": [
-      "Course Technology Tools"
-    ]
-  },
-  {
-    "objectID": "course_infrastructure.html#python3",
-    "href": "course_infrastructure.html#python3",
-    "title": "Week 1: Course Infrastructure",
-    "section": "",
-    "text": "We’ll use Python3 throughout this course. Below are instructions for downloading Python3 using command line packages manager (Homebrew for mac, Chocolatey for windows).\n\nInstalling Python3 using Homebrew on a Mac (Apple)\nInstalling Python3 using Chocolatey on a PC (Windows)\n\nAn alternative way to install Python3 is to download an Anaconda distribution. I will use pip rather than conda in the instruction for downloading Python modules. These are simply two ways of downloading and managing open-source software packages. Choose which ever works best for you\nSome computers already have python3 installed. You can check if that is your case through your command line\npython3 --version\nOn some versions of Windows, you may need to use py instead of python3:\npy --version\nIn either case, the output of this command should be something like Python 3.9.13",
-    "crumbs": [
-      "Course Technology Tools"
-    ]
-  },
-  {
-    "objectID": "course_infrastructure.html#jupyter-notebooks",
-    "href": "course_infrastructure.html#jupyter-notebooks",
-    "title": "Week 1: Course Infrastructure",
-    "section": "",
-    "text": "Once you have Python3 on your computer, you can install a Jupyter Notebook. If you downloaded Python3 using Anaconda, then Jupyter Notebook comes with the distribution and requires no further installation on your part. If you are not using Anaconda, you can install Jupyter notebook running the following code using your command line.\n# on your command line\npip install jupyter\nYou can then activate a Jupyter Notebook from the command line by typing:\n# on your command line\njupyter notebook\n\n\nHere is my workflow to open Jupyter Notebooks using the commandline.\n\nOpen the terminal\nNavigate (using cd) to the folder you want to be the root of your jupyter notebook\nOpen the notebook (jupyter notebook)\n\nIt looks like this if I were to open a notebook in the folder I have for this course\n# open terminal\ncd ppol_5203_fall2026\njupyter notebook\n\n\n\nIf you installed Python using Anaconda distribution system (here: https://www.anaconda.com/products/individual). You can open Jupyter through a point-and-click system.\nIn the lecture notes, you can also find a Introduction to Jupyter notebook. We will cover this in the first class of the course.",
-    "crumbs": [
-      "Course Technology Tools"
-    ]
-  },
-  {
-    "objectID": "course_infrastructure.html#rstudio-reticulatequarto",
-    "href": "course_infrastructure.html#rstudio-reticulatequarto",
-    "title": "Week 1: Course Infrastructure",
-    "section": "",
-    "text": "In your classes that are focused on using R, RStudio will be your main IDE. However, RStudio isn’t just for R. It can handle a number of different languages. We can use Python in RStudio using the reticulate package.\nHere’s a notebook to teach you how to use Python in Rstudio. Check out the intro to quarto notebook. Let’s cover some of the installation steps here:\n\nTo install RStudio, download from the following link . reticulate is an R package that allows one run a Python REPL in the R console. In addition, it allows one to read in and use Python code, and pass data between R and and Python. The following provides instructions on installing reticulate.\nWith reticulate, you can use Rstudio as a IDE for Python. Another option is to use Quarto (the next-generation version of R Markdown) as an unified framework to generate notebooks with text + code. If you’re an R Markdown user, you will see how Quarto is just an extension of the capabilities that were previously provided by R Markdown. Now, instead of .rmd files, we have .qmd files. Quarto is already installed with RStudio.",
-    "crumbs": [
-      "Course Technology Tools"
-    ]
-  },
-  {
-    "objectID": "course_infrastructure.html#git",
-    "href": "course_infrastructure.html#git",
-    "title": "Week 1: Course Infrastructure",
-    "section": "",
-    "text": "We’ll go over more Git/GitHub instructions during the second class session. Before that session:\n\nInstall Git if it’s not installed already\nCreate a GitHub account if you don’t have one already (any email and free subscription is fine)",
-    "crumbs": [
-      "Course Technology Tools"
-    ]
-  },
-  {
     "objectID": "slides/week-1.html#plans-for-today",
     "href": "slides/week-1.html#plans-for-today",
     "title": "PPOL 5203 - Data Science I: Foundations",
@@ -412,6 +249,407 @@
     "title": "PPOL 5203 - Data Science I: Foundations",
     "section": "Additional Materials: Quarto",
     "text": "Additional Materials: Quarto\nTotally optional to use!\nQuarto tutorial on class website"
+  },
+  {
+    "objectID": "course_infrastructure.html",
+    "href": "course_infrastructure.html",
+    "title": "Week 1: Course Infrastructure",
+    "section": "",
+    "text": "Throughout the semester, we will use a combination of computational tools. This a summary of the main tools:\n\nCommand line: primarily to interact with git, install programs and run a few scripts\nPython3: for programming taks\nGit/GitHub: for version control, reproucibility and for sharing materials\nJupyter Notebooks: as a main IDE to work with Python\nQuarto via RStudio: as a secondary IDE (you can make your primary if you prefer) to coding in Python/R/SQL\n\nLet’s cover how to set up each of these tools in your local machines.\n\n\n\n\n\n\nWarning\n\n\n\nIf you run into issues, please set up an office hours appointment for assistance\n\n\n\n\nAt times, we’ll use a unix-based command line. The command line will feature into our discussion on using git and also running Python programs. If you use a Mac or a Linux operating system, then a functioning command line comes with your operating system. For Apple machines, this is the Terminal.\nFor Windows (specifically Windows 10), you can enable Linux Bash shell. The following offers a tutorial on how to do this.\nIf you’re using a version of Windows that pre-dates version 10, then Git Bash offers a program will allow you to use git commands from your windows machine.\nLater in the first class, we will cover some concepts of working with the command line. You can get a full notebook with a intro to command line in the materials for week 1\n\n\n\nWe’ll use Python3 throughout this course. Below are instructions for downloading Python3 using command line packages manager (Homebrew for mac, Chocolatey for windows).\n\nInstalling Python3 using Homebrew on a Mac (Apple)\nInstalling Python3 using Chocolatey on a PC (Windows)\n\nAn alternative way to install Python3 is to download an Anaconda distribution. I will use pip rather than conda in the instruction for downloading Python modules. These are simply two ways of downloading and managing open-source software packages. Choose which ever works best for you\nSome computers already have python3 installed. You can check if that is your case through your command line\npython3 --version\nOn some versions of Windows, you may need to use py instead of python3:\npy --version\nIn either case, the output of this command should be something like Python 3.9.13\n\n\n\nOnce you have Python3 on your computer, you can install a Jupyter Notebook. If you downloaded Python3 using Anaconda, then Jupyter Notebook comes with the distribution and requires no further installation on your part. If you are not using Anaconda, you can install Jupyter notebook running the following code using your command line.\n# on your command line\npip install jupyter\nYou can then activate a Jupyter Notebook from the command line by typing:\n# on your command line\njupyter notebook\n\n\nHere is my workflow to open Jupyter Notebooks using the commandline.\n\nOpen the terminal\nNavigate (using cd) to the folder you want to be the root of your jupyter notebook\nOpen the notebook (jupyter notebook)\n\nIt looks like this if I were to open a notebook in the folder I have for this course\n# open terminal\ncd ppol_5203_fall2026\njupyter notebook\n\n\n\nIf you installed Python using Anaconda distribution system (here: https://www.anaconda.com/products/individual). You can open Jupyter through a point-and-click system.\nIn the lecture notes, you can also find a Introduction to Jupyter notebook. We will cover this in the first class of the course.\n\n\n\n\nIn your classes that are focused on using R, RStudio will be your main IDE. However, RStudio isn’t just for R. It can handle a number of different languages. We can use Python in RStudio using the reticulate package.\nHere’s a notebook to teach you how to use Python in Rstudio. Check out the intro to quarto notebook. Let’s cover some of the installation steps here:\n\nTo install RStudio, download from the following link . reticulate is an R package that allows one run a Python REPL in the R console. In addition, it allows one to read in and use Python code, and pass data between R and and Python. The following provides instructions on installing reticulate.\nWith reticulate, you can use Rstudio as a IDE for Python. Another option is to use Quarto (the next-generation version of R Markdown) as an unified framework to generate notebooks with text + code. If you’re an R Markdown user, you will see how Quarto is just an extension of the capabilities that were previously provided by R Markdown. Now, instead of .rmd files, we have .qmd files. Quarto is already installed with RStudio.\n\n\n\n\nWe’ll go over more Git/GitHub instructions during the second class session. Before that session:\n\nInstall Git if it’s not installed already\nCreate a GitHub account if you don’t have one already (any email and free subscription is fine)",
+    "crumbs": [
+      "Course Technology Tools"
+    ]
+  },
+  {
+    "objectID": "course_infrastructure.html#command-line",
+    "href": "course_infrastructure.html#command-line",
+    "title": "Week 1: Course Infrastructure",
+    "section": "",
+    "text": "At times, we’ll use a unix-based command line. The command line will feature into our discussion on using git and also running Python programs. If you use a Mac or a Linux operating system, then a functioning command line comes with your operating system. For Apple machines, this is the Terminal.\nFor Windows (specifically Windows 10), you can enable Linux Bash shell. The following offers a tutorial on how to do this.\nIf you’re using a version of Windows that pre-dates version 10, then Git Bash offers a program will allow you to use git commands from your windows machine.\nLater in the first class, we will cover some concepts of working with the command line. You can get a full notebook with a intro to command line in the materials for week 1",
+    "crumbs": [
+      "Course Technology Tools"
+    ]
+  },
+  {
+    "objectID": "course_infrastructure.html#python3",
+    "href": "course_infrastructure.html#python3",
+    "title": "Week 1: Course Infrastructure",
+    "section": "",
+    "text": "We’ll use Python3 throughout this course. Below are instructions for downloading Python3 using command line packages manager (Homebrew for mac, Chocolatey for windows).\n\nInstalling Python3 using Homebrew on a Mac (Apple)\nInstalling Python3 using Chocolatey on a PC (Windows)\n\nAn alternative way to install Python3 is to download an Anaconda distribution. I will use pip rather than conda in the instruction for downloading Python modules. These are simply two ways of downloading and managing open-source software packages. Choose which ever works best for you\nSome computers already have python3 installed. You can check if that is your case through your command line\npython3 --version\nOn some versions of Windows, you may need to use py instead of python3:\npy --version\nIn either case, the output of this command should be something like Python 3.9.13",
+    "crumbs": [
+      "Course Technology Tools"
+    ]
+  },
+  {
+    "objectID": "course_infrastructure.html#jupyter-notebooks",
+    "href": "course_infrastructure.html#jupyter-notebooks",
+    "title": "Week 1: Course Infrastructure",
+    "section": "",
+    "text": "Once you have Python3 on your computer, you can install a Jupyter Notebook. If you downloaded Python3 using Anaconda, then Jupyter Notebook comes with the distribution and requires no further installation on your part. If you are not using Anaconda, you can install Jupyter notebook running the following code using your command line.\n# on your command line\npip install jupyter\nYou can then activate a Jupyter Notebook from the command line by typing:\n# on your command line\njupyter notebook\n\n\nHere is my workflow to open Jupyter Notebooks using the commandline.\n\nOpen the terminal\nNavigate (using cd) to the folder you want to be the root of your jupyter notebook\nOpen the notebook (jupyter notebook)\n\nIt looks like this if I were to open a notebook in the folder I have for this course\n# open terminal\ncd ppol_5203_fall2026\njupyter notebook\n\n\n\nIf you installed Python using Anaconda distribution system (here: https://www.anaconda.com/products/individual). You can open Jupyter through a point-and-click system.\nIn the lecture notes, you can also find a Introduction to Jupyter notebook. We will cover this in the first class of the course.",
+    "crumbs": [
+      "Course Technology Tools"
+    ]
+  },
+  {
+    "objectID": "course_infrastructure.html#rstudio-reticulatequarto",
+    "href": "course_infrastructure.html#rstudio-reticulatequarto",
+    "title": "Week 1: Course Infrastructure",
+    "section": "",
+    "text": "In your classes that are focused on using R, RStudio will be your main IDE. However, RStudio isn’t just for R. It can handle a number of different languages. We can use Python in RStudio using the reticulate package.\nHere’s a notebook to teach you how to use Python in Rstudio. Check out the intro to quarto notebook. Let’s cover some of the installation steps here:\n\nTo install RStudio, download from the following link . reticulate is an R package that allows one run a Python REPL in the R console. In addition, it allows one to read in and use Python code, and pass data between R and and Python. The following provides instructions on installing reticulate.\nWith reticulate, you can use Rstudio as a IDE for Python. Another option is to use Quarto (the next-generation version of R Markdown) as an unified framework to generate notebooks with text + code. If you’re an R Markdown user, you will see how Quarto is just an extension of the capabilities that were previously provided by R Markdown. Now, instead of .rmd files, we have .qmd files. Quarto is already installed with RStudio.",
+    "crumbs": [
+      "Course Technology Tools"
+    ]
+  },
+  {
+    "objectID": "course_infrastructure.html#git",
+    "href": "course_infrastructure.html#git",
+    "title": "Week 1: Course Infrastructure",
+    "section": "",
+    "text": "We’ll go over more Git/GitHub instructions during the second class session. Before that session:\n\nInstall Git if it’s not installed already\nCreate a GitHub account if you don’t have one already (any email and free subscription is fine)",
+    "crumbs": [
+      "Course Technology Tools"
+    ]
+  },
+  {
+    "objectID": "lecture_notes/week-1/minimal_example_python.html",
+    "href": "lecture_notes/week-1/minimal_example_python.html",
+    "title": "Python via Quarto",
+    "section": "",
+    "text": "Here you add your text as markdown."
+  },
+  {
+    "objectID": "lecture_notes/week-1/minimal_example_python.html#minimal-example-of-using-python-with-quarto",
+    "href": "lecture_notes/week-1/minimal_example_python.html#minimal-example-of-using-python-with-quarto",
+    "title": "Python via Quarto",
+    "section": "",
+    "text": "Here you add your text as markdown."
+  },
+  {
+    "objectID": "lecture_notes/week-1/minimal_example_python.html#code",
+    "href": "lecture_notes/week-1/minimal_example_python.html#code",
+    "title": "Python via Quarto",
+    "section": "Code",
+    "text": "Code\nYou will use the same code block for any language. You just need to change language inside of the brackets {}\n\nlibrary(reticulate)\n\nWarning: package 'reticulate' was built under R version 4.2.3\n\nreticulate::py_config()\n\npython:         /Users/rj545/.virtualenvs/r-reticulate/bin/python\nlibpython:      /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/config-3.9-darwin/libpython3.9.dylib\npythonhome:     /Users/rj545/.virtualenvs/r-reticulate:/Users/rj545/.virtualenvs/r-reticulate\nversion:        3.9.6 (default, Sep 26 2022, 11:37:49)  [Clang 14.0.0 (clang-1400.0.29.202)]\nnumpy:          /Users/rj545/.virtualenvs/r-reticulate/lib/python3.9/site-packages/numpy\nnumpy_version:  2.0.2\n\nuse_python(\"/Users/rj545/.virtualenvs/r-reticulate/bin/python\")\n\nusethis::edit_r_environ()\n\n• Edit '/Users/rj545/.Renviron'\n• Restart R for changes to take effect\n\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport scipy.stats as stats\nimport math\n\n## generate normal distribution \nmu = 0\nvariance = 1\nsigma = math.sqrt(variance)\nx = np.linspace(mu - 3*sigma, mu + 3*sigma, 100)\ny = stats.norm.pdf(x, mu, sigma)\n\n## plot using Georgetown Blue colors\nGU_BLUE = '#041E42'\nplt.plot(x, y, color = GU_BLUE)\nplt.fill_between(x, y, color= GU_BLUE, alpha=0.4)\n\n\n\n\n\n\n\n\n\nplt.show()"
+  },
+  {
+    "objectID": "weeks/week-02.html",
+    "href": "weeks/week-02.html",
+    "title": "Week 02",
+    "section": "",
+    "text": "Slides\nWeek 01:Git and GitHub\n\n\nIn-class activity\nGitHub classroom link\n\n\nResources (optional)\nGitHub Cheatsheet\nAnother GitHub Cheatsheet"
+  },
+  {
+    "objectID": "weeks/week-01.html",
+    "href": "weeks/week-01.html",
+    "title": "Week 01",
+    "section": "",
+    "text": "Slides\nWeek 01:Introduction, Installations, IDEs, Command line\n\n\nHandouts\n\nInstructions for setting up the course infrastructure.\nUsing Jupyter Notebooks: web page,  .ipynb file \nUsing Quarto for Python and R web page,  .qmd file \nBasics of Command Line: web page,  .ipynb file \nPractice Notebook to Check Installations:  .ipynb file \n\n\n\nReadings\nRequired Readings\n\nJupyter Notebook for Beginners: A tutorial Pryke, Benjamin - www.dataquest.io\n\n\n\nDataCamp\n\nOptional (but highly recommended) module: Introduction to Shell &gt; Manipulating Files and Directories",
+    "crumbs": [
+      "Materials",
+      "Week 1: Intro to Course and Tools"
+    ]
+  },
+  {
+    "objectID": "lecture_notes/week-1/intro_to_quarto.html",
+    "href": "lecture_notes/week-1/intro_to_quarto.html",
+    "title": "Week 1: Introduction to Quarto for Python",
+    "section": "",
+    "text": "The purpose of this notebook is to show case the use of Quarto notebooks. It will cover:\n\nBrief introduction to Quarto Notebooks\nRunning R with Quarto Notebooks\nRunning Python with Quarto Notebooks + reticulate\n\nSee Quarto’s website for a more in-depth coverage of the framework."
+  },
+  {
+    "objectID": "lecture_notes/week-1/intro_to_quarto.html#quick-tutorial-for-rstudio",
+    "href": "lecture_notes/week-1/intro_to_quarto.html#quick-tutorial-for-rstudio",
+    "title": "Week 1: Introduction to Quarto for Python",
+    "section": "Quick tutorial for RStudio",
+    "text": "Quick tutorial for RStudio\nThis is what RStudio looks like when you open it for the first time.\n\n\n\n\n\n\n\n\n\nTop left pane (input/script)\nThis is your code editor. Here you enter code in any file type (.py, .r, .qmd) you are working on. If not working with notebooks, this is just gonna be a plain text file but with a extension that run the commands.\nFor example, enter 2 + 2 in your script and run a line of code by pressing command + enter (Mac) or Ctrl + enter (PC). This is a huge advantage of Rstudio over Jupyter. You can run your code line by line, instead of running the entire cell.\nBottom left pane (output/console)\nThis is the console. It is pretty much like when you open Python/R from the Command line.\nIn the console, the prompt &gt; looks like a greater than symbol. If your prompt begins to look like a + symbol by mistake, simply click in your console and press the esc key on your keyboard as many times as necessary to return to the prompt.\nRstudio uses + when code is broken up across multiple lines and is still expecting more code. A line of code does not usually end until Rstudio finds an appropriate stop parameter or punctuation that completes some code such as a closed round parenthesis ), square bracket ], curly brace }, or quotation mark '.\nIf the output in your console gets too messy, you can clear it by pressing control + l on both Mac and PC. This will not erase any saved data - it will simply make your console easier to read.\nTop right pane (global environment)\nThis is your environment pane. All objects you create will be displayed here.\nBottom right pane (files, plots, packages, and help)\nHere you find useful tabs for navigating your file system, displaying plots, installing packages, and viewing help pages. Press the control key and a number (1 through 9) on your keyboard to shortcut between these panes and tabs."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "",
+    "text": "This first course in the core data science sequence teaches Data Science for Public Policy (DSPP) students how to synthesize disparate, possibly unstructured data in order to draw meaningful insights. Topics covered include the fundamentals of object-oriented programming in Python; literate programming; an introduction to algorithms and data types; data wrangling, visualization, and extraction; an introduction to machine learning methods, and text analysis. In addition, students will be exposed to Git and Github for version control and reproducible research. The objective of the course is to teach students how to incorporate data into their decision-making and analysis. No prior programming experience is assumed or required.\nData Science I is a collective effort among DSPP faculty. For this reason, the materials heavily draw from Dr. Tiago Ventura’s version of the course, with some also drawn from materials created by Dr. Eric Dunford",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "",
+    "text": "This first course in the core data science sequence teaches Data Science for Public Policy (DSPP) students how to synthesize disparate, possibly unstructured data in order to draw meaningful insights. Topics covered include the fundamentals of object-oriented programming in Python; literate programming; an introduction to algorithms and data types; data wrangling, visualization, and extraction; an introduction to machine learning methods, and text analysis. In addition, students will be exposed to Git and Github for version control and reproducible research. The objective of the course is to teach students how to incorporate data into their decision-making and analysis. No prior programming experience is assumed or required.\nData Science I is a collective effort among DSPP faculty. For this reason, the materials heavily draw from Dr. Tiago Ventura’s version of the course, with some also drawn from materials created by Dr. Eric Dunford",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#goals",
+    "href": "index.html#goals",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "Goals",
+    "text": "Goals\nAfter completing this course, the students will be able to:\n\nGeneral understanding of python’s object oriented programming syntax and data structures.\nCompetency using version control (Git/Github).\nLearn to manipulate and explore data with Pandas and other tools.\nGeneral understanding of analyzing algorithms and data structures.\nLearn to extract and process data from structured and unstructured sources.\nGet some intuition of modeling text data in Python.\nLearn the basics of machine learning as a modeling approach.\nLearn how to use Generative AI for multiple applied tasks.\nLearn basics of using SQL to query databases.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "Instructor",
+    "text": "Instructor\n\nProfessor: Dr. Rebecca Johnson\nEmail: rj545@georgetown.edu\nOffice hours:\n\nTime: Every Wednesday, 1130am - 130pm\nLocation - either:\nIn person: 125E, Office Number 768\nRemote: see Calendly link\n\n\nSign up: on Calendly",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#teaching-assistant-tbd",
+    "href": "index.html#teaching-assistant-tbd",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "Teaching Assistant: TBD",
+    "text": "Teaching Assistant: TBD\n\nCourse Infra-structure\nClass Website: A class website https://rebeccajohnson88.github.io/PPOL5203_fall2026/ will be used throughout the course and should be checked on a regular basis for lecture materials and required readings.\n\nCanvas: A Canvas site (http://canvas.georgetown.edu) will be used throughout the course and should be checked on a regular basis for announcements. All announcements for the assignments and classes will be posted on Canvas; they will not be distributed in class or by e-mail. Support for Canvas is available at (202) 687-4949\nNOTE: Students are encouraged to run lecture code on their own machines. If you do not have access to a laptop on which you can install python3, please contact the professor and/or TA for assistance. Only python3 will be used in this course.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "slides/week-2.html#workflow-and-reproducibility",
+    "href": "slides/week-2.html#workflow-and-reproducibility",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Workflow and reproducibility",
+    "text": "Workflow and reproducibility"
+  },
+  {
+    "objectID": "slides/week-2.html#what-is-git",
+    "href": "slides/week-2.html#what-is-git",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "What is Git?",
+    "text": "What is Git?\n\nSet of command line tools for version control (aka avoid finalfinal, finalrealthistime, etc.)\n``Distributed,’’ or means that files/code, rather than only stored one place centrally, can be stored on all collaborators’ machines"
+  },
+  {
+    "objectID": "slides/week-2.html#what-is-github",
+    "href": "slides/week-2.html#what-is-github",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\n\nWeb-based repository for code that utilizes version control system (VCS) for tracking changes\nHas additional features useful for collaboration, some of which we’ll review today (repos; issues; push/pulling recent changes) and others of which we’ll review as the course progresses (branches; pull requests)\nWhy GitHub rather than Dropbox/Google Drive?\n\nExplicit features that help with simultaneous editing of the same file\nPublic-facing record, or a portfolio of code/work (if you make it public)\nWays to comment on and have discussions about code specifically through the interface"
+  },
+  {
+    "objectID": "slides/week-2.html#example-repo-private-repo",
+    "href": "slides/week-2.html#example-repo-private-repo",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Example repo: private repo",
+    "text": "Example repo: private repo\n\nIf you go to the url, get 404 error unless you’re added as a collaborator: https://github.com/gsa-oes/2003-SBA-RFASmallBizRelief"
+  },
+  {
+    "objectID": "slides/week-2.html#example-tracked-changes-in-code-when-you-push-updated-version",
+    "href": "slides/week-2.html#example-tracked-changes-in-code-when-you-push-updated-version",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Example: tracked changes in code when you ``push’’ updated version",
+    "text": "Example: tracked changes in code when you ``push’’ updated version"
+  },
+  {
+    "objectID": "slides/week-2.html#example-repo-public-repo",
+    "href": "slides/week-2.html#example-repo-public-repo",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Example repo: public repo",
+    "text": "Example repo: public repo\nLook familiar? https://github.com/rebeccajohnson88/PPOL5203_fall2026"
+  },
+  {
+    "objectID": "slides/week-2.html#ingredients-of-a-repo-readme",
+    "href": "slides/week-2.html#ingredients-of-a-repo-readme",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Ingredients of a repo: README",
+    "text": "Ingredients of a repo: README\nShould be more informative than the one for our class repo, e.g.:\n\nMight have installation instructions, directions on where to download data, etc."
+  },
+  {
+    "objectID": "slides/week-2.html#ingredients-of-a-repo-files-and-directories",
+    "href": "slides/week-2.html#ingredients-of-a-repo-files-and-directories",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Ingredients of a repo: files and directories",
+    "text": "Ingredients of a repo: files and directories\nCommand line commands we reviewed last week are useful for organizing and reorganizing repos. Example directory structure:\n├── /data\n│   ├── /raw      \n│   ├── /processed  \n├── /docs \n├── /code\n|   |── 01_clean_xxx.py\n|   |── 01_analysis_xxx.py\n\n├── /literature      \n\n├── /output      \n│   ├── /tables      \n│   ├── /figures  \n├── /misc \n└── readme.txt"
+  },
+  {
+    "objectID": "slides/week-2.html#for-these-files-and-directories",
+    "href": "slides/week-2.html#for-these-files-and-directories",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "For these files and directories",
+    "text": "For these files and directories\n\nFile names should be meaningful\nDO NOT USE SPACES. Use snake case (_) style for you files and code\nAlso allows you to avoid capitalization (FileName → file_name)\n\n\n\n\ndata analysis 2.py → data_analysis_2.py\n\n\n\n\n\nmodel_analysis.py → model_analysis_het_treatment_effects_main_paper.py"
+  },
+  {
+    "objectID": "slides/week-2.html#ingredients-of-a-repo-data",
+    "href": "slides/week-2.html#ingredients-of-a-repo-data",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Ingredients of a repo: data?",
+    "text": "Ingredients of a repo: data?\nDepending on the context, you store data, but\n\nGitHub has file size limits (though can pay to override these)\nSensitive data should generally not be put in a repo, even if the repo is private since employees at the company have access to private repo content\nInstead, read directly directly from its source or have download instructions"
+  },
+  {
+    "objectID": "slides/week-2.html#ingredients-of-a-repo-issues",
+    "href": "slides/week-2.html#ingredients-of-a-repo-issues",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Ingredients of a repo: issues",
+    "text": "Ingredients of a repo: issues\n\nCan assign to specific collaborators or leave as a “note to self” to look back at something\nCan use checklist features\nCan include code excerpts\nEasy to link to a specific commit (change to code)\nNeed to be logged into GitHub to write"
+  },
+  {
+    "objectID": "slides/week-2.html#general-steps-in-workflow",
+    "href": "slides/week-2.html#general-steps-in-workflow",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "General steps in workflow",
+    "text": "General steps in workflow\n\nEither create a repository locally and link to GitHub OR create a repository on GitHub and clone\nMake changes to code or other files\nAdd changes: tells the computer to move changes to a temporary staging area\nCommit changes: tells the computer to ``save’’ those staged changes, taking a permanent snapshot of what the changes are\nPush changes: tells the computer to push those saved changes to GitHub (if file exists already, will overwrite file, but all previous versions of that file are accessible/retrievable)"
+  },
+  {
+    "objectID": "slides/week-2.html#step-one-two-paths-to-getting-started",
+    "href": "slides/week-2.html#step-one-two-paths-to-getting-started",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Step one: two paths to getting started",
+    "text": "Step one: two paths to getting started\n\nCreate a repository locally and then link it to GitHub: use when you have an existing folder/set of files and you want to move it to git/GitHub-based version control\nCreate a repository on GitHub and then create a linked copy locally: my preferred way when starting a new project; what you’ll do for problem sets"
+  },
+  {
+    "objectID": "slides/week-2.html#step-one-path-one-linking-a-local-directory-to-gitgithub",
+    "href": "slides/week-2.html#step-one-path-one-linking-a-local-directory-to-gitgithub",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Step one path one: linking a local directory to git/GitHub",
+    "text": "Step one path one: linking a local directory to git/GitHub\nCreate an empty directory called gitexample\n\n# check where you are\npwd \n# create dir\nmkdir gitexample\n# change cd\ncd gitexample\n\nCheck if you have a git\n\ngit --version\n\nStart a repository within gitexample\n\ngit init"
+  },
+  {
+    "objectID": "slides/week-2.html#what-you-should-see-after-git-init",
+    "href": "slides/week-2.html#what-you-should-see-after-git-init",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "What you should see after git init",
+    "text": "What you should see after git init\n\nModify the contents of the directory by adding an (empty) README\n\ntouch README.md\n\nList files to make sure it was added\n\nls"
+  },
+  {
+    "objectID": "slides/week-2.html#step-one-path-one-linking-a-local-directory-to-gitgithub-1",
+    "href": "slides/week-2.html#step-one-path-one-linking-a-local-directory-to-gitgithub-1",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Step one path one: linking a local directory to git/GitHub",
+    "text": "Step one path one: linking a local directory to git/GitHub\nThree steps:\n\ngit add: prepares the changes you made locally to be “sent up” to the repository. Can repeat many times as you work.\ngit commit: permanently saves those changes to your local history but doesn’t yet send them to the remote repository for permanent record\ngit push: uploads the changes you made locally to the remote repository"
+  },
+  {
+    "objectID": "slides/week-2.html#add-versus-commit-versus-push-visualization",
+    "href": "slides/week-2.html#add-versus-commit-versus-push-visualization",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Add versus commit versus push visualization",
+    "text": "Add versus commit versus push visualization\n\nSource"
+  },
+  {
+    "objectID": "slides/week-2.html#implementing-in-practice",
+    "href": "slides/week-2.html#implementing-in-practice",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Implementing in practice",
+    "text": "Implementing in practice\nAdd the file\n\ngit add README.md\n\nFirst commit\n\ngit commit -m \"add readme\"\n\nCheck your log\n\ngit log"
+  },
+  {
+    "objectID": "slides/week-2.html#how-can-we-link-these-local-changes-to-our-remote-github-account",
+    "href": "slides/week-2.html#how-can-we-link-these-local-changes-to-our-remote-github-account",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "How can we link these local changes to our remote GitHub account?",
+    "text": "How can we link these local changes to our remote GitHub account?\nEasiest way: set up an empty repository on GitHub. To avoid errors, do not initialize the new repository with README, license, or gitignore files.\nHow to"
+  },
+  {
+    "objectID": "slides/week-2.html#once-we-have-the-link-following-steps",
+    "href": "slides/week-2.html#once-we-have-the-link-following-steps",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Once we have the link, following steps",
+    "text": "Once we have the link, following steps\nTell it the url for the repository (will differ for you)\n\ngit remote add origin https://github.com/rebeccajohnson88/gitexample.git\n\nPush\n\ngit push -u origin main\n\nShould see it appear on your GitHub profile"
+  },
+  {
+    "objectID": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-your-identity",
+    "href": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-your-identity",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "If you run into an issue at the push step, configuring your identity",
+    "text": "If you run into an issue at the push step, configuring your identity\n\ngit config --global user.name \"Your Name\" \ngit config --global user.email \"your-email@example.com\""
+  },
+  {
+    "objectID": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens",
+    "href": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "If you run into an issue at the push step, configuring personal access tokens",
+    "text": "If you run into an issue at the push step, configuring personal access tokens\n\nGo to settings on right hand side under your profile"
+  },
+  {
+    "objectID": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens-1",
+    "href": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens-1",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "If you run into an issue at the push step, configuring personal access tokens",
+    "text": "If you run into an issue at the push step, configuring personal access tokens\n\nScroll down to “Developer settings” on left hand side"
+  },
+  {
+    "objectID": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens-2",
+    "href": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens-2",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "If you run into an issue at the push step, configuring personal access tokens",
+    "text": "If you run into an issue at the push step, configuring personal access tokens\n\nClick on personal access token and generate a personal access token"
+  },
+  {
+    "objectID": "slides/week-2.html#putting-it-all-together-and-your-own-practice",
+    "href": "slides/week-2.html#putting-it-all-together-and-your-own-practice",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Putting it all together and your own practice",
+    "text": "Putting it all together and your own practice\n\nmkdir gitexample\ngit init \ntouch README.md\ngit add README.md\ngit commit -m \"add readme\"\ngit remote add origin YOUR_URL.git\ngit push -u origin main\n\nActivity:\n\nComplete the above steps\nAfter you’re done with the above steps, open jupyter notebook and create a new notebook called notebook.ipynb with some small amount of content\nComplete the following steps to push that code to your remote repository\n\n\ngit add notebook.ipynb\ngit commit -m \"add code\"\ngit push"
+  },
+  {
+    "objectID": "slides/week-2.html#returning-to-the-github-workflow-steps",
+    "href": "slides/week-2.html#returning-to-the-github-workflow-steps",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Returning to the GitHub workflow steps",
+    "text": "Returning to the GitHub workflow steps\n\nEither:\n\n\nCreate a repository locally and link to GitHub\nCreate a repository on GitHub and clone\n\n\nMake changes to code or other files\nCommit changes: tells the computer to ``save’’ the changes\nPush changes: tells the computer to push those saved changes to GitHub (if file exists already, will overwrite file, but all previous versions of that file are accessible/retrievable)"
+  },
+  {
+    "objectID": "slides/week-2.html#cloning-a-repo",
+    "href": "slides/week-2.html#cloning-a-repo",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Cloning a repo",
+    "text": "Cloning a repo\n\nOpen your local terminal and navigate to where you want the repo’s files to be stored\nGo to GitHub.com and create the repo; recommend include a README and a Python .gitignore file\nGo to the green “Code” button to find the name of the repo\nIn your terminal, use the following command to clone\n\n\ngit clone reponame.git"
+  },
+  {
+    "objectID": "slides/week-2.html#once-its-cloned-same-process-as-earlier",
+    "href": "slides/week-2.html#once-its-cloned-same-process-as-earlier",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Once it’s cloned, same process as earlier",
+    "text": "Once it’s cloned, same process as earlier\n\nEdit files locally\nEither add specific files, e.g.:\n\n\ngit add notebook.ipynb\ngit commit -m \"add code\"\ngit push \n\n\nOr add all changes\n\n\ngit add .\ngit commit -m \"add all contents\"\ngit push"
+  },
+  {
+    "objectID": "slides/week-2.html#activity-clone-a-repo-from-our-github-classroom-page",
+    "href": "slides/week-2.html#activity-clone-a-repo-from-our-github-classroom-page",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Activity: clone a repo from our GitHub classroom page",
+    "text": "Activity: clone a repo from our GitHub classroom page\nAccess the activity here\nAlso linked here: TODO ADD LINK TO WEEK PAGE"
+  },
+  {
+    "objectID": "slides/week-2.html#pulling-remote-changes",
+    "href": "slides/week-2.html#pulling-remote-changes",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Pulling remote changes",
+    "text": "Pulling remote changes\n\nWithin your ppol5203_f26_activities repo, make a change locally (e.g., adding a comment to the code)\nTry pushing (add, commit, push) the changes\nIf you edited the README remotely, you likely get an error that updates were rejected before the remote contains work that you do not have locally"
+  },
+  {
+    "objectID": "slides/week-2.html#how-to-address-always-pull-before-making-local-changes",
+    "href": "slides/week-2.html#how-to-address-always-pull-before-making-local-changes",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "How to address: ALWAYS pull before making local changes",
+    "text": "How to address: ALWAYS pull before making local changes\n\ngit pull\n\nEither: - There are no merge conflicts with the pull (the things you edited locally don’t conflict with what you edited on the GitHub website) -&gt; you can proceed with git push - There are merge conflicts with the pull"
+  },
+  {
+    "objectID": "slides/week-2.html#what-to-do-in-the-case-of-merge-conflicts",
+    "href": "slides/week-2.html#what-to-do-in-the-case-of-merge-conflicts",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "What to do in the case of merge conflicts",
+    "text": "What to do in the case of merge conflicts\n\nOpen your text editor and navigate to the file that has merge conflicts (can use vim or other command line editor)\nSolve the conflict and delete the conflict markers\nStage your changes (git add)\nCommit your changes (git commit)"
+  },
+  {
+    "objectID": "slides/week-2.html#activity-2",
+    "href": "slides/week-2.html#activity-2",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Activity 2",
+    "text": "Activity 2\nSee activity 2 in your notebook"
+  },
+  {
+    "objectID": "slides/week-2.html#activity-3",
+    "href": "slides/week-2.html#activity-3",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Activity 3",
+    "text": "Activity 3\nCloning the repo with your problem set\n\n\n\nData Science I: Foundations"
   },
   {
     "objectID": "syllabus.html",
