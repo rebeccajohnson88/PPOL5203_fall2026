@@ -26,6 +26,8 @@ website:
         contents:
           - href: weeks/week-01.qmd
             text: "Week 1: Intro to Course and Tools"
+          - href: weeks/week-02.qmd
+            text: "Week 2: Git and GitHub"
 
 format:
   html:
