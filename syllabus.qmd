@@ -43,6 +43,14 @@ After completing this course, the students will be able to:
 
 **Sign up**: on [Calendly](https://calendly.com/rebeccajohnsonmtg/ppol-3500-office-hours)
 
+## TA
+
+-   Rebecca Wagner
+-   Email [rlw137\@georgetown.edu](mailto:rlw137@georgetown.edu)
+-   Office hours:
+    - Time: Every Friday, 2-4pm
+    - [Zoom link (also see Canvas)](https://georgetown.zoom.us/j/95527110792)
+
 ## Our classes
 
 Classes will take place at the scheduled class time/place and will involve a combination of lectures, coding walkthrough, breakout group sessions, and questions. We will start our classes with a lecture highlighting what I consider to be the broader substantive and programming concepts covered in the class. From that, we will switch to a mix of coding walk through and breakout group sessions.

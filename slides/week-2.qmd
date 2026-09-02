@@ -431,11 +431,13 @@ Either:
 
 ## Activity 2
 
-See activity 2 in your notebook 
+See Activity 2 in your notebook 
 
 ## Activity 3
 
-Cloning the repo with your problem set
+Cloning the repo that contains your problem set and walking through
+
+# See you next week! {background-color="#447099"}
 
 
 

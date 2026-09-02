@@ -336,7 +336,7 @@
     "href": "weeks/week-02.html",
     "title": "Week 02",
     "section": "",
-    "text": "Slides\nWeek 01:Git and GitHub\n\n\nIn-class activity\nGitHub classroom link\n\n\nResources (optional)\nGitHub Cheatsheet\nAnother GitHub Cheatsheet",
+    "text": "Slides\nWeek 01: Git and GitHub\n\n\nIn-class activity\nGitHub classroom link\n\n\nResources (optional)\nGitHub Cheatsheet\nAnother GitHub Cheatsheet",
     "crumbs": [
       "Materials",
       "Week 2: Git and GitHub"
@@ -646,14 +646,14 @@
     "href": "slides/week-2.html#activity-2",
     "title": "PPOL 5203 - Data Science I: Foundations",
     "section": "Activity 2",
-    "text": "Activity 2\nSee activity 2 in your notebook"
+    "text": "Activity 2\nSee Activity 2 in your notebook"
   },
   {
     "objectID": "slides/week-2.html#activity-3",
     "href": "slides/week-2.html#activity-3",
     "title": "PPOL 5203 - Data Science I: Foundations",
     "section": "Activity 3",
-    "text": "Activity 3\nCloning the repo with your problem set\n\n\n\nData Science I: Foundations"
+    "text": "Activity 3\nCloning the repo that contains your problem set and walking through"
   },
   {
     "objectID": "syllabus.html",
@@ -691,6 +691,16 @@
     "title": "Syllabus: PPOL 5203 - Data Science I: Foundations - Fall 2026",
     "section": "Instructor",
     "text": "Instructor\n\nProfessor: Dr. Rebecca Johnson\nEmail: rj545@georgetown.edu\nOffice hours:\n\nTime: Every Wednesday, 1130am - 130pm\nLocation - either:\nIn person: 125E, Office Number 768\nRemote: see Calendly link\n\n\nSign up: on Calendly",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#ta",
+    "href": "syllabus.html#ta",
+    "title": "Syllabus: PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "TA",
+    "text": "TA\n\nRebecca Wagner\nEmail rlw137@georgetown.edu\nOffice hours:\n\nTime: Every Friday, 2-4pm\nZoom link (also see Canvas)",
     "crumbs": [
       "Syllabus"
     ]
