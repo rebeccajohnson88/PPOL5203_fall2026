@@ -485,7 +485,7 @@
     "href": "slides/week-2.html#ingredients-of-a-repo-data",
     "title": "PPOL 5203 - Data Science I: Foundations",
     "section": "Ingredients of a repo: data?",
-    "text": "Ingredients of a repo: data?\nDepending on the context, you may store data, but\n\nGitHub has file size limits (though can pay to override these)\nSensitive data should generally not be put in a repo, even if the repo is private since employees at the company have access to private repo content\nInstead, read directly directly from its source or have download instructions"
+    "text": "Ingredients of a repo: data?\nDepending on the context, you may store data, but\n\nGitHub has file size limits (though can pay to override these)\nSensitive data should generally not be put in a repo, even if the repo is private since employees at the company have access to private repo content\nInstead, read data directly from its source or have download instructions"
   },
   {
     "objectID": "slides/week-2.html#ingredients-of-a-repo-issues",
@@ -584,6 +584,20 @@
     "title": "PPOL 5203 - Data Science I: Foundations",
     "section": "If you run into an issue at the push step, configuring personal access tokens",
     "text": "If you run into an issue at the push step, configuring personal access tokens\n\nClick on personal access token and generate a personal access token"
+  },
+  {
+    "objectID": "slides/week-2.html#troubleshooting-issues-error-about-main-not-found",
+    "href": "slides/week-2.html#troubleshooting-issues-error-about-main-not-found",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Troubleshooting issues: error about main not found",
+    "text": "Troubleshooting issues: error about main not found\nSome versions of GitHub default to a branch called master as the primary branch rather than a branch called main.\nHow do I check what the branch is called on my machine? Run git log and it should show you the name as main or master at the top. As you can see in this screenshot, mine shows main\n\nWhat do I do if mine shows master rather than main? Modify the code for the push command to push to master rather than main, or:\n\ngit push -u origin master"
+  },
+  {
+    "objectID": "slides/week-2.html#troubleshooting-issues-403-error-when-pushing",
+    "href": "slides/week-2.html#troubleshooting-issues-403-error-when-pushing",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Troubleshooting issues: 403 error when pushing",
+    "text": "Troubleshooting issues: 403 error when pushing\nIf you’ve already tried giving your personal access token (PAT) to GitHub and are getting a 403 error when pushing, you might have not given that token permission to access your repos\nTo fix:\n\nDelete token and\nGenerate a new token and make sure to select these repo options under the scopes 3. Repeat the git push -u origin main step and feed it the new PAT"
   },
   {
     "objectID": "slides/week-2.html#putting-it-all-together-and-your-own-practice",

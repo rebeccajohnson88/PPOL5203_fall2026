@@ -513,7 +513,7 @@
 <ul>
 <li class="fragment">GitHub has file size limits (though can pay to override these)</li>
 <li class="fragment">Sensitive data should generally not be put in a repo, even if the repo is private since employees at the company have access to private repo content</li>
-<li class="fragment">Instead, read directly directly from its source or have download instructions</li>
+<li class="fragment">Instead, read data directly from its source or have download instructions</li>
 </ul>
 </section>
 <section id="ingredients-of-a-repo-issues" class="slide level2 center">
@@ -651,16 +651,36 @@
 </ol>
 
 <img data-src="week2_figs/pat.png" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%"></section>
+<section id="troubleshooting-issues-error-about-main-not-found" class="slide level2 center">
+<h2>Troubleshooting issues: error about main not found</h2>
+<p>Some versions of GitHub default to a branch called <code>master</code> as the primary branch rather than a branch called <code>main</code>.</p>
+<p><strong>How do I check what the branch is called on my machine?</strong> Run <code>git log</code> and it should show you the name as main or master at the top. As you can see in this screenshot, mine shows <code>main</code></p>
+
+<img data-src="week2_figs/default_branch.png" class="quarto-figure quarto-figure-center r-stretch" style="width:40.0%"><p><strong>What do I do if mine shows <code>master</code> rather than <code>main</code>?</strong> Modify the code for the push command to push to <code>master</code> rather than <code>main</code>, or:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>git push <span class="op">-</span>u origin master</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="troubleshooting-issues-403-error-when-pushing" class="slide level2 center">
+<h2>Troubleshooting issues: 403 error when pushing</h2>
+<p>If you’ve already tried giving your personal access token (PAT) to GitHub and are getting a 403 error when pushing, you might have not given that token permission to access your repos</p>
+<p>To fix:</p>
+<ol type="1">
+<li class="fragment">Delete token and</li>
+<li class="fragment">Generate a new token and make sure to select these repo options under the scopes 3. Repeat the <code>git push -u origin main</code> step and feed it the new PAT</li>
+</ol>
+
+<img data-src="week2_figs/pat_scopes.png" class="quarto-figure quarto-figure-center r-stretch" style="width:40.0%"></section>
 <section id="putting-it-all-together-and-your-own-practice" class="slide level2 center">
 <h2>Putting it all together and your own practice</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>mkdir gitexample</span>
-<span id="cb13-2"><a></a>git init </span>
-<span id="cb13-3"><a></a>touch README.md</span>
-<span id="cb13-4"><a></a>git add README.md</span>
-<span id="cb13-5"><a></a>git commit <span class="op">-</span>m <span class="st">"add readme"</span></span>
-<span id="cb13-6"><a></a>git remote add origin YOUR_URL.git</span>
-<span id="cb13-7"><a></a>git push <span class="op">-</span>u origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>mkdir gitexample</span>
+<span id="cb14-2"><a></a>git init </span>
+<span id="cb14-3"><a></a>touch README.md</span>
+<span id="cb14-4"><a></a>git add README.md</span>
+<span id="cb14-5"><a></a>git commit <span class="op">-</span>m <span class="st">"add readme"</span></span>
+<span id="cb14-6"><a></a>git remote add origin YOUR_URL.git</span>
+<span id="cb14-7"><a></a>git push <span class="op">-</span>u origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Activity:</p>
 <ul>
@@ -669,9 +689,9 @@
 <li class="fragment">Complete the following steps to push that code to your remote repository</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>git add notebook.ipynb</span>
-<span id="cb14-2"><a></a>git commit <span class="op">-</span>m <span class="st">"add code"</span></span>
-<span id="cb14-3"><a></a>git push </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>git add notebook.ipynb</span>
+<span id="cb15-2"><a></a>git commit <span class="op">-</span>m <span class="st">"add code"</span></span>
+<span id="cb15-3"><a></a>git push </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="returning-to-the-github-workflow-steps" class="slide level2 center">
@@ -698,7 +718,7 @@
 <li class="fragment">In your terminal, use the following command to clone</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>git clone reponame.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>git clone reponame.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="once-its-cloned-same-process-as-earlier" class="slide level2 center">
@@ -708,17 +728,17 @@
 <li class="fragment">Either add specific files, e.g.:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>git add notebook.ipynb</span>
-<span id="cb16-2"><a></a>git commit <span class="op">-</span>m <span class="st">"add code"</span></span>
-<span id="cb16-3"><a></a>git push </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>git add notebook.ipynb</span>
+<span id="cb17-2"><a></a>git commit <span class="op">-</span>m <span class="st">"add code"</span></span>
+<span id="cb17-3"><a></a>git push </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li class="fragment">Or add all changes</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>git add .</span>
-<span id="cb17-2"><a></a>git commit <span class="op">-</span>m <span class="st">"add all contents"</span></span>
-<span id="cb17-3"><a></a>git push </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>git add .</span>
+<span id="cb18-2"><a></a>git commit <span class="op">-</span>m <span class="st">"add all contents"</span></span>
+<span id="cb18-3"><a></a>git push </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="activity-clone-a-repo-from-our-github-classroom-page" class="slide level2 center">
@@ -738,7 +758,7 @@
 <section id="how-to-address-always-pull-before-making-local-changes" class="slide level2 center">
 <h2>How to address: ALWAYS pull before making local changes</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>git pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>git pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Either:</p>
 <ul>
@@ -754,6 +774,11 @@
 <li class="fragment"><p>Stage your changes (git add)</p></li>
 <li class="fragment"><p>Commit and push your changes (git commit and git push)</p></li>
 </ul>
+</section></section>
+<section>
+<section id="in-class-activity-to-prep-for-pset-1" class="title-slide slide level1 center">
+<h1>In-class activity to prep for pset 1</h1>
+
 </section>
 <section id="activity-2" class="slide level2 center">
 <h2>Activity 2</h2>

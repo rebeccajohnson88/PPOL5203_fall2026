@@ -140,7 +140,7 @@ Depending on the context, you *may* store data, but
 
 - GitHub has file size limits (though can pay to override these)
 - Sensitive data should generally not be put in a repo, even if the repo is private since employees at the company have access to private repo content 
-- Instead, read directly directly from its source or have download instructions
+- Instead, read data directly from its source or have download instructions
 
 ## Ingredients of a repo: issues
 
@@ -327,6 +327,38 @@ knitr::include_graphics("week2_figs/devsettings.png")
 knitr::include_graphics("week2_figs/pat.png") 
 ```
 
+## Troubleshooting issues: error about main not found
+
+Some versions of GitHub default to a branch called `master` as the primary branch rather than a branch called `main`. 
+
+**How do I check what the branch is called on my machine?** Run `git log` and it should show you the name as main or master at the top. As you can see in this screenshot, mine shows `main`
+
+```{r  echo=FALSE, out.width = "40%", fig.align="center"}
+knitr::include_graphics("week2_figs/default_branch.png") 
+```
+
+
+**What do I do if mine shows `master` rather than `main`?** Modify the code for the push command to push to `master` rather than `main`, or:
+
+```{python}
+#| eval: false 
+git push -u origin master
+```
+
+## Troubleshooting issues: 403 error when pushing
+
+If you've already tried giving your personal access token (PAT) to GitHub and are getting a 403 error when pushing, you might have not given that token permission to access your repos
+
+To fix:
+
+1. Delete token and
+2. Generate a new token and make sure to select these repo options under the scopes 3. Repeat the `git push -u origin main` step and feed it the new PAT
+
+```{r  echo=FALSE, out.width = "40%", fig.align="center"}
+knitr::include_graphics("week2_figs/pat_scopes.png") 
+```
+
+
 
 ## Putting it all together and your own practice
 
@@ -432,6 +464,8 @@ Either:
 
 - Commit and push your changes (git commit and git push)
 
+
+#   In-class activity to prep for pset 1
 
 ## Activity 2
 
