@@ -455,12 +455,12 @@
 <img data-src="week2_figs/private_repo.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p>If you go to the url, get 404 error unless you’re added as a collaborator: <a href="https://github.com/gsa-oes/2003-SBA-RFASmallBizRelie">https://github.com/gsa-oes/2003-SBA-RFASmallBizRelief</a></p>
 </section>
 <section id="example-tracked-changes-in-code-when-you-push-updated-version" class="slide level2 center">
-<h2>Example: tracked changes in code when you ``push’’ updated version</h2>
+<h2>Example: tracked changes in code when you “push” updated version</h2>
 
 <img data-src="week2_figs/track_change.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="example-repo-public-repo" class="slide level2 center">
 <h2>Example repo: public repo</h2>
-<p>Look familiar? <a href="https://github.com/rebeccajohnson88/PPOL5203_fall2026">https://github.com/rebeccajohnson88/PPOL5203_fall2026</a></p>
+<p>Look familiar? <a href="https://github.com/rebeccajohnson88/PPOL5203_fall2026" target="_blank">https://github.com/rebeccajohnson88/PPOL5203_fall2026</a></p>
 </section>
 <section id="ingredients-of-a-repo-readme" class="slide level2 center">
 <h2>Ingredients of a repo: README</h2>
@@ -509,7 +509,7 @@
 </section>
 <section id="ingredients-of-a-repo-data" class="slide level2 center">
 <h2>Ingredients of a repo: data?</h2>
-<p>Depending on the context, you store data, but</p>
+<p>Depending on the context, you <em>may</em> store data, but</p>
 <ul>
 <li class="fragment">GitHub has file size limits (though can pay to override these)</li>
 <li class="fragment">Sensitive data should generally not be put in a repo, even if the repo is private since employees at the company have access to private repo content</li>
@@ -724,7 +724,8 @@
 <section id="activity-clone-a-repo-from-our-github-classroom-page" class="slide level2 center">
 <h2>Activity: clone a repo from our GitHub classroom page</h2>
 <p><a href="https://classroom50.org/ppol5203-fall2026/ppol-5203-fall-2026/assignments/week-2-in-class-activity/accept">Access the activity here</a></p>
-<p>Also linked here: TODO ADD LINK TO WEEK PAGE</p>
+<p>Also linked on our class page: <a href="https://rebeccajohnson88.github.io/PPOL5203_fall2026/weeks/week-02.html">https://rebeccajohnson88.github.io/PPOL5203_fall2026/weeks/week-02.html</a></p>
+<p>You may need to click through to authorize Classroom 50, which is a tool for managing assignments through GitHub that has replaced the now-defunct GitHub Classroom</p>
 </section>
 <section id="pulling-remote-changes" class="slide level2 center">
 <h2>Pulling remote changes</h2>
@@ -739,7 +740,11 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>git pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Either: - There are no merge conflicts with the pull (the things you edited locally don’t conflict with what you edited on the GitHub website) -&gt; you can proceed with git push - There are merge conflicts with the pull</p>
+<p>Either:</p>
+<ul>
+<li class="fragment">There are no merge conflicts with the pull (the things you edited locally don’t conflict with what you edited on the GitHub website) -&gt; you can proceed with git push</li>
+<li class="fragment">There are merge conflicts with the pull</li>
+</ul>
 </section>
 <section id="what-to-do-in-the-case-of-merge-conflicts" class="slide level2 center">
 <h2>What to do in the case of merge conflicts</h2>
@@ -747,7 +752,7 @@
 <li class="fragment"><p>Open your text editor and navigate to the file that has merge conflicts (can use <code>vim</code> or other command line editor)</p></li>
 <li class="fragment"><p>Solve the conflict and delete the conflict markers</p></li>
 <li class="fragment"><p>Stage your changes (git add)</p></li>
-<li class="fragment"><p>Commit your changes (git commit)</p></li>
+<li class="fragment"><p>Commit and push your changes (git commit and git push)</p></li>
 </ul>
 </section>
 <section id="activity-2" class="slide level2 center">

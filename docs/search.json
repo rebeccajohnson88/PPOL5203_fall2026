@@ -449,8 +449,8 @@
     "objectID": "slides/week-2.html#example-tracked-changes-in-code-when-you-push-updated-version",
     "href": "slides/week-2.html#example-tracked-changes-in-code-when-you-push-updated-version",
     "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Example: tracked changes in code when you ``push’’ updated version",
-    "text": "Example: tracked changes in code when you ``push’’ updated version"
+    "section": "Example: tracked changes in code when you “push” updated version",
+    "text": "Example: tracked changes in code when you “push” updated version"
   },
   {
     "objectID": "slides/week-2.html#example-repo-public-repo",
@@ -485,7 +485,7 @@
     "href": "slides/week-2.html#ingredients-of-a-repo-data",
     "title": "PPOL 5203 - Data Science I: Foundations",
     "section": "Ingredients of a repo: data?",
-    "text": "Ingredients of a repo: data?\nDepending on the context, you store data, but\n\nGitHub has file size limits (though can pay to override these)\nSensitive data should generally not be put in a repo, even if the repo is private since employees at the company have access to private repo content\nInstead, read directly directly from its source or have download instructions"
+    "text": "Ingredients of a repo: data?\nDepending on the context, you may store data, but\n\nGitHub has file size limits (though can pay to override these)\nSensitive data should generally not be put in a repo, even if the repo is private since employees at the company have access to private repo content\nInstead, read directly directly from its source or have download instructions"
   },
   {
     "objectID": "slides/week-2.html#ingredients-of-a-repo-issues",
@@ -618,7 +618,7 @@
     "href": "slides/week-2.html#activity-clone-a-repo-from-our-github-classroom-page",
     "title": "PPOL 5203 - Data Science I: Foundations",
     "section": "Activity: clone a repo from our GitHub classroom page",
-    "text": "Activity: clone a repo from our GitHub classroom page\nAccess the activity here\nAlso linked here: TODO ADD LINK TO WEEK PAGE"
+    "text": "Activity: clone a repo from our GitHub classroom page\nAccess the activity here\nAlso linked on our class page: https://rebeccajohnson88.github.io/PPOL5203_fall2026/weeks/week-02.html\nYou may need to click through to authorize Classroom 50, which is a tool for managing assignments through GitHub that has replaced the now-defunct GitHub Classroom"
   },
   {
     "objectID": "slides/week-2.html#pulling-remote-changes",
@@ -632,14 +632,14 @@
     "href": "slides/week-2.html#how-to-address-always-pull-before-making-local-changes",
     "title": "PPOL 5203 - Data Science I: Foundations",
     "section": "How to address: ALWAYS pull before making local changes",
-    "text": "How to address: ALWAYS pull before making local changes\n\ngit pull\n\nEither: - There are no merge conflicts with the pull (the things you edited locally don’t conflict with what you edited on the GitHub website) -&gt; you can proceed with git push - There are merge conflicts with the pull"
+    "text": "How to address: ALWAYS pull before making local changes\n\ngit pull\n\nEither:\n\nThere are no merge conflicts with the pull (the things you edited locally don’t conflict with what you edited on the GitHub website) -&gt; you can proceed with git push\nThere are merge conflicts with the pull"
   },
   {
     "objectID": "slides/week-2.html#what-to-do-in-the-case-of-merge-conflicts",
     "href": "slides/week-2.html#what-to-do-in-the-case-of-merge-conflicts",
     "title": "PPOL 5203 - Data Science I: Foundations",
     "section": "What to do in the case of merge conflicts",
-    "text": "What to do in the case of merge conflicts\n\nOpen your text editor and navigate to the file that has merge conflicts (can use vim or other command line editor)\nSolve the conflict and delete the conflict markers\nStage your changes (git add)\nCommit your changes (git commit)"
+    "text": "What to do in the case of merge conflicts\n\nOpen your text editor and navigate to the file that has merge conflicts (can use vim or other command line editor)\nSolve the conflict and delete the conflict markers\nStage your changes (git add)\nCommit and push your changes (git commit and git push)"
   },
   {
     "objectID": "slides/week-2.html#activity-2",
