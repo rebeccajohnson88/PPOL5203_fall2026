@@ -27,6 +27,258 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
+    "objectID": "slides/week-2.html#workflow-and-reproducibility",
+    "href": "slides/week-2.html#workflow-and-reproducibility",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Workflow and reproducibility",
+    "text": "Workflow and reproducibility"
+  },
+  {
+    "objectID": "slides/week-2.html#what-is-git",
+    "href": "slides/week-2.html#what-is-git",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "What is Git?",
+    "text": "What is Git?\n\nSet of command line tools for version control (aka avoid finalfinal, finalrealthistime, etc.)\n``Distributed,’’ or means that files/code, rather than only stored one place centrally, can be stored on all collaborators’ machines"
+  },
+  {
+    "objectID": "slides/week-2.html#what-is-github",
+    "href": "slides/week-2.html#what-is-github",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\n\nWeb-based repository for code that utilizes version control system (VCS) for tracking changes\nHas additional features useful for collaboration, some of which we’ll review today (repos; issues; push/pulling recent changes) and others of which we’ll review as the course progresses (branches; pull requests)\nWhy GitHub rather than Dropbox/Google Drive?\n\nExplicit features that help with simultaneous editing of the same file\nPublic-facing record, or a portfolio of code/work (if you make it public)\nWays to comment on and have discussions about code specifically through the interface"
+  },
+  {
+    "objectID": "slides/week-2.html#example-repo-private-repo",
+    "href": "slides/week-2.html#example-repo-private-repo",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Example repo: private repo",
+    "text": "Example repo: private repo\n\nIf you go to the url, get 404 error unless you’re added as a collaborator: https://github.com/gsa-oes/2003-SBA-RFASmallBizRelief"
+  },
+  {
+    "objectID": "slides/week-2.html#example-tracked-changes-in-code-when-you-push-updated-version",
+    "href": "slides/week-2.html#example-tracked-changes-in-code-when-you-push-updated-version",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Example: tracked changes in code when you “push” updated version",
+    "text": "Example: tracked changes in code when you “push” updated version"
+  },
+  {
+    "objectID": "slides/week-2.html#example-repo-public-repo",
+    "href": "slides/week-2.html#example-repo-public-repo",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Example repo: public repo",
+    "text": "Example repo: public repo\nLook familiar? https://github.com/rebeccajohnson88/PPOL5203_fall2026"
+  },
+  {
+    "objectID": "slides/week-2.html#ingredients-of-a-repo-readme",
+    "href": "slides/week-2.html#ingredients-of-a-repo-readme",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Ingredients of a repo: README",
+    "text": "Ingredients of a repo: README\nShould be more informative than the one for our class repo, e.g.:\n\nMight have installation instructions, directions on where to download data, etc."
+  },
+  {
+    "objectID": "slides/week-2.html#ingredients-of-a-repo-files-and-directories",
+    "href": "slides/week-2.html#ingredients-of-a-repo-files-and-directories",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Ingredients of a repo: files and directories",
+    "text": "Ingredients of a repo: files and directories\nCommand line commands we reviewed last week are useful for organizing and reorganizing repos. Example directory structure:\n├── /data\n│   ├── /raw      \n│   ├── /processed  \n├── /docs \n├── /code\n|   |── 01_clean_xxx.py\n|   |── 01_analysis_xxx.py\n\n├── /literature      \n\n├── /output      \n│   ├── /tables      \n│   ├── /figures  \n├── /misc \n└── readme.txt"
+  },
+  {
+    "objectID": "slides/week-2.html#for-these-files-and-directories",
+    "href": "slides/week-2.html#for-these-files-and-directories",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "For these files and directories",
+    "text": "For these files and directories\n\nFile names should be meaningful\nDO NOT USE SPACES. Use snake case (_) style for you files and code\nAlso allows you to avoid capitalization (FileName → file_name)\n\n\n\n\ndata analysis 2.py → data_analysis_2.py\n\n\n\n\n\nmodel_analysis.py → model_analysis_het_treatment_effects_main_paper.py"
+  },
+  {
+    "objectID": "slides/week-2.html#ingredients-of-a-repo-data",
+    "href": "slides/week-2.html#ingredients-of-a-repo-data",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Ingredients of a repo: data?",
+    "text": "Ingredients of a repo: data?\nDepending on the context, you may store data, but\n\nGitHub has file size limits (though can pay to override these)\nSensitive data should generally not be put in a repo, even if the repo is private since employees at the company have access to private repo content\nInstead, read data directly from its source or have download instructions"
+  },
+  {
+    "objectID": "slides/week-2.html#ingredients-of-a-repo-issues",
+    "href": "slides/week-2.html#ingredients-of-a-repo-issues",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Ingredients of a repo: issues",
+    "text": "Ingredients of a repo: issues\n\nCan assign to specific collaborators or leave as a “note to self” to look back at something\nCan use checklist features\nCan include code excerpts\nEasy to link to a specific commit (change to code)\nNeed to be logged into GitHub to write"
+  },
+  {
+    "objectID": "slides/week-2.html#general-steps-in-workflow",
+    "href": "slides/week-2.html#general-steps-in-workflow",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "General steps in workflow",
+    "text": "General steps in workflow\n\nEither create a repository locally and link to GitHub OR create a repository on GitHub and clone\nMake changes to code or other files\nAdd changes: tells the computer to move changes to a temporary staging area\nCommit changes: tells the computer to ``save’’ those staged changes, taking a permanent snapshot of what the changes are\nPush changes: tells the computer to push those saved changes to GitHub (if file exists already, will overwrite file, but all previous versions of that file are accessible/retrievable)"
+  },
+  {
+    "objectID": "slides/week-2.html#step-one-two-paths-to-getting-started",
+    "href": "slides/week-2.html#step-one-two-paths-to-getting-started",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Step one: two paths to getting started",
+    "text": "Step one: two paths to getting started\n\nCreate a repository locally and then link it to GitHub: use when you have an existing folder/set of files and you want to move it to git/GitHub-based version control\nCreate a repository on GitHub and then create a linked copy locally: my preferred way when starting a new project; what you’ll do for problem sets"
+  },
+  {
+    "objectID": "slides/week-2.html#step-one-path-one-linking-a-local-directory-to-gitgithub",
+    "href": "slides/week-2.html#step-one-path-one-linking-a-local-directory-to-gitgithub",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Step one path one: linking a local directory to git/GitHub",
+    "text": "Step one path one: linking a local directory to git/GitHub\nCreate an empty directory called gitexample\n\n# check where you are\npwd \n# create dir\nmkdir gitexample\n# change cd\ncd gitexample\n\nCheck if you have a git\n\ngit --version\n\nStart a repository within gitexample\n\ngit init"
+  },
+  {
+    "objectID": "slides/week-2.html#what-you-should-see-after-git-init",
+    "href": "slides/week-2.html#what-you-should-see-after-git-init",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "What you should see after git init",
+    "text": "What you should see after git init\n\nModify the contents of the directory by adding an (empty) README\n\ntouch README.md\n\nList files to make sure it was added\n\nls"
+  },
+  {
+    "objectID": "slides/week-2.html#step-one-path-one-linking-a-local-directory-to-gitgithub-1",
+    "href": "slides/week-2.html#step-one-path-one-linking-a-local-directory-to-gitgithub-1",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Step one path one: linking a local directory to git/GitHub",
+    "text": "Step one path one: linking a local directory to git/GitHub\nThree steps:\n\ngit add: prepares the changes you made locally to be “sent up” to the repository. Can repeat many times as you work.\ngit commit: permanently saves those changes to your local history but doesn’t yet send them to the remote repository for permanent record\ngit push: uploads the changes you made locally to the remote repository"
+  },
+  {
+    "objectID": "slides/week-2.html#add-versus-commit-versus-push-visualization",
+    "href": "slides/week-2.html#add-versus-commit-versus-push-visualization",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Add versus commit versus push visualization",
+    "text": "Add versus commit versus push visualization\n\nSource"
+  },
+  {
+    "objectID": "slides/week-2.html#implementing-in-practice",
+    "href": "slides/week-2.html#implementing-in-practice",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Implementing in practice",
+    "text": "Implementing in practice\nAdd the file\n\ngit add README.md\n\nFirst commit\n\ngit commit -m \"add readme\"\n\nCheck your log\n\ngit log"
+  },
+  {
+    "objectID": "slides/week-2.html#how-can-we-link-these-local-changes-to-our-remote-github-account",
+    "href": "slides/week-2.html#how-can-we-link-these-local-changes-to-our-remote-github-account",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "How can we link these local changes to our remote GitHub account?",
+    "text": "How can we link these local changes to our remote GitHub account?\nEasiest way: set up an empty repository on GitHub. To avoid errors, do not initialize the new repository with README, license, or gitignore files.\nHow to"
+  },
+  {
+    "objectID": "slides/week-2.html#once-we-have-the-link-following-steps",
+    "href": "slides/week-2.html#once-we-have-the-link-following-steps",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Once we have the link, following steps",
+    "text": "Once we have the link, following steps\nTell it the url for the repository (will differ for you)\n\ngit remote add origin https://github.com/rebeccajohnson88/gitexample.git\n\nPush\n\ngit push -u origin main\n\nShould see it appear on your GitHub profile"
+  },
+  {
+    "objectID": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-your-identity",
+    "href": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-your-identity",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "If you run into an issue at the push step, configuring your identity",
+    "text": "If you run into an issue at the push step, configuring your identity\n\ngit config --global user.name \"Your Name\" \ngit config --global user.email \"your-email@example.com\""
+  },
+  {
+    "objectID": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens",
+    "href": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "If you run into an issue at the push step, configuring personal access tokens",
+    "text": "If you run into an issue at the push step, configuring personal access tokens\n\nGo to settings on right hand side under your profile"
+  },
+  {
+    "objectID": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens-1",
+    "href": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens-1",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "If you run into an issue at the push step, configuring personal access tokens",
+    "text": "If you run into an issue at the push step, configuring personal access tokens\n\nScroll down to “Developer settings” on left hand side"
+  },
+  {
+    "objectID": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens-2",
+    "href": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens-2",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "If you run into an issue at the push step, configuring personal access tokens",
+    "text": "If you run into an issue at the push step, configuring personal access tokens\n\nClick on personal access token and generate a personal access token"
+  },
+  {
+    "objectID": "slides/week-2.html#troubleshooting-issues-error-about-main-not-found",
+    "href": "slides/week-2.html#troubleshooting-issues-error-about-main-not-found",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Troubleshooting issues: error about main not found",
+    "text": "Troubleshooting issues: error about main not found\nSome versions of GitHub default to a branch called master as the primary branch rather than a branch called main.\nHow do I check what the branch is called on my machine? Run git log and it should show you the name as main or master at the top. As you can see in this screenshot, mine shows main\n\nWhat do I do if mine shows master rather than main? Modify the code for the push command to push to master rather than main, or:\n\ngit push -u origin master"
+  },
+  {
+    "objectID": "slides/week-2.html#troubleshooting-issues-403-error-when-pushing",
+    "href": "slides/week-2.html#troubleshooting-issues-403-error-when-pushing",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Troubleshooting issues: 403 error when pushing",
+    "text": "Troubleshooting issues: 403 error when pushing\nIf you’ve already tried giving your personal access token (PAT) to GitHub and are getting a 403 error when pushing, you might have not given that token permission to access your repos\nTo fix:\n\nDelete token and\nGenerate a new token and make sure to select these repo options under the scopes 3. Repeat the git push -u origin main step and feed it the new PAT"
+  },
+  {
+    "objectID": "slides/week-2.html#putting-it-all-together-and-your-own-practice",
+    "href": "slides/week-2.html#putting-it-all-together-and-your-own-practice",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Putting it all together and your own practice",
+    "text": "Putting it all together and your own practice\n\nmkdir gitexample\ngit init \ntouch README.md\ngit add README.md\ngit commit -m \"add readme\"\ngit remote add origin YOUR_URL.git\ngit push -u origin main\n\nActivity:\n\nComplete the above steps\nAfter you’re done with the above steps, open jupyter notebook and create a new notebook called notebook.ipynb with some small amount of content\nComplete the following steps to push that code to your remote repository\n\n\ngit add notebook.ipynb\ngit commit -m \"add code\"\ngit push"
+  },
+  {
+    "objectID": "slides/week-2.html#returning-to-the-github-workflow-steps",
+    "href": "slides/week-2.html#returning-to-the-github-workflow-steps",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Returning to the GitHub workflow steps",
+    "text": "Returning to the GitHub workflow steps\n\nEither:\n\n\nCreate a repository locally and link to GitHub\nCreate a repository on GitHub and clone\n\n\nMake changes to code or other files\nCommit changes: tells the computer to ``save’’ the changes\nPush changes: tells the computer to push those saved changes to GitHub (if file exists already, will overwrite file, but all previous versions of that file are accessible/retrievable)"
+  },
+  {
+    "objectID": "slides/week-2.html#cloning-a-repo",
+    "href": "slides/week-2.html#cloning-a-repo",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Cloning a repo",
+    "text": "Cloning a repo\n\nOpen your local terminal and navigate to where you want the repo’s files to be stored\nGo to GitHub.com and create the repo; recommend include a README and a Python .gitignore file\nGo to the green “Code” button to find the name of the repo\nIn your terminal, use the following command to clone\n\n\ngit clone reponame.git"
+  },
+  {
+    "objectID": "slides/week-2.html#once-its-cloned-same-process-as-earlier",
+    "href": "slides/week-2.html#once-its-cloned-same-process-as-earlier",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Once it’s cloned, same process as earlier",
+    "text": "Once it’s cloned, same process as earlier\n\nEdit files locally\nEither add specific files, e.g.:\n\n\ngit add notebook.ipynb\ngit commit -m \"add code\"\ngit push \n\n\nOr add all changes\n\n\ngit add .\ngit commit -m \"add all contents\"\ngit push"
+  },
+  {
+    "objectID": "slides/week-2.html#activity-clone-a-repo-from-our-github-classroom-page",
+    "href": "slides/week-2.html#activity-clone-a-repo-from-our-github-classroom-page",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Activity: clone a repo from our GitHub classroom page",
+    "text": "Activity: clone a repo from our GitHub classroom page\nAccess the activity here\nAlso linked on our class page: https://rebeccajohnson88.github.io/PPOL5203_fall2026/weeks/week-02.html\nYou may need to click through to authorize Classroom 50, which is a tool for managing assignments through GitHub that has replaced the now-defunct GitHub Classroom"
+  },
+  {
+    "objectID": "slides/week-2.html#pulling-remote-changes",
+    "href": "slides/week-2.html#pulling-remote-changes",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Pulling remote changes",
+    "text": "Pulling remote changes\n\nWithin your ppol5203_f26_activities repo, make a change locally (e.g., adding a comment to the code)\nTry pushing (add, commit, push) the changes\nIf you edited the README remotely, you likely get an error that updates were rejected before the remote contains work that you do not have locally"
+  },
+  {
+    "objectID": "slides/week-2.html#how-to-address-always-pull-before-making-local-changes",
+    "href": "slides/week-2.html#how-to-address-always-pull-before-making-local-changes",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "How to address: ALWAYS pull before making local changes",
+    "text": "How to address: ALWAYS pull before making local changes\n\ngit pull\n\nEither:\n\nThere are no merge conflicts with the pull (the things you edited locally don’t conflict with what you edited on the GitHub website) -&gt; you can proceed with git push\nThere are merge conflicts with the pull"
+  },
+  {
+    "objectID": "slides/week-2.html#what-to-do-in-the-case-of-merge-conflicts",
+    "href": "slides/week-2.html#what-to-do-in-the-case-of-merge-conflicts",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "What to do in the case of merge conflicts",
+    "text": "What to do in the case of merge conflicts\n\nOpen your text editor and navigate to the file that has merge conflicts (can use vim or other command line editor)\nSolve the conflict and delete the conflict markers\nStage your changes (git add)\nCommit and push your changes (git commit and git push)"
+  },
+  {
+    "objectID": "slides/week-2.html#activity-2",
+    "href": "slides/week-2.html#activity-2",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Activity 2",
+    "text": "Activity 2\nSee Activity 2 in your notebook"
+  },
+  {
+    "objectID": "slides/week-2.html#activity-3",
+    "href": "slides/week-2.html#activity-3",
+    "title": "PPOL 5203 - Data Science I: Foundations",
+    "section": "Activity 3",
+    "text": "Activity 3\nCloning the repo that contains your problem set and walking through"
+  },
+  {
     "objectID": "slides/week-1.html#plans-for-today",
     "href": "slides/week-1.html#plans-for-today",
     "title": "PPOL 5203 - Data Science I: Foundations",
@@ -418,256 +670,270 @@
     ]
   },
   {
-    "objectID": "slides/week-2.html#workflow-and-reproducibility",
-    "href": "slides/week-2.html#workflow-and-reproducibility",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Workflow and reproducibility",
-    "text": "Workflow and reproducibility"
+    "objectID": "slides/week-3.html#plans-for-today",
+    "href": "slides/week-3.html#plans-for-today",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Plans for Today",
+    "text": "Plans for Today\n\nShort activity in problem set 1 repo\nIntroduction to Python\n\nPython as an Object-Oriented Programming Language\nData Types in Python\n\nActivity"
   },
   {
-    "objectID": "slides/week-2.html#what-is-git",
-    "href": "slides/week-2.html#what-is-git",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "What is Git?",
-    "text": "What is Git?\n\nSet of command line tools for version control (aka avoid finalfinal, finalrealthistime, etc.)\n``Distributed,’’ or means that files/code, rather than only stored one place centrally, can be stored on all collaborators’ machines"
+    "objectID": "slides/week-3.html#problem-set-1-activity-1",
+    "href": "slides/week-3.html#problem-set-1-activity-1",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Problem Set 1 Activity",
+    "text": "Problem Set 1 Activity\n\nNavigate to the cloned repo for problem set 1. This will be named something like ppol-5203-fall-2026-problem-set-1-yourgithubusername\nIf you haven’t already, use mkdir to create a folder in the repo called: question-01\nUse the following steps to push your changes to your repo (if you’ve already pushed no need to redo):\n\n\ngit add question-01/\ngit commit -m \"pushing the q1 directory\"\ngit push \n\nNote: this will be where you make the files / directories we ask you to make for Question 1."
   },
   {
-    "objectID": "slides/week-2.html#what-is-github",
-    "href": "slides/week-2.html#what-is-github",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "What is GitHub?",
-    "text": "What is GitHub?\n\nWeb-based repository for code that utilizes version control system (VCS) for tracking changes\nHas additional features useful for collaboration, some of which we’ll review today (repos; issues; push/pulling recent changes) and others of which we’ll review as the course progresses (branches; pull requests)\nWhy GitHub rather than Dropbox/Google Drive?\n\nExplicit features that help with simultaneous editing of the same file\nPublic-facing record, or a portfolio of code/work (if you make it public)\nWays to comment on and have discussions about code specifically through the interface"
+    "objectID": "slides/week-3.html#am-i-able-to-see-your-changes",
+    "href": "slides/week-3.html#am-i-able-to-see-your-changes",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Am I able to see your changes?",
+    "text": "Am I able to see your changes?\nDuring our break/after class, I’ll fill out the “PS1 check” column on this GitHub usernames sheet: usernames"
   },
   {
-    "objectID": "slides/week-2.html#example-repo-private-repo",
-    "href": "slides/week-2.html#example-repo-private-repo",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Example repo: private repo",
-    "text": "Example repo: private repo\n\nIf you go to the url, get 404 error unless you’re added as a collaborator: https://github.com/gsa-oes/2003-SBA-RFASmallBizRelief"
+    "objectID": "slides/week-3.html#python-object-oriented-programming-language",
+    "href": "slides/week-3.html#python-object-oriented-programming-language",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Python: Object-Oriented Programming Language",
+    "text": "Python: Object-Oriented Programming Language\nIn most Python introductions out there, you would start with:\n\nPython as a calculator\nData Types in Python\nObjects\n\n\nWe will take a different route starting with a brief overview of object-oriented programming"
   },
   {
-    "objectID": "slides/week-2.html#example-tracked-changes-in-code-when-you-push-updated-version",
-    "href": "slides/week-2.html#example-tracked-changes-in-code-when-you-push-updated-version",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Example: tracked changes in code when you “push” updated version",
-    "text": "Example: tracked changes in code when you “push” updated version"
+    "objectID": "slides/week-3.html#object-oriented-programming-oop-vs-functional-programming-language",
+    "href": "slides/week-3.html#object-oriented-programming-oop-vs-functional-programming-language",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Object-oriented programming (OOP) vs Functional Programming Language",
+    "text": "Object-oriented programming (OOP) vs Functional Programming Language\n\nPython is an object-oriented programming language (OOP).\n\nKey concept: it uses “objects” that contains data and methods (functions).\n\nR is a functional programming language\n\nKey concept: treats functions as the first-class citizens, meaning they can be assigned to variables, passed as arguments, and returned by other functions"
   },
   {
-    "objectID": "slides/week-2.html#example-repo-public-repo",
-    "href": "slides/week-2.html#example-repo-public-repo",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Example repo: public repo",
-    "text": "Example repo: public repo\nLook familiar? https://github.com/rebeccajohnson88/PPOL5203_fall2026"
+    "objectID": "slides/week-3.html#section",
+    "href": "slides/week-3.html#section",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "",
+    "text": "Python OOP\n\n# call library\nimport pandas as pd\n\n# Using a Pandas Series method (OOP)\ns = pd.Series([1, 2, 3, 4, 5])\n\n# create a series object. You use a methods from this object to take the mean\ns.mean()\n\n\nR Functional Programming in Practice\n\nvec &lt;- c(1, 2, 3, 4, 5)\nmean(vec)\n\n\nObjects are the core of Python.\nFrom the objects, you will access functions that will make Python work.\nYou can also access data from object."
   },
   {
-    "objectID": "slides/week-2.html#ingredients-of-a-repo-readme",
-    "href": "slides/week-2.html#ingredients-of-a-repo-readme",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Ingredients of a repo: README",
-    "text": "Ingredients of a repo: README\nShould be more informative than the one for our class repo, e.g.:\n\nMight have installation instructions, directions on where to download data, etc."
+    "objectID": "slides/week-3.html#section-1",
+    "href": "slides/week-3.html#section-1",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "",
+    "text": "Basics: Creating an object in Python.\n= is the assignment operator in Python. (Different from the &lt;- in R)\n\nx = 4"
   },
   {
-    "objectID": "slides/week-2.html#ingredients-of-a-repo-files-and-directories",
-    "href": "slides/week-2.html#ingredients-of-a-repo-files-and-directories",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Ingredients of a repo: files and directories",
-    "text": "Ingredients of a repo: files and directories\nCommand line commands we reviewed last week are useful for organizing and reorganizing repos. Example directory structure:\n├── /data\n│   ├── /raw      \n│   ├── /processed  \n├── /docs \n├── /code\n|   |── 01_clean_xxx.py\n|   |── 01_analysis_xxx.py\n\n├── /literature      \n\n├── /output      \n│   ├── /tables      \n│   ├── /figures  \n├── /misc \n└── readme.txt"
+    "objectID": "slides/week-3.html#what-happens-upon-assignment",
+    "href": "slides/week-3.html#what-happens-upon-assignment",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "What happens upon assignment?",
+    "text": "What happens upon assignment?\n\nAction 1: A reference is assigned to an object, with an id number in memory\n\nid(x)\n\n140266921191824"
   },
   {
-    "objectID": "slides/week-2.html#for-these-files-and-directories",
-    "href": "slides/week-2.html#for-these-files-and-directories",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "For these files and directories",
-    "text": "For these files and directories\n\nFile names should be meaningful\nDO NOT USE SPACES. Use snake case (_) style for you files and code\nAlso allows you to avoid capitalization (FileName → file_name)\n\n\n\n\ndata analysis 2.py → data_analysis_2.py\n\n\n\n\n\nmodel_analysis.py → model_analysis_het_treatment_effects_main_paper.py"
+    "objectID": "slides/week-3.html#section-2",
+    "href": "slides/week-3.html#section-2",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "",
+    "text": "Action 2 An object type (class) is defined at run time\n\ntype(x)\n\nint"
   },
   {
-    "objectID": "slides/week-2.html#ingredients-of-a-repo-data",
-    "href": "slides/week-2.html#ingredients-of-a-repo-data",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Ingredients of a repo: data?",
-    "text": "Ingredients of a repo: data?\nDepending on the context, you may store data, but\n\nGitHub has file size limits (though can pay to override these)\nSensitive data should generally not be put in a repo, even if the repo is private since employees at the company have access to private repo content\nInstead, read data directly from its source or have download instructions"
+    "objectID": "slides/week-3.html#section-3",
+    "href": "slides/week-3.html#section-3",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "",
+    "text": "Action 3: Object’s class is instantiated upon assignment. An object is an instance of a particular class.\n\n# what is the class?\ntype(x)\n\nint\n\n\n\n# Access methods (behaviors) using .\nx.bit_length()\n\n3\n\n\n\n# see all methods\ndir(x)\n\n['__abs__',\n '__add__',\n '__and__',\n '__bool__',\n '__ceil__',\n '__class__',\n '__delattr__',\n '__dir__',\n '__divmod__',\n '__doc__',\n '__eq__',\n '__float__',\n '__floor__',\n '__floordiv__',\n '__format__',\n '__ge__',\n '__getattribute__',\n '__getnewargs__',\n '__gt__',\n '__hash__',\n '__index__',\n '__init__',\n '__init_subclass__',\n '__int__',\n '__invert__',\n '__le__',\n '__lshift__',\n '__lt__',\n '__mod__',\n '__mul__',\n '__ne__',\n '__neg__',\n '__new__',\n '__or__',\n '__pos__',\n '__pow__',\n '__radd__',\n '__rand__',\n '__rdivmod__',\n '__reduce__',\n '__reduce_ex__',\n '__repr__',\n '__rfloordiv__',\n '__rlshift__',\n '__rmod__',\n '__rmul__',\n '__ror__',\n '__round__',\n '__rpow__',\n '__rrshift__',\n '__rshift__',\n '__rsub__',\n '__rtruediv__',\n '__rxor__',\n '__setattr__',\n '__sizeof__',\n '__str__',\n '__sub__',\n '__subclasshook__',\n '__truediv__',\n '__trunc__',\n '__xor__',\n 'as_integer_ratio',\n 'bit_length',\n 'conjugate',\n 'denominator',\n 'from_bytes',\n 'imag',\n 'numerator',\n 'real',\n 'to_bytes']"
   },
   {
-    "objectID": "slides/week-2.html#ingredients-of-a-repo-issues",
-    "href": "slides/week-2.html#ingredients-of-a-repo-issues",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Ingredients of a repo: issues",
-    "text": "Ingredients of a repo: issues\n\nCan assign to specific collaborators or leave as a “note to self” to look back at something\nCan use checklist features\nCan include code excerpts\nEasy to link to a specific commit (change to code)\nNeed to be logged into GitHub to write"
+    "objectID": "slides/week-3.html#object-oriented-programming-what-are-these-classes",
+    "href": "slides/week-3.html#object-oriented-programming-what-are-these-classes",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Object-Oriented Programming: What are these classes?",
+    "text": "Object-Oriented Programming: What are these classes?\n\n\nInstantiation: When we create a object, we are creating an instance of this class.\nInheritance: Every time we create an object, the objects inherits a class.\n\nA class is a blueprint holding of the properties of a particular data structure.\nAn instance is a realization of a particular class. This instance inherits the characteristics of its class.\n\nComponents: Classes have two major components:\n\nAttributes: these are constant features, data, a characteristic of the broader class. For instance, many objects have some sort of length attribute.\nMethods: these are actions, behaviors of this class. For instance, you might havea mean or median method you can apply to an object.\n\nPolymorphism: Both attributes and methods are accessed through . function, conditional on the class"
   },
   {
-    "objectID": "slides/week-2.html#general-steps-in-workflow",
-    "href": "slides/week-2.html#general-steps-in-workflow",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "General steps in workflow",
-    "text": "General steps in workflow\n\nEither create a repository locally and link to GitHub OR create a repository on GitHub and clone\nMake changes to code or other files\nAdd changes: tells the computer to move changes to a temporary staging area\nCommit changes: tells the computer to ``save’’ those staged changes, taking a permanent snapshot of what the changes are\nPush changes: tells the computer to push those saved changes to GitHub (if file exists already, will overwrite file, but all previous versions of that file are accessible/retrievable)"
+    "objectID": "slides/week-3.html#section-4",
+    "href": "slides/week-3.html#section-4",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "",
+    "text": "Create a Class\n\nclass Example():\n  def __init__ (self, name):\n    self.name = name\n  def hello(self):\n    print('Hi, I am ' + self.name)"
   },
   {
-    "objectID": "slides/week-2.html#step-one-two-paths-to-getting-started",
-    "href": "slides/week-2.html#step-one-two-paths-to-getting-started",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Step one: two paths to getting started",
-    "text": "Step one: two paths to getting started\n\nCreate a repository locally and then link it to GitHub: use when you have an existing folder/set of files and you want to move it to git/GitHub-based version control\nCreate a repository on GitHub and then create a linked copy locally: my preferred way when starting a new project; what you’ll do for problem sets"
+    "objectID": "slides/week-3.html#section-5",
+    "href": "slides/week-3.html#section-5",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "",
+    "text": "Instantiate\n\n# Instatiate\nme = Example(name=\"Rebecca\")\ntype(me)\n\n__main__.Example"
   },
   {
-    "objectID": "slides/week-2.html#step-one-path-one-linking-a-local-directory-to-gitgithub",
-    "href": "slides/week-2.html#step-one-path-one-linking-a-local-directory-to-gitgithub",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Step one path one: linking a local directory to git/GitHub",
-    "text": "Step one path one: linking a local directory to git/GitHub\nCreate an empty directory called gitexample\n\n# check where you are\npwd \n# create dir\nmkdir gitexample\n# change cd\ncd gitexample\n\nCheck if you have a git\n\ngit --version\n\nStart a repository within gitexample\n\ngit init"
+    "objectID": "slides/week-3.html#section-6",
+    "href": "slides/week-3.html#section-6",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "",
+    "text": "Attributes\n\nme.name\n\n'Rebecca'"
   },
   {
-    "objectID": "slides/week-2.html#what-you-should-see-after-git-init",
-    "href": "slides/week-2.html#what-you-should-see-after-git-init",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "What you should see after git init",
-    "text": "What you should see after git init\n\nModify the contents of the directory by adding an (empty) README\n\ntouch README.md\n\nList files to make sure it was added\n\nls"
+    "objectID": "slides/week-3.html#section-7",
+    "href": "slides/week-3.html#section-7",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "",
+    "text": "method\n\nme.hello() \n\nHi, I am Rebecca"
   },
   {
-    "objectID": "slides/week-2.html#step-one-path-one-linking-a-local-directory-to-gitgithub-1",
-    "href": "slides/week-2.html#step-one-path-one-linking-a-local-directory-to-gitgithub-1",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Step one path one: linking a local directory to git/GitHub",
-    "text": "Step one path one: linking a local directory to git/GitHub\nThree steps:\n\ngit add: prepares the changes you made locally to be “sent up” to the repository. Can repeat many times as you work.\ngit commit: permanently saves those changes to your local history but doesn’t yet send them to the remote repository for permanent record\ngit push: uploads the changes you made locally to the remote repository"
+    "objectID": "slides/week-3.html#data-type",
+    "href": "slides/week-3.html#data-type",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Data Type",
+    "text": "Data Type\nPython comes with a number of built-in data types. Two major data type groups in Python:\n\nScalar types: hold one piece of information, like a digit.\nCollection types: hold multiple pieces of information\n\nThere are two ways of instantiating a data class in Python:\n\nLiterals: syntactic representation in Python, e.g. []\nConstructors: class constructors, e.g. list()"
   },
   {
-    "objectID": "slides/week-2.html#add-versus-commit-versus-push-visualization",
-    "href": "slides/week-2.html#add-versus-commit-versus-push-visualization",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Add versus commit versus push visualization",
-    "text": "Add versus commit versus push visualization\n\nSource"
+    "objectID": "slides/week-3.html#scalar",
+    "href": "slides/week-3.html#scalar",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Scalar",
+    "text": "Scalar\n\n\n\n\n\n\n\n\n\n\nType\nDescription\nExample\nLiteral\nConstructor\n\n\n\n\nint\ninteger types\n4\nx = 4\nint(4)\n\n\nfloat\n64-bit floating point numbers\n4.567\nx = 4.567\nfloat(4.567)\n\n\nbool\nboolean logical values\nTrue\nx = True\nbool(1)\n\n\nNone\nnull object (serves as a valuable place holder)\nNone\nx = None"
   },
   {
-    "objectID": "slides/week-2.html#implementing-in-practice",
-    "href": "slides/week-2.html#implementing-in-practice",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Implementing in practice",
-    "text": "Implementing in practice\nAdd the file\n\ngit add README.md\n\nFirst commit\n\ngit commit -m \"add readme\"\n\nCheck your log\n\ngit log"
+    "objectID": "slides/week-3.html#collectors",
+    "href": "slides/week-3.html#collectors",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Collectors",
+    "text": "Collectors\n\n\n\n\n\n\n\n\n\n\n\nType\nDescription\nExample\nMutable\nLiteral\nConstructor\n\n\n\n\nlist\nheterogeneous sequences of objects\n[1,\"2\",True]\n✓\nx = [\"c\",\"a\",\"t\"]\nx = list(\"cat\")\n\n\nstr\nsequences of characters\n\"A word\"\n✘\nx = \"12345\"\nx = str(12345)\n\n\ntuples\nheterogeneous sequence of objects\n(1,2)\n✘\nx = (1,2)\nx = tuple([1,2])\n\n\nsets\nunordered collection of distinct objects\n{1,2}\n✓\nx = {1,2}\nx = set([1,2])\n\n\ndicts\nassociative array of key/value mappings\n{\"a\": 1}\nkeys ✘values ✓\nx = {'a':1}\nx = dict(a = 1)"
   },
   {
-    "objectID": "slides/week-2.html#how-can-we-link-these-local-changes-to-our-remote-github-account",
-    "href": "slides/week-2.html#how-can-we-link-these-local-changes-to-our-remote-github-account",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "How can we link these local changes to our remote GitHub account?",
-    "text": "How can we link these local changes to our remote GitHub account?\nEasiest way: set up an empty repository on GitHub. To avoid errors, do not initialize the new repository with README, license, or gitignore files.\nHow to"
+    "objectID": "slides/week-3.html#key-concepts",
+    "href": "slides/week-3.html#key-concepts",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Key concepts",
+    "text": "Key concepts\n\n\nWhy, different from R, I should use . to run specific functions, instead of just running the functions on a object function(obj)?\nTuples and Lists are pretty much the same. But tuples are more computationally efficient (storage and speed in accessing it) than lists. Why do you think this is the case?\nAssume I have this dictionary my_dict = {'a': 4, 'b': 7, 'c': 9.2}. If I tried to access the first element of the dictionary with my_dict[0], Python will throw me an error. Why?"
   },
   {
-    "objectID": "slides/week-2.html#once-we-have-the-link-following-steps",
-    "href": "slides/week-2.html#once-we-have-the-link-following-steps",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Once we have the link, following steps",
-    "text": "Once we have the link, following steps\nTell it the url for the repository (will differ for you)\n\ngit remote add origin https://github.com/rebeccajohnson88/gitexample.git\n\nPush\n\ngit push -u origin main\n\nShould see it appear on your GitHub profile"
+    "objectID": "slides/week-3-1.html#plans-for-today",
+    "href": "slides/week-3-1.html#plans-for-today",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Plans for Today",
+    "text": "Plans for Today\n\nShort activity in problem set 1 repo\nIntroduction to Python\n\nPython as an Object-Oriented Programming Language\nData Types in Python\n\nActivity"
   },
   {
-    "objectID": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-your-identity",
-    "href": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-your-identity",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "If you run into an issue at the push step, configuring your identity",
-    "text": "If you run into an issue at the push step, configuring your identity\n\ngit config --global user.name \"Your Name\" \ngit config --global user.email \"your-email@example.com\""
+    "objectID": "slides/week-3-1.html#problem-set-1-activity-1",
+    "href": "slides/week-3-1.html#problem-set-1-activity-1",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Problem Set 1 Activity",
+    "text": "Problem Set 1 Activity\n\nNavigate to the cloned repo for problem set 1. This will be named something like ppol-5203-fall-2026-problem-set-1-yourgithubusername\nIf you haven’t already, use mkdir to create a folder in the repo called: question-01\nUse the following steps to push your changes to your repo (if you’ve already pushed no need to redo):\n\n\ngit add question-01/\ngit commit -m \"pushing the q1 directory\"\ngit push \n\nNote: this will be where you make the files / directories we ask you to make for Question 1."
   },
   {
-    "objectID": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens",
-    "href": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "If you run into an issue at the push step, configuring personal access tokens",
-    "text": "If you run into an issue at the push step, configuring personal access tokens\n\nGo to settings on right hand side under your profile"
+    "objectID": "slides/week-3-1.html#am-i-able-to-see-your-changes",
+    "href": "slides/week-3-1.html#am-i-able-to-see-your-changes",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Am I able to see your changes?",
+    "text": "Am I able to see your changes?\nDuring our break/after class, I’ll fill out the “PS1 check” column on this GitHub usernames sheet: usernames"
   },
   {
-    "objectID": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens-1",
-    "href": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens-1",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "If you run into an issue at the push step, configuring personal access tokens",
-    "text": "If you run into an issue at the push step, configuring personal access tokens\n\nScroll down to “Developer settings” on left hand side"
+    "objectID": "slides/week-3-1.html#python-object-oriented-programming-language",
+    "href": "slides/week-3-1.html#python-object-oriented-programming-language",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Python: Object-Oriented Programming Language",
+    "text": "Python: Object-Oriented Programming Language\nIn most Python introductions out there, you would start with:\n\nPython as a calculator\nData Types in Python\nObjects\n\n\nWe will take a different route starting with a brief overview of object-oriented programming"
   },
   {
-    "objectID": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens-2",
-    "href": "slides/week-2.html#if-you-run-into-an-issue-at-the-push-step-configuring-personal-access-tokens-2",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "If you run into an issue at the push step, configuring personal access tokens",
-    "text": "If you run into an issue at the push step, configuring personal access tokens\n\nClick on personal access token and generate a personal access token"
+    "objectID": "slides/week-3-1.html#object-oriented-programming-oop-vs-functional-programming-language",
+    "href": "slides/week-3-1.html#object-oriented-programming-oop-vs-functional-programming-language",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Object-oriented programming (OOP) vs Functional Programming Language",
+    "text": "Object-oriented programming (OOP) vs Functional Programming Language\n\nPython is an object-oriented programming language (OOP).\n\nKey concept: it uses “objects” that contains data and methods (functions).\n\nR is a functional programming language\n\nKey concept: treats functions as the first-class citizens, meaning they can be assigned to variables, passed as arguments, and returned by other functions"
   },
   {
-    "objectID": "slides/week-2.html#troubleshooting-issues-error-about-main-not-found",
-    "href": "slides/week-2.html#troubleshooting-issues-error-about-main-not-found",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Troubleshooting issues: error about main not found",
-    "text": "Troubleshooting issues: error about main not found\nSome versions of GitHub default to a branch called master as the primary branch rather than a branch called main.\nHow do I check what the branch is called on my machine? Run git log and it should show you the name as main or master at the top. As you can see in this screenshot, mine shows main\n\nWhat do I do if mine shows master rather than main? Modify the code for the push command to push to master rather than main, or:\n\ngit push -u origin master"
+    "objectID": "slides/week-3-1.html#section",
+    "href": "slides/week-3-1.html#section",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "",
+    "text": "Python OOP\n\n# call library\nimport pandas as pd\n\n# Using a Pandas Series method (OOP)\ns = pd.Series([1, 2, 3, 4, 5])\n\n# create a series object. You use a methods from this object to take the mean\ns.mean()\n\n\nR Functional Programming in Practice\n\nvec &lt;- c(1, 2, 3, 4, 5)\nmean(vec)\n\n\nObjects are the core of Python.\nFrom the objects, you will access functions that will make Python work.\nYou can also access data from object."
   },
   {
-    "objectID": "slides/week-2.html#troubleshooting-issues-403-error-when-pushing",
-    "href": "slides/week-2.html#troubleshooting-issues-403-error-when-pushing",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Troubleshooting issues: 403 error when pushing",
-    "text": "Troubleshooting issues: 403 error when pushing\nIf you’ve already tried giving your personal access token (PAT) to GitHub and are getting a 403 error when pushing, you might have not given that token permission to access your repos\nTo fix:\n\nDelete token and\nGenerate a new token and make sure to select these repo options under the scopes 3. Repeat the git push -u origin main step and feed it the new PAT"
+    "objectID": "slides/week-3-1.html#section-1",
+    "href": "slides/week-3-1.html#section-1",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "",
+    "text": "Basics: Creating an object in Python.\n= is the assignment operator in Python. (Different from the &lt;- in R)\n\nx = 4"
   },
   {
-    "objectID": "slides/week-2.html#putting-it-all-together-and-your-own-practice",
-    "href": "slides/week-2.html#putting-it-all-together-and-your-own-practice",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Putting it all together and your own practice",
-    "text": "Putting it all together and your own practice\n\nmkdir gitexample\ngit init \ntouch README.md\ngit add README.md\ngit commit -m \"add readme\"\ngit remote add origin YOUR_URL.git\ngit push -u origin main\n\nActivity:\n\nComplete the above steps\nAfter you’re done with the above steps, open jupyter notebook and create a new notebook called notebook.ipynb with some small amount of content\nComplete the following steps to push that code to your remote repository\n\n\ngit add notebook.ipynb\ngit commit -m \"add code\"\ngit push"
+    "objectID": "slides/week-3-1.html#what-happens-upon-assignment",
+    "href": "slides/week-3-1.html#what-happens-upon-assignment",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "What happens upon assignment?",
+    "text": "What happens upon assignment?\n\nAction 1: A reference is assigned to an object, with an id number in memory\n\nid(x)\n\n140588238432656"
   },
   {
-    "objectID": "slides/week-2.html#returning-to-the-github-workflow-steps",
-    "href": "slides/week-2.html#returning-to-the-github-workflow-steps",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Returning to the GitHub workflow steps",
-    "text": "Returning to the GitHub workflow steps\n\nEither:\n\n\nCreate a repository locally and link to GitHub\nCreate a repository on GitHub and clone\n\n\nMake changes to code or other files\nCommit changes: tells the computer to ``save’’ the changes\nPush changes: tells the computer to push those saved changes to GitHub (if file exists already, will overwrite file, but all previous versions of that file are accessible/retrievable)"
+    "objectID": "slides/week-3-1.html#section-2",
+    "href": "slides/week-3-1.html#section-2",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "",
+    "text": "Action 2 An object type (class) is defined at run time\n\ntype(x)\n\nint"
   },
   {
-    "objectID": "slides/week-2.html#cloning-a-repo",
-    "href": "slides/week-2.html#cloning-a-repo",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Cloning a repo",
-    "text": "Cloning a repo\n\nOpen your local terminal and navigate to where you want the repo’s files to be stored\nGo to GitHub.com and create the repo; recommend include a README and a Python .gitignore file\nGo to the green “Code” button to find the name of the repo\nIn your terminal, use the following command to clone\n\n\ngit clone reponame.git"
+    "objectID": "slides/week-3-1.html#section-3",
+    "href": "slides/week-3-1.html#section-3",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "",
+    "text": "Action 3: Object’s class is instantiated upon assignment. An object is an instance of a particular class.\n\n# what is the class?\ntype(x)\n\nint\n\n\n\n# Access methods (behaviors) using .\nx.bit_length()\n\n3\n\n\n\n# see all methods\ndir(x)\n\n['__abs__',\n '__add__',\n '__and__',\n '__bool__',\n '__ceil__',\n '__class__',\n '__delattr__',\n '__dir__',\n '__divmod__',\n '__doc__',\n '__eq__',\n '__float__',\n '__floor__',\n '__floordiv__',\n '__format__',\n '__ge__',\n '__getattribute__',\n '__getnewargs__',\n '__gt__',\n '__hash__',\n '__index__',\n '__init__',\n '__init_subclass__',\n '__int__',\n '__invert__',\n '__le__',\n '__lshift__',\n '__lt__',\n '__mod__',\n '__mul__',\n '__ne__',\n '__neg__',\n '__new__',\n '__or__',\n '__pos__',\n '__pow__',\n '__radd__',\n '__rand__',\n '__rdivmod__',\n '__reduce__',\n '__reduce_ex__',\n '__repr__',\n '__rfloordiv__',\n '__rlshift__',\n '__rmod__',\n '__rmul__',\n '__ror__',\n '__round__',\n '__rpow__',\n '__rrshift__',\n '__rshift__',\n '__rsub__',\n '__rtruediv__',\n '__rxor__',\n '__setattr__',\n '__sizeof__',\n '__str__',\n '__sub__',\n '__subclasshook__',\n '__truediv__',\n '__trunc__',\n '__xor__',\n 'as_integer_ratio',\n 'bit_length',\n 'conjugate',\n 'denominator',\n 'from_bytes',\n 'imag',\n 'numerator',\n 'real',\n 'to_bytes']"
   },
   {
-    "objectID": "slides/week-2.html#once-its-cloned-same-process-as-earlier",
-    "href": "slides/week-2.html#once-its-cloned-same-process-as-earlier",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Once it’s cloned, same process as earlier",
-    "text": "Once it’s cloned, same process as earlier\n\nEdit files locally\nEither add specific files, e.g.:\n\n\ngit add notebook.ipynb\ngit commit -m \"add code\"\ngit push \n\n\nOr add all changes\n\n\ngit add .\ngit commit -m \"add all contents\"\ngit push"
+    "objectID": "slides/week-3-1.html#object-oriented-programming-what-are-these-classes",
+    "href": "slides/week-3-1.html#object-oriented-programming-what-are-these-classes",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Object-Oriented Programming: What are these classes?",
+    "text": "Object-Oriented Programming: What are these classes?\n\n\nInstantiation: When we create a object, we are creating an instance of this class.\nInheritance: Every time we create an object, the objects inherits a class.\n\nA class is a blueprint holding of the properties of a particular data structure.\nAn instance is a realization of a particular class. This instance inherits the characteristics of its class.\n\nComponents: Classes have two major components:\n\nAttributes: these are constant features, data, a characteristic of the broader class. For instance, many objects have some sort of length attribute.\nMethods: these are actions, behaviors of this class. For instance, you might havea mean or median method you can apply to an object.\n\nPolymorphism: Both attributes and methods are accessed through . function, conditional on the class"
   },
   {
-    "objectID": "slides/week-2.html#activity-clone-a-repo-from-our-github-classroom-page",
-    "href": "slides/week-2.html#activity-clone-a-repo-from-our-github-classroom-page",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Activity: clone a repo from our GitHub classroom page",
-    "text": "Activity: clone a repo from our GitHub classroom page\nAccess the activity here\nAlso linked on our class page: https://rebeccajohnson88.github.io/PPOL5203_fall2026/weeks/week-02.html\nYou may need to click through to authorize Classroom 50, which is a tool for managing assignments through GitHub that has replaced the now-defunct GitHub Classroom"
+    "objectID": "slides/week-3-1.html#section-4",
+    "href": "slides/week-3-1.html#section-4",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "",
+    "text": "Create a Class\n\nclass Example():\n  def __init__ (self, name):\n    self.name = name\n  def hello(self):\n    print('Hi, I am ' + self.name)"
   },
   {
-    "objectID": "slides/week-2.html#pulling-remote-changes",
-    "href": "slides/week-2.html#pulling-remote-changes",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Pulling remote changes",
-    "text": "Pulling remote changes\n\nWithin your ppol5203_f26_activities repo, make a change locally (e.g., adding a comment to the code)\nTry pushing (add, commit, push) the changes\nIf you edited the README remotely, you likely get an error that updates were rejected before the remote contains work that you do not have locally"
+    "objectID": "slides/week-3-1.html#section-5",
+    "href": "slides/week-3-1.html#section-5",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "",
+    "text": "Instantiate\n\n# Instatiate\nme = Example(name=\"Rebecca\")\ntype(me)\n\n__main__.Example"
   },
   {
-    "objectID": "slides/week-2.html#how-to-address-always-pull-before-making-local-changes",
-    "href": "slides/week-2.html#how-to-address-always-pull-before-making-local-changes",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "How to address: ALWAYS pull before making local changes",
-    "text": "How to address: ALWAYS pull before making local changes\n\ngit pull\n\nEither:\n\nThere are no merge conflicts with the pull (the things you edited locally don’t conflict with what you edited on the GitHub website) -&gt; you can proceed with git push\nThere are merge conflicts with the pull"
+    "objectID": "slides/week-3-1.html#section-6",
+    "href": "slides/week-3-1.html#section-6",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "",
+    "text": "Attributes\n\nme.name\n\n'Rebecca'"
   },
   {
-    "objectID": "slides/week-2.html#what-to-do-in-the-case-of-merge-conflicts",
-    "href": "slides/week-2.html#what-to-do-in-the-case-of-merge-conflicts",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "What to do in the case of merge conflicts",
-    "text": "What to do in the case of merge conflicts\n\nOpen your text editor and navigate to the file that has merge conflicts (can use vim or other command line editor)\nSolve the conflict and delete the conflict markers\nStage your changes (git add)\nCommit and push your changes (git commit and git push)"
+    "objectID": "slides/week-3-1.html#section-7",
+    "href": "slides/week-3-1.html#section-7",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "",
+    "text": "method\n\nme.hello() \n\nHi, I am Rebecca"
   },
   {
-    "objectID": "slides/week-2.html#activity-2",
-    "href": "slides/week-2.html#activity-2",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Activity 2",
-    "text": "Activity 2\nSee Activity 2 in your notebook"
+    "objectID": "slides/week-3-1.html#data-type",
+    "href": "slides/week-3-1.html#data-type",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Data Type",
+    "text": "Data Type\nPython comes with a number of built-in data types. Two major data type groups in Python:\n\nScalar types: hold one piece of information, like a digit.\nCollection types: hold multiple pieces of information\n\nThere are two ways of instantiating a data class in Python:\n\nLiterals: syntactic representation in Python, e.g. []\nConstructors: class constructors, e.g. list()"
   },
   {
-    "objectID": "slides/week-2.html#activity-3",
-    "href": "slides/week-2.html#activity-3",
-    "title": "PPOL 5203 - Data Science I: Foundations",
-    "section": "Activity 3",
-    "text": "Activity 3\nCloning the repo that contains your problem set and walking through"
+    "objectID": "slides/week-3-1.html#scalar",
+    "href": "slides/week-3-1.html#scalar",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Scalar",
+    "text": "Scalar\n\n\n\n\n\n\n\n\n\n\nType\nDescription\nExample\nLiteral\nConstructor\n\n\n\n\nint\ninteger types\n4\nx = 4\nint(4)\n\n\nfloat\n64-bit floating point numbers\n4.567\nx = 4.567\nfloat(4.567)\n\n\nbool\nboolean logical values\nTrue\nx = True\nbool(1)\n\n\nNone\nnull object (serves as a valuable place holder)\nNone\nx = None"
+  },
+  {
+    "objectID": "slides/week-3-1.html#collectors",
+    "href": "slides/week-3-1.html#collectors",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Collectors",
+    "text": "Collectors\n\n\n\n\n\n\n\n\n\n\n\nType\nDescription\nExample\nMutable\nLiteral\nConstructor\n\n\n\n\nlist\nheterogeneous sequences of objects\n[1,\"2\",True]\n✓\nx = [\"c\",\"a\",\"t\"]\nx = list(\"cat\")\n\n\nstr\nsequences of characters\n\"A word\"\n✘\nx = \"12345\"\nx = str(12345)\n\n\ntuples\nheterogeneous sequence of objects\n(1,2)\n✘\nx = (1,2)\nx = tuple([1,2])\n\n\nsets\nunordered collection of distinct objects\n{1,2}\n✓\nx = {1,2}\nx = set([1,2])\n\n\ndicts\nassociative array of key/value mappings\n{\"a\": 1}\nkeys ✘values ✓\nx = {'a':1}\nx = dict(a = 1)"
+  },
+  {
+    "objectID": "slides/week-3-1.html#key-concepts",
+    "href": "slides/week-3-1.html#key-concepts",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Key concepts",
+    "text": "Key concepts\n\n\nWhy, different from R, I should use . to run specific functions, instead of just running the functions on a object function(obj)?\nTuples and Lists are pretty much the same. But tuples are more computationally efficient (storage and speed in accessing it) than lists. Why do you think this is the case?\nAssume I have this dictionary my_dict = {'a': 4, 'b': 7, 'c': 9.2}. If I tried to access the first element of the dictionary with my_dict[0], Python will throw me an error. Why?"
   },
   {
     "objectID": "syllabus.html",

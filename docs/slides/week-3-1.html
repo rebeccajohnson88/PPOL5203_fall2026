@@ -10,8 +10,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.56">
 
-  <meta name="author" content=" Professor: Rebecca A. Johnson ">
-  <title>PPOL 5203 - Data Science I: Foundations</title>
+  <meta name="author" content="Professor: Rebecca A. Johnson">
+  <title> PPOL 5203 - Data Science I: Foundations </title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -322,516 +387,457 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../site_libs/countdown-0.6.0/countdown.css" rel="stylesheet">
-  <script src="../site_libs/countdown-0.6.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">PPOL 5203 - Data Science I: Foundations</h1>
-  <p class="subtitle"><span style="font-size: 200%;"> <br>Week 1: Introductions, Installations, IDEs, Command line </span></p>
+  <h1 class="title"><span style="font-size: 120%;"> PPOL 5203 - Data Science I: Foundations </span></h1>
+  <p class="subtitle"><span style="font-size: 150%;"> Week 3: Intro to Python </span></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<span style="font-size: 150%;"> Professor: Rebecca A. Johnson </span> 
+<span style="font-size: 150%;">Professor: Rebecca A. Johnson</span> 
 </div>
 </div>
 </div>
-
-</section>
-<section>
-<section id="welcome-to-data-science-i" class="title-slide slide level1 center" data-background-color="#447099">
-<h1>Welcome to Data Science I</h1>
 
 </section>
 <section id="plans-for-today" class="slide level2 center">
 <h2>Plans for Today</h2>
 <ul>
-<li class="fragment"><p>Motivating <span class="blue">Data Science for Public Policy</span>.</p></li>
-<li class="fragment"><p>Goals of the course</p></li>
-<li class="fragment"><p>Introductions</p></li>
-<li class="fragment"><p>Course Logistics</p></li>
-<li class="fragment"><p>IDEs</p>
+<li><p>Short activity in problem set 1 repo</p></li>
+<li><p>Introduction to Python</p>
 <ul>
-<li class="fragment">Jupyter</li>
+<li><p>Python as an Object-Oriented Programming Language</p></li>
+<li><p>Data Types in Python</p></li>
 </ul></li>
-<li class="fragment"><p>Introduction to command line</p></li>
+<li><p>Activity</p></li>
 </ul>
-</section></section>
+</section>
 <section>
-<section id="motivation-digital-information-age" class="title-slide slide level1 center" data-background-color="#447099">
-<h1>Motivation: Digital Information Age</h1>
+<section id="problem-set-1-activity" class="title-slide slide level1 center" data-background-color="#447099">
+<h1>Problem Set 1 Activity</h1>
 
 </section>
-<section id="abundance-of-data" class="slide level2 center">
-<h2>Abundance of data</h2>
-
-<img data-src="week1_figs/digital.jpeg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="powerful-and-cheap-computing-power" class="slide level2 center">
-<h2>Powerful and Cheap Computing Power</h2>
-
-<img data-src="week1_figs/collab.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="world-of-generative-ai-models" class="slide level2 center">
-<h2>World of Generative AI Models</h2>
-
-<img data-src="https://diplo-media.s3.eu-central-1.amazonaws.com/2025/03/openai-chatgpt-surge-deepseek.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="as-a-consequence-we-live-in-a-world" class="slide level2 center">
-<h2>As a consequence, we live in a world:</h2>
-<div>
-<div class="fragment">
+<section id="problem-set-1-activity-1" class="slide level2 center">
+<h2>Problem Set 1 Activity</h2>
 <ul>
-<li><p><strong>With</strong> abundance of data we can use for research and to recommend policy decisions:</p>
-<ul>
-<li>Internet data, social media, geo-tracking tools, etc…</li>
-</ul></li>
+<li><p>Navigate to the cloned repo for problem set 1. This will be named something like <code>ppol-5203-fall-2026-problem-set-1-yourgithubusername</code></p></li>
+<li><p>If you haven’t already, use <code>mkdir</code> to create a folder in the repo called: <code>question-01</code></p></li>
+<li><p>Use the following steps to push your changes to your repo (if you’ve already pushed no need to redo):</p></li>
 </ul>
+<div id="9bc80038" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>git add question<span class="op">-</span><span class="dv">0</span><span class="er">1</span><span class="op">/</span></span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>git commit <span class="op">-</span>m <span class="st">"pushing the q1 directory"</span></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>git push </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="fragment">
-<ul>
-<li><p><strong>With</strong> easily available technologies to analyze this data at scale</p>
-<ul>
-<li>Your laptops, cloud computing, ChatBots…</li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><p><strong>But</strong> with new technologies that also have novel social implications:</p>
-<ul>
-<li><p>Privacy issues</p></li>
-<li><p>Use of technology by bad actors.</p></li>
-<li><p>Use of technology by governments to censor/monitor citizens.</p></li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Policy scholars (but pretty much any researcher) need to be equipped to properly <strong>work</strong> with this data and <strong>understand</strong> the effects of these news technologies</li>
-</ul>
-</div>
-</div>
+<p><strong>Note</strong>: this will be where you make the files / directories we ask you to make for Question 1.</p>
 </section>
-<section id="data-science-for-public-policy" class="slide level2 center">
-<h2>Data Science for Public Policy</h2>
-<p><strong>Data Scientist for Public Policy</strong> focuses on <strong>computational approaches</strong> to solve/understand <strong>policy problems</strong>.</p>
-<ul>
-<li class="fragment">It is part of a larger and new field called <a href="https://en.wikipedia.org/wiki/Computational_social_science">computational social science</a></li>
-</ul>
-<div>
-<div class="fragment">
-<ul>
-<li><p><strong>Social science</strong></p>
-<ul>
-<li>Understands human behavior: human psychology, language, economic behavior, political systems, policy problems</li>
-<li>Involve many <strong>approaches</strong>: qualitative interviews, statistical analysis, simulations</li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><p><strong>Data Science</strong>:</p>
-<ul>
-<li>Tools to work with large-scale data + learning models + novel data sources</li>
-</ul></li>
-</ul>
-</div>
-</div>
+<section id="am-i-able-to-see-your-changes" class="slide level2 center">
+<h2>Am I able to see your changes?</h2>
+<p>During our break/after class, I’ll fill out the “PS1 check” column on this GitHub usernames sheet: <a href="https://docs.google.com/spreadsheets/d/1vMIFgJej0SAY8_BfCmaXcAGl_pgZcAJehhV9WdPHWas/edit?usp=sharing">usernames</a></p>
 </section></section>
 <section>
-<section id="computational-social-science-in-practice" class="title-slide slide level1 center">
-<h1>Computational Social Science in Practice</h1>
+<section id="introduction-to-python" class="title-slide slide level1 center" data-background-color="#447099">
+<h1>Introduction to Python</h1>
 
 </section>
-<section id="turning-the-intro-survey-into-usable-data" class="slide level2 center">
-<h2>Turning the intro survey into usable data</h2>
-
-<img data-src="week1_figs/intro_survey.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-1-get-credentials-for-apis-for-google-drive-and-google-sheets" class="slide level2 center">
-<h2>Step 1: Get credentials for APIs for Google Drive and Google Sheets</h2>
-
-<img data-src="week1_figs/google_api_serviceaccount.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-2-use-those-credentials-in-python-code-to-pull-the-data" class="slide level2 center">
-<h2>Step 2: Use those credentials in Python code to pull the data</h2>
-
-<img data-src="week1_figs/pull_data.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-3-clean-data-and-view-the-head" class="slide level2 center">
-<h2>Step 3: clean data and view the head</h2>
-
-<img data-src="week1_figs/clean_data.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-4-preprocess-to-visualize-responses-to-policy-question" class="slide level2 center">
-<h2>Step 4: preprocess to visualize responses to policy question</h2>
-
-<img data-src="week1_figs/viz_preprocess.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-5-plotting-code" class="slide level2 center">
-<h2>Step 5: plotting code</h2>
-
-<img data-src="week1_figs/plotting_code.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-6-result" class="slide level2 center">
-<h2>Step 6: result</h2>
-
-<img data-src="week1_figs/ppol5203_policyareas.png" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
-<section id="goals-of-the-course" class="slide level2 center">
-<h2>Goals of the course</h2>
-<p><br></p>
-<p>The goal of this course is to teach you:</p>
+<section id="python-object-oriented-programming-language" class="slide level2 center">
+<h2>Python: Object-Oriented Programming Language</h2>
+<p>In most Python introductions out there, you would start with:</p>
 <ul>
-<li class="fragment"><p><strong>Computational thinking</strong>: how to approach problems and devise solutions from a computational perspective.</p></li>
-<li class="fragment"><p>Get you started on <strong>Python</strong>, introduce some useful tools (scrapping, text analysis and API applications of GenAI models), and bit of <strong>SQL</strong> for applied data science; lay the foundations for the remainder of the core DS sequence</p></li>
-<li class="fragment"><p><strong>Workflows and tools:</strong> Git/GitHub + command line</p></li>
+<li><p>Python as a calculator</p></li>
+<li><p>Data Types in Python</p></li>
+<li><p>Objects</p></li>
 </ul>
-</section></section>
-<section>
-<section id="ppol-5203---data-science-i-foundations" class="title-slide slide level1 center" data-background-color="#447099">
-<h1>PPOL 5203 - Data Science I: Foundations</h1>
-
+<div class="fragment">
+<p><strong>We will take a different route starting with a brief overview of object-oriented programming</strong></p>
+</div>
 </section>
-<section id="course-schedule" class="slide level2 center" style="font-size: .7em;">
-<h2>Course Schedule</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Topic</th>
-<th>Date</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Week 01</td>
-<td>Introduction, Installations, IDEs, Command line</td>
-<td>August 27, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 02</td>
-<td>Version Control, Workflow and Reproducibility: Or a bit of Git &amp; GitHub</td>
-<td>September 3, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 03</td>
-<td>Intro to Python - OOP, Data Types, Control Statements and Functions</td>
-<td>September 10, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 04</td>
-<td>Intro to Python II: Scaling up your code - Iteration, Comprehension and Functions</td>
-<td>September 17, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 05</td>
-<td>From Nested lists to Dataframes: Numpy and Intro to Pandas</td>
-<td>September 24, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 06</td>
-<td>Pandas II: Data Wrangling</td>
-<td>October 1, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 07</td>
-<td>Joining, Tidying and Visualizing Data</td>
-<td>October 8, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 08</td>
-<td>Scraping + APIs</td>
-<td>October 15, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 09</td>
-<td>Statistical Learning</td>
-<td>October 22, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 10</td>
-<td>Text as Data I: Discovery and Topics</td>
-<td>October 29, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 11</td>
-<td>Text as Data II: Supervised Learning</td>
-<td>November 5, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 12</td>
-<td>Generative AI</td>
-<td>November 12, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 13</td>
-<td>SQL</td>
-<td>November 19, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 14</td>
-<td>Presentations of Final Projects</td>
-<td>December 03, 2026</td>
-</tr>
-</tbody>
-</table>
-</section></section>
-<section>
-<section id="introductions" class="title-slide slide level1 center">
-<h1>Introductions</h1>
-
+<section id="object-oriented-programming-oop-vs-functional-programming-language" class="slide level2 center">
+<h2>Object-oriented programming (OOP) vs Functional Programming Language</h2>
+<ul>
+<li><p><strong>Python</strong> is an object-oriented programming language (OOP).</p>
+<ul>
+<li>Key concept: it uses “objects” that contains data and methods (functions).</li>
+</ul></li>
+<li><p><strong>R</strong> is a functional programming language</p>
+<ul>
+<li>Key concept: treats functions as the first-class citizens, meaning they can be assigned to variables, passed as arguments, and returned by other functions</li>
+</ul></li>
+</ul>
 </section>
 <section id="section" class="slide level2 center">
 <h2></h2>
-<div>
+<h4 id="python-oop">Python OOP</h4>
+<div id="cde1069d" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># call library</span></span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Using a Pandas Series method (OOP)</span></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="co"># create a series object. You use a methods from this object to take the mean</span></span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>s.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<h4 id="r-functional-programming-in-practice">R Functional Programming in Practice</h4>
+<div id="bb0b6af3" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>vec <span class="op">&lt;-</span> c(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>mean(vec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Objects are the core of Python.</li>
+<li>From the objects, you will access functions that will make Python work.</li>
+<li>You can also access data from object.</li>
+</ul>
+</section>
+<section id="section-1" class="slide level2 center">
+<h2></h2>
+<h3 id="basics-creating-an-object-in-python.">Basics: Creating an object in Python.</h3>
+<p><code>=</code> is the assignment operator in Python. (Different from the <code>&lt;-</code> in R)</p>
+<div id="7dcf0837" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="what-happens-upon-assignment" class="slide level2 center">
+<h2>What happens upon assignment?</h2>
 <div class="fragment">
-<p><strong>Professor Rebecca Johnson</strong></p>
-<ul>
-<li>Assistant Professor at McCourt School.</li>
-<li>Demography, Sociology, and Social Policy PhD</li>
-<li>Previously an Assistant Professor at Dartmouth College, teaching in their major in Quantitative Social Science</li>
-</ul>
+<p><strong>Action 1:</strong> A reference is assigned to an object, with an id number in memory</p>
+<div id="b90fe08b" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">id</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>140588238432656</code></pre>
 </div>
-<div class="fragment">
-<p><strong>My Research: How social service agencies use a mix of data and discretion to allocate scarce resources:</strong></p>
-<ul>
-<li>Ranking of categories (e.g., disability; veteran) on waitlists for housing vouchers</li>
-<li>Parent perceptions of the fairness of using predictive modeling to determine which students need help most urgently versus older methods (e.g., income thresholds; counselor discretion)</li>
-<li>Database of K-12 school board meetings</li>
-</ul>
 </div>
 </div>
 </section>
-<section id="ta" class="slide level2 center">
-<h2>TA</h2>
-<p>DSPP Alum Rebecca Wagner. Will share details on background and office hours in the coming days!</p>
+<section id="section-2" class="slide level2 center">
+<h2></h2>
+<p><strong>Action 2</strong> An object type (class) is defined at run time</p>
+<div id="18141bf2" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>int</code></pre>
+</div>
+</div>
 </section>
-<section id="your-turn" class="slide level2 center">
-<h2>Your turn!</h2>
-<ul>
-<li class="fragment"><p>Name</p></li>
-<li class="fragment"><p>(Briefly) what you were up to prior to the DSPP</p></li>
-<li class="fragment"><p>If you could have any data source at your disposal, what would it be?</p></li>
-</ul>
+<section id="section-3" class="slide level2 center">
+<h2></h2>
+<p><strong>Action 3:</strong> Object’s class is instantiated upon assignment. An object is an <strong>instance</strong> of a particular class.</p>
+<div id="51e65ea5" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># what is the class?</span></span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>int</code></pre>
+</div>
+</div>
+<div id="8d532036" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Access methods (behaviors) using .</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>x.bit_length()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>3</code></pre>
+</div>
+</div>
+<div id="a632fa09" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># see all methods</span></span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>['__abs__',
+ '__add__',
+ '__and__',
+ '__bool__',
+ '__ceil__',
+ '__class__',
+ '__delattr__',
+ '__dir__',
+ '__divmod__',
+ '__doc__',
+ '__eq__',
+ '__float__',
+ '__floor__',
+ '__floordiv__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__getnewargs__',
+ '__gt__',
+ '__hash__',
+ '__index__',
+ '__init__',
+ '__init_subclass__',
+ '__int__',
+ '__invert__',
+ '__le__',
+ '__lshift__',
+ '__lt__',
+ '__mod__',
+ '__mul__',
+ '__ne__',
+ '__neg__',
+ '__new__',
+ '__or__',
+ '__pos__',
+ '__pow__',
+ '__radd__',
+ '__rand__',
+ '__rdivmod__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__rfloordiv__',
+ '__rlshift__',
+ '__rmod__',
+ '__rmul__',
+ '__ror__',
+ '__round__',
+ '__rpow__',
+ '__rrshift__',
+ '__rshift__',
+ '__rsub__',
+ '__rtruediv__',
+ '__rxor__',
+ '__setattr__',
+ '__sizeof__',
+ '__str__',
+ '__sub__',
+ '__subclasshook__',
+ '__truediv__',
+ '__trunc__',
+ '__xor__',
+ 'as_integer_ratio',
+ 'bit_length',
+ 'conjugate',
+ 'denominator',
+ 'from_bytes',
+ 'imag',
+ 'numerator',
+ 'real',
+ 'to_bytes']</code></pre>
+</div>
+</div>
 </section>
-<section id="logistics" class="slide level2 center">
-<h2>Logistics</h2>
+<section id="object-oriented-programming-what-are-these-classes" class="slide level2 center">
+<h2>Object-Oriented Programming: What are these classes?</h2>
 <div>
 <ul>
-<li class="fragment"><p><strong>Communication</strong>: via slack. Join the <a href="https://compethicslawlabgu.slack.com/archives/C0BRR7LGB8U">workspace!</a></p></li>
-<li class="fragment"><p><strong>All materials</strong>: hosted on the class website: <a href="https://rebeccajohnson88.github.io/PPOL5203_fall2026/" class="uri">https://rebeccajohnson88.github.io/PPOL5203_fall2026/</a></p></li>
-<li class="fragment"><p><strong>Syllabus</strong>: also on the website.</p></li>
-<li class="fragment"><p><strong>My Office Hours</strong>: Wednesdays 11:30AM-1:30PM. Sign up on Calendly</p></li>
-<li class="fragment"><p><strong>Canvas</strong>: Only for official communication! Materials will be hosted in the website</p></li>
-<li class="fragment"><p><strong>Datacamp</strong>: Additional exercises (not graded unless we explicitly include as part of a problem set). Access our free account <a href="https://www.datacamp.com/groups/shared_links/63a4d32b3c706ed0a6fdb79245c95f84c9487b004a29163f4cc34e8331c3eec9">here</a></p></li>
-<li class="fragment"><p><strong>Task:</strong> go on slack and send me a message about the data source you choose in the last answer, and if you feel comfortable add a picture to your profile</p></li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_9f32d700" minutes="5" seconds="0" update-every="1" tabindex="0" style="top:0;right:0;--countdown-font-size:2em;"></countdown-timer>
-</div>
-</div>
-</div>
-</section>
-<section id="evaluation" class="slide level2 center">
-<h2>Evaluation</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><strong>Assignment</strong></th>
-<th style="text-align: center;"><strong>Percentage of Grade</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Participation/Attendance</td>
-<td style="text-align: center;">5%</td>
-</tr>
-<tr class="even">
-<td>Coding Discussion</td>
-<td style="text-align: center;">5%</td>
-</tr>
-<tr class="odd">
-<td>Problem Sets</td>
-<td style="text-align: center;">35%</td>
-</tr>
-<tr class="even">
-<td>In-class Python Exam</td>
-<td style="text-align: center;">15%</td>
-</tr>
-<tr class="odd">
-<td>Final Project</td>
-<td style="text-align: center;">40%</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="problem-sets" class="slide level2 center">
-<h2>Problem Sets</h2>
-<p>Individual submission through GitHub.</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Assignment</th>
-<th style="text-align: center;">Date Assigned</th>
-<th style="text-align: center;">Date Due</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">No.&nbsp;1</td>
-<td style="text-align: center;">Week 2</td>
-<td style="text-align: center;">Before EOD of Friday of Week 3</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">No.&nbsp;2</td>
-<td style="text-align: center;">Week 4</td>
-<td style="text-align: center;">Before EOD of Friday of Week 5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">No.&nbsp;3</td>
-<td style="text-align: center;">Week 6</td>
-<td style="text-align: center;">Before EOD of Friday of Week 7</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">No.&nbsp;4</td>
-<td style="text-align: center;">week 8</td>
-<td style="text-align: center;">Before EOD of Friday of Week 9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">No.&nbsp;5</td>
-<td style="text-align: center;">November 10</td>
-<td style="text-align: center;">Before EOD of Friday of Week 111</td>
-</tr>
-</tbody>
-</table>
-</section></section>
-<section>
-<section id="eod-1159pm" class="title-slide slide level1 center">
-<h1><span class="red">EOD = 11:59pm!</span></h1>
-
-</section>
-<section id="final-project" class="slide level2 center">
-<h2>Final Project</h2>
+<li class="fragment"><p><strong>Instantiation:</strong> When we create a object, we are creating an instance of this class.</p></li>
+<li class="fragment"><p><strong>Inheritance:</strong> Every time we create an object, the objects inherits a class.</p>
 <ul>
-<li class="fragment"><p>You will work on in <strong>groups!</strong></p></li>
-<li class="fragment"><p>The project is composed of three parts:</p>
-<ul>
-<li class="fragment">a 2 page project proposal: (which should be discussed and approved by me)</li>
-<li class="fragment">an in-class presentation,</li>
-<li class="fragment">A 10-page project report.</li>
+<li class="fragment"><p><strong>A class</strong> is a blueprint holding of the properties of a particular data structure.</p></li>
+<li class="fragment"><p><strong>An instance</strong> is a realization of a particular class. This instance inherits the characteristics of its class.</p></li>
 </ul></li>
+<li class="fragment"><p><strong>Components:</strong> Classes have two major components:</p>
+<ul>
+<li class="fragment"><p><strong>Attributes:</strong> these are constant features, data, a characteristic of the broader class. For instance, many objects have some sort of length attribute.</p></li>
+<li class="fragment"><p><strong>Methods:</strong> these are actions, behaviors of this class. For instance, you might havea mean or median method you can apply to an object.</p></li>
+</ul></li>
+<li class="fragment"><p><strong>Polymorphism:</strong> Both attributes and methods are accessed through <code>.</code> function, conditional on the class</p></li>
+</ul>
+</div>
+</section>
+<section id="section-4" class="slide level2 center">
+<h2></h2>
+<h3 id="create-a-class">Create a Class</h3>
+<div id="5be23de7" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Example():</span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span> (<span class="va">self</span>, name):</span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> hello(<span class="va">self</span>):</span>
+<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Hi, I am '</span> <span class="op">+</span> <span class="va">self</span>.name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-5" class="slide level2 center">
+<h2></h2>
+<h3 id="instantiate">Instantiate</h3>
+<div id="668648f2" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Instatiate</span></span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>me <span class="op">=</span> Example(name<span class="op">=</span><span class="st">"Rebecca"</span>)</span>
+<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(me)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>__main__.Example</code></pre>
+</div>
+</div>
+</section>
+<section id="section-6" class="slide level2 center">
+<h2></h2>
+<h3 id="attributes">Attributes</h3>
+<div id="1f3e2d4f" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>me.name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>'Rebecca'</code></pre>
+</div>
+</div>
+</section>
+<section id="section-7" class="slide level2 center">
+<h2></h2>
+<h3 id="method">method</h3>
+<div id="798acce2" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>me.hello() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hi, I am Rebecca</code></pre>
+</div>
+</div>
+</section></section>
+<section id="r-fontawesomefalaptop-code-coding" class="title-slide slide level1 center">
+<h1><code>r fontawesome::fa("laptop-code")</code> Coding</h1>
+
+</section>
+
+<section>
+<section id="data-types" class="title-slide slide level1 center">
+<h1>Data types</h1>
+
+</section>
+<section id="data-type" class="slide level2 center">
+<h2>Data Type</h2>
+<p>Python comes with a number of built-in data types. Two major data type groups in Python:</p>
+<ul>
+<li><p><strong>Scalar types</strong>: hold one piece of information, like a digit.</p></li>
+<li><p><strong>Collection types</strong>: hold multiple pieces of information</p></li>
+</ul>
+<p>There are two ways of instantiating a data class in Python:</p>
+<ul>
+<li><p><strong>Literals:</strong> syntactic representation in Python, e.g.&nbsp;[]</p></li>
+<li><p><strong>Constructors:</strong> class constructors, e.g.&nbsp;list()</p></li>
 </ul>
 </section>
-<section id="due-dates-and-points" class="slide level2 center">
-<h2>Due dates and Points:</h2>
+<section id="scalar" class="slide level2 center">
+<h2>Scalar</h2>
 <table class="caption-top">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 23%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
 <thead>
 <tr class="header">
-<th><strong>Requirement</strong></th>
-<th><strong>Due</strong></th>
-<th><strong>Length</strong></th>
-<th><strong>Percentage</strong></th>
+<th style="text-align: center;"><em>Type</em></th>
+<th style="text-align: left;"><em>Description</em></th>
+<th style="text-align: center;"><em>Example</em></th>
+<th style="text-align: center;"><em>Literal</em></th>
+<th style="text-align: center;"><em>Constructor</em></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Project Proposal</td>
-<td>October 31</td>
-<td>2 pages</td>
-<td>5%</td>
+<td style="text-align: center;"><code>int</code></td>
+<td style="text-align: left;">integer types</td>
+<td style="text-align: center;"><code>4</code></td>
+<td style="text-align: center;"><code>x = 4</code></td>
+<td style="text-align: center;"><code>int(4)</code></td>
 </tr>
 <tr class="even">
-<td>Presentation</td>
-<td>December 09</td>
-<td>10-15 minutes</td>
-<td>10%</td>
+<td style="text-align: center;"><code>float</code></td>
+<td style="text-align: left;">64-bit floating point numbers</td>
+<td style="text-align: center;"><code>4.567</code></td>
+<td style="text-align: center;"><code>x = 4.567</code></td>
+<td style="text-align: center;"><code>float(4.567)</code></td>
 </tr>
 <tr class="odd">
-<td>Project Report</td>
-<td>December 16</td>
-<td>10 pages</td>
-<td>25%</td>
+<td style="text-align: center;"><code>bool</code></td>
+<td style="text-align: left;">boolean logical values</td>
+<td style="text-align: center;"><code>True</code></td>
+<td style="text-align: center;"><code>x = True</code></td>
+<td style="text-align: center;"><code>bool(1)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>None</code></td>
+<td style="text-align: left;">null object (serves as a valuable place holder)</td>
+<td style="text-align: center;"><code>None</code></td>
+<td style="text-align: center;"><code>x = None</code></td>
+<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="genai" class="slide level2 center">
-<h2>GenAI</h2>
-<p>You are allowed to use GenAI as you would use google in this class. This means:</p>
-<ul>
-<li class="fragment"><p>Do not copy the responses from GenAI Chatbots – a lot of them are wrong or will just not run on your computer</p></li>
-<li class="fragment"><p>Use GenAI Chatbots as a auxiliary source.</p></li>
-<li class="fragment"><p>If your entire homework comes straight from GenAI Chatbots, I will consider it plagiarism.</p></li>
-<li class="fragment"><p>If you use GenAI Chatbots, I ask you to mention on your code how chatgpt worked for you.</p></li>
-<li class="fragment"><p>I will be transparent about my own use of GenAI (e.g.&nbsp;to aid in grading)</p></li>
-</ul>
-</section>
-<section id="in-class-python-exam" class="slide level2 center">
-<h2>In-class Python Exam</h2>
-<p>This will take place after the Python content (after week 11). This will be a short exam, either using pen or paper or on a computer without accessing LLMs. It will be easy to complete if you have engaged with the content.</p>
+<section id="collectors" class="slide level2 smaller center">
+<h2>Collectors</h2>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><em>Type</em></th>
+<th style="text-align: left;"><em>Description</em></th>
+<th style="text-align: center;"><em>Example</em></th>
+<th style="text-align: center;"><em>Mutable</em></th>
+<th style="text-align: center;"><em>Literal</em></th>
+<th style="text-align: center;"><em>Constructor</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>list</code></td>
+<td style="text-align: left;">heterogeneous sequences of objects</td>
+<td style="text-align: center;"><code>[1,"2",True]</code></td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;"><code>x = ["c","a","t"]</code></td>
+<td style="text-align: center;"><code>x = list("cat")</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>str</code></td>
+<td style="text-align: left;">sequences of characters</td>
+<td style="text-align: center;"><code>"A word"</code></td>
+<td style="text-align: center;">✘</td>
+<td style="text-align: center;"><code>x = "12345"</code></td>
+<td style="text-align: center;"><code>x = str(12345)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>tuples</code></td>
+<td style="text-align: left;">heterogeneous sequence of objects</td>
+<td style="text-align: center;"><code>(1,2)</code></td>
+<td style="text-align: center;">✘</td>
+<td style="text-align: center;"><code>x = (1,2)</code></td>
+<td style="text-align: center;"><code>x = tuple([1,2])</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>sets</code></td>
+<td style="text-align: left;">unordered collection of <em>distinct</em> objects</td>
+<td style="text-align: center;"><code>{1,2}</code></td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;"><code>x = {1,2}</code></td>
+<td style="text-align: center;"><code>x = set([1,2])</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>dicts</code></td>
+<td style="text-align: left;">associative array of key/value mappings</td>
+<td style="text-align: center;"><code>{"a": 1}</code></td>
+<td style="text-align: center;">keys ✘<br>values ✓</td>
+<td style="text-align: center;"><code>x = {'a':1}</code></td>
+<td style="text-align: center;"><code>x = dict(a = 1)</code></td>
+</tr>
+</tbody>
+</table>
 </section></section>
 <section>
-<section id="survey-results" class="title-slide slide level1 center">
-<h1><svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Survey Results</h1>
+<section id="r-fontawesomefalaptop-code-coding-1" class="title-slide slide level1 center">
+<h1><code>r fontawesome::fa("laptop-code")</code> Coding</h1>
 
 </section>
-<section id="summary-of-the-survey" class="slide level2 center">
-<h2>Summary of the survey</h2>
-<ul>
-<li class="fragment"><p>About half of you have <strong>some</strong> experience with Python.</p></li>
-<li class="fragment"><p>Less exposure to SQL</p></li>
-</ul>
-</section>
-<section id="open-ended" class="slide level2 center">
-<h2>Open Ended</h2>
-<p>Some of you are slightly anxious about Python and the pace of the class</p>
+<section id="key-concepts" class="slide level2 center">
+<h2>Key concepts</h2>
 <div>
 <ul>
-<li class="fragment"><p>The goal of the class is to bring everyone up to the same level of working Python proficiency</p></li>
-<li class="fragment"><p>That means some content will be review for some of you and I appreciate you helping out your classmates</p></li>
-<li class="fragment"><p><strong>Our approach</strong>: We will start slow and build up from Python fundamentals – so learning about the building blocks of dataframes before we actually work with data</p></li>
+<li class="fragment"><p>Why, different from R, I should use <class>.<method> to run specific functions, instead of just running the functions on a object <code>function(obj)</code>?</method></class></p></li>
+<li class="fragment"><p>Tuples and Lists are pretty much the same. But tuples are more computationally efficient (storage and speed in accessing it) than lists. Why do you think this is the case?</p></li>
+<li class="fragment"><p>Assume I have this dictionary <code>my_dict = {'a': 4, 'b': 7, 'c': 9.2}</code>. If I tried to access the first element of the dictionary with <code>my_dict[0]</code>, Python will throw me an error. Why?</p></li>
 </ul>
 </div>
 </section></section>
-<section>
-<section id="transition-setting-up-course-tools" class="title-slide slide level1 center">
-<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 96c0-35.3 28.7-64 64-64H512c35.3 0 64 28.7 64 64V352H512V96H128V352H64V96zM0 403.2C0 392.6 8.6 384 19.2 384H620.8c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8H76.8C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"></path></svg> Transition: Setting up Course Tools!</h1>
-
-</section>
-<section id="set-up-your-course-infrastructure" class="slide level2 center">
-<h2>Set up your course infrastructure</h2>
-<p><a href="https://rebeccajohnson88.github.io/PPOL5203_fall2026/course_infrastructure.html">See Course Website</a></p>
-<ul>
-<li class="fragment"><p>Install Python and Jupyter (recommend bundling together by installing Anaconda distribution)</p></li>
-<li class="fragment"><p>Install Jupyter</p></li>
-<li class="fragment"><p>Setup your Git/GitHub account and add your username <a href="https://docs.google.com/spreadsheets/d/1vMIFgJej0SAY8_BfCmaXcAGl_pgZcAJehhV9WdPHWas/edit?usp=sharing">to this sheet</a> - will also distribute the sheet via Canvas</p></li>
-</ul>
-</section>
-<section id="jupyter" class="slide level2 center">
-<h2>Jupyter:</h2>
-<p><a href="https://rebeccajohnson88.github.io/PPOL5203_fall2026/lecture_notes/week-1/_using_jupyter_notebooks.html">Jupyter Notebook Tutorial in the Class Website</a></p>
-<p><strong>Note on my approach on Notebooks:</strong> I will go over quite quickly through the notebooks. You should run them by yourselves at a later point!</p>
-</section>
-<section id="command-line" class="slide level2 center">
-<h2>Command Line</h2>
-<p><a href="https://rebeccajohnson88.github.io/PPOL5203_fall2026/lecture_notes/week-1/_basics_of_cmd.html">Command Line Tutorial in the Class Website</a></p>
-</section>
-<section id="datacamp-course" class="slide level2 center">
-<h2>Datacamp Course</h2>
-<ul>
-<li class="fragment">Join our team</li>
-<li class="fragment">Manipulating files and directories in <a href="https://app.datacamp.com/learn/courses/introduction-to-shell">Introduction to Shell</a></li>
-</ul>
-</section>
-<section id="additional-materials-quarto" class="slide level2 center">
-<h2>Additional Materials: Quarto</h2>
-<p>Totally optional to use!</p>
-<p><a href="https://rebeccajohnson88.github.io/PPOL5203_fall2026/lecture_notes/week-1/intro_to_quarto.html">Quarto tutorial on class website</a></p>
-</section></section>
-<section id="see-you-next-week" class="title-slide slide level1 center">
-<h1>See you next week!</h1>
+<section id="in-class-activity" class="title-slide slide level1 center">
+<h1>In-class Activity</h1>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -1017,7 +1023,7 @@
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1300,
+        width: 1600,
 
         height: 900,
 
@@ -1051,44 +1057,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
