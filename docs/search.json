@@ -38,7 +38,7 @@
     "href": "slides/week-3.html#problem-set-1-activity-1",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Problem Set 1 Activity",
-    "text": "Problem Set 1 Activity\n\nNavigate to the cloned repo for problem set 1. This will be named something like ppol-5203-fall-2026-problem-set-1-yourgithubusername\nIf you haven’t already, use mkdir to create a folder in the repo called: question-01\nUse the following steps to push your changes to your repo (if you’ve already pushed no need to redo):\n\n\ngit add question-01/\ngit commit -m \"pushing the q1 directory\"\ngit push \n\nNote: this will be where you make the files / directories we ask you to make for Question 1."
+    "text": "Problem Set 1 Activity\n\nNavigate to the cloned repo for problem set 1. This will be named something like ppol-5203-fall-2026-problem-set-1-yourgithubusername\nIf you haven’t already, use mkdir to create a folder in the repo called: question-01\nUse touch (Mac), New-Item (powershell), or another command to make a filed in the question-01 directory called main.py\nUse the following steps to push your changes to your repo (if you’ve already pushed no need to redo):\n\n\ngit add question-01/\ngit commit -m \"pushing the q1 directory\"\ngit push \n\nNote: this will be where you make the files / directories we ask you to make for Question 1."
   },
   {
     "objectID": "slides/week-3.html#am-i-able-to-see-your-changes",
@@ -46,6 +46,13 @@
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Am I able to see your changes?",
     "text": "Am I able to see your changes?\nDuring our break/after class, I’ll fill out the “PS1 check” column on this GitHub usernames sheet: usernames"
+  },
+  {
+    "objectID": "slides/week-3.html#prep-for-me-deleting-classroom-50-activities-repo",
+    "href": "slides/week-3.html#prep-for-me-deleting-classroom-50-activities-repo",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Prep for me deleting Classroom 50 activities repo",
+    "text": "Prep for me deleting Classroom 50 activities repo\n\nAfter class, I’ll be deleting the public repos called ppol-5203-fall-2026-week-2-in-class-activity-yourusername from our organization so that you/we have a more streamlined set of repos to view\nIf you have content in there you want to preserve, move it to your personal ppol5203_f26_myactivities repo"
   },
   {
     "objectID": "slides/week-3.html#python-object-oriented-programming-language",
@@ -80,7 +87,7 @@
     "href": "slides/week-3.html#what-happens-upon-assignment",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "What happens upon assignment?",
-    "text": "What happens upon assignment?\n\nAction 1: A reference is assigned to an object, with an id number in memory\n\nid(x)\n\n140601123334544"
+    "text": "What happens upon assignment?\n\nAction 1: A reference is assigned to an object, with an id number in memory\n\nid(x)\n\n140635080419728"
   },
   {
     "objectID": "slides/week-3.html#section-2",
@@ -151,13 +158,6 @@
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Collectors",
     "text": "Collectors\n\n\n\n\n\n\n\n\n\n\n\nType\nDescription\nExample\nMutable\nLiteral\nConstructor\n\n\n\n\nlist\nheterogeneous sequences of objects\n[1,\"2\",True]\n✓\nx = [\"c\",\"a\",\"t\"]\nx = list(\"cat\")\n\n\nstr\nsequences of characters\n\"A word\"\n✘\nx = \"12345\"\nx = str(12345)\n\n\ntuples\nheterogeneous sequence of objects\n(1,2)\n✘\nx = (1,2)\nx = tuple([1,2])\n\n\nsets\nunordered collection of distinct objects\n{1,2}\n✓\nx = {1,2}\nx = set([1,2])\n\n\ndicts\nassociative array of key/value mappings\n{\"a\": 1}\nkeys ✘values ✓\nx = {'a':1}\nx = dict(a = 1)"
-  },
-  {
-    "objectID": "slides/week-3.html#key-concepts",
-    "href": "slides/week-3.html#key-concepts",
-    "title": " PPOL 5203 - Data Science I: Foundations ",
-    "section": "Key concepts",
-    "text": "Key concepts\n\n\nWhy, different from R, I should use . to run specific functions, instead of just running the functions on a object function(obj)?\nTuples and Lists are pretty much the same. But tuples are more computationally efficient (storage and speed in accessing it) than lists. Why do you think this is the case?\nAssume I have this dictionary my_dict = {'a': 4, 'b': 7, 'c': 9.2}. If I tried to access the first element of the dictionary with my_dict[0], Python will throw me an error. Why?"
   },
   {
     "objectID": "index.html",

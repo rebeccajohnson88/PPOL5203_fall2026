@@ -43,6 +43,8 @@ jupyter: python3
 
 - If you haven't already, use `mkdir` to create a folder in the repo called: `question-01`
 
+- Use `touch` (Mac), `New-Item` (powershell), or another command to make a filed in the `question-01` directory called `main.py`
+
 - Use the following steps to push your changes to your repo (if you've already pushed no need to redo):
 
 
@@ -59,6 +61,13 @@ git push
 ## Am I able to see your changes?
 
 During our break/after class, I'll fill out the "PS1 check" column on this GitHub usernames sheet: [usernames](https://docs.google.com/spreadsheets/d/1vMIFgJej0SAY8_BfCmaXcAGl_pgZcAJehhV9WdPHWas/edit?usp=sharing)
+
+## Prep for me deleting Classroom 50 activities repo
+
+- After class, I'll be deleting the public repos called `ppol-5203-fall-2026-week-2-in-class-activity-yourusername` from our organization so that you/we have a more streamlined set of repos to view 
+
+- If you have content in there you want to preserve, move it to your personal `ppol5203_f26_myactivities` repo 
+
 
 # Introduction to Python {background-color="#447099"}
 
@@ -261,17 +270,7 @@ There are two ways of instantiating a data class in Python:
 | `sets` | unordered collection of *distinct* objects | `{1,2}` | ✓ | `x = {1,2}` | `x = set([1,2])` |
 | `dicts` | associative array of key/value mappings | `{"a": 1}` | keys ✘<br>values ✓ | `x = {'a':1}` | `x = dict(a = 1)` |
 
-# {{< fa laptop-code >}} Coding
 
-## Key concepts
-
-::: incremental
--   Why, different from R, I should use <class>.<method> to run specific functions, instead of just running the functions on a object `function(obj)`?
-
--   Tuples and Lists are pretty much the same. But tuples are more computationally efficient (storage and speed in accessing it) than lists. Why do you think this is the case?
-
--   Assume I have this dictionary `my_dict = {'a': 4, 'b': 7, 'c': 9.2}`. If I tried to access the first element of the dictionary with `my_dict[0]`, Python will throw me an error. Why?
-:::
 
 # In-class Activity
 
