@@ -87,7 +87,7 @@
     "href": "slides/week-3.html#what-happens-upon-assignment",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "What happens upon assignment?",
-    "text": "What happens upon assignment?\n\nAction 1: A reference is assigned to an object, with an id number in memory\n\nid(x)\n\n140271216159120"
+    "text": "What happens upon assignment?\n\nAction 1: A reference is assigned to an object, with an id number in memory\n\nid(x)\n\n140488246225296"
   },
   {
     "objectID": "slides/week-3.html#section-2",
@@ -108,7 +108,7 @@
     "href": "slides/week-3.html#object-oriented-programming-what-are-these-classes",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Object-Oriented Programming: What are these classes?",
-    "text": "Object-Oriented Programming: What are these classes?\n\n\nInstantiation: When we create a object, we are creating an instance of this class.\nInheritance: Every time we create an object, the objects inherits a class.\n\nA class is a blueprint holding of the properties of a particular data structure.\nAn instance is a realization of a particular class. This instance inherits the characteristics of its class.\n\nComponents: Classes have two major components:\n\nAttributes: these are constant features, data, a characteristic of the broader class. For instance, many objects have some sort of length attribute.\nMethods: these are actions, behaviors of this class. For instance, you might havea mean or median method you can apply to an object.\n\nPolymorphism: Both attributes and methods are accessed through . function, conditional on the class"
+    "text": "Object-Oriented Programming: What are these classes?\n\n\nInstantiation: When we create a object, we are creating an instance of this class.\nInheritance: Every time we create an object, the objects inherits a class.\n\nA class is a blueprint holding of the properties of a particular data structure.\nAn instance is a realization of a particular class. This instance inherits the characteristics of its class.\n\nComponents: Classes have two major components:\n\nAttributes: these are constant features, data, a characteristic of the broader class. For instance, many objects have some sort of length attribute.\nMethods: these are actions, behaviors of this class. For instance, you might have a mean or median method you can apply to an object.\n\nPolymorphism: Both attributes and methods are accessed through . function, conditional on the class"
   },
   {
     "objectID": "slides/week-3.html#section-4",
@@ -158,6 +158,41 @@
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Collectors",
     "text": "Collectors\n\n\n\n\n\n\n\n\n\n\n\nType\nDescription\nExample\nMutable\nLiteral\nConstructor\n\n\n\n\nlist\nheterogeneous sequences of objects\n[1,\"2\",True]\n✓\nx = [\"c\",\"a\",\"t\"]\nx = list(\"cat\")\n\n\nstr\nsequences of characters\n\"A word\"\n✘\nx = \"12345\"\nx = str(12345)\n\n\ntuples\nheterogeneous sequence of objects\n(1,2)\n✘\nx = (1,2)\nx = tuple([1,2])\n\n\nsets\nunordered collection of distinct objects\n{1,2}\n✓\nx = {1,2}\nx = set([1,2])\n\n\ndicts\nassociative array of key/value mappings\n{\"a\": 1}\nkeys ✘values ✓\nx = {'a':1}\nx = dict(a = 1)"
+  },
+  {
+    "objectID": "slides/week-3.html#where-to-download",
+    "href": "slides/week-3.html#where-to-download",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Where to download",
+    "text": "Where to download\n\nOn this week page\nWe’ll pause after each activity and go over solutions"
+  },
+  {
+    "objectID": "slides/week-3.html#activity-1",
+    "href": "slides/week-3.html#activity-1",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Activity 1",
+    "text": "Activity 1"
+  },
+  {
+    "objectID": "slides/week-3.html#activity-2",
+    "href": "slides/week-3.html#activity-2",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Activity 2",
+    "text": "Activity 2"
+  },
+  {
+    "objectID": "slides/week-3.html#activity-3",
+    "href": "slides/week-3.html#activity-3",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Activity 3",
+    "text": "Activity 3"
+  },
+  {
+    "objectID": "slides/week-3.html#activity-4",
+    "href": "slides/week-3.html#activity-4",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Activity 4",
+    "text": "Activity 4"
   },
   {
     "objectID": "index.html",
@@ -243,6 +278,50 @@
     "crumbs": [
       "Materials",
       "Week 2: Git and GitHub"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html",
+    "href": "weeks/week-03.html",
+    "title": "Week 03",
+    "section": "",
+    "text": "Week 3 - Intro to Python",
+    "crumbs": [
+      "Materials",
+      "Week 3: Intro to Python"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#slides",
+    "href": "weeks/week-03.html#slides",
+    "title": "Week 03",
+    "section": "",
+    "text": "Week 3 - Intro to Python",
+    "crumbs": [
+      "Materials",
+      "Week 3: Intro to Python"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#in-class-exercise",
+    "href": "weeks/week-03.html#in-class-exercise",
+    "title": "Week 03",
+    "section": "In-Class Exercise",
+    "text": "In-Class Exercise\n\nBlank activity (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html to view): html",
+    "crumbs": [
+      "Materials",
+      "Week 3: Intro to Python"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#optional-readings",
+    "href": "weeks/week-03.html#optional-readings",
+    "title": "Week 03",
+    "section": "Optional Readings",
+    "text": "Optional Readings\nFrom Wes McKinney, Python for Data Analysis\n\nChapter 2: Python Language Basics, IPython, and Jupyter Notebooks\n\nFrom Data Carpentry:\n\nPython Fundamentals\nStoring Multiple Values in Lists",
+    "crumbs": [
+      "Materials",
+      "Week 3: Intro to Python"
     ]
   },
   {

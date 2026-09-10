@@ -28,6 +28,8 @@ website:
             text: "Week 1: Intro to Course and Tools"
           - href: weeks/week-02.qmd
             text: "Week 2: Git and GitHub"
+          - href: weeks/week-03.qmd
+            text: "Week 3: Intro to Python"
 
 format:
   html:

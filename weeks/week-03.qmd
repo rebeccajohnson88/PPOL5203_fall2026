@@ -1,0 +1,59 @@
+---
+title: "Week 03"
+subtitle: "Intro to Python"
+description: ""
+author: "Rebecca A. Johnson"
+date: "09/10/2026"
+#listing:
+  # - id: slides
+  #   contents:
+  #     - ../slides/week-01/*.qmd
+  #   type: table
+  #   fields: [title, date]
+  #   date-format: "ddd, MMM DD"
+  #   field-display-names:
+  #     title: "Topic"
+  #     date: "Date"
+  #   sort: [filename]
+  #   sort-ui: false
+  #   filter-ui: false
+  # - id: assignments
+  #   contents:
+  #     - ../hw/w1-*.qmd
+  #     - ../labs/w1-*.qmd
+  #   type: table
+  #   fields: [categories, title, date]
+  #   date-format: "ddd, MMM DD"
+  #   field-display-names:
+  #     categories: "Assignment"
+  #     title: "Title"
+  #     date: "Due"
+  #   sort: [date]
+  #   sort-ui: false
+  #   filter-ui: false
+tbl-colwidths: [10,50,40]
+---
+
+
+## Slides
+
+[Week 3 - Intro to Python](/slides/week-3.qmd)
+
+## In-Class Exercise
+
+- Blank activity (ipynb file to download): <a href="/activities/_week3_activity.ipynb" download> .ipynb file </a>
+- Activity solutions (ipynb file to download): <a href="/activities/_week3_activity_solutions.ipynb" download> .ipynb file </a>
+- Activity solutions (html to view): [html](/activities/week3_activity_solutions.html)
+
+
+## Optional Readings
+
+From Wes McKinney, Python for Data Analysis
+
+-   [Chapter 2: Python Language Basics, IPython, and Jupyter Notebooks](https://wesmckinney.com/book/python-basics.html)
+
+From Data Carpentry:
+
+-   [Python Fundamentals](https://swcarpentry.github.io/python-novice-inflammation/01-intro.html)
+
+-   [Storing Multiple Values in Lists](https://swcarpentry.github.io/python-novice-inflammation/04-lists.html)

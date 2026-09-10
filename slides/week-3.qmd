@@ -190,7 +190,7 @@ dir(x)
 
     -   **Attributes:** these are constant features, data, a characteristic of the broader class. For instance, many objects have some sort of length attribute.
 
-    -   **Methods:** these are actions, behaviors of this class. For instance, you might havea  mean or median method you can apply to an object.
+    -   **Methods:** these are actions, behaviors of this class. For instance, you might have a  mean or median method you can apply to an object.
 
 -   **Polymorphism:** Both attributes and methods are accessed through `.` function, conditional on the class
 :::
@@ -233,8 +233,6 @@ me.name
 me.hello() 
 ```
 
-# {{< fa laptop-code >}} Coding
-
 # Data types
 
 ## Data Type
@@ -274,4 +272,26 @@ There are two ways of instantiating a data class in Python:
 
 # In-class Activity
 
-TODO: put activity screenshots here
+## Where to download
+
+- On this [week page](weeks/week-03.qmd)
+- We'll pause after each activity and go over solutions
+
+## Activity 1
+
+![](week3_figs/activity1.png){width="80%" fig-align="center"}
+
+## Activity 2
+
+![](week3_figs/activity2.png){width="80%" fig-align="center"}
+
+## Activity 3 
+
+![](week3_figs/activity3.png){width="80%" fig-align="center"}
+
+## Activity 4
+
+![](week3_figs/activity4.png){width="80%" fig-align="center"}
+
+# See you next week! {background-color="#447099"}
+
