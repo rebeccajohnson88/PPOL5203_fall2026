@@ -274,7 +274,7 @@ There are two ways of instantiating a data class in Python:
 
 ## Where to download
 
-- On this [week page](weeks/week-03.qmd)
+- On this [week page](/weeks/week-03.qmd)
 - We'll pause after each activity and go over solutions
 
 ## Activity 1
