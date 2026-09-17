@@ -255,8 +255,8 @@ while x < 5:
 
 ## Activity: Activity 1 and 2
 
-TODO: insert screenshot
 
+[See notebook here](weeks/week-04.qmd)
 
 
 # User-Defined Functions {background-color="#447099"}
@@ -473,7 +473,7 @@ result
 
 ## Activity: Activity 3 and Activity 4
 
-TODO: add screenshots 
+[See notebook here](weeks/week-04.qmd)
 
 # Generators {background-color="#447099"}
 
@@ -576,6 +576,10 @@ ranked_teams = ["Eagles", "Cowboys", "Commanders", "Giants"]
 for i, team in enumerate(ranked_teams)] 
 
 ```
+
+## Activity: Activity 5
+
+[See notebook here](weeks/week-04.qmd)
 
 
 # See you next week! {background-color="#447099"}
