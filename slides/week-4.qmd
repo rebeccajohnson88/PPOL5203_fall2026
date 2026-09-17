@@ -1,0 +1,582 @@
+---
+title: "<span style = 'font-size: 100%;'> PPOL 5203 - Data Science I: Foundations </span>"
+subtitle: "<span style = 'font-size: 100%;'> Week 4: Intro to Python II: Scaling up your code - Iteration, Comprehension and Functions</span>"
+author: "Professor: Rebecca A. Johnson"
+execute: 
+  echo: true
+  error: true
+format:
+  revealjs: 
+    transition: slide
+    background-transition: fade
+    code-line-numbers: false
+    width: 1600
+    height: 900
+    center: true
+    slide-number: true
+    incremental: false
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    footer: "Data science I: Foundations"
+    theme: [simple, custom.scss]
+jupyter: python3 
+ipynb-shell-interactivity: all
+---
+
+## Plans for today
+
+
+-   Control statements (if, for and while loops)
+
+-   User-defined functions
+
+-   List comprehension
+
+-   Generators 
+
+
+
+
+# Control Statements, Loops and Functions
+
+We will go over some concepts that are very general for any programming language.
+
+::: incremental
+-   **Logical Operators**: to make comparisons
+
+-   **Control statements**: to control the behavior of your code
+
+-   **Iterations**: repeat, repeat, scale-up!
+
+-   **User-Defined Functions**: to make code more flexible, debuggable, and readable.
+:::
+
+## Comparison Operators
+
+| Operator     | Property                |
+|--------------|-------------------------|
+| **`==`**     | (value) equivalence     |
+| **`>`**      | greater than            |
+| **`<`**      | strictly less than      |
+| **`<=`**     | less than or equal      |
+| **`>`**      | strictly greater than   |
+| **`>=`**     | greater than or equal   |
+| **`!=`**     | Not Equals              |
+| **`is`**     | object identity         |
+| **`is not`** | negated object identity |
+| **`in`**     | membership in           |
+| **`not in`** | negated membership in   |
+
+## Implementing comparison operators 
+
+```{python}
+# Comparisons
+x = 7
+y = 6
+
+# simple comparisons
+print(x >= y)
+print(x > y)
+print(x < y)
+print(x <= y)
+
+# "in" for contains
+"d" in ["x","a","v"]
+
+```
+
+## Boolean comparison
+
+Useful for combining multiple logical comparisons 
+
+| Operator | Logical Operation |
+|----------|-------------------|
+| `and`    | Conjunction       |
+| `or`     | Disjunction       |
+| `not`    | Negation          |
+
+```{python}
+# Comparisons
+x = 7
+y = 6
+
+# simple comparisons
+print(x > 5 and y > 5)
+print(x > 5 or y > 5)
+print(x > 10 or y > 10)
+
+```
+
+
+
+## Control Statements
+
+Any programming language needs statements that controls the sequence of execution of a particular piece of code. We will see three main types:
+
+-   if-else statements
+-   for loops
+-   while loops
+
+## Ifelse Statements
+
+**Definition:** Conditional execution.
+
+```         
+
+if <logical statement>:
+ 
+ 
+  ~~~~ CODE ~~~~
+
+
+elif <logical statement>:
+
+
+  ~~~~ CODE ~~~~
+
+
+else:
+
+  ~~~~ CODE ~~~~
+```
+
+## Example: if else 
+
+```{python}
+x = 100
+if x > 10: # state some condition
+    print("High")
+else:
+    print("Low")
+
+
+```
+
+## Example: if, elif, else:
+
+Elif allows us to add more conditions- can be repeated
+
+```{python}
+x = 60
+if x > 80: # state some condition
+  print("High")
+elif x < 80 and x >= 20:
+  print("Medium")
+else:
+  print("Low")
+```
+
+
+
+## For loops
+
+**Definition:** Taking one item at a time from a collection. We start at the beginning of the collection and mover through it until we reach the end.
+
+In python, we can iterate over:
+
+-   Elements in lists
+
+-   Characters in strings
+
+-   Key-value pairs in dictionaries
+
+-   File connections
+
+-   Group pandas dataframe
+
+
+## Example: for loop with a list
+
+```{python}
+# create a list
+my_list = [1, 2, 3, 4, 5]
+
+# iterate with a for loop:
+for m in my_list:
+  print(m)
+  
+```
+
+## Breaking down the syntax
+
+```         
+for <var> in <iterable>:
+    <statement(s)>
+```
+
+-   `<iterable>`: is a collection of objects. This is the container through which our loop is navigating element-wise
+-   `<statement(s)>`: this is the juice. It is a sequence of code that describes what is the action our program wants to repeat for each component of the iterable. Notice, `<statements>` in the loop body are denoted by indentation, as with all Python control structures.
+-   `<var>`: it is a local value for every of the next element in <iterable> each time through the loop. This is named arbitrarily
+
+
+
+## Example: for loop with a string
+
+```{python}
+my_string = "Georgetown"
+
+# iterate
+for letter in my_string:
+    print(letter)
+```
+
+
+## Example: for loop using `range` as an iterator
+
+```{python}
+## creating range from 0 to 9
+for i in range(10):
+    print(i)
+
+```
+
+
+```{python}
+## creating range using length of the list
+for i in range(len(my_list)):
+    print("Position: " + i)
+    print("Element at that position: " + my_list[i])
+```
+
+
+
+## While Loops
+
+-   While loops are all about repetitions. Instead of a sequence, the operation will repeat up according to the conditional statement in the loop.
+
+```{python}
+# while loops
+x = 0
+while x < 5:
+    print("This")
+    x += 1
+```
+
+## Activity: Activity 1 and 2
+
+TODO: insert screenshot
+
+
+
+# User-Defined Functions {background-color="#447099"}
+
+## How do we start coding?
+
+::: incremental
+-   write code sequentially to solve your immediate needs
+
+-   reuse this code for similar tasks.
+
+-   Have very long and repetitive codes
+:::
+
+## Problems with this approach
+
+::: incremental
+-   Lack of general utility.
+-   Need to edit/copy/paste your code every time you want to **reuse it.**
+-   Need to re-write the code when you need to make small extension
+-   Likely to raise errors
+:::
+
+## Functions
+
+```{python}
+#| eval: false
+def square(x):
+  '''
+  Takes the square of a number
+  input: int object
+  output: int object
+  '''
+  y = x*x
+  return y
+```
+
+<br>
+
+The code block above has the following elements:
+
+-   [def](): keyword for generating a function
+
+-   [docstring](): to explain your function
+
+-   [arguments](): things we want to feed into the function and do something to.
+
+-   [return](): keyword for returning a specific value from a function
+
+## Comparing Python and R
+
+```{python}
+#| eval: false
+def square(x):
+  '''
+  Takes the square of a number
+  input: int object
+  output: int object
+  '''
+  y = x*x
+  return y
+```
+
+<br>
+
+```{r}
+#| eval: false
+square <- function(x){
+#  Takes the square of a number
+#  input: int object
+#  output: int object
+y = x*x
+return(y)
+}
+```
+
+-   In Python, you don't need to assign an object to a function
+
+-   The **indentation denotes the meat of the function**. It replaces the curly braces
+
+## Additional depth: arguments for a function
+
+
+Arguments are all the input values that lie inside the parentheses.
+
+```         
+`def fun(argument_1,argument_2):`
+```
+
+We can supply **default values** to one or all arguments; in doing so, we've specified a default argument.
+
+```         
+`def fun(argument_1 = "default 1",argument_2 = "default 2"):`
+```
+
+## Example: function with multiple arguments {.scrollable}
+
+```{python}
+def raise_value(input_value, raise_to):
+  '''
+  Raises an input number to a specified value
+  input_value: int object
+  raise_to: int object to raise that input_value to
+  output: int object
+  '''
+  y = input_value ** raise_to
+  return y
+
+raise_value(input_value = 2, raise_to = 2)
+raise_value(input_value = 2, raise_to = 3)
+
+```
+
+## Arguments: specifying by name versus position
+
+
+```{python}
+## these return equivalent results
+raise_value(input_value = 2, raise_to = 3)
+raise_value(2, 3)
+
+```
+
+
+
+## Additional depth: function returning multiple values 
+
+Stored as a tuple
+
+```{python}
+def raise_value(input_value, raise_to):
+  '''
+  Raises an input number to a specified value
+  input_value: int object
+  raise_to: int object to raise that input_value to
+  output: int object
+  '''
+  y = input_value ** raise_to
+  return (input_value, raise_to, y)
+
+entry, raised, result = raise_value(input_value = 2, raise_to = 3)
+entry
+raised
+result
+
+```
+
+## Additional depth: abbreviated lambda functions
+
+When the function is a simple, can write with abbreviated syntax called a `lambda` function; this is also sometimes called an anonymous function because we don't give it a name 
+
+
+```{python}
+def square(value):
+  """Returns the square of a number."""
+  new_val = value ** 2
+  return new_val
+
+#lambda function
+(lambda x: x ** 2)(2)
+
+## especially powerful with higher-order functions like map
+nums = [2, 4, 6, 8]
+square_all = map(lambda x: x ** 2, nums)
+print(list(square_all))
+```
+
+
+# Comprehensions {background-color="#447099"}
+
+
+## Comprehensions
+
+-   Provide a readable and efficient way to construct new sequences (such as lists, sets, dictionaries, etc.) based on a sequence of elements
+
+![](https://python-3-patterns-idioms-test.readthedocs.io/en/latest/_images/listComprehensions.gif)
+
+## Breaking this into steps
+
+```{python}
+a_list =[0, 1, 2, 3, 4, "hey"]
+## filter the list to only integers
+[e for e in a_list if type(e) == int]
+## filter the list to only integer + square the integer
+result = [e**2 for e in a_list if type(e) == int]
+result
+
+```
+
+
+## Compared to a loop
+
+```{python}
+a_list =[0, 1, 2, 3, 4, "hey"]
+result = []
+for e in a_list:
+    if type(e) == int:  # use int for Python 3
+        result.append(e**2)
+result
+```
+
+## Why do I need to learn another way to iterate beyond for loops?
+
+::: incremental
+-   Elegant and cleaner way to perform iterations. Which means: a lot of people use it!
+
+-   Automatically create new objects -- no need to create a container in the loop
+
+-   Flexible: allows working with lists, dictionaries, and sets
+
+-   Faster than loops (but not much in a way that makes you avoid loops)
+:::
+
+
+## Activity: Activity 3 and Activity 4
+
+TODO: add screenshots 
+
+# Generators {background-color="#447099"}
+
+## Generators
+
+Python has this very nice data type called **generators**. We use these functions a lot, but hardly talk about them.
+
+::: incremental
+-   **Purpose:** Generators allow for generating a sequence of values at each time. In other words, it allows you to create iterators in Python.
+
+-   **Main Advantage:** do not have to create the entire sequence at once and allocate memory
+
+-   **Lazy Evaluation:** Returns a value at time. When requested. It is LAZY!!! We love LAZY!
+:::
+
+## Example of Generators
+
+You can build your own generators. That's a bit advanced, and you probably will not need to use for our purposes. But we will see some pre-built "generators" that will be useful for us:
+
+::: incremental
+-   `range()`: generate the corresponding sequence of integers. Commonly used with for loops when we want to use the position of elements for iteration.
+
+-   `zip()`: syncs two series of numbers up into tuples.
+
+-   `enumerate()`: generates an index and value tuple's pairing
+:::
+
+
+
+## Range generator: syntax
+
+- Takes the following inputs `range(start, stop, step)`, where:  
+
+    ‘start’ (inclusive, default=0)
+
+    ‘stop’ (exclusive)
+
+    ‘step’ (default=1)
+
+As a generator, `range` will generate the corresponding sequence of integers (from start to stop, using the step size) upon iteration. 
+
+## Range generator: example applications
+
+
+```{python}
+r = range(0, 10, 2)
+print([r_ for r_ in r])
+for r_ in range(10):
+    print(r_)
+
+```
+
+## Zip function: motivation and syntax
+
+- Useful for looping through multiple lists at once 
+- Also can be used to create dictionaries
+- Syntax is `zip(list1, list2)`
+
+## Zip function: example
+
+```{python}
+teams =  ["Giants", "Commanders", "Eagles", "Jets"]
+results = [1, 0, 1, 1]
+team_w_results = zip(teams, results)
+team_w_results
+
+## list comprehension over the combined zip
+[item for item in team_w_results]
+
+```
+
+## Zip function: example
+
+```{python}
+teams =  ["Giants", "Commanders", "Eagles", "Jets"]
+results = [1, 0, 1, 1]
+team_w_results_dict = dict(zip(teams, results))
+team_w_results_dict
+
+
+```
+
+
+## Enumerate function: motivation and syntax
+
+- Generates a tuple where the first element is the index and the second element is the value
+- Useful for looping through values where we want to know the position of those values without creating a counter
+
+## Enumerate function: example
+
+```{python}
+# list of projected rankings
+ranked_teams = ["Eagles", "Cowboys", "Commanders", "Giants"]
+
+# enumerate creates tuples
+[i for i in enumerate(ranked_teams)]
+
+# can use index and values 
+[team + " are ranked position " + str(i+1)
+for i, team in enumerate(ranked_teams)] 
+
+```
+
+
+# See you next week! {background-color="#447099"}
+

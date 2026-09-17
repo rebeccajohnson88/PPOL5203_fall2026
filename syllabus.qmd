@@ -164,10 +164,10 @@ The follow schedule lays out when each assignment will be assigned.
 | Assignment | Date Assigned |            Date Due             |
 |:----------:|:-------------:|:-------------------------------:|
 |   No. 1    |    Week 2     | Wednesday September 16th 11:59 PM   |
-|   No. 2    |    Week 4     | Before EOD of Friday of Week 5  |
-|   No. 3    |    Week 6     | Before EOD of Friday of Week 7  |
-|   No. 4    |    Week 8     | Before EOD of Friday of Week 10 |
-|   No. 5    |    Week 10    | Before EOD of Friday of Week 11 |
+|   No. 2    |    Thursday September 23rd     | Wednesday October 7th 11:59 PM  |
+|   No. 3    |    TBD    | TBD  |
+|   No. 4    |    TBD     | TBD |
+|   No. 5    |    TBD    | TBD |
 
 **In-class Python Exam (15%):** for problem sets and the final project, as noted below, LLMs can be used as a resource similar to Google. To ensure mastery of the material without the assistance of LLMs, we will have a short, in-class Python exam following the Week 11 conclusion of the Python content. This will either be by hand or on a computer without LLM use. This exam will be easily completed if you have engaged with the material and written code yourself throughout the semester.
 

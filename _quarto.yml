@@ -30,6 +30,8 @@ website:
             text: "Week 2: Git and GitHub"
           - href: weeks/week-03.qmd
             text: "Week 3: Intro to Python"
+          - href: weeks/week-04.qmd
+            text: "Week 4: Python - Iteration, Comprehension, and Functions"
 
 format:
   html:

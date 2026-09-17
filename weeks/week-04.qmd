@@ -1,0 +1,54 @@
+---
+title: "Week 04"
+subtitle: "Python 2: Iteration, Comprehension, and Functions"
+description: ""
+author: "Rebecca A. Johnson"
+date: "09/17/2026"
+#listing:
+  # - id: slides
+  #   contents:
+  #     - ../slides/week-01/*.qmd
+  #   type: table
+  #   fields: [title, date]
+  #   date-format: "ddd, MMM DD"
+  #   field-display-names:
+  #     title: "Topic"
+  #     date: "Date"
+  #   sort: [filename]
+  #   sort-ui: false
+  #   filter-ui: false
+  # - id: assignments
+  #   contents:
+  #     - ../hw/w1-*.qmd
+  #     - ../labs/w1-*.qmd
+  #   type: table
+  #   fields: [categories, title, date]
+  #   date-format: "ddd, MMM DD"
+  #   field-display-names:
+  #     categories: "Assignment"
+  #     title: "Title"
+  #     date: "Due"
+  #   sort: [date]
+  #   sort-ui: false
+  #   filter-ui: false
+tbl-colwidths: [10,50,40]
+---
+
+
+## Slides
+
+[Week 4 - Python part II](/slides/week-4.qmd)
+
+## In-Class Exercise
+
+
+- Activity solutions (ipynb file to download): <a href="/activities/_week4_activity_solutions.ipynb" download> .ipynb file </a>
+
+
+## Optional Readings
+
+-   PDA Wes McKinney, [Chapter 3](https://wesmckinney.com/book/python-builtin.html)
+
+    -   [List, Set, and Dictionary Comprehensions](https://wesmckinney.com/book/python-builtin.html#comprehensions)
+    
+-   [for-loop-vs-list-comprehension-vs-high-order-functions](https://medium.com/globant/for-loop-vs-list-comprehension-vs-high-order-functions-a766a8b9cbe1#:~:text=List%20comprehensions%20are%20generally%20faster,great%20choice%20for%20simple%20iterations.)
