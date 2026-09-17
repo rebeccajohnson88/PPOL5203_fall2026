@@ -87,7 +87,7 @@
     "href": "slides/week-3.html#what-happens-upon-assignment",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "What happens upon assignment?",
-    "text": "What happens upon assignment?\n\nAction 1: A reference is assigned to an object, with an id number in memory\n\nid(x)\n\n140186927425936"
+    "text": "What happens upon assignment?\n\nAction 1: A reference is assigned to an object, with an id number in memory\n\nid(x)\n\n140401138919824"
   },
   {
     "objectID": "slides/week-3.html#section-2",
@@ -283,7 +283,7 @@
     "href": "slides/week-4.html#example-for-loop-using-range-as-an-iterator",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Example: for loop using range as an iterator",
-    "text": "Example: for loop using range as an iterator\n\n## creating range from 0 to 9\nfor i in range(10):\n    print(i)\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\n\n## creating range using length of the list\nfor i in range(len(my_list)):\n    print(\"Position: \" + i)\n    print(\"Element at that position: \" + my_list[i])\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_48281/2695283835.py in &lt;module&gt;\n      1 ## creating range using length of the list\n      2 for i in range(len(my_list)):\n----&gt; 3     print(\"Position: \" + i)\n      4     print(\"Element at that position: \" + my_list[i])\n\nTypeError: can only concatenate str (not \"int\") to str"
+    "text": "Example: for loop using range as an iterator\n\n## creating range from 0 to 9\nfor i in range(10):\n    print(i)\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\n\n## creating range using length of the list\nfor i in range(len(my_list)):\n    print(\"Position: \" + i)\n    print(\"Element at that position: \" + my_list[i])\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_56717/2695283835.py in &lt;module&gt;\n      1 ## creating range using length of the list\n      2 for i in range(len(my_list)):\n----&gt; 3     print(\"Position: \" + i)\n      4     print(\"Element at that position: \" + my_list[i])\n\nTypeError: can only concatenate str (not \"int\") to str"
   },
   {
     "objectID": "slides/week-4.html#while-loops",
@@ -437,7 +437,7 @@
     "href": "slides/week-4.html#zip-function-example",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Zip function: example",
-    "text": "Zip function: example\n\nteams =  [\"Giants\", \"Commanders\", \"Eagles\", \"Jets\"]\nresults = [1, 0, 1, 1]\nteam_w_results = zip(teams, results)\nteam_w_results\n\n## list comprehension over the combined zip\n[item for item in team_w_results]\n\n&lt;zip at 0x7feae9e56300&gt;\n\n\n[('Giants', 1), ('Commanders', 0), ('Eagles', 1), ('Jets', 1)]"
+    "text": "Zip function: example\n\nteams =  [\"Giants\", \"Commanders\", \"Eagles\", \"Jets\"]\nresults = [1, 0, 1, 1]\nteam_w_results = zip(teams, results)\nteam_w_results\n\n## list comprehension over the combined zip\n[item for item in team_w_results]\n\n&lt;zip at 0x7fa7c003c740&gt;\n\n\n[('Giants', 1), ('Commanders', 0), ('Eagles', 1), ('Jets', 1)]"
   },
   {
     "objectID": "slides/week-4.html#zip-function-example-1",
