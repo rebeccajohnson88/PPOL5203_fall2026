@@ -235,8 +235,8 @@ for i in range(10):
 ```{python}
 ## creating range using length of the list
 for i in range(len(my_list)):
-    print("Position: " + i)
-    print("Element at that position: " + my_list[i])
+    print("Position: " + str(i))
+    print("Element at that position: " + str(my_list[i]))
 ```
 
 
@@ -256,7 +256,7 @@ while x < 5:
 ## Activity: Activity 1 and 2
 
 
-[See notebook here](weeks/week-04.qmd)
+[See notebook here](../weeks/week-04.qmd)
 
 
 # User-Defined Functions {background-color="#447099"}
@@ -473,7 +473,7 @@ result
 
 ## Activity: Activity 3 and Activity 4
 
-[See notebook here](weeks/week-04.qmd)
+[See notebook here](../weeks/week-04.qmd)
 
 # Generators {background-color="#447099"}
 
@@ -579,7 +579,7 @@ for i, team in enumerate(ranked_teams)]
 
 ## Activity: Activity 5
 
-[See notebook here](weeks/week-04.qmd)
+[See notebook here](../weeks/week-04.qmd)
 
 
 # See you next week! {background-color="#447099"}
