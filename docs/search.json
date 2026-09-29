@@ -87,7 +87,7 @@
     "href": "slides/week-3.html#what-happens-upon-assignment",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "What happens upon assignment?",
-    "text": "What happens upon assignment?\n\nAction 1: A reference is assigned to an object, with an id number in memory\n\nid(x)\n\n140320876718480"
+    "text": "What happens upon assignment?\n\nAction 1: A reference is assigned to an object, with an id number in memory\n\nid(x)\n\n140391877896592"
   },
   {
     "objectID": "slides/week-3.html#section-2",
@@ -437,7 +437,7 @@
     "href": "slides/week-4.html#zip-function-example",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Zip function: example",
-    "text": "Zip function: example\n\nteams =  [\"Giants\", \"Commanders\", \"Eagles\", \"Jets\"]\nresults = [1, 0, 1, 1]\nteam_w_results = zip(teams, results)\nteam_w_results\n\n## list comprehension over the combined zip\n[item for item in team_w_results]\n\n&lt;zip at 0x7fcab003c440&gt;\n\n\n[('Giants', 1), ('Commanders', 0), ('Eagles', 1), ('Jets', 1)]"
+    "text": "Zip function: example\n\nteams =  [\"Giants\", \"Commanders\", \"Eagles\", \"Jets\"]\nresults = [1, 0, 1, 1]\nteam_w_results = zip(teams, results)\nteam_w_results\n\n## list comprehension over the combined zip\n[item for item in team_w_results]\n\n&lt;zip at 0x7fe15a1d4c00&gt;\n\n\n[('Giants', 1), ('Commanders', 0), ('Eagles', 1), ('Jets', 1)]"
   },
   {
     "objectID": "slides/week-4.html#zip-function-example-1",
@@ -468,243 +468,375 @@
     "text": "Activity: Activity 5\nSee notebook here"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
-    "section": "",
-    "text": "This first course in the core data science sequence teaches Data Science for Public Policy (DSPP) students how to synthesize disparate, possibly unstructured data in order to draw meaningful insights. Topics covered include the fundamentals of object-oriented programming in Python; literate programming; an introduction to algorithms and data types; data wrangling, visualization, and extraction; an introduction to machine learning methods, and text analysis. In addition, students will be exposed to Git and Github for version control and reproducible research. The objective of the course is to teach students how to incorporate data into their decision-making and analysis. No prior programming experience is assumed or required.\nData Science I is a collective effort among DSPP faculty. For this reason, the materials heavily draw from Dr. Tiago Ventura’s version of the course, with some also drawn from materials created by Dr. Eric Dunford",
-    "crumbs": [
-      "Home"
-    ]
+    "objectID": "slides/week-6.html#motivation",
+    "href": "slides/week-6.html#motivation",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Motivation",
+    "text": "Motivation\n\n\nNumpy offers a great flexibility and efficiency when dealing with data matrices.\nReally efficient for mathematical operations.\nPretty bad for data wrangling tasks ~&gt; numpy only accepts the same data type\nThe pandas package was designed to solve this limitation by providing data structures to deal with rectangular & heterogeneous data types.\nMain Data Structures: pd.series() and pd.DataFrames()"
   },
   {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
-    "section": "",
-    "text": "This first course in the core data science sequence teaches Data Science for Public Policy (DSPP) students how to synthesize disparate, possibly unstructured data in order to draw meaningful insights. Topics covered include the fundamentals of object-oriented programming in Python; literate programming; an introduction to algorithms and data types; data wrangling, visualization, and extraction; an introduction to machine learning methods, and text analysis. In addition, students will be exposed to Git and Github for version control and reproducible research. The objective of the course is to teach students how to incorporate data into their decision-making and analysis. No prior programming experience is assumed or required.\nData Science I is a collective effort among DSPP faculty. For this reason, the materials heavily draw from Dr. Tiago Ventura’s version of the course, with some also drawn from materials created by Dr. Eric Dunford",
-    "crumbs": [
-      "Home"
-    ]
+    "objectID": "slides/week-6.html#pandas-series",
+    "href": "slides/week-6.html#pandas-series",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Pandas Series",
+    "text": "Pandas Series\nA pandas series is a one-dimensional labeled array.\n\n\nCapable of holding different data types (e.g. integer, boolean, strings, etc.).\nIt holds two key components:\n\nindex: names in the axis\nvalues: values in the series\n\nA pandas series is nothing but a column in an excel sheet or an R data.frame (with an index)"
   },
   {
-    "objectID": "index.html#goals",
-    "href": "index.html#goals",
-    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
-    "section": "Goals",
-    "text": "Goals\nAfter completing this course, the students will be able to:\n\nGeneral understanding of python’s object oriented programming syntax and data structures.\nCompetency using version control (Git/Github).\nLearn to manipulate and explore data with Pandas and other tools.\nGeneral understanding of analyzing algorithms and data structures.\nLearn to extract and process data from structured and unstructured sources.\nGet some intuition of modeling text data in Python.\nLearn the basics of machine learning as a modeling approach.\nLearn how to use Generative AI for multiple applied tasks.\nLearn basics of using SQL to query databases.",
-    "crumbs": [
-      "Home"
-    ]
+    "objectID": "slides/week-6.html#pandas-series-constructor",
+    "href": "slides/week-6.html#pandas-series-constructor",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Pandas Series Constructor",
+    "text": "Pandas Series Constructor\n\nimport pandas as pd\n\ns = pd.Series([\"Argentina\", \"France\", \"Germany\",\"Spain\", \"Italy\", \"Brazil\"],\n                 index=[2022, 2018, 2014, 2010, 2006, 2002])\nprint(s)\n\n2022    Argentina\n2018       France\n2014      Germany\n2010        Spain\n2006        Italy\n2002       Brazil\ndtype: object\n\n\n\nYou can feed to the constructor:\n\nlist\ndictionaries\nscalar values\nndarray"
   },
   {
-    "objectID": "index.html#instructor",
-    "href": "index.html#instructor",
-    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
-    "section": "Instructor",
-    "text": "Instructor\n\nProfessor: Dr. Rebecca Johnson\nEmail: rj545@georgetown.edu\nOffice hours:\n\nTime: Every Wednesday, 1130am - 130pm\nLocation - either:\nIn person: 125E, Office Number 768\nRemote: see Calendly link\n\n\nSign up: on Calendly",
-    "crumbs": [
-      "Home"
-    ]
+    "objectID": "slides/week-6.html#pandas-dataframes",
+    "href": "slides/week-6.html#pandas-dataframes",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Pandas DataFrames",
+    "text": "Pandas DataFrames\nA pandas DataFrame is a two dimensional, relational data structure with the capacity to handle heterogeneous data types.\n\nrelational: each column value contained within a row entry corresponds with the same observation.\ntwo dimensional: a matrix data structure\nheterogeneous: different data types can be contained across each column series."
   },
   {
-    "objectID": "index.html#teaching-assistant-tbd",
-    "href": "index.html#teaching-assistant-tbd",
-    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
-    "section": "Teaching Assistant: TBD",
-    "text": "Teaching Assistant: TBD\n\nCourse Infra-structure\nClass Website: A class website https://rebeccajohnson88.github.io/PPOL5203_fall2026/ will be used throughout the course and should be checked on a regular basis for lecture materials and required readings.\n\nCanvas: A Canvas site (http://canvas.georgetown.edu) will be used throughout the course and should be checked on a regular basis for announcements. All announcements for the assignments and classes will be posted on Canvas; they will not be distributed in class or by e-mail. Support for Canvas is available at (202) 687-4949\nNOTE: Students are encouraged to run lecture code on their own machines. If you do not have access to a laptop on which you can install python3, please contact the professor and/or TA for assistance. Only python3 will be used in this course.",
-    "crumbs": [
-      "Home"
-    ]
+    "objectID": "slides/week-6.html#constructor",
+    "href": "slides/week-6.html#constructor",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Constructor",
+    "text": "Constructor\n\nimport pandas as pd\n# create a simple series\nseries = pd.Series([\"Argentina\", \"France\", \"Germany\",\"Spain\", \"Italy\", \"Brazil\"],\n                 index=[2022, 2018, 2014, 2010, 2006, 2002])\n# create the dataframe\ndf = pd.DataFrame(series)\nprint(df)\n\n              0\n2022  Argentina\n2018     France\n2014    Germany\n2010      Spain\n2006      Italy\n2002     Brazil"
   },
   {
-    "objectID": "lecture_notes/week-1/intro_to_quarto.html",
-    "href": "lecture_notes/week-1/intro_to_quarto.html",
-    "title": "Week 1: Introduction to Quarto for Python",
-    "section": "",
-    "text": "The purpose of this notebook is to show case the use of Quarto notebooks. It will cover:\n\nBrief introduction to Quarto Notebooks\nRunning R with Quarto Notebooks\nRunning Python with Quarto Notebooks + reticulate\n\nSee Quarto’s website for a more in-depth coverage of the framework."
+    "objectID": "slides/week-6.html#loading-data-from-a-csv-file",
+    "href": "slides/week-6.html#loading-data-from-a-csv-file",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Loading data from a csv file",
+    "text": "Loading data from a csv file\n\nimport pandas as pd\ndf = pd.read_csv(\"../datasets/childnoinsur_complete.csv\")"
   },
   {
-    "objectID": "lecture_notes/week-1/intro_to_quarto.html#quick-tutorial-for-rstudio",
-    "href": "lecture_notes/week-1/intro_to_quarto.html#quick-tutorial-for-rstudio",
-    "title": "Week 1: Introduction to Quarto for Python",
-    "section": "Quick tutorial for RStudio",
-    "text": "Quick tutorial for RStudio\nThis is what RStudio looks like when you open it for the first time.\n\n\n\n\n\n\n\n\n\nTop left pane (input/script)\nThis is your code editor. Here you enter code in any file type (.py, .r, .qmd) you are working on. If not working with notebooks, this is just gonna be a plain text file but with a extension that run the commands.\nFor example, enter 2 + 2 in your script and run a line of code by pressing command + enter (Mac) or Ctrl + enter (PC). This is a huge advantage of Rstudio over Jupyter. You can run your code line by line, instead of running the entire cell.\nBottom left pane (output/console)\nThis is the console. It is pretty much like when you open Python/R from the Command line.\nIn the console, the prompt &gt; looks like a greater than symbol. If your prompt begins to look like a + symbol by mistake, simply click in your console and press the esc key on your keyboard as many times as necessary to return to the prompt.\nRstudio uses + when code is broken up across multiple lines and is still expecting more code. A line of code does not usually end until Rstudio finds an appropriate stop parameter or punctuation that completes some code such as a closed round parenthesis ), square bracket ], curly brace }, or quotation mark '.\nIf the output in your console gets too messy, you can clear it by pressing control + l on both Mac and PC. This will not erase any saved data - it will simply make your console easier to read.\nTop right pane (global environment)\nThis is your environment pane. All objects you create will be displayed here.\nBottom right pane (files, plots, packages, and help)\nHere you find useful tabs for navigating your file system, displaying plots, installing packages, and viewing help pages. Press the control key and a number (1 through 9) on your keyboard to shortcut between these panes and tabs."
+    "objectID": "slides/week-6.html#attributes-of-dataframes-as-a-whole-or-specific-columns",
+    "href": "slides/week-6.html#attributes-of-dataframes-as-a-whole-or-specific-columns",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Attributes of dataframes as a whole or specific columns",
+    "text": "Attributes of dataframes as a whole or specific columns\n\ndfname.dtypes: returns a pandas series where the index is the name of the column; the value is the type of data it contains (eg str; int; float)\ndfname.shape: returns a length-2 tuple with dimensions of dataframe (number of rows, number of columns)\ndfname.head() prints first n rows (defaults to 5)\ndfname.tail(): prints last n rows (defaults to 5)\ndfname.describe(): prints summary statistics for numeric columns\ndfname.colname.value_counts(): count of observations for each value of categorical data"
   },
   {
-    "objectID": "weeks/week-01.html",
-    "href": "weeks/week-01.html",
-    "title": "Week 01",
-    "section": "",
-    "text": "Slides\nWeek 01:Introduction, Installations, IDEs, Command line\n\n\nHandouts\n\nInstructions for setting up the course infrastructure.\nUsing Jupyter Notebooks: web page,  .ipynb file \nUsing Quarto for Python and R web page,  .qmd file \nBasics of Command Line: web page,  .ipynb file \nPractice Notebook to Check Installations:  .ipynb file \n\n\n\nReadings\nRequired Readings\n\nJupyter Notebook for Beginners: A tutorial Pryke, Benjamin - www.dataquest.io\n\n\n\nDataCamp\n\nOptional (but highly recommended) module: Introduction to Shell &gt; Manipulating Files and Directories",
-    "crumbs": [
-      "Materials",
-      "Week 1: Intro to Course and Tools"
-    ]
+    "objectID": "slides/week-6.html#illustrating",
+    "href": "slides/week-6.html#illustrating",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Illustrating",
+    "text": "Illustrating\n\ndf.dtypes\ndf.shape\ndf.head(2)\ndf.tail(2)\ndf.describe()\ndf.Census_Division.value_counts()\n\nState               object\nRace                object\nYear                 int64\nuninsured_rate     float64\nCensus_Division     object\ndtype: object\n\n\n(1714, 5)\n\n\n\n\n\n\n\n\n\nState\nRace\nYear\nuninsured_rate\nCensus_Division\n\n\n\n\n0\nWyoming\nNon-Hispanic White\n2018\n0.07\nMountain\n\n\n1\nWyoming\nHispanic or Latino\n2018\n0.06\nMountain\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nState\nRace\nYear\nuninsured_rate\nCensus_Division\n\n\n\n\n1712\nAlabama\nNon-Hispanic White\n2023\n0.02\nEast South Central\n\n\n1713\nAlabama\nTwo or more races\n2023\n0.03\nEast South Central\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYear\nuninsured_rate\n\n\n\n\ncount\n1714.000000\n1714.000000\n\n\nmean\n2020.544341\n0.054195\n\n\nstd\n2.444376\n0.035869\n\n\nmin\n2017.000000\n0.010000\n\n\n25%\n2018.000000\n0.030000\n\n\n50%\n2021.000000\n0.040000\n\n\n75%\n2023.000000\n0.070000\n\n\nmax\n2024.000000\n0.240000\n\n\n\n\n\n\n\nSouth Atlantic        279\nMountain              257\nWest North Central    228\nEast North Central    194\nPacific               181\nNew England           168\nWest South Central    149\nEast South Central    140\nMiddle Atlantic       118\nName: Census_Division, dtype: int64"
   },
   {
-    "objectID": "weeks/week-02.html",
-    "href": "weeks/week-02.html",
-    "title": "Week 02",
-    "section": "",
-    "text": "Slides\nWeek 01: Git and GitHub\n\n\nIn-class activity\nClassroom 50 link\nDownload from this website:\n\nBlank activity:  .ipynb file \nActivity solutions:  .ipynb file \n\n\n\nResources (optional)\nGitHub Cheatsheet\nAnother GitHub Cheatsheet",
-    "crumbs": [
-      "Materials",
-      "Week 2: Git and GitHub"
-    ]
-  },
-  {
-    "objectID": "weeks/week-04.html",
-    "href": "weeks/week-04.html",
-    "title": "Week 04",
-    "section": "",
-    "text": "Week 4 - Python part II",
-    "crumbs": [
-      "Materials",
-      "Week 4: Python - Iteration, Comprehension, and Functions"
-    ]
-  },
-  {
-    "objectID": "weeks/week-04.html#slides",
-    "href": "weeks/week-04.html#slides",
-    "title": "Week 04",
-    "section": "",
-    "text": "Week 4 - Python part II",
-    "crumbs": [
-      "Materials",
-      "Week 4: Python - Iteration, Comprehension, and Functions"
-    ]
-  },
-  {
-    "objectID": "weeks/week-04.html#in-class-exercise",
-    "href": "weeks/week-04.html#in-class-exercise",
-    "title": "Week 04",
-    "section": "In-Class Exercise",
-    "text": "In-Class Exercise\n\nBlank activity (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html to view): html",
-    "crumbs": [
-      "Materials",
-      "Week 4: Python - Iteration, Comprehension, and Functions"
-    ]
-  },
-  {
-    "objectID": "weeks/week-04.html#optional-readings",
-    "href": "weeks/week-04.html#optional-readings",
-    "title": "Week 04",
-    "section": "Optional Readings",
-    "text": "Optional Readings\n\nPDA Wes McKinney, Chapter 3\n\nList, Set, and Dictionary Comprehensions\n\nfor-loop-vs-list-comprehension-vs-high-order-functions",
-    "crumbs": [
-      "Materials",
-      "Week 4: Python - Iteration, Comprehension, and Functions"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html",
-    "href": "weeks/week-05.html",
-    "title": "Week 05",
-    "section": "",
-    "text": "Week 5",
-    "crumbs": [
-      "Materials",
-      "Week 5: Libraries and Numpy"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html#slides",
-    "href": "weeks/week-05.html#slides",
-    "title": "Week 05",
-    "section": "",
-    "text": "Week 5",
-    "crumbs": [
-      "Materials",
-      "Week 5: Libraries and Numpy"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html#in-class-activity",
-    "href": "weeks/week-05.html#in-class-activity",
-    "title": "Week 05",
+    "objectID": "slides/week-6.html#in-class-activity",
+    "href": "slides/week-6.html#in-class-activity",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "In-class activity",
-    "text": "In-class activity\n\nProblem set 2 (see Classroom 50 assignment)",
-    "crumbs": [
-      "Materials",
-      "Week 5: Libraries and Numpy"
-    ]
+    "text": "In-class activity\nSee Activity 1 in notebook"
   },
   {
-    "objectID": "weeks/week-05.html#optional-readings",
-    "href": "weeks/week-05.html#optional-readings",
-    "title": "Week 05",
-    "section": "Optional Readings",
-    "text": "Optional Readings\n\nPDS VanderPlas\n\nCh. 2: Introduction to Numpy - Python Data Science Handbook - VanderPlas, Jake",
-    "crumbs": [
-      "Materials",
-      "Week 5: Libraries and Numpy"
-    ]
+    "objectID": "slides/week-6.html#translating-r-data-wrangling-to-python",
+    "href": "slides/week-6.html#translating-r-data-wrangling-to-python",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Translating R data wrangling to Python",
+    "text": "Translating R data wrangling to Python\n**\n\nMain (tidy) Data Wrangling Functions\n\n**\n\n\n\npandas\ndplyr\\(^\\dagger\\)\nDescription\n\n\n\n\n.filter()\nselect()\nselect column variables/index\n\n\n.drop()\nselect()\ndrop selected column variables/index\n\n\n.rename()\nrename()\nrename column variables/index\n\n\n.query()\nfilter()\nrow-wise subset of a data frame by a values of a column variable/index\n\n\n.assign()\nmutate()\nCreate a new variable on the existing data frame\n\n\n.sort_values()\narrange()\nArrange all data values along a specified (set of) column variable(s)/indices\n\n\n.groupby()\ngroup_by()\nIndex data frame by specific (set of) column variable(s)/index value(s)\n\n\n.agg()\nsummarize()\naggregate data by specific function rules\n\n\n.pivot_table()\nspread()\ncast the data from a “long” to a “wide” format\n\n\npd.melt()\ngather()\ncast the data from a “wide” to a “long” format\n\n\n.()\n%&gt;%\npiping, fluid programming, or the passing one function output to the next"
   },
   {
-    "objectID": "weeks/week-03.html",
-    "href": "weeks/week-03.html",
-    "title": "Week 03",
-    "section": "",
-    "text": "Week 3 - Intro to Python",
-    "crumbs": [
-      "Materials",
-      "Week 3: Intro to Python"
-    ]
+    "objectID": "slides/week-6.html#strengths-and-weaknesses",
+    "href": "slides/week-6.html#strengths-and-weaknesses",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Strengths and weaknesses",
+    "text": "Strengths and weaknesses\n\nTidyverse and the ability to chain together operations is a strength of R\nFor Python code most similar to tidyverse, you can use the dfply module\nFor now, we want to fully strengthen your pandas skills so will be focused on wrangling in that language"
   },
   {
-    "objectID": "weeks/week-03.html#slides",
-    "href": "weeks/week-03.html#slides",
-    "title": "Week 03",
-    "section": "",
-    "text": "Week 3 - Intro to Python",
-    "crumbs": [
-      "Materials",
-      "Week 3: Intro to Python"
-    ]
+    "objectID": "slides/week-6.html#working-with-columns-in-the-data",
+    "href": "slides/week-6.html#working-with-columns-in-the-data",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Working with columns in the data",
+    "text": "Working with columns in the data\nThings we might want to do:\n\nNow: Select columns\nNow: Drop columns\nNext: Create new columns\nNext: Rename columns"
   },
   {
-    "objectID": "weeks/week-03.html#in-class-exercise",
-    "href": "weeks/week-03.html#in-class-exercise",
-    "title": "Week 03",
-    "section": "In-Class Exercise",
-    "text": "In-Class Exercise\n\nBlank activity (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html to view): html",
-    "crumbs": [
-      "Materials",
-      "Week 3: Intro to Python"
-    ]
+    "objectID": "slides/week-6.html#how-do-we-see-which-columns-are-in-the-data",
+    "href": "slides/week-6.html#how-do-we-see-which-columns-are-in-the-data",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "How do we see which columns are in the data?",
+    "text": "How do we see which columns are in the data?\n\n## view start of data\ndf.head(3)\n\n## prints a list of column names\ndf.columns \n\n\n\n\n\n\n\n\nState\nRace\nYear\nuninsured_rate\nCensus_Division\n\n\n\n\n0\nWyoming\nNon-Hispanic White\n2018\n0.07\nMountain\n\n\n1\nWyoming\nHispanic or Latino\n2018\n0.06\nMountain\n\n\n2\nWyoming\nBlack or African American\n2018\n0.02\nMountain\n\n\n\n\n\n\n\nIndex(['State', 'Race', 'Year', 'uninsured_rate', 'Census_Division'], dtype='object')"
   },
   {
-    "objectID": "weeks/week-03.html#optional-readings",
-    "href": "weeks/week-03.html#optional-readings",
-    "title": "Week 03",
-    "section": "Optional Readings",
-    "text": "Optional Readings\nFrom Wes McKinney, Python for Data Analysis\n\nChapter 2: Python Language Basics, IPython, and Jupyter Notebooks\n\nFrom Data Carpentry:\n\nPython Fundamentals\nStoring Multiple Values in Lists",
-    "crumbs": [
-      "Materials",
-      "Week 3: Intro to Python"
-    ]
+    "objectID": "slides/week-6.html#selecting-one-column-multiple-approaches",
+    "href": "slides/week-6.html#selecting-one-column-multiple-approaches",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Selecting one column: multiple approaches",
+    "text": "Selecting one column: multiple approaches\nAll except for loc default to selecting all rows so don’t need to explicitly indicate that\n\n# call it by name\ndf.State\n\n# brackets \ndf['State']\n\n# loc\ndf.loc[:, 'State']\n\n0         Wyoming\n1         Wyoming\n2         Wyoming\n3         Wyoming\n4       Wisconsin\n          ...    \n1709      Alabama\n1710      Alabama\n1711      Alabama\n1712      Alabama\n1713      Alabama\nName: State, Length: 1714, dtype: object\n\n\n0         Wyoming\n1         Wyoming\n2         Wyoming\n3         Wyoming\n4       Wisconsin\n          ...    \n1709      Alabama\n1710      Alabama\n1711      Alabama\n1712      Alabama\n1713      Alabama\nName: State, Length: 1714, dtype: object\n\n\n0         Wyoming\n1         Wyoming\n2         Wyoming\n3         Wyoming\n4       Wisconsin\n          ...    \n1709      Alabama\n1710      Alabama\n1711      Alabama\n1712      Alabama\n1713      Alabama\nName: State, Length: 1714, dtype: object"
   },
   {
-    "objectID": "lecture_notes/week-1/minimal_example_python.html",
-    "href": "lecture_notes/week-1/minimal_example_python.html",
-    "title": "Python via Quarto",
-    "section": "",
-    "text": "Here you add your text as markdown."
+    "objectID": "slides/week-6.html#selecting-2-columns",
+    "href": "slides/week-6.html#selecting-2-columns",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Selecting 2+ columns",
+    "text": "Selecting 2+ columns\n\ndf[['State', 'Year', 'uninsured_rate']].head()\n\ndf.loc[:, ['State', 'Year', 'uninsured_rate']].head()\n\n\n\n\n\n\n\n\nState\nYear\nuninsured_rate\n\n\n\n\n0\nWyoming\n2018\n0.07\n\n\n1\nWyoming\n2018\n0.06\n\n\n2\nWyoming\n2018\n0.02\n\n\n3\nWyoming\n2018\n0.02\n\n\n4\nWisconsin\n2018\n0.02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nState\nYear\nuninsured_rate\n\n\n\n\n0\nWyoming\n2018\n0.07\n\n\n1\nWyoming\n2018\n0.06\n\n\n2\nWyoming\n2018\n0.02\n\n\n3\nWyoming\n2018\n0.02\n\n\n4\nWisconsin\n2018\n0.02"
   },
   {
-    "objectID": "lecture_notes/week-1/minimal_example_python.html#minimal-example-of-using-python-with-quarto",
-    "href": "lecture_notes/week-1/minimal_example_python.html#minimal-example-of-using-python-with-quarto",
-    "title": "Python via Quarto",
-    "section": "",
-    "text": "Here you add your text as markdown."
+    "objectID": "slides/week-6.html#what-if-we-want-to-select-all-columns-in-a-column-range-within-the-dataset",
+    "href": "slides/week-6.html#what-if-we-want-to-select-all-columns-in-a-column-range-within-the-dataset",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "What if we want to select all columns in a column range within the dataset?",
+    "text": "What if we want to select all columns in a column range within the dataset?\nExample: want to select all columns from State to Year\n\ndf_sub = df.loc[:, \"State\": \"Year\"]\ndf_sub.head()\n\n\n\n\n\n\n\n\nState\nRace\nYear\n\n\n\n\n0\nWyoming\nNon-Hispanic White\n2018\n\n\n1\nWyoming\nHispanic or Latino\n2018\n\n\n2\nWyoming\nBlack or African American\n2018\n\n\n3\nWyoming\nAsian and Pacific Islander\n2018\n\n\n4\nWisconsin\nTwo or more races\n2018"
   },
   {
-    "objectID": "lecture_notes/week-1/minimal_example_python.html#code",
-    "href": "lecture_notes/week-1/minimal_example_python.html#code",
-    "title": "Python via Quarto",
-    "section": "Code",
-    "text": "Code\nYou will use the same code block for any language. You just need to change language inside of the brackets {}\n\nlibrary(reticulate)\n\nWarning: package 'reticulate' was built under R version 4.2.3\n\nreticulate::py_config()\n\npython:         /Users/rj545/.virtualenvs/r-reticulate/bin/python\nlibpython:      /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/config-3.9-darwin/libpython3.9.dylib\npythonhome:     /Users/rj545/.virtualenvs/r-reticulate:/Users/rj545/.virtualenvs/r-reticulate\nversion:        3.9.6 (default, Sep 26 2022, 11:37:49)  [Clang 14.0.0 (clang-1400.0.29.202)]\nnumpy:          /Users/rj545/.virtualenvs/r-reticulate/lib/python3.9/site-packages/numpy\nnumpy_version:  2.0.2\n\nuse_python(\"/Users/rj545/.virtualenvs/r-reticulate/bin/python\")\n\nusethis::edit_r_environ()\n\n• Edit '/Users/rj545/.Renviron'\n• Restart R for changes to take effect\n\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport scipy.stats as stats\nimport math\n\n## generate normal distribution \nmu = 0\nvariance = 1\nsigma = math.sqrt(variance)\nx = np.linspace(mu - 3*sigma, mu + 3*sigma, 100)\ny = stats.norm.pdf(x, mu, sigma)\n\n## plot using Georgetown Blue colors\nGU_BLUE = '#041E42'\nplt.plot(x, y, color = GU_BLUE)\nplt.fill_between(x, y, color= GU_BLUE, alpha=0.4)\n\n\n\n\n\n\n\n\n\nplt.show()"
+    "objectID": "slides/week-6.html#what-if-we-want-to-select-columns-based-on-their-position-in-the-dataset",
+    "href": "slides/week-6.html#what-if-we-want-to-select-columns-based-on-their-position-in-the-dataset",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "What if we want to select columns based on their position in the dataset?",
+    "text": "What if we want to select columns based on their position in the dataset?\nCaution: would really caution against this in most cases since column order can shift around as we manipulate the data; much safer to reference columns by name\nBut so you’re aware of the syntax\n\ndf.columns\ndf.iloc[:, 0:3].head()\n\nIndex(['State', 'Race', 'Year', 'uninsured_rate', 'Census_Division'], dtype='object')\n\n\n\n\n\n\n\n\n\nState\nRace\nYear\n\n\n\n\n0\nWyoming\nNon-Hispanic White\n2018\n\n\n1\nWyoming\nHispanic or Latino\n2018\n\n\n2\nWyoming\nBlack or African American\n2018\n\n\n3\nWyoming\nAsian and Pacific Islander\n2018\n\n\n4\nWisconsin\nTwo or more races\n2018"
+  },
+  {
+    "objectID": "slides/week-6.html#filter-function-as-most-similar-to-select-in-dplyr",
+    "href": "slides/week-6.html#filter-function-as-most-similar-to-select-in-dplyr",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "filter function as most similar to select in dplyr",
+    "text": "filter function as most similar to select in dplyr\nIn addition to the bracket-based subsetting, pandas has a filter function that behaves similarly to select within dplyr in R\n\n## filtering to state and year columns\ndf.filter([\"State\", \"Year\"]).head()\n\n## similar to contains - looks for pattern anywhere in string\ndf.filter(like = \"insur\").head()\n\n## can also use with regex (specific week covering)\ndf.filter(regex = \"rate$\").head()\n\n\n\n\n\n\n\n\nState\nYear\n\n\n\n\n0\nWyoming\n2018\n\n\n1\nWyoming\n2018\n\n\n2\nWyoming\n2018\n\n\n3\nWyoming\n2018\n\n\n4\nWisconsin\n2018\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nuninsured_rate\n\n\n\n\n0\n0.07\n\n\n1\n0.06\n\n\n2\n0.02\n\n\n3\n0.02\n\n\n4\n0.02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nuninsured_rate\n\n\n\n\n0\n0.07\n\n\n1\n0.06\n\n\n2\n0.02\n\n\n3\n0.02\n\n\n4\n0.02"
+  },
+  {
+    "objectID": "slides/week-6.html#dropping-specific-columns",
+    "href": "slides/week-6.html#dropping-specific-columns",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Dropping specific columns",
+    "text": "Dropping specific columns\nTwo ways: - Specify which columns to keep (can use list comprehension to help construct that list) - drop function"
+  },
+  {
+    "objectID": "slides/week-6.html#using-list-comprehension-to-create-list-of-columns-to-keep",
+    "href": "slides/week-6.html#using-list-comprehension-to-create-list-of-columns-to-keep",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Using list comprehension to create list of columns to keep",
+    "text": "Using list comprehension to create list of columns to keep\n\ndf.columns\ncols_keep = [col for col in df.columns if\n            col not in [\"uninsured_rate\", \"Year\"]]\ncols_keep\ndf_notimevary = df[cols_keep].copy()\ndf_notimevary.head()\n\nIndex(['State', 'Race', 'Year', 'uninsured_rate', 'Census_Division'], dtype='object')\n\n\n['State', 'Race', 'Census_Division']\n\n\n\n\n\n\n\n\n\nState\nRace\nCensus_Division\n\n\n\n\n0\nWyoming\nNon-Hispanic White\nMountain\n\n\n1\nWyoming\nHispanic or Latino\nMountain\n\n\n2\nWyoming\nBlack or African American\nMountain\n\n\n3\nWyoming\nAsian and Pacific Islander\nMountain\n\n\n4\nWisconsin\nTwo or more races\nEast North Central"
+  },
+  {
+    "objectID": "slides/week-6.html#using-drop-function-to-specifically-tell-it-columns-to-drop",
+    "href": "slides/week-6.html#using-drop-function-to-specifically-tell-it-columns-to-drop",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Using drop function to specifically tell it columns to drop",
+    "text": "Using drop function to specifically tell it columns to drop\n\ndf_notimevary = df.drop(columns = ['uninsured_rate', 'Year']).copy()\ndf_notimevary.head()\n\n\n\n\n\n\n\n\nState\nRace\nCensus_Division\n\n\n\n\n0\nWyoming\nNon-Hispanic White\nMountain\n\n\n1\nWyoming\nHispanic or Latino\nMountain\n\n\n2\nWyoming\nBlack or African American\nMountain\n\n\n3\nWyoming\nAsian and Pacific Islander\nMountain\n\n\n4\nWisconsin\nTwo or more races\nEast North Central"
+  },
+  {
+    "objectID": "slides/week-6.html#working-with-rows-in-the-data",
+    "href": "slides/week-6.html#working-with-rows-in-the-data",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Working with rows in the data",
+    "text": "Working with rows in the data\nSome tasks include: - Subsetting - Filtering distinct values - Sorting values\nThroughout, our earlier coverage of logical operators will be helpful"
+  },
+  {
+    "objectID": "slides/week-6.html#subsetting-using-one-condition",
+    "href": "slides/week-6.html#subsetting-using-one-condition",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Subsetting using one condition",
+    "text": "Subsetting using one condition\n\nSimilar to column-based subsetting, can do with or without the explicit loc command\n\n\n## All years after 2020\ndf[df.Year &gt; 2020].head()\n\n## Three different ways to pull data from 2021\ndf[df.Year == 2021].head()\ndf[df['Year'] == 2021].head()\ndf.loc[df.Year == 2021].head()\n\n\n\n\n\n\n\n\nState\nRace\nYear\nuninsured_rate\nCensus_Division\n\n\n\n\n503\nWyoming\nNon-Hispanic White\n2022\n0.07\nMountain\n\n\n504\nWyoming\nTwo or more races\n2022\n0.09\nMountain\n\n\n505\nWisconsin\nAsian and Pacific Islander\n2022\n0.04\nEast North Central\n\n\n506\nWisconsin\nBlack or African American\n2022\n0.03\nEast North Central\n\n\n507\nWisconsin\nHispanic or Latino\n2022\n0.09\nEast North Central\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nState\nRace\nYear\nuninsured_rate\nCensus_Division\n\n\n\n\n1225\nColorado\nAmerican Indian or Alaska Native\n2021\n0.05\nMountain\n\n\n1226\nArizona\nAsian and Pacific Islander\n2021\n0.04\nMountain\n\n\n1227\nArizona\nAmerican Indian or Alaska Native\n2021\n0.20\nMountain\n\n\n1228\nAlaska\nTwo or more races\n2021\n0.09\nPacific\n\n\n1229\nAlaska\nNon-Hispanic White\n2021\n0.05\nPacific\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nState\nRace\nYear\nuninsured_rate\nCensus_Division\n\n\n\n\n1225\nColorado\nAmerican Indian or Alaska Native\n2021\n0.05\nMountain\n\n\n1226\nArizona\nAsian and Pacific Islander\n2021\n0.04\nMountain\n\n\n1227\nArizona\nAmerican Indian or Alaska Native\n2021\n0.20\nMountain\n\n\n1228\nAlaska\nTwo or more races\n2021\n0.09\nPacific\n\n\n1229\nAlaska\nNon-Hispanic White\n2021\n0.05\nPacific\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nState\nRace\nYear\nuninsured_rate\nCensus_Division\n\n\n\n\n1225\nColorado\nAmerican Indian or Alaska Native\n2021\n0.05\nMountain\n\n\n1226\nArizona\nAsian and Pacific Islander\n2021\n0.04\nMountain\n\n\n1227\nArizona\nAmerican Indian or Alaska Native\n2021\n0.20\nMountain\n\n\n1228\nAlaska\nTwo or more races\n2021\n0.09\nPacific\n\n\n1229\nAlaska\nNon-Hispanic White\n2021\n0.05\nPacific"
+  },
+  {
+    "objectID": "slides/week-6.html#subsetting-importance-of-checking-data-types",
+    "href": "slides/week-6.html#subsetting-importance-of-checking-data-types",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Subsetting: importance of checking data types",
+    "text": "Subsetting: importance of checking data types\n\nSee that data is treating year as an integer and so subsetting using the string form returns no rows/an empty dataframe\n\n\ndf.Year.dtypes\ndf[df.Year == \"2021\"]\n\ndtype('int64')\n\n\n\n\n\n\n\n\n\nState\nRace\nYear\nuninsured_rate\nCensus_Division"
+  },
+  {
+    "objectID": "slides/week-6.html#subsetting-using-multiple-conditions",
+    "href": "slides/week-6.html#subsetting-using-multiple-conditions",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Subsetting using multiple conditions",
+    "text": "Subsetting using multiple conditions\nKey is including parentheses\n\ndf[(df.Year == 2021) & (df.State == \"California\")]\ndf.loc[(df.Year == 2021) & (df.State == \"California)]\n\n\n  File \"/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_83865/708134521.py\", line 2\n    df.loc[(df.Year == 2021) & (df.State == \"California)]\n                                                         ^\nSyntaxError: EOL while scanning string literal"
+  },
+  {
+    "objectID": "slides/week-6.html#subsetting-rows-and-columns-simultaneously",
+    "href": "slides/week-6.html#subsetting-rows-and-columns-simultaneously",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Subsetting rows and columns simultaneously",
+    "text": "Subsetting rows and columns simultaneously\nThis is where value of loc comes in; see error without\n\ndf.loc[(df.Year == 2021) & (df.State == \"California\"), \n        [\"State\", \"Year\", \"Race\"]]\n\n\n\n\n\n\n\n\nState\nYear\nRace\n\n\n\n\n1247\nCalifornia\n2021\nHispanic or Latino\n\n\n1248\nCalifornia\n2021\nBlack or African American\n\n\n1249\nCalifornia\n2021\nAsian and Pacific Islander\n\n\n1250\nCalifornia\n2021\nAmerican Indian or Alaska Native\n\n\n1256\nCalifornia\n2021\nTwo or more races\n\n\n1257\nCalifornia\n2021\nNon-Hispanic White\n\n\n\n\n\n\n\n\n## throws error\ndf[(df.Year == 2021) & (df.State == \"California\"),\n[\"State\", \"Year\", \"Race\"]]\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)\n   3628             try:\n-&gt; 3629                 return self._engine.get_loc(casted_key)\n   3630             except KeyError as err:\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()\n\nTypeError: '(0       False\n1       False\n2       False\n3       False\n4       False\n        ...  \n1709    False\n1710    False\n1711    False\n1712    False\n1713    False\nLength: 1714, dtype: bool, ['State', 'Year', 'Race'])' is an invalid key\n\nDuring handling of the above exception, another exception occurred:\n\nInvalidIndexError                         Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_83865/2067952100.py in &lt;module&gt;\n      1 ## throws error\n----&gt; 2 df[(df.Year == 2021) & (df.State == \"California\"),\n      3 [\"State\", \"Year\", \"Race\"]]\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py in __getitem__(self, key)\n   3503             if self.columns.nlevels &gt; 1:\n   3504                 return self._getitem_multilevel(key)\n-&gt; 3505             indexer = self.columns.get_loc(key)\n   3506             if is_integer(indexer):\n   3507                 indexer = [indexer]\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)\n   3634                 #  InvalidIndexError. Otherwise we fall through and re-raise\n   3635                 #  the TypeError.\n-&gt; 3636                 self._check_indexing_error(key)\n   3637                 raise\n   3638 \n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in _check_indexing_error(self, key)\n   5649             # if key is not a scalar, directly raise an error (the code below\n   5650             # would convert to numpy arrays and raise later any way) - GH29926\n-&gt; 5651             raise InvalidIndexError(key)\n   5652 \n   5653     @cache_readonly\n\nInvalidIndexError: (0       False\n1       False\n2       False\n3       False\n4       False\n        ...  \n1709    False\n1710    False\n1711    False\n1712    False\n1713    False\nLength: 1714, dtype: bool, ['State', 'Year', 'Race'])"
+  },
+  {
+    "objectID": "slides/week-6.html#query-offers-similarities-to-dplyrs-filter",
+    "href": "slides/week-6.html#query-offers-similarities-to-dplyrs-filter",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Query offers similarities to dplyr’s Filter",
+    "text": "Query offers similarities to dplyr’s Filter\nCan chain multiple conditions together using query. Note:\n\nAll content in the quotes\nDon’t reference dataset name within the subsetting\n\n\ndf.query(\"Year == 2021 & State == 'California'\") \n\n\n\n\n\n\n\n\nState\nRace\nYear\nuninsured_rate\nCensus_Division\n\n\n\n\n1247\nCalifornia\nHispanic or Latino\n2021\n0.04\nPacific\n\n\n1248\nCalifornia\nBlack or African American\n2021\n0.03\nPacific\n\n\n1249\nCalifornia\nAsian and Pacific Islander\n2021\n0.03\nPacific\n\n\n1250\nCalifornia\nAmerican Indian or Alaska Native\n2021\n0.05\nPacific\n\n\n1256\nCalifornia\nTwo or more races\n2021\n0.03\nPacific\n\n\n1257\nCalifornia\nNon-Hispanic White\n2021\n0.02\nPacific"
+  },
+  {
+    "objectID": "slides/week-6.html#in-class-activity-1",
+    "href": "slides/week-6.html#in-class-activity-1",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "In-class Activity",
+    "text": "In-class Activity\nSee Activity 2 in notebook"
+  },
+  {
+    "objectID": "slides/week-6.html#example-tasks",
+    "href": "slides/week-6.html#example-tasks",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Example tasks:",
+    "text": "Example tasks:\n\nCreating variables\n\nCreating a new variable based on calculations (eg adding two numeric columns together)\nCreating a new variable that represents a transformation of a string (e.g., converting to lowercase)\nCreating a new variable based on logical conditions\n\nRecoding variables\n\nRecoding categorical variables to combine categories\nRecoding categorical variables to more descriptive names\nRecoding variables based on logical conditions"
+  },
+  {
+    "objectID": "slides/week-6.html#creating-variables-based-on-calculations",
+    "href": "slides/week-6.html#creating-variables-based-on-calculations",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Creating variables: based on calculations",
+    "text": "Creating variables: based on calculations\nUse bracket notation to add a new variable\n\n## create a new variable, uninsured percent, that multiples the proportion by 100\ndf['uninsured_percent'] = df.uninsured_rate * 100\ndf[['uninsured_rate', 'uninsured_percent']].head()\n\n\n\n\n\n\n\n\nuninsured_rate\nuninsured_percent\n\n\n\n\n0\n0.07\n7.0\n\n\n1\n0.06\n6.0\n\n\n2\n0.02\n2.0\n\n\n3\n0.02\n2.0\n\n\n4\n0.02\n2.0"
+  },
+  {
+    "objectID": "slides/week-6.html#creating-variables-based-on-string-operations",
+    "href": "slides/week-6.html#creating-variables-based-on-string-operations",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Creating variables: based on string operations",
+    "text": "Creating variables: based on string operations\nFor variables involving strings, pandas has a series of built-in string operations we can use to transform these variables. The general syntax is:\ndf.variablename.str.strmethod()\nSee here for a list of frequently-used ones: https://www.geeksforgeeks.org/python/top-10-string-methods-in-pandas/\nCan also combine multiple operations, e.g.:\ndf.variablename.str.strmethod1().str.strmethod2()\n\ndf['state_lower']  = df.State.str.lower()"
+  },
+  {
+    "objectID": "slides/week-6.html#creating-variables-based-on-logical-conditions",
+    "href": "slides/week-6.html#creating-variables-based-on-logical-conditions",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Creating variables: based on logical conditions",
+    "text": "Creating variables: based on logical conditions\nnp.where is similar to ifelse(condition, value if true, value if false) in R and is useful for incorporating comparisons into variable creation\n\navg_uninsured_rate = np.mean(df.uninsured_rate)\navg_uninsured_rate\n\n## Create variable for whether a state-year-race observation\n## is above or below the national average\ndf['uninsured_abovebelow'] = np.where(df.uninsured_rate &gt; avg_uninsured_rate,\n            \"Higher than avg\", \n            \"Equal or less than avg\")\n            \ndf[['uninsured_rate', 'uninsured_abovebelow']].head()\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_83865/1626912818.py in &lt;module&gt;\n----&gt; 1 avg_uninsured_rate = np.mean(df.uninsured_rate)\n      2 avg_uninsured_rate\n      3 \n      4 ## Create variable for whether a state-year-race observation\n      5 ## is above or below the national average\n\nNameError: name 'np' is not defined"
+  },
+  {
+    "objectID": "slides/week-6.html#creating-variables-assign-method-as-similar-to-mutate-in-dplyr",
+    "href": "slides/week-6.html#creating-variables-assign-method-as-similar-to-mutate-in-dplyr",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Creating variables: assign method as similar to mutate in dplyr",
+    "text": "Creating variables: assign method as similar to mutate in dplyr\nKey advantage is we can create multiple variables in the same assign statement\n\ndf = (df.assign(state_lower = df.State.str.lower(),\n        year_category = np.where(df.Year &lt; 2020, \n        \"Pre Covid\", \"During or post COVID\")))\ndf[['State', 'state_lower', 'Year', 'year_category']].sample(n = 5)\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_83865/1220063910.py in &lt;module&gt;\n      1 df = (df.assign(state_lower = df.State.str.lower(),\n----&gt; 2         year_category = np.where(df.Year &lt; 2020, \n      3         \"Pre Covid\", \"During or post COVID\")))\n      4 df[['State', 'state_lower', 'Year', 'year_category']].sample(n = 5)\n\nNameError: name 'np' is not defined"
+  },
+  {
+    "objectID": "slides/week-6.html#recoding-variables",
+    "href": "slides/week-6.html#recoding-variables",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Recoding variables",
+    "text": "Recoding variables\n\nThese previous examples contained a couple examples of recoding – for instance, using np.where to recode blocks of years into pre versus during/post COVID\nnp.where is one recoding tool. Here, we’ll cover np.select as a cleaner tool when we have multiple conditions"
+  },
+  {
+    "objectID": "slides/week-6.html#example-recoding-task",
+    "href": "slides/week-6.html#example-recoding-task",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Example recoding task",
+    "text": "Example recoding task\nExample: combining different Census Divisions\nMap here: https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf\nWant to: - Combine both North Centrals -&gt; Midwest - Combine both South Centrals and South Atlantic into South - Otherwise keep the same\nNote: we can use the pandas series string method str.contains() to simplify the code a bit based on looking for patterns\n\n## look at all the Census Divisions \ndf.Census_Division.value_counts()\n\nSouth Atlantic        279\nMountain              257\nWest North Central    228\nEast North Central    194\nPacific               181\nNew England           168\nWest South Central    149\nEast South Central    140\nMiddle Atlantic       118\nName: Census_Division, dtype: int64"
+  },
+  {
+    "objectID": "slides/week-6.html#can-we-do-this-with-np.where-yes-but-code-gets-bulky",
+    "href": "slides/week-6.html#can-we-do-this-with-np.where-yes-but-code-gets-bulky",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Can we do this with np.where? Yes but code gets bulky",
+    "text": "Can we do this with np.where? Yes but code gets bulky\n\n## recoding using np.where\ndf['division_npw'] = np.where(df.Census_Division.str.contains(\"North Central\"),\n                \"Midwest\",\n                    np.where((df.Census_Division.str.contains(\"South Central\")) |\n                            (df.Census_Division == \"South Atlantic\"),\n                \"South\", df.Census_Division)) \n                \n## checking results\npd.crosstab(df.Census_Division[df.division_npw.isin(['Midwest', 'South'])],\ndf.division_npw[df.division_npw.isin(['Midwest', 'South'])])\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_83865/1531898425.py in &lt;module&gt;\n      1 ## recoding using np.where\n----&gt; 2 df['division_npw'] = np.where(df.Census_Division.str.contains(\"North Central\"),\n      3                 \"Midwest\",\n      4                     np.where((df.Census_Division.str.contains(\"South Central\")) |\n      5                             (df.Census_Division == \"South Atlantic\"),\n\nNameError: name 'np' is not defined"
+  },
+  {
+    "objectID": "slides/week-6.html#np.select-for-cleaner-code",
+    "href": "slides/week-6.html#np.select-for-cleaner-code",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "np.select for cleaner code",
+    "text": "np.select for cleaner code\n\n## step one: define conditions\nconditions = [df.Census_Division.str.contains(\"North Central\"),\n              df.Census_Division.str.contains(\"South Central\"),\n              df.Census_Division == \"South Atlantic\"]\n              \n## step two: define the choices \nchoices = [\"Midwest\", \"South\", \"South\"]\n\n## step three: use np.select\ndf['division_nps'] = np.select(conditions,\n                    choices, \n                    default = df.Census_Division) # keep all others same\n                    \n## Check results\npd.crosstab(df.Census_Division[df.division_nps.isin(['Midwest', 'South'])],\ndf.division_nps[df.division_nps.isin(['Midwest', 'South'])])\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_83865/1443799031.py in &lt;module&gt;\n      8 \n      9 ## step three: use np.select\n---&gt; 10 df['division_nps'] = np.select(conditions,\n     11                     choices,\n     12                     default = df.Census_Division) # keep all others same\n\nNameError: name 'np' is not defined"
+  },
+  {
+    "objectID": "slides/week-6.html#in-class-activity-2",
+    "href": "slides/week-6.html#in-class-activity-2",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "In-class Activity",
+    "text": "In-class Activity\nSee Activity 3 in notebook"
+  },
+  {
+    "objectID": "slides/week-6.html#motivation-1",
+    "href": "slides/week-6.html#motivation-1",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Motivation",
+    "text": "Motivation\n\nThe activity we did of writing a user-defined function to subset to a single race/ethnicity group illustrated the concept of grouping\nThe general process is split-apply-combine, where we use one or more of the following steps:\nSplitting the data into groups based on some criteria.\nApplying a function to each group independently.\nCombining the results into a data structure.\n\n\nFrom Python Data Science Handbook by Jake VanderPlas"
+  },
+  {
+    "objectID": "slides/week-6.html#split-step-within-pandas-groupby",
+    "href": "slides/week-6.html#split-step-within-pandas-groupby",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Split step within pandas: groupby",
+    "text": "Split step within pandas: groupby\n\nThe groupby() method in pandas splits your dataset in smaller parts. It generates an iterable where each group is broken up into a tuple (group,data).\nThe output of a groupby method is a flexible abstraction: although more complicated things are happening under the hood, in many ways, it can be treated as a collection of DataFrames. And as we learned, any collector can be iterated over!"
+  },
+  {
+    "objectID": "slides/week-6.html#illustration-grouping-by-raceethnicity-across-all-states",
+    "href": "slides/week-6.html#illustration-grouping-by-raceethnicity-across-all-states",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Illustration: grouping by race/ethnicity (across all states)",
+    "text": "Illustration: grouping by race/ethnicity (across all states)\n\ndf_raceeth = df.groupby(\"Race\")\ndf_raceeth\n\n&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fa001fef640&gt;"
+  },
+  {
+    "objectID": "slides/week-6.html#iterating-over-groups",
+    "href": "slides/week-6.html#iterating-over-groups",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Iterating over groups",
+    "text": "Iterating over groups\n\nfor group, data in df_raceeth:\n  print(group)\n  print(data.head(2))\n\nAmerican Indian or Alaska Native\n         State                              Race  Year  uninsured_rate  \\\n9    Wisconsin  American Indian or Alaska Native  2018            0.14   \n20  Washington  American Indian or Alaska Native  2018            0.09   \n\n       Census_Division  uninsured_percent state_lower  \n9   East North Central               14.0   wisconsin  \n20             Pacific                9.0  washington  \nAsian and Pacific Islander\n       State                        Race  Year  uninsured_rate  \\\n3    Wyoming  Asian and Pacific Islander  2018            0.02   \n8  Wisconsin  Asian and Pacific Islander  2018            0.04   \n\n      Census_Division  uninsured_percent state_lower  \n3            Mountain                2.0     wyoming  \n8  East North Central                4.0   wisconsin  \nBlack or African American\n       State                       Race  Year  uninsured_rate  \\\n2    Wyoming  Black or African American  2018            0.02   \n7  Wisconsin  Black or African American  2018            0.02   \n\n      Census_Division  uninsured_percent state_lower  \n2            Mountain                2.0     wyoming  \n7  East North Central                2.0   wisconsin  \nHispanic or Latino\n       State                Race  Year  uninsured_rate     Census_Division  \\\n1    Wyoming  Hispanic or Latino  2018            0.06            Mountain   \n6  Wisconsin  Hispanic or Latino  2018            0.06  East North Central   \n\n   uninsured_percent state_lower  \n1                6.0     wyoming  \n6                6.0   wisconsin  \nNon-Hispanic White\n       State                Race  Year  uninsured_rate     Census_Division  \\\n0    Wyoming  Non-Hispanic White  2018            0.07            Mountain   \n5  Wisconsin  Non-Hispanic White  2018            0.04  East North Central   \n\n   uninsured_percent state_lower  \n0                7.0     wyoming  \n5                4.0   wisconsin  \nTwo or more races\n            State               Race  Year  uninsured_rate  \\\n4       Wisconsin  Two or more races  2018            0.02   \n10  West Virginia  Two or more races  2018            0.01   \n\n       Census_Division  uninsured_percent    state_lower  \n4   East North Central                2.0      wisconsin  \n10      South Atlantic                1.0  west virginia"
+  },
+  {
+    "objectID": "slides/week-6.html#retrieving-a-specific-group",
+    "href": "slides/week-6.html#retrieving-a-specific-group",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Retrieving a specific group",
+    "text": "Retrieving a specific group\n\nameri = df_raceeth.get_group(\"American Indian or Alaska Native\")\nameri.head()\n\n\n\n\n\n\n\n\nState\nRace\nYear\nuninsured_rate\nCensus_Division\nuninsured_percent\nstate_lower\n\n\n\n\n9\nWisconsin\nAmerican Indian or Alaska Native\n2018\n0.14\nEast North Central\n14.0\nwisconsin\n\n\n20\nWashington\nAmerican Indian or Alaska Native\n2018\n0.09\nPacific\n9.0\nwashington\n\n\n44\nSouth Dakota\nAmerican Indian or Alaska Native\n2018\n0.15\nWest North Central\n15.0\nsouth dakota\n\n\n63\nOregon\nAmerican Indian or Alaska Native\n2018\n0.08\nPacific\n8.0\noregon\n\n\n69\nOklahoma\nAmerican Indian or Alaska Native\n2018\n0.19\nWest South Central\n19.0\noklahoma"
+  },
+  {
+    "objectID": "slides/week-6.html#grouping-by-multiple-variables-works-similarly",
+    "href": "slides/week-6.html#grouping-by-multiple-variables-works-similarly",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Grouping by multiple variables works similarly",
+    "text": "Grouping by multiple variables works similarly\nGrouping by State and Year\n\n## group by will work with year in integer form but it's easier if we\n## convert it to string\ndf['year_cat'] = df.Year.astype('string')\n\n\ndf_sy = df.groupby(['State', 'year_cat'])\n\nfor group, data in df_sy:\n  print(group)\n\n('Alabama', '2017')\n('Alabama', '2018')\n('Alabama', '2019')\n('Alabama', '2021')\n('Alabama', '2022')\n('Alabama', '2023')\n('Alabama', '2024')\n('Alaska', '2017')\n('Alaska', '2018')\n('Alaska', '2019')\n('Alaska', '2021')\n('Alaska', '2022')\n('Alaska', '2023')\n('Alaska', '2024')\n('Arizona', '2017')\n('Arizona', '2018')\n('Arizona', '2019')\n('Arizona', '2021')\n('Arizona', '2022')\n('Arizona', '2023')\n('Arizona', '2024')\n('Arkansas', '2017')\n('Arkansas', '2018')\n('Arkansas', '2019')\n('Arkansas', '2021')\n('Arkansas', '2022')\n('Arkansas', '2023')\n('Arkansas', '2024')\n('California', '2017')\n('California', '2018')\n('California', '2019')\n('California', '2021')\n('California', '2022')\n('California', '2023')\n('California', '2024')\n('Colorado', '2017')\n('Colorado', '2018')\n('Colorado', '2019')\n('Colorado', '2021')\n('Colorado', '2022')\n('Colorado', '2023')\n('Colorado', '2024')\n('Connecticut', '2017')\n('Connecticut', '2018')\n('Connecticut', '2019')\n('Connecticut', '2021')\n('Connecticut', '2022')\n('Connecticut', '2023')\n('Connecticut', '2024')\n('Delaware', '2017')\n('Delaware', '2018')\n('Delaware', '2019')\n('Delaware', '2021')\n('Delaware', '2022')\n('Delaware', '2023')\n('Delaware', '2024')\n('Florida', '2017')\n('Florida', '2018')\n('Florida', '2019')\n('Florida', '2021')\n('Florida', '2022')\n('Florida', '2023')\n('Florida', '2024')\n('Georgia', '2017')\n('Georgia', '2018')\n('Georgia', '2019')\n('Georgia', '2021')\n('Georgia', '2022')\n('Georgia', '2023')\n('Georgia', '2024')\n('Hawaii', '2017')\n('Hawaii', '2018')\n('Hawaii', '2019')\n('Hawaii', '2021')\n('Hawaii', '2022')\n('Hawaii', '2023')\n('Hawaii', '2024')\n('Idaho', '2017')\n('Idaho', '2018')\n('Idaho', '2019')\n('Idaho', '2021')\n('Idaho', '2022')\n('Idaho', '2023')\n('Idaho', '2024')\n('Illinois', '2017')\n('Illinois', '2018')\n('Illinois', '2019')\n('Illinois', '2021')\n('Illinois', '2022')\n('Illinois', '2023')\n('Illinois', '2024')\n('Indiana', '2017')\n('Indiana', '2018')\n('Indiana', '2019')\n('Indiana', '2021')\n('Indiana', '2022')\n('Indiana', '2023')\n('Indiana', '2024')\n('Iowa', '2017')\n('Iowa', '2018')\n('Iowa', '2019')\n('Iowa', '2021')\n('Iowa', '2022')\n('Iowa', '2023')\n('Iowa', '2024')\n('Kansas', '2017')\n('Kansas', '2018')\n('Kansas', '2019')\n('Kansas', '2021')\n('Kansas', '2022')\n('Kansas', '2023')\n('Kansas', '2024')\n('Kentucky', '2017')\n('Kentucky', '2018')\n('Kentucky', '2019')\n('Kentucky', '2021')\n('Kentucky', '2022')\n('Kentucky', '2023')\n('Kentucky', '2024')\n('Louisiana', '2017')\n('Louisiana', '2018')\n('Louisiana', '2019')\n('Louisiana', '2021')\n('Louisiana', '2022')\n('Louisiana', '2023')\n('Louisiana', '2024')\n('Maine', '2017')\n('Maine', '2018')\n('Maine', '2019')\n('Maine', '2021')\n('Maine', '2022')\n('Maine', '2023')\n('Maine', '2024')\n('Maryland', '2017')\n('Maryland', '2018')\n('Maryland', '2019')\n('Maryland', '2021')\n('Maryland', '2022')\n('Maryland', '2023')\n('Maryland', '2024')\n('Massachusetts', '2017')\n('Massachusetts', '2018')\n('Massachusetts', '2019')\n('Massachusetts', '2021')\n('Massachusetts', '2022')\n('Massachusetts', '2023')\n('Massachusetts', '2024')\n('Michigan', '2017')\n('Michigan', '2018')\n('Michigan', '2019')\n('Michigan', '2021')\n('Michigan', '2022')\n('Michigan', '2023')\n('Michigan', '2024')\n('Minnesota', '2017')\n('Minnesota', '2018')\n('Minnesota', '2019')\n('Minnesota', '2021')\n('Minnesota', '2022')\n('Minnesota', '2023')\n('Minnesota', '2024')\n('Mississippi', '2017')\n('Mississippi', '2018')\n('Mississippi', '2019')\n('Mississippi', '2021')\n('Mississippi', '2022')\n('Mississippi', '2023')\n('Mississippi', '2024')\n('Missouri', '2017')\n('Missouri', '2018')\n('Missouri', '2019')\n('Missouri', '2021')\n('Missouri', '2022')\n('Missouri', '2023')\n('Missouri', '2024')\n('Montana', '2017')\n('Montana', '2018')\n('Montana', '2019')\n('Montana', '2021')\n('Montana', '2022')\n('Montana', '2023')\n('Montana', '2024')\n('Nebraska', '2017')\n('Nebraska', '2018')\n('Nebraska', '2019')\n('Nebraska', '2021')\n('Nebraska', '2022')\n('Nebraska', '2023')\n('Nebraska', '2024')\n('Nevada', '2017')\n('Nevada', '2018')\n('Nevada', '2019')\n('Nevada', '2021')\n('Nevada', '2022')\n('Nevada', '2023')\n('Nevada', '2024')\n('New Hampshire', '2017')\n('New Hampshire', '2018')\n('New Hampshire', '2019')\n('New Hampshire', '2021')\n('New Hampshire', '2022')\n('New Hampshire', '2023')\n('New Hampshire', '2024')\n('New Jersey', '2017')\n('New Jersey', '2018')\n('New Jersey', '2019')\n('New Jersey', '2021')\n('New Jersey', '2022')\n('New Jersey', '2023')\n('New Jersey', '2024')\n('New Mexico', '2017')\n('New Mexico', '2018')\n('New Mexico', '2019')\n('New Mexico', '2021')\n('New Mexico', '2022')\n('New Mexico', '2023')\n('New Mexico', '2024')\n('New York', '2017')\n('New York', '2018')\n('New York', '2019')\n('New York', '2021')\n('New York', '2022')\n('New York', '2023')\n('New York', '2024')\n('North Carolina', '2017')\n('North Carolina', '2018')\n('North Carolina', '2019')\n('North Carolina', '2021')\n('North Carolina', '2022')\n('North Carolina', '2023')\n('North Carolina', '2024')\n('North Dakota', '2017')\n('North Dakota', '2018')\n('North Dakota', '2019')\n('North Dakota', '2021')\n('North Dakota', '2022')\n('North Dakota', '2023')\n('North Dakota', '2024')\n('Ohio', '2017')\n('Ohio', '2018')\n('Ohio', '2019')\n('Ohio', '2021')\n('Ohio', '2022')\n('Ohio', '2023')\n('Ohio', '2024')\n('Oklahoma', '2017')\n('Oklahoma', '2018')\n('Oklahoma', '2019')\n('Oklahoma', '2021')\n('Oklahoma', '2022')\n('Oklahoma', '2023')\n('Oklahoma', '2024')\n('Oregon', '2017')\n('Oregon', '2018')\n('Oregon', '2019')\n('Oregon', '2021')\n('Oregon', '2022')\n('Oregon', '2023')\n('Oregon', '2024')\n('Pennsylvania', '2017')\n('Pennsylvania', '2018')\n('Pennsylvania', '2019')\n('Pennsylvania', '2021')\n('Pennsylvania', '2022')\n('Pennsylvania', '2023')\n('Pennsylvania', '2024')\n('Rhode Island', '2017')\n('Rhode Island', '2018')\n('Rhode Island', '2019')\n('Rhode Island', '2021')\n('Rhode Island', '2022')\n('Rhode Island', '2023')\n('Rhode Island', '2024')\n('South Carolina', '2017')\n('South Carolina', '2018')\n('South Carolina', '2019')\n('South Carolina', '2021')\n('South Carolina', '2022')\n('South Carolina', '2023')\n('South Carolina', '2024')\n('South Dakota', '2017')\n('South Dakota', '2018')\n('South Dakota', '2019')\n('South Dakota', '2021')\n('South Dakota', '2022')\n('South Dakota', '2023')\n('South Dakota', '2024')\n('Tennessee', '2017')\n('Tennessee', '2018')\n('Tennessee', '2019')\n('Tennessee', '2021')\n('Tennessee', '2022')\n('Tennessee', '2023')\n('Tennessee', '2024')\n('Texas', '2017')\n('Texas', '2018')\n('Texas', '2019')\n('Texas', '2021')\n('Texas', '2022')\n('Texas', '2023')\n('Texas', '2024')\n('Utah', '2017')\n('Utah', '2018')\n('Utah', '2019')\n('Utah', '2021')\n('Utah', '2022')\n('Utah', '2023')\n('Utah', '2024')\n('Vermont', '2017')\n('Vermont', '2018')\n('Vermont', '2019')\n('Vermont', '2021')\n('Vermont', '2022')\n('Vermont', '2023')\n('Vermont', '2024')\n('Virginia', '2017')\n('Virginia', '2018')\n('Virginia', '2019')\n('Virginia', '2021')\n('Virginia', '2022')\n('Virginia', '2023')\n('Virginia', '2024')\n('Washington', '2017')\n('Washington', '2018')\n('Washington', '2019')\n('Washington', '2021')\n('Washington', '2022')\n('Washington', '2023')\n('Washington', '2024')\n('West Virginia', '2017')\n('West Virginia', '2018')\n('West Virginia', '2019')\n('West Virginia', '2021')\n('West Virginia', '2022')\n('West Virginia', '2023')\n('West Virginia', '2024')\n('Wisconsin', '2017')\n('Wisconsin', '2018')\n('Wisconsin', '2019')\n('Wisconsin', '2021')\n('Wisconsin', '2022')\n('Wisconsin', '2023')\n('Wisconsin', '2024')\n('Wyoming', '2017')\n('Wyoming', '2018')\n('Wyoming', '2019')\n('Wyoming', '2021')\n('Wyoming', '2022')\n('Wyoming', '2023')\n('Wyoming', '2024')"
+  },
+  {
+    "objectID": "slides/week-6.html#next-step-combining-grouping-with-aggregation",
+    "href": "slides/week-6.html#next-step-combining-grouping-with-aggregation",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Next step: combining grouping with aggregation",
+    "text": "Next step: combining grouping with aggregation\n\nWe can use grouping to get a better sense of different subsets of the data\nBut grouping becomes most powerful when we combine with operations that perform some form of aggregation\nAggregation is any operation that reduces the dimensionality of the data"
+  },
+  {
+    "objectID": "slides/week-6.html#easiest-way-to-aggregate-built-in-methods-for-specific-datatypes",
+    "href": "slides/week-6.html#easiest-way-to-aggregate-built-in-methods-for-specific-datatypes",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Easiest way to aggregate: built-in methods for specific datatypes",
+    "text": "Easiest way to aggregate: built-in methods for specific datatypes\nExample: mean of a numeric column by group\n\n# within a state, average uninsurance rate across all years and race/ethnic groups\nstate_means = df.groupby('State')['uninsured_rate'].mean()\nstate_means.sort_values(ascending = False)\n\n# within an ethnic group, average uninsurance rate across all years and states\nraceeth_means = df.groupby('Race')['uninsured_rate'].mean()\nraceeth_means.sort_values(ascending = False)\n\n## within an ethnic group x year, average uninsurance rate across all states\nraceeth_means_byyear = df.groupby(['year_cat', 'Race'])['uninsured_rate'].mean()\nraceeth_means_byyear.sort_values(ascending = False)\n\nState\nTexas             0.108250\nArizona           0.095238\nOklahoma          0.090714\nAlaska            0.086000\nUtah              0.084643\nGeorgia           0.083056\nMontana           0.075357\nArkansas          0.075152\nFlorida           0.073333\nNevada            0.072222\nMississippi       0.071923\nSouth Carolina    0.068056\nTennessee         0.067838\nMissouri          0.066389\nKansas            0.065429\nNorth Carolina    0.063333\nIdaho             0.063226\nWyoming           0.063125\nLouisiana         0.059412\nIndiana           0.058158\nNebraska          0.056667\nSouth Dakota      0.055833\nMinnesota         0.054634\nNorth Dakota      0.054091\nVirginia          0.053947\nColorado          0.053250\nNew Mexico        0.051111\nOhio              0.050513\nKentucky          0.047105\nAlabama           0.044872\nWisconsin         0.043684\nPennsylvania      0.043333\nMaryland          0.042778\nNew Jersey        0.040789\nWashington        0.040476\nDelaware          0.039355\nIowa              0.037297\nMichigan          0.035500\nIllinois          0.034872\nNew Hampshire     0.034800\nOregon            0.034595\nMaine             0.034444\nCalifornia        0.033810\nConnecticut       0.031053\nNew York          0.029024\nHawaii            0.027333\nWest Virginia     0.026667\nRhode Island      0.024483\nVermont           0.018571\nMassachusetts     0.017714\nName: uninsured_rate, dtype: float64\n\n\nRace\nAmerican Indian or Alaska Native    0.084444\nHispanic or Latino                  0.082812\nTwo or more races                   0.048389\nAsian and Pacific Islander          0.042774\nBlack or African American           0.040833\nNon-Hispanic White                  0.040200\nName: uninsured_rate, dtype: float64\n\n\nyear_cat  Race                            \n2024      Hispanic or Latino                  0.092222\n2018      American Indian or Alaska Native    0.091667\n2017      American Indian or Alaska Native    0.089130\n2019      Hispanic or Latino                  0.088372\n2024      American Indian or Alaska Native    0.087500\n2021      American Indian or Alaska Native    0.086190\n2023      Hispanic or Latino                  0.085000\n2019      American Indian or Alaska Native    0.085000\n2018      Hispanic or Latino                  0.081702\n2021      Hispanic or Latino                  0.081702\n2023      American Indian or Alaska Native    0.080435\n2022      Hispanic or Latino                  0.077021\n2017      Hispanic or Latino                  0.074222\n2022      American Indian or Alaska Native    0.070909\n2024      Two or more races                   0.058913\n2021      Two or more races                   0.056458\n2023      Two or more races                   0.054167\n2022      Two or more races                   0.053061\n2024      Black or African American           0.049744\n2019      Asian and Pacific Islander          0.045278\n2024      Asian and Pacific Islander          0.044359\n2017      Asian and Pacific Islander          0.044048\n2018      Asian and Pacific Islander          0.043333\n2024      Non-Hispanic White                  0.043000\n2023      Asian and Pacific Islander          0.042703\n2019      Non-Hispanic White                  0.042200\n          Black or African American           0.041860\n2021      Non-Hispanic White                  0.041400\n2017      Black or African American           0.040238\n2019      Two or more races                   0.040222\n2022      Asian and Pacific Islander          0.040000\n2018      Non-Hispanic White                  0.039600\n2023      Black or African American           0.039500\n2021      Black or African American           0.039500\n          Asian and Pacific Islander          0.039487\n2023      Non-Hispanic White                  0.039200\n2022      Non-Hispanic White                  0.038800\n          Black or African American           0.038571\n2018      Two or more races                   0.037609\n2017      Two or more races                   0.037447\n          Non-Hispanic White                  0.037200\n2018      Black or African American           0.036905\nName: uninsured_rate, dtype: float64"
+  },
+  {
+    "objectID": "slides/week-6.html#using-reset_index-to-into-an-operable-dataframe",
+    "href": "slides/week-6.html#using-reset_index-to-into-an-operable-dataframe",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Using reset_index() to into an operable dataframe",
+    "text": "Using reset_index() to into an operable dataframe\nCan then use to plot, further manipulate, etc.\n\nraceeth_means_df = raceeth_means.reset_index()\nraceeth_means_df\n\n\n\n\n\n\n\n\nRace\nuninsured_rate\n\n\n\n\n0\nAmerican Indian or Alaska Native\n0.084444\n\n\n1\nAsian and Pacific Islander\n0.042774\n\n\n2\nBlack or African American\n0.040833\n\n\n3\nHispanic or Latino\n0.082812\n\n\n4\nNon-Hispanic White\n0.040200\n\n\n5\nTwo or more races\n0.048389"
+  },
+  {
+    "objectID": "slides/week-6.html#range-of-built-in-methods",
+    "href": "slides/week-6.html#range-of-built-in-methods",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Range of built-in methods",
+    "text": "Range of built-in methods\nSee user guide from Pandas Documentation\n\n\n\n\n\n\n\nMethod\nFunctionality\n\n\n\n\n.any\nCompute whether any of the values in the groups are truthy\n\n\n.all\nCompute whether all of the values in the groups are truthy\n\n\n.count\nCompute the number of non-NA values in the groups\n\n\n.cov\nCompute the covariance of the groups\n\n\n.first\nCompute the first occurring value in each group\n\n\n.idxmax\nCompute the index of the maximum value in each group\n\n\n.idxmin\nCompute the index of the minimum value in each group\n\n\n.last\nCompute the last occurring value in each group\n\n\n.max\nCompute the maximum value in each group\n\n\n.mean\nCompute the mean of each group\n\n\n.median\nCompute the median of each group\n\n\n.min\nCompute the minimum value in each group\n\n\n.nunique\nCompute the number of unique values in each group\n\n\n.prod\nCompute the product of the values in each group\n\n\n.quantile\nCompute a given quantile of the values in each group\n\n\n.sem\nCompute the standard error of the mean of the values in each group\n\n\n.size\nCompute the number of values in each group\n\n\n.skew\nCompute the skew of the values in each group\n\n\n.std\nCompute the standard deviation of the values in each group\n\n\n.sum\nCompute the sum of the values in each group\n\n\n.var\nCompute the variance of the values in each group"
+  },
+  {
+    "objectID": "slides/week-6.html#another-approach-using-agg-for-more-flexible-aggregation",
+    "href": "slides/week-6.html#another-approach-using-agg-for-more-flexible-aggregation",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Another approach: using agg for more flexible aggregation",
+    "text": "Another approach: using agg for more flexible aggregation\nAdvantages: - Can summarize multiple columns - For each column, can use multiple summary functions\nSyntax is:\ndf.groupby(['groupvar1', 'groupvar2', ...]).agg({'colname1':           ['aggfunc1', 'aggfunc2'],           'colname2':           ['aggfunc1']})\n\n## example: find mean and median uninsurance rate by race/ethnicity group\nraceeth_agg = df.groupby('Race').agg({'uninsured_rate':\n  [\"mean\", \"median\"]}).reset_index()\n\nraceeth_agg\n\n\n\n\n\n\n\n\nRace\nuninsured_rate\n\n\n\n\nmean\nmedian\n\n\n\n\n0\nAmerican Indian or Alaska Native\n0.084444\n0.07\n\n\n1\nAsian and Pacific Islander\n0.042774\n0.04\n\n\n2\nBlack or African American\n0.040833\n0.04\n\n\n3\nHispanic or Latino\n0.082812\n0.08\n\n\n4\nNon-Hispanic White\n0.040200\n0.04\n\n\n5\nTwo or more races\n0.048389\n0.04"
+  },
+  {
+    "objectID": "slides/week-6.html#agg-can-also-be-combined-with-a-user-defined-function",
+    "href": "slides/week-6.html#agg-can-also-be-combined-with-a-user-defined-function",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "agg can also be combined with a user-defined function",
+    "text": "agg can also be combined with a user-defined function\nEither a standalone function or a lambda function\nExample: for each state, find the interquartile range of insurance rates (75th percentile minus 25th percentile)\n\nur_iqr = df.groupby('State').agg({'uninsured_rate':\n                        lambda x: x.quantile(0.75) - x.quantile(0.25)}).reset_index()\nur_iqr.sort_values(by = 'uninsured_rate',\nascending = False).head()\n\n\n\n\n\n\n\n\nState\nuninsured_rate\n\n\n\n\n42\nTexas\n0.0725\n\n\n43\nUtah\n0.0675\n\n\n39\nSouth Carolina\n0.0625\n\n\n2\nArizona\n0.0500\n\n\n22\nMinnesota\n0.0500"
+  },
+  {
+    "objectID": "slides/week-6.html#what-if-we-want-to-relabel-columns-to-more-descriptive-names-within-the-aggregation",
+    "href": "slides/week-6.html#what-if-we-want-to-relabel-columns-to-more-descriptive-names-within-the-aggregation",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "What if we want to relabel columns to more descriptive names within the aggregation?",
+    "text": "What if we want to relabel columns to more descriptive names within the aggregation?\n\nPrevious example shows that without explicit relabeling, the interquartile range is given the name of the column we’re calculating that for (uninsured_rate)\nWith a slight tweak to the syntax, we can relabel the column within the agg call itself\n\n\nur_iqr = df.groupby('State').agg(uninsured_iqr = \n                        ('uninsured_rate',\n                        lambda x: x.quantile(0.75) -\n                        x.quantile(0.25))).reset_index()\nur_iqr.sort_values(by = 'uninsured_iqr',\nascending = False).head()\n\n\n\n\n\n\n\n\nState\nuninsured_iqr\n\n\n\n\n42\nTexas\n0.0725\n\n\n43\nUtah\n0.0675\n\n\n39\nSouth Carolina\n0.0625\n\n\n2\nArizona\n0.0500\n\n\n22\nMinnesota\n0.0500"
+  },
+  {
+    "objectID": "slides/week-6.html#what-if-we-want-to-keep-the-shape-of-the-dataframe-and-add-a-grouped-aggregation-result-as-a-new-column",
+    "href": "slides/week-6.html#what-if-we-want-to-keep-the-shape-of-the-dataframe-and-add-a-grouped-aggregation-result-as-a-new-column",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "What if we want to keep the shape of the dataframe and add a grouped aggregation result as a new column?",
+    "text": "What if we want to keep the shape of the dataframe and add a grouped aggregation result as a new column?\nCan use the assign function we learned earlier for variable creation and combine it with the transform function\nExample: keep all rows in the data; add the average nationwide uninsurance rate for each racial/ethnic group as an additional column\n\ndf_wavg = (df.assign(raceeth_avg = \n        df.groupby('Race')['uninsured_rate'].transform(\"mean\")))\ndf_wavg[['State', 'Year', \n        'Race', 'uninsured_rate', 'raceeth_avg']].sample(n = 5)\n\n\n\n\n\n\n\n\nState\nYear\nRace\nuninsured_rate\nraceeth_avg\n\n\n\n\n344\nLouisiana\n2017\nBlack or African American\n0.03\n0.040833\n\n\n1253\nColorado\n2021\nBlack or African American\n0.02\n0.040833\n\n\n251\nAlabama\n2018\nBlack or African American\n0.04\n0.040833\n\n\n409\nNew York\n2017\nTwo or more races\n0.02\n0.048389\n\n\n286\nConnecticut\n2017\nNon-Hispanic White\n0.02\n0.040200"
+  },
+  {
+    "objectID": "slides/week-6.html#in-class-activity-3",
+    "href": "slides/week-6.html#in-class-activity-3",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "In-class Activity",
+    "text": "In-class Activity\nSee Activity 4 in notebook"
   },
   {
     "objectID": "course_infrastructure.html",
@@ -767,6 +899,245 @@
     ]
   },
   {
+    "objectID": "lecture_notes/week-1/minimal_example_python.html",
+    "href": "lecture_notes/week-1/minimal_example_python.html",
+    "title": "Python via Quarto",
+    "section": "",
+    "text": "Here you add your text as markdown."
+  },
+  {
+    "objectID": "lecture_notes/week-1/minimal_example_python.html#minimal-example-of-using-python-with-quarto",
+    "href": "lecture_notes/week-1/minimal_example_python.html#minimal-example-of-using-python-with-quarto",
+    "title": "Python via Quarto",
+    "section": "",
+    "text": "Here you add your text as markdown."
+  },
+  {
+    "objectID": "lecture_notes/week-1/minimal_example_python.html#code",
+    "href": "lecture_notes/week-1/minimal_example_python.html#code",
+    "title": "Python via Quarto",
+    "section": "Code",
+    "text": "Code\nYou will use the same code block for any language. You just need to change language inside of the brackets {}\n\nlibrary(reticulate)\n\nWarning: package 'reticulate' was built under R version 4.2.3\n\nreticulate::py_config()\n\npython:         /Users/rj545/.virtualenvs/r-reticulate/bin/python\nlibpython:      /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/config-3.9-darwin/libpython3.9.dylib\npythonhome:     /Users/rj545/.virtualenvs/r-reticulate:/Users/rj545/.virtualenvs/r-reticulate\nversion:        3.9.6 (default, Sep 26 2022, 11:37:49)  [Clang 14.0.0 (clang-1400.0.29.202)]\nnumpy:          /Users/rj545/.virtualenvs/r-reticulate/lib/python3.9/site-packages/numpy\nnumpy_version:  2.0.2\n\nuse_python(\"/Users/rj545/.virtualenvs/r-reticulate/bin/python\")\n\nusethis::edit_r_environ()\n\n• Edit '/Users/rj545/.Renviron'\n• Restart R for changes to take effect\n\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport scipy.stats as stats\nimport math\n\n## generate normal distribution \nmu = 0\nvariance = 1\nsigma = math.sqrt(variance)\nx = np.linspace(mu - 3*sigma, mu + 3*sigma, 100)\ny = stats.norm.pdf(x, mu, sigma)\n\n## plot using Georgetown Blue colors\nGU_BLUE = '#041E42'\nplt.plot(x, y, color = GU_BLUE)\nplt.fill_between(x, y, color= GU_BLUE, alpha=0.4)\n\n\n\n\n\n\n\n\n\nplt.show()"
+  },
+  {
+    "objectID": "weeks/week-03.html",
+    "href": "weeks/week-03.html",
+    "title": "Week 03",
+    "section": "",
+    "text": "Week 3 - Intro to Python",
+    "crumbs": [
+      "Materials",
+      "Week 3: Intro to Python"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#slides",
+    "href": "weeks/week-03.html#slides",
+    "title": "Week 03",
+    "section": "",
+    "text": "Week 3 - Intro to Python",
+    "crumbs": [
+      "Materials",
+      "Week 3: Intro to Python"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#in-class-exercise",
+    "href": "weeks/week-03.html#in-class-exercise",
+    "title": "Week 03",
+    "section": "In-Class Exercise",
+    "text": "In-Class Exercise\n\nBlank activity (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html to view): html",
+    "crumbs": [
+      "Materials",
+      "Week 3: Intro to Python"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#optional-readings",
+    "href": "weeks/week-03.html#optional-readings",
+    "title": "Week 03",
+    "section": "Optional Readings",
+    "text": "Optional Readings\nFrom Wes McKinney, Python for Data Analysis\n\nChapter 2: Python Language Basics, IPython, and Jupyter Notebooks\n\nFrom Data Carpentry:\n\nPython Fundamentals\nStoring Multiple Values in Lists",
+    "crumbs": [
+      "Materials",
+      "Week 3: Intro to Python"
+    ]
+  },
+  {
+    "objectID": "weeks/week-05.html",
+    "href": "weeks/week-05.html",
+    "title": "Week 05",
+    "section": "",
+    "text": "Week 5",
+    "crumbs": [
+      "Materials",
+      "Week 5: Libraries and Numpy"
+    ]
+  },
+  {
+    "objectID": "weeks/week-05.html#slides",
+    "href": "weeks/week-05.html#slides",
+    "title": "Week 05",
+    "section": "",
+    "text": "Week 5",
+    "crumbs": [
+      "Materials",
+      "Week 5: Libraries and Numpy"
+    ]
+  },
+  {
+    "objectID": "weeks/week-05.html#in-class-activity",
+    "href": "weeks/week-05.html#in-class-activity",
+    "title": "Week 05",
+    "section": "In-class activity",
+    "text": "In-class activity\n\nProblem set 2 (see Classroom 50 assignment)",
+    "crumbs": [
+      "Materials",
+      "Week 5: Libraries and Numpy"
+    ]
+  },
+  {
+    "objectID": "weeks/week-05.html#optional-readings",
+    "href": "weeks/week-05.html#optional-readings",
+    "title": "Week 05",
+    "section": "Optional Readings",
+    "text": "Optional Readings\n\nPDS VanderPlas\n\nCh. 2: Introduction to Numpy - Python Data Science Handbook - VanderPlas, Jake",
+    "crumbs": [
+      "Materials",
+      "Week 5: Libraries and Numpy"
+    ]
+  },
+  {
+    "objectID": "weeks/week-04.html",
+    "href": "weeks/week-04.html",
+    "title": "Week 04",
+    "section": "",
+    "text": "Week 4 - Python part II",
+    "crumbs": [
+      "Materials",
+      "Week 4: Python - Iteration, Comprehension, and Functions"
+    ]
+  },
+  {
+    "objectID": "weeks/week-04.html#slides",
+    "href": "weeks/week-04.html#slides",
+    "title": "Week 04",
+    "section": "",
+    "text": "Week 4 - Python part II",
+    "crumbs": [
+      "Materials",
+      "Week 4: Python - Iteration, Comprehension, and Functions"
+    ]
+  },
+  {
+    "objectID": "weeks/week-04.html#in-class-exercise",
+    "href": "weeks/week-04.html#in-class-exercise",
+    "title": "Week 04",
+    "section": "In-Class Exercise",
+    "text": "In-Class Exercise\n\nBlank activity (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html to view): html",
+    "crumbs": [
+      "Materials",
+      "Week 4: Python - Iteration, Comprehension, and Functions"
+    ]
+  },
+  {
+    "objectID": "weeks/week-04.html#optional-readings",
+    "href": "weeks/week-04.html#optional-readings",
+    "title": "Week 04",
+    "section": "Optional Readings",
+    "text": "Optional Readings\n\nPDA Wes McKinney, Chapter 3\n\nList, Set, and Dictionary Comprehensions\n\nfor-loop-vs-list-comprehension-vs-high-order-functions",
+    "crumbs": [
+      "Materials",
+      "Week 4: Python - Iteration, Comprehension, and Functions"
+    ]
+  },
+  {
+    "objectID": "weeks/week-02.html",
+    "href": "weeks/week-02.html",
+    "title": "Week 02",
+    "section": "",
+    "text": "Slides\nWeek 01: Git and GitHub\n\n\nIn-class activity\nClassroom 50 link\nDownload from this website:\n\nBlank activity:  .ipynb file \nActivity solutions:  .ipynb file \n\n\n\nResources (optional)\nGitHub Cheatsheet\nAnother GitHub Cheatsheet",
+    "crumbs": [
+      "Materials",
+      "Week 2: Git and GitHub"
+    ]
+  },
+  {
+    "objectID": "weeks/week-01.html",
+    "href": "weeks/week-01.html",
+    "title": "Week 01",
+    "section": "",
+    "text": "Slides\nWeek 01:Introduction, Installations, IDEs, Command line\n\n\nHandouts\n\nInstructions for setting up the course infrastructure.\nUsing Jupyter Notebooks: web page,  .ipynb file \nUsing Quarto for Python and R web page,  .qmd file \nBasics of Command Line: web page,  .ipynb file \nPractice Notebook to Check Installations:  .ipynb file \n\n\n\nReadings\nRequired Readings\n\nJupyter Notebook for Beginners: A tutorial Pryke, Benjamin - www.dataquest.io\n\n\n\nDataCamp\n\nOptional (but highly recommended) module: Introduction to Shell &gt; Manipulating Files and Directories",
+    "crumbs": [
+      "Materials",
+      "Week 1: Intro to Course and Tools"
+    ]
+  },
+  {
+    "objectID": "lecture_notes/week-1/intro_to_quarto.html",
+    "href": "lecture_notes/week-1/intro_to_quarto.html",
+    "title": "Week 1: Introduction to Quarto for Python",
+    "section": "",
+    "text": "The purpose of this notebook is to show case the use of Quarto notebooks. It will cover:\n\nBrief introduction to Quarto Notebooks\nRunning R with Quarto Notebooks\nRunning Python with Quarto Notebooks + reticulate\n\nSee Quarto’s website for a more in-depth coverage of the framework."
+  },
+  {
+    "objectID": "lecture_notes/week-1/intro_to_quarto.html#quick-tutorial-for-rstudio",
+    "href": "lecture_notes/week-1/intro_to_quarto.html#quick-tutorial-for-rstudio",
+    "title": "Week 1: Introduction to Quarto for Python",
+    "section": "Quick tutorial for RStudio",
+    "text": "Quick tutorial for RStudio\nThis is what RStudio looks like when you open it for the first time.\n\n\n\n\n\n\n\n\n\nTop left pane (input/script)\nThis is your code editor. Here you enter code in any file type (.py, .r, .qmd) you are working on. If not working with notebooks, this is just gonna be a plain text file but with a extension that run the commands.\nFor example, enter 2 + 2 in your script and run a line of code by pressing command + enter (Mac) or Ctrl + enter (PC). This is a huge advantage of Rstudio over Jupyter. You can run your code line by line, instead of running the entire cell.\nBottom left pane (output/console)\nThis is the console. It is pretty much like when you open Python/R from the Command line.\nIn the console, the prompt &gt; looks like a greater than symbol. If your prompt begins to look like a + symbol by mistake, simply click in your console and press the esc key on your keyboard as many times as necessary to return to the prompt.\nRstudio uses + when code is broken up across multiple lines and is still expecting more code. A line of code does not usually end until Rstudio finds an appropriate stop parameter or punctuation that completes some code such as a closed round parenthesis ), square bracket ], curly brace }, or quotation mark '.\nIf the output in your console gets too messy, you can clear it by pressing control + l on both Mac and PC. This will not erase any saved data - it will simply make your console easier to read.\nTop right pane (global environment)\nThis is your environment pane. All objects you create will be displayed here.\nBottom right pane (files, plots, packages, and help)\nHere you find useful tabs for navigating your file system, displaying plots, installing packages, and viewing help pages. Press the control key and a number (1 through 9) on your keyboard to shortcut between these panes and tabs."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "",
+    "text": "This first course in the core data science sequence teaches Data Science for Public Policy (DSPP) students how to synthesize disparate, possibly unstructured data in order to draw meaningful insights. Topics covered include the fundamentals of object-oriented programming in Python; literate programming; an introduction to algorithms and data types; data wrangling, visualization, and extraction; an introduction to machine learning methods, and text analysis. In addition, students will be exposed to Git and Github for version control and reproducible research. The objective of the course is to teach students how to incorporate data into their decision-making and analysis. No prior programming experience is assumed or required.\nData Science I is a collective effort among DSPP faculty. For this reason, the materials heavily draw from Dr. Tiago Ventura’s version of the course, with some also drawn from materials created by Dr. Eric Dunford",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "",
+    "text": "This first course in the core data science sequence teaches Data Science for Public Policy (DSPP) students how to synthesize disparate, possibly unstructured data in order to draw meaningful insights. Topics covered include the fundamentals of object-oriented programming in Python; literate programming; an introduction to algorithms and data types; data wrangling, visualization, and extraction; an introduction to machine learning methods, and text analysis. In addition, students will be exposed to Git and Github for version control and reproducible research. The objective of the course is to teach students how to incorporate data into their decision-making and analysis. No prior programming experience is assumed or required.\nData Science I is a collective effort among DSPP faculty. For this reason, the materials heavily draw from Dr. Tiago Ventura’s version of the course, with some also drawn from materials created by Dr. Eric Dunford",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#goals",
+    "href": "index.html#goals",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "Goals",
+    "text": "Goals\nAfter completing this course, the students will be able to:\n\nGeneral understanding of python’s object oriented programming syntax and data structures.\nCompetency using version control (Git/Github).\nLearn to manipulate and explore data with Pandas and other tools.\nGeneral understanding of analyzing algorithms and data structures.\nLearn to extract and process data from structured and unstructured sources.\nGet some intuition of modeling text data in Python.\nLearn the basics of machine learning as a modeling approach.\nLearn how to use Generative AI for multiple applied tasks.\nLearn basics of using SQL to query databases.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "Instructor",
+    "text": "Instructor\n\nProfessor: Dr. Rebecca Johnson\nEmail: rj545@georgetown.edu\nOffice hours:\n\nTime: Every Wednesday, 1130am - 130pm\nLocation - either:\nIn person: 125E, Office Number 768\nRemote: see Calendly link\n\n\nSign up: on Calendly",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#teaching-assistant-tbd",
+    "href": "index.html#teaching-assistant-tbd",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "Teaching Assistant: TBD",
+    "text": "Teaching Assistant: TBD\n\nCourse Infra-structure\nClass Website: A class website https://rebeccajohnson88.github.io/PPOL5203_fall2026/ will be used throughout the course and should be checked on a regular basis for lecture materials and required readings.\n\nCanvas: A Canvas site (http://canvas.georgetown.edu) will be used throughout the course and should be checked on a regular basis for announcements. All announcements for the assignments and classes will be posted on Canvas; they will not be distributed in class or by e-mail. Support for Canvas is available at (202) 687-4949\nNOTE: Students are encouraged to run lecture code on their own machines. If you do not have access to a laptop on which you can install python3, please contact the professor and/or TA for assistance. Only python3 will be used in this course.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
     "objectID": "slides/week-5.html#importing-libraries-in-python",
     "href": "slides/week-5.html#importing-libraries-in-python",
     "title": " PPOL 5203 - Data Science I: Foundations ",
@@ -778,7 +1149,7 @@
     "href": "slides/week-5.html#the-full-library-and-its-functions",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "The full library and its functions",
-    "text": "The full library and its functions\n\n\n# import library\nimport math\n\n# access methods from the library\nmath.pi\n\n3.141592653589793\n\n\n\n\n# this will throw you an error\npi\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_77815/767399446.py in &lt;module&gt;\n      1 # this will throw you an error\n----&gt; 2 pi\n\nNameError: name 'pi' is not defined"
+    "text": "The full library and its functions\n\n\n# import library\nimport math\n\n# access methods from the library\nmath.pi\n\n3.141592653589793\n\n\n\n\n# this will throw you an error\npi\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_83899/767399446.py in &lt;module&gt;\n      1 # this will throw you an error\n----&gt; 2 pi\n\nNameError: name 'pi' is not defined"
   },
   {
     "objectID": "slides/week-5.html#the-full-library-with-an-alias",
@@ -813,7 +1184,7 @@
     "href": "slides/week-5.html#example-csv-file",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Example: csv file",
-    "text": "Example: csv file\n\n# Libraries \nimport csv\nimport os\n\n# Print current working directory\nos.getcwd()\n\n# List files in datasets directory\nos.listdir(\"../datasets/\")\n\n# Load gapminder dataset\nwith open(\"../datasets/gapminder.csv\",mode=\"rt\") as file:\n    data = [row for row in csv.reader(file)]\n\n'/Users/rj545/Dropbox/PPOL5203_fall2026/slides'\n\n\n['gapminder.csv']"
+    "text": "Example: csv file\n\n# Libraries \nimport csv\nimport os\n\n# Print current working directory\nos.getcwd()\n\n# List files in datasets directory\nos.listdir(\"../datasets/\")\n\n# Load gapminder dataset\nwith open(\"../datasets/gapminder.csv\",mode=\"rt\") as file:\n    data = [row for row in csv.reader(file)]\n\n'/Users/rj545/Dropbox/PPOL5203_fall2026/slides'\n\n\n['us census bureau regions and divisions.csv',\n 'childnoinsur_all.csv',\n 'childnoinsur_complete.csv',\n 'gapminder.csv',\n 'Children without health insurance by race and ethnicity.xlsx']"
   },
   {
     "objectID": "slides/week-5.html#working-with-nested-lists-indexing",
@@ -911,14 +1282,14 @@
     "href": "slides/week-5.html#creating-arrays-not-using-lists",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Creating arrays not using lists",
-    "text": "Creating arrays not using lists\n\nCan also create arrays with certain content. Some examples:\n\n\n## creating a 3x3 array filled with 1s\nnp.ones((3,3))\n\n## creating a 3x3 array filled with random numbers between 0 and 1\nnp.random.random((3, 3))\n\n## creating a 3x3 array filled with random integers\n## from a pre-defined interval (in this case, 1 through 10)\nnp.random.randint(1, 10, (3, 3))\n\narray([[1., 1., 1.],\n       [1., 1., 1.],\n       [1., 1., 1.]])\n\n\narray([[0.35557464, 0.54990631, 0.62684939],\n       [0.212665  , 0.72406384, 0.83272866],\n       [0.67972944, 0.35280126, 0.95155749]])\n\n\narray([[3, 5, 6],\n       [8, 8, 5],\n       [6, 5, 2]])"
+    "text": "Creating arrays not using lists\n\nCan also create arrays with certain content. Some examples:\n\n\n## creating a 3x3 array filled with 1s\nnp.ones((3,3))\n\n## creating a 3x3 array filled with random numbers between 0 and 1\nnp.random.random((3, 3))\n\n## creating a 3x3 array filled with random integers\n## from a pre-defined interval (in this case, 1 through 10)\nnp.random.randint(1, 10, (3, 3))\n\narray([[1., 1., 1.],\n       [1., 1., 1.],\n       [1., 1., 1.]])\n\n\narray([[0.7286044 , 0.87655243, 0.33205958],\n       [0.38241472, 0.48759432, 0.06736328],\n       [0.68660474, 0.62098072, 0.82539212]])\n\n\narray([[8, 5, 6],\n       [1, 1, 1],\n       [9, 8, 6]])"
   },
   {
     "objectID": "slides/week-5.html#what-are-some-attributes-of-arrays",
     "href": "slides/week-5.html#what-are-some-attributes-of-arrays",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "What are some attributes of arrays?",
-    "text": "What are some attributes of arrays?\n\nnumpy.dim: tells us the number of dimensions\nnumpy.shape: tells us the size of each dimension\nnumpy.size: tells us the full size of a array\n\n\n# generate an array\nX = np.random.randint(0, 100, (5, 5))\nX\n\n# information\nprint(\"ndim: \", X.ndim)\nprint(\"shape:\", X.shape)\nprint(\"size: \", X.size)\n\narray([[38, 23, 51, 75, 54],\n       [76, 58, 46,  6, 37],\n       [29, 43, 60, 44, 86],\n       [ 2,  9, 99, 87, 82],\n       [34, 78,  2, 44, 82]])\n\n\nndim:  2\nshape: (5, 5)\nsize:  25"
+    "text": "What are some attributes of arrays?\n\nnumpy.dim: tells us the number of dimensions\nnumpy.shape: tells us the size of each dimension\nnumpy.size: tells us the full size of a array\n\n\n# generate an array\nX = np.random.randint(0, 100, (5, 5))\nX\n\n# information\nprint(\"ndim: \", X.ndim)\nprint(\"shape:\", X.shape)\nprint(\"size: \", X.size)\n\narray([[64, 85, 20,  4, 55],\n       [29, 29, 41, 20, 88],\n       [20, 37,  5, 19, 23],\n       [14, 51, 84, 23, 10],\n       [38, 87, 85, 35, 25]])\n\n\nndim:  2\nshape: (5, 5)\nsize:  25"
   },
   {
     "objectID": "slides/week-5.html#array-indexing-and-slicing",
@@ -932,7 +1303,7 @@
     "href": "slides/week-5.html#example-indexing",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Example indexing",
-    "text": "Example indexing\n\nX\n# index first row \nX[0] \n\n# index first column\nX[:,0]\n\n# index a specific cell \nX[0,0] \n\n# slice rows and columns\nX[0:3,0:3] \n\n# last row\nX[-1,:] \n\narray([[38, 23, 51, 75, 54],\n       [76, 58, 46,  6, 37],\n       [29, 43, 60, 44, 86],\n       [ 2,  9, 99, 87, 82],\n       [34, 78,  2, 44, 82]])\n\n\narray([38, 23, 51, 75, 54])\n\n\narray([38, 76, 29,  2, 34])\n\n\n38\n\n\narray([[38, 23, 51],\n       [76, 58, 46],\n       [29, 43, 60]])\n\n\narray([34, 78,  2, 44, 82])"
+    "text": "Example indexing\n\nX\n# index first row \nX[0] \n\n# index first column\nX[:,0]\n\n# index a specific cell \nX[0,0] \n\n# slice rows and columns\nX[0:3,0:3] \n\n# last row\nX[-1,:] \n\narray([[64, 85, 20,  4, 55],\n       [29, 29, 41, 20, 88],\n       [20, 37,  5, 19, 23],\n       [14, 51, 84, 23, 10],\n       [38, 87, 85, 35, 25]])\n\n\narray([64, 85, 20,  4, 55])\n\n\narray([64, 29, 20, 14, 38])\n\n\n64\n\n\narray([[64, 85, 20],\n       [29, 29, 41],\n       [20, 37,  5]])\n\n\narray([38, 87, 85, 35, 25])"
   },
   {
     "objectID": "slides/week-5.html#reassignment",
@@ -960,35 +1331,35 @@
     "href": "slides/week-5.html#reassignment-based-on-conditional-statements",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Reassignment based on conditional statements",
-    "text": "Reassignment based on conditional statements\n\nD = np.random.randn(50).reshape(10,5).round(1)\nD\n\nD[D &gt; 0] = 1\nprint(D)\n\narray([[ 0. ,  1.6,  0.4, -0.6,  0.8],\n       [ 1.5,  2.4, -0.1, -0.6,  0.2],\n       [-0.3,  1.1, -0.3, -0.5, -0.9],\n       [ 0.8,  0.2,  0.9,  0.3,  3.2],\n       [-1.4, -0.8,  0.3, -2.3, -1.4],\n       [ 0.7, -0.4,  0.4, -1.3,  1.3],\n       [ 0.3,  0.5, -0.9, -0.2, -0.7],\n       [-1.2,  0.2,  1.2,  0.6, -0.8],\n       [ 0.4, -0.4, -0.1, -0.4, -1.6],\n       [ 0.6, -0.4, -1.1, -0.3, -1. ]])\n\n\n[[ 0.   1.   1.  -0.6  1. ]\n [ 1.   1.  -0.1 -0.6  1. ]\n [-0.3  1.  -0.3 -0.5 -0.9]\n [ 1.   1.   1.   1.   1. ]\n [-1.4 -0.8  1.  -2.3 -1.4]\n [ 1.  -0.4  1.  -1.3  1. ]\n [ 1.   1.  -0.9 -0.2 -0.7]\n [-1.2  1.   1.   1.  -0.8]\n [ 1.  -0.4 -0.1 -0.4 -1.6]\n [ 1.  -0.4 -1.1 -0.3 -1. ]]"
+    "text": "Reassignment based on conditional statements\n\nD = np.random.randn(50).reshape(10,5).round(1)\nD\n\nD[D &gt; 0] = 1\nprint(D)\n\narray([[ 0.6, -1.2,  0.1,  0.2,  0.8],\n       [ 0.9,  0.4,  0.8, -0.1,  1.2],\n       [ 0.5,  0.2,  0.4, -1.8, -1.2],\n       [-1. ,  0.5,  0.3, -0.6,  0.1],\n       [-0.5, -1.3,  0.4, -0.6, -1. ],\n       [ 0.9, -1.3,  0.2,  1.5, -0.9],\n       [ 0. , -0.7, -0.5, -0.8, -0.5],\n       [-1.3, -0.2, -1.5,  1.5,  0.1],\n       [-1.2,  0.5,  0.1, -2.1,  0.2],\n       [-1.2,  1.2,  0.2,  0.6, -1.5]])\n\n\n[[ 1.  -1.2  1.   1.   1. ]\n [ 1.   1.   1.  -0.1  1. ]\n [ 1.   1.   1.  -1.8 -1.2]\n [-1.   1.   1.  -0.6  1. ]\n [-0.5 -1.3  1.  -0.6 -1. ]\n [ 1.  -1.3  1.   1.  -0.9]\n [ 0.  -0.7 -0.5 -0.8 -0.5]\n [-1.3 -0.2 -1.5  1.   1. ]\n [-1.2  1.   1.  -2.1  1. ]\n [-1.2  1.   1.   1.  -1.5]]"
   },
   {
     "objectID": "slides/week-5.html#reassignment-based-on-conditional-statements-1",
     "href": "slides/week-5.html#reassignment-based-on-conditional-statements-1",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Reassignment based on conditional statements",
-    "text": "Reassignment based on conditional statements\n\nD[D &lt;=0 ] =0\nprint(D)\n\n[[0. 1. 1. 0. 1.]\n [1. 1. 0. 0. 1.]\n [0. 1. 0. 0. 0.]\n [1. 1. 1. 1. 1.]\n [0. 0. 1. 0. 0.]\n [1. 0. 1. 0. 1.]\n [1. 1. 0. 0. 0.]\n [0. 1. 1. 1. 0.]\n [1. 0. 0. 0. 0.]\n [1. 0. 0. 0. 0.]]"
+    "text": "Reassignment based on conditional statements\n\nD[D &lt;=0 ] =0\nprint(D)\n\n[[1. 0. 1. 1. 1.]\n [1. 1. 1. 0. 1.]\n [1. 1. 1. 0. 0.]\n [0. 1. 1. 0. 1.]\n [0. 0. 1. 0. 0.]\n [1. 0. 1. 1. 0.]\n [0. 0. 0. 0. 0.]\n [0. 0. 0. 1. 1.]\n [0. 1. 1. 0. 1.]\n [0. 1. 1. 1. 0.]]"
   },
   {
     "objectID": "slides/week-5.html#np.where-streamlines-this-conditional-reassignment",
     "href": "slides/week-5.html#np.where-streamlines-this-conditional-reassignment",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "np.where streamlines this conditional reassignment",
-    "text": "np.where streamlines this conditional reassignment\n\nD = np.random.randn(50).reshape(10,5).round(1) # Generate some random numbers again\nD # Before \nnp.where(D&gt;0,1,0) # After\n\narray([[ 0.7,  0.3,  2.8,  1.2,  1. ],\n       [ 0.9,  1.9, -2. , -2.1, -0.2],\n       [ 1.1, -0.4, -1.4, -0. , -0.5],\n       [ 0.3, -1. ,  1.4,  0.1,  0.7],\n       [-0.7, -0.8,  0.1,  1.4, -0.4],\n       [-0.3, -0.9, -1.6, -0.8, -0.4],\n       [ 0.2,  0.1,  1.3, -0.1,  0.7],\n       [-1.6,  0.2, -0.7,  0.2,  0.3],\n       [-0.5,  1.1,  0.1, -0.8, -0.8],\n       [-0.7,  0.6,  0.1,  0.9, -0. ]])\n\n\narray([[1, 1, 1, 1, 1],\n       [1, 1, 0, 0, 0],\n       [1, 0, 0, 0, 0],\n       [1, 0, 1, 1, 1],\n       [0, 0, 1, 1, 0],\n       [0, 0, 0, 0, 0],\n       [1, 1, 1, 0, 1],\n       [0, 1, 0, 1, 1],\n       [0, 1, 1, 0, 0],\n       [0, 1, 1, 1, 0]])"
+    "text": "np.where streamlines this conditional reassignment\n\nD = np.random.randn(50).reshape(10,5).round(1) # Generate some random numbers again\nD # Before \nnp.where(D&gt;0,1,0) # After\n\narray([[-0.3, -0.5,  0.5, -1.3, -0.6],\n       [ 1.1,  0.7,  0.9, -0.9,  0.1],\n       [-0.9,  1. ,  0.3,  1. ,  0.2],\n       [-0.4, -0.5,  0.3,  1. , -0.9],\n       [-0.2,  1.8,  0.6,  0.1,  0.3],\n       [ 1.9,  1.6,  0.1,  1.3, -0.9],\n       [ 0.5,  0.3, -1.2, -2.1,  0.7],\n       [ 0.6, -0.6,  0.1,  0.2, -0.5],\n       [ 0.5, -0.1, -0.4, -0.6, -1.9],\n       [-1.4, -1.2,  1.1,  0.8, -1. ]])\n\n\narray([[0, 0, 1, 0, 0],\n       [1, 1, 1, 0, 1],\n       [0, 1, 1, 1, 1],\n       [0, 0, 1, 1, 0],\n       [0, 1, 1, 1, 1],\n       [1, 1, 1, 1, 0],\n       [1, 1, 0, 0, 1],\n       [1, 0, 1, 1, 0],\n       [1, 0, 0, 0, 0],\n       [0, 0, 1, 1, 0]])"
   },
   {
     "objectID": "slides/week-5.html#one-warning-with-slicing-and-reassignment-need-to-explicitly-copy-array-to-avoid-modifying-original",
     "href": "slides/week-5.html#one-warning-with-slicing-and-reassignment-need-to-explicitly-copy-array-to-avoid-modifying-original",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "One warning with slicing and reassignment: need to explicitly copy array to avoid modifying original",
-    "text": "One warning with slicing and reassignment: need to explicitly copy array to avoid modifying original\n\nX = np.random.randint(0, 100, (1, 5))\n\n# slice\nX_sub = X[:3]\n\n# modify\nX_sub[0][0] = 3000\n\n# print\nprint(X, X_sub)\n\n[[3000   67   54   42   58]] [[3000   67   54   42   58]]"
+    "text": "One warning with slicing and reassignment: need to explicitly copy array to avoid modifying original\n\nX = np.random.randint(0, 100, (1, 5))\n\n# slice\nX_sub = X[:3]\n\n# modify\nX_sub[0][0] = 3000\n\n# print\nprint(X, X_sub)\n\n[[3000   72   19   26   82]] [[3000   72   19   26   82]]"
   },
   {
     "objectID": "slides/week-5.html#how-to-avoid-add-an-explicit-copy",
     "href": "slides/week-5.html#how-to-avoid-add-an-explicit-copy",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "How to avoid: add an explicit copy",
-    "text": "How to avoid: add an explicit copy\n\nX = np.random.randint(0, 100, (1, 5))\n\n# slice.copy()\nX_sub = X[:3].copy()\n\n# modify\nX_sub[0][0] = 1000\n\n# print\nprint(X, X_sub)\n\n[[96 94 67 75 85]] [[1000   94   67   75   85]]"
+    "text": "How to avoid: add an explicit copy\n\nX = np.random.randint(0, 100, (1, 5))\n\n# slice.copy()\nX_sub = X[:3].copy()\n\n# modify\nX_sub[0][0] = 1000\n\n# print\nprint(X, X_sub)\n\n[[61 23 32 56 78]] [[1000   23   32   56   78]]"
   },
   {
     "objectID": "slides/week-5.html#concatenating-and-splitting-arrays",
@@ -1002,21 +1373,21 @@
     "href": "slides/week-5.html#example-applications",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Example applications",
-    "text": "Example applications\n\n# create arrays\nX = np.random.randint(0, 100, (5, 2))\nY = np.random.randint(0, 100, (5, 2))\n\nX\nY\n\narray([[73, 30],\n       [12, 45],\n       [ 6, 86],\n       [87, 66],\n       [44, 26]])\n\n\narray([[91, 62],\n       [96, 39],\n       [36, 40],\n       [92, 86],\n       [42, 40]])"
+    "text": "Example applications\n\n# create arrays\nX = np.random.randint(0, 100, (5, 2))\nY = np.random.randint(0, 100, (5, 2))\n\nX\nY\n\narray([[23, 13],\n       [97, 82],\n       [ 1, 91],\n       [23, 45],\n       [35, 28]])\n\n\narray([[61, 65],\n       [86, 94],\n       [79, 75],\n       [69, 50],\n       [89, 67]])"
   },
   {
     "objectID": "slides/week-5.html#rowbind-vertically-stack",
     "href": "slides/week-5.html#rowbind-vertically-stack",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Rowbind / vertically stack",
-    "text": "Rowbind / vertically stack\n\nnp.concatenate([X,Y],axis=0)\n\narray([[73, 30],\n       [12, 45],\n       [ 6, 86],\n       [87, 66],\n       [44, 26],\n       [91, 62],\n       [96, 39],\n       [36, 40],\n       [92, 86],\n       [42, 40]])"
+    "text": "Rowbind / vertically stack\n\nnp.concatenate([X,Y],axis=0)\n\narray([[23, 13],\n       [97, 82],\n       [ 1, 91],\n       [23, 45],\n       [35, 28],\n       [61, 65],\n       [86, 94],\n       [79, 75],\n       [69, 50],\n       [89, 67]])"
   },
   {
     "objectID": "slides/week-5.html#column-bind-horizontally-combine",
     "href": "slides/week-5.html#column-bind-horizontally-combine",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Column bind / horizontally combine",
-    "text": "Column bind / horizontally combine\n\n# cbind\nnp.concatenate([X,Y],axis=1)\n\narray([[73, 30, 91, 62],\n       [12, 45, 96, 39],\n       [ 6, 86, 36, 40],\n       [87, 66, 92, 86],\n       [44, 26, 42, 40]])"
+    "text": "Column bind / horizontally combine\n\n# cbind\nnp.concatenate([X,Y],axis=1)\n\narray([[23, 13, 61, 65],\n       [97, 82, 86, 94],\n       [ 1, 91, 79, 75],\n       [23, 45, 69, 50],\n       [35, 28, 89, 67]])"
   },
   {
     "objectID": "slides/week-5.html#broadcasting",

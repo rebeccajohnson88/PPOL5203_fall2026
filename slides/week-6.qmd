@@ -1,0 +1,762 @@
+---
+title: "<span style = 'font-size: 100%;'> PPOL 5203 - Data Science I: Foundations </span>"
+subtitle: "<span style = 'font-size: 100%;'> Week 6: Intro to Pandas and data wrangling</span>"
+author: "Professor: Rebecca Johnson"
+execute: 
+  echo: true
+  error: true
+format:
+  revealjs: 
+    transition: slide
+    background-transition: fade
+    code-line-numbers: false
+    width: 1600
+    height: 900
+    center: true
+    slide-number: true
+    incremental: false
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    footer: "Data science I: Foundations"
+    theme: [simple, custom.scss]
+jupyter: python3 
+ipynb-shell-interactivity: all
+---
+
+# Plans for Today
+
+-   Intro to Pandas 
+
+-   Data wrangling: selecting and filtering
+
+-   Data wrangling: creating new columns and recoding variables
+
+-   Data wrangling: grouping and summarization
+
+
+# Intro to Pandas {background-color="#447099"}
+
+## Motivation
+
+::: incremental
+-   **Numpy** offers a great flexibility and efficiency when dealing with data matrices.
+
+-   Really efficient for mathematical operations.
+
+-   Pretty bad for data wrangling tasks \~\> **numpy** only accepts the same data type
+
+-   The `pandas` package was designed to solve this limitation by providing data structures to deal with rectangular & heterogeneous data types.
+
+-   Main Data Structures: `pd.series()` and `pd.DataFrames()`
+:::
+
+## Pandas Series
+
+A **pandas series** is a **one-dimensional** labeled array.
+
+::: incremental
+-   Capable of holding different data types (e.g. integer, boolean, strings, etc.).
+
+-   It holds two key components:
+
+    -   **index**: names in the axis
+    -   **values**: values in the series
+
+-   A **pandas series** is nothing but a **column** in an excel sheet or an R `data.frame` (with an index)
+:::
+
+## Pandas Series Constructor
+
+```{python}
+import pandas as pd
+
+s = pd.Series(["Argentina", "France", "Germany","Spain", "Italy", "Brazil"],
+                 index=[2022, 2018, 2014, 2010, 2006, 2002])
+print(s)
+```
+
+-   You can feed to the constructor:
+
+    -   list
+
+    -   dictionaries
+
+    -   scalar values
+
+    -   ndarray
+
+## Pandas DataFrames
+
+A `pandas DataFrame` is a two dimensional, relational data structure with the capacity to handle heterogeneous data types.
+
+-   **relational**: each column value contained within a row entry corresponds with the same observation.
+
+-   **two dimensional**: a matrix data structure
+
+-   **heterogeneous**: different data types can be contained across each column series.
+
+## Constructor
+
+```{python}
+import pandas as pd
+# create a simple series
+series = pd.Series(["Argentina", "France", "Germany","Spain", "Italy", "Brazil"],
+                 index=[2022, 2018, 2014, 2010, 2006, 2002])
+# create the dataframe
+df = pd.DataFrame(series)
+print(df)
+```
+
+
+```{python}
+#| echo: false
+#| eval: false
+
+raw_kids = pd.read_excel("../datasets/Children without health insurance by race and ethnicity.xlsx")
+raw_kids.columns
+
+kids_perc = raw_kids[(raw_kids.LocationType == "State") &
+                  (raw_kids.DataFormat == "Percent") &
+                  (raw_kids.Race != "Total")].copy()
+
+kids_perc =  kids_perc.replace(['<500', 'S', 
+                      'NA', '<0.5%', "N.A."], pd.NA)
+                      
+                      
+kids_perc['uninsured_rate'] = pd.to_numeric(kids_perc.Data, 
+                  errors = "coerce")
+kids_perc_keep = kids_perc[["Location", "Race", "TimeFrame",
+                  "uninsured_rate"]].copy()
+                  
+## write two versions of file
+kids_perc_keep = kids_perc_keep.rename(columns = {'TimeFrame': 'Year',
+'Location': 'State'})
+
+## add region
+kids_perc_keep.head()
+
+## write one version with missing data and other without
+regions = pd.read_csv("../datasets/us census bureau regions and divisions.csv") 
+regions.columns
+kp_wregion = pd.merge(kids_perc_keep, regions[["State", "Division"]].rename(columns = {"Division": "Census_Division"}),
+      on= "State")
+
+## write with and without missing
+kp_wregion_complete = kp_wregion[kp_wregion.uninsured_rate.notna()].copy()
+kp_wregion_complete.to_csv("../datasets/childnoinsur_complete.csv",
+            index = False)
+kp_wregion.to_csv("../datasets/childnoinsur_all.csv",
+            index = False)
+
+```
+
+
+
+## Loading data from a csv file
+
+
+```{python}
+import pandas as pd
+df = pd.read_csv("../datasets/childnoinsur_complete.csv")
+
+```
+## Attributes of dataframes as a whole or specific columns
+
+- `dfname.dtypes:` returns a pandas series where the index is the name of the column; the value is the type of data it contains (eg str; int; float)
+- `dfname.shape`: returns a length-2 tuple with dimensions of dataframe (number of rows, number of columns)
+- `dfname.head()` prints first n rows (defaults to 5)
+- `dfname.tail()`: prints last n rows (defaults to 5)
+- `dfname.describe()`: prints summary statistics for numeric columns
+- `dfname.colname.value_counts()`: count of observations for each value of categorical data
+
+
+## Illustrating 
+
+
+```{python}
+df.dtypes
+df.shape
+df.head(2)
+df.tail(2)
+df.describe()
+df.Census_Division.value_counts()
+
+```
+
+
+## In-class activity
+
+See Activity 1 in notebook
+
+
+# Data wrangling: selecting and filtering {background-color="#447099"}
+
+## Translating R data wrangling to Python
+
+**<center>Main (tidy) Data Wrangling Functions </center>**
+
+|   [`pandas`](https://pandas.pydata.org/)      |   [`dplyr`](https://dplyr.tidyverse.org/)$^\dagger$      |     Description     |
+|:---------------:|:-------------:|:-----------------------------|
+| `.filter()`     | `select()`    | select column variables/index |
+| `.drop()`       | `select()`    | drop selected column variables/index |
+| `.rename()`     | `rename()`    | rename column variables/index |
+| `.query()`      | `filter()`    | row-wise subset of a data frame by a values of a column variable/index |
+| `.assign()`     |`mutate()`    | Create a new variable on the existing data frame |
+| `.sort_values()`| `arrange()`   | Arrange all data values along a specified (set of) column variable(s)/indices |
+| `.groupby()`    |  `group_by()`  | Index data frame by specific (set of) column variable(s)/index value(s)|
+| `.agg()`        |  `summarize()` | aggregate data by specific function rules |
+| `.pivot_table()`        | `spread()` | cast the data from a "long" to a "wide" format |
+| `pd.melt()`        | `gather()` | cast the data from a "wide" to a "long" format |
+| `.()`            | `%>%`          | piping, fluid programming, or the passing one function output to the next |
+
+
+## Strengths and weaknesses
+
+- Tidyverse and the ability to chain together operations is a strength of R
+- For Python code most similar to tidyverse, you can use the `dfply` module
+- For now, we want to fully strengthen your `pandas` skills so will be focused on wrangling in that language 
+
+
+## Working with columns in the data
+
+Things we might want to do:
+
+- Now: Select columns
+- Now: Drop  columns
+- Next: Create new columns
+- Next: Rename columns
+
+
+## How do we see which columns are in the data?
+
+```{python}
+## view start of data
+df.head(3)
+
+## prints a list of column names
+df.columns 
+
+```
+
+## Selecting one column: multiple approaches
+
+All except for `loc` default to selecting all rows so don't need to explicitly indicate that
+
+```{python}
+# call it by name
+df.State
+
+# brackets 
+df['State']
+
+# loc
+df.loc[:, 'State']
+
+```
+
+## Selecting 2+ columns
+
+```{python}
+df[['State', 'Year', 'uninsured_rate']].head()
+
+df.loc[:, ['State', 'Year', 'uninsured_rate']].head()
+
+```
+
+## What if we want to select all columns in a column range within the dataset?
+
+Example: want to select all columns from State to Year
+
+```{python}
+df_sub = df.loc[:, "State": "Year"]
+df_sub.head()
+
+
+```
+
+## What if we want to select columns based on their position in the dataset?
+
+**Caution**: would really caution against this in most cases since column order can shift around as we manipulate the data; much safer to reference columns by name
+
+But so you're aware of the syntax 
+
+```{python}
+df.columns
+df.iloc[:, 0:3].head()
+
+
+```
+
+## filter function as most similar to select in dplyr
+
+In addition to the bracket-based subsetting, pandas has a `filter` function that behaves similarly to `select` within `dplyr` in R
+
+```{python}
+
+## filtering to state and year columns
+df.filter(["State", "Year"]).head()
+
+## similar to contains - looks for pattern anywhere in string
+df.filter(like = "insur").head()
+
+## can also use with regex (specific week covering)
+df.filter(regex = "rate$").head()
+
+```
+
+## Dropping specific columns
+
+Two ways:
+- Specify which columns to keep (can use list comprehension to help construct that list)
+- `drop` function
+
+## Using list comprehension to create list of columns to keep
+
+```{python}
+df.columns
+cols_keep = [col for col in df.columns if
+            col not in ["uninsured_rate", "Year"]]
+cols_keep
+df_notimevary = df[cols_keep].copy()
+df_notimevary.head()
+
+
+
+```
+
+## Using drop function to specifically tell it columns to drop
+
+
+```{python}
+df_notimevary = df.drop(columns = ['uninsured_rate', 'Year']).copy()
+df_notimevary.head()
+
+
+```
+
+## Working with rows in the data
+
+Some tasks include:
+- Subsetting
+- Filtering distinct values
+- Sorting values
+
+Throughout, our earlier coverage of **logical operators** will be helpful
+
+
+## Subsetting using one condition
+
+- Similar to column-based subsetting, can do with or without the explicit `loc` command
+
+
+```{python}
+## All years after 2020
+df[df.Year > 2020].head()
+
+## Three different ways to pull data from 2021
+df[df.Year == 2021].head()
+df[df['Year'] == 2021].head()
+df.loc[df.Year == 2021].head()
+
+```
+
+## Subsetting: importance of checking data types
+
+- See that data is treating year as an integer and so subsetting using the string form returns no rows/an empty dataframe
+
+```{python}
+df.Year.dtypes
+df[df.Year == "2021"]
+
+
+```
+
+
+## Subsetting using multiple conditions
+
+Key is including parentheses 
+
+```{python}
+df[(df.Year == 2021) & (df.State == "California")]
+df.loc[(df.Year == 2021) & (df.State == "California)]
+
+
+```
+
+## Subsetting rows and columns simultaneously
+
+This is where value of `loc` comes in; see error without
+
+```{python}
+
+df.loc[(df.Year == 2021) & (df.State == "California"), 
+        ["State", "Year", "Race"]]
+
+```
+
+```{python}
+#| error: true
+## throws error
+df[(df.Year == 2021) & (df.State == "California"),
+["State", "Year", "Race"]]
+
+
+```
+
+
+## Query offers similarities to dplyr's Filter
+
+Can chain multiple conditions together using query. Note:
+
+- All content in the quotes
+- Don't reference dataset name within the subsetting
+
+```{python}
+df.query("Year == 2021 & State == 'California'") 
+
+```
+
+## In-class Activity
+
+See Activity 2 in notebook
+
+# Data wrangling: creating and recoding variables
+
+## Example tasks:
+
+- Creating variables
+  - Creating a new variable based on calculations (eg adding two numeric columns together)
+  - Creating a new variable that represents a transformation of a string (e.g., converting to lowercase)
+  - Creating a new variable based on logical conditions
+- Recoding variables
+  - Recoding categorical variables to combine categories
+  - Recoding categorical variables to more descriptive names
+  - Recoding variables based on logical conditions 
+  
+## Creating variables: based on calculations
+  
+Use bracket notation to add a new variable
+  
+```{python}
+## create a new variable, uninsured percent, that multiples the proportion by 100
+df['uninsured_percent'] = df.uninsured_rate * 100
+df[['uninsured_rate', 'uninsured_percent']].head()
+  
+```
+## Creating variables: based on string operations
+
+For variables involving strings, pandas has a series of built-in string operations we can use to transform these variables. The general syntax is:
+
+`df.variablename.str.strmethod()`
+
+See here for a list of frequently-used ones: https://www.geeksforgeeks.org/python/top-10-string-methods-in-pandas/ 
+
+Can also combine multiple operations, e.g.:
+
+`df.variablename.str.strmethod1().str.strmethod2()`
+
+
+```{python}
+df['state_lower']  = df.State.str.lower() 
+
+```
+
+
+## Creating variables: based on logical conditions
+
+`np.where` is similar to `ifelse(condition, value if true, value if false)` in R and is useful for incorporating comparisons into variable creation 
+
+```{python}
+avg_uninsured_rate = np.mean(df.uninsured_rate)
+avg_uninsured_rate
+
+## Create variable for whether a state-year-race observation
+## is above or below the national average
+df['uninsured_abovebelow'] = np.where(df.uninsured_rate > avg_uninsured_rate,
+            "Higher than avg", 
+            "Equal or less than avg")
+            
+df[['uninsured_rate', 'uninsured_abovebelow']].head()
+            
+
+```
+
+## Creating variables: assign method as similar to mutate in dplyr
+
+Key advantage is we can create multiple variables in the same assign statement 
+
+```{python}
+df = (df.assign(state_lower = df.State.str.lower(),
+        year_category = np.where(df.Year < 2020, 
+        "Pre Covid", "During or post COVID")))
+df[['State', 'state_lower', 'Year', 'year_category']].sample(n = 5)
+
+```
+## Recoding variables
+
+- These previous examples contained a couple examples of recoding -- for instance, using `np.where` to recode blocks of years into pre versus during/post COVID
+- `np.where` is one recoding tool. Here, we'll cover `np.select` as a cleaner tool when we have multiple conditions
+  
+## Example recoding task
+
+**Example**: combining different Census Divisions
+
+Map here: https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf 
+
+Want to:
+- Combine both North Centrals -> Midwest
+- Combine both South Centrals and South Atlantic into South
+- Otherwise keep the same
+
+*Note*: we can use the pandas series string method `str.contains()` to simplify the code a bit based on looking for patterns
+
+```{python}
+## look at all the Census Divisions 
+df.Census_Division.value_counts()
+
+```
+
+## Can we do this with np.where? Yes but code gets bulky
+
+```{python}
+## recoding using np.where
+df['division_npw'] = np.where(df.Census_Division.str.contains("North Central"),
+                "Midwest",
+                    np.where((df.Census_Division.str.contains("South Central")) |
+                            (df.Census_Division == "South Atlantic"),
+                "South", df.Census_Division)) 
+                
+## checking results
+pd.crosstab(df.Census_Division[df.division_npw.isin(['Midwest', 'South'])],
+df.division_npw[df.division_npw.isin(['Midwest', 'South'])])
+
+```
+
+## np.select for cleaner code
+
+```{python}
+## step one: define conditions
+conditions = [df.Census_Division.str.contains("North Central"),
+              df.Census_Division.str.contains("South Central"),
+              df.Census_Division == "South Atlantic"]
+              
+## step two: define the choices 
+choices = ["Midwest", "South", "South"]
+
+## step three: use np.select
+df['division_nps'] = np.select(conditions,
+                    choices, 
+                    default = df.Census_Division) # keep all others same
+                    
+## Check results
+pd.crosstab(df.Census_Division[df.division_nps.isin(['Midwest', 'South'])],
+df.division_nps[df.division_nps.isin(['Midwest', 'South'])])
+
+
+```
+
+## In-class Activity
+
+See Activity 3 in notebook
+
+# Data wrangling: grouping and aggregation {background-color="#447099"}
+
+## Motivation
+
+- The activity we did of writing a user-defined function to subset to a single race/ethnicity group illustrated the concept of *grouping*
+- The general process is `split-apply-combine`, where we use one or more of the following steps:
+
+- Splitting the data into groups based on some criteria.
+
+- Applying a function to each group independently.
+
+- Combining the results into a data structure.
+
+![From Python Data Science Handbook by Jake VanderPlas](https://jakevdp.github.io/PythonDataScienceHandbook/figures/03.08-split-apply-combine.png) 
+
+## Split step within pandas: groupby
+
+- The `groupby()` method in pandas splits your dataset in smaller parts. It generates an iterable where each group is broken up into a tuple (group,data). 
+- The output of a groupby method is a flexible abstraction: although more complicated things are happening under the hood, in many ways, it can be treated as a collection of ``DataFrame``s. And as we learned, any collector can be iterated over!
+
+## Illustration: grouping by race/ethnicity (across all states)
+
+
+```{python}
+df_raceeth = df.groupby("Race")
+df_raceeth
+
+
+```
+## Iterating over groups
+
+
+```{python}
+for group, data in df_raceeth:
+  print(group)
+  print(data.head(2))
+
+
+```
+
+## Retrieving a specific group
+
+```{python}
+ameri = df_raceeth.get_group("American Indian or Alaska Native")
+ameri.head()
+
+
+
+```
+
+## Grouping by multiple variables works similarly
+
+Grouping by State and Year
+
+```{python}
+## group by will work with year in integer form but it's easier if we
+## convert it to string
+df['year_cat'] = df.Year.astype('string')
+```
+
+```{python}
+df_sy = df.groupby(['State', 'year_cat'])
+
+for group, data in df_sy:
+  print(group)
+
+```
+
+## Next step: combining grouping with aggregation
+
+- We can use grouping to get a better sense of different subsets of the data
+- But grouping becomes most powerful when we combine with operations that perform some form of *aggregation*
+- *Aggregation* is any operation that reduces the dimensionality of the data
+
+## Easiest way to aggregate: built-in methods for specific datatypes 
+
+Example: mean of a numeric column by group
+
+```{python}
+# within a state, average uninsurance rate across all years and race/ethnic groups
+state_means = df.groupby('State')['uninsured_rate'].mean()
+state_means.sort_values(ascending = False)
+
+# within an ethnic group, average uninsurance rate across all years and states
+raceeth_means = df.groupby('Race')['uninsured_rate'].mean()
+raceeth_means.sort_values(ascending = False)
+
+## within an ethnic group x year, average uninsurance rate across all states
+raceeth_means_byyear = df.groupby(['year_cat', 'Race'])['uninsured_rate'].mean()
+raceeth_means_byyear.sort_values(ascending = False)
+
+
+```
+
+## Using reset_index() to into an operable dataframe
+
+Can then use to plot, further manipulate, etc.
+
+```{python}
+raceeth_means_df = raceeth_means.reset_index()
+raceeth_means_df
+```
+
+## Range of built-in methods
+
+[See user guide from Pandas Documentation](https://pandas.pydata.org/docs/user_guide/groupby.html)
+
+| Method  | Functionality |
+|:---------------:|:-----------------------------|
+|`.any`|Compute whether any of the values in the groups are truthy| 
+|`.all`|Compute whether all of the values in the groups are truthy|
+|`.count`|Compute the number of non-NA values in the groups|
+|`.cov` |Compute the covariance of the groups|
+|`.first`|Compute the first occurring value in each group|
+|`.idxmax` |Compute the index of the maximum value in each group|
+| `.idxmin`| Compute the index of the minimum value in each group|
+|`.last`|Compute the last occurring value in each group|
+|`.max`|Compute the maximum value in each group|
+|`.mean`|Compute the mean of each group|
+|`.median`|Compute the median of each group|
+|`.min`|Compute the minimum value in each group|
+|`.nunique`|Compute the number of unique values in each group|
+|`.prod`|Compute the product of the values in each group|
+|`.quantile`|Compute a given quantile of the values in each group|
+|`.sem`|Compute the standard error of the mean of the values in each group|
+|`.size`|Compute the number of values in each group|
+|`.skew` |Compute the skew of the values in each group|
+|`.std`|Compute the standard deviation of the values in each group|
+|`.sum`|Compute the sum of the values in each group|
+|`.var`|Compute the variance of the values in each group|
+
+## Another approach: using `agg` for more flexible aggregation
+
+Advantages:
+- Can summarize multiple columns
+- For each column, can use multiple summary functions
+
+Syntax is:
+
+`df.groupby(['groupvar1', 'groupvar2', ...]).agg({'colname1':
+          ['aggfunc1', 'aggfunc2'],
+          'colname2':
+          ['aggfunc1']})`
+
+```{python}
+## example: find mean and median uninsurance rate by race/ethnicity group
+raceeth_agg = df.groupby('Race').agg({'uninsured_rate':
+  ["mean", "median"]}).reset_index()
+
+raceeth_agg
+
+```
+## `agg` can also be combined with a user-defined function 
+
+Either a standalone function or a lambda function 
+
+**Example**: for each state, find the interquartile range of insurance rates (75th percentile minus 25th percentile)
+
+```{python}
+ur_iqr = df.groupby('State').agg({'uninsured_rate':
+                        lambda x: x.quantile(0.75) - x.quantile(0.25)}).reset_index()
+ur_iqr.sort_values(by = 'uninsured_rate',
+ascending = False).head()
+```
+## What if we want to relabel columns to more descriptive names within the aggregation?
+
+- Previous example shows that without explicit relabeling, the interquartile range is given the name of the column we're calculating that for (`uninsured_rate`)
+- With a slight tweak to the syntax, we can relabel the column within the agg call itself
+
+```{python}
+ur_iqr = df.groupby('State').agg(uninsured_iqr = 
+                        ('uninsured_rate',
+                        lambda x: x.quantile(0.75) -
+                        x.quantile(0.25))).reset_index()
+ur_iqr.sort_values(by = 'uninsured_iqr',
+ascending = False).head()
+
+
+```
+
+## What if we want to keep the shape of the dataframe and add a grouped aggregation result as a new column?
+
+Can use the `assign` function we learned earlier for variable creation and combine it with the `transform` function
+
+**Example**: keep all rows in the data; add the average nationwide uninsurance rate for each racial/ethnic group as an additional column 
+
+```{python}
+df_wavg = (df.assign(raceeth_avg = 
+        df.groupby('Race')['uninsured_rate'].transform("mean")))
+df_wavg[['State', 'Year', 
+        'Race', 'uninsured_rate', 'raceeth_avg']].sample(n = 5)
+
+
+```
+
+## In-class Activity {background-color=#709944}
+
+See Activity 4 in notebook
+
+# See you next week! {background-color="#447099"}
