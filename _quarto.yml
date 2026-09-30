@@ -34,6 +34,11 @@ website:
             text: "Week 4: Python - Iteration, Comprehension, and Functions"
           - href: weeks/week-05.qmd
             text: "Week 5: Libraries and Numpy"
+          - href: weeks/week-06.qmd
+            text: "Week 6: Intro to Pandas and Data Wrangling"
+      - href: datasets.qmd
+        text: Datasets for In-class Activities 
+
 
 format:
   html:

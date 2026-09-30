@@ -452,7 +452,7 @@ Professor: Rebecca Johnson
 </section>
 <section id="pandas-series-constructor" class="slide level2 center">
 <h2>Pandas Series Constructor</h2>
-<div id="cde7bfc2" class="cell" data-execution_count="1">
+<div id="963bb8ac" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> pd.Series([<span class="st">"Argentina"</span>, <span class="st">"France"</span>, <span class="st">"Germany"</span>,<span class="st">"Spain"</span>, <span class="st">"Italy"</span>, <span class="st">"Brazil"</span>],</span>
@@ -489,7 +489,7 @@ dtype: object</code></pre>
 </section>
 <section id="constructor" class="slide level2 center">
 <h2>Constructor</h2>
-<div id="a4a2cb6a" class="cell" data-execution_count="2">
+<div id="dc550d4f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="co"># create a simple series</span></span>
 <span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>series <span class="op">=</span> pd.Series([<span class="st">"Argentina"</span>, <span class="st">"France"</span>, <span class="st">"Germany"</span>,<span class="st">"Spain"</span>, <span class="st">"Italy"</span>, <span class="st">"Brazil"</span>],</span>
@@ -510,7 +510,7 @@ dtype: object</code></pre>
 </section>
 <section id="loading-data-from-a-csv-file" class="slide level2 center">
 <h2>Loading data from a csv file</h2>
-<div id="341816e4" class="cell" data-execution_count="4">
+<div id="da820231" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"../datasets/childnoinsur_complete.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -528,7 +528,7 @@ dtype: object</code></pre>
 </section>
 <section id="illustrating" class="slide level2 center">
 <h2>Illustrating</h2>
-<div id="ffa4c718" class="cell" data-execution_count="5">
+<div id="1acaf1a7" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>df.dtypes</span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>df.shape</span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>df.head(<span class="dv">2</span>)</span>
@@ -831,7 +831,7 @@ Main (tidy) Data Wrangling Functions
 </section>
 <section id="how-do-we-see-which-columns-are-in-the-data" class="slide level2 center">
 <h2>How do we see which columns are in the data?</h2>
-<div id="4b159958" class="cell" data-execution_count="6">
+<div id="9993b9a5" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## view start of data</span></span>
 <span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>df.head(<span class="dv">3</span>)</span>
 <span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -902,7 +902,7 @@ Main (tidy) Data Wrangling Functions
 <section id="selecting-one-column-multiple-approaches" class="slide level2 center">
 <h2>Selecting one column: multiple approaches</h2>
 <p>All except for <code>loc</code> default to selecting all rows so don’t need to explicitly indicate that</p>
-<div id="c11dc39f" class="cell" data-execution_count="7">
+<div id="42d19a47" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># call it by name</span></span>
 <span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>df.State</span>
 <span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -957,7 +957,7 @@ Name: State, Length: 1714, dtype: object</code></pre>
 </section>
 <section id="selecting-2-columns" class="slide level2 center">
 <h2>Selecting 2+ columns</h2>
-<div id="6c6d19f5" class="cell" data-execution_count="8">
+<div id="90fafadf" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'State'</span>, <span class="st">'Year'</span>, <span class="st">'uninsured_rate'</span>]].head()</span>
 <span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>df.loc[:, [<span class="st">'State'</span>, <span class="st">'Year'</span>, <span class="st">'uninsured_rate'</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1088,7 +1088,7 @@ Name: State, Length: 1714, dtype: object</code></pre>
 <section id="what-if-we-want-to-select-all-columns-in-a-column-range-within-the-dataset" class="slide level2 center">
 <h2>What if we want to select all columns in a column range within the dataset?</h2>
 <p>Example: want to select all columns from State to Year</p>
-<div id="4ff5118b" class="cell" data-execution_count="9">
+<div id="dbd8165d" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>df_sub <span class="op">=</span> df.loc[:, <span class="st">"State"</span>: <span class="st">"Year"</span>]</span>
 <span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>df_sub.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
@@ -1158,7 +1158,7 @@ Name: State, Length: 1714, dtype: object</code></pre>
 <h2>What if we want to select columns based on their position in the dataset?</h2>
 <p><strong>Caution</strong>: would really caution against this in most cases since column order can shift around as we manipulate the data; much safer to reference columns by name</p>
 <p>But so you’re aware of the syntax</p>
-<div id="22a1e3e1" class="cell" data-execution_count="10">
+<div id="4a6a533d" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>df.columns</span>
 <span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>df.iloc[:, <span class="dv">0</span>:<span class="dv">3</span>].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
@@ -1230,7 +1230,7 @@ Name: State, Length: 1714, dtype: object</code></pre>
 <section id="filter-function-as-most-similar-to-select-in-dplyr" class="slide level2 center">
 <h2>filter function as most similar to select in dplyr</h2>
 <p>In addition to the bracket-based subsetting, pandas has a <code>filter</code> function that behaves similarly to <code>select</code> within <code>dplyr</code> in R</p>
-<div id="f213a0c3" class="cell" data-execution_count="11">
+<div id="36ff04ea" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## filtering to state and year columns</span></span>
 <span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a>df.<span class="bu">filter</span>([<span class="st">"State"</span>, <span class="st">"Year"</span>]).head()</span>
 <span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -1400,7 +1400,7 @@ Name: State, Length: 1714, dtype: object</code></pre>
 </section>
 <section id="using-list-comprehension-to-create-list-of-columns-to-keep" class="slide level2 center">
 <h2>Using list comprehension to create list of columns to keep</h2>
-<div id="a74167c1" class="cell" data-execution_count="12">
+<div id="0b453bf0" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>df.columns</span>
 <span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a>cols_keep <span class="op">=</span> [col <span class="cf">for</span> col <span class="kw">in</span> df.columns <span class="cf">if</span></span>
 <span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a>            col <span class="kw">not</span> <span class="kw">in</span> [<span class="st">"uninsured_rate"</span>, <span class="st">"Year"</span>]]</span>
@@ -1478,7 +1478,7 @@ Name: State, Length: 1714, dtype: object</code></pre>
 </section>
 <section id="using-drop-function-to-specifically-tell-it-columns-to-drop" class="slide level2 center">
 <h2>Using drop function to specifically tell it columns to drop</h2>
-<div id="2f8fe942" class="cell" data-execution_count="13">
+<div id="b7dff8c9" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a>df_notimevary <span class="op">=</span> df.drop(columns <span class="op">=</span> [<span class="st">'uninsured_rate'</span>, <span class="st">'Year'</span>]).copy()</span>
 <span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a>df_notimevary.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -1554,7 +1554,7 @@ Name: State, Length: 1714, dtype: object</code></pre>
 <ul>
 <li>Similar to column-based subsetting, can do with or without the explicit <code>loc</code> command</li>
 </ul>
-<div id="68b8d2c3" class="cell" data-execution_count="14">
+<div id="71521430" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## All years after 2020</span></span>
 <span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a>df[df.Year <span class="op">&gt;</span> <span class="dv">2020</span>].head()</span>
 <span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -1861,7 +1861,7 @@ Name: State, Length: 1714, dtype: object</code></pre>
 <ul>
 <li>See that data is treating year as an integer and so subsetting using the string form returns no rows/an empty dataframe</li>
 </ul>
-<div id="c99e479f" class="cell" data-execution_count="15">
+<div id="0b8f14e3" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>df.Year.dtypes</span>
 <span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a>df[df.Year <span class="op">==</span> <span class="st">"2021"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
@@ -1905,12 +1905,12 @@ Name: State, Length: 1714, dtype: object</code></pre>
 <section id="subsetting-using-multiple-conditions" class="slide level2 center">
 <h2>Subsetting using multiple conditions</h2>
 <p>Key is including parentheses</p>
-<div id="4bb5dfd6" class="cell" data-execution_count="16">
+<div id="bb2b0543" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a>df[(df.Year <span class="op">==</span> <span class="dv">2021</span>) <span class="op">&amp;</span> (df.State <span class="op">==</span> <span class="st">"California"</span>)]</span>
 <span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a>df.loc[(df.Year <span class="op">==</span> <span class="dv">2021</span>) <span class="op">&amp;</span> (df.State <span class="op">==</span> <span class="st">"California)]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
-<pre><span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">"/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_83865/708134521.py"</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">2</span>
+<pre><span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">"/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_84996/708134521.py"</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">2</span>
 <span class="ansi-red-fg">    df.loc[(df.Year == 2021) &amp; (df.State == "California)]</span>
                                                          ^
 <span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> EOL while scanning string literal
@@ -1922,7 +1922,7 @@ Name: State, Length: 1714, dtype: object</code></pre>
 <section id="subsetting-rows-and-columns-simultaneously" class="slide level2 center">
 <h2>Subsetting rows and columns simultaneously</h2>
 <p>This is where value of <code>loc</code> comes in; see error without</p>
-<div id="4941d713" class="cell" data-execution_count="17">
+<div id="bdfdb8ce" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a>df.loc[(df.Year <span class="op">==</span> <span class="dv">2021</span>) <span class="op">&amp;</span> (df.State <span class="op">==</span> <span class="st">"California"</span>), </span>
 <span id="cb29-2"><a aria-hidden="true" tabindex="-1"></a>        [<span class="st">"State"</span>, <span class="st">"Year"</span>, <span class="st">"Race"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
@@ -1993,7 +1993,7 @@ Name: State, Length: 1714, dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div id="c79d28d2" class="cell" data-execution_count="18">
+<div id="85233104" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## throws error</span></span>
 <span id="cb30-2"><a aria-hidden="true" tabindex="-1"></a>df[(df.Year <span class="op">==</span> <span class="dv">2021</span>) <span class="op">&amp;</span> (df.State <span class="op">==</span> <span class="st">"California"</span>),</span>
 <span id="cb30-3"><a aria-hidden="true" tabindex="-1"></a>[<span class="st">"State"</span>, <span class="st">"Year"</span>, <span class="st">"Race"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2026,7 +2026,7 @@ Length: 1714, dtype: bool, ['State', 'Year', 'Race'])' is an invalid key
 During handling of the above exception, another exception occurred:
 
 <span class="ansi-red-fg">InvalidIndexError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_83865/2067952100.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_84996/2067952100.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg ansi-bold">      1</span> <span class="ansi-red-fg">## throws error</span>
 <span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> df[(df.Year == 2021) &amp; (df.State == "California"),
 </span><span class="ansi-green-fg ansi-bold">      3</span> ["State", "Year", "Race"]]
@@ -2075,7 +2075,7 @@ Length: 1714, dtype: bool, ['State', 'Year', 'Race'])</pre>
 <li>All content in the quotes</li>
 <li>Don’t reference dataset name within the subsetting</li>
 </ul>
-<div id="720d3503" class="cell" data-execution_count="19">
+<div id="e0e600b6" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a>df.query(<span class="st">"Year == 2021 &amp; State == 'California'"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <div>
@@ -2189,7 +2189,7 @@ Length: 1714, dtype: bool, ['State', 'Year', 'Race'])</pre>
 <section id="creating-variables-based-on-calculations" class="slide level2 center">
 <h2>Creating variables: based on calculations</h2>
 <p>Use bracket notation to add a new variable</p>
-<div id="0158911d" class="cell" data-execution_count="20">
+<div id="d41027ab" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## create a new variable, uninsured percent, that multiples the proportion by 100</span></span>
 <span id="cb32-2"><a aria-hidden="true" tabindex="-1"></a>df[<span class="st">'uninsured_percent'</span>] <span class="op">=</span> df.uninsured_rate <span class="op">*</span> <span class="dv">100</span></span>
 <span id="cb32-3"><a aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'uninsured_rate'</span>, <span class="st">'uninsured_percent'</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2257,14 +2257,14 @@ Length: 1714, dtype: bool, ['State', 'Year', 'Race'])</pre>
 <p>See here for a list of frequently-used ones: https://www.geeksforgeeks.org/python/top-10-string-methods-in-pandas/</p>
 <p>Can also combine multiple operations, e.g.:</p>
 <p><code>df.variablename.str.strmethod1().str.strmethod2()</code></p>
-<div id="bdb14158" class="cell" data-execution_count="21">
+<div id="e417503e" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a aria-hidden="true" tabindex="-1"></a>df[<span class="st">'state_lower'</span>]  <span class="op">=</span> df.State.<span class="bu">str</span>.lower() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="creating-variables-based-on-logical-conditions" class="slide level2 center">
 <h2>Creating variables: based on logical conditions</h2>
 <p><code>np.where</code> is similar to <code>ifelse(condition, value if true, value if false)</code> in R and is useful for incorporating comparisons into variable creation</p>
-<div id="85899e5a" class="cell" data-execution_count="22">
+<div id="2cd444fb" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a>avg_uninsured_rate <span class="op">=</span> np.mean(df.uninsured_rate)</span>
 <span id="cb34-2"><a aria-hidden="true" tabindex="-1"></a>avg_uninsured_rate</span>
 <span id="cb34-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -2279,7 +2279,7 @@ Length: 1714, dtype: bool, ['State', 'Year', 'Race'])</pre>
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_83865/1626912818.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_84996/1626912818.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>avg_uninsured_rate <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>mean<span class="ansi-blue-fg">(</span>df<span class="ansi-blue-fg">.</span>uninsured_rate<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg ansi-bold">      2</span> avg_uninsured_rate
 <span class="ansi-green-fg ansi-bold">      3</span> 
@@ -2294,7 +2294,7 @@ Length: 1714, dtype: bool, ['State', 'Year', 'Race'])</pre>
 <section id="creating-variables-assign-method-as-similar-to-mutate-in-dplyr" class="slide level2 center">
 <h2>Creating variables: assign method as similar to mutate in dplyr</h2>
 <p>Key advantage is we can create multiple variables in the same assign statement</p>
-<div id="a042f150" class="cell" data-execution_count="23">
+<div id="d9479f70" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> (df.assign(state_lower <span class="op">=</span> df.State.<span class="bu">str</span>.lower(),</span>
 <span id="cb35-2"><a aria-hidden="true" tabindex="-1"></a>        year_category <span class="op">=</span> np.where(df.Year <span class="op">&lt;</span> <span class="dv">2020</span>, </span>
 <span id="cb35-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="st">"Pre Covid"</span>, <span class="st">"During or post COVID"</span>)))</span>
@@ -2303,7 +2303,7 @@ Length: 1714, dtype: bool, ['State', 'Year', 'Race'])</pre>
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_83865/1220063910.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_84996/1220063910.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg ansi-bold">      1</span> df = (df.assign(state_lower = df.State.str.lower(),
 <span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">         year_category = np.where(df.Year &lt; 2020, 
 </span><span class="ansi-green-fg ansi-bold">      3</span>         "Pre Covid", "During or post COVID")))
@@ -2327,7 +2327,7 @@ Length: 1714, dtype: bool, ['State', 'Year', 'Race'])</pre>
 <p>Map here: https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf</p>
 <p>Want to: - Combine both North Centrals -&gt; Midwest - Combine both South Centrals and South Atlantic into South - Otherwise keep the same</p>
 <p><em>Note</em>: we can use the pandas series string method <code>str.contains()</code> to simplify the code a bit based on looking for patterns</p>
-<div id="987da073" class="cell" data-execution_count="24">
+<div id="1409eb5d" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## look at all the Census Divisions </span></span>
 <span id="cb36-2"><a aria-hidden="true" tabindex="-1"></a>df.Census_Division.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
@@ -2346,7 +2346,7 @@ Name: Census_Division, dtype: int64</code></pre>
 </section>
 <section id="can-we-do-this-with-np.where-yes-but-code-gets-bulky" class="slide level2 center">
 <h2>Can we do this with np.where? Yes but code gets bulky</h2>
-<div id="3981901c" class="cell" data-execution_count="25">
+<div id="c2204a50" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## recoding using np.where</span></span>
 <span id="cb38-2"><a aria-hidden="true" tabindex="-1"></a>df[<span class="st">'division_npw'</span>] <span class="op">=</span> np.where(df.Census_Division.<span class="bu">str</span>.contains(<span class="st">"North Central"</span>),</span>
 <span id="cb38-3"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Midwest"</span>,</span>
@@ -2361,7 +2361,7 @@ Name: Census_Division, dtype: int64</code></pre>
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_83865/1531898425.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_84996/1531898425.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg ansi-bold">      1</span> <span class="ansi-red-fg">## recoding using np.where</span>
 <span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> df['division_npw'] = np.where(df.Census_Division.str.contains("North Central"),
 </span><span class="ansi-green-fg ansi-bold">      3</span>                 <span class="ansi-blue-fg">"Midwest"</span><span class="ansi-blue-fg">,</span>
@@ -2375,7 +2375,7 @@ Name: Census_Division, dtype: int64</code></pre>
 </section>
 <section id="np.select-for-cleaner-code" class="slide level2 center">
 <h2>np.select for cleaner code</h2>
-<div id="665e0a7a" class="cell" data-execution_count="26">
+<div id="d0391c41" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## step one: define conditions</span></span>
 <span id="cb39-2"><a aria-hidden="true" tabindex="-1"></a>conditions <span class="op">=</span> [df.Census_Division.<span class="bu">str</span>.contains(<span class="st">"North Central"</span>),</span>
 <span id="cb39-3"><a aria-hidden="true" tabindex="-1"></a>              df.Census_Division.<span class="bu">str</span>.contains(<span class="st">"South Central"</span>),</span>
@@ -2396,7 +2396,7 @@ Name: Census_Division, dtype: int64</code></pre>
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_83865/1443799031.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_84996/1443799031.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg ansi-bold">      8</span> 
 <span class="ansi-green-fg ansi-bold">      9</span> <span class="ansi-red-fg">## step three: use np.select</span>
 <span class="ansi-green-fg">---&gt; 10</span><span class="ansi-red-fg"> df['division_nps'] = np.select(conditions,
@@ -2437,17 +2437,17 @@ Name: Census_Division, dtype: int64</code></pre>
 </section>
 <section id="illustration-grouping-by-raceethnicity-across-all-states" class="slide level2 center">
 <h2>Illustration: grouping by race/ethnicity (across all states)</h2>
-<div id="b3570672" class="cell" data-execution_count="27">
+<div id="6ab6670f" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a aria-hidden="true" tabindex="-1"></a>df_raceeth <span class="op">=</span> df.groupby(<span class="st">"Race"</span>)</span>
 <span id="cb40-2"><a aria-hidden="true" tabindex="-1"></a>df_raceeth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
-<pre><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fa001fef640&gt;</code></pre>
+<pre><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f9b98637c10&gt;</code></pre>
 </div>
 </div>
 </section>
 <section id="iterating-over-groups" class="slide level2 center">
 <h2>Iterating over groups</h2>
-<div id="17f0f2bd" class="cell" data-execution_count="28">
+<div id="98eec262" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> group, data <span class="kw">in</span> df_raceeth:</span>
 <span id="cb42-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(group)</span>
 <span id="cb42-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(data.head(<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2505,7 +2505,7 @@ Two or more races
 </section>
 <section id="retrieving-a-specific-group" class="slide level2 center">
 <h2>Retrieving a specific group</h2>
-<div id="a86e19e7" class="cell" data-execution_count="29">
+<div id="d3983389" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a aria-hidden="true" tabindex="-1"></a>ameri <span class="op">=</span> df_raceeth.get_group(<span class="st">"American Indian or Alaska Native"</span>)</span>
 <span id="cb44-2"><a aria-hidden="true" tabindex="-1"></a>ameri.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
@@ -2598,12 +2598,12 @@ Two or more races
 <section id="grouping-by-multiple-variables-works-similarly" class="slide level2 center">
 <h2>Grouping by multiple variables works similarly</h2>
 <p>Grouping by State and Year</p>
-<div id="d0ab4d6a" class="cell" data-execution_count="30">
+<div id="1e23d648" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## group by will work with year in integer form but it's easier if we</span></span>
 <span id="cb45-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## convert it to string</span></span>
 <span id="cb45-3"><a aria-hidden="true" tabindex="-1"></a>df[<span class="st">'year_cat'</span>] <span class="op">=</span> df.Year.astype(<span class="st">'string'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="176f4069" class="cell" data-execution_count="31">
+<div id="4261e2ed" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a aria-hidden="true" tabindex="-1"></a>df_sy <span class="op">=</span> df.groupby([<span class="st">'State'</span>, <span class="st">'year_cat'</span>])</span>
 <span id="cb46-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb46-3"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> group, data <span class="kw">in</span> df_sy:</span>
@@ -2973,7 +2973,7 @@ Two or more races
 <section id="easiest-way-to-aggregate-built-in-methods-for-specific-datatypes" class="slide level2 center">
 <h2>Easiest way to aggregate: built-in methods for specific datatypes</h2>
 <p>Example: mean of a numeric column by group</p>
-<div id="e9e12433" class="cell" data-execution_count="32">
+<div id="1c9faf0f" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># within a state, average uninsurance rate across all years and race/ethnic groups</span></span>
 <span id="cb48-2"><a aria-hidden="true" tabindex="-1"></a>state_means <span class="op">=</span> df.groupby(<span class="st">'State'</span>)[<span class="st">'uninsured_rate'</span>].mean()</span>
 <span id="cb48-3"><a aria-hidden="true" tabindex="-1"></a>state_means.sort_values(ascending <span class="op">=</span> <span class="va">False</span>)</span>
@@ -3100,7 +3100,7 @@ Name: uninsured_rate, dtype: float64</code></pre>
 <section id="using-reset_index-to-into-an-operable-dataframe" class="slide level2 center">
 <h2>Using reset_index() to into an operable dataframe</h2>
 <p>Can then use to plot, further manipulate, etc.</p>
-<div id="cc989812" class="cell" data-execution_count="33">
+<div id="5297c72d" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a aria-hidden="true" tabindex="-1"></a>raceeth_means_df <span class="op">=</span> raceeth_means.reset_index()</span>
 <span id="cb52-2"><a aria-hidden="true" tabindex="-1"></a>raceeth_means_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
@@ -3272,7 +3272,7 @@ Name: uninsured_rate, dtype: float64</code></pre>
 <p>Advantages: - Can summarize multiple columns - For each column, can use multiple summary functions</p>
 <p>Syntax is:</p>
 <p><code>df.groupby(['groupvar1', 'groupvar2', ...]).agg({'colname1':           ['aggfunc1', 'aggfunc2'],           'colname2':           ['aggfunc1']})</code></p>
-<div id="45656f58" class="cell" data-execution_count="34">
+<div id="212f640b" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## example: find mean and median uninsurance rate by race/ethnicity group</span></span>
 <span id="cb53-2"><a aria-hidden="true" tabindex="-1"></a>raceeth_agg <span class="op">=</span> df.groupby(<span class="st">'Race'</span>).agg({<span class="st">'uninsured_rate'</span>:</span>
 <span id="cb53-3"><a aria-hidden="true" tabindex="-1"></a>  [<span class="st">"mean"</span>, <span class="st">"median"</span>]}).reset_index()</span>
@@ -3356,7 +3356,7 @@ Name: uninsured_rate, dtype: float64</code></pre>
 <h2><code>agg</code> can also be combined with a user-defined function</h2>
 <p>Either a standalone function or a lambda function</p>
 <p><strong>Example</strong>: for each state, find the interquartile range of insurance rates (75th percentile minus 25th percentile)</p>
-<div id="fac534b2" class="cell" data-execution_count="35">
+<div id="6216d0e0" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a aria-hidden="true" tabindex="-1"></a>ur_iqr <span class="op">=</span> df.groupby(<span class="st">'State'</span>).agg({<span class="st">'uninsured_rate'</span>:</span>
 <span id="cb54-2"><a aria-hidden="true" tabindex="-1"></a>                        <span class="kw">lambda</span> x: x.quantile(<span class="fl">0.75</span>) <span class="op">-</span> x.quantile(<span class="fl">0.25</span>)}).reset_index()</span>
 <span id="cb54-3"><a aria-hidden="true" tabindex="-1"></a>ur_iqr.sort_values(by <span class="op">=</span> <span class="st">'uninsured_rate'</span>,</span>
@@ -3424,7 +3424,7 @@ Name: uninsured_rate, dtype: float64</code></pre>
 <li>Previous example shows that without explicit relabeling, the interquartile range is given the name of the column we’re calculating that for (<code>uninsured_rate</code>)</li>
 <li>With a slight tweak to the syntax, we can relabel the column within the agg call itself</li>
 </ul>
-<div id="8eceabdb" class="cell" data-execution_count="36">
+<div id="7076120d" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a aria-hidden="true" tabindex="-1"></a>ur_iqr <span class="op">=</span> df.groupby(<span class="st">'State'</span>).agg(uninsured_iqr <span class="op">=</span> </span>
 <span id="cb55-2"><a aria-hidden="true" tabindex="-1"></a>                        (<span class="st">'uninsured_rate'</span>,</span>
 <span id="cb55-3"><a aria-hidden="true" tabindex="-1"></a>                        <span class="kw">lambda</span> x: x.quantile(<span class="fl">0.75</span>) <span class="op">-</span></span>
@@ -3492,7 +3492,7 @@ Name: uninsured_rate, dtype: float64</code></pre>
 <h2>What if we want to keep the shape of the dataframe and add a grouped aggregation result as a new column?</h2>
 <p>Can use the <code>assign</code> function we learned earlier for variable creation and combine it with the <code>transform</code> function</p>
 <p><strong>Example</strong>: keep all rows in the data; add the average nationwide uninsurance rate for each racial/ethnic group as an additional column</p>
-<div id="de252320" class="cell" data-execution_count="37">
+<div id="b4245fa3" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a aria-hidden="true" tabindex="-1"></a>df_wavg <span class="op">=</span> (df.assign(raceeth_avg <span class="op">=</span> </span>
 <span id="cb56-2"><a aria-hidden="true" tabindex="-1"></a>        df.groupby(<span class="st">'Race'</span>)[<span class="st">'uninsured_rate'</span>].transform(<span class="st">"mean"</span>)))</span>
 <span id="cb56-3"><a aria-hidden="true" tabindex="-1"></a>df_wavg[[<span class="st">'State'</span>, <span class="st">'Year'</span>, </span>
@@ -3526,44 +3526,44 @@ Name: uninsured_rate, dtype: float64</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">344</td>
-<td>Louisiana</td>
-<td>2017</td>
-<td>Black or African American</td>
-<td>0.03</td>
-<td>0.040833</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1253</td>
-<td>Colorado</td>
-<td>2021</td>
-<td>Black or African American</td>
-<td>0.02</td>
-<td>0.040833</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">251</td>
-<td>Alabama</td>
-<td>2018</td>
-<td>Black or African American</td>
-<td>0.04</td>
-<td>0.040833</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">409</td>
+<td data-quarto-table-cell-role="th">1549</td>
 <td>New York</td>
-<td>2017</td>
+<td>2023</td>
+<td>American Indian or Alaska Native</td>
+<td>0.03</td>
+<td>0.084444</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1111</td>
+<td>Minnesota</td>
+<td>2019</td>
 <td>Two or more races</td>
 <td>0.02</td>
 <td>0.048389</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">286</td>
-<td>Connecticut</td>
+<td data-quarto-table-cell-role="th">364</td>
+<td>Michigan</td>
 <td>2017</td>
-<td>Non-Hispanic White</td>
+<td>Hispanic or Latino</td>
+<td>0.04</td>
+<td>0.082812</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">231</td>
+<td>California</td>
+<td>2018</td>
+<td>Asian and Pacific Islander</td>
 <td>0.02</td>
-<td>0.040200</td>
+<td>0.042774</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1039</td>
+<td>Pennsylvania</td>
+<td>2019</td>
+<td>Black or African American</td>
+<td>0.03</td>
+<td>0.040833</td>
 </tr>
 </tbody>
 </table>

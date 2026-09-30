@@ -3,7 +3,7 @@ title: "Week 05"
 subtitle: "Python: Libraries and Numpy"
 description: ""
 author: "Rebecca A. Johnson"
-date: "09/17/2026"
+date: "09/24/2026"
 #listing:
   # - id: slides
   #   contents:
