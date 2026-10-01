@@ -472,7 +472,7 @@ For variables involving strings, pandas has a series of built-in string operatio
 
 `df.variablename.str.strmethod()`
 
-(See here for a list of frequently-used ones) [https://www.geeksforgeeks.org/python/top-10-string-methods-in-pandas/] 
+[See here for a list of frequently-used ones] (https://www.geeksforgeeks.org/python/top-10-string-methods-in-pandas/) 
 
 Can also combine multiple operations, e.g.:
 
