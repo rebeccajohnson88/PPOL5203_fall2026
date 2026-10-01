@@ -573,7 +573,11 @@ choices = ["Midwest", "South", "South"]
 df['division_nps'] = np.select(conditions,
                     choices, 
                     default = df.Census_Division) # keep all others same
-                    
+```
+
+## np.select for cleaner code
+
+```{python}
 ## Check results
 pd.crosstab(df.Census_Division[df.division_nps.isin(['Midwest', 'South'])],
 df.division_nps[df.division_nps.isin(['Midwest', 'South'])])
@@ -700,7 +704,7 @@ raceeth_means_df = raceeth_means.reset_index()
 raceeth_means_df
 ```
 
-## Range of built-in methods {.smaller}
+## Range of built-in methods {.smaller .scrollable}
 
 [See user guide from Pandas Documentation](https://pandas.pydata.org/docs/user_guide/groupby.html)
 
