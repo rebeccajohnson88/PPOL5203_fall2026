@@ -15,6 +15,7 @@ format:
     center: true
     slide-number: true
     incremental: false
+    scrollable: true
     chalkboard: 
       buttons: false
     preview-links: auto
@@ -179,13 +180,19 @@ df.dtypes
 df.shape
 df.head(2)
 df.tail(2)
+```
+
+
+## Illustrating
+
+```{python}
 df.describe()
 df.Census_Division.value_counts()
 
 ```
 
 
-## In-class activity
+## In-class activity {background-color=#449998}
 
 See Activity 1 in notebook
 
@@ -193,8 +200,6 @@ See Activity 1 in notebook
 # Data wrangling: selecting and filtering {background-color="#447099"}
 
 ## Translating R data wrangling to Python
-
-**<center>Main (tidy) Data Wrangling Functions </center>**
 
 |   [`pandas`](https://pandas.pydata.org/)      |   [`dplyr`](https://dplyr.tidyverse.org/)$^\dagger$      |     Description     |
 |:---------------:|:-------------:|:-----------------------------|
@@ -249,7 +254,11 @@ df.State
 
 # brackets 
 df['State']
+```
 
+## Selecting one column: multiple approaches
+
+```{python}
 # loc
 df.loc[:, 'State']
 
@@ -297,6 +306,12 @@ In addition to the bracket-based subsetting, pandas has a `filter` function that
 ## filtering to state and year columns
 df.filter(["State", "Year"]).head()
 
+
+```
+
+## filter function as most similar to select in dplyr
+
+```{python}
 ## similar to contains - looks for pattern anywhere in string
 df.filter(like = "insur").head()
 
@@ -308,6 +323,7 @@ df.filter(regex = "rate$").head()
 ## Dropping specific columns
 
 Two ways:
+
 - Specify which columns to keep (can use list comprehension to help construct that list)
 - `drop` function
 
@@ -338,6 +354,7 @@ df_notimevary.head()
 ## Working with rows in the data
 
 Some tasks include:
+
 - Subsetting
 - Filtering distinct values
 - Sorting values
@@ -352,12 +369,12 @@ Throughout, our earlier coverage of **logical operators** will be helpful
 
 ```{python}
 ## All years after 2020
-df[df.Year > 2020].head()
+df[df.Year > 2020].head(2)
 
 ## Three different ways to pull data from 2021
-df[df.Year == 2021].head()
-df[df['Year'] == 2021].head()
-df.loc[df.Year == 2021].head()
+df[df.Year == 2021].head(2)
+df[df['Year'] == 2021].head(2)
+df.loc[df.Year == 2021].head(2)
 
 ```
 
@@ -379,7 +396,7 @@ Key is including parentheses
 
 ```{python}
 df[(df.Year == 2021) & (df.State == "California")]
-df.loc[(df.Year == 2021) & (df.State == "California)]
+df.loc[(df.Year == 2021) & (df.State == "California")]
 
 
 ```
@@ -394,6 +411,11 @@ df.loc[(df.Year == 2021) & (df.State == "California"),
         ["State", "Year", "Race"]]
 
 ```
+
+## Subsetting rows and columns simultaneously
+
+This is where value of `loc` comes in; see error without
+
 
 ```{python}
 #| error: true
@@ -417,11 +439,11 @@ df.query("Year == 2021 & State == 'California'")
 
 ```
 
-## In-class Activity
+## In-class Activity {background-color=#449998}
 
 See Activity 2 in notebook
 
-# Data wrangling: creating and recoding variables
+# Data wrangling: creating and recoding variables {background-color="#447099"}
 
 ## Example tasks:
 
@@ -450,16 +472,17 @@ For variables involving strings, pandas has a series of built-in string operatio
 
 `df.variablename.str.strmethod()`
 
-See here for a list of frequently-used ones: https://www.geeksforgeeks.org/python/top-10-string-methods-in-pandas/ 
+(See here for a list of frequently-used ones) [https://www.geeksforgeeks.org/python/top-10-string-methods-in-pandas/] 
 
 Can also combine multiple operations, e.g.:
 
 `df.variablename.str.strmethod1().str.strmethod2()`
 
+## Creating variables: based on string operations
 
 ```{python}
 df['state_lower']  = df.State.str.lower() 
-
+df[['State', 'state_lower']].head(2)
 ```
 
 
@@ -468,6 +491,7 @@ df['state_lower']  = df.State.str.lower()
 `np.where` is similar to `ifelse(condition, value if true, value if false)` in R and is useful for incorporating comparisons into variable creation 
 
 ```{python}
+import numpy as np
 avg_uninsured_rate = np.mean(df.uninsured_rate)
 avg_uninsured_rate
 
@@ -505,6 +529,7 @@ df[['State', 'state_lower', 'Year', 'year_category']].sample(n = 5)
 Map here: https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf 
 
 Want to:
+
 - Combine both North Centrals -> Midwest
 - Combine both South Centrals and South Atlantic into South
 - Otherwise keep the same
@@ -556,7 +581,7 @@ df.division_nps[df.division_nps.isin(['Midwest', 'South'])])
 
 ```
 
-## In-class Activity
+## In-class Activity {background-color=#449998}
 
 See Activity 3 in notebook
 
@@ -567,11 +592,11 @@ See Activity 3 in notebook
 - The activity we did of writing a user-defined function to subset to a single race/ethnicity group illustrated the concept of *grouping*
 - The general process is `split-apply-combine`, where we use one or more of the following steps:
 
-- Splitting the data into groups based on some criteria.
+  - Splitting the data into groups based on some criteria.
 
-- Applying a function to each group independently.
+  - Applying a function to each group independently.
 
-- Combining the results into a data structure.
+  - Combining the results into a data structure.
 
 ![From Python Data Science Handbook by Jake VanderPlas](https://jakevdp.github.io/PythonDataScienceHandbook/figures/03.08-split-apply-combine.png) 
 
@@ -594,7 +619,7 @@ df_raceeth
 
 ```{python}
 for group, data in df_raceeth:
-  print(group)
+  print("Group: " + group)
   print(data.head(2))
 
 
@@ -641,14 +666,26 @@ Example: mean of a numeric column by group
 ```{python}
 # within a state, average uninsurance rate across all years and race/ethnic groups
 state_means = df.groupby('State')['uninsured_rate'].mean()
+print("Mean uninsurance rate by state:-----------------")
 state_means.sort_values(ascending = False)
 
+```
+
+## Means by group
+
+```{python}
 # within an ethnic group, average uninsurance rate across all years and states
 raceeth_means = df.groupby('Race')['uninsured_rate'].mean()
+print("Mean uninsurance rate by race/ethnic group:-----------------")
 raceeth_means.sort_values(ascending = False)
+```
 
+## Means by group
+
+```{python}
 ## within an ethnic group x year, average uninsurance rate across all states
 raceeth_means_byyear = df.groupby(['year_cat', 'Race'])['uninsured_rate'].mean()
+print("Mean uninsurance rate by race/ethnic group and year:-----------------")
 raceeth_means_byyear.sort_values(ascending = False)
 
 
@@ -663,7 +700,7 @@ raceeth_means_df = raceeth_means.reset_index()
 raceeth_means_df
 ```
 
-## Range of built-in methods
+## Range of built-in methods {.smaller}
 
 [See user guide from Pandas Documentation](https://pandas.pydata.org/docs/user_guide/groupby.html)
 
@@ -694,6 +731,7 @@ raceeth_means_df
 ## Another approach: using `agg` for more flexible aggregation
 
 Advantages:
+
 - Can summarize multiple columns
 - For each column, can use multiple summary functions
 
@@ -703,6 +741,8 @@ Syntax is:
           ['aggfunc1', 'aggfunc2'],
           'colname2':
           ['aggfunc1']})`
+          
+## Another approach: using `agg` for more flexible aggregation
 
 ```{python}
 ## example: find mean and median uninsurance rate by race/ethnicity group
@@ -755,7 +795,7 @@ df_wavg[['State', 'Year',
 
 ```
 
-## In-class Activity {background-color=#709944}
+## In-class Activity {background-color=#449998}
 
 See Activity 4 in notebook
 
