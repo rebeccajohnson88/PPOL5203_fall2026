@@ -36,8 +36,10 @@ website:
             text: "Week 5: Libraries and Numpy"
           - href: weeks/week-06.qmd
             text: "Week 6: Intro to Pandas and Data Wrangling"
+          - href: weeks/week-07.qmd
+            text: "Week 7: Reshaping and Joining Data"
       - href: datasets.qmd
-        text: Datasets for In-class Activities 
+        text: Datasets for Class 
 
 
 format:
