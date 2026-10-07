@@ -24,7 +24,7 @@
     "href": "datasets.html",
     "title": "Datasets for Class",
     "section": "",
-    "text": "Dataset Name\nLink to Download\nDescription/\nsource\nUsed for\n\n\n\n\ngapminder.csv\n gapminder.csv \nhttps://www.gapminder.org/data/documentation/\nNumpy nested lists/arrays\n\n\nchildnoinsur_complete.csv\n childnoinsure_complete.csv \nKids Count aggregation of American Community Survey (ACS) table C27001\nPandas data wrangling",
+    "text": "Dataset Name\nLink to Download\nDescription/\nsource\nUsed for\n\n\n\n\ngapminder.csv\n gapminder.csv \nhttps://www.gapminder.org/data/documentation/\nNumpy nested lists/arrays\n\n\nchildnoinsur_complete.csv\n childnoinsure_complete.csv \nKids Count aggregation of American Community Survey (ACS) table C27001\nPandas data wrangling\n\n\nchild_poverty.csv\n child_poverty.csv \nKids Count Aggregation of American Community Survey data Table C17001\nReshaping and joining",
     "crumbs": [
       "Datasets for In-class Activities"
     ]
@@ -34,7 +34,7 @@
     "href": "datasets.html#weekly-schedule",
     "title": "Datasets for Class",
     "section": "",
-    "text": "Dataset Name\nLink to Download\nDescription/\nsource\nUsed for\n\n\n\n\ngapminder.csv\n gapminder.csv \nhttps://www.gapminder.org/data/documentation/\nNumpy nested lists/arrays\n\n\nchildnoinsur_complete.csv\n childnoinsure_complete.csv \nKids Count aggregation of American Community Survey (ACS) table C27001\nPandas data wrangling",
+    "text": "Dataset Name\nLink to Download\nDescription/\nsource\nUsed for\n\n\n\n\ngapminder.csv\n gapminder.csv \nhttps://www.gapminder.org/data/documentation/\nNumpy nested lists/arrays\n\n\nchildnoinsur_complete.csv\n childnoinsure_complete.csv \nKids Count aggregation of American Community Survey (ACS) table C27001\nPandas data wrangling\n\n\nchild_poverty.csv\n child_poverty.csv \nKids Count Aggregation of American Community Survey data Table C17001\nReshaping and joining",
     "crumbs": [
       "Datasets for In-class Activities"
     ]
@@ -527,7 +527,7 @@
     "href": "slides/week-5.html#the-full-library-and-its-functions",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "The full library and its functions",
-    "text": "The full library and its functions\n\n\n# import library\nimport math\n\n# access methods from the library\nmath.pi\n\n3.141592653589793\n\n\n\n\n# this will throw you an error\npi\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_9088/767399446.py in &lt;module&gt;\n      1 # this will throw you an error\n----&gt; 2 pi\n\nNameError: name 'pi' is not defined"
+    "text": "The full library and its functions\n\n\n# import library\nimport math\n\n# access methods from the library\nmath.pi\n\n3.141592653589793\n\n\n\n\n# this will throw you an error\npi\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_43754/767399446.py in &lt;module&gt;\n      1 # this will throw you an error\n----&gt; 2 pi\n\nNameError: name 'pi' is not defined"
   },
   {
     "objectID": "slides/week-5.html#the-full-library-with-an-alias",
@@ -562,7 +562,7 @@
     "href": "slides/week-5.html#example-csv-file",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Example: csv file",
-    "text": "Example: csv file\n\n# Libraries \nimport csv\nimport os\n\n# Print current working directory\nos.getcwd()\n\n# List files in datasets directory\nos.listdir(\"../datasets/\")\n\n# Load gapminder dataset\nwith open(\"../datasets/gapminder.csv\",mode=\"rt\") as file:\n    data = [row for row in csv.reader(file)]\n\n'/Users/rj545/Dropbox/PPOL5203_fall2026/slides'\n\n\n['us census bureau regions and divisions.csv',\n 'childnoinsur_all.csv',\n 'childnoinsur_complete.csv',\n 'gapminder.csv',\n 'Children without health insurance by race and ethnicity.xlsx']"
+    "text": "Example: csv file\n\n# Libraries \nimport csv\nimport os\n\n# Print current working directory\nos.getcwd()\n\n# List files in datasets directory\nos.listdir(\"../datasets/\")\n\n# Load gapminder dataset\nwith open(\"../datasets/gapminder.csv\",mode=\"rt\") as file:\n    data = [row for row in csv.reader(file)]\n\n'/Users/rj545/Dropbox/PPOL5203_fall2026/slides'\n\n\n['us census bureau regions and divisions.csv',\n 'childnoinsur_all.csv',\n 'childnoinsur_complete.csv',\n 'child_poverty.csv',\n 'gapminder.csv',\n 'Children without health insurance by race and ethnicity.xlsx']"
   },
   {
     "objectID": "slides/week-5.html#working-with-nested-lists-indexing",
@@ -660,14 +660,14 @@
     "href": "slides/week-5.html#creating-arrays-not-using-lists",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Creating arrays not using lists",
-    "text": "Creating arrays not using lists\n\nCan also create arrays with certain content. Some examples:\n\n\n## creating a 3x3 array filled with 1s\nnp.ones((3,3))\n\n## creating a 3x3 array filled with random numbers between 0 and 1\nnp.random.random((3, 3))\n\n## creating a 3x3 array filled with random integers\n## from a pre-defined interval (in this case, 1 through 10)\nnp.random.randint(1, 10, (3, 3))\n\narray([[1., 1., 1.],\n       [1., 1., 1.],\n       [1., 1., 1.]])\n\n\narray([[0.81770617, 0.32741676, 0.94743198],\n       [0.3361196 , 0.01956693, 0.6598118 ],\n       [0.17515441, 0.09847573, 0.50440032]])\n\n\narray([[1, 2, 7],\n       [8, 7, 4],\n       [4, 5, 8]])"
+    "text": "Creating arrays not using lists\n\nCan also create arrays with certain content. Some examples:\n\n\n## creating a 3x3 array filled with 1s\nnp.ones((3,3))\n\n## creating a 3x3 array filled with random numbers between 0 and 1\nnp.random.random((3, 3))\n\n## creating a 3x3 array filled with random integers\n## from a pre-defined interval (in this case, 1 through 10)\nnp.random.randint(1, 10, (3, 3))\n\narray([[1., 1., 1.],\n       [1., 1., 1.],\n       [1., 1., 1.]])\n\n\narray([[0.03285488, 0.64429818, 0.67862416],\n       [0.32042664, 0.31498128, 0.09378734],\n       [0.21690046, 0.41259995, 0.01830475]])\n\n\narray([[7, 1, 8],\n       [7, 4, 1],\n       [4, 4, 2]])"
   },
   {
     "objectID": "slides/week-5.html#what-are-some-attributes-of-arrays",
     "href": "slides/week-5.html#what-are-some-attributes-of-arrays",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "What are some attributes of arrays?",
-    "text": "What are some attributes of arrays?\n\nnumpy.dim: tells us the number of dimensions\nnumpy.shape: tells us the size of each dimension\nnumpy.size: tells us the full size of a array\n\n\n# generate an array\nX = np.random.randint(0, 100, (5, 5))\nX\n\n# information\nprint(\"ndim: \", X.ndim)\nprint(\"shape:\", X.shape)\nprint(\"size: \", X.size)\n\narray([[92, 60, 44, 13, 11],\n       [10, 68, 11,  6, 72],\n       [68, 88, 14, 40, 62],\n       [71, 73, 32, 10, 65],\n       [28, 37, 25, 61,  3]])\n\n\nndim:  2\nshape: (5, 5)\nsize:  25"
+    "text": "What are some attributes of arrays?\n\nnumpy.dim: tells us the number of dimensions\nnumpy.shape: tells us the size of each dimension\nnumpy.size: tells us the full size of a array\n\n\n# generate an array\nX = np.random.randint(0, 100, (5, 5))\nX\n\n# information\nprint(\"ndim: \", X.ndim)\nprint(\"shape:\", X.shape)\nprint(\"size: \", X.size)\n\narray([[88, 87, 77, 41, 58],\n       [55, 16, 99, 17, 59],\n       [60, 47, 43, 88, 89],\n       [19, 19, 78, 96, 88],\n       [28,  1, 96, 65, 31]])\n\n\nndim:  2\nshape: (5, 5)\nsize:  25"
   },
   {
     "objectID": "slides/week-5.html#array-indexing-and-slicing",
@@ -681,7 +681,7 @@
     "href": "slides/week-5.html#example-indexing",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Example indexing",
-    "text": "Example indexing\n\nX\n# index first row \nX[0] \n\n# index first column\nX[:,0]\n\n# index a specific cell \nX[0,0] \n\n# slice rows and columns\nX[0:3,0:3] \n\n# last row\nX[-1,:] \n\narray([[92, 60, 44, 13, 11],\n       [10, 68, 11,  6, 72],\n       [68, 88, 14, 40, 62],\n       [71, 73, 32, 10, 65],\n       [28, 37, 25, 61,  3]])\n\n\narray([92, 60, 44, 13, 11])\n\n\narray([92, 10, 68, 71, 28])\n\n\n92\n\n\narray([[92, 60, 44],\n       [10, 68, 11],\n       [68, 88, 14]])\n\n\narray([28, 37, 25, 61,  3])"
+    "text": "Example indexing\n\nX\n# index first row \nX[0] \n\n# index first column\nX[:,0]\n\n# index a specific cell \nX[0,0] \n\n# slice rows and columns\nX[0:3,0:3] \n\n# last row\nX[-1,:] \n\narray([[88, 87, 77, 41, 58],\n       [55, 16, 99, 17, 59],\n       [60, 47, 43, 88, 89],\n       [19, 19, 78, 96, 88],\n       [28,  1, 96, 65, 31]])\n\n\narray([88, 87, 77, 41, 58])\n\n\narray([88, 55, 60, 19, 28])\n\n\n88\n\n\narray([[88, 87, 77],\n       [55, 16, 99],\n       [60, 47, 43]])\n\n\narray([28,  1, 96, 65, 31])"
   },
   {
     "objectID": "slides/week-5.html#reassignment",
@@ -709,35 +709,35 @@
     "href": "slides/week-5.html#reassignment-based-on-conditional-statements",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Reassignment based on conditional statements",
-    "text": "Reassignment based on conditional statements\n\nD = np.random.randn(50).reshape(10,5).round(1)\nD\n\nD[D &gt; 0] = 1\nprint(D)\n\narray([[ 0.2, -1.7,  1.1, -2.2, -0.6],\n       [ 0.3,  0.2,  0. ,  0.5,  2.3],\n       [ 0.4,  0.5,  2. ,  1.2,  0.6],\n       [ 1.1, -0.4, -0.5, -1.1, -0.5],\n       [ 2. , -1. ,  0.1, -0. , -1. ],\n       [ 0.9,  0.1, -1.6, -0.2, -0.8],\n       [-0.2, -1.4, -0.2, -1.5, -0.6],\n       [ 0.6, -0.8,  1.4, -1.1,  1. ],\n       [ 0.7, -0.4,  0.1, -0.4, -0.6],\n       [ 1. , -0.2, -0.4,  0.3,  1.1]])\n\n\n[[ 1.  -1.7  1.  -2.2 -0.6]\n [ 1.   1.   0.   1.   1. ]\n [ 1.   1.   1.   1.   1. ]\n [ 1.  -0.4 -0.5 -1.1 -0.5]\n [ 1.  -1.   1.  -0.  -1. ]\n [ 1.   1.  -1.6 -0.2 -0.8]\n [-0.2 -1.4 -0.2 -1.5 -0.6]\n [ 1.  -0.8  1.  -1.1  1. ]\n [ 1.  -0.4  1.  -0.4 -0.6]\n [ 1.  -0.2 -0.4  1.   1. ]]"
+    "text": "Reassignment based on conditional statements\n\nD = np.random.randn(50).reshape(10,5).round(1)\nD\n\nD[D &gt; 0] = 1\nprint(D)\n\narray([[ 0.5, -2.9, -1.6,  1.1, -0.3],\n       [ 0.3, -0.1,  1. ,  0.7, -0.1],\n       [ 0.4,  1.1,  0.5,  1.4,  0.5],\n       [ 1.2,  1.8,  0.7, -0.2, -1.2],\n       [ 0.7,  0.1,  1.8,  1.9, -1.1],\n       [-1.8, -2.1, -1.5,  0.8, -1. ],\n       [-0.1,  0.5, -0.3,  0.2, -0. ],\n       [-0.1, -1.2, -1.5,  0.1,  0.7],\n       [ 0.1, -0.1, -0.8,  0.6,  0.9],\n       [ 1.2, -0.8,  0.3, -1.1,  0.8]])\n\n\n[[ 1.  -2.9 -1.6  1.  -0.3]\n [ 1.  -0.1  1.   1.  -0.1]\n [ 1.   1.   1.   1.   1. ]\n [ 1.   1.   1.  -0.2 -1.2]\n [ 1.   1.   1.   1.  -1.1]\n [-1.8 -2.1 -1.5  1.  -1. ]\n [-0.1  1.  -0.3  1.  -0. ]\n [-0.1 -1.2 -1.5  1.   1. ]\n [ 1.  -0.1 -0.8  1.   1. ]\n [ 1.  -0.8  1.  -1.1  1. ]]"
   },
   {
     "objectID": "slides/week-5.html#reassignment-based-on-conditional-statements-1",
     "href": "slides/week-5.html#reassignment-based-on-conditional-statements-1",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Reassignment based on conditional statements",
-    "text": "Reassignment based on conditional statements\n\nD[D &lt;=0 ] =0\nprint(D)\n\n[[1. 0. 1. 0. 0.]\n [1. 1. 0. 1. 1.]\n [1. 1. 1. 1. 1.]\n [1. 0. 0. 0. 0.]\n [1. 0. 1. 0. 0.]\n [1. 1. 0. 0. 0.]\n [0. 0. 0. 0. 0.]\n [1. 0. 1. 0. 1.]\n [1. 0. 1. 0. 0.]\n [1. 0. 0. 1. 1.]]"
+    "text": "Reassignment based on conditional statements\n\nD[D &lt;=0 ] =0\nprint(D)\n\n[[1. 0. 0. 1. 0.]\n [1. 0. 1. 1. 0.]\n [1. 1. 1. 1. 1.]\n [1. 1. 1. 0. 0.]\n [1. 1. 1. 1. 0.]\n [0. 0. 0. 1. 0.]\n [0. 1. 0. 1. 0.]\n [0. 0. 0. 1. 1.]\n [1. 0. 0. 1. 1.]\n [1. 0. 1. 0. 1.]]"
   },
   {
     "objectID": "slides/week-5.html#np.where-streamlines-this-conditional-reassignment",
     "href": "slides/week-5.html#np.where-streamlines-this-conditional-reassignment",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "np.where streamlines this conditional reassignment",
-    "text": "np.where streamlines this conditional reassignment\n\nD = np.random.randn(50).reshape(10,5).round(1) # Generate some random numbers again\nD # Before \nnp.where(D&gt;0,1,0) # After\n\narray([[ 1.9,  1.1,  0.3,  0.4, -0.1],\n       [ 0.1,  1.2,  1.7, -0.9,  0.4],\n       [ 0.8,  2.8, -1.5, -1.6,  0.3],\n       [ 2.2, -0.5, -0.8, -0.8,  0.2],\n       [-1. , -2. , -0. ,  1. ,  1.8],\n       [-1. , -0.8, -0.1,  1. ,  1.8],\n       [-0.5, -0.3,  0.3,  1.2, -0.5],\n       [ 0.3,  2.9,  1.9,  2.1, -1. ],\n       [-0.3,  0.8, -1.4,  1. , -1.5],\n       [-1.3, -0.8,  0.2,  0.1, -0.5]])\n\n\narray([[1, 1, 1, 1, 0],\n       [1, 1, 1, 0, 1],\n       [1, 1, 0, 0, 1],\n       [1, 0, 0, 0, 1],\n       [0, 0, 0, 1, 1],\n       [0, 0, 0, 1, 1],\n       [0, 0, 1, 1, 0],\n       [1, 1, 1, 1, 0],\n       [0, 1, 0, 1, 0],\n       [0, 0, 1, 1, 0]])"
+    "text": "np.where streamlines this conditional reassignment\n\nD = np.random.randn(50).reshape(10,5).round(1) # Generate some random numbers again\nD # Before \nnp.where(D&gt;0,1,0) # After\n\narray([[-0.3,  0.1, -1.2, -0.1, -1.4],\n       [-1.5,  0.7,  0.2, -0.7,  0.7],\n       [ 1.4, -0.5, -0.1,  2.5, -1.7],\n       [ 0.8,  0.5,  0.4,  0.8, -0.3],\n       [-0.4,  0.2,  1.1,  0.1,  1.3],\n       [ 3.2,  1.9,  1.1, -0.4,  0. ],\n       [ 2.4, -0.9,  1.2, -0.5, -1.3],\n       [-1. ,  0. , -1.8, -0.5, -0.2],\n       [-0.6, -0.6,  1.2, -0.9, -0.2],\n       [-0.8,  0. ,  2.8, -0.7,  2.1]])\n\n\narray([[0, 1, 0, 0, 0],\n       [0, 1, 1, 0, 1],\n       [1, 0, 0, 1, 0],\n       [1, 1, 1, 1, 0],\n       [0, 1, 1, 1, 1],\n       [1, 1, 1, 0, 0],\n       [1, 0, 1, 0, 0],\n       [0, 0, 0, 0, 0],\n       [0, 0, 1, 0, 0],\n       [0, 0, 1, 0, 1]])"
   },
   {
     "objectID": "slides/week-5.html#one-warning-with-slicing-and-reassignment-need-to-explicitly-copy-array-to-avoid-modifying-original",
     "href": "slides/week-5.html#one-warning-with-slicing-and-reassignment-need-to-explicitly-copy-array-to-avoid-modifying-original",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "One warning with slicing and reassignment: need to explicitly copy array to avoid modifying original",
-    "text": "One warning with slicing and reassignment: need to explicitly copy array to avoid modifying original\n\nX = np.random.randint(0, 100, (1, 5))\n\n# slice\nX_sub = X[:3]\n\n# modify\nX_sub[0][0] = 3000\n\n# print\nprint(X, X_sub)\n\n[[3000   15   37   64   87]] [[3000   15   37   64   87]]"
+    "text": "One warning with slicing and reassignment: need to explicitly copy array to avoid modifying original\n\nX = np.random.randint(0, 100, (1, 5))\n\n# slice\nX_sub = X[:3]\n\n# modify\nX_sub[0][0] = 3000\n\n# print\nprint(X, X_sub)\n\n[[3000   12   77   27   36]] [[3000   12   77   27   36]]"
   },
   {
     "objectID": "slides/week-5.html#how-to-avoid-add-an-explicit-copy",
     "href": "slides/week-5.html#how-to-avoid-add-an-explicit-copy",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "How to avoid: add an explicit copy",
-    "text": "How to avoid: add an explicit copy\n\nX = np.random.randint(0, 100, (1, 5))\n\n# slice.copy()\nX_sub = X[:3].copy()\n\n# modify\nX_sub[0][0] = 1000\n\n# print\nprint(X, X_sub)\n\n[[51 83 61 80 72]] [[1000   83   61   80   72]]"
+    "text": "How to avoid: add an explicit copy\n\nX = np.random.randint(0, 100, (1, 5))\n\n# slice.copy()\nX_sub = X[:3].copy()\n\n# modify\nX_sub[0][0] = 1000\n\n# print\nprint(X, X_sub)\n\n[[63 40 89 89 44]] [[1000   40   89   89   44]]"
   },
   {
     "objectID": "slides/week-5.html#concatenating-and-splitting-arrays",
@@ -751,21 +751,21 @@
     "href": "slides/week-5.html#example-applications",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Example applications",
-    "text": "Example applications\n\n# create arrays\nX = np.random.randint(0, 100, (5, 2))\nY = np.random.randint(0, 100, (5, 2))\n\nX\nY\n\narray([[10, 91],\n       [27, 87],\n       [80, 11],\n       [25, 73],\n       [22,  1]])\n\n\narray([[62, 24],\n       [78, 86],\n       [47, 91],\n       [93, 26],\n       [20, 43]])"
+    "text": "Example applications\n\n# create arrays\nX = np.random.randint(0, 100, (5, 2))\nY = np.random.randint(0, 100, (5, 2))\n\nX\nY\n\narray([[88, 13],\n       [31, 28],\n       [30, 18],\n       [18, 96],\n       [ 1, 73]])\n\n\narray([[96, 32],\n       [19, 54],\n       [71, 49],\n       [25,  1],\n       [58, 46]])"
   },
   {
     "objectID": "slides/week-5.html#rowbind-vertically-stack",
     "href": "slides/week-5.html#rowbind-vertically-stack",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Rowbind / vertically stack",
-    "text": "Rowbind / vertically stack\n\nnp.concatenate([X,Y],axis=0)\n\narray([[10, 91],\n       [27, 87],\n       [80, 11],\n       [25, 73],\n       [22,  1],\n       [62, 24],\n       [78, 86],\n       [47, 91],\n       [93, 26],\n       [20, 43]])"
+    "text": "Rowbind / vertically stack\n\nnp.concatenate([X,Y],axis=0)\n\narray([[88, 13],\n       [31, 28],\n       [30, 18],\n       [18, 96],\n       [ 1, 73],\n       [96, 32],\n       [19, 54],\n       [71, 49],\n       [25,  1],\n       [58, 46]])"
   },
   {
     "objectID": "slides/week-5.html#column-bind-horizontally-combine",
     "href": "slides/week-5.html#column-bind-horizontally-combine",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Column bind / horizontally combine",
-    "text": "Column bind / horizontally combine\n\n# cbind\nnp.concatenate([X,Y],axis=1)\n\narray([[10, 91, 62, 24],\n       [27, 87, 78, 86],\n       [80, 11, 47, 91],\n       [25, 73, 93, 26],\n       [22,  1, 20, 43]])"
+    "text": "Column bind / horizontally combine\n\n# cbind\nnp.concatenate([X,Y],axis=1)\n\narray([[88, 13, 96, 32],\n       [31, 28, 19, 54],\n       [30, 18, 71, 49],\n       [18, 96, 25,  1],\n       [ 1, 73, 58, 46]])"
   },
   {
     "objectID": "slides/week-5.html#broadcasting",
@@ -822,360 +822,6 @@
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Work on Numpy questions in Problem Set 2",
     "text": "Work on Numpy questions in Problem Set 2\n\nAccept invitation to assignment\nClone repo locally\nOpen the problem set notebook\n\n\n\n\nData science I: Foundations"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
-    "section": "",
-    "text": "This first course in the core data science sequence teaches Data Science for Public Policy (DSPP) students how to synthesize disparate, possibly unstructured data in order to draw meaningful insights. Topics covered include the fundamentals of object-oriented programming in Python; literate programming; an introduction to algorithms and data types; data wrangling, visualization, and extraction; an introduction to machine learning methods, and text analysis. In addition, students will be exposed to Git and Github for version control and reproducible research. The objective of the course is to teach students how to incorporate data into their decision-making and analysis. No prior programming experience is assumed or required.\nData Science I is a collective effort among DSPP faculty. For this reason, the materials heavily draw from Dr. Tiago Ventura’s version of the course, with some also drawn from materials created by Dr. Eric Dunford",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
-    "section": "",
-    "text": "This first course in the core data science sequence teaches Data Science for Public Policy (DSPP) students how to synthesize disparate, possibly unstructured data in order to draw meaningful insights. Topics covered include the fundamentals of object-oriented programming in Python; literate programming; an introduction to algorithms and data types; data wrangling, visualization, and extraction; an introduction to machine learning methods, and text analysis. In addition, students will be exposed to Git and Github for version control and reproducible research. The objective of the course is to teach students how to incorporate data into their decision-making and analysis. No prior programming experience is assumed or required.\nData Science I is a collective effort among DSPP faculty. For this reason, the materials heavily draw from Dr. Tiago Ventura’s version of the course, with some also drawn from materials created by Dr. Eric Dunford",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#goals",
-    "href": "index.html#goals",
-    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
-    "section": "Goals",
-    "text": "Goals\nAfter completing this course, the students will be able to:\n\nGeneral understanding of python’s object oriented programming syntax and data structures.\nCompetency using version control (Git/Github).\nLearn to manipulate and explore data with Pandas and other tools.\nGeneral understanding of analyzing algorithms and data structures.\nLearn to extract and process data from structured and unstructured sources.\nGet some intuition of modeling text data in Python.\nLearn the basics of machine learning as a modeling approach.\nLearn how to use Generative AI for multiple applied tasks.\nLearn basics of using SQL to query databases.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#instructor",
-    "href": "index.html#instructor",
-    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
-    "section": "Instructor",
-    "text": "Instructor\n\nProfessor: Dr. Rebecca Johnson\nEmail: rj545@georgetown.edu\nOffice hours:\n\nTime: Every Wednesday, 1130am - 130pm\nLocation - either:\nIn person: 125E, Office Number 768\nRemote: see Calendly link\n\n\nSign up: on Calendly",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#teaching-assistant-tbd",
-    "href": "index.html#teaching-assistant-tbd",
-    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
-    "section": "Teaching Assistant: TBD",
-    "text": "Teaching Assistant: TBD\n\nCourse Infra-structure\nClass Website: A class website https://rebeccajohnson88.github.io/PPOL5203_fall2026/ will be used throughout the course and should be checked on a regular basis for lecture materials and required readings.\n\nCanvas: A Canvas site (http://canvas.georgetown.edu) will be used throughout the course and should be checked on a regular basis for announcements. All announcements for the assignments and classes will be posted on Canvas; they will not be distributed in class or by e-mail. Support for Canvas is available at (202) 687-4949\nNOTE: Students are encouraged to run lecture code on their own machines. If you do not have access to a laptop on which you can install python3, please contact the professor and/or TA for assistance. Only python3 will be used in this course.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "lecture_notes/week-1/intro_to_quarto.html",
-    "href": "lecture_notes/week-1/intro_to_quarto.html",
-    "title": "Week 1: Introduction to Quarto for Python",
-    "section": "",
-    "text": "The purpose of this notebook is to show case the use of Quarto notebooks. It will cover:\n\nBrief introduction to Quarto Notebooks\nRunning R with Quarto Notebooks\nRunning Python with Quarto Notebooks + reticulate\n\nSee Quarto’s website for a more in-depth coverage of the framework."
-  },
-  {
-    "objectID": "lecture_notes/week-1/intro_to_quarto.html#quick-tutorial-for-rstudio",
-    "href": "lecture_notes/week-1/intro_to_quarto.html#quick-tutorial-for-rstudio",
-    "title": "Week 1: Introduction to Quarto for Python",
-    "section": "Quick tutorial for RStudio",
-    "text": "Quick tutorial for RStudio\nThis is what RStudio looks like when you open it for the first time.\n\n\n\n\n\n\n\n\n\nTop left pane (input/script)\nThis is your code editor. Here you enter code in any file type (.py, .r, .qmd) you are working on. If not working with notebooks, this is just gonna be a plain text file but with a extension that run the commands.\nFor example, enter 2 + 2 in your script and run a line of code by pressing command + enter (Mac) or Ctrl + enter (PC). This is a huge advantage of Rstudio over Jupyter. You can run your code line by line, instead of running the entire cell.\nBottom left pane (output/console)\nThis is the console. It is pretty much like when you open Python/R from the Command line.\nIn the console, the prompt &gt; looks like a greater than symbol. If your prompt begins to look like a + symbol by mistake, simply click in your console and press the esc key on your keyboard as many times as necessary to return to the prompt.\nRstudio uses + when code is broken up across multiple lines and is still expecting more code. A line of code does not usually end until Rstudio finds an appropriate stop parameter or punctuation that completes some code such as a closed round parenthesis ), square bracket ], curly brace }, or quotation mark '.\nIf the output in your console gets too messy, you can clear it by pressing control + l on both Mac and PC. This will not erase any saved data - it will simply make your console easier to read.\nTop right pane (global environment)\nThis is your environment pane. All objects you create will be displayed here.\nBottom right pane (files, plots, packages, and help)\nHere you find useful tabs for navigating your file system, displaying plots, installing packages, and viewing help pages. Press the control key and a number (1 through 9) on your keyboard to shortcut between these panes and tabs."
-  },
-  {
-    "objectID": "weeks/week-01.html",
-    "href": "weeks/week-01.html",
-    "title": "Week 01",
-    "section": "",
-    "text": "Slides\nWeek 01:Introduction, Installations, IDEs, Command line\n\n\nHandouts\n\nInstructions for setting up the course infrastructure.\nUsing Jupyter Notebooks: web page,  .ipynb file \nUsing Quarto for Python and R web page,  .qmd file \nBasics of Command Line: web page,  .ipynb file \nPractice Notebook to Check Installations:  .ipynb file \n\n\n\nReadings\nRequired Readings\n\nJupyter Notebook for Beginners: A tutorial Pryke, Benjamin - www.dataquest.io\n\n\n\nDataCamp\n\nOptional (but highly recommended) module: Introduction to Shell &gt; Manipulating Files and Directories",
-    "crumbs": [
-      "Materials",
-      "Week 1: Intro to Course and Tools"
-    ]
-  },
-  {
-    "objectID": "weeks/week-02.html",
-    "href": "weeks/week-02.html",
-    "title": "Week 02",
-    "section": "",
-    "text": "Slides\nWeek 01: Git and GitHub\n\n\nIn-class activity\nClassroom 50 link\nDownload from this website:\n\nBlank activity:  .ipynb file \nActivity solutions:  .ipynb file \n\n\n\nResources (optional)\nGitHub Cheatsheet\nAnother GitHub Cheatsheet",
-    "crumbs": [
-      "Materials",
-      "Week 2: Git and GitHub"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html",
-    "href": "weeks/week-05.html",
-    "title": "Week 05",
-    "section": "",
-    "text": "Week 5",
-    "crumbs": [
-      "Materials",
-      "Week 5: Libraries and Numpy"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html#slides",
-    "href": "weeks/week-05.html#slides",
-    "title": "Week 05",
-    "section": "",
-    "text": "Week 5",
-    "crumbs": [
-      "Materials",
-      "Week 5: Libraries and Numpy"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html#in-class-activity",
-    "href": "weeks/week-05.html#in-class-activity",
-    "title": "Week 05",
-    "section": "In-class activity",
-    "text": "In-class activity\n\nProblem set 2 (see Classroom 50 assignment)",
-    "crumbs": [
-      "Materials",
-      "Week 5: Libraries and Numpy"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html#optional-readings",
-    "href": "weeks/week-05.html#optional-readings",
-    "title": "Week 05",
-    "section": "Optional Readings",
-    "text": "Optional Readings\n\nPDS VanderPlas\n\nCh. 2: Introduction to Numpy - Python Data Science Handbook - VanderPlas, Jake",
-    "crumbs": [
-      "Materials",
-      "Week 5: Libraries and Numpy"
-    ]
-  },
-  {
-    "objectID": "weeks/week-04.html",
-    "href": "weeks/week-04.html",
-    "title": "Week 04",
-    "section": "",
-    "text": "Week 4 - Python part II",
-    "crumbs": [
-      "Materials",
-      "Week 4: Python - Iteration, Comprehension, and Functions"
-    ]
-  },
-  {
-    "objectID": "weeks/week-04.html#slides",
-    "href": "weeks/week-04.html#slides",
-    "title": "Week 04",
-    "section": "",
-    "text": "Week 4 - Python part II",
-    "crumbs": [
-      "Materials",
-      "Week 4: Python - Iteration, Comprehension, and Functions"
-    ]
-  },
-  {
-    "objectID": "weeks/week-04.html#in-class-exercise",
-    "href": "weeks/week-04.html#in-class-exercise",
-    "title": "Week 04",
-    "section": "In-Class Exercise",
-    "text": "In-Class Exercise\n\nBlank activity (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html to view): html",
-    "crumbs": [
-      "Materials",
-      "Week 4: Python - Iteration, Comprehension, and Functions"
-    ]
-  },
-  {
-    "objectID": "weeks/week-04.html#optional-readings",
-    "href": "weeks/week-04.html#optional-readings",
-    "title": "Week 04",
-    "section": "Optional Readings",
-    "text": "Optional Readings\n\nPDA Wes McKinney, Chapter 3\n\nList, Set, and Dictionary Comprehensions\n\nfor-loop-vs-list-comprehension-vs-high-order-functions",
-    "crumbs": [
-      "Materials",
-      "Week 4: Python - Iteration, Comprehension, and Functions"
-    ]
-  },
-  {
-    "objectID": "weeks/week-06.html",
-    "href": "weeks/week-06.html",
-    "title": "Week 06",
-    "section": "",
-    "text": "Week 6",
-    "crumbs": [
-      "Materials",
-      "Week 6: Intro to Pandas and Data Wrangling"
-    ]
-  },
-  {
-    "objectID": "weeks/week-06.html#slides",
-    "href": "weeks/week-06.html#slides",
-    "title": "Week 06",
-    "section": "",
-    "text": "Week 6",
-    "crumbs": [
-      "Materials",
-      "Week 6: Intro to Pandas and Data Wrangling"
-    ]
-  },
-  {
-    "objectID": "weeks/week-06.html#in-class-activity",
-    "href": "weeks/week-06.html#in-class-activity",
-    "title": "Week 06",
-    "section": "In-class activity",
-    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file",
-    "crumbs": [
-      "Materials",
-      "Week 6: Intro to Pandas and Data Wrangling"
-    ]
-  },
-  {
-    "objectID": "weeks/week-06.html#data-for-in-class-activity",
-    "href": "weeks/week-06.html#data-for-in-class-activity",
-    "title": "Week 06",
-    "section": "Data for in-class activity",
-    "text": "Data for in-class activity\n\nRates of children without health insurance by state, year, and race/ethnicity (csv to download):  .csv file \n\nAdapted from: Kids Count aggregation of American Community Survey (ACS) table C27001",
-    "crumbs": [
-      "Materials",
-      "Week 6: Intro to Pandas and Data Wrangling"
-    ]
-  },
-  {
-    "objectID": "weeks/week-06.html#optional-readings",
-    "href": "weeks/week-06.html#optional-readings",
-    "title": "Week 06",
-    "section": "Optional Readings",
-    "text": "Optional Readings\n\nPandas cheat sheet",
-    "crumbs": [
-      "Materials",
-      "Week 6: Intro to Pandas and Data Wrangling"
-    ]
-  },
-  {
-    "objectID": "weeks/week-03.html",
-    "href": "weeks/week-03.html",
-    "title": "Week 03",
-    "section": "",
-    "text": "Week 3 - Intro to Python",
-    "crumbs": [
-      "Materials",
-      "Week 3: Intro to Python"
-    ]
-  },
-  {
-    "objectID": "weeks/week-03.html#slides",
-    "href": "weeks/week-03.html#slides",
-    "title": "Week 03",
-    "section": "",
-    "text": "Week 3 - Intro to Python",
-    "crumbs": [
-      "Materials",
-      "Week 3: Intro to Python"
-    ]
-  },
-  {
-    "objectID": "weeks/week-03.html#in-class-exercise",
-    "href": "weeks/week-03.html#in-class-exercise",
-    "title": "Week 03",
-    "section": "In-Class Exercise",
-    "text": "In-Class Exercise\n\nBlank activity (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html to view): html",
-    "crumbs": [
-      "Materials",
-      "Week 3: Intro to Python"
-    ]
-  },
-  {
-    "objectID": "weeks/week-03.html#optional-readings",
-    "href": "weeks/week-03.html#optional-readings",
-    "title": "Week 03",
-    "section": "Optional Readings",
-    "text": "Optional Readings\nFrom Wes McKinney, Python for Data Analysis\n\nChapter 2: Python Language Basics, IPython, and Jupyter Notebooks\n\nFrom Data Carpentry:\n\nPython Fundamentals\nStoring Multiple Values in Lists",
-    "crumbs": [
-      "Materials",
-      "Week 3: Intro to Python"
-    ]
-  },
-  {
-    "objectID": "lecture_notes/week-1/minimal_example_python.html",
-    "href": "lecture_notes/week-1/minimal_example_python.html",
-    "title": "Python via Quarto",
-    "section": "",
-    "text": "Here you add your text as markdown."
-  },
-  {
-    "objectID": "lecture_notes/week-1/minimal_example_python.html#minimal-example-of-using-python-with-quarto",
-    "href": "lecture_notes/week-1/minimal_example_python.html#minimal-example-of-using-python-with-quarto",
-    "title": "Python via Quarto",
-    "section": "",
-    "text": "Here you add your text as markdown."
-  },
-  {
-    "objectID": "lecture_notes/week-1/minimal_example_python.html#code",
-    "href": "lecture_notes/week-1/minimal_example_python.html#code",
-    "title": "Python via Quarto",
-    "section": "Code",
-    "text": "Code\nYou will use the same code block for any language. You just need to change language inside of the brackets {}\n\nlibrary(reticulate)\n\nWarning: package 'reticulate' was built under R version 4.2.3\n\nreticulate::py_config()\n\npython:         /Users/rj545/.virtualenvs/r-reticulate/bin/python\nlibpython:      /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/config-3.9-darwin/libpython3.9.dylib\npythonhome:     /Users/rj545/.virtualenvs/r-reticulate:/Users/rj545/.virtualenvs/r-reticulate\nversion:        3.9.6 (default, Sep 26 2022, 11:37:49)  [Clang 14.0.0 (clang-1400.0.29.202)]\nnumpy:          /Users/rj545/.virtualenvs/r-reticulate/lib/python3.9/site-packages/numpy\nnumpy_version:  2.0.2\n\nuse_python(\"/Users/rj545/.virtualenvs/r-reticulate/bin/python\")\n\nusethis::edit_r_environ()\n\n• Edit '/Users/rj545/.Renviron'\n• Restart R for changes to take effect\n\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport scipy.stats as stats\nimport math\n\n## generate normal distribution \nmu = 0\nvariance = 1\nsigma = math.sqrt(variance)\nx = np.linspace(mu - 3*sigma, mu + 3*sigma, 100)\ny = stats.norm.pdf(x, mu, sigma)\n\n## plot using Georgetown Blue colors\nGU_BLUE = '#041E42'\nplt.plot(x, y, color = GU_BLUE)\nplt.fill_between(x, y, color= GU_BLUE, alpha=0.4)\n\n\n\n\n\n\n\n\n\nplt.show()"
-  },
-  {
-    "objectID": "course_infrastructure.html",
-    "href": "course_infrastructure.html",
-    "title": "Week 1: Course Infrastructure",
-    "section": "",
-    "text": "Throughout the semester, we will use a combination of computational tools. This a summary of the main tools:\n\nCommand line: primarily to interact with git, install programs and run a few scripts\nPython3: for programming taks\nGit/GitHub: for version control, reproucibility and for sharing materials\nJupyter Notebooks: as a main IDE to work with Python\nQuarto via RStudio: as a secondary IDE (you can make your primary if you prefer) to coding in Python/R/SQL\n\nLet’s cover how to set up each of these tools in your local machines.\n\n\n\n\n\n\nWarning\n\n\n\nIf you run into issues, please set up an office hours appointment for assistance\n\n\n\n\nAt times, we’ll use a unix-based command line. The command line will feature into our discussion on using git and also running Python programs. If you use a Mac or a Linux operating system, then a functioning command line comes with your operating system. For Apple machines, this is the Terminal.\nFor Windows (specifically Windows 10), you can enable Linux Bash shell. The following offers a tutorial on how to do this.\nIf you’re using a version of Windows that pre-dates version 10, then Git Bash offers a program will allow you to use git commands from your windows machine.\nLater in the first class, we will cover some concepts of working with the command line. You can get a full notebook with a intro to command line in the materials for week 1\n\n\n\nWe’ll use Python3 throughout this course. Below are instructions for downloading Python3 using command line packages manager (Homebrew for mac, Chocolatey for windows).\n\nInstalling Python3 using Homebrew on a Mac (Apple)\nInstalling Python3 using Chocolatey on a PC (Windows)\n\nAn alternative way to install Python3 is to download an Anaconda distribution. I will use pip rather than conda in the instruction for downloading Python modules. These are simply two ways of downloading and managing open-source software packages. Choose which ever works best for you\nSome computers already have python3 installed. You can check if that is your case through your command line\npython3 --version\nOn some versions of Windows, you may need to use py instead of python3:\npy --version\nIn either case, the output of this command should be something like Python 3.9.13\n\n\n\nOnce you have Python3 on your computer, you can install a Jupyter Notebook. If you downloaded Python3 using Anaconda, then Jupyter Notebook comes with the distribution and requires no further installation on your part. If you are not using Anaconda, you can install Jupyter notebook running the following code using your command line.\n# on your command line\npip install jupyter\nYou can then activate a Jupyter Notebook from the command line by typing:\n# on your command line\njupyter notebook\n\n\nHere is my workflow to open Jupyter Notebooks using the commandline.\n\nOpen the terminal\nNavigate (using cd) to the folder you want to be the root of your jupyter notebook\nOpen the notebook (jupyter notebook)\n\nIt looks like this if I were to open a notebook in the folder I have for this course\n# open terminal\ncd ppol_5203_fall2026\njupyter notebook\n\n\n\nIf you installed Python using Anaconda distribution system (here: https://www.anaconda.com/products/individual). You can open Jupyter through a point-and-click system.\nIn the lecture notes, you can also find a Introduction to Jupyter notebook. We will cover this in the first class of the course.\n\n\n\n\nIn your classes that are focused on using R, RStudio will be your main IDE. However, RStudio isn’t just for R. It can handle a number of different languages. We can use Python in RStudio using the reticulate package.\nHere’s a notebook to teach you how to use Python in Rstudio. Check out the intro to quarto notebook. Let’s cover some of the installation steps here:\n\nTo install RStudio, download from the following link . reticulate is an R package that allows one run a Python REPL in the R console. In addition, it allows one to read in and use Python code, and pass data between R and and Python. The following provides instructions on installing reticulate.\nWith reticulate, you can use Rstudio as a IDE for Python. Another option is to use Quarto (the next-generation version of R Markdown) as an unified framework to generate notebooks with text + code. If you’re an R Markdown user, you will see how Quarto is just an extension of the capabilities that were previously provided by R Markdown. Now, instead of .rmd files, we have .qmd files. Quarto is already installed with RStudio.\n\n\n\n\nWe’ll go over more Git/GitHub instructions during the second class session. Before that session:\n\nInstall Git if it’s not installed already\nCreate a GitHub account if you don’t have one already (any email and free subscription is fine)",
-    "crumbs": [
-      "Course Technology Tools"
-    ]
-  },
-  {
-    "objectID": "course_infrastructure.html#command-line",
-    "href": "course_infrastructure.html#command-line",
-    "title": "Week 1: Course Infrastructure",
-    "section": "",
-    "text": "At times, we’ll use a unix-based command line. The command line will feature into our discussion on using git and also running Python programs. If you use a Mac or a Linux operating system, then a functioning command line comes with your operating system. For Apple machines, this is the Terminal.\nFor Windows (specifically Windows 10), you can enable Linux Bash shell. The following offers a tutorial on how to do this.\nIf you’re using a version of Windows that pre-dates version 10, then Git Bash offers a program will allow you to use git commands from your windows machine.\nLater in the first class, we will cover some concepts of working with the command line. You can get a full notebook with a intro to command line in the materials for week 1",
-    "crumbs": [
-      "Course Technology Tools"
-    ]
-  },
-  {
-    "objectID": "course_infrastructure.html#python3",
-    "href": "course_infrastructure.html#python3",
-    "title": "Week 1: Course Infrastructure",
-    "section": "",
-    "text": "We’ll use Python3 throughout this course. Below are instructions for downloading Python3 using command line packages manager (Homebrew for mac, Chocolatey for windows).\n\nInstalling Python3 using Homebrew on a Mac (Apple)\nInstalling Python3 using Chocolatey on a PC (Windows)\n\nAn alternative way to install Python3 is to download an Anaconda distribution. I will use pip rather than conda in the instruction for downloading Python modules. These are simply two ways of downloading and managing open-source software packages. Choose which ever works best for you\nSome computers already have python3 installed. You can check if that is your case through your command line\npython3 --version\nOn some versions of Windows, you may need to use py instead of python3:\npy --version\nIn either case, the output of this command should be something like Python 3.9.13",
-    "crumbs": [
-      "Course Technology Tools"
-    ]
-  },
-  {
-    "objectID": "course_infrastructure.html#jupyter-notebooks",
-    "href": "course_infrastructure.html#jupyter-notebooks",
-    "title": "Week 1: Course Infrastructure",
-    "section": "",
-    "text": "Once you have Python3 on your computer, you can install a Jupyter Notebook. If you downloaded Python3 using Anaconda, then Jupyter Notebook comes with the distribution and requires no further installation on your part. If you are not using Anaconda, you can install Jupyter notebook running the following code using your command line.\n# on your command line\npip install jupyter\nYou can then activate a Jupyter Notebook from the command line by typing:\n# on your command line\njupyter notebook\n\n\nHere is my workflow to open Jupyter Notebooks using the commandline.\n\nOpen the terminal\nNavigate (using cd) to the folder you want to be the root of your jupyter notebook\nOpen the notebook (jupyter notebook)\n\nIt looks like this if I were to open a notebook in the folder I have for this course\n# open terminal\ncd ppol_5203_fall2026\njupyter notebook\n\n\n\nIf you installed Python using Anaconda distribution system (here: https://www.anaconda.com/products/individual). You can open Jupyter through a point-and-click system.\nIn the lecture notes, you can also find a Introduction to Jupyter notebook. We will cover this in the first class of the course.",
-    "crumbs": [
-      "Course Technology Tools"
-    ]
-  },
-  {
-    "objectID": "course_infrastructure.html#rstudio-reticulatequarto",
-    "href": "course_infrastructure.html#rstudio-reticulatequarto",
-    "title": "Week 1: Course Infrastructure",
-    "section": "",
-    "text": "In your classes that are focused on using R, RStudio will be your main IDE. However, RStudio isn’t just for R. It can handle a number of different languages. We can use Python in RStudio using the reticulate package.\nHere’s a notebook to teach you how to use Python in Rstudio. Check out the intro to quarto notebook. Let’s cover some of the installation steps here:\n\nTo install RStudio, download from the following link . reticulate is an R package that allows one run a Python REPL in the R console. In addition, it allows one to read in and use Python code, and pass data between R and and Python. The following provides instructions on installing reticulate.\nWith reticulate, you can use Rstudio as a IDE for Python. Another option is to use Quarto (the next-generation version of R Markdown) as an unified framework to generate notebooks with text + code. If you’re an R Markdown user, you will see how Quarto is just an extension of the capabilities that were previously provided by R Markdown. Now, instead of .rmd files, we have .qmd files. Quarto is already installed with RStudio.",
-    "crumbs": [
-      "Course Technology Tools"
-    ]
-  },
-  {
-    "objectID": "course_infrastructure.html#git",
-    "href": "course_infrastructure.html#git",
-    "title": "Week 1: Course Infrastructure",
-    "section": "",
-    "text": "We’ll go over more Git/GitHub instructions during the second class session. Before that session:\n\nInstall Git if it’s not installed already\nCreate a GitHub account if you don’t have one already (any email and free subscription is fine)",
-    "crumbs": [
-      "Course Technology Tools"
-    ]
   },
   {
     "objectID": "slides/week-6.html#motivation",
@@ -1385,7 +1031,7 @@
     "href": "slides/week-6.html#subsetting-rows-and-columns-simultaneously-1",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Subsetting rows and columns simultaneously",
-    "text": "Subsetting rows and columns simultaneously\nThis is where value of loc comes in; see error without\n\n## throws error\ndf[(df.Year == 2021) & (df.State == \"California\"),\n[\"State\", \"Year\", \"Race\"]]\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)\n   3628             try:\n-&gt; 3629                 return self._engine.get_loc(casted_key)\n   3630             except KeyError as err:\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()\n\nTypeError: '(0       False\n1       False\n2       False\n3       False\n4       False\n        ...  \n1709    False\n1710    False\n1711    False\n1712    False\n1713    False\nLength: 1714, dtype: bool, ['State', 'Year', 'Race'])' is an invalid key\n\nDuring handling of the above exception, another exception occurred:\n\nInvalidIndexError                         Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_9049/2067952100.py in &lt;module&gt;\n      1 ## throws error\n----&gt; 2 df[(df.Year == 2021) & (df.State == \"California\"),\n      3 [\"State\", \"Year\", \"Race\"]]\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py in __getitem__(self, key)\n   3503             if self.columns.nlevels &gt; 1:\n   3504                 return self._getitem_multilevel(key)\n-&gt; 3505             indexer = self.columns.get_loc(key)\n   3506             if is_integer(indexer):\n   3507                 indexer = [indexer]\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)\n   3634                 #  InvalidIndexError. Otherwise we fall through and re-raise\n   3635                 #  the TypeError.\n-&gt; 3636                 self._check_indexing_error(key)\n   3637                 raise\n   3638 \n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in _check_indexing_error(self, key)\n   5649             # if key is not a scalar, directly raise an error (the code below\n   5650             # would convert to numpy arrays and raise later any way) - GH29926\n-&gt; 5651             raise InvalidIndexError(key)\n   5652 \n   5653     @cache_readonly\n\nInvalidIndexError: (0       False\n1       False\n2       False\n3       False\n4       False\n        ...  \n1709    False\n1710    False\n1711    False\n1712    False\n1713    False\nLength: 1714, dtype: bool, ['State', 'Year', 'Race'])"
+    "text": "Subsetting rows and columns simultaneously\nThis is where value of loc comes in; see error without\n\n## throws error\ndf[(df.Year == 2021) & (df.State == \"California\"),\n[\"State\", \"Year\", \"Race\"]]\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)\n   3628             try:\n-&gt; 3629                 return self._engine.get_loc(casted_key)\n   3630             except KeyError as err:\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()\n\nTypeError: '(0       False\n1       False\n2       False\n3       False\n4       False\n        ...  \n1709    False\n1710    False\n1711    False\n1712    False\n1713    False\nLength: 1714, dtype: bool, ['State', 'Year', 'Race'])' is an invalid key\n\nDuring handling of the above exception, another exception occurred:\n\nInvalidIndexError                         Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_43678/2067952100.py in &lt;module&gt;\n      1 ## throws error\n----&gt; 2 df[(df.Year == 2021) & (df.State == \"California\"),\n      3 [\"State\", \"Year\", \"Race\"]]\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py in __getitem__(self, key)\n   3503             if self.columns.nlevels &gt; 1:\n   3504                 return self._getitem_multilevel(key)\n-&gt; 3505             indexer = self.columns.get_loc(key)\n   3506             if is_integer(indexer):\n   3507                 indexer = [indexer]\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)\n   3634                 #  InvalidIndexError. Otherwise we fall through and re-raise\n   3635                 #  the TypeError.\n-&gt; 3636                 self._check_indexing_error(key)\n   3637                 raise\n   3638 \n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in _check_indexing_error(self, key)\n   5649             # if key is not a scalar, directly raise an error (the code below\n   5650             # would convert to numpy arrays and raise later any way) - GH29926\n-&gt; 5651             raise InvalidIndexError(key)\n   5652 \n   5653     @cache_readonly\n\nInvalidIndexError: (0       False\n1       False\n2       False\n3       False\n4       False\n        ...  \n1709    False\n1710    False\n1711    False\n1712    False\n1713    False\nLength: 1714, dtype: bool, ['State', 'Year', 'Race'])"
   },
   {
     "objectID": "slides/week-6.html#query-offers-similarities-to-dplyrs-filter",
@@ -1441,7 +1087,7 @@
     "href": "slides/week-6.html#creating-variables-assign-method-as-similar-to-mutate-in-dplyr",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Creating variables: assign method as similar to mutate in dplyr",
-    "text": "Creating variables: assign method as similar to mutate in dplyr\nKey advantage is we can create multiple variables in the same assign statement\n\ndf = (df.assign(state_lower = df.State.str.lower(),\n        year_category = np.where(df.Year &lt; 2020, \n        \"Pre Covid\", \"During or post COVID\")))\ndf[['State', 'state_lower', 'Year', 'year_category']].sample(n = 5)\n\n\n\n\n\n\n\n\nState\nstate_lower\nYear\nyear_category\n\n\n\n\n252\nAlabama\nalabama\n2018\nPre Covid\n\n\n890\nNew Jersey\nnew jersey\n2024\nDuring or post COVID\n\n\n988\nWyoming\nwyoming\n2019\nPre Covid\n\n\n872\nMontana\nmontana\n2024\nDuring or post COVID\n\n\n308\nHawaii\nhawaii\n2017\nPre Covid"
+    "text": "Creating variables: assign method as similar to mutate in dplyr\nKey advantage is we can create multiple variables in the same assign statement\n\ndf = (df.assign(state_lower = df.State.str.lower(),\n        year_category = np.where(df.Year &lt; 2020, \n        \"Pre Covid\", \"During or post COVID\")))\ndf[['State', 'state_lower', 'Year', 'year_category']].sample(n = 5)\n\n\n\n\n\n\n\n\nState\nstate_lower\nYear\nyear_category\n\n\n\n\n997\nWashington\nwashington\n2019\nPre Covid\n\n\n426\nOhio\nohio\n2017\nPre Covid\n\n\n1198\nCalifornia\ncalifornia\n2019\nPre Covid\n\n\n1334\nMaryland\nmaryland\n2021\nDuring or post COVID\n\n\n34\nTexas\ntexas\n2018\nPre Covid"
   },
   {
     "objectID": "slides/week-6.html#recoding-variables",
@@ -1504,7 +1150,7 @@
     "href": "slides/week-6.html#illustration-grouping-by-raceethnicity-across-all-states",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Illustration: grouping by race/ethnicity (across all states)",
-    "text": "Illustration: grouping by race/ethnicity (across all states)\n\ndf_raceeth = df.groupby(\"Race\")\ndf_raceeth\n\n&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f8720e914c0&gt;"
+    "text": "Illustration: grouping by race/ethnicity (across all states)\n\ndf_raceeth = df.groupby(\"Race\")\ndf_raceeth\n\n&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fea602f5490&gt;"
   },
   {
     "objectID": "slides/week-6.html#iterating-over-groups",
@@ -1602,7 +1248,7 @@
     "href": "slides/week-6.html#what-if-we-want-to-keep-the-shape-of-the-dataframe-and-add-a-grouped-aggregation-result-as-a-new-column",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "What if we want to keep the shape of the dataframe and add a grouped aggregation result as a new column?",
-    "text": "What if we want to keep the shape of the dataframe and add a grouped aggregation result as a new column?\nCan use the assign function we learned earlier for variable creation and combine it with the transform function\nExample: keep all rows in the data; add the average nationwide uninsurance rate for each racial/ethnic group as an additional column\n\ndf_wavg = (df.assign(raceeth_avg = \n        df.groupby('Race')['uninsured_rate'].transform(\"mean\")))\ndf_wavg[['State', 'Year', \n        'Race', 'uninsured_rate', 'raceeth_avg']].sample(n = 5)\n\n\n\n\n\n\n\n\nState\nYear\nRace\nuninsured_rate\nraceeth_avg\n\n\n\n\n172\nKansas\n2018\nAsian and Pacific Islander\n0.02\n0.042774\n\n\n1696\nArkansas\n2023\nNon-Hispanic White\n0.05\n0.040200\n\n\n324\nIllinois\n2017\nAmerican Indian or Alaska Native\n0.01\n0.084444\n\n\n665\nKansas\n2022\nTwo or more races\n0.06\n0.048389\n\n\n1235\nAlabama\n2021\nAsian and Pacific Islander\n0.03\n0.042774"
+    "text": "What if we want to keep the shape of the dataframe and add a grouped aggregation result as a new column?\nCan use the assign function we learned earlier for variable creation and combine it with the transform function\nExample: keep all rows in the data; add the average nationwide uninsurance rate for each racial/ethnic group as an additional column\n\ndf_wavg = (df.assign(raceeth_avg = \n        df.groupby('Race')['uninsured_rate'].transform(\"mean\")))\ndf_wavg[['State', 'Year', \n        'Race', 'uninsured_rate', 'raceeth_avg']].sample(n = 5)\n\n\n\n\n\n\n\n\nState\nYear\nRace\nuninsured_rate\nraceeth_avg\n\n\n\n\n1216\nArizona\n2019\nHispanic or Latino\n0.11\n0.082812\n\n\n526\nVermont\n2022\nNon-Hispanic White\n0.02\n0.040200\n\n\n1134\nLouisiana\n2019\nBlack or African American\n0.03\n0.040833\n\n\n706\nFlorida\n2022\nTwo or more races\n0.08\n0.048389\n\n\n1005\nVirginia\n2019\nHispanic or Latino\n0.12\n0.082812"
   },
   {
     "objectID": "slides/week-6.html#in-class-activity-3",
@@ -1610,6 +1256,542 @@
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "In-class Activity",
     "text": "In-class Activity\nSee Activity 4 in notebook"
+  },
+  {
+    "objectID": "course_infrastructure.html",
+    "href": "course_infrastructure.html",
+    "title": "Week 1: Course Infrastructure",
+    "section": "",
+    "text": "Throughout the semester, we will use a combination of computational tools. This a summary of the main tools:\n\nCommand line: primarily to interact with git, install programs and run a few scripts\nPython3: for programming taks\nGit/GitHub: for version control, reproucibility and for sharing materials\nJupyter Notebooks: as a main IDE to work with Python\nQuarto via RStudio: as a secondary IDE (you can make your primary if you prefer) to coding in Python/R/SQL\n\nLet’s cover how to set up each of these tools in your local machines.\n\n\n\n\n\n\nWarning\n\n\n\nIf you run into issues, please set up an office hours appointment for assistance\n\n\n\n\nAt times, we’ll use a unix-based command line. The command line will feature into our discussion on using git and also running Python programs. If you use a Mac or a Linux operating system, then a functioning command line comes with your operating system. For Apple machines, this is the Terminal.\nFor Windows (specifically Windows 10), you can enable Linux Bash shell. The following offers a tutorial on how to do this.\nIf you’re using a version of Windows that pre-dates version 10, then Git Bash offers a program will allow you to use git commands from your windows machine.\nLater in the first class, we will cover some concepts of working with the command line. You can get a full notebook with a intro to command line in the materials for week 1\n\n\n\nWe’ll use Python3 throughout this course. Below are instructions for downloading Python3 using command line packages manager (Homebrew for mac, Chocolatey for windows).\n\nInstalling Python3 using Homebrew on a Mac (Apple)\nInstalling Python3 using Chocolatey on a PC (Windows)\n\nAn alternative way to install Python3 is to download an Anaconda distribution. I will use pip rather than conda in the instruction for downloading Python modules. These are simply two ways of downloading and managing open-source software packages. Choose which ever works best for you\nSome computers already have python3 installed. You can check if that is your case through your command line\npython3 --version\nOn some versions of Windows, you may need to use py instead of python3:\npy --version\nIn either case, the output of this command should be something like Python 3.9.13\n\n\n\nOnce you have Python3 on your computer, you can install a Jupyter Notebook. If you downloaded Python3 using Anaconda, then Jupyter Notebook comes with the distribution and requires no further installation on your part. If you are not using Anaconda, you can install Jupyter notebook running the following code using your command line.\n# on your command line\npip install jupyter\nYou can then activate a Jupyter Notebook from the command line by typing:\n# on your command line\njupyter notebook\n\n\nHere is my workflow to open Jupyter Notebooks using the commandline.\n\nOpen the terminal\nNavigate (using cd) to the folder you want to be the root of your jupyter notebook\nOpen the notebook (jupyter notebook)\n\nIt looks like this if I were to open a notebook in the folder I have for this course\n# open terminal\ncd ppol_5203_fall2026\njupyter notebook\n\n\n\nIf you installed Python using Anaconda distribution system (here: https://www.anaconda.com/products/individual). You can open Jupyter through a point-and-click system.\nIn the lecture notes, you can also find a Introduction to Jupyter notebook. We will cover this in the first class of the course.\n\n\n\n\nIn your classes that are focused on using R, RStudio will be your main IDE. However, RStudio isn’t just for R. It can handle a number of different languages. We can use Python in RStudio using the reticulate package.\nHere’s a notebook to teach you how to use Python in Rstudio. Check out the intro to quarto notebook. Let’s cover some of the installation steps here:\n\nTo install RStudio, download from the following link . reticulate is an R package that allows one run a Python REPL in the R console. In addition, it allows one to read in and use Python code, and pass data between R and and Python. The following provides instructions on installing reticulate.\nWith reticulate, you can use Rstudio as a IDE for Python. Another option is to use Quarto (the next-generation version of R Markdown) as an unified framework to generate notebooks with text + code. If you’re an R Markdown user, you will see how Quarto is just an extension of the capabilities that were previously provided by R Markdown. Now, instead of .rmd files, we have .qmd files. Quarto is already installed with RStudio.\n\n\n\n\nWe’ll go over more Git/GitHub instructions during the second class session. Before that session:\n\nInstall Git if it’s not installed already\nCreate a GitHub account if you don’t have one already (any email and free subscription is fine)",
+    "crumbs": [
+      "Course Technology Tools"
+    ]
+  },
+  {
+    "objectID": "course_infrastructure.html#command-line",
+    "href": "course_infrastructure.html#command-line",
+    "title": "Week 1: Course Infrastructure",
+    "section": "",
+    "text": "At times, we’ll use a unix-based command line. The command line will feature into our discussion on using git and also running Python programs. If you use a Mac or a Linux operating system, then a functioning command line comes with your operating system. For Apple machines, this is the Terminal.\nFor Windows (specifically Windows 10), you can enable Linux Bash shell. The following offers a tutorial on how to do this.\nIf you’re using a version of Windows that pre-dates version 10, then Git Bash offers a program will allow you to use git commands from your windows machine.\nLater in the first class, we will cover some concepts of working with the command line. You can get a full notebook with a intro to command line in the materials for week 1",
+    "crumbs": [
+      "Course Technology Tools"
+    ]
+  },
+  {
+    "objectID": "course_infrastructure.html#python3",
+    "href": "course_infrastructure.html#python3",
+    "title": "Week 1: Course Infrastructure",
+    "section": "",
+    "text": "We’ll use Python3 throughout this course. Below are instructions for downloading Python3 using command line packages manager (Homebrew for mac, Chocolatey for windows).\n\nInstalling Python3 using Homebrew on a Mac (Apple)\nInstalling Python3 using Chocolatey on a PC (Windows)\n\nAn alternative way to install Python3 is to download an Anaconda distribution. I will use pip rather than conda in the instruction for downloading Python modules. These are simply two ways of downloading and managing open-source software packages. Choose which ever works best for you\nSome computers already have python3 installed. You can check if that is your case through your command line\npython3 --version\nOn some versions of Windows, you may need to use py instead of python3:\npy --version\nIn either case, the output of this command should be something like Python 3.9.13",
+    "crumbs": [
+      "Course Technology Tools"
+    ]
+  },
+  {
+    "objectID": "course_infrastructure.html#jupyter-notebooks",
+    "href": "course_infrastructure.html#jupyter-notebooks",
+    "title": "Week 1: Course Infrastructure",
+    "section": "",
+    "text": "Once you have Python3 on your computer, you can install a Jupyter Notebook. If you downloaded Python3 using Anaconda, then Jupyter Notebook comes with the distribution and requires no further installation on your part. If you are not using Anaconda, you can install Jupyter notebook running the following code using your command line.\n# on your command line\npip install jupyter\nYou can then activate a Jupyter Notebook from the command line by typing:\n# on your command line\njupyter notebook\n\n\nHere is my workflow to open Jupyter Notebooks using the commandline.\n\nOpen the terminal\nNavigate (using cd) to the folder you want to be the root of your jupyter notebook\nOpen the notebook (jupyter notebook)\n\nIt looks like this if I were to open a notebook in the folder I have for this course\n# open terminal\ncd ppol_5203_fall2026\njupyter notebook\n\n\n\nIf you installed Python using Anaconda distribution system (here: https://www.anaconda.com/products/individual). You can open Jupyter through a point-and-click system.\nIn the lecture notes, you can also find a Introduction to Jupyter notebook. We will cover this in the first class of the course.",
+    "crumbs": [
+      "Course Technology Tools"
+    ]
+  },
+  {
+    "objectID": "course_infrastructure.html#rstudio-reticulatequarto",
+    "href": "course_infrastructure.html#rstudio-reticulatequarto",
+    "title": "Week 1: Course Infrastructure",
+    "section": "",
+    "text": "In your classes that are focused on using R, RStudio will be your main IDE. However, RStudio isn’t just for R. It can handle a number of different languages. We can use Python in RStudio using the reticulate package.\nHere’s a notebook to teach you how to use Python in Rstudio. Check out the intro to quarto notebook. Let’s cover some of the installation steps here:\n\nTo install RStudio, download from the following link . reticulate is an R package that allows one run a Python REPL in the R console. In addition, it allows one to read in and use Python code, and pass data between R and and Python. The following provides instructions on installing reticulate.\nWith reticulate, you can use Rstudio as a IDE for Python. Another option is to use Quarto (the next-generation version of R Markdown) as an unified framework to generate notebooks with text + code. If you’re an R Markdown user, you will see how Quarto is just an extension of the capabilities that were previously provided by R Markdown. Now, instead of .rmd files, we have .qmd files. Quarto is already installed with RStudio.",
+    "crumbs": [
+      "Course Technology Tools"
+    ]
+  },
+  {
+    "objectID": "course_infrastructure.html#git",
+    "href": "course_infrastructure.html#git",
+    "title": "Week 1: Course Infrastructure",
+    "section": "",
+    "text": "We’ll go over more Git/GitHub instructions during the second class session. Before that session:\n\nInstall Git if it’s not installed already\nCreate a GitHub account if you don’t have one already (any email and free subscription is fine)",
+    "crumbs": [
+      "Course Technology Tools"
+    ]
+  },
+  {
+    "objectID": "lecture_notes/week-1/minimal_example_python.html",
+    "href": "lecture_notes/week-1/minimal_example_python.html",
+    "title": "Python via Quarto",
+    "section": "",
+    "text": "Here you add your text as markdown."
+  },
+  {
+    "objectID": "lecture_notes/week-1/minimal_example_python.html#minimal-example-of-using-python-with-quarto",
+    "href": "lecture_notes/week-1/minimal_example_python.html#minimal-example-of-using-python-with-quarto",
+    "title": "Python via Quarto",
+    "section": "",
+    "text": "Here you add your text as markdown."
+  },
+  {
+    "objectID": "lecture_notes/week-1/minimal_example_python.html#code",
+    "href": "lecture_notes/week-1/minimal_example_python.html#code",
+    "title": "Python via Quarto",
+    "section": "Code",
+    "text": "Code\nYou will use the same code block for any language. You just need to change language inside of the brackets {}\n\nlibrary(reticulate)\n\nWarning: package 'reticulate' was built under R version 4.2.3\n\nreticulate::py_config()\n\npython:         /Users/rj545/.virtualenvs/r-reticulate/bin/python\nlibpython:      /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/config-3.9-darwin/libpython3.9.dylib\npythonhome:     /Users/rj545/.virtualenvs/r-reticulate:/Users/rj545/.virtualenvs/r-reticulate\nversion:        3.9.6 (default, Sep 26 2022, 11:37:49)  [Clang 14.0.0 (clang-1400.0.29.202)]\nnumpy:          /Users/rj545/.virtualenvs/r-reticulate/lib/python3.9/site-packages/numpy\nnumpy_version:  2.0.2\n\nuse_python(\"/Users/rj545/.virtualenvs/r-reticulate/bin/python\")\n\nusethis::edit_r_environ()\n\n• Edit '/Users/rj545/.Renviron'\n• Restart R for changes to take effect\n\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport scipy.stats as stats\nimport math\n\n## generate normal distribution \nmu = 0\nvariance = 1\nsigma = math.sqrt(variance)\nx = np.linspace(mu - 3*sigma, mu + 3*sigma, 100)\ny = stats.norm.pdf(x, mu, sigma)\n\n## plot using Georgetown Blue colors\nGU_BLUE = '#041E42'\nplt.plot(x, y, color = GU_BLUE)\nplt.fill_between(x, y, color= GU_BLUE, alpha=0.4)\n\n\n\n\n\n\n\n\n\nplt.show()"
+  },
+  {
+    "objectID": "weeks/week-03.html",
+    "href": "weeks/week-03.html",
+    "title": "Week 03",
+    "section": "",
+    "text": "Week 3 - Intro to Python",
+    "crumbs": [
+      "Materials",
+      "Week 3: Intro to Python"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#slides",
+    "href": "weeks/week-03.html#slides",
+    "title": "Week 03",
+    "section": "",
+    "text": "Week 3 - Intro to Python",
+    "crumbs": [
+      "Materials",
+      "Week 3: Intro to Python"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#in-class-exercise",
+    "href": "weeks/week-03.html#in-class-exercise",
+    "title": "Week 03",
+    "section": "In-Class Exercise",
+    "text": "In-Class Exercise\n\nBlank activity (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html to view): html",
+    "crumbs": [
+      "Materials",
+      "Week 3: Intro to Python"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#optional-readings",
+    "href": "weeks/week-03.html#optional-readings",
+    "title": "Week 03",
+    "section": "Optional Readings",
+    "text": "Optional Readings\nFrom Wes McKinney, Python for Data Analysis\n\nChapter 2: Python Language Basics, IPython, and Jupyter Notebooks\n\nFrom Data Carpentry:\n\nPython Fundamentals\nStoring Multiple Values in Lists",
+    "crumbs": [
+      "Materials",
+      "Week 3: Intro to Python"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html",
+    "href": "weeks/week-06.html",
+    "title": "Week 06",
+    "section": "",
+    "text": "Week 6",
+    "crumbs": [
+      "Materials",
+      "Week 6: Intro to Pandas and Data Wrangling"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html#slides",
+    "href": "weeks/week-06.html#slides",
+    "title": "Week 06",
+    "section": "",
+    "text": "Week 6",
+    "crumbs": [
+      "Materials",
+      "Week 6: Intro to Pandas and Data Wrangling"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html#in-class-activity",
+    "href": "weeks/week-06.html#in-class-activity",
+    "title": "Week 06",
+    "section": "In-class activity",
+    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file",
+    "crumbs": [
+      "Materials",
+      "Week 6: Intro to Pandas and Data Wrangling"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html#data-for-in-class-activity",
+    "href": "weeks/week-06.html#data-for-in-class-activity",
+    "title": "Week 06",
+    "section": "Data for in-class activity",
+    "text": "Data for in-class activity\n\nRates of children without health insurance by state, year, and race/ethnicity (csv to download):  .csv file \n\nAdapted from: Kids Count aggregation of American Community Survey (ACS) table C27001",
+    "crumbs": [
+      "Materials",
+      "Week 6: Intro to Pandas and Data Wrangling"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html#optional-readings",
+    "href": "weeks/week-06.html#optional-readings",
+    "title": "Week 06",
+    "section": "Optional Readings",
+    "text": "Optional Readings\n\nPandas cheat sheet",
+    "crumbs": [
+      "Materials",
+      "Week 6: Intro to Pandas and Data Wrangling"
+    ]
+  },
+  {
+    "objectID": "weeks/week-05.html",
+    "href": "weeks/week-05.html",
+    "title": "Week 05",
+    "section": "",
+    "text": "Week 5",
+    "crumbs": [
+      "Materials",
+      "Week 5: Libraries and Numpy"
+    ]
+  },
+  {
+    "objectID": "weeks/week-05.html#slides",
+    "href": "weeks/week-05.html#slides",
+    "title": "Week 05",
+    "section": "",
+    "text": "Week 5",
+    "crumbs": [
+      "Materials",
+      "Week 5: Libraries and Numpy"
+    ]
+  },
+  {
+    "objectID": "weeks/week-05.html#in-class-activity",
+    "href": "weeks/week-05.html#in-class-activity",
+    "title": "Week 05",
+    "section": "In-class activity",
+    "text": "In-class activity\n\nProblem set 2 (see Classroom 50 assignment)",
+    "crumbs": [
+      "Materials",
+      "Week 5: Libraries and Numpy"
+    ]
+  },
+  {
+    "objectID": "weeks/week-05.html#optional-readings",
+    "href": "weeks/week-05.html#optional-readings",
+    "title": "Week 05",
+    "section": "Optional Readings",
+    "text": "Optional Readings\n\nPDS VanderPlas\n\nCh. 2: Introduction to Numpy - Python Data Science Handbook - VanderPlas, Jake",
+    "crumbs": [
+      "Materials",
+      "Week 5: Libraries and Numpy"
+    ]
+  },
+  {
+    "objectID": "weeks/week-04.html",
+    "href": "weeks/week-04.html",
+    "title": "Week 04",
+    "section": "",
+    "text": "Week 4 - Python part II",
+    "crumbs": [
+      "Materials",
+      "Week 4: Python - Iteration, Comprehension, and Functions"
+    ]
+  },
+  {
+    "objectID": "weeks/week-04.html#slides",
+    "href": "weeks/week-04.html#slides",
+    "title": "Week 04",
+    "section": "",
+    "text": "Week 4 - Python part II",
+    "crumbs": [
+      "Materials",
+      "Week 4: Python - Iteration, Comprehension, and Functions"
+    ]
+  },
+  {
+    "objectID": "weeks/week-04.html#in-class-exercise",
+    "href": "weeks/week-04.html#in-class-exercise",
+    "title": "Week 04",
+    "section": "In-Class Exercise",
+    "text": "In-Class Exercise\n\nBlank activity (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html to view): html",
+    "crumbs": [
+      "Materials",
+      "Week 4: Python - Iteration, Comprehension, and Functions"
+    ]
+  },
+  {
+    "objectID": "weeks/week-04.html#optional-readings",
+    "href": "weeks/week-04.html#optional-readings",
+    "title": "Week 04",
+    "section": "Optional Readings",
+    "text": "Optional Readings\n\nPDA Wes McKinney, Chapter 3\n\nList, Set, and Dictionary Comprehensions\n\nfor-loop-vs-list-comprehension-vs-high-order-functions",
+    "crumbs": [
+      "Materials",
+      "Week 4: Python - Iteration, Comprehension, and Functions"
+    ]
+  },
+  {
+    "objectID": "weeks/week-07.html",
+    "href": "weeks/week-07.html",
+    "title": "Week 07",
+    "section": "",
+    "text": "Week 7"
+  },
+  {
+    "objectID": "weeks/week-07.html#slides",
+    "href": "weeks/week-07.html#slides",
+    "title": "Week 07",
+    "section": "",
+    "text": "Week 7"
+  },
+  {
+    "objectID": "weeks/week-07.html#in-class-activity",
+    "href": "weeks/week-07.html#in-class-activity",
+    "title": "Week 07",
+    "section": "In-class activity",
+    "text": "In-class activity\n\nBlank notebook (ipynb file to download):\nActivity solutions (ipynb file to download):  .ipynb file"
+  },
+  {
+    "objectID": "weeks/week-07.html#data-for-in-class-activity",
+    "href": "weeks/week-07.html#data-for-in-class-activity",
+    "title": "Week 07",
+    "section": "Data for in-class activity",
+    "text": "Data for in-class activity\n\nRates of child poverty without health insurance by state, year, and race/ethnicity (csv to download):  .csv file \n\nDatasets page with more details"
+  },
+  {
+    "objectID": "weeks/week-07.html#optional-readings",
+    "href": "weeks/week-07.html#optional-readings",
+    "title": "Week 07",
+    "section": "Optional Readings",
+    "text": "Optional Readings\n\nReshaping data in pandas\nJoining data in pandas"
+  },
+  {
+    "objectID": "weeks/week-02.html",
+    "href": "weeks/week-02.html",
+    "title": "Week 02",
+    "section": "",
+    "text": "Slides\nWeek 01: Git and GitHub\n\n\nIn-class activity\nClassroom 50 link\nDownload from this website:\n\nBlank activity:  .ipynb file \nActivity solutions:  .ipynb file \n\n\n\nResources (optional)\nGitHub Cheatsheet\nAnother GitHub Cheatsheet",
+    "crumbs": [
+      "Materials",
+      "Week 2: Git and GitHub"
+    ]
+  },
+  {
+    "objectID": "weeks/week-01.html",
+    "href": "weeks/week-01.html",
+    "title": "Week 01",
+    "section": "",
+    "text": "Slides\nWeek 01:Introduction, Installations, IDEs, Command line\n\n\nHandouts\n\nInstructions for setting up the course infrastructure.\nUsing Jupyter Notebooks: web page,  .ipynb file \nUsing Quarto for Python and R web page,  .qmd file \nBasics of Command Line: web page,  .ipynb file \nPractice Notebook to Check Installations:  .ipynb file \n\n\n\nReadings\nRequired Readings\n\nJupyter Notebook for Beginners: A tutorial Pryke, Benjamin - www.dataquest.io\n\n\n\nDataCamp\n\nOptional (but highly recommended) module: Introduction to Shell &gt; Manipulating Files and Directories",
+    "crumbs": [
+      "Materials",
+      "Week 1: Intro to Course and Tools"
+    ]
+  },
+  {
+    "objectID": "lecture_notes/week-1/intro_to_quarto.html",
+    "href": "lecture_notes/week-1/intro_to_quarto.html",
+    "title": "Week 1: Introduction to Quarto for Python",
+    "section": "",
+    "text": "The purpose of this notebook is to show case the use of Quarto notebooks. It will cover:\n\nBrief introduction to Quarto Notebooks\nRunning R with Quarto Notebooks\nRunning Python with Quarto Notebooks + reticulate\n\nSee Quarto’s website for a more in-depth coverage of the framework."
+  },
+  {
+    "objectID": "lecture_notes/week-1/intro_to_quarto.html#quick-tutorial-for-rstudio",
+    "href": "lecture_notes/week-1/intro_to_quarto.html#quick-tutorial-for-rstudio",
+    "title": "Week 1: Introduction to Quarto for Python",
+    "section": "Quick tutorial for RStudio",
+    "text": "Quick tutorial for RStudio\nThis is what RStudio looks like when you open it for the first time.\n\n\n\n\n\n\n\n\n\nTop left pane (input/script)\nThis is your code editor. Here you enter code in any file type (.py, .r, .qmd) you are working on. If not working with notebooks, this is just gonna be a plain text file but with a extension that run the commands.\nFor example, enter 2 + 2 in your script and run a line of code by pressing command + enter (Mac) or Ctrl + enter (PC). This is a huge advantage of Rstudio over Jupyter. You can run your code line by line, instead of running the entire cell.\nBottom left pane (output/console)\nThis is the console. It is pretty much like when you open Python/R from the Command line.\nIn the console, the prompt &gt; looks like a greater than symbol. If your prompt begins to look like a + symbol by mistake, simply click in your console and press the esc key on your keyboard as many times as necessary to return to the prompt.\nRstudio uses + when code is broken up across multiple lines and is still expecting more code. A line of code does not usually end until Rstudio finds an appropriate stop parameter or punctuation that completes some code such as a closed round parenthesis ), square bracket ], curly brace }, or quotation mark '.\nIf the output in your console gets too messy, you can clear it by pressing control + l on both Mac and PC. This will not erase any saved data - it will simply make your console easier to read.\nTop right pane (global environment)\nThis is your environment pane. All objects you create will be displayed here.\nBottom right pane (files, plots, packages, and help)\nHere you find useful tabs for navigating your file system, displaying plots, installing packages, and viewing help pages. Press the control key and a number (1 through 9) on your keyboard to shortcut between these panes and tabs."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "",
+    "text": "This first course in the core data science sequence teaches Data Science for Public Policy (DSPP) students how to synthesize disparate, possibly unstructured data in order to draw meaningful insights. Topics covered include the fundamentals of object-oriented programming in Python; literate programming; an introduction to algorithms and data types; data wrangling, visualization, and extraction; an introduction to machine learning methods, and text analysis. In addition, students will be exposed to Git and Github for version control and reproducible research. The objective of the course is to teach students how to incorporate data into their decision-making and analysis. No prior programming experience is assumed or required.\nData Science I is a collective effort among DSPP faculty. For this reason, the materials heavily draw from Dr. Tiago Ventura’s version of the course, with some also drawn from materials created by Dr. Eric Dunford",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "",
+    "text": "This first course in the core data science sequence teaches Data Science for Public Policy (DSPP) students how to synthesize disparate, possibly unstructured data in order to draw meaningful insights. Topics covered include the fundamentals of object-oriented programming in Python; literate programming; an introduction to algorithms and data types; data wrangling, visualization, and extraction; an introduction to machine learning methods, and text analysis. In addition, students will be exposed to Git and Github for version control and reproducible research. The objective of the course is to teach students how to incorporate data into their decision-making and analysis. No prior programming experience is assumed or required.\nData Science I is a collective effort among DSPP faculty. For this reason, the materials heavily draw from Dr. Tiago Ventura’s version of the course, with some also drawn from materials created by Dr. Eric Dunford",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#goals",
+    "href": "index.html#goals",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "Goals",
+    "text": "Goals\nAfter completing this course, the students will be able to:\n\nGeneral understanding of python’s object oriented programming syntax and data structures.\nCompetency using version control (Git/Github).\nLearn to manipulate and explore data with Pandas and other tools.\nGeneral understanding of analyzing algorithms and data structures.\nLearn to extract and process data from structured and unstructured sources.\nGet some intuition of modeling text data in Python.\nLearn the basics of machine learning as a modeling approach.\nLearn how to use Generative AI for multiple applied tasks.\nLearn basics of using SQL to query databases.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "Instructor",
+    "text": "Instructor\n\nProfessor: Dr. Rebecca Johnson\nEmail: rj545@georgetown.edu\nOffice hours:\n\nTime: Every Wednesday, 1130am - 130pm\nLocation - either:\nIn person: 125E, Office Number 768\nRemote: see Calendly link\n\n\nSign up: on Calendly",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#teaching-assistant-tbd",
+    "href": "index.html#teaching-assistant-tbd",
+    "title": "PPOL 5203 - Data Science I: Foundations - Fall 2026",
+    "section": "Teaching Assistant: TBD",
+    "text": "Teaching Assistant: TBD\n\nCourse Infra-structure\nClass Website: A class website https://rebeccajohnson88.github.io/PPOL5203_fall2026/ will be used throughout the course and should be checked on a regular basis for lecture materials and required readings.\n\nCanvas: A Canvas site (http://canvas.georgetown.edu) will be used throughout the course and should be checked on a regular basis for announcements. All announcements for the assignments and classes will be posted on Canvas; they will not be distributed in class or by e-mail. Support for Canvas is available at (202) 687-4949\nNOTE: Students are encouraged to run lecture code on their own machines. If you do not have access to a laptop on which you can install python3, please contact the professor and/or TA for assistance. Only python3 will be used in this course.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "slides/week-7.html#two-general-formats-for-data",
+    "href": "slides/week-7.html#two-general-formats-for-data",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Two general formats for data",
+    "text": "Two general formats for data\n\nWide-format data: each row is one unit (a person; a company; a state); columns contain time or type-varying information about that unit\nLong-format data: each row is a snapshot of that unit (eg a person at one point in time; a state with one economic summary measure); each unit might have multiple rows; sometimes called “tidy” data format"
+  },
+  {
+    "objectID": "slides/week-7.html#examples",
+    "href": "slides/week-7.html#examples",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Examples",
+    "text": "Examples\nWide format:\n\n\n\nStudent\ngpa_2020\ngpa_2021\nncourses_2020\nncourses_2021\n\n\n\n\n1\n3.8\n3.9\n5\n3\n\n\n2\n3.6\n3.6\n6\n7\n\n\n\nLong format:\n\n\n\nStudent\nyear\nstat\nvalue\n\n\n\n\n1\n2020\ngpa\n3.8\n\n\n1\n2021\nncourses\n3.9\n\n\n1\n2020\ngpa\n5\n\n\n1\n2021\nncourses\n3\n\n\n2\n2020\ngpa\n3.6\n\n\n…"
+  },
+  {
+    "objectID": "slides/week-7.html#one-direction-of-transformation-pivoting-from-long-to-wide",
+    "href": "slides/week-7.html#one-direction-of-transformation-pivoting-from-long-to-wide",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "One direction of transformation: pivoting from long to wide",
+    "text": "One direction of transformation: pivoting from long to wide\nSyntax:\npd.pivot(longformat_df, index= ‘col_unitinfo’, columns= ‘col_repeatmeasure’, values = [‘col1_value’, ‘col2_value’, …])\nBreaking it down:\n\nindex: the name of the column we want to treat as a row— in the previous example, we want one student per row\nvalues: the name of the column(s) that contain the values of data we want to ``spread’’ out — in the previous example, we want the gpa and total courses information spread out\ncolumns: the name of the column(s) that describe the unit of variation — in the previous example, the year column (2020 or 2021) and stat column (gpa or ncourses)"
+  },
+  {
+    "objectID": "slides/week-7.html#visualization-of-long-to-wide",
+    "href": "slides/week-7.html#visualization-of-long-to-wide",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Visualization of long to wide",
+    "text": "Visualization of long to wide"
+  },
+  {
+    "objectID": "slides/week-7.html#other-direction-of-transformation-melting-from-wide-to-long",
+    "href": "slides/week-7.html#other-direction-of-transformation-melting-from-wide-to-long",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Other direction of transformation: ``melting’’ from wide to long",
+    "text": "Other direction of transformation: ``melting’’ from wide to long\nSyntax: pd.melt(wideformat_df, id_vars = ‘nameofcol’)\nBreaking it down:\n\nid_vars: the name of the columns you’re treating as the unit of analysis that has repeated measures\nSee documentation here for optional arguments that help us rename the output: melt documentation"
+  },
+  {
+    "objectID": "slides/week-7.html#visualization-of-wide-to-long",
+    "href": "slides/week-7.html#visualization-of-wide-to-long",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Visualization of wide to long",
+    "text": "Visualization of wide to long\n\nhttps://r4ds.had.co.nz/tidy-data.html"
+  },
+  {
+    "objectID": "slides/week-7.html#in-class-activity",
+    "href": "slides/week-7.html#in-class-activity",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "In-class activity",
+    "text": "In-class activity\nSee Activity 1 in notebook"
+  },
+  {
+    "objectID": "slides/week-7.html#working-example",
+    "href": "slides/week-7.html#working-example",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Working example",
+    "text": "Working example\n\nMain or “left” dataset: college data on students’ high schools\n\n\n\n\nStudent\nYear\nDistrict\nNCES ID\n\n\n\n\nRebecca\n2021\nNew Trier High School\n1728200\n\n\nJennifer\n2022\nBethesda High\n3302670\n\n\nJason\n2022\nHomeschool\nNA\n\n\n⋮\n\n\n\n\n\n\n\nAuxiliary or “right” dataset - FRPL = free or reduced price lunch eligible percentage; used as (one) measure of school district poverty\n\n\n\n\nDistrict\nNCES ID\n% FRPL\n\n\n\n\nNew Trier HS\n1728200\nX%\n\n\nBethesda HS\n3302670\nY%\n\n\nArundel HS\n4107380\nZ%\n\n\n⋮"
+  },
+  {
+    "objectID": "slides/week-7.html#possible-join-keys",
+    "href": "slides/week-7.html#possible-join-keys",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Possible join keys",
+    "text": "Possible join keys\n\nUnique identifier: used for “exact matching” — or a Yes/No match on that basis\n\nE.g., is the NCES ID of New Trier found in the dataset of demographics?\n\nOther identifiers: can be used for either “exact match” or for “probabilistic/fuzzy matching”\n\nProbabilistic: what’s the likelihood that “New Trier district” and “New Trier HS” are the same entity?"
+  },
+  {
+    "objectID": "slides/week-7.html#conceptual-overview-of-four-types-of-joins",
+    "href": "slides/week-7.html#conceptual-overview-of-four-types-of-joins",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Conceptual overview of four types of joins",
+    "text": "Conceptual overview of four types of joins\n\n\n\n\nSource: Trifacta"
+  },
+  {
+    "objectID": "slides/week-7.html#inner-join-in-this-context",
+    "href": "slides/week-7.html#inner-join-in-this-context",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Inner join in this context",
+    "text": "Inner join in this context\nIn words: “drop all students whose districts don’t appear in the demographics data; drop all districts that don’t appear in the Georgetown student data”\n\nMain or “left” dataset\n\n\n\n\nStudent\n\n\nYear\n\n\nDistrict\n\n\nNCES ID\n\n\n\n\nRebecca\n\n\n2021\n\n\nNew Trier High School\n\n\n1728200\n\n\n\n\nJennifer\n\n\n2022\n\n\nBethesda High\n\n\n3302670\n\n\n\n\nJason\n\n\n2022\n\n\nHomeschool\n\n\nNA\n\n\n\n\n⋮\n\n\n\n\n\n\n\n\n\n\nAuxiliary or “right” dataset\n\n\n\n\nDistrict\n\n\nNCES ID\n\n\n% FRPL\n\n\n\n\nNew Trier HS\n\n\n1728200\n\n\nX%\n\n\n\n\nBethesda HS\n\n\n3302670\n\n\nY%\n\n\n\n\nArundel HS\n\n\n4107380\n\n\nZ%\n\n\n\n\n⋮"
+  },
+  {
+    "objectID": "slides/week-7.html#outer-join-in-this-context",
+    "href": "slides/week-7.html#outer-join-in-this-context",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Outer join in this context",
+    "text": "Outer join in this context\nIn words: “keep all students from the student-level data; keep all schools from the school-level data; even if there’s not an overlap”\n\n\n\nStudent\nYear\nDistrict\nNCES ID\n% FRPL\n\n\n\n\nRebecca\n2021\nNew Trier High School\n1728200\nX%\n\n\nJennifer\n2022\nBethesda High\n3302670\nY%\n\n\nJason\n2022\nHomeschool\nNA\nNA\n\n\nNA\nNA\nNA\n4107380\nZ%\n\n\n⋮"
+  },
+  {
+    "objectID": "slides/week-7.html#left-join-in-this-context",
+    "href": "slides/week-7.html#left-join-in-this-context",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Left join in this context",
+    "text": "Left join in this context\nIn words: “keep all students from the student-level data; drop any school from the school-level data that doesn’t merge onto a student”\n\nMain or “left” dataset\n\n\n\n\nStudent\n\n\nYear\n\n\nDistrict\n\n\nNCES ID\n\n\n\n\nRebecca\n\n\n2021\n\n\nNew Trier High School\n\n\n1728200\n\n\n\n\nJennifer\n\n\n2022\n\n\nBethesda High\n\n\n3302670\n\n\n\n\nJason\n\n\n2022\n\n\nHomeschool\n\n\nNA\n\n\n\n\n⋮\n\n\n\n\n\n\n\n\n\n\nAuxiliary or “right” dataset\n\n\n\n\nDistrict\n\n\nNCES ID\n\n\n% FRPL\n\n\n\n\nNew Trier HS\n\n\n1728200\n\n\nX%\n\n\n\n\nBethesda HS\n\n\n3302670\n\n\nY%\n\n\n\n\nArundel HS\n\n\n4107380\n\n\nZ%\n\n\n\n\n⋮"
+  },
+  {
+    "objectID": "slides/week-7.html#right-join-in-this-context",
+    "href": "slides/week-7.html#right-join-in-this-context",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Right join in this context",
+    "text": "Right join in this context\nIn words: “drop students who don’t have a school in the school-level data; keep all schools from the student-level data even those that don’t merge onto any student”\n\nMain or “left” dataset\n\n\n\n\nStudent\n\n\nYear\n\n\nDistrict\n\n\nNCES ID\n\n\n\n\nRebecca\n\n\n2021\n\n\nNew Trier High School\n\n\n1728200\n\n\n\n\nJennifer\n\n\n2022\n\n\nBethesda High\n\n\n3302670\n\n\n\n\nJason\n\n\n2022\n\n\nHomeschool\n\n\nNA\n\n\n\n\n⋮\n\n\n\n\n\n\n\n\n\n\nAuxiliary or “right” dataset\n\n\n\n\nDistrict\n\n\nNCES ID\n\n\n% FRPL\n\n\n\n\nNew Trier HS\n\n\n1728200\n\n\nX%\n\n\n\n\nBethesda HS\n\n\n3302670\n\n\nY%\n\n\n\n\nArundel HS\n\n\n4107380\n\n\nZ%\n\n\n\n\n⋮"
+  },
+  {
+    "objectID": "slides/week-7.html#datacamp-versus-slide-syntax",
+    "href": "slides/week-7.html#datacamp-versus-slide-syntax",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "DataCamp versus slide syntax",
+    "text": "DataCamp versus slide syntax\n\nDataCamp modules generally used this syntax for merges:\n\nmerged_df = df1.merge(df2,\n                how = \"left\",\n                on = \"something\")\n\nSlides/solution code will tend to use this syntax:\n\nmerged_df = pd.merge(df1, df2,\n                how = \"left\",\n                on = \"something\")\n\nThey produce identical answers so use whichever comes more naturally (I use latter because it’s more similar to base R syntax)\nIn addition, feel free to use self joins if useful but we won’t be focusing a lot on those"
+  },
+  {
+    "objectID": "slides/week-7.html#how-do-we-code-these-different-types-of-joins-in-practice",
+    "href": "slides/week-7.html#how-do-we-code-these-different-types-of-joins-in-practice",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "How do we code these different types of joins in practice?",
+    "text": "How do we code these different types of joins in practice?\nExample with left join and join key has same colname in both\n## perform a left join on the student data\n## and schools data\nstud_wschool = pd.merge(students,\n                schools,\n                how = \"left\",\n                on = \"NCES ID\",\n                indicator = \"student_mergestatus\")\n\nhow: argument to tell it inner, left, right, outer, or cross; defaults to inner\non: name of join key (in this case single key)\nindicator: optional arg to add a col to the resulting data (string is what to call it) that helps diagnose merge status; good for post-merge dx"
+  },
+  {
+    "objectID": "slides/week-7.html#example-with-inner-join-and-join-key-has-different-name",
+    "href": "slides/week-7.html#example-with-inner-join-and-join-key-has-different-name",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Example with inner join and join key has different name",
+    "text": "Example with inner join and join key has different name\n## perform a left join on the student data\n## and schools data\nstud_wschool = pd.merge(students,\n                schools,\n                how = \"inner\",\n                left_on = \"NCES ID\",\n                right_on = \"ncesnumeric\")"
+  },
+  {
+    "objectID": "slides/week-7.html#example-with-left-join-and-multiple-join-keys",
+    "href": "slides/week-7.html#example-with-left-join-and-multiple-join-keys",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Example with left join and multiple join keys",
+    "text": "Example with left join and multiple join keys\n## perform a left join on the student data\n## and schools data\nstud_wschool = pd.merge(students,\n                schools,\n                how = \"left\",\n                left_on = [\"NCES ID\", \n                \"Dist name\"],\n                right_on = [\"ncesnumeric\",\n                \"distnamechar\"],\n                indicator = \"student_mergestatus\")"
+  },
+  {
+    "objectID": "slides/week-7.html#example-with-left-join-multiple-join-keys-and-some-overlapping-non-join-columns-that-we-want-to-differentiate",
+    "href": "slides/week-7.html#example-with-left-join-multiple-join-keys-and-some-overlapping-non-join-columns-that-we-want-to-differentiate",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Example with left join, multiple join keys, and some overlapping, non-join columns that we want to differentiate",
+    "text": "Example with left join, multiple join keys, and some overlapping, non-join columns that we want to differentiate\n## perform a left join on the student data\n## and schools data\nstud_wschool = pd.merge(students,\n                schools,\n                how = \"left\",\n                left_on = [\"NCES ID\", \n                \"Dist name\"],\n                right_on = [\"ncesnumeric\",\n                \"distnamechar\"],\n                indicator = \"student_mergestatus\",\n                suffixes = [\"_students\",\n                            \"_schools\"])"
+  },
+  {
+    "objectID": "slides/week-7.html#non-exhaustive-checklist-of-merge-diagnostics",
+    "href": "slides/week-7.html#non-exhaustive-checklist-of-merge-diagnostics",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Non-exhaustive checklist of merge diagnostics",
+    "text": "Non-exhaustive checklist of merge diagnostics\n\nHow many rows were in each data before the merge? What about after?\nIf doing a left join, did we properly retain all left-hand side rows?\nFor strings as join keys: if a lot of rows were lost in a merge, could that be due to spelling/punctuation variations in a character join key?\nFor numeric identifiers as join keys: if a lot of rows were lost in a merge, could that be due to things like the id having leading or lagging zeros and those being stripped at some stage? (e.g., one dataset identifies an entity as 002548; another as 2548)"
+  },
+  {
+    "objectID": "slides/week-7.html#in-class-activity-1",
+    "href": "slides/week-7.html#in-class-activity-1",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "In-class activity",
+    "text": "In-class activity\nSee Activity 2 in notebook\n\n\n\nData science I: Foundations"
   },
   {
     "objectID": "slides/week-4.html#plans-for-today",
@@ -1854,7 +2036,7 @@
     "href": "slides/week-4.html#zip-function-example",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Zip function: example",
-    "text": "Zip function: example\n\nteams =  [\"Giants\", \"Commanders\", \"Eagles\", \"Jets\"]\nresults = [1, 0, 1, 1]\nteam_w_results = zip(teams, results)\nteam_w_results\n\n## list comprehension over the combined zip\n[item for item in team_w_results]\n\n&lt;zip at 0x7fa9f01ccb80&gt;\n\n\n[('Giants', 1), ('Commanders', 0), ('Eagles', 1), ('Jets', 1)]"
+    "text": "Zip function: example\n\nteams =  [\"Giants\", \"Commanders\", \"Eagles\", \"Jets\"]\nresults = [1, 0, 1, 1]\nteam_w_results = zip(teams, results)\nteam_w_results\n\n## list comprehension over the combined zip\n[item for item in team_w_results]\n\n&lt;zip at 0x7fab60214ac0&gt;\n\n\n[('Giants', 1), ('Commanders', 0), ('Eagles', 1), ('Jets', 1)]"
   },
   {
     "objectID": "slides/week-4.html#zip-function-example-1",
@@ -1945,7 +2127,7 @@
     "href": "slides/week-3.html#what-happens-upon-assignment",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "What happens upon assignment?",
-    "text": "What happens upon assignment?\n\nAction 1: A reference is assigned to an object, with an id number in memory\n\nid(x)\n\n140639106951568"
+    "text": "What happens upon assignment?\n\nAction 1: A reference is assigned to an object, with an id number in memory\n\nid(x)\n\n140546094066064"
   },
   {
     "objectID": "slides/week-3.html#section-2",

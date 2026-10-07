@@ -10,8 +10,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.56">
 
-  <meta name="author" content=" Professor: Rebecca A. Johnson ">
-  <title>PPOL 5203 - Data Science I: Foundations</title>
+  <meta name="author" content="Professor: Rebecca Johnson">
+  <title> PPOL 5203 - Data Science I: Foundations </title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -246,6 +311,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -322,523 +388,805 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../site_libs/countdown-0.6.0/countdown.css" rel="stylesheet">
-  <script src="../site_libs/countdown-0.6.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">PPOL 5203 - Data Science I: Foundations</h1>
-  <p class="subtitle"><span style="font-size: 200%;"> <br>Week 1: Introductions, Installations, IDEs, Command line </span></p>
+  <h1 class="title"><span style="font-size: 100%;"> PPOL 5203 - Data Science I: Foundations </span></h1>
+  <p class="subtitle"><span style="font-size: 100%;"> Week 7: reshaping and merging data</span></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<span style="font-size: 150%;"> Professor: Rebecca A. Johnson </span> 
+Professor: Rebecca Johnson 
 </div>
 </div>
 </div>
 
 </section>
+<section id="plans-for-today" class="title-slide slide level1 center">
+<h1>Plans for Today</h1>
+<ul>
+<li><p>Data wrangling: reshaping</p></li>
+<li><p>Data wrangling: merging</p></li>
+</ul>
+</section>
+
 <section>
-<section id="welcome-to-data-science-i" class="title-slide slide level1 center" data-background-color="#447099">
-<h1>Welcome to Data Science I</h1>
+<section id="data-wrangling-reshaping" class="title-slide slide level1 center" data-background-color="#447099">
+<h1>Data wrangling: reshaping</h1>
 
 </section>
-<section id="plans-for-today" class="slide level2 center">
-<h2>Plans for Today</h2>
+<section id="two-general-formats-for-data" class="slide level2 center">
+<h2>Two general formats for data</h2>
 <ul>
-<li class="fragment"><p>Motivating <span class="blue">Data Science for Public Policy</span>.</p></li>
-<li class="fragment"><p>Goals of the course</p></li>
-<li class="fragment"><p>Introductions</p></li>
-<li class="fragment"><p>Course Logistics</p></li>
-<li class="fragment"><p>IDEs</p>
-<ul>
-<li class="fragment">Jupyter</li>
-</ul></li>
-<li class="fragment"><p>Introduction to command line</p></li>
+<li><strong>Wide-format data</strong>: each row is one unit (a person; a company; a state); columns contain time or type-varying information about that unit</li>
+<li><strong>Long-format data</strong>: each row is a snapshot of that unit (eg a person at one point in time; a state with one economic summary measure); each unit might have multiple rows; sometimes called “tidy” data format</li>
 </ul>
-</section></section>
-<section>
-<section id="motivation-digital-information-age" class="title-slide slide level1 center" data-background-color="#447099">
-<h1>Motivation: Digital Information Age</h1>
-
 </section>
-<section id="abundance-of-data" class="slide level2 center">
-<h2>Abundance of data</h2>
-
-<img data-src="week1_figs/digital.jpeg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="powerful-and-cheap-computing-power" class="slide level2 center">
-<h2>Powerful and Cheap Computing Power</h2>
-
-<img data-src="week1_figs/collab.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="world-of-generative-ai-models" class="slide level2 center">
-<h2>World of Generative AI Models</h2>
-
-<img data-src="https://diplo-media.s3.eu-central-1.amazonaws.com/2025/03/openai-chatgpt-surge-deepseek.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="as-a-consequence-we-live-in-a-world" class="slide level2 center">
-<h2>As a consequence, we live in a world:</h2>
-<div>
-<div class="fragment">
-<ul>
-<li><p><strong>With</strong> abundance of data we can use for research and to recommend policy decisions:</p>
-<ul>
-<li>Internet data, social media, geo-tracking tools, etc…</li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><p><strong>With</strong> easily available technologies to analyze this data at scale</p>
-<ul>
-<li>Your laptops, cloud computing, ChatBots…</li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><p><strong>But</strong> with new technologies that also have novel social implications:</p>
-<ul>
-<li><p>Privacy issues</p></li>
-<li><p>Use of technology by bad actors.</p></li>
-<li><p>Use of technology by governments to censor/monitor citizens.</p></li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Policy scholars (but pretty much any researcher) need to be equipped to properly <strong>work</strong> with this data and <strong>understand</strong> the effects of these news technologies</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="data-science-for-public-policy" class="slide level2 center">
-<h2>Data Science for Public Policy</h2>
-<p><strong>Data Scientist for Public Policy</strong> focuses on <strong>computational approaches</strong> to solve/understand <strong>policy problems</strong>.</p>
-<ul>
-<li class="fragment">It is part of a larger and new field called <a href="https://en.wikipedia.org/wiki/Computational_social_science">computational social science</a></li>
-</ul>
-<div>
-<div class="fragment">
-<ul>
-<li><p><strong>Social science</strong></p>
-<ul>
-<li>Understands human behavior: human psychology, language, economic behavior, political systems, policy problems</li>
-<li>Involve many <strong>approaches</strong>: qualitative interviews, statistical analysis, simulations</li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><p><strong>Data Science</strong>:</p>
-<ul>
-<li>Tools to work with large-scale data + learning models + novel data sources</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section></section>
-<section>
-<section id="computational-social-science-in-practice" class="title-slide slide level1 center">
-<h1>Computational Social Science in Practice</h1>
-
-</section>
-<section id="turning-the-intro-survey-into-usable-data" class="slide level2 center">
-<h2>Turning the intro survey into usable data</h2>
-
-<img data-src="week1_figs/intro_survey.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-1-get-credentials-for-apis-for-google-drive-and-google-sheets" class="slide level2 center">
-<h2>Step 1: Get credentials for APIs for Google Drive and Google Sheets</h2>
-
-<img data-src="week1_figs/google_api_serviceaccount.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-2-use-those-credentials-in-python-code-to-pull-the-data" class="slide level2 center">
-<h2>Step 2: Use those credentials in Python code to pull the data</h2>
-
-<img data-src="week1_figs/pull_data.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-3-clean-data-and-view-the-head" class="slide level2 center">
-<h2>Step 3: clean data and view the head</h2>
-
-<img data-src="week1_figs/clean_data.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-4-preprocess-to-visualize-responses-to-policy-question" class="slide level2 center">
-<h2>Step 4: preprocess to visualize responses to policy question</h2>
-
-<img data-src="week1_figs/viz_preprocess.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-5-plotting-code" class="slide level2 center">
-<h2>Step 5: plotting code</h2>
-
-<img data-src="week1_figs/plotting_code.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
-<section id="step-6-result" class="slide level2 center">
-<h2>Step 6: result</h2>
-
-<img data-src="week1_figs/ppol5203_policyareas.png" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
-<section id="goals-of-the-course" class="slide level2 center">
-<h2>Goals of the course</h2>
-<p><br></p>
-<p>The goal of this course is to teach you:</p>
-<ul>
-<li class="fragment"><p><strong>Computational thinking</strong>: how to approach problems and devise solutions from a computational perspective.</p></li>
-<li class="fragment"><p>Get you started on <strong>Python</strong>, introduce some useful tools (scrapping, text analysis and API applications of GenAI models), and bit of <strong>SQL</strong> for applied data science; lay the foundations for the remainder of the core DS sequence</p></li>
-<li class="fragment"><p><strong>Workflows and tools:</strong> Git/GitHub + command line</p></li>
-</ul>
-</section></section>
-<section>
-<section id="ppol-5203---data-science-i-foundations" class="title-slide slide level1 center" data-background-color="#447099">
-<h1>PPOL 5203 - Data Science I: Foundations</h1>
-
-</section>
-<section id="course-schedule" class="slide level2 center" style="font-size: .7em;">
-<h2>Course Schedule</h2>
+<section id="examples" class="slide level2 center">
+<h2>Examples</h2>
+<p>Wide format:</p>
 <table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Week</th>
-<th>Topic</th>
-<th>Date</th>
+<th>Student</th>
+<th>gpa_2020</th>
+<th>gpa_2021</th>
+<th>ncourses_2020</th>
+<th>ncourses_2021</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Week 01</td>
-<td>Introduction, Installations, IDEs, Command line</td>
-<td>August 27, 2026</td>
+<td>1</td>
+<td>3.8</td>
+<td>3.9</td>
+<td>5</td>
+<td>3</td>
 </tr>
 <tr class="even">
-<td>Week 02</td>
-<td>Version Control, Workflow and Reproducibility: Or a bit of Git &amp; GitHub</td>
-<td>September 3, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 03</td>
-<td>Intro to Python - OOP, Data Types, Control Statements and Functions</td>
-<td>September 10, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 04</td>
-<td>Intro to Python II: Scaling up your code - Iteration, Comprehension and Functions</td>
-<td>September 17, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 05</td>
-<td>From Nested lists to Dataframes: Numpy and Intro to Pandas</td>
-<td>September 24, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 06</td>
-<td>Pandas II: Data Wrangling</td>
-<td>October 1, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 07</td>
-<td>Joining, Tidying and Visualizing Data</td>
-<td>October 8, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 08</td>
-<td>Scraping + APIs</td>
-<td>October 15, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 09</td>
-<td>Statistical Learning</td>
-<td>October 22, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 10</td>
-<td>Text as Data I: Discovery and Topics</td>
-<td>October 29, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 11</td>
-<td>Text as Data II: Supervised Learning</td>
-<td>November 5, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 12</td>
-<td>Generative AI</td>
-<td>November 12, 2026</td>
-</tr>
-<tr class="odd">
-<td>Week 13</td>
-<td>SQL</td>
-<td>November 19, 2026</td>
-</tr>
-<tr class="even">
-<td>Week 14</td>
-<td>Presentations of Final Projects</td>
-<td>December 03, 2026</td>
+<td>2</td>
+<td>3.6</td>
+<td>3.6</td>
+<td>6</td>
+<td>7</td>
 </tr>
 </tbody>
 </table>
-</section></section>
-<section>
-<section id="introductions" class="title-slide slide level1 center">
-<h1>Introductions</h1>
-
-</section>
-<section id="section" class="slide level2 center">
-<h2></h2>
-<div>
-<div class="fragment">
-<p><strong>Professor Rebecca Johnson</strong></p>
-<ul>
-<li>Assistant Professor at McCourt School.</li>
-<li>Demography, Sociology, and Social Policy PhD</li>
-<li>Previously an Assistant Professor at Dartmouth College, teaching in their major in Quantitative Social Science</li>
-</ul>
-</div>
-<div class="fragment">
-<p><strong>My Research: How social service agencies use a mix of data and discretion to allocate scarce resources:</strong></p>
-<ul>
-<li>Ranking of categories (e.g., disability; veteran) on waitlists for housing vouchers</li>
-<li>Parent perceptions of the fairness of using predictive modeling to determine which students need help most urgently versus older methods (e.g., income thresholds; counselor discretion)</li>
-<li>Database of K-12 school board meetings</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="ta" class="slide level2 center">
-<h2>TA</h2>
-<p>DSPP Alum Rebecca Wagner. Will share details on background and office hours in the coming days!</p>
-</section>
-<section id="your-turn" class="slide level2 center">
-<h2>Your turn!</h2>
-<ul>
-<li class="fragment"><p>Name</p></li>
-<li class="fragment"><p>(Briefly) what you were up to prior to the DSPP</p></li>
-<li class="fragment"><p>If you could have any data source at your disposal, what would it be?</p></li>
-</ul>
-</section>
-<section id="logistics" class="slide level2 center">
-<h2>Logistics</h2>
-<div>
-<ul>
-<li class="fragment"><p><strong>Communication</strong>: via slack. Join the <a href="https://compethicslawlabgu.slack.com/archives/C0BRR7LGB8U">workspace!</a></p></li>
-<li class="fragment"><p><strong>All materials</strong>: hosted on the class website: <a href="https://rebeccajohnson88.github.io/PPOL5203_fall2026/" class="uri">https://rebeccajohnson88.github.io/PPOL5203_fall2026/</a></p></li>
-<li class="fragment"><p><strong>Syllabus</strong>: also on the website.</p></li>
-<li class="fragment"><p><strong>My Office Hours</strong>: Wednesdays 11:30AM-1:30PM. Sign up on Calendly</p></li>
-<li class="fragment"><p><strong>Canvas</strong>: Only for official communication! Materials will be hosted in the website</p></li>
-<li class="fragment"><p><strong>Datacamp</strong>: Additional exercises (not graded unless we explicitly include as part of a problem set). Access our free account <a href="https://www.datacamp.com/groups/shared_links/63a4d32b3c706ed0a6fdb79245c95f84c9487b004a29163f4cc34e8331c3eec9">here</a></p></li>
-<li class="fragment"><p><strong>Task:</strong> go on slack and send me a message about the data source you choose in the last answer, and if you feel comfortable add a picture to your profile</p></li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_69915a48" minutes="5" seconds="0" update-every="1" tabindex="0" style="top:0;right:0;--countdown-font-size:2em;"></countdown-timer>
-</div>
-</div>
-</div>
-</section>
-<section id="evaluation" class="slide level2 center">
-<h2>Evaluation</h2>
+<p>Long format:</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th><strong>Assignment</strong></th>
-<th style="text-align: center;"><strong>Percentage of Grade</strong></th>
+<th>Student</th>
+<th>year</th>
+<th>stat</th>
+<th>value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Participation/Attendance</td>
-<td style="text-align: center;">5%</td>
+<td>1</td>
+<td>2020</td>
+<td>gpa</td>
+<td>3.8</td>
 </tr>
 <tr class="even">
-<td>Coding Discussion</td>
-<td style="text-align: center;">5%</td>
+<td>1</td>
+<td>2021</td>
+<td>ncourses</td>
+<td>3.9</td>
 </tr>
 <tr class="odd">
-<td>Problem Sets</td>
-<td style="text-align: center;">35%</td>
+<td>1</td>
+<td>2020</td>
+<td>gpa</td>
+<td>5</td>
 </tr>
 <tr class="even">
-<td>In-class Python Exam</td>
-<td style="text-align: center;">15%</td>
+<td>1</td>
+<td>2021</td>
+<td>ncourses</td>
+<td>3</td>
 </tr>
 <tr class="odd">
-<td>Final Project</td>
-<td style="text-align: center;">40%</td>
+<td>2</td>
+<td>2020</td>
+<td>gpa</td>
+<td>3.6</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="problem-sets" class="slide level2 center">
-<h2>Problem Sets</h2>
-<p>Individual submission through GitHub.</p>
+<section id="one-direction-of-transformation-pivoting-from-long-to-wide" class="slide level2 center">
+<h2>One direction of transformation: pivoting from long to wide</h2>
+<p>Syntax:</p>
+<p>pd.pivot(longformat_df, index= ‘col_unitinfo’, columns= ‘col_repeatmeasure’, values = [‘col1_value’, ‘col2_value’, …])</p>
+<p>Breaking it down:</p>
+<ul>
+<li><strong>index</strong>: the name of the column we want to treat as a row— in the previous example, we want one student per row</li>
+<li><strong>values</strong>: the name of the column(s) that contain the values of data we want to ``spread’’ out — in the previous example, we want the gpa and total courses information spread out</li>
+<li><strong>columns</strong>: the name of the column(s) that describe the unit of variation — in the previous example, the year column (2020 or 2021) and stat column (gpa or ncourses)</li>
+</ul>
+</section>
+<section id="visualization-of-long-to-wide" class="slide level2 center">
+<h2>Visualization of long to wide</h2>
+
+<img data-src="https://d33wubrfki0l68.cloudfront.net/8350f0dda414629b9d6c354f87acf5c5f722be43/bcb84/images/tidy-8.png" class="r-stretch"></section>
+<section id="other-direction-of-transformation-melting-from-wide-to-long" class="slide level2 center">
+<h2>Other direction of transformation: ``melting’’ from wide to long</h2>
+<p>Syntax: pd.melt(wideformat_df, id_vars = ‘nameofcol’)</p>
+<p>Breaking it down:</p>
+<ul>
+<li><strong>id_vars</strong>: the name of the columns you’re treating as the unit of analysis that has repeated measures</li>
+<li>See documentation here for optional arguments that help us rename the output: <a href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html">melt documentation</a></li>
+</ul>
+</section>
+<section id="visualization-of-wide-to-long" class="slide level2 center">
+<h2>Visualization of wide to long</h2>
+
+<img data-src="https://d33wubrfki0l68.cloudfront.net/3aea19108d39606bbe49981acda07696c0c7fcd8/2de65/images/tidy-9.png" class="r-stretch quarto-figure-center"><p class="caption">https://r4ds.had.co.nz/tidy-data.html</p></section>
+<section id="in-class-activity" class="slide level2 center" data-background-color="#449998">
+<h2>In-class activity</h2>
+<p>See Activity 1 in notebook</p>
+</section></section>
+<section>
+<section id="data-wrangling-merging" class="title-slide slide level1 center" data-background-color="#447099">
+<h1>Data wrangling: merging</h1>
+
+</section>
+<section id="working-example" class="slide level2 center">
+<h2>Working example</h2>
+<ul>
+<li><strong>Main or “left” dataset:</strong> college data on students’ high schools</li>
+</ul>
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th style="text-align: center;">Assignment</th>
-<th style="text-align: center;">Date Assigned</th>
-<th style="text-align: center;">Date Due</th>
+<th style="text-align: left;"><strong>Student</strong></th>
+<th style="text-align: left;"><strong>Year</strong></th>
+<th style="text-align: left;"><strong>District</strong></th>
+<th style="text-align: left;"><strong>NCES ID</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">No.&nbsp;1</td>
-<td style="text-align: center;">Week 2</td>
-<td style="text-align: center;">Before EOD of Friday of Week 3</td>
+<td style="text-align: left;">Rebecca</td>
+<td style="text-align: left;">2021</td>
+<td style="text-align: left;">New Trier High School</td>
+<td style="text-align: left;">1728200</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">No.&nbsp;2</td>
-<td style="text-align: center;">Week 4</td>
-<td style="text-align: center;">Before EOD of Friday of Week 5</td>
+<td style="text-align: left;">Jennifer</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: left;">Bethesda High</td>
+<td style="text-align: left;">3302670</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">No.&nbsp;3</td>
-<td style="text-align: center;">Week 6</td>
-<td style="text-align: center;">Before EOD of Friday of Week 7</td>
+<td style="text-align: left;">Jason</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: left;">Homeschool</td>
+<td style="text-align: left;">NA</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">No.&nbsp;4</td>
-<td style="text-align: center;">week 8</td>
-<td style="text-align: center;">Before EOD of Friday of Week 9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">No.&nbsp;5</td>
-<td style="text-align: center;">November 10</td>
-<td style="text-align: center;">Before EOD of Friday of Week 111</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
-</section></section>
-<section>
-<section id="eod-1159pm" class="title-slide slide level1 center">
-<h1><span class="red">EOD = 11:59pm!</span></h1>
-
+<ul>
+<li><strong>Auxiliary or “right” dataset</strong> - FRPL = free or reduced price lunch eligible percentage; used as (one) measure of school district poverty</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>District</strong></th>
+<th style="text-align: left;"><strong>NCES ID</strong></th>
+<th style="text-align: left;"><strong>% FRPL</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">New Trier HS</td>
+<td style="text-align: left;">1728200</td>
+<td style="text-align: left;">X%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bethesda HS</td>
+<td style="text-align: left;">3302670</td>
+<td style="text-align: left;">Y%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Arundel HS</td>
+<td style="text-align: left;">4107380</td>
+<td style="text-align: left;">Z%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="final-project" class="slide level2 center">
-<h2>Final Project</h2>
+<section id="possible-join-keys" class="slide level2 center">
+<h2>Possible join keys</h2>
 <ul>
-<li class="fragment"><p>You will work on in <strong>groups!</strong></p></li>
-<li class="fragment"><p>The project is composed of three parts:</p>
+<li><strong>Unique identifier:</strong> used for “exact matching” — or a Yes/No match on that basis
 <ul>
-<li class="fragment">a 2 page project proposal: (which should be discussed and approved by me)</li>
-<li class="fragment">an in-class presentation,</li>
-<li class="fragment">A 10-page project report.</li>
+<li>E.g., is the NCES ID of New Trier found in the dataset of demographics?</li>
+</ul></li>
+<li><strong>Other identifiers:</strong> can be used for either “exact match” or for “probabilistic/fuzzy matching”
+<ul>
+<li><strong>Probabilistic:</strong> what’s the likelihood that “New Trier district” and “New Trier HS” are the same entity?</li>
 </ul></li>
 </ul>
 </section>
-<section id="due-dates-and-points" class="slide level2 center">
-<h2>Due dates and Points:</h2>
+<section id="conceptual-overview-of-four-types-of-joins" class="slide level2 center">
+<h2>Conceptual overview of four types of joins</h2>
+<div style="text-align: center;">
+<p><img data-src="week7_figs/JoinVennDiagram.png" style="width:55.0%"></p>
+</div>
+<div style="text-align: right;">
+<p><strong>Source:</strong> Trifacta</p>
+</div>
+</section>
+<section id="inner-join-in-this-context" class="slide level2 center">
+<h2>Inner join in this context</h2>
+<p><strong>In words:</strong> “drop all students whose districts don’t appear in the demographics data; drop all districts that don’t appear in the Georgetown student data”</p>
+<ul>
+<li><strong>Main or “left” dataset</strong></li>
+</ul>
+<table>
+<tbody><tr>
+<th>
+<strong>Student</strong>
+</th>
+<th>
+<strong>Year</strong>
+</th>
+<th>
+<strong>District</strong>
+</th>
+<th>
+<strong>NCES ID</strong>
+</th>
+</tr>
+<tr>
+<td>
+Rebecca
+</td>
+<td>
+2021
+</td>
+<td>
+New Trier High School
+</td>
+<td>
+1728200
+</td>
+</tr>
+<tr>
+<td>
+Jennifer
+</td>
+<td>
+2022
+</td>
+<td>
+Bethesda High
+</td>
+<td>
+3302670
+</td>
+</tr>
+<tr style="background-color:#f8d7da;">
+<td>
+Jason
+</td>
+<td>
+2022
+</td>
+<td>
+Homeschool
+</td>
+<td>
+NA
+</td>
+</tr>
+<tr>
+<td>
+⋮
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>Auxiliary or “right” dataset</strong></li>
+</ul>
+<table>
+<tbody><tr>
+<th>
+<strong>District</strong>
+</th>
+<th>
+<strong>NCES ID</strong>
+</th>
+<th>
+<strong>% FRPL</strong>
+</th>
+</tr>
+<tr>
+<td>
+New Trier HS
+</td>
+<td>
+1728200
+</td>
+<td>
+X%
+</td>
+</tr>
+<tr>
+<td>
+Bethesda HS
+</td>
+<td>
+3302670
+</td>
+<td>
+Y%
+</td>
+</tr>
+<tr style="background-color:#f8d7da;">
+<td>
+Arundel HS
+</td>
+<td>
+4107380
+</td>
+<td>
+Z%
+</td>
+</tr>
+<tr>
+<td>
+⋮
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody></table>
+</section>
+<section id="outer-join-in-this-context" class="slide level2 center">
+<h2>Outer join in this context</h2>
+<p><strong>In words:</strong> “keep all students from the student-level data; keep all schools from the school-level data; even if there’s not an overlap”</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th><strong>Requirement</strong></th>
-<th><strong>Due</strong></th>
-<th><strong>Length</strong></th>
-<th><strong>Percentage</strong></th>
+<th style="text-align: left;"><strong>Student</strong></th>
+<th style="text-align: left;"><strong>Year</strong></th>
+<th style="text-align: left;"><strong>District</strong></th>
+<th style="text-align: left;"><strong>NCES ID</strong></th>
+<th style="text-align: left;"><strong>% FRPL</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Project Proposal</td>
-<td>October 31</td>
-<td>2 pages</td>
-<td>5%</td>
+<td style="text-align: left;">Rebecca</td>
+<td style="text-align: left;">2021</td>
+<td style="text-align: left;">New Trier High School</td>
+<td style="text-align: left;">1728200</td>
+<td style="text-align: left;">X%</td>
 </tr>
 <tr class="even">
-<td>Presentation</td>
-<td>December 09</td>
-<td>10-15 minutes</td>
-<td>10%</td>
+<td style="text-align: left;">Jennifer</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: left;">Bethesda High</td>
+<td style="text-align: left;">3302670</td>
+<td style="text-align: left;">Y%</td>
 </tr>
 <tr class="odd">
-<td>Project Report</td>
-<td>December 16</td>
-<td>10 pages</td>
-<td>25%</td>
+<td style="text-align: left;">Jason</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: left;">Homeschool</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">4107380</td>
+<td style="text-align: left;">Z%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="genai" class="slide level2 center">
-<h2>GenAI</h2>
-<p>You are allowed to use GenAI as you would use google in this class. This means:</p>
+<section id="left-join-in-this-context" class="slide level2 center">
+<h2>Left join in this context</h2>
+<p><strong>In words:</strong> “keep all students from the student-level data; drop any school from the school-level data that doesn’t merge onto a student”</p>
 <ul>
-<li class="fragment"><p>Do not copy the responses from GenAI Chatbots – a lot of them are wrong or will just not run on your computer</p></li>
-<li class="fragment"><p>Use GenAI Chatbots as a auxiliary source.</p></li>
-<li class="fragment"><p>If your entire homework comes straight from GenAI Chatbots, I will consider it plagiarism.</p></li>
-<li class="fragment"><p>If you use GenAI Chatbots, I ask you to mention on your code how chatgpt worked for you.</p></li>
-<li class="fragment"><p>I will be transparent about my own use of GenAI (e.g.&nbsp;to aid in grading)</p></li>
+<li><strong>Main or “left” dataset</strong></li>
+</ul>
+<table>
+<tbody><tr>
+<th>
+<strong>Student</strong>
+</th>
+<th>
+<strong>Year</strong>
+</th>
+<th>
+<strong>District</strong>
+</th>
+<th>
+<strong>NCES ID</strong>
+</th>
+</tr>
+<tr>
+<td>
+Rebecca
+</td>
+<td>
+2021
+</td>
+<td>
+New Trier High School
+</td>
+<td>
+1728200
+</td>
+</tr>
+<tr>
+<td>
+Jennifer
+</td>
+<td>
+2022
+</td>
+<td>
+Bethesda High
+</td>
+<td>
+3302670
+</td>
+</tr>
+<tr style="background-color:#d4edda;">
+<td>
+Jason
+</td>
+<td>
+2022
+</td>
+<td>
+Homeschool
+</td>
+<td>
+NA
+</td>
+</tr>
+<tr>
+<td>
+⋮
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>Auxiliary or “right” dataset</strong></li>
+</ul>
+<table>
+<tbody><tr>
+<th>
+<strong>District</strong>
+</th>
+<th>
+<strong>NCES ID</strong>
+</th>
+<th>
+<strong>% FRPL</strong>
+</th>
+</tr>
+<tr>
+<td>
+New Trier HS
+</td>
+<td>
+1728200
+</td>
+<td>
+X%
+</td>
+</tr>
+<tr>
+<td>
+Bethesda HS
+</td>
+<td>
+3302670
+</td>
+<td>
+Y%
+</td>
+</tr>
+<tr style="background-color:#f8d7da;">
+<td>
+Arundel HS
+</td>
+<td>
+4107380
+</td>
+<td>
+Z%
+</td>
+</tr>
+<tr>
+<td>
+⋮
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody></table>
+</section>
+<section id="right-join-in-this-context" class="slide level2 center">
+<h2>Right join in this context</h2>
+<p><strong>In words:</strong> “drop students who don’t have a school in the school-level data; keep all schools from the student-level data even those that don’t merge onto any student”</p>
+<ul>
+<li><strong>Main or “left” dataset</strong></li>
+</ul>
+<table>
+<tbody><tr>
+<th>
+<strong>Student</strong>
+</th>
+<th>
+<strong>Year</strong>
+</th>
+<th>
+<strong>District</strong>
+</th>
+<th>
+<strong>NCES ID</strong>
+</th>
+</tr>
+<tr>
+<td>
+Rebecca
+</td>
+<td>
+2021
+</td>
+<td>
+New Trier High School
+</td>
+<td>
+1728200
+</td>
+</tr>
+<tr>
+<td>
+Jennifer
+</td>
+<td>
+2022
+</td>
+<td>
+Bethesda High
+</td>
+<td>
+3302670
+</td>
+</tr>
+<tr style="background-color:#f8d7da;">
+<td>
+Jason
+</td>
+<td>
+2022
+</td>
+<td>
+Homeschool
+</td>
+<td>
+NA
+</td>
+</tr>
+<tr>
+<td>
+⋮
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>Auxiliary or “right” dataset</strong></li>
+</ul>
+<table>
+<tbody><tr>
+<th>
+<strong>District</strong>
+</th>
+<th>
+<strong>NCES ID</strong>
+</th>
+<th>
+<strong>% FRPL</strong>
+</th>
+</tr>
+<tr>
+<td>
+New Trier HS
+</td>
+<td>
+1728200
+</td>
+<td>
+X%
+</td>
+</tr>
+<tr>
+<td>
+Bethesda HS
+</td>
+<td>
+3302670
+</td>
+<td>
+Y%
+</td>
+</tr>
+<tr style="background-color:#d4edda;">
+<td>
+Arundel HS
+</td>
+<td>
+4107380
+</td>
+<td>
+Z%
+</td>
+</tr>
+<tr>
+<td>
+⋮
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody></table>
+</section>
+<section id="datacamp-versus-slide-syntax" class="slide level2 center">
+<h2>DataCamp versus slide syntax</h2>
+<ul>
+<li>DataCamp modules generally used this syntax for merges:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> df1.merge(df2,</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>                how <span class="op">=</span> <span class="st">"left"</span>,</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>                on <span class="op">=</span> <span class="st">"something"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Slides/solution code will tend to use this syntax:</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> pd.merge(df1, df2,</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>                how <span class="op">=</span> <span class="st">"left"</span>,</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>                on <span class="op">=</span> <span class="st">"something"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>They produce identical answers so use whichever comes more naturally (I use latter because it’s more similar to base <code>R</code> syntax)</li>
+<li>In addition, feel free to use self joins if useful but we won’t be focusing a lot on those</li>
 </ul>
 </section>
-<section id="in-class-python-exam" class="slide level2 center">
-<h2>In-class Python Exam</h2>
-<p>This will take place after the Python content (after week 11). This will be a short exam, either using pen or paper or on a computer without accessing LLMs. It will be easy to complete if you have engaged with the content.</p>
-</section></section>
-<section>
-<section id="survey-results" class="title-slide slide level1 center">
-<h1><svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Survey Results</h1>
-
-</section>
-<section id="summary-of-the-survey" class="slide level2 center">
-<h2>Summary of the survey</h2>
+<section id="how-do-we-code-these-different-types-of-joins-in-practice" class="slide level2 smaller center">
+<h2>How do we code these different types of joins in practice?</h2>
+<h3 id="example-with-left-join-and-join-key-has-same-colname-in-both">Example with left join and join key has same colname in both</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## perform a left join on the student data</span></span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## and schools data</span></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>stud_wschool <span class="op">=</span> pd.merge(students,</span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>                schools,</span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>                how <span class="op">=</span> <span class="st">"left"</span>,</span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>                on <span class="op">=</span> <span class="st">"NCES ID"</span>,</span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>                indicator <span class="op">=</span> <span class="st">"student_mergestatus"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li class="fragment"><p>About half of you have <strong>some</strong> experience with Python.</p></li>
-<li class="fragment"><p>Less exposure to SQL</p></li>
+<li><code>how</code>: argument to tell it inner, left, right, outer, or cross; defaults to inner</li>
+<li><code>on</code>: name of join key (in this case single key)</li>
+<li><code>indicator</code>: optional arg to add a col to the resulting data (string is what to call it) that helps diagnose merge status; good for post-merge dx</li>
 </ul>
 </section>
-<section id="open-ended" class="slide level2 center">
-<h2>Open Ended</h2>
-<p>Some of you are slightly anxious about Python and the pace of the class</p>
-<div>
-<ul>
-<li class="fragment"><p>The goal of the class is to bring everyone up to the same level of working Python proficiency</p></li>
-<li class="fragment"><p>That means some content will be review for some of you and I appreciate you helping out your classmates</p></li>
-<li class="fragment"><p><strong>Our approach</strong>: We will start slow and build up from Python fundamentals – so learning about the building blocks of dataframes before we actually work with data</p></li>
-</ul>
-</div>
-</section></section>
-<section>
-<section id="transition-setting-up-course-tools" class="title-slide slide level1 center">
-<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 96c0-35.3 28.7-64 64-64H512c35.3 0 64 28.7 64 64V352H512V96H128V352H64V96zM0 403.2C0 392.6 8.6 384 19.2 384H620.8c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8H76.8C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"></path></svg> Transition: Setting up Course Tools!</h1>
-
+<section id="example-with-inner-join-and-join-key-has-different-name" class="slide level2 center">
+<h2>Example with inner join and join key has different name</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## perform a left join on the student data</span></span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## and schools data</span></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>stud_wschool <span class="op">=</span> pd.merge(students,</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>                schools,</span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>                how <span class="op">=</span> <span class="st">"inner"</span>,</span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>                left_on <span class="op">=</span> <span class="st">"NCES ID"</span>,</span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>                right_on <span class="op">=</span> <span class="st">"ncesnumeric"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="set-up-your-course-infrastructure" class="slide level2 center">
-<h2>Set up your course infrastructure</h2>
-<p><a href="https://rebeccajohnson88.github.io/PPOL5203_fall2026/course_infrastructure.html">See Course Website</a></p>
-<ul>
-<li class="fragment"><p>Install Python and Jupyter (recommend bundling together by installing Anaconda distribution)</p></li>
-<li class="fragment"><p>Install Jupyter</p></li>
-<li class="fragment"><p>Setup your Git/GitHub account and add your username <a href="https://docs.google.com/spreadsheets/d/1vMIFgJej0SAY8_BfCmaXcAGl_pgZcAJehhV9WdPHWas/edit?usp=sharing">to this sheet</a> - will also distribute the sheet via Canvas</p></li>
-</ul>
+<section id="example-with-left-join-and-multiple-join-keys" class="slide level2 center">
+<h2>Example with left join and multiple join keys</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## perform a left join on the student data</span></span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## and schools data</span></span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>stud_wschool <span class="op">=</span> pd.merge(students,</span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>                schools,</span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>                how <span class="op">=</span> <span class="st">"left"</span>,</span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>                left_on <span class="op">=</span> [<span class="st">"NCES ID"</span>, </span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Dist name"</span>],</span>
+<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a>                right_on <span class="op">=</span> [<span class="st">"ncesnumeric"</span>,</span>
+<span id="cb5-9"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"distnamechar"</span>],</span>
+<span id="cb5-10"><a aria-hidden="true" tabindex="-1"></a>                indicator <span class="op">=</span> <span class="st">"student_mergestatus"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="jupyter" class="slide level2 center">
-<h2>Jupyter:</h2>
-<p><a href="https://rebeccajohnson88.github.io/PPOL5203_fall2026/lecture_notes/week-1/_using_jupyter_notebooks.html">Jupyter Notebook Tutorial in the Class Website</a></p>
-<p><strong>Note on my approach on Notebooks:</strong> I will go over quite quickly through the notebooks. You should run them by yourselves at a later point!</p>
+<section id="example-with-left-join-multiple-join-keys-and-some-overlapping-non-join-columns-that-we-want-to-differentiate" class="slide level2 smaller center">
+<h2>Example with left join, multiple join keys, and some overlapping, non-join columns that we want to differentiate</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## perform a left join on the student data</span></span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## and schools data</span></span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>stud_wschool <span class="op">=</span> pd.merge(students,</span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>                schools,</span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a>                how <span class="op">=</span> <span class="st">"left"</span>,</span>
+<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a>                left_on <span class="op">=</span> [<span class="st">"NCES ID"</span>, </span>
+<span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Dist name"</span>],</span>
+<span id="cb6-8"><a aria-hidden="true" tabindex="-1"></a>                right_on <span class="op">=</span> [<span class="st">"ncesnumeric"</span>,</span>
+<span id="cb6-9"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"distnamechar"</span>],</span>
+<span id="cb6-10"><a aria-hidden="true" tabindex="-1"></a>                indicator <span class="op">=</span> <span class="st">"student_mergestatus"</span>,</span>
+<span id="cb6-11"><a aria-hidden="true" tabindex="-1"></a>                suffixes <span class="op">=</span> [<span class="st">"_students"</span>,</span>
+<span id="cb6-12"><a aria-hidden="true" tabindex="-1"></a>                            <span class="st">"_schools"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="command-line" class="slide level2 center">
-<h2>Command Line</h2>
-<p><a href="https://rebeccajohnson88.github.io/PPOL5203_fall2026/lecture_notes/week-1/_basics_of_cmd.html">Command Line Tutorial in the Class Website</a></p>
+<section id="non-exhaustive-checklist-of-merge-diagnostics" class="slide level2 center scrollable">
+<h2>Non-exhaustive checklist of merge diagnostics</h2>
+<ol type="1">
+<li>How many rows were in each data before the merge? What about after?</li>
+<li>If doing a left join, did we properly retain all left-hand side rows?</li>
+<li><strong>For strings as join keys:</strong> if a lot of rows were lost in a merge, could that be due to spelling/punctuation variations in a character join key?</li>
+<li><strong>For numeric identifiers as join keys:</strong> if a lot of rows were lost in a merge, could that be due to things like the id having leading or lagging zeros and those being stripped at some stage? (e.g., one dataset identifies an entity as <code>002548</code>; another as <code>2548</code>)</li>
+</ol>
 </section>
-<section id="datacamp-course" class="slide level2 center">
-<h2>Datacamp Course</h2>
-<ul>
-<li class="fragment">Join our team</li>
-<li class="fragment">Manipulating files and directories in <a href="https://app.datacamp.com/learn/courses/introduction-to-shell">Introduction to Shell</a></li>
-</ul>
-</section>
-<section id="additional-materials-quarto" class="slide level2 center">
-<h2>Additional Materials: Quarto</h2>
-<p>Totally optional to use!</p>
-<p><a href="https://rebeccajohnson88.github.io/PPOL5203_fall2026/lecture_notes/week-1/intro_to_quarto.html">Quarto tutorial on class website</a></p>
-</section></section>
-<section id="see-you-next-week" class="title-slide slide level1 center">
-<h1>See you next week!</h1>
+<section id="in-class-activity-1" class="slide level2 center" data-background-color="#449998">
+<h2>In-class activity</h2>
+<p>See Activity 2 in notebook</p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
-<p>Data Science I: Foundations</p>
+<p>Data science I: Foundations</p>
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -1017,7 +1365,7 @@
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1300,
+        width: 1600,
 
         height: 900,
 
@@ -1051,44 +1399,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

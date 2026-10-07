@@ -1,0 +1,701 @@
+state,year,race_ethnicity,child_poverty_rate
+Alabama,2023,American Indian or Alaska Native,NA
+Alabama,2023,Asian and Pacific Islander,0.08
+Alabama,2023,Black or African American,0.41
+Alabama,2023,Hispanic or Latino,0.27
+Alabama,2023,Non-Hispanic White,0.11
+Alabama,2023,Total,0.21
+Alabama,2023,Two or more races,0.17
+Alabama,2024,American Indian or Alaska Native,NA
+Alabama,2024,Asian and Pacific Islander,0.03
+Alabama,2024,Black or African American,0.34
+Alabama,2024,Hispanic or Latino,0.26
+Alabama,2024,Non-Hispanic White,0.13
+Alabama,2024,Total,0.2
+Alabama,2024,Two or more races,0.22
+Alaska,2023,American Indian or Alaska Native,0.22
+Alaska,2023,Asian and Pacific Islander,NA
+Alaska,2023,Black or African American,NA
+Alaska,2023,Hispanic or Latino,NA
+Alaska,2023,Non-Hispanic White,0.07
+Alaska,2023,Total,0.12
+Alaska,2023,Two or more races,0.1
+Alaska,2024,American Indian or Alaska Native,0.31
+Alaska,2024,Asian and Pacific Islander,NA
+Alaska,2024,Black or African American,NA
+Alaska,2024,Hispanic or Latino,NA
+Alaska,2024,Non-Hispanic White,0.05
+Alaska,2024,Total,0.13
+Alaska,2024,Two or more races,0.14
+Arizona,2023,American Indian or Alaska Native,0.31
+Arizona,2023,Asian and Pacific Islander,0.05
+Arizona,2023,Black or African American,0.25
+Arizona,2023,Hispanic or Latino,0.2
+Arizona,2023,Non-Hispanic White,0.08
+Arizona,2023,Total,0.15
+Arizona,2023,Two or more races,0.18
+Arizona,2024,American Indian or Alaska Native,0.34
+Arizona,2024,Asian and Pacific Islander,0.09
+Arizona,2024,Black or African American,0.28
+Arizona,2024,Hispanic or Latino,0.18
+Arizona,2024,Non-Hispanic White,0.08
+Arizona,2024,Total,0.15
+Arizona,2024,Two or more races,0.15
+Arkansas,2023,American Indian or Alaska Native,NA
+Arkansas,2023,Asian and Pacific Islander,NA
+Arkansas,2023,Black or African American,0.43
+Arkansas,2023,Hispanic or Latino,0.19
+Arkansas,2023,Non-Hispanic White,0.15
+Arkansas,2023,Total,0.21
+Arkansas,2023,Two or more races,0.21
+Arkansas,2024,American Indian or Alaska Native,0.04
+Arkansas,2024,Asian and Pacific Islander,NA
+Arkansas,2024,Black or African American,0.36
+Arkansas,2024,Hispanic or Latino,0.24
+Arkansas,2024,Non-Hispanic White,0.16
+Arkansas,2024,Total,0.2
+Arkansas,2024,Two or more races,0.2
+California,2023,American Indian or Alaska Native,0.19
+California,2023,Asian and Pacific Islander,0.09
+California,2023,Black or African American,0.27
+California,2023,Hispanic or Latino,0.19
+California,2023,Non-Hispanic White,0.08
+California,2023,Total,0.15
+California,2023,Two or more races,0.15
+California,2024,American Indian or Alaska Native,0.23
+California,2024,Asian and Pacific Islander,0.09
+California,2024,Black or African American,0.23
+California,2024,Hispanic or Latino,0.19
+California,2024,Non-Hispanic White,0.08
+California,2024,Total,0.15
+California,2024,Two or more races,0.14
+Colorado,2023,American Indian or Alaska Native,NA
+Colorado,2023,Asian and Pacific Islander,0.09
+Colorado,2023,Black or African American,NA
+Colorado,2023,Hispanic or Latino,0.17
+Colorado,2023,Non-Hispanic White,0.06
+Colorado,2023,Total,0.11
+Colorado,2023,Two or more races,0.14
+Colorado,2024,American Indian or Alaska Native,0.08
+Colorado,2024,Asian and Pacific Islander,0.06
+Colorado,2024,Black or African American,NA
+Colorado,2024,Hispanic or Latino,0.19
+Colorado,2024,Non-Hispanic White,0.06
+Colorado,2024,Total,0.11
+Colorado,2024,Two or more races,0.13
+Connecticut,2023,American Indian or Alaska Native,NA
+Connecticut,2023,Asian and Pacific Islander,0.06
+Connecticut,2023,Black or African American,0.26
+Connecticut,2023,Hispanic or Latino,0.26
+Connecticut,2023,Non-Hispanic White,0.06
+Connecticut,2023,Total,0.13
+Connecticut,2023,Two or more races,0.13
+Connecticut,2024,American Indian or Alaska Native,NA
+Connecticut,2024,Asian and Pacific Islander,NA
+Connecticut,2024,Black or African American,0.28
+Connecticut,2024,Hispanic or Latino,0.24
+Connecticut,2024,Non-Hispanic White,0.05
+Connecticut,2024,Total,0.13
+Connecticut,2024,Two or more races,0.16
+Delaware,2023,American Indian or Alaska Native,NA
+Delaware,2023,Asian and Pacific Islander,0.04
+Delaware,2023,Black or African American,NA
+Delaware,2023,Hispanic or Latino,NA
+Delaware,2023,Non-Hispanic White,0.07
+Delaware,2023,Total,0.15
+Delaware,2023,Two or more races,NA
+Delaware,2024,American Indian or Alaska Native,NA
+Delaware,2024,Asian and Pacific Islander,NA
+Delaware,2024,Black or African American,NA
+Delaware,2024,Hispanic or Latino,NA
+Delaware,2024,Non-Hispanic White,0.07
+Delaware,2024,Total,0.13
+Delaware,2024,Two or more races,NA
+Florida,2023,American Indian or Alaska Native,NA
+Florida,2023,Asian and Pacific Islander,0.1
+Florida,2023,Black or African American,0.25
+Florida,2023,Hispanic or Latino,0.19
+Florida,2023,Non-Hispanic White,0.1
+Florida,2023,Total,0.16
+Florida,2023,Two or more races,0.16
+Florida,2024,American Indian or Alaska Native,NA
+Florida,2024,Asian and Pacific Islander,0.09
+Florida,2024,Black or African American,0.26
+Florida,2024,Hispanic or Latino,0.17
+Florida,2024,Non-Hispanic White,0.1
+Florida,2024,Total,0.15
+Florida,2024,Two or more races,0.15
+Georgia,2023,American Indian or Alaska Native,NA
+Georgia,2023,Asian and Pacific Islander,0.12
+Georgia,2023,Black or African American,0.28
+Georgia,2023,Hispanic or Latino,0.23
+Georgia,2023,Non-Hispanic White,0.1
+Georgia,2023,Total,0.18
+Georgia,2023,Two or more races,0.18
+Georgia,2024,American Indian or Alaska Native,NA
+Georgia,2024,Asian and Pacific Islander,0.1
+Georgia,2024,Black or African American,0.25
+Georgia,2024,Hispanic or Latino,0.22
+Georgia,2024,Non-Hispanic White,0.08
+Georgia,2024,Total,0.16
+Georgia,2024,Two or more races,0.14
+Hawaii,2023,American Indian or Alaska Native,NA
+Hawaii,2023,Asian and Pacific Islander,0.11
+Hawaii,2023,Black or African American,NA
+Hawaii,2023,Hispanic or Latino,0.15
+Hawaii,2023,Non-Hispanic White,0.06
+Hawaii,2023,Total,0.11
+Hawaii,2023,Two or more races,0.12
+Hawaii,2024,American Indian or Alaska Native,NA
+Hawaii,2024,Asian and Pacific Islander,0.14
+Hawaii,2024,Black or African American,NA
+Hawaii,2024,Hispanic or Latino,0.14
+Hawaii,2024,Non-Hispanic White,0.1
+Hawaii,2024,Total,0.12
+Hawaii,2024,Two or more races,0.09
+Idaho,2023,American Indian or Alaska Native,NA
+Idaho,2023,Asian and Pacific Islander,0.04
+Idaho,2023,Black or African American,NA
+Idaho,2023,Hispanic or Latino,0.17
+Idaho,2023,Non-Hispanic White,0.1
+Idaho,2023,Total,0.11
+Idaho,2023,Two or more races,0.14
+Idaho,2024,American Indian or Alaska Native,NA
+Idaho,2024,Asian and Pacific Islander,NA
+Idaho,2024,Black or African American,NA
+Idaho,2024,Hispanic or Latino,0.17
+Idaho,2024,Non-Hispanic White,0.09
+Idaho,2024,Total,0.11
+Idaho,2024,Two or more races,0.13
+Illinois,2023,American Indian or Alaska Native,NA
+Illinois,2023,Asian and Pacific Islander,0.11
+Illinois,2023,Black or African American,0.29
+Illinois,2023,Hispanic or Latino,0.19
+Illinois,2023,Non-Hispanic White,0.09
+Illinois,2023,Total,0.15
+Illinois,2023,Two or more races,0.16
+Illinois,2024,American Indian or Alaska Native,NA
+Illinois,2024,Asian and Pacific Islander,0.09
+Illinois,2024,Black or African American,0.33
+Illinois,2024,Hispanic or Latino,0.18
+Illinois,2024,Non-Hispanic White,0.07
+Illinois,2024,Total,0.14
+Illinois,2024,Two or more races,0.14
+Indiana,2023,American Indian or Alaska Native,NA
+Indiana,2023,Asian and Pacific Islander,0.12
+Indiana,2023,Black or African American,0.32
+Indiana,2023,Hispanic or Latino,0.25
+Indiana,2023,Non-Hispanic White,0.1
+Indiana,2023,Total,0.15
+Indiana,2023,Two or more races,0.2
+Indiana,2024,American Indian or Alaska Native,NA
+Indiana,2024,Asian and Pacific Islander,NA
+Indiana,2024,Black or African American,0.31
+Indiana,2024,Hispanic or Latino,0.23
+Indiana,2024,Non-Hispanic White,0.12
+Indiana,2024,Total,0.16
+Indiana,2024,Two or more races,0.21
+Iowa,2023,American Indian or Alaska Native,NA
+Iowa,2023,Asian and Pacific Islander,NA
+Iowa,2023,Black or African American,NA
+Iowa,2023,Hispanic or Latino,0.26
+Iowa,2023,Non-Hispanic White,0.1
+Iowa,2023,Total,0.14
+Iowa,2023,Two or more races,0.24
+Iowa,2024,American Indian or Alaska Native,NA
+Iowa,2024,Asian and Pacific Islander,NA
+Iowa,2024,Black or African American,NA
+Iowa,2024,Hispanic or Latino,0.22
+Iowa,2024,Non-Hispanic White,0.09
+Iowa,2024,Total,0.14
+Iowa,2024,Two or more races,0.21
+Kansas,2023,American Indian or Alaska Native,NA
+Kansas,2023,Asian and Pacific Islander,NA
+Kansas,2023,Black or African American,NA
+Kansas,2023,Hispanic or Latino,0.21
+Kansas,2023,Non-Hispanic White,0.09
+Kansas,2023,Total,0.13
+Kansas,2023,Two or more races,0.19
+Kansas,2024,American Indian or Alaska Native,NA
+Kansas,2024,Asian and Pacific Islander,NA
+Kansas,2024,Black or African American,NA
+Kansas,2024,Hispanic or Latino,0.18
+Kansas,2024,Non-Hispanic White,0.09
+Kansas,2024,Total,0.13
+Kansas,2024,Two or more races,0.15
+Kentucky,2023,American Indian or Alaska Native,NA
+Kentucky,2023,Asian and Pacific Islander,NA
+Kentucky,2023,Black or African American,0.38
+Kentucky,2023,Hispanic or Latino,0.28
+Kentucky,2023,Non-Hispanic White,0.18
+Kentucky,2023,Total,0.21
+Kentucky,2023,Two or more races,0.25
+Kentucky,2024,American Indian or Alaska Native,NA
+Kentucky,2024,Asian and Pacific Islander,NA
+Kentucky,2024,Black or African American,0.31
+Kentucky,2024,Hispanic or Latino,0.23
+Kentucky,2024,Non-Hispanic White,0.17
+Kentucky,2024,Total,0.19
+Kentucky,2024,Two or more races,0.23
+Louisiana,2023,American Indian or Alaska Native,NA
+Louisiana,2023,Asian and Pacific Islander,NA
+Louisiana,2023,Black or African American,0.4
+Louisiana,2023,Hispanic or Latino,0.25
+Louisiana,2023,Non-Hispanic White,0.15
+Louisiana,2023,Total,0.25
+Louisiana,2023,Two or more races,0.2
+Louisiana,2024,American Indian or Alaska Native,NA
+Louisiana,2024,Asian and Pacific Islander,NA
+Louisiana,2024,Black or African American,0.42
+Louisiana,2024,Hispanic or Latino,0.29
+Louisiana,2024,Non-Hispanic White,0.12
+Louisiana,2024,Total,0.25
+Louisiana,2024,Two or more races,0.3
+Maine,2023,American Indian or Alaska Native,NA
+Maine,2023,Asian and Pacific Islander,NA
+Maine,2023,Black or African American,NA
+Maine,2023,Hispanic or Latino,NA
+Maine,2023,Non-Hispanic White,0.12
+Maine,2023,Total,0.13
+Maine,2023,Two or more races,0.11
+Maine,2024,American Indian or Alaska Native,NA
+Maine,2024,Asian and Pacific Islander,NA
+Maine,2024,Black or African American,NA
+Maine,2024,Hispanic or Latino,NA
+Maine,2024,Non-Hispanic White,0.12
+Maine,2024,Total,0.13
+Maine,2024,Two or more races,0.11
+Maryland,2023,American Indian or Alaska Native,0.05
+Maryland,2023,Asian and Pacific Islander,0.07
+Maryland,2023,Black or African American,0.17
+Maryland,2023,Hispanic or Latino,0.14
+Maryland,2023,Non-Hispanic White,0.05
+Maryland,2023,Total,0.11
+Maryland,2023,Two or more races,0.09
+Maryland,2024,American Indian or Alaska Native,NA
+Maryland,2024,Asian and Pacific Islander,0.1
+Maryland,2024,Black or African American,0.16
+Maryland,2024,Hispanic or Latino,0.14
+Maryland,2024,Non-Hispanic White,0.05
+Maryland,2024,Total,0.11
+Maryland,2024,Two or more races,0.09
+Massachusetts,2023,American Indian or Alaska Native,NA
+Massachusetts,2023,Asian and Pacific Islander,0.08
+Massachusetts,2023,Black or African American,0.24
+Massachusetts,2023,Hispanic or Latino,0.25
+Massachusetts,2023,Non-Hispanic White,0.07
+Massachusetts,2023,Total,0.13
+Massachusetts,2023,Two or more races,0.15
+Massachusetts,2024,American Indian or Alaska Native,NA
+Massachusetts,2024,Asian and Pacific Islander,0.07
+Massachusetts,2024,Black or African American,0.21
+Massachusetts,2024,Hispanic or Latino,0.23
+Massachusetts,2024,Non-Hispanic White,0.06
+Massachusetts,2024,Total,0.11
+Massachusetts,2024,Two or more races,0.15
+Michigan,2023,American Indian or Alaska Native,NA
+Michigan,2023,Asian and Pacific Islander,0.13
+Michigan,2023,Black or African American,0.36
+Michigan,2023,Hispanic or Latino,0.22
+Michigan,2023,Non-Hispanic White,0.13
+Michigan,2023,Total,0.18
+Michigan,2023,Two or more races,0.19
+Michigan,2024,American Indian or Alaska Native,NA
+Michigan,2024,Asian and Pacific Islander,0.12
+Michigan,2024,Black or African American,0.37
+Michigan,2024,Hispanic or Latino,0.25
+Michigan,2024,Non-Hispanic White,0.13
+Michigan,2024,Total,0.18
+Michigan,2024,Two or more races,0.19
+Minnesota,2023,American Indian or Alaska Native,NA
+Minnesota,2023,Asian and Pacific Islander,0.1
+Minnesota,2023,Black or African American,0.28
+Minnesota,2023,Hispanic or Latino,0.16
+Minnesota,2023,Non-Hispanic White,0.06
+Minnesota,2023,Total,0.1
+Minnesota,2023,Two or more races,0.12
+Minnesota,2024,American Indian or Alaska Native,NA
+Minnesota,2024,Asian and Pacific Islander,0.1
+Minnesota,2024,Black or African American,0.21
+Minnesota,2024,Hispanic or Latino,0.15
+Minnesota,2024,Non-Hispanic White,0.06
+Minnesota,2024,Total,0.1
+Minnesota,2024,Two or more races,0.13
+Mississippi,2023,American Indian or Alaska Native,NA
+Mississippi,2023,Asian and Pacific Islander,NA
+Mississippi,2023,Black or African American,0.36
+Mississippi,2023,Hispanic or Latino,NA
+Mississippi,2023,Non-Hispanic White,0.12
+Mississippi,2023,Total,0.23
+Mississippi,2023,Two or more races,0.25
+Mississippi,2024,American Indian or Alaska Native,NA
+Mississippi,2024,Asian and Pacific Islander,NA
+Mississippi,2024,Black or African American,0.39
+Mississippi,2024,Hispanic or Latino,0.29
+Mississippi,2024,Non-Hispanic White,0.14
+Mississippi,2024,Total,0.25
+Mississippi,2024,Two or more races,NA
+Missouri,2023,American Indian or Alaska Native,NA
+Missouri,2023,Asian and Pacific Islander,0.11
+Missouri,2023,Black or African American,0.28
+Missouri,2023,Hispanic or Latino,0.17
+Missouri,2023,Non-Hispanic White,0.11
+Missouri,2023,Total,0.14
+Missouri,2023,Two or more races,0.16
+Missouri,2024,American Indian or Alaska Native,NA
+Missouri,2024,Asian and Pacific Islander,0.14
+Missouri,2024,Black or African American,0.33
+Missouri,2024,Hispanic or Latino,0.26
+Missouri,2024,Non-Hispanic White,0.11
+Missouri,2024,Total,0.15
+Missouri,2024,Two or more races,0.22
+Montana,2023,American Indian or Alaska Native,NA
+Montana,2023,Asian and Pacific Islander,NA
+Montana,2023,Black or African American,NA
+Montana,2023,Hispanic or Latino,NA
+Montana,2023,Non-Hispanic White,0.1
+Montana,2023,Total,0.12
+Montana,2023,Two or more races,0.18
+Montana,2024,American Indian or Alaska Native,NA
+Montana,2024,Asian and Pacific Islander,NA
+Montana,2024,Black or African American,NA
+Montana,2024,Hispanic or Latino,NA
+Montana,2024,Non-Hispanic White,0.08
+Montana,2024,Total,0.11
+Montana,2024,Two or more races,0.13
+Nebraska,2023,American Indian or Alaska Native,NA
+Nebraska,2023,Asian and Pacific Islander,0.06
+Nebraska,2023,Black or African American,NA
+Nebraska,2023,Hispanic or Latino,0.18
+Nebraska,2023,Non-Hispanic White,0.07
+Nebraska,2023,Total,0.11
+Nebraska,2023,Two or more races,0.14
+Nebraska,2024,American Indian or Alaska Native,NA
+Nebraska,2024,Asian and Pacific Islander,NA
+Nebraska,2024,Black or African American,NA
+Nebraska,2024,Hispanic or Latino,0.22
+Nebraska,2024,Non-Hispanic White,0.07
+Nebraska,2024,Total,0.12
+Nebraska,2024,Two or more races,0.18
+Nevada,2023,American Indian or Alaska Native,NA
+Nevada,2023,Asian and Pacific Islander,0.09
+Nevada,2023,Black or African American,NA
+Nevada,2023,Hispanic or Latino,0.2
+Nevada,2023,Non-Hispanic White,0.08
+Nevada,2023,Total,0.16
+Nevada,2023,Two or more races,0.18
+Nevada,2024,American Indian or Alaska Native,NA
+Nevada,2024,Asian and Pacific Islander,0.11
+Nevada,2024,Black or African American,NA
+Nevada,2024,Hispanic or Latino,0.19
+Nevada,2024,Non-Hispanic White,0.07
+Nevada,2024,Total,0.15
+Nevada,2024,Two or more races,0.12
+New Hampshire,2023,American Indian or Alaska Native,NA
+New Hampshire,2023,Asian and Pacific Islander,0.005
+New Hampshire,2023,Black or African American,NA
+New Hampshire,2023,Hispanic or Latino,NA
+New Hampshire,2023,Non-Hispanic White,0.07
+New Hampshire,2023,Total,0.08
+New Hampshire,2023,Two or more races,0.1
+New Hampshire,2024,American Indian or Alaska Native,NA
+New Hampshire,2024,Asian and Pacific Islander,NA
+New Hampshire,2024,Black or African American,NA
+New Hampshire,2024,Hispanic or Latino,NA
+New Hampshire,2024,Non-Hispanic White,0.05
+New Hampshire,2024,Total,0.07
+New Hampshire,2024,Two or more races,0.11
+New Jersey,2023,American Indian or Alaska Native,NA
+New Jersey,2023,Asian and Pacific Islander,0.04
+New Jersey,2023,Black or African American,0.22
+New Jersey,2023,Hispanic or Latino,0.2
+New Jersey,2023,Non-Hispanic White,0.08
+New Jersey,2023,Total,0.13
+New Jersey,2023,Two or more races,0.14
+New Jersey,2024,American Indian or Alaska Native,NA
+New Jersey,2024,Asian and Pacific Islander,0.05
+New Jersey,2024,Black or African American,0.18
+New Jersey,2024,Hispanic or Latino,0.21
+New Jersey,2024,Non-Hispanic White,0.06
+New Jersey,2024,Total,0.12
+New Jersey,2024,Two or more races,0.12
+New Mexico,2023,American Indian or Alaska Native,0.41
+New Mexico,2023,Asian and Pacific Islander,NA
+New Mexico,2023,Black or African American,NA
+New Mexico,2023,Hispanic or Latino,0.28
+New Mexico,2023,Non-Hispanic White,0.12
+New Mexico,2023,Total,0.25
+New Mexico,2023,Two or more races,0.25
+New Mexico,2024,American Indian or Alaska Native,0.31
+New Mexico,2024,Asian and Pacific Islander,NA
+New Mexico,2024,Black or African American,NA
+New Mexico,2024,Hispanic or Latino,0.23
+New Mexico,2024,Non-Hispanic White,0.13
+New Mexico,2024,Total,0.22
+New Mexico,2024,Two or more races,0.21
+New York,2023,American Indian or Alaska Native,NA
+New York,2023,Asian and Pacific Islander,0.18
+New York,2023,Black or African American,0.28
+New York,2023,Hispanic or Latino,0.26
+New York,2023,Non-Hispanic White,0.13
+New York,2023,Total,0.19
+New York,2023,Two or more races,0.18
+New York,2024,American Indian or Alaska Native,NA
+New York,2024,Asian and Pacific Islander,0.16
+New York,2024,Black or African American,0.3
+New York,2024,Hispanic or Latino,0.24
+New York,2024,Non-Hispanic White,0.13
+New York,2024,Total,0.18
+New York,2024,Two or more races,0.15
+North Carolina,2023,American Indian or Alaska Native,NA
+North Carolina,2023,Asian and Pacific Islander,0.13
+North Carolina,2023,Black or African American,0.31
+North Carolina,2023,Hispanic or Latino,0.25
+North Carolina,2023,Non-Hispanic White,0.1
+North Carolina,2023,Total,0.18
+North Carolina,2023,Two or more races,0.18
+North Carolina,2024,American Indian or Alaska Native,0.18
+North Carolina,2024,Asian and Pacific Islander,0.08
+North Carolina,2024,Black or African American,0.26
+North Carolina,2024,Hispanic or Latino,0.27
+North Carolina,2024,Non-Hispanic White,0.09
+North Carolina,2024,Total,0.17
+North Carolina,2024,Two or more races,0.18
+North Dakota,2023,American Indian or Alaska Native,NA
+North Dakota,2023,Asian and Pacific Islander,NA
+North Dakota,2023,Black or African American,NA
+North Dakota,2023,Hispanic or Latino,NA
+North Dakota,2023,Non-Hispanic White,0.06
+North Dakota,2023,Total,0.09
+North Dakota,2023,Two or more races,NA
+North Dakota,2024,American Indian or Alaska Native,NA
+North Dakota,2024,Asian and Pacific Islander,NA
+North Dakota,2024,Black or African American,NA
+North Dakota,2024,Hispanic or Latino,NA
+North Dakota,2024,Non-Hispanic White,0.08
+North Dakota,2024,Total,0.13
+North Dakota,2024,Two or more races,NA
+Ohio,2023,American Indian or Alaska Native,NA
+Ohio,2023,Asian and Pacific Islander,0.14
+Ohio,2023,Black or African American,0.34
+Ohio,2023,Hispanic or Latino,0.24
+Ohio,2023,Non-Hispanic White,0.13
+Ohio,2023,Total,0.18
+Ohio,2023,Two or more races,0.24
+Ohio,2024,American Indian or Alaska Native,NA
+Ohio,2024,Asian and Pacific Islander,0.13
+Ohio,2024,Black or African American,0.34
+Ohio,2024,Hispanic or Latino,0.23
+Ohio,2024,Non-Hispanic White,0.11
+Ohio,2024,Total,0.16
+Ohio,2024,Two or more races,0.24
+Oklahoma,2023,American Indian or Alaska Native,0.23
+Oklahoma,2023,Asian and Pacific Islander,0.15
+Oklahoma,2023,Black or African American,0.43
+Oklahoma,2023,Hispanic or Latino,0.27
+Oklahoma,2023,Non-Hispanic White,0.16
+Oklahoma,2023,Total,0.21
+Oklahoma,2023,Two or more races,0.23
+Oklahoma,2024,American Indian or Alaska Native,0.22
+Oklahoma,2024,Asian and Pacific Islander,NA
+Oklahoma,2024,Black or African American,0.32
+Oklahoma,2024,Hispanic or Latino,0.23
+Oklahoma,2024,Non-Hispanic White,0.14
+Oklahoma,2024,Total,0.19
+Oklahoma,2024,Two or more races,0.21
+Oregon,2023,American Indian or Alaska Native,NA
+Oregon,2023,Asian and Pacific Islander,0.08
+Oregon,2023,Black or African American,NA
+Oregon,2023,Hispanic or Latino,0.21
+Oregon,2023,Non-Hispanic White,0.1
+Oregon,2023,Total,0.14
+Oregon,2023,Two or more races,0.17
+Oregon,2024,American Indian or Alaska Native,NA
+Oregon,2024,Asian and Pacific Islander,0.1
+Oregon,2024,Black or African American,NA
+Oregon,2024,Hispanic or Latino,0.2
+Oregon,2024,Non-Hispanic White,0.1
+Oregon,2024,Total,0.13
+Oregon,2024,Two or more races,0.16
+Pennsylvania,2023,American Indian or Alaska Native,NA
+Pennsylvania,2023,Asian and Pacific Islander,0.1
+Pennsylvania,2023,Black or African American,0.32
+Pennsylvania,2023,Hispanic or Latino,0.28
+Pennsylvania,2023,Non-Hispanic White,0.1
+Pennsylvania,2023,Total,0.16
+Pennsylvania,2023,Two or more races,0.19
+Pennsylvania,2024,American Indian or Alaska Native,NA
+Pennsylvania,2024,Asian and Pacific Islander,0.13
+Pennsylvania,2024,Black or African American,0.3
+Pennsylvania,2024,Hispanic or Latino,0.26
+Pennsylvania,2024,Non-Hispanic White,0.1
+Pennsylvania,2024,Total,0.15
+Pennsylvania,2024,Two or more races,0.2
+Rhode Island,2023,American Indian or Alaska Native,NA
+Rhode Island,2023,Asian and Pacific Islander,NA
+Rhode Island,2023,Black or African American,NA
+Rhode Island,2023,Hispanic or Latino,NA
+Rhode Island,2023,Non-Hispanic White,0.09
+Rhode Island,2023,Total,0.13
+Rhode Island,2023,Two or more races,NA
+Rhode Island,2024,American Indian or Alaska Native,NA
+Rhode Island,2024,Asian and Pacific Islander,NA
+Rhode Island,2024,Black or African American,NA
+Rhode Island,2024,Hispanic or Latino,NA
+Rhode Island,2024,Non-Hispanic White,0.05
+Rhode Island,2024,Total,0.16
+Rhode Island,2024,Two or more races,NA
+South Carolina,2023,American Indian or Alaska Native,NA
+South Carolina,2023,Asian and Pacific Islander,0.07
+South Carolina,2023,Black or African American,0.32
+South Carolina,2023,Hispanic or Latino,0.28
+South Carolina,2023,Non-Hispanic White,0.1
+South Carolina,2023,Total,0.19
+South Carolina,2023,Two or more races,0.24
+South Carolina,2024,American Indian or Alaska Native,NA
+South Carolina,2024,Asian and Pacific Islander,NA
+South Carolina,2024,Black or African American,0.3
+South Carolina,2024,Hispanic or Latino,0.28
+South Carolina,2024,Non-Hispanic White,0.1
+South Carolina,2024,Total,0.18
+South Carolina,2024,Two or more races,0.23
+South Dakota,2023,American Indian or Alaska Native,NA
+South Dakota,2023,Asian and Pacific Islander,NA
+South Dakota,2023,Black or African American,NA
+South Dakota,2023,Hispanic or Latino,NA
+South Dakota,2023,Non-Hispanic White,0.07
+South Dakota,2023,Total,0.15
+South Dakota,2023,Two or more races,NA
+South Dakota,2024,American Indian or Alaska Native,NA
+South Dakota,2024,Asian and Pacific Islander,NA
+South Dakota,2024,Black or African American,NA
+South Dakota,2024,Hispanic or Latino,NA
+South Dakota,2024,Non-Hispanic White,0.05
+South Dakota,2024,Total,0.11
+South Dakota,2024,Two or more races,0.1
+Tennessee,2023,American Indian or Alaska Native,NA
+Tennessee,2023,Asian and Pacific Islander,0.06
+Tennessee,2023,Black or African American,0.35
+Tennessee,2023,Hispanic or Latino,0.28
+Tennessee,2023,Non-Hispanic White,0.14
+Tennessee,2023,Total,0.2
+Tennessee,2023,Two or more races,0.23
+Tennessee,2024,American Indian or Alaska Native,NA
+Tennessee,2024,Asian and Pacific Islander,0.11
+Tennessee,2024,Black or African American,0.35
+Tennessee,2024,Hispanic or Latino,0.3
+Tennessee,2024,Non-Hispanic White,0.13
+Tennessee,2024,Total,0.19
+Tennessee,2024,Two or more races,0.21
+Texas,2023,American Indian or Alaska Native,NA
+Texas,2023,Asian and Pacific Islander,0.1
+Texas,2023,Black or African American,0.26
+Texas,2023,Hispanic or Latino,0.24
+Texas,2023,Non-Hispanic White,0.08
+Texas,2023,Total,0.18
+Texas,2023,Two or more races,0.22
+Texas,2024,American Indian or Alaska Native,0.17
+Texas,2024,Asian and Pacific Islander,0.08
+Texas,2024,Black or African American,0.26
+Texas,2024,Hispanic or Latino,0.23
+Texas,2024,Non-Hispanic White,0.08
+Texas,2024,Total,0.18
+Texas,2024,Two or more races,0.21
+Utah,2023,American Indian or Alaska Native,NA
+Utah,2023,Asian and Pacific Islander,NA
+Utah,2023,Black or African American,NA
+Utah,2023,Hispanic or Latino,0.16
+Utah,2023,Non-Hispanic White,0.06
+Utah,2023,Total,0.09
+Utah,2023,Two or more races,0.12
+Utah,2024,American Indian or Alaska Native,NA
+Utah,2024,Asian and Pacific Islander,0.05
+Utah,2024,Black or African American,NA
+Utah,2024,Hispanic or Latino,0.14
+Utah,2024,Non-Hispanic White,0.07
+Utah,2024,Total,0.09
+Utah,2024,Two or more races,0.09
+Vermont,2023,American Indian or Alaska Native,NA
+Vermont,2023,Asian and Pacific Islander,NA
+Vermont,2023,Black or African American,NA
+Vermont,2023,Hispanic or Latino,NA
+Vermont,2023,Non-Hispanic White,0.09
+Vermont,2023,Total,0.09
+Vermont,2023,Two or more races,0.06
+Vermont,2024,American Indian or Alaska Native,NA
+Vermont,2024,Asian and Pacific Islander,NA
+Vermont,2024,Black or African American,NA
+Vermont,2024,Hispanic or Latino,NA
+Vermont,2024,Non-Hispanic White,0.08
+Vermont,2024,Total,0.09
+Vermont,2024,Two or more races,NA
+Virginia,2023,American Indian or Alaska Native,NA
+Virginia,2023,Asian and Pacific Islander,0.07
+Virginia,2023,Black or African American,0.24
+Virginia,2023,Hispanic or Latino,0.15
+Virginia,2023,Non-Hispanic White,0.08
+Virginia,2023,Total,0.13
+Virginia,2023,Two or more races,0.12
+Virginia,2024,American Indian or Alaska Native,NA
+Virginia,2024,Asian and Pacific Islander,0.06
+Virginia,2024,Black or African American,0.2
+Virginia,2024,Hispanic or Latino,0.17
+Virginia,2024,Non-Hispanic White,0.08
+Virginia,2024,Total,0.12
+Virginia,2024,Two or more races,0.12
+Washington,2023,American Indian or Alaska Native,0.21
+Washington,2023,Asian and Pacific Islander,0.1
+Washington,2023,Black or African American,0.24
+Washington,2023,Hispanic or Latino,0.19
+Washington,2023,Non-Hispanic White,0.08
+Washington,2023,Total,0.12
+Washington,2023,Two or more races,0.15
+Washington,2024,American Indian or Alaska Native,NA
+Washington,2024,Asian and Pacific Islander,0.1
+Washington,2024,Black or African American,NA
+Washington,2024,Hispanic or Latino,0.19
+Washington,2024,Non-Hispanic White,0.08
+Washington,2024,Total,0.11
+Washington,2024,Two or more races,0.13
+West Virginia,2023,American Indian or Alaska Native,NA
+West Virginia,2023,Asian and Pacific Islander,NA
+West Virginia,2023,Black or African American,NA
+West Virginia,2023,Hispanic or Latino,0.12
+West Virginia,2023,Non-Hispanic White,0.18
+West Virginia,2023,Total,0.2
+West Virginia,2023,Two or more races,NA
+West Virginia,2024,American Indian or Alaska Native,NA
+West Virginia,2024,Asian and Pacific Islander,NA
+West Virginia,2024,Black or African American,NA
+West Virginia,2024,Hispanic or Latino,NA
+West Virginia,2024,Non-Hispanic White,0.2
+West Virginia,2024,Total,0.22
+West Virginia,2024,Two or more races,NA
+Wisconsin,2023,American Indian or Alaska Native,0.27
+Wisconsin,2023,Asian and Pacific Islander,0.16
+Wisconsin,2023,Black or African American,0.32
+Wisconsin,2023,Hispanic or Latino,0.23
+Wisconsin,2023,Non-Hispanic White,0.08
+Wisconsin,2023,Total,0.13
+Wisconsin,2023,Two or more races,0.19
+Wisconsin,2024,American Indian or Alaska Native,NA
+Wisconsin,2024,Asian and Pacific Islander,0.15
+Wisconsin,2024,Black or African American,0.38
+Wisconsin,2024,Hispanic or Latino,0.18
+Wisconsin,2024,Non-Hispanic White,0.07
+Wisconsin,2024,Total,0.12
+Wisconsin,2024,Two or more races,0.14
+Wyoming,2023,American Indian or Alaska Native,NA
+Wyoming,2023,Asian and Pacific Islander,NA
+Wyoming,2023,Black or African American,NA
+Wyoming,2023,Hispanic or Latino,NA
+Wyoming,2023,Non-Hispanic White,0.14
+Wyoming,2023,Total,0.15
+Wyoming,2023,Two or more races,0.15
+Wyoming,2024,American Indian or Alaska Native,NA
+Wyoming,2024,Asian and Pacific Islander,NA
+Wyoming,2024,Black or African American,NA
+Wyoming,2024,Hispanic or Latino,NA
+Wyoming,2024,Non-Hispanic White,0.09
+Wyoming,2024,Total,0.1
+Wyoming,2024,Two or more races,NA
