@@ -1,6 +1,6 @@
 ---
 title: "Week 06"
-subtitle: "Intro to Pandas and Data Warn"
+subtitle: "Intro to Pandas and Data Wrangling"
 description: ""
 author: "Rebecca A. Johnson"
 date: "10/01/2026"
