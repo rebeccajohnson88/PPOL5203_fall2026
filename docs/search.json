@@ -485,7 +485,7 @@
     "href": "slides/week-3.html#what-happens-upon-assignment",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "What happens upon assignment?",
-    "text": "What happens upon assignment?\n\nAction 1: A reference is assigned to an object, with an id number in memory\n\nid(x)\n\n140379932518800"
+    "text": "What happens upon assignment?\n\nAction 1: A reference is assigned to an object, with an id number in memory\n\nid(x)\n\n140276182215056"
   },
   {
     "objectID": "slides/week-3.html#section-2",
@@ -835,7 +835,7 @@
     "href": "slides/week-4.html#zip-function-example",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Zip function: example",
-    "text": "Zip function: example\n\nteams =  [\"Giants\", \"Commanders\", \"Eagles\", \"Jets\"]\nresults = [1, 0, 1, 1]\nteam_w_results = zip(teams, results)\nteam_w_results\n\n## list comprehension over the combined zip\n[item for item in team_w_results]\n\n&lt;zip at 0x7f8a8a0ab780&gt;\n\n\n[('Giants', 1), ('Commanders', 0), ('Eagles', 1), ('Jets', 1)]"
+    "text": "Zip function: example\n\nteams =  [\"Giants\", \"Commanders\", \"Eagles\", \"Jets\"]\nresults = [1, 0, 1, 1]\nteam_w_results = zip(teams, results)\nteam_w_results\n\n## list comprehension over the combined zip\n[item for item in team_w_results]\n\n&lt;zip at 0x7f95ea0923c0&gt;\n\n\n[('Giants', 1), ('Commanders', 0), ('Eagles', 1), ('Jets', 1)]"
   },
   {
     "objectID": "slides/week-4.html#zip-function-example-1",
@@ -1712,7 +1712,7 @@
     "href": "slides/week-6.html#subsetting-rows-and-columns-simultaneously-1",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Subsetting rows and columns simultaneously",
-    "text": "Subsetting rows and columns simultaneously\nThis is where value of loc comes in; see error without\n\n## throws error\ndf[(df.Year == 2021) & (df.State == \"California\"),\n[\"State\", \"Year\", \"Race\"]]\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)\n   3628             try:\n-&gt; 3629                 return self._engine.get_loc(casted_key)\n   3630             except KeyError as err:\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()\n\nTypeError: '(0       False\n1       False\n2       False\n3       False\n4       False\n        ...  \n1709    False\n1710    False\n1711    False\n1712    False\n1713    False\nLength: 1714, dtype: bool, ['State', 'Year', 'Race'])' is an invalid key\n\nDuring handling of the above exception, another exception occurred:\n\nInvalidIndexError                         Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_2939/2067952100.py in &lt;module&gt;\n      1 ## throws error\n----&gt; 2 df[(df.Year == 2021) & (df.State == \"California\"),\n      3 [\"State\", \"Year\", \"Race\"]]\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py in __getitem__(self, key)\n   3503             if self.columns.nlevels &gt; 1:\n   3504                 return self._getitem_multilevel(key)\n-&gt; 3505             indexer = self.columns.get_loc(key)\n   3506             if is_integer(indexer):\n   3507                 indexer = [indexer]\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)\n   3634                 #  InvalidIndexError. Otherwise we fall through and re-raise\n   3635                 #  the TypeError.\n-&gt; 3636                 self._check_indexing_error(key)\n   3637                 raise\n   3638 \n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in _check_indexing_error(self, key)\n   5649             # if key is not a scalar, directly raise an error (the code below\n   5650             # would convert to numpy arrays and raise later any way) - GH29926\n-&gt; 5651             raise InvalidIndexError(key)\n   5652 \n   5653     @cache_readonly\n\nInvalidIndexError: (0       False\n1       False\n2       False\n3       False\n4       False\n        ...  \n1709    False\n1710    False\n1711    False\n1712    False\n1713    False\nLength: 1714, dtype: bool, ['State', 'Year', 'Race'])"
+    "text": "Subsetting rows and columns simultaneously\nThis is where value of loc comes in; see error without\n\n## throws error\ndf[(df.Year == 2021) & (df.State == \"California\"),\n[\"State\", \"Year\", \"Race\"]]\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)\n   3628             try:\n-&gt; 3629                 return self._engine.get_loc(casted_key)\n   3630             except KeyError as err:\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()\n\nTypeError: '(0       False\n1       False\n2       False\n3       False\n4       False\n        ...  \n1709    False\n1710    False\n1711    False\n1712    False\n1713    False\nLength: 1714, dtype: bool, ['State', 'Year', 'Race'])' is an invalid key\n\nDuring handling of the above exception, another exception occurred:\n\nInvalidIndexError                         Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_3313/2067952100.py in &lt;module&gt;\n      1 ## throws error\n----&gt; 2 df[(df.Year == 2021) & (df.State == \"California\"),\n      3 [\"State\", \"Year\", \"Race\"]]\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py in __getitem__(self, key)\n   3503             if self.columns.nlevels &gt; 1:\n   3504                 return self._getitem_multilevel(key)\n-&gt; 3505             indexer = self.columns.get_loc(key)\n   3506             if is_integer(indexer):\n   3507                 indexer = [indexer]\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)\n   3634                 #  InvalidIndexError. Otherwise we fall through and re-raise\n   3635                 #  the TypeError.\n-&gt; 3636                 self._check_indexing_error(key)\n   3637                 raise\n   3638 \n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in _check_indexing_error(self, key)\n   5649             # if key is not a scalar, directly raise an error (the code below\n   5650             # would convert to numpy arrays and raise later any way) - GH29926\n-&gt; 5651             raise InvalidIndexError(key)\n   5652 \n   5653     @cache_readonly\n\nInvalidIndexError: (0       False\n1       False\n2       False\n3       False\n4       False\n        ...  \n1709    False\n1710    False\n1711    False\n1712    False\n1713    False\nLength: 1714, dtype: bool, ['State', 'Year', 'Race'])"
   },
   {
     "objectID": "slides/week-6.html#query-offers-similarities-to-dplyrs-filter",
@@ -1768,7 +1768,7 @@
     "href": "slides/week-6.html#creating-variables-assign-method-as-similar-to-mutate-in-dplyr",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Creating variables: assign method as similar to mutate in dplyr",
-    "text": "Creating variables: assign method as similar to mutate in dplyr\nKey advantage is we can create multiple variables in the same assign statement\n\ndf = (df.assign(state_lower = df.State.str.lower(),\n        year_category = np.where(df.Year &lt; 2020, \n        \"Pre Covid\", \"During or post COVID\")))\ndf[['State', 'state_lower', 'Year', 'year_category']].sample(n = 5)\n\n\n\n\n\n\n\n\nState\nstate_lower\nYear\nyear_category\n\n\n\n\n964\nVermont\nvermont\n2024\nDuring or post COVID\n\n\n218\nConnecticut\nconnecticut\n2018\nPre Covid\n\n\n333\nKansas\nkansas\n2017\nPre Covid\n\n\n185\nIllinois\nillinois\n2018\nPre Covid\n\n\n150\nMaryland\nmaryland\n2018\nPre Covid"
+    "text": "Creating variables: assign method as similar to mutate in dplyr\nKey advantage is we can create multiple variables in the same assign statement\n\ndf = (df.assign(state_lower = df.State.str.lower(),\n        year_category = np.where(df.Year &lt; 2020, \n        \"Pre Covid\", \"During or post COVID\")))\ndf[['State', 'state_lower', 'Year', 'year_category']].sample(n = 5)\n\n\n\n\n\n\n\n\nState\nstate_lower\nYear\nyear_category\n\n\n\n\n155\nMaine\nmaine\n2018\nPre Covid\n\n\n1042\nOregon\noregon\n2019\nPre Covid\n\n\n1519\nRhode Island\nrhode island\n2023\nDuring or post COVID\n\n\n1352\nMississippi\nmississippi\n2021\nDuring or post COVID\n\n\n775\nCalifornia\ncalifornia\n2024\nDuring or post COVID"
   },
   {
     "objectID": "slides/week-6.html#recoding-variables",
@@ -1831,7 +1831,7 @@
     "href": "slides/week-6.html#illustration-grouping-by-raceethnicity-across-all-states",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Illustration: grouping by race/ethnicity (across all states)",
-    "text": "Illustration: grouping by race/ethnicity (across all states)\n\ndf_raceeth = df.groupby(\"Race\")\ndf_raceeth\n\n&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fcc12a09d00&gt;"
+    "text": "Illustration: grouping by race/ethnicity (across all states)\n\ndf_raceeth = df.groupby(\"Race\")\ndf_raceeth\n\n&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fbe101a3a00&gt;"
   },
   {
     "objectID": "slides/week-6.html#iterating-over-groups",
@@ -1929,7 +1929,7 @@
     "href": "slides/week-6.html#what-if-we-want-to-keep-the-shape-of-the-dataframe-and-add-a-grouped-aggregation-result-as-a-new-column",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "What if we want to keep the shape of the dataframe and add a grouped aggregation result as a new column?",
-    "text": "What if we want to keep the shape of the dataframe and add a grouped aggregation result as a new column?\nCan use the assign function we learned earlier for variable creation and combine it with the transform function\nExample: keep all rows in the data; add the average nationwide uninsurance rate for each racial/ethnic group as an additional column\n\ndf_wavg = (df.assign(raceeth_avg = \n        df.groupby('Race')['uninsured_rate'].transform(\"mean\")))\ndf_wavg[['State', 'Year', \n        'Race', 'uninsured_rate', 'raceeth_avg']].sample(n = 5)\n\n\n\n\n\n\n\n\nState\nYear\nRace\nuninsured_rate\nraceeth_avg\n\n\n\n\n348\nMaine\n2017\nHispanic or Latino\n0.02\n0.082812\n\n\n794\nGeorgia\n2024\nBlack or African American\n0.06\n0.040833\n\n\n795\nGeorgia\n2024\nHispanic or Latino\n0.18\n0.082812\n\n\n1372\nNew Jersey\n2021\nBlack or African American\n0.03\n0.040833\n\n\n330\nKansas\n2017\nTwo or more races\n0.06\n0.048389"
+    "text": "What if we want to keep the shape of the dataframe and add a grouped aggregation result as a new column?\nCan use the assign function we learned earlier for variable creation and combine it with the transform function\nExample: keep all rows in the data; add the average nationwide uninsurance rate for each racial/ethnic group as an additional column\n\ndf_wavg = (df.assign(raceeth_avg = \n        df.groupby('Race')['uninsured_rate'].transform(\"mean\")))\ndf_wavg[['State', 'Year', \n        'Race', 'uninsured_rate', 'raceeth_avg']].sample(n = 5)\n\n\n\n\n\n\n\n\nState\nYear\nRace\nuninsured_rate\nraceeth_avg\n\n\n\n\n549\nSouth Carolina\n2022\nAsian and Pacific Islander\n0.04\n0.042774\n\n\n114\nNebraska\n2018\nNon-Hispanic White\n0.04\n0.040200\n\n\n1346\nMississippi\n2021\nHispanic or Latino\n0.13\n0.082812\n\n\n416\nNorth Carolina\n2017\nTwo or more races\n0.03\n0.048389\n\n\n123\nMissouri\n2018\nNon-Hispanic White\n0.06\n0.040200"
   },
   {
     "objectID": "slides/week-6.html#in-class-activity-3",
@@ -1950,7 +1950,7 @@
     "href": "slides/week-5.html#the-full-library-and-its-functions",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "The full library and its functions",
-    "text": "The full library and its functions\n\n\n# import library\nimport math\n\n# access methods from the library\nmath.pi\n\n3.141592653589793\n\n\n\n\n# this will throw you an error\npi\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_3033/767399446.py in &lt;module&gt;\n      1 # this will throw you an error\n----&gt; 2 pi\n\nNameError: name 'pi' is not defined"
+    "text": "The full library and its functions\n\n\n# import library\nimport math\n\n# access methods from the library\nmath.pi\n\n3.141592653589793\n\n\n\n\n# this will throw you an error\npi\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_3383/767399446.py in &lt;module&gt;\n      1 # this will throw you an error\n----&gt; 2 pi\n\nNameError: name 'pi' is not defined"
   },
   {
     "objectID": "slides/week-5.html#the-full-library-with-an-alias",
@@ -2083,14 +2083,14 @@
     "href": "slides/week-5.html#creating-arrays-not-using-lists",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Creating arrays not using lists",
-    "text": "Creating arrays not using lists\n\nCan also create arrays with certain content. Some examples:\n\n\n## creating a 3x3 array filled with 1s\nnp.ones((3,3))\n\n## creating a 3x3 array filled with random numbers between 0 and 1\nnp.random.random((3, 3))\n\n## creating a 3x3 array filled with random integers\n## from a pre-defined interval (in this case, 1 through 10)\nnp.random.randint(1, 10, (3, 3))\n\narray([[1., 1., 1.],\n       [1., 1., 1.],\n       [1., 1., 1.]])\n\n\narray([[0.46776865, 0.67805972, 0.42987552],\n       [0.23985265, 0.96240419, 0.2230134 ],\n       [0.25204635, 0.18010351, 0.21471232]])\n\n\narray([[7, 4, 2],\n       [2, 5, 1],\n       [5, 4, 1]])"
+    "text": "Creating arrays not using lists\n\nCan also create arrays with certain content. Some examples:\n\n\n## creating a 3x3 array filled with 1s\nnp.ones((3,3))\n\n## creating a 3x3 array filled with random numbers between 0 and 1\nnp.random.random((3, 3))\n\n## creating a 3x3 array filled with random integers\n## from a pre-defined interval (in this case, 1 through 10)\nnp.random.randint(1, 10, (3, 3))\n\narray([[1., 1., 1.],\n       [1., 1., 1.],\n       [1., 1., 1.]])\n\n\narray([[0.32815426, 0.16651456, 0.36205471],\n       [0.05323327, 0.21440897, 0.06905964],\n       [0.80193171, 0.95301337, 0.28133612]])\n\n\narray([[5, 8, 9],\n       [9, 2, 9],\n       [5, 6, 6]])"
   },
   {
     "objectID": "slides/week-5.html#what-are-some-attributes-of-arrays",
     "href": "slides/week-5.html#what-are-some-attributes-of-arrays",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "What are some attributes of arrays?",
-    "text": "What are some attributes of arrays?\n\nnumpy.dim: tells us the number of dimensions\nnumpy.shape: tells us the size of each dimension\nnumpy.size: tells us the full size of a array\n\n\n# generate an array\nX = np.random.randint(0, 100, (5, 5))\nX\n\n# information\nprint(\"ndim: \", X.ndim)\nprint(\"shape:\", X.shape)\nprint(\"size: \", X.size)\n\narray([[98, 93, 84, 97, 76],\n       [45,  1, 54, 90,  1],\n       [51, 61, 54, 55,  1],\n       [ 7,  6, 20, 25, 40],\n       [67, 19, 94, 91, 79]])\n\n\nndim:  2\nshape: (5, 5)\nsize:  25"
+    "text": "What are some attributes of arrays?\n\nnumpy.dim: tells us the number of dimensions\nnumpy.shape: tells us the size of each dimension\nnumpy.size: tells us the full size of a array\n\n\n# generate an array\nX = np.random.randint(0, 100, (5, 5))\nX\n\n# information\nprint(\"ndim: \", X.ndim)\nprint(\"shape:\", X.shape)\nprint(\"size: \", X.size)\n\narray([[82, 99, 40, 23, 54],\n       [51, 20, 42, 75, 16],\n       [85, 77, 83, 53, 62],\n       [53, 71, 76, 35, 94],\n       [57, 72, 50, 34, 77]])\n\n\nndim:  2\nshape: (5, 5)\nsize:  25"
   },
   {
     "objectID": "slides/week-5.html#array-indexing-and-slicing",
@@ -2104,7 +2104,7 @@
     "href": "slides/week-5.html#example-indexing",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Example indexing",
-    "text": "Example indexing\n\nX\n# index first row \nX[0] \n\n# index first column\nX[:,0]\n\n# index a specific cell \nX[0,0] \n\n# slice rows and columns\nX[0:3,0:3] \n\n# last row\nX[-1,:] \n\narray([[98, 93, 84, 97, 76],\n       [45,  1, 54, 90,  1],\n       [51, 61, 54, 55,  1],\n       [ 7,  6, 20, 25, 40],\n       [67, 19, 94, 91, 79]])\n\n\narray([98, 93, 84, 97, 76])\n\n\narray([98, 45, 51,  7, 67])\n\n\n98\n\n\narray([[98, 93, 84],\n       [45,  1, 54],\n       [51, 61, 54]])\n\n\narray([67, 19, 94, 91, 79])"
+    "text": "Example indexing\n\nX\n# index first row \nX[0] \n\n# index first column\nX[:,0]\n\n# index a specific cell \nX[0,0] \n\n# slice rows and columns\nX[0:3,0:3] \n\n# last row\nX[-1,:] \n\narray([[82, 99, 40, 23, 54],\n       [51, 20, 42, 75, 16],\n       [85, 77, 83, 53, 62],\n       [53, 71, 76, 35, 94],\n       [57, 72, 50, 34, 77]])\n\n\narray([82, 99, 40, 23, 54])\n\n\narray([82, 51, 85, 53, 57])\n\n\n82\n\n\narray([[82, 99, 40],\n       [51, 20, 42],\n       [85, 77, 83]])\n\n\narray([57, 72, 50, 34, 77])"
   },
   {
     "objectID": "slides/week-5.html#reassignment",
@@ -2132,35 +2132,35 @@
     "href": "slides/week-5.html#reassignment-based-on-conditional-statements",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Reassignment based on conditional statements",
-    "text": "Reassignment based on conditional statements\n\nD = np.random.randn(50).reshape(10,5).round(1)\nD\n\nD[D &gt; 0] = 1\nprint(D)\n\narray([[ 1.6,  0.6,  0.2,  0.7,  0.1],\n       [-0.1, -1.4, -1.7,  1.9,  0.9],\n       [ 0.5,  2.1, -0.8,  0.6, -0.2],\n       [ 0.8, -0.2,  1.5, -0.4,  1.4],\n       [ 0.2,  0.8, -0.7, -1.4, -0.5],\n       [ 0.4,  0.3, -0.8, -2.1, -0.6],\n       [-2.1,  0.1,  0.9,  0.4, -0.6],\n       [-0.4,  0.4,  0.6, -1.1,  1.4],\n       [-1.4, -1.2,  0. , -0.7, -0.9],\n       [-0.3,  0.8, -0.2, -0.3,  2.5]])\n\n\n[[ 1.   1.   1.   1.   1. ]\n [-0.1 -1.4 -1.7  1.   1. ]\n [ 1.   1.  -0.8  1.  -0.2]\n [ 1.  -0.2  1.  -0.4  1. ]\n [ 1.   1.  -0.7 -1.4 -0.5]\n [ 1.   1.  -0.8 -2.1 -0.6]\n [-2.1  1.   1.   1.  -0.6]\n [-0.4  1.   1.  -1.1  1. ]\n [-1.4 -1.2  0.  -0.7 -0.9]\n [-0.3  1.  -0.2 -0.3  1. ]]"
+    "text": "Reassignment based on conditional statements\n\nD = np.random.randn(50).reshape(10,5).round(1)\nD\n\nD[D &gt; 0] = 1\nprint(D)\n\narray([[ 0.4,  0.5,  0.2,  1.1,  0.2],\n       [-0.2, -0.8, -1.9,  0.2,  1.3],\n       [ 1.3, -0.5, -2.3, -0.6,  0.6],\n       [ 0.2, -0.7,  0.1,  1.2, -0.3],\n       [ 0.6,  1. ,  1. ,  0.6, -2. ],\n       [-0.5,  0.8, -0.4, -1.4,  0.6],\n       [-0.2,  0.7,  0.2,  1.9, -2. ],\n       [-0.1, -0.3,  0.6,  1.3, -2.2],\n       [-0.5,  0.6, -1.5, -0.1, -1.8],\n       [-1.6, -0.6,  0.1, -1.1, -0.7]])\n\n\n[[ 1.   1.   1.   1.   1. ]\n [-0.2 -0.8 -1.9  1.   1. ]\n [ 1.  -0.5 -2.3 -0.6  1. ]\n [ 1.  -0.7  1.   1.  -0.3]\n [ 1.   1.   1.   1.  -2. ]\n [-0.5  1.  -0.4 -1.4  1. ]\n [-0.2  1.   1.   1.  -2. ]\n [-0.1 -0.3  1.   1.  -2.2]\n [-0.5  1.  -1.5 -0.1 -1.8]\n [-1.6 -0.6  1.  -1.1 -0.7]]"
   },
   {
     "objectID": "slides/week-5.html#reassignment-based-on-conditional-statements-1",
     "href": "slides/week-5.html#reassignment-based-on-conditional-statements-1",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Reassignment based on conditional statements",
-    "text": "Reassignment based on conditional statements\n\nD[D &lt;=0 ] =0\nprint(D)\n\n[[1. 1. 1. 1. 1.]\n [0. 0. 0. 1. 1.]\n [1. 1. 0. 1. 0.]\n [1. 0. 1. 0. 1.]\n [1. 1. 0. 0. 0.]\n [1. 1. 0. 0. 0.]\n [0. 1. 1. 1. 0.]\n [0. 1. 1. 0. 1.]\n [0. 0. 0. 0. 0.]\n [0. 1. 0. 0. 1.]]"
+    "text": "Reassignment based on conditional statements\n\nD[D &lt;=0 ] =0\nprint(D)\n\n[[1. 1. 1. 1. 1.]\n [0. 0. 0. 1. 1.]\n [1. 0. 0. 0. 1.]\n [1. 0. 1. 1. 0.]\n [1. 1. 1. 1. 0.]\n [0. 1. 0. 0. 1.]\n [0. 1. 1. 1. 0.]\n [0. 0. 1. 1. 0.]\n [0. 1. 0. 0. 0.]\n [0. 0. 1. 0. 0.]]"
   },
   {
     "objectID": "slides/week-5.html#np.where-streamlines-this-conditional-reassignment",
     "href": "slides/week-5.html#np.where-streamlines-this-conditional-reassignment",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "np.where streamlines this conditional reassignment",
-    "text": "np.where streamlines this conditional reassignment\n\nD = np.random.randn(50).reshape(10,5).round(1) # Generate some random numbers again\nD # Before \nnp.where(D&gt;0,1,0) # After\n\narray([[-0.9, -0.6, -0.6,  1.7, -0.1],\n       [ 0.4, -0.9,  0.2, -0.5,  0.3],\n       [-0.2,  0.9, -0.7,  0.8,  0.9],\n       [ 1.4,  0.1, -1.2, -3.1,  0.6],\n       [ 1.8,  1.3, -0.2, -0.7, -0.9],\n       [-0.6,  1.5, -0.7,  1.3,  1.5],\n       [-0.8,  0.7,  1. , -0.8,  2.1],\n       [-1.7,  0.4,  0.7,  2.2,  0.3],\n       [ 0. ,  0.2, -0.9,  0.6,  0.1],\n       [-0.1, -0.6, -0. , -1.4,  0.1]])\n\n\narray([[0, 0, 0, 1, 0],\n       [1, 0, 1, 0, 1],\n       [0, 1, 0, 1, 1],\n       [1, 1, 0, 0, 1],\n       [1, 1, 0, 0, 0],\n       [0, 1, 0, 1, 1],\n       [0, 1, 1, 0, 1],\n       [0, 1, 1, 1, 1],\n       [0, 1, 0, 1, 1],\n       [0, 0, 0, 0, 1]])"
+    "text": "np.where streamlines this conditional reassignment\n\nD = np.random.randn(50).reshape(10,5).round(1) # Generate some random numbers again\nD # Before \nnp.where(D&gt;0,1,0) # After\n\narray([[-0.8, -0. , -1.9, -0.2,  0.3],\n       [-0.4, -1.2,  0.1, -0.4, -1.8],\n       [-0.8,  0.2, -0.8,  0.2,  0.4],\n       [-1.2, -1. , -0.9,  1.6, -0.5],\n       [ 0.1,  0.1, -0.8,  0.6,  0.5],\n       [-0.3,  0.1,  0. ,  0.4, -0.7],\n       [-0.2, -1.3, -1.2,  1.5, -1. ],\n       [-0.3, -1.1, -0.2, -0.9, -1. ],\n       [-1.6,  0.6,  2.1,  1.3,  1.1],\n       [-0. ,  0.2, -0.2,  0.2, -0.1]])\n\n\narray([[0, 0, 0, 0, 1],\n       [0, 0, 1, 0, 0],\n       [0, 1, 0, 1, 1],\n       [0, 0, 0, 1, 0],\n       [1, 1, 0, 1, 1],\n       [0, 1, 0, 1, 0],\n       [0, 0, 0, 1, 0],\n       [0, 0, 0, 0, 0],\n       [0, 1, 1, 1, 1],\n       [0, 1, 0, 1, 0]])"
   },
   {
     "objectID": "slides/week-5.html#one-warning-with-slicing-and-reassignment-need-to-explicitly-copy-array-to-avoid-modifying-original",
     "href": "slides/week-5.html#one-warning-with-slicing-and-reassignment-need-to-explicitly-copy-array-to-avoid-modifying-original",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "One warning with slicing and reassignment: need to explicitly copy array to avoid modifying original",
-    "text": "One warning with slicing and reassignment: need to explicitly copy array to avoid modifying original\n\nX = np.random.randint(0, 100, (1, 5))\n\n# slice\nX_sub = X[:3]\n\n# modify\nX_sub[0][0] = 3000\n\n# print\nprint(X, X_sub)\n\n[[3000   99   48   58   53]] [[3000   99   48   58   53]]"
+    "text": "One warning with slicing and reassignment: need to explicitly copy array to avoid modifying original\n\nX = np.random.randint(0, 100, (1, 5))\n\n# slice\nX_sub = X[:3]\n\n# modify\nX_sub[0][0] = 3000\n\n# print\nprint(X, X_sub)\n\n[[3000   67    9   32   53]] [[3000   67    9   32   53]]"
   },
   {
     "objectID": "slides/week-5.html#how-to-avoid-add-an-explicit-copy",
     "href": "slides/week-5.html#how-to-avoid-add-an-explicit-copy",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "How to avoid: add an explicit copy",
-    "text": "How to avoid: add an explicit copy\n\nX = np.random.randint(0, 100, (1, 5))\n\n# slice.copy()\nX_sub = X[:3].copy()\n\n# modify\nX_sub[0][0] = 1000\n\n# print\nprint(X, X_sub)\n\n[[78 24  0 25 90]] [[1000   24    0   25   90]]"
+    "text": "How to avoid: add an explicit copy\n\nX = np.random.randint(0, 100, (1, 5))\n\n# slice.copy()\nX_sub = X[:3].copy()\n\n# modify\nX_sub[0][0] = 1000\n\n# print\nprint(X, X_sub)\n\n[[30 61 45 65 85]] [[1000   61   45   65   85]]"
   },
   {
     "objectID": "slides/week-5.html#concatenating-and-splitting-arrays",
@@ -2174,21 +2174,21 @@
     "href": "slides/week-5.html#example-applications",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Example applications",
-    "text": "Example applications\n\n# create arrays\nX = np.random.randint(0, 100, (5, 2))\nY = np.random.randint(0, 100, (5, 2))\n\nX\nY\n\narray([[76, 18],\n       [ 9,  3],\n       [47, 82],\n       [20, 25],\n       [23, 10]])\n\n\narray([[54, 62],\n       [37, 16],\n       [90, 88],\n       [55, 95],\n       [23, 81]])"
+    "text": "Example applications\n\n# create arrays\nX = np.random.randint(0, 100, (5, 2))\nY = np.random.randint(0, 100, (5, 2))\n\nX\nY\n\narray([[43, 54],\n       [34, 62],\n       [74, 15],\n       [76, 90],\n       [75, 30]])\n\n\narray([[17, 63],\n       [70,  5],\n       [22, 12],\n       [38, 87],\n       [53, 91]])"
   },
   {
     "objectID": "slides/week-5.html#rowbind-vertically-stack",
     "href": "slides/week-5.html#rowbind-vertically-stack",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Rowbind / vertically stack",
-    "text": "Rowbind / vertically stack\n\nnp.concatenate([X,Y],axis=0)\n\narray([[76, 18],\n       [ 9,  3],\n       [47, 82],\n       [20, 25],\n       [23, 10],\n       [54, 62],\n       [37, 16],\n       [90, 88],\n       [55, 95],\n       [23, 81]])"
+    "text": "Rowbind / vertically stack\n\nnp.concatenate([X,Y],axis=0)\n\narray([[43, 54],\n       [34, 62],\n       [74, 15],\n       [76, 90],\n       [75, 30],\n       [17, 63],\n       [70,  5],\n       [22, 12],\n       [38, 87],\n       [53, 91]])"
   },
   {
     "objectID": "slides/week-5.html#column-bind-horizontally-combine",
     "href": "slides/week-5.html#column-bind-horizontally-combine",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Column bind / horizontally combine",
-    "text": "Column bind / horizontally combine\n\n# cbind\nnp.concatenate([X,Y],axis=1)\n\narray([[76, 18, 54, 62],\n       [ 9,  3, 37, 16],\n       [47, 82, 90, 88],\n       [20, 25, 55, 95],\n       [23, 10, 23, 81]])"
+    "text": "Column bind / horizontally combine\n\n# cbind\nnp.concatenate([X,Y],axis=1)\n\narray([[43, 54, 17, 63],\n       [34, 62, 70,  5],\n       [74, 15, 22, 12],\n       [76, 90, 38, 87],\n       [75, 30, 53, 91]])"
   },
   {
     "objectID": "slides/week-5.html#broadcasting",
