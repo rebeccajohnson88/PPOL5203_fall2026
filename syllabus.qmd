@@ -165,7 +165,7 @@ The follow schedule lays out when each assignment will be assigned.
 |:----------:|:-------------:|:-------------------------------:|
 |   No. 1    |    Week 2     | Wednesday September 16th 11:59 PM   |
 |   No. 2    |    Thursday September 23rd     | Wednesday October 7th 11:59 PM  |
-|   No. 3    |    TBD    | TBD  |
+|   No. 3    |    Thursday October 8th    | Wednesday October 21st at 11:59 PM  |
 |   No. 4    |    TBD     | TBD |
 |   No. 5    |    TBD    | TBD |
 
