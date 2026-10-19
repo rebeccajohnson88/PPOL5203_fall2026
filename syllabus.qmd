@@ -131,7 +131,7 @@ Every class will involve some lecture time, and some coding time. The coding tim
 
 **Problem Sets** (40%):
 
-Students will be assigned five problem sets over the course of the semesters. While you are encouraged to discuss the problem sets with your peers and/or consult online resources, **the finished product must be your own work**. The goal of the assignment is to reinforce the student's comprehension of the materials covered in each section.
+Students will be assigned four problem sets over the course of the semesters. While you are encouraged to discuss the problem sets with your peers and/or consult online resources, **the finished product must be your own work**. The goal of the assignment is to reinforce the student's comprehension of the materials covered in each section.
 
 The problems sets will assess your ability to apply the concepts to data that is substantially messier, and problems that are substantially more difficult, than the ones in the coding discussion in class.
 
@@ -167,7 +167,6 @@ The follow schedule lays out when each assignment will be assigned.
 |   No. 2    |    Thursday September 23rd     | Wednesday October 7th 11:59 PM  |
 |   No. 3    |    Thursday October 8th    | Wednesday October 21st at 11:59 PM  |
 |   No. 4    |    TBD     | TBD |
-|   No. 5    |    TBD    | TBD |
 
 **In-class Python Exam (15%):** for problem sets and the final project, as noted below, LLMs can be used as a resource similar to Google. To ensure mastery of the material without the assistance of LLMs, we will have a short, in-class Python exam following the Week 11 conclusion of the Python content. This will either be by hand or on a computer without LLM use. This exam will be easily completed if you have engaged with the material and written code yourself throughout the semester.
 
