@@ -1,0 +1,2723 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.5.56">
+
+  <meta name="author" content="Professor: Rebecca Johnson">
+  <title> PPOL 5203 - Data Science I: Foundations </title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title"><span style="font-size: 100%;"> PPOL 5203 - Data Science I: Foundations </span></h1>
+  <p class="subtitle"><span style="font-size: 100%;"> Week 9: Acquiring data via APIs and scraping</span></p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Professor: Rebecca Johnson 
+</div>
+</div>
+</div>
+
+</section>
+<section>
+<section id="plans-for-today" class="title-slide slide level1 center">
+<h1>Plans for Today</h1>
+<ul>
+<li><p>Three routes to acquiring data</p></li>
+<li><p>APIs: terminology and basics</p></li>
+<li><p>APIs in practice: three examples</p>
+<ul>
+<li>No credentials and no wrapper (NAEP data API)</li>
+<li>Credentials and no wrapper (Yelp API)</li>
+<li>Credentials and a wrapper (Census API via the <code>census</code> package)</li>
+</ul></li>
+<li><p>Scraping static websites with <code>requests</code> and <code>BeautifulSoup</code></p></li>
+</ul>
+</section>
+<section id="setup" class="slide level2 center">
+<h2>Setup</h2>
+<div id="70a787ca" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests                  <span class="co"># for calling APIs and downloading websites</span></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yaml                      <span class="co"># for loading credentials</span></span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup    <span class="co"># for parsing html</span></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time                      <span class="co"># to put the system to sleep</span></span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random                    <span class="co"># for random numbers</span></span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re                        <span class="co"># regular expressions</span></span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_columns'</span>, <span class="va">None</span>)</span>
+<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-13"><a aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"ignore"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="acquiring-data" class="title-slide slide level1 center" data-background-color="#447099">
+<h1>Acquiring data</h1>
+
+</section>
+<section id="three-general-routes-to-acquiring-data" class="slide level2 center">
+<h2>Three general routes to acquiring data</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><strong>Exists already</strong></p>
+<p>csv or excel data like we’ve been working with for problem sets</p>
+</div><div class="column" style="width:35%;">
+<p><strong>API</strong></p>
+<p>Use code (rather than point and click) to create data or flat files; most relevant for “high-velocity” data that changes frequently (e.g., social media posts; job postings)</p>
+</div><div class="column" style="width:35%;">
+<p><strong>Scraping</strong></p>
+<p>APIs are a “front door” to a website: developers provide an easy way to get content but also set limits (what content you can get; how much you can pull in a given period)</p>
+<p>Scraping is a “back door” for when there’s no API or when we need content beyond the structured fields the API returns</p>
+</div></div>
+</section>
+<section id="why-go-through-the-effort-to-use-data-that-doesnt-exist-already" class="slide level2 center">
+<h2>Why go through the effort to use data that doesn’t exist already?</h2>
+<ul>
+<li><p>Guarantees that you’re working with original data <span class="math inline">\(\implies\)</span> research question is likely novel</p></li>
+<li><p>Study rapidly changing phenomena missed in static flat files</p></li>
+<li><p><strong>Rule of thumb:</strong> if you can use an API to access a dataset, that’s where you will want to go — APIs are developed by the data owners, so they’re often more secure, practical, and organized than scraping</p></li>
+</ul>
+</section></section>
+<section>
+<section id="apis-terminology-and-basics" class="title-slide slide level1 center" data-background-color="#447099">
+<h1>APIs: terminology and basics</h1>
+
+</section>
+<section id="terminology" class="slide level2 center">
+<h2>Terminology</h2>
+<ul>
+<li><p><strong>API:</strong> application programming interface; a way to ask an app or website for something and get something in return</p></li>
+<li><p><strong>Call the API:</strong> sending a request for something to the API</p></li>
+<li><p><strong>Response:</strong> a message back telling us <em>whether</em> we got something back or whether the call returned an error</p></li>
+<li><p><strong>JSON:</strong> if we get something back, it’s often stored in <code>json</code> format — a text string with a structure similar to the <em>data structure</em> of a dictionary; pretty easy to convert to a <code>pandas</code> DataFrame</p></li>
+<li><p><strong>Wrapper:</strong> a language-specific module or package that simplifies calling an API from that language (e.g., <code>census</code> is a Python wrapper for the Census Bureau’s API)</p></li>
+</ul>
+</section>
+<section id="three-examples-well-walk-through" class="slide level2 center">
+<h2>Three examples we’ll walk through</h2>
+<ul>
+<li>API with no credentials and no wrapper (NAEP data API)</li>
+<li>API with credentials and no wrapper (Yelp API)</li>
+<li>API with credentials and a wrapper (Census API via the <code>census</code> package)</li>
+</ul>
+</section></section>
+<section>
+<section id="example-1-api-with-no-credentials-and-no-wrapper-naep" class="title-slide slide level1 center" data-background-color="#447099">
+<h1>Example 1: API with no credentials and no wrapper (NAEP)</h1>
+
+</section>
+<section id="naep-in-the-news" class="slide level2 center">
+<h2>NAEP in the news</h2>
+<div style="text-align: center;">
+<p><img data-src="week9_figs/naep1.png" style="width:60.0%"></p>
+<p><img data-src="week9_figs/naep2.png" style="width:60.0%"></p>
+<p><img data-src="week9_figs/naep3.png" style="width:60.0%"></p>
+</div>
+</section>
+<section id="high-level-overview-of-steps-apis-that-dont-need-credentials" class="slide level2 center scrollable">
+<h2>High-level overview of steps: APIs that don’t need credentials</h2>
+<ol type="1">
+<li>Construct a query that tells the API what we want to pull</li>
+<li>Use <code>requests.get(querystring)</code> to call the API</li>
+<li>Examine the response: a message from the API telling us whether it returned something</li>
+<li>If the response returned something, extract the content of the response and make it usable</li>
+</ol>
+</section>
+<section id="step-1-construct-a-query" class="slide level2 center">
+<h2>Step 1: construct a query</h2>
+<p><strong>Generic example:</strong></p>
+<p><span style="color:#9932CC;">https://baseurl.com/</span><span style="color:red;">onething=something&amp;</span><span style="color:blue;">anotherthing=somethingelse</span></p>
+<p><strong>Specific NAEP example</strong> (wrap in parentheses to split the string across lines):</p>
+<div id="8836ee37" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>example_naep_query <span class="op">=</span> (</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'https://www.nationsreportcard.gov/'</span></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'Dataservice/GetAdhocData.aspx?'</span></span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'type=data&amp;subject=writing&amp;grade=8&amp;'</span></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'subscale=WRIRP&amp;variable=GENDER&amp;'</span></span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'jurisdiction=NP&amp;stattype=MN:MN&amp;'</span></span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'Year=2011'</span>)</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>example_naep_query</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="140">
+<pre><code>'https://www.nationsreportcard.gov/Dataservice/GetAdhocData.aspx?type=data&amp;subject=writing&amp;grade=8&amp;subscale=WRIRP&amp;variable=GENDER&amp;jurisdiction=NP&amp;stattype=MN:MN&amp;Year=2011'</code></pre>
+</div>
+</div>
+<p><strong>Breaking things down:</strong></p>
+<ul>
+<li><code>nationsreportcard...GetAdhocData.aspx?</code>: the “base url” we add parameters to</li>
+<li><code>subject</code>: type of parameter</li>
+<li><code>subject=writing</code>: specific value for that parameter (error if we feed it a subject that doesn’t exist)</li>
+<li>And so on…</li>
+</ul>
+</section>
+<section id="step-2-call-the-api" class="slide level2 center">
+<h2>Step 2: call the API</h2>
+<div id="bc487e8e" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## use requests.get to call the API</span></span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>naep_resp <span class="op">=</span> requests.get(example_naep_query)</span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">## examine the response</span></span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>naep_resp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="141">
+<pre><code>&lt;Response [200]&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="steps-3-4-if-the-response-indicates-something-usable-extract-content" class="slide level2 center">
+<h2>Steps 3-4: if the response indicates something usable, extract content</h2>
+<div id="e6779218" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## we got a usable response, so get json of status and result</span></span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>naep_resp_j <span class="op">=</span> naep_resp.json()</span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>naep_resp_j.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="142">
+<pre><code>dict_keys(['status', 'serviceVersion', 'dwellTimeMS', 'avgWebHostCPUTotalLoad', 'dataHitType', 'Source', 'result'])</code></pre>
+</div>
+</div>
+<div id="1071985e" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## extract contents in 'result' key</span></span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## and convert to dataframe</span></span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>naep_resp_d <span class="op">=</span> pd.DataFrame(naep_resp_j[<span class="st">'result'</span>])</span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a>naep_resp_d[[<span class="st">'year'</span>, <span class="st">'jurisLabel'</span>, <span class="st">'variableLabel'</span>, <span class="st">'varValueLabel'</span>, <span class="st">'value'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="143">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">jurisLabel</th>
+<th data-quarto-table-cell-role="th">variableLabel</th>
+<th data-quarto-table-cell-role="th">varValueLabel</th>
+<th data-quarto-table-cell-role="th">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2011</td>
+<td>National public</td>
+<td>Sex</td>
+<td>Male</td>
+<td>139.099505</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2011</td>
+<td>National public</td>
+<td>Sex</td>
+<td>Female</td>
+<td>158.567105</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="what-do-i-mean-by-no-wrapper" class="slide level2 center">
+<h2>What do I mean by “no wrapper”?</h2>
+<ul>
+<li>We write a query to request something from the API</li>
+<li>While the request syntax differs across languages, the query is the same — e.g., could use the same query and run the <code>R</code> code below to get the content</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="do">## packages</span></span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr)</span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a><span class="do">## ping API</span></span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a>return_q <span class="ot">=</span> <span class="fu">GET</span>(example_naep_query)</span>
+<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a><span class="do">## get data from that ping</span></span>
+<span id="cb9-9"><a aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">fromJSON</span>(<span class="fu">rawToChar</span>(return_q<span class="sc">$</span>content))<span class="sc">$</span>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="in-class-activity" class="slide level2 center" data-background-color="#449998">
+<h2>In-class activity</h2>
+<p>See Activity 1 in notebook</p>
+</section></section>
+<section>
+<section id="example-2-api-with-credentials-and-no-wrapper-yelp" class="title-slide slide level1 center" data-background-color="#447099">
+<h1>Example 2: API with credentials and no wrapper (Yelp)</h1>
+
+</section>
+<section id="what-changes-about-the-general-steps" class="slide level2 center scrollable">
+<h2>What changes about the general steps?</h2>
+<ol type="1">
+<li><span style="color:#9932CC;"><strong>Acquire credentials for the API:</strong> these may be an API key (single string) or a client ID and secret (strings); can store in a <code>yaml</code> credentials file</span></li>
+<li>Construct a query that tells the API what we want to pull</li>
+<li><span style="color:#9932CC;"><strong>Two paths:</strong></span>
+<ol type="a">
+<li><strong>Use credentials to authenticate and then call the API:</strong> we’ll see an example of this with the Census API/wrapper</li>
+<li><strong>Feed the API your credentials when you call it:</strong> we’ll see an example of this with Yelp</li>
+</ol></li>
+<li>Examine the response: a message from the API telling us whether it returned something</li>
+<li>If the response returned something, extract the content of the response and make it usable</li>
+</ol>
+</section>
+<section id="step-1-acquire-credentials" class="slide level2 center">
+<h2>Step 1: acquire credentials</h2>
+<ul>
+<li>Varies across APIs, but generally involves going to the “developer’s portal,” creating an account, and obtaining credentials</li>
+<li>Examples:
+<ul>
+<li>Google developer’s console (e.g., geocoding API; maps API): <a href="https://console.cloud.google.com" class="uri">https://console.cloud.google.com</a></li>
+<li>Facebook: <a href="https://developers.facebook.com/docs/development" class="uri">https://developers.facebook.com/docs/development</a></li>
+<li>Census Bureau: <a href="https://api.census.gov/data/key_signup.html" class="uri">https://api.census.gov/data/key_signup.html</a></li>
+<li>Yelp: <a href="https://business.yelp.com/data/products/fusion/" class="uri">https://business.yelp.com/data/products/fusion/</a></li>
+</ul></li>
+<li>Terminology is a bit odd for social science applications: you often set up “an application” to get credentials, even though we’re usually doing a one-way pull of data rather than developing an app</li>
+</ul>
+</section>
+<section id="step-1-store-those-credentials-somewhere" class="slide level2 center">
+<h2>Step 1: store those credentials somewhere</h2>
+<ul>
+<li>Your key or client ID/secret are meant to be unique to you, like a password, so you generally shouldn’t print them in code</li>
+<li>Can use any text editor to make a <code>yaml</code> file (structured similar to a dictionary); screenshot below with fake credentials</li>
+</ul>
+<div style="text-align: center;">
+<p><img data-src="week9_figs/yaml_example.png" style="width:40.0%"></p>
+</div>
+</section>
+<section id="step-1-load-the-file-with-credentials" class="slide level2 center">
+<h2>Step 1: load the file with credentials</h2>
+<div id="fb4b4680" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## load creds</span></span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"../creds.yaml"</span>, <span class="st">'r'</span>) <span class="im">as</span> stream:</span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a>        creds <span class="op">=</span> yaml.safe_load(stream)</span>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> yaml.YAMLError <span class="im">as</span> exc:</span>
+<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(exc)</span>
+<span id="cb10-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">## can then get the relevant key</span></span>
+<span id="cb10-9"><a aria-hidden="true" tabindex="-1"></a>API_KEY <span class="op">=</span> creds[<span class="st">'yelp_api'</span>][<span class="st">'api_key'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="step-2-construct-a-query" class="slide level2 center">
+<h2>Step 2: construct a query</h2>
+<ul>
+<li>Same process as before</li>
+<li>Focus on the <strong>Yelp Fusion API</strong>.</li>
+<li>We’ll initially rfocus on focus on Business Search, since that returns a Yelp-specific ID: <a href="https://docs.developer.yelp.com/reference/v3_business_search">documentation</a></li>
+</ul>
+</section>
+<section id="step-2-construct-a-query-1" class="slide level2 center">
+<h2>Step 2: construct a query</h2>
+<div id="0aa97315" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## defining inputs</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>base_url <span class="op">=</span> <span class="st">"https://api.yelp.com/v3/businesses/search?"</span></span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>my_name <span class="op">=</span> <span class="st">"restaurants"</span></span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a>my_location <span class="op">=</span> <span class="st">"Washington,DC,20001"</span></span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">## combining them into a query</span></span>
+<span id="cb11-7"><a aria-hidden="true" tabindex="-1"></a>yelp_genquery <span class="op">=</span> (</span>
+<span id="cb11-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'</span><span class="sc">{base_url}</span><span class="st">'</span></span>
+<span id="cb11-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'term=</span><span class="sc">{name}</span><span class="st">'</span></span>
+<span id="cb11-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'&amp;location=</span><span class="sc">{loc}</span><span class="st">'</span>).<span class="bu">format</span>(</span>
+<span id="cb11-11"><a aria-hidden="true" tabindex="-1"></a>            base_url <span class="op">=</span> base_url,</span>
+<span id="cb11-12"><a aria-hidden="true" tabindex="-1"></a>            name <span class="op">=</span> my_name,</span>
+<span id="cb11-13"><a aria-hidden="true" tabindex="-1"></a>            loc <span class="op">=</span> my_location)</span>
+<span id="cb11-14"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a aria-hidden="true" tabindex="-1"></a>yelp_genquery</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="145">
+<pre><code>'https://api.yelp.com/v3/businesses/search?term=restaurants&amp;location=Washington,DC,20001'</code></pre>
+</div>
+</div>
+</section>
+<section id="step-3-authenticate-and-call-the-api" class="slide level2 center">
+<h2>Step 3: authenticate and call the API</h2>
+<p>For Yelp, we feed a dictionary with our key directly into the <code>get</code> call via the optional <code>headers</code> parameter; for other APIs, we sometimes authenticate in a separate step</p>
+<div id="2d272259" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## construct my http header dict</span></span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>header <span class="op">=</span> {<span class="st">'Authorization'</span>: <span class="ss">f'Bearer </span><span class="sc">{</span>API_KEY<span class="sc">}</span><span class="ss">'</span>}</span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">## call the API</span></span>
+<span id="cb13-5"><a aria-hidden="true" tabindex="-1"></a>yelp_genresp <span class="op">=</span> requests.get(yelp_genquery, headers <span class="op">=</span> header)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Output of a successful call:</strong></p>
+<pre><code>&lt;Response [200]&gt;</code></pre>
+<p><strong>Output of an unsuccessful call:</strong></p>
+<pre><code>&lt;Response [400]&gt;</code></pre>
+</section>
+<section id="step-4-if-output-successful-make-results-usable" class="slide level2 center">
+<h2>Step 4: if output successful, make results usable</h2>
+<div id="8b160cfc" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>yelp_genjson <span class="op">=</span> yelp_genresp.json()</span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>yelp_genjson[<span class="st">'businesses'</span>][<span class="dv">0</span>:<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="147">
+<pre><code>[{'id': 'kVCCVqIikApTuD_SGHBwHg',
+  'alias': 'unconventional-diner-washington-3',
+  'name': 'Unconventional Diner',
+  'image_url': 'https://s3-media0.fl.yelpcdn.com/bphoto/N80epEa-4oW3DcLTrigv0A/o.jpg',
+  'is_closed': False,
+  'url': 'https://www.yelp.com/biz/unconventional-diner-washington-3?adjust_creative=fZtFlUvyaR-hVIafscUD-Q&amp;utm_campaign=yelp_api_v3&amp;utm_medium=api_v3_business_search&amp;utm_source=fZtFlUvyaR-hVIafscUD-Q',
+  'review_count': 3512,
+  'categories': [{'alias': 'breakfast_brunch', 'title': 'Breakfast &amp; Brunch'},
+   {'alias': 'venues', 'title': 'Venues &amp; Event Spaces'},
+   {'alias': 'sandwiches', 'title': 'Sandwiches'}],
+  'rating': 4.4,
+  'coordinates': {'latitude': 38.906139, 'longitude': -77.0238},
+  'transactions': ['delivery', 'pickup'],
+  'price': '$$',
+  'location': {'address1': '1207 9th St NW',
+   'address2': '',
+   'address3': '',
+   'city': 'Washington, DC',
+   'zip_code': '20001',
+   'country': 'US',
+   'state': 'DC',
+   'display_address': ['1207 9th St NW', 'Washington, DC 20001']},
+  'phone': '+12028470122',
+  'display_phone': '(202) 847-0122',
+  'distance': 687.569910611279,
+  'business_hours': [{'open': [{'is_overnight': False,
+      'start': '0700',
+      'end': '2200',
+      'day': 0},
+     {'is_overnight': False, 'start': '0700', 'end': '2200', 'day': 1},
+     {'is_overnight': False, 'start': '0700', 'end': '2200', 'day': 2},
+     {'is_overnight': False, 'start': '0700', 'end': '2200', 'day': 3},
+     {'is_overnight': False, 'start': '0700', 'end': '2200', 'day': 4},
+     {'is_overnight': False, 'start': '0700', 'end': '2200', 'day': 5},
+     {'is_overnight': False, 'start': '0700', 'end': '2200', 'day': 6}],
+    'hours_type': 'REGULAR',
+    'is_open_now': True}],
+  'attributes': {'menu_url': 'http://unconventionaldiner.com'}},
+ {'id': 'j9qYRR8HCXm_GEnetijOGA',
+  'alias': 'le-diplomate-washington',
+  'name': 'Le Diplomate',
+  'image_url': 'https://s3-media0.fl.yelpcdn.com/bphoto/NIzlZ6HK-w_KvjjDl7rZew/o.jpg',
+  'is_closed': False,
+  'url': 'https://www.yelp.com/biz/le-diplomate-washington?adjust_creative=fZtFlUvyaR-hVIafscUD-Q&amp;utm_campaign=yelp_api_v3&amp;utm_medium=api_v3_business_search&amp;utm_source=fZtFlUvyaR-hVIafscUD-Q',
+  'review_count': 5835,
+  'categories': [{'alias': 'french', 'title': 'French'},
+   {'alias': 'breakfast_brunch', 'title': 'Breakfast &amp; Brunch'},
+   {'alias': 'cocktailbars', 'title': 'Cocktail Bars'},
+   {'alias': 'french', 'title': 'French'},
+   {'alias': 'breakfast_brunch', 'title': 'Breakfast &amp; Brunch'},
+   {'alias': 'cocktailbars', 'title': 'Cocktail Bars'},
+   {'alias': 'french', 'title': 'French'},
+   {'alias': 'breakfast_brunch', 'title': 'Breakfast &amp; Brunch'},
+   {'alias': 'cocktailbars', 'title': 'Cocktail Bars'}],
+  'rating': 4.3,
+  'coordinates': {'latitude': 38.91135, 'longitude': -77.03157},
+  'transactions': ['delivery', 'pickup'],
+  'price': '$$$',
+  'location': {'address1': '1601 14th St NW',
+   'address2': '',
+   'address3': '',
+   'city': 'Washington, DC',
+   'zip_code': '20009',
+   'country': 'US',
+   'state': 'DC',
+   'display_address': ['1601 14th St NW', 'Washington, DC 20009']},
+  'phone': '+12023323333',
+  'display_phone': '(202) 332-3333',
+  'distance': 1223.3869582711193,
+  'business_hours': [{'open': [{'is_overnight': False,
+      'start': '1130',
+      'end': '2300',
+      'day': 0},
+     {'is_overnight': False, 'start': '1130', 'end': '2300', 'day': 1},
+     {'is_overnight': False, 'start': '1130', 'end': '2300', 'day': 2},
+     {'is_overnight': False, 'start': '1130', 'end': '2300', 'day': 3},
+     {'is_overnight': False, 'start': '1130', 'end': '0000', 'day': 4},
+     {'is_overnight': False, 'start': '0930', 'end': '0000', 'day': 5},
+     {'is_overnight': False, 'start': '0930', 'end': '2300', 'day': 6}],
+    'hours_type': 'REGULAR',
+    'is_open_now': True}],
+  'attributes': {'menu_url': 'https://lediplomatedc.com/#menus'}}]</code></pre>
+</div>
+</div>
+<p>The <code>businesses</code> key of the json has a dictionary for each business, but with some nesting to deal with variable lengths (e.g., within <code>location</code>: <code>address1</code>, <code>address2</code>, etc.) that might produce odd things when we convert to a DataFrame</p>
+</section>
+<section id="two-approaches-to-step-4" class="slide level2 center">
+<h2>Two approaches to step 4</h2>
+<p><strong>Approach 1:</strong> more automatic conversion that leaves nested fields as lists/dictionaries</p>
+<div id="2ee66889" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>yelp_gendf <span class="op">=</span> pd.DataFrame(yelp_genjson[<span class="st">'businesses'</span>])</span>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>yelp_gendf.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="148">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">alias</th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">image_url</th>
+<th data-quarto-table-cell-role="th">is_closed</th>
+<th data-quarto-table-cell-role="th">url</th>
+<th data-quarto-table-cell-role="th">review_count</th>
+<th data-quarto-table-cell-role="th">categories</th>
+<th data-quarto-table-cell-role="th">rating</th>
+<th data-quarto-table-cell-role="th">coordinates</th>
+<th data-quarto-table-cell-role="th">transactions</th>
+<th data-quarto-table-cell-role="th">price</th>
+<th data-quarto-table-cell-role="th">location</th>
+<th data-quarto-table-cell-role="th">phone</th>
+<th data-quarto-table-cell-role="th">display_phone</th>
+<th data-quarto-table-cell-role="th">distance</th>
+<th data-quarto-table-cell-role="th">business_hours</th>
+<th data-quarto-table-cell-role="th">attributes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>kVCCVqIikApTuD_SGHBwHg</td>
+<td>unconventional-diner-washington-3</td>
+<td>Unconventional Diner</td>
+<td>https://s3-media0.fl.yelpcdn.com/bphoto/N80epE...</td>
+<td>False</td>
+<td>https://www.yelp.com/biz/unconventional-diner-...</td>
+<td>3512</td>
+<td>[{'alias': 'breakfast_brunch', 'title': 'Break...</td>
+<td>4.4</td>
+<td>{'latitude': 38.906139, 'longitude': -77.0238}</td>
+<td>[delivery, pickup]</td>
+<td>$$</td>
+<td>{'address1': '1207 9th St NW', 'address2': '',...</td>
+<td>+12028470122</td>
+<td>(202) 847-0122</td>
+<td>687.569911</td>
+<td>[{'open': [{'is_overnight': False, 'start': '0...</td>
+<td>{'menu_url': 'http://unconventionaldiner.com'}</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>j9qYRR8HCXm_GEnetijOGA</td>
+<td>le-diplomate-washington</td>
+<td>Le Diplomate</td>
+<td>https://s3-media0.fl.yelpcdn.com/bphoto/NIzlZ6...</td>
+<td>False</td>
+<td>https://www.yelp.com/biz/le-diplomate-washingt...</td>
+<td>5835</td>
+<td>[{'alias': 'french', 'title': 'French'}, {'ali...</td>
+<td>4.3</td>
+<td>{'latitude': 38.91135, 'longitude': -77.03157}</td>
+<td>[delivery, pickup]</td>
+<td>$$$</td>
+<td>{'address1': '1601 14th St NW', 'address2': ''...</td>
+<td>+12023323333</td>
+<td>(202) 332-3333</td>
+<td>1223.386958</td>
+<td>[{'open': [{'is_overnight': False, 'start': '1...</td>
+<td>{'menu_url': 'https://lediplomatedc.com/#menus'}</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>uDeOuGCBMFgGE0c5WjxH1g</td>
+<td>gypsy-kitchen-dc-washington</td>
+<td>Gypsy Kitchen DC</td>
+<td>https://s3-media0.fl.yelpcdn.com/bphoto/CNNAw4...</td>
+<td>False</td>
+<td>https://www.yelp.com/biz/gypsy-kitchen-dc-wash...</td>
+<td>1061</td>
+<td>[{'alias': 'tapasmallplates', 'title': 'Tapas/...</td>
+<td>4.3</td>
+<td>{'latitude': 38.91488, 'longitude': -77.03155}</td>
+<td>[delivery, pickup]</td>
+<td>$$</td>
+<td>{'address1': '1825 14th St NW', 'address2': ''...</td>
+<td>+12027650500</td>
+<td>(202) 765-0500</td>
+<td>1324.244080</td>
+<td>[{'open': [{'is_overnight': False, 'start': '1...</td>
+<td>{'menu_url': 'https://www.gypsykitchendc.com/m...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="two-approaches-to-step-4-1" class="slide level2 center">
+<h2>Two approaches to step 4</h2>
+<p><strong>Approach 2:</strong> only retaining columns that are already strings</p>
+<p>Can also make more complicated function that formats specific, non-string keys like the business hours to a more intuitive column format</p>
+<div id="143d8f1a" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> clean_yelp_json(one_biz):</span>
+<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="co">## restrict to str cols</span></span>
+<span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a>    d_str <span class="op">=</span> {key:value <span class="cf">for</span> key, value <span class="kw">in</span> one_biz.items() <span class="cf">if</span> <span class="bu">type</span>(value) <span class="op">==</span> <span class="bu">str</span>}</span>
+<span id="cb19-4"><a aria-hidden="true" tabindex="-1"></a>    df_str <span class="op">=</span> pd.DataFrame(d_str, index <span class="op">=</span> [d_str[<span class="st">'id'</span>]])</span>
+<span id="cb19-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(df_str)</span>
+<span id="cb19-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a aria-hidden="true" tabindex="-1"></a>yelp_stronly <span class="op">=</span> [clean_yelp_json(one_b)</span>
+<span id="cb19-8"><a aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> one_b <span class="kw">in</span> yelp_genjson[<span class="st">'businesses'</span>]]</span>
+<span id="cb19-9"><a aria-hidden="true" tabindex="-1"></a>yelp_stronly_df <span class="op">=</span> pd.concat(yelp_stronly)</span>
+<span id="cb19-10"><a aria-hidden="true" tabindex="-1"></a>yelp_stronly_df.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="149">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">alias</th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">image_url</th>
+<th data-quarto-table-cell-role="th">url</th>
+<th data-quarto-table-cell-role="th">price</th>
+<th data-quarto-table-cell-role="th">phone</th>
+<th data-quarto-table-cell-role="th">display_phone</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">kVCCVqIikApTuD_SGHBwHg</td>
+<td>kVCCVqIikApTuD_SGHBwHg</td>
+<td>unconventional-diner-washington-3</td>
+<td>Unconventional Diner</td>
+<td>https://s3-media0.fl.yelpcdn.com/bphoto/N80epE...</td>
+<td>https://www.yelp.com/biz/unconventional-diner-...</td>
+<td>$$</td>
+<td>+12028470122</td>
+<td>(202) 847-0122</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">j9qYRR8HCXm_GEnetijOGA</td>
+<td>j9qYRR8HCXm_GEnetijOGA</td>
+<td>le-diplomate-washington</td>
+<td>Le Diplomate</td>
+<td>https://s3-media0.fl.yelpcdn.com/bphoto/NIzlZ6...</td>
+<td>https://www.yelp.com/biz/le-diplomate-washingt...</td>
+<td>$$$</td>
+<td>+12023323333</td>
+<td>(202) 332-3333</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">uDeOuGCBMFgGE0c5WjxH1g</td>
+<td>uDeOuGCBMFgGE0c5WjxH1g</td>
+<td>gypsy-kitchen-dc-washington</td>
+<td>Gypsy Kitchen DC</td>
+<td>https://s3-media0.fl.yelpcdn.com/bphoto/CNNAw4...</td>
+<td>https://www.yelp.com/biz/gypsy-kitchen-dc-wash...</td>
+<td>$$</td>
+<td>+12027650500</td>
+<td>(202) 765-0500</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="in-class-activity-1" class="slide level2 center" data-background-color="#449998">
+<h2>In-class activity</h2>
+<p>See Activity 2 in notebook</p>
+</section></section>
+<section>
+<section id="example-3-api-with-credentials-and-a-wrapper-census" class="title-slide slide level1 center" data-background-color="#447099">
+<h1>Example 3: API with credentials and a wrapper (Census)</h1>
+
+</section>
+<section id="why-census-data" class="slide level2 center">
+<h2>Why Census data?</h2>
+<ul>
+<li>The <strong>American Community Survey (ACS)</strong> is the Census Bureau’s ongoing survey of ~3.5 million addresses per year; it’s the main source of detailed data on income, poverty, housing, education, language, and more</li>
+<li>Available for many <strong>geographies</strong>: nation, states, counties, census tracts, and smaller</li>
+<li>Used to allocate federal funding, draw districts, and in countless policy evaluations — and it’s a very common “right-hand side” dataset to merge onto your own data</li>
+<li>Two common versions:
+<ul>
+<li><strong>ACS 1-year:</strong> more current, but only for areas with 65,000+ people</li>
+<li><strong>ACS 5-year:</strong> pooled over five years; available down to small geographies like tracts</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-census-api-and-the-census-wrapper" class="slide level2 center scrollable">
+<h2>The Census API and the <code>census</code> wrapper</h2>
+<ul>
+<li><strong>API:</strong> <a href="https://api.census.gov" class="uri">https://api.census.gov</a> — requires a free API key</li>
+<li><strong>Wrapper:</strong> the <a href="https://pypi.org/project/census/"><code>census</code> package</a> (developed by DataMade)</li>
+<li>Recall our earlier steps for NAEP and Yelp:
+<ol type="1">
+<li>Set up credentials (where relevant)</li>
+<li>Constructed a query based on the API documentation</li>
+<li>Used <code>requests.get(query)</code> to call the API</li>
+<li>Got a response</li>
+<li>Extracted the content of the response and turned it into usable data</li>
+</ol></li>
+<li>The wrapper simplifies <span style="color:#9932CC;"><strong>steps 2-5</strong></span>: instead of a long query string, we call methods that name the dataset and geography we want, and get back data that’s easy to convert to a DataFrame</li>
+<li><strong>Downside:</strong> we need to learn the wrapper’s methods (but this is often easier than constructing queries ourselves)</li>
+</ul>
+</section>
+<section id="step-1-acquire-and-store-credentials" class="slide level2 center">
+<h2>Step 1: acquire and store credentials</h2>
+<ul>
+<li>Request a key here: <a href="https://api.census.gov/data/key_signup.html" class="uri">https://api.census.gov/data/key_signup.html</a> — it arrives by email; you need to click the link in the email to activate it</li>
+<li>Add it to your <code>yaml</code> credentials file, e.g.:</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">census_api</span><span class="kw">:</span></span>
+<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">api_key</span><span class="kw">:</span><span class="at"> </span><span class="st">'YOUR_KEY_HERE'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Load it the same way as the Yelp key:</li>
+</ul>
+<div id="ab39a6ca" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"../creds.yaml"</span>, <span class="st">'r'</span>) <span class="im">as</span> stream:</span>
+<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a>    creds <span class="op">=</span> yaml.safe_load(stream)</span>
+<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a aria-hidden="true" tabindex="-1"></a>CENSUS_KEY <span class="op">=</span> creds[<span class="st">'census_api'</span>][<span class="st">'api_key'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="step-2-find-the-variables-you-want" class="slide level2 center">
+<h2>Step 2: find the variables you want</h2>
+<ul>
+<li>ACS variables have codes like <code>B19013_001E</code>:
+<ul>
+<li><code>B19013</code>: the table (median household income)</li>
+<li><code>_001</code>: the line within the table</li>
+<li><code>E</code>: estimate (vs.&nbsp;<code>M</code> for margin of error)</li>
+</ul></li>
+<li>Search the variable list for a dataset and year: <a href="https://api.census.gov/data/2024/acs/acs5/variables.html" class="uri">https://api.census.gov/data/2024/acs/acs5/variables.html</a></li>
+<li>Some variables we’ll use:</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>NAME</code></td>
+<td style="text-align: left;">Name of the geography</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>B01003_001E</code></td>
+<td style="text-align: left;">Total population</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>B19013_001E</code></td>
+<td style="text-align: left;">Median household income</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>B17001_001E</code></td>
+<td style="text-align: left;">Population for whom poverty status is determined</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>B17001_002E</code></td>
+<td style="text-align: left;">Population with income below the poverty level</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="without-a-wrapper-same-structure-as-naep" class="slide level2 center">
+<h2>Without a wrapper: same structure as NAEP</h2>
+<div id="fd359970" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## construct the query</span></span>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a>census_query <span class="op">=</span> (</span>
+<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'https://api.census.gov/data/2024/acs/acs5?'</span></span>
+<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'get=NAME,B19013_001E&amp;'</span></span>
+<span id="cb22-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'for=county:*&amp;in=state:24&amp;'</span></span>
+<span id="cb22-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'key=</span><span class="sc">{</span>CENSUS_KEY<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb22-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">## call the API</span></span>
+<span id="cb22-9"><a aria-hidden="true" tabindex="-1"></a>census_resp <span class="op">=</span> requests.get(census_query)</span>
+<span id="cb22-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">## the json is a list of lists; the first list is the column names</span></span>
+<span id="cb22-12"><a aria-hidden="true" tabindex="-1"></a>census_json <span class="op">=</span> census_resp.json()</span>
+<span id="cb22-13"><a aria-hidden="true" tabindex="-1"></a>md_income_raw <span class="op">=</span> pd.DataFrame(census_json[<span class="dv">1</span>:], columns <span class="op">=</span> census_json[<span class="dv">0</span>])</span>
+<span id="cb22-14"><a aria-hidden="true" tabindex="-1"></a>md_income_raw.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="151">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">NAME</th>
+<th data-quarto-table-cell-role="th">B19013_001E</th>
+<th data-quarto-table-cell-role="th">state</th>
+<th data-quarto-table-cell-role="th">county</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Allegany County, Maryland</td>
+<td>59603</td>
+<td>24</td>
+<td>001</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Anne Arundel County, Maryland</td>
+<td>124911</td>
+<td>24</td>
+<td>003</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Baltimore County, Maryland</td>
+<td>91768</td>
+<td>24</td>
+<td>005</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Calvert County, Maryland</td>
+<td>133922</td>
+<td>24</td>
+<td>009</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Caroline County, Maryland</td>
+<td>68457</td>
+<td>24</td>
+<td>011</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="without-a-wrapper-same-structure-as-naep-1" class="slide level2 center">
+<h2>Without a wrapper: same structure as NAEP</h2>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## construct the query</span></span>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>census_query <span class="op">=</span> (</span>
+<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'https://api.census.gov/data/2024/acs/acs5?'</span></span>
+<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'get=NAME,B19013_001E&amp;'</span></span>
+<span id="cb23-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'for=county:*&amp;in=state:24&amp;'</span></span>
+<span id="cb23-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'key=</span><span class="sc">{</span>CENSUS_KEY<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Notice that the query has to encode the <strong>dataset</strong> (<code>2024/acs/acs5</code>), the <strong>variables</strong> (<code>get=</code>), and the <strong>geography</strong> (<code>for=</code> and <code>in=</code>)</li>
+<li>Values come back as strings, so we’d still need to convert them to numbers</li>
+</ul>
+</section>
+<section id="with-a-wrapper-install-and-connect" class="slide level2 center">
+<h2>With a wrapper: install and connect</h2>
+<div id="064a58f7" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> census <span class="im">import</span> Census</span>
+<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> us <span class="im">import</span> states</span>
+<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">## use the key to create a connection to the API</span></span>
+<span id="cb24-5"><a aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> Census(CENSUS_KEY)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><code>Census(CENSUS_KEY)</code>: creates a client object that stores our key, so we don’t need to add it to each call</li>
+<li><code>us</code>: a helper package with state names and FIPS codes (e.g., <code>states.MD.fips</code> returns <code>'24'</code>)</li>
+<li>The client has an attribute for each dataset, e.g.&nbsp;<code>c.acs5</code>, <code>c.acs1</code>, <code>c.acs5dp</code> (data profiles), and <code>c.pl</code> (redistricting data)</li>
+<li>Each dataset has methods for each geography, e.g.&nbsp;<code>.state()</code>, <code>.state_county()</code>, <code>.state_county_tract()</code></li>
+</ul>
+</section>
+<section id="same-query-as-before-using-the-wrapper" class="slide level2 center">
+<h2>Same query as before, using the wrapper</h2>
+<div id="79938697" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a>md_income <span class="op">=</span> c.acs5.state_county(fields <span class="op">=</span> (<span class="st">'NAME'</span>, <span class="st">'B19013_001E'</span>),</span>
+<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a>                                state_fips <span class="op">=</span> states.MD.fips,</span>
+<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a>                                county_fips <span class="op">=</span> Census.ALL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Breaking things down:</strong></p>
+<ul>
+<li><code>c.acs5</code>: the dataset (ACS 5-year; defaults to the most recent year)</li>
+<li><code>.state_county()</code>: the geography (counties within a state)</li>
+<li><code>fields</code>: tuple of variables we want</li>
+<li><code>state_fips</code>: which state</li>
+<li><code>county_fips = Census.ALL</code>: all counties in that state (<code>Census.ALL</code> is the wrapper’s version of <code>*</code> in the raw query)</li>
+</ul>
+</section>
+<section id="same-query-as-before-using-the-wrapper-1" class="slide level2 center">
+<h2>Same query as before, using the wrapper</h2>
+<div id="878bbbbf" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>md_income_df <span class="op">=</span> pd.DataFrame(md_income)</span>
+<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a>md_income_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="154">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">NAME</th>
+<th data-quarto-table-cell-role="th">B19013_001E</th>
+<th data-quarto-table-cell-role="th">state</th>
+<th data-quarto-table-cell-role="th">county</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Allegany County, Maryland</td>
+<td>59603.0</td>
+<td>24</td>
+<td>001</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Anne Arundel County, Maryland</td>
+<td>124911.0</td>
+<td>24</td>
+<td>003</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Baltimore County, Maryland</td>
+<td>91768.0</td>
+<td>24</td>
+<td>005</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Calvert County, Maryland</td>
+<td>133922.0</td>
+<td>24</td>
+<td>009</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Caroline County, Maryland</td>
+<td>68457.0</td>
+<td>24</td>
+<td>011</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<ul>
+<li>Returns a list of dictionaries (one per county) that converts directly to a DataFrame</li>
+</ul>
+</section>
+<section id="examples-of-three-things-we-can-do" class="slide level2 center scrollable">
+<h2>Examples of three things we can do</h2>
+<ol type="1">
+<li><strong>Pull a variable for every state</strong></li>
+<li><span style="color:gray;">Pull several variables for counties and construct new measures</span></li>
+<li><span style="color:gray;">Pull small-area (tract) data and build join keys to merge with other data</span></li>
+</ol>
+</section>
+<section id="task-1-pull-a-variable-for-every-state" class="slide level2 center">
+<h2>Task 1: pull a variable for every state</h2>
+<div id="69ec3c07" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## pull total population and median household income for all states</span></span>
+<span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a>state_data <span class="op">=</span> c.acs5.state(fields <span class="op">=</span> (<span class="st">'NAME'</span>, <span class="st">'B01003_001E'</span>, <span class="st">'B19013_001E'</span>),</span>
+<span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a>                          state_fips <span class="op">=</span> Census.ALL)</span>
+<span id="cb27-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a aria-hidden="true" tabindex="-1"></a>state_df <span class="op">=</span> (pd.DataFrame(state_data)</span>
+<span id="cb27-6"><a aria-hidden="true" tabindex="-1"></a>            .rename(columns <span class="op">=</span> {<span class="st">'B01003_001E'</span>: <span class="st">'total_pop'</span>,</span>
+<span id="cb27-7"><a aria-hidden="true" tabindex="-1"></a>                               <span class="st">'B19013_001E'</span>: <span class="st">'median_hh_income'</span>})</span>
+<span id="cb27-8"><a aria-hidden="true" tabindex="-1"></a>            .sort_values(by <span class="op">=</span> <span class="st">'median_hh_income'</span>, ascending <span class="op">=</span> <span class="va">False</span>))</span>
+<span id="cb27-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a aria-hidden="true" tabindex="-1"></a>state_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="155">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">NAME</th>
+<th data-quarto-table-cell-role="th">total_pop</th>
+<th data-quarto-table-cell-role="th">median_hh_income</th>
+<th data-quarto-table-cell-role="th">state</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>District of Columbia</td>
+<td>681294.0</td>
+<td>109870.0</td>
+<td>11</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">21</td>
+<td>Massachusetts</td>
+<td>7044056.0</td>
+<td>103960.0</td>
+<td>25</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">20</td>
+<td>Maryland</td>
+<td>6206011.0</td>
+<td>103678.0</td>
+<td>24</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">30</td>
+<td>New Jersey</td>
+<td>9343809.0</td>
+<td>103556.0</td>
+<td>34</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">11</td>
+<td>Hawaii</td>
+<td>1445235.0</td>
+<td>100389.0</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<ul>
+<li>Can pull an earlier year with the <code>year</code> argument — e.g., <code>c.acs5.state(..., year = 2019)</code></li>
+<li>Can use the same code with <code>c.acs1</code> for more recent estimates (only for larger geographies)</li>
+</ul>
+</section>
+<section id="examples-of-three-things-we-can-do-1" class="slide level2 center scrollable">
+<h2>Examples of three things we can do</h2>
+<ol type="1">
+<li><span style="color:gray;">Pull a variable for every state</span></li>
+<li><strong>Pull several variables for counties and construct new measures</strong></li>
+<li><span style="color:gray;">Pull small-area (tract) data and build join keys to merge with other data</span></li>
+</ol>
+</section>
+<section id="task-2-pull-county-data-and-construct-a-poverty-rate" class="slide level2 smaller center">
+<h2>Task 2: pull county data and construct a poverty rate</h2>
+<div id="cecda9cb" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## variables to pull, with readable names</span></span>
+<span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a>county_vars <span class="op">=</span> {<span class="st">'NAME'</span>: <span class="st">'name'</span>,</span>
+<span id="cb28-3"><a aria-hidden="true" tabindex="-1"></a>               <span class="st">'B01003_001E'</span>: <span class="st">'total_pop'</span>,</span>
+<span id="cb28-4"><a aria-hidden="true" tabindex="-1"></a>               <span class="st">'B19013_001E'</span>: <span class="st">'median_hh_income'</span>,</span>
+<span id="cb28-5"><a aria-hidden="true" tabindex="-1"></a>               <span class="st">'B17001_001E'</span>: <span class="st">'pov_universe'</span>,</span>
+<span id="cb28-6"><a aria-hidden="true" tabindex="-1"></a>               <span class="st">'B17001_002E'</span>: <span class="st">'pov_below'</span>}</span>
+<span id="cb28-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">## pull for all counties in Maryland</span></span>
+<span id="cb28-9"><a aria-hidden="true" tabindex="-1"></a>md_counties <span class="op">=</span> c.acs5.state_county(fields <span class="op">=</span> <span class="bu">tuple</span>(county_vars.keys()),</span>
+<span id="cb28-10"><a aria-hidden="true" tabindex="-1"></a>                                  state_fips <span class="op">=</span> states.MD.fips,</span>
+<span id="cb28-11"><a aria-hidden="true" tabindex="-1"></a>                                  county_fips <span class="op">=</span> Census.ALL)</span>
+<span id="cb28-12"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-13"><a aria-hidden="true" tabindex="-1"></a><span class="co">## convert to a dataframe, rename, and construct poverty rate</span></span>
+<span id="cb28-14"><a aria-hidden="true" tabindex="-1"></a>md_counties_df <span class="op">=</span> (pd.DataFrame(md_counties)</span>
+<span id="cb28-15"><a aria-hidden="true" tabindex="-1"></a>                  .rename(columns <span class="op">=</span> county_vars)</span>
+<span id="cb28-16"><a aria-hidden="true" tabindex="-1"></a>                  .assign(pov_rate <span class="op">=</span> <span class="kw">lambda</span> df: df.pov_below <span class="op">/</span> df.pov_universe)</span>
+<span id="cb28-17"><a aria-hidden="true" tabindex="-1"></a>                  .sort_values(by <span class="op">=</span> <span class="st">'pov_rate'</span>, ascending <span class="op">=</span> <span class="va">False</span>))</span>
+<span id="cb28-18"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-19"><a aria-hidden="true" tabindex="-1"></a>md_counties_df[[<span class="st">'name'</span>, <span class="st">'total_pop'</span>, <span class="st">'median_hh_income'</span>, <span class="st">'pov_rate'</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="156">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">total_pop</th>
+<th data-quarto-table-cell-role="th">median_hh_income</th>
+<th data-quarto-table-cell-role="th">pov_rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">23</td>
+<td>Baltimore city, Maryland</td>
+<td>573243.0</td>
+<td>62177.0</td>
+<td>0.197497</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">8</td>
+<td>Dorchester County, Maryland</td>
+<td>32754.0</td>
+<td>61839.0</td>
+<td>0.171352</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Allegany County, Maryland</td>
+<td>67452.0</td>
+<td>59603.0</td>
+<td>0.168518</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">18</td>
+<td>Somerset County, Maryland</td>
+<td>24822.0</td>
+<td>64943.0</td>
+<td>0.163588</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">21</td>
+<td>Wicomico County, Maryland</td>
+<td>104914.0</td>
+<td>76210.0</td>
+<td>0.139374</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<ul>
+<li>Storing variable codes and readable names in a <strong>dictionary</strong> lets us use the keys to pull the data and the whole dictionary to rename</li>
+<li>Why use the poverty “universe” as the denominator rather than total population? Poverty status isn’t determined for everyone (e.g., people in college dorms or institutions)</li>
+</ul>
+</section>
+<section id="examples-of-three-things-we-can-do-2" class="slide level2 center scrollable">
+<h2>Examples of three things we can do</h2>
+<ol type="1">
+<li><span style="color:gray;">Pull a variable for every state</span></li>
+<li><span style="color:gray;">Pull several variables for counties and construct new measures</span></li>
+<li><strong>Pull small-area (tract) data and build join keys to merge with other data</strong></li>
+</ol>
+</section>
+<section id="task-3-pull-tract-level-data" class="slide level2 smaller center">
+<h2>Task 3: pull tract-level data</h2>
+<div id="d312bd88" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## DC has a single county-equivalent with FIPS code 001</span></span>
+<span id="cb29-2"><a aria-hidden="true" tabindex="-1"></a>dc_tracts <span class="op">=</span> c.acs5.state_county_tract(fields <span class="op">=</span> <span class="bu">tuple</span>(county_vars.keys()),</span>
+<span id="cb29-3"><a aria-hidden="true" tabindex="-1"></a>                                      state_fips <span class="op">=</span> states.DC.fips,</span>
+<span id="cb29-4"><a aria-hidden="true" tabindex="-1"></a>                                      county_fips <span class="op">=</span> <span class="st">'001'</span>,</span>
+<span id="cb29-5"><a aria-hidden="true" tabindex="-1"></a>                                      tract <span class="op">=</span> Census.ALL)</span>
+<span id="cb29-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a aria-hidden="true" tabindex="-1"></a>dc_tracts_df <span class="op">=</span> (pd.DataFrame(dc_tracts)</span>
+<span id="cb29-8"><a aria-hidden="true" tabindex="-1"></a>                .rename(columns <span class="op">=</span> county_vars))</span>
+<span id="cb29-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">## the census uses large negative numbers to flag values</span></span>
+<span id="cb29-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">## that can't be computed (e.g., median income for a tract with few households)</span></span>
+<span id="cb29-12"><a aria-hidden="true" tabindex="-1"></a>dc_tracts_df[<span class="st">'median_hh_income'</span>] <span class="op">=</span> np.where(dc_tracts_df.median_hh_income <span class="op">&lt;</span> <span class="dv">0</span>,</span>
+<span id="cb29-13"><a aria-hidden="true" tabindex="-1"></a>                                            np.nan,</span>
+<span id="cb29-14"><a aria-hidden="true" tabindex="-1"></a>                                            dc_tracts_df.median_hh_income)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Always check for these <strong>sentinel values</strong> (e.g., <code>-666666666</code>) before summarizing — otherwise they’ll drag down means dramatically</li>
+</ul>
+</section>
+<section id="task-3-build-a-join-key" class="slide level2 center">
+<h2>Task 3: build a join key</h2>
+<div id="56fe058d" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## the geography columns come back as strings with leading zeros</span></span>
+<span id="cb30-2"><a aria-hidden="true" tabindex="-1"></a>dc_tracts_df[[<span class="st">'state'</span>, <span class="st">'county'</span>, <span class="st">'tract'</span>]].head()</span>
+<span id="cb30-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">## combine into the standard 11-digit tract GEOID</span></span>
+<span id="cb30-5"><a aria-hidden="true" tabindex="-1"></a>dc_tracts_df[<span class="st">'GEOID'</span>] <span class="op">=</span> (dc_tracts_df.state <span class="op">+</span></span>
+<span id="cb30-6"><a aria-hidden="true" tabindex="-1"></a>                         dc_tracts_df.county <span class="op">+</span></span>
+<span id="cb30-7"><a aria-hidden="true" tabindex="-1"></a>                         dc_tracts_df.tract)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="158">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">state</th>
+<th data-quarto-table-cell-role="th">county</th>
+<th data-quarto-table-cell-role="th">tract</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>11</td>
+<td>001</td>
+<td>000101</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>11</td>
+<td>001</td>
+<td>000102</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>11</td>
+<td>001</td>
+<td>000201</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>11</td>
+<td>001</td>
+<td>000202</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>11</td>
+<td>001</td>
+<td>000300</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<ul>
+<li>The <strong>GEOID</strong> (state + county + tract FIPS codes) is the standard key for merging Census data onto other datasets (e.g., school locations; crime incidents geocoded to tracts; shapefiles for mapping)</li>
+<li>Recall the merge diagnostics from week 7: keep these codes as <strong>strings</strong> — converting to integers strips leading zeros (e.g., Alabama’s state FIPS is <code>01</code>) and leads to failed merges</li>
+</ul>
+</section>
+<section id="in-class-activity-2" class="slide level2 center" data-background-color="#449998">
+<h2>In-class activity</h2>
+<p>See Activity 3 in notebook</p>
+</section></section>
+<section>
+<section id="scraping-static-websites" class="title-slide slide level1 center" data-background-color="#447099">
+<h1>Scraping static websites</h1>
+
+</section>
+<section id="what-is-scraping" class="slide level2 center">
+<h2>What is scraping?</h2>
+<p><strong>Scraping:</strong> automatically collecting data available on websites. In theory, you could collect website data by hand — but in a world of abundant data, this is rarely feasible</p>
+<p>Examples of websites that have been scraped for research:</p>
+<ul>
+<li>Electoral data from many different countries</li>
+<li>Composition of elites around the world</li>
+<li>Wikipedia</li>
+<li>Political manifestos</li>
+<li>Fact-checking news</li>
+<li>Property prices from Zillow</li>
+</ul>
+<p>Scraping can be summarized as:</p>
+<ul>
+<li>Leveraging the structure of a website to <strong>grab its contents</strong></li>
+<li>Using a programming environment (such as R, Python, Java, etc.) to <strong>systematically extract</strong> that content</li>
+<li>Accomplishing the above in an “unobtrusive” and <strong>legal</strong> way</li>
+</ul>
+</section>
+<section id="ethical-challenges-with-scraping" class="slide level2 center">
+<h2>Ethical challenges with scraping</h2>
+<p>Web scraping is legal <strong>as long as the scraped data is publicly available and the scraping activity does not harm the website being scraped</strong> — two hugely relevant conditions</p>
+<ul>
+<li>Each call to a web server takes time, server cycles, and memory; massive automated requests can overload a site, taking it offline or causing the site administrator to ban your IP (see <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack">denial-of-service attack</a>)</li>
+<li>Best practice: only collect public information (e.g., public posts are OK; content from private groups where members expect privacy is not)</li>
+</ul>
+<p><strong>Good practices for scraping:</strong></p>
+<ul>
+<li>Respect <code>robots.txt</code></li>
+<li>Don’t hit servers too often; slow your code down to the speed a human would browse</li>
+<li>Find trusted source sites</li>
+<li>Avoid scraping during peak hours</li>
+<li>Use data responsibly</li>
+</ul>
+</section>
+<section id="scraping-routine" class="slide level2 center">
+<h2>Scraping routine</h2>
+<ul>
+<li><strong>Step 1:</strong> Find a website with information you want to collect</li>
+<li><strong>Step 2:</strong> Understand the website</li>
+<li><strong>Step 3:</strong> Write code to collect one realization of the data</li>
+<li><strong>Step 4:</strong> Build a scraper — generalize your code into a function</li>
+</ul>
+<p>And repeat!</p>
+</section>
+<section id="step-1-find-a-website-but-what-is-a-website" class="slide level2 center">
+<h2>Step 1: find a website… but what is a website?</h2>
+<p>A website is generally a combination of <strong>HTML, CSS, XML, PHP, and JavaScript</strong>. We will care mostly about HTML and CSS</p>
+<p><strong>Static vs.&nbsp;dynamic websites:</strong></p>
+<ul>
+<li><strong>Static websites:</strong> built with HTML — everything you see is in the source behind the website</li>
+<li><strong>Dynamic websites:</strong> produced by JavaScript — sites you browse and click on where the url doesn’t change; typically powered by a database deep within the programming</li>
+</ul>
+<p>Today we focus on static websites using the Python library <code>BeautifulSoup</code>; I can share resources for dynamic website scraping using <code>Selenium</code></p>
+</section>
+<section id="html" class="slide level2 center">
+<h2>HTML</h2>
+<p><strong>HTML</strong> = <strong>HyperText Markup Language</strong>: a markup language used to create web pages (not a programming language like Python, R, or Java). Web browsers read HTML documents and render them into visible web pages</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb31-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb31-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span> Michael Cohen's Email <span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb31-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb31-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> foot <span class="op">=</span> bar<span class="op">;</span></span>
+<span id="cb31-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;</span>script<span class="op">&gt;</span></span>
+<span id="cb31-7"><a aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>head<span class="op">&gt;</span></span>
+<span id="cb31-8"><a aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>body<span class="op">&gt;</span></span>
+<span id="cb31-9"><a aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;</span>div id<span class="op">=</span><span class="st">"payments"</span><span class="op">&gt;</span></span>
+<span id="cb31-10"><a aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;</span>h2<span class="op">&gt;</span>Second heading<span class="op">&lt;/</span>h2<span class="op">&gt;</span></span>
+<span id="cb31-11"><a aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;</span>p <span class="kw">class</span><span class="op">=</span><span class="st">'slick'</span><span class="op">&gt;</span>information about <span class="op">&lt;</span>br<span class="op">/&gt;&lt;</span>i<span class="op">&gt;</span>payments<span class="op">&lt;/</span>i<span class="op">&gt;&lt;/</span>p<span class="op">&gt;</span></span>
+<span id="cb31-12"><a aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;</span>p<span class="op">&gt;</span>Just <span class="op">&lt;</span>a href<span class="op">=</span><span class="st">"http://www.google.com"</span><span class="op">&gt;</span>google it<span class="op">!&lt;/</span>a<span class="op">&gt;&lt;/</span>p<span class="op">&gt;</span></span>
+<span id="cb31-13"><a aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>body<span class="op">&gt;</span></span>
+<span id="cb31-14"><a aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>html<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="html-tags" class="slide level2 center">
+<h2>HTML tags</h2>
+<p>HTML code is structured using tags, and information is organized hierarchically from top to bottom</p>
+<p>Some of the most important tags for scraping:</p>
+<ul>
+<li><code>p</code> – paragraphs</li>
+<li><code>a href</code> – links</li>
+<li><code>div</code> – divisions</li>
+<li><code>h</code> – headings</li>
+<li><code>table</code> – tables</li>
+</ul>
+<p>See <a href="https://betterprogramming.pub/understanding-html-basics-for-web-scraping-ae351ee0b3f9">here for more about html tags</a></p>
+<div style="background-color:#f8d7da; padding:20px; font-size:120%; text-align:center;">
+<p>Scraping is all about finding tags and collecting the data associated with them</p>
+</div>
+</section>
+<section id="what-else-exists-in-html-beyond-tags" class="slide level2 center">
+<h2>What else exists in HTML beyond tags?</h2>
+<p>The tags are the target. The information we need usually comes from the <strong>text</strong> and <strong>attributes</strong> of the tag — very often, your work will consist of finding the tag and then capturing the information you need</p>
+<div style="text-align: center;">
+<p><img data-src="https://static.semrush.com/blog/uploads/media/59/fc/59fc528eecc00e43b1a3ed5d9b9933ee/4YA3vCJ_Hw6DucoVZ40FbKFRppAReJVOkLKHcZlDkO-9geydLO6tw9uzFJFZf5nam3QcT7p0hRdpFyL2uPhoDISD8CPZwfPE5GTqgpH53q9M99QWgDVhjgQrCMOlQI9fA1T2dCxJ5T2goCV3k1wo-Jc.webp" style="width:55.0%"></p>
+</div>
+<div style="text-align: right;">
+<p><strong>Source:</strong> <a href="https://www.semrush.com/blog/html-anchor/">semrush</a></p>
+</div>
+</section>
+<section id="step-2-understand-the-website" class="slide level2 center">
+<h2>Step 2: understand the website</h2>
+<p>A huge part of scraping is understanding your website and finding the tags/information you’re interested in. Two ways to go about it:</p>
+<ul>
+<li><strong>Inspect the website:</strong> <code>command</code> + <code>shift</code> + <code>i</code>, or select an element, right click, and choose Inspect
+<ul>
+<li>See <a href="https://storage.googleapis.com/lds-media/documents/css_selector_vs_xpath.mp4">an example in practice</a> (<em>Source: Ultimate Guide to Web Scraping with Python by Brenda Marting</em>)</li>
+</ul></li>
+<li><strong>Use SelectorGadget:</strong> a tool that lets us use CSS selectors to scrape websites
+<ul>
+<li>See the <a href="https://selectorgadget.com/">documentation</a> and a <a href="https://www.youtube.com/watch?v=YdIWI6K64zo">tutorial</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="break-install-selectorgadget" class="slide level2 center" data-background-color="#449998">
+<h2>Break: install SelectorGadget</h2>
+<p><a href="https://chromewebstore.google.com/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb">SelectorGadget Chrome extension</a></p>
+</section>
+<section id="step-3-collect-a-realization-of-the-data" class="slide level2 center">
+<h2>Step 3: collect a realization of the data</h2>
+<p>Two main libraries:</p>
+<ul>
+<li><code>requests</code>: to make a <code>get()</code> request and access the html behind the pages</li>
+<li><code>BeautifulSoup</code>: to parse the html</li>
+</ul>
+<p>See this <a href="https://realpython.com/python-web-scraping-practical-introduction/">tutorial</a> on the difference between parsing html with <code>BeautifulSoup</code> and using text-mining methods to scrape a website</p>
+</section>
+<section id="example-cnn-get-request-to-collect-html-data" class="slide level2 center">
+<h2>Example: CNN — get request to collect html data</h2>
+<div id="154cfd23" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># get access to the website</span></span>
+<span id="cb32-2"><a aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://www.cnn.com/2026/10/15/health/parents-vaccine-delays-wellness?source=sub_web_wall-met"</span></span>
+<span id="cb32-3"><a aria-hidden="true" tabindex="-1"></a>page <span class="op">=</span> requests.get(url)</span>
+<span id="cb32-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a aria-hidden="true" tabindex="-1"></a><span class="co"># check object type - object class requests</span></span>
+<span id="cb32-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(page)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="159">
+<pre><code>requests.models.Response</code></pre>
+</div>
+</div>
+<div id="c060871a" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># check if you got a connection</span></span>
+<span id="cb34-2"><a aria-hidden="true" tabindex="-1"></a>page.status_code <span class="co"># 200 == connection</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="160">
+<pre><code>200</code></pre>
+</div>
+</div>
+<div id="6eddc83b" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># see the content</span></span>
+<span id="cb36-2"><a aria-hidden="true" tabindex="-1"></a><span class="co"># notice we downloaded the entire website</span></span>
+<span id="cb36-3"><a aria-hidden="true" tabindex="-1"></a>page.content[<span class="dv">0</span>:<span class="dv">500</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="161">
+<pre><code>b'  &lt;!DOCTYPE html&gt;\n&lt;html lang="en" data-uri="cms.cnn.com/_pages/cmv8qiku4000028p7fj6e79gw@published" data-layout-uri="cms.cnn.com/_layouts/layout-article-elevate/instances/health-article-elevate_medium-v1@published" data-site="cnn"&gt;\n  &lt;head&gt;\n&lt;link rel="preload" href="/fonts/cnn/cnn_sans_display-v1.woff2" as="font" type="font/woff2" crossorigin="anonymous"&gt;\n&lt;link rel="preload" href="/fonts/cnn/cnn_sans_display-medium-v1.woff2" as="font" type="font/woff2" crossorigin="anonymous"&gt;\n&lt;link rel="preload'</code></pre>
+</div>
+</div>
+</section>
+<section id="saving-and-loading-html-locally" class="slide level2 center">
+<h2>Saving and loading html locally</h2>
+<p>After we make a request and retrieve a web page’s content, we can store it locally with Python’s <code>open()</code> function — saving the html source avoids hitting the website multiple times</p>
+<div id="ccc7134d" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># save html locally</span></span>
+<span id="cb38-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"../datasets/cnn_example_article"</span>, <span class="st">'wb'</span>) <span class="im">as</span> f:</span>
+<span id="cb38-3"><a aria-hidden="true" tabindex="-1"></a>    f.write(page.content)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="78aeefaf" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># open a locally saved html</span></span>
+<span id="cb39-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"../datasets/cnn_example_article"</span>, <span class="st">'rb'</span>) <span class="im">as</span> f:</span>
+<span id="cb39-3"><a aria-hidden="true" tabindex="-1"></a>    html <span class="op">=</span> f.read()</span>
+<span id="cb39-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a aria-hidden="true" tabindex="-1"></a><span class="co"># see it</span></span>
+<span id="cb39-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(html[<span class="dv">0</span>:<span class="dv">500</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>b'  &lt;!DOCTYPE html&gt;\n&lt;html lang="en" data-uri="cms.cnn.com/_pages/cmv8qiku4000028p7fj6e79gw@published" data-layout-uri="cms.cnn.com/_layouts/layout-article-elevate/instances/health-article-elevate_medium-v1@published" data-site="cnn"&gt;\n  &lt;head&gt;\n&lt;link rel="preload" href="/fonts/cnn/cnn_sans_display-v1.woff2" as="font" type="font/woff2" crossorigin="anonymous"&gt;\n&lt;link rel="preload" href="/fonts/cnn/cnn_sans_display-medium-v1.woff2" as="font" type="font/woff2" crossorigin="anonymous"&gt;\n&lt;link rel="preload'</code></pre>
+</div>
+</div>
+</section>
+<section id="here-comes-beautifulsoup" class="slide level2 center">
+<h2>Here comes <code>BeautifulSoup</code></h2>
+<p>A <code>BeautifulSoup</code> object is a parser: it lets us easily access elements from the raw html</p>
+<div id="1eaafc97" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># create a bs object</span></span>
+<span id="cb41-2"><a aria-hidden="true" tabindex="-1"></a><span class="co"># input 1: request content; input 2: tell it you need an html parser</span></span>
+<span id="cb41-3"><a aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(page.content, <span class="st">'html.parser'</span>)</span>
+<span id="cb41-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a aria-hidden="true" tabindex="-1"></a><span class="co"># look at the raw code of the downloaded website</span></span>
+<span id="cb41-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(soup.prettify()[:<span class="dv">1000</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html data-layout-uri="cms.cnn.com/_layouts/layout-article-elevate/instances/health-article-elevate_medium-v1@published" data-site="cnn" data-uri="cms.cnn.com/_pages/cmv8qiku4000028p7fj6e79gw@published" lang="en"&gt;
+ &lt;head&gt;
+  &lt;link as="font" crossorigin="anonymous" href="/fonts/cnn/cnn_sans_display-v1.woff2" rel="preload" type="font/woff2"/&gt;
+  &lt;link as="font" crossorigin="anonymous" href="/fonts/cnn/cnn_sans_display-medium-v1.woff2" rel="preload" type="font/woff2"/&gt;
+  &lt;link as="font" crossorigin="anonymous" href="/fonts/cnn/cnn_sans_display-bold-v1.woff2" rel="preload" type="font/woff2"/&gt;
+  &lt;link as="font" crossorigin="anonymous" href="/fonts/cnn/noto_serif_display-v1.woff2" rel="preload" type="font/woff2"/&gt;
+  &lt;link href="//tpc.googlesyndication.com" rel="dns-prefetch"/&gt;
+  &lt;link href="//tpc.googlesyndication.com" rel="preconnect"/&gt;
+  &lt;link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/&gt;
+  &lt;link href="//pagead2.googlesyndication.com" rel="preconnect"/&gt;
+  &lt;link </code></pre>
+</div>
+</div>
+</section>
+<section id="here-comes-beautifulsoup-1" class="slide level2 center">
+<h2>Here comes <code>BeautifulSoup</code></h2>
+<p>The functions we’ll use the most:</p>
+<ul>
+<li><code>.find_all()</code>: to find tags by their names</li>
+<li><code>.select()</code>: to select tags using a CSS selector</li>
+<li><code>.get_text()</code>: to access the text in the tag</li>
+<li><code>["attr"]</code>: to access attributes of a tag</li>
+</ul>
+</section>
+<section id="grabbing-the-text-of-the-story" class="slide level2 center">
+<h2>Grabbing the text of the story</h2>
+<p>The text of a story is often under the tag <code>&lt;p&gt;</code> for paragraph</p>
+<div id="6e17d583" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## find paragraphs</span></span>
+<span id="cb43-2"><a aria-hidden="true" tabindex="-1"></a>cnn_par <span class="op">=</span> soup.find_all(<span class="st">'p'</span>)</span>
+<span id="cb43-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(cnn_par)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="164">
+<pre><code>26</code></pre>
+</div>
+</div>
+<div id="d4a170e1" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## first paragraph</span></span>
+<span id="cb45-2"><a aria-hidden="true" tabindex="-1"></a>cnn_par[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="165">
+<pre><code>&lt;p class="editor-note-elevate vossi-editor-note_elevate inline-placeholder" data-article-gutter="true" data-component-name="editor-note" data-editable="text" data-uri="cms.cnn.com/_components/editor-note/instances/cmv8vvabu00023b6r4cy7tivq@published"&gt;
+    Dr. Edith Bracho-Sanchez is a primary care pediatrician at Columbia University Irving Medical Center in New York City. She hosts the American Academy of Pediatrics &lt;a href="https://www.healthychildren.org/English/tips-tools/healthy-children-podcast/Pages/podcast.aspx" target="_blank"&gt;Healthy Children podcast&lt;/a&gt; for parents.
+&lt;/p&gt;</code></pre>
+</div>
+</div>
+<div id="673d1209" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## last paragraph</span></span>
+<span id="cb47-2"><a aria-hidden="true" tabindex="-1"></a>cnn_par[<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="166">
+<pre><code>&lt;p&gt;Scan the QR code to download the CNN app from the Apple Store.&lt;/p&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="removing-html-tags-with-.get_text" class="slide level2 center">
+<h2>Removing html tags with <code>.get_text()</code></h2>
+<div id="3751b286" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># get the text f the first paragraph</span></span>
+<span id="cb49-2"><a aria-hidden="true" tabindex="-1"></a><span class="co"># this is what is in between the tags &lt;p&gt; TEXT &lt;/p&gt;</span></span>
+<span id="cb49-3"><a aria-hidden="true" tabindex="-1"></a>cnn_par[<span class="dv">0</span>].get_text()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="167">
+<pre><code>'\n    Dr. Edith Bracho-Sanchez is a primary care pediatrician at Columbia University Irving Medical Center in New York City. She hosts the American Academy of Pediatrics Healthy Children podcast for parents.\n'</code></pre>
+</div>
+</div>
+<div id="42d9aca5" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># use our friend list comprehension to parse all</span></span>
+<span id="cb51-2"><a aria-hidden="true" tabindex="-1"></a>all_par <span class="op">=</span> [par.get_text() <span class="cf">for</span> par <span class="kw">in</span> cnn_par]</span>
+<span id="cb51-3"><a aria-hidden="true" tabindex="-1"></a>all_par[<span class="op">-</span><span class="dv">3</span>:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="168">
+<pre><code>['© 2026 Cable News Network. All Rights Reserved.  CNN Sans ™ &amp; © 2016 Cable News Network.',
+ 'Scan the QR code to download the CNN app on Google Play.',
+ 'Scan the QR code to download the CNN app from the Apple Store.']</code></pre>
+</div>
+</div>
+<p>We collected some paragraphs at the bottom that aren’t the story text: <code>&lt;p&gt;</code> is used in multiple places on the page — e.g., the last element is the page footer</p>
+</section>
+<section id="solution-be-more-specific-with-a-css-selector" class="slide level2 center">
+<h2>Solution: be more specific with a CSS selector</h2>
+<ul>
+<li>A <strong>CSS selector</strong> is a pattern used to select and style one or more elements in an HTML document — a way to chain multiple styles and attributes of an html file</li>
+<li>Another option is XPATH, which can be super useful to learn but is a bit more complicated for beginners</li>
+<li>See this <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors">tutorial</a> to understand the concept of a CSS selector</li>
+</ul>
+</section>
+<section id="solution-be-more-specific-with-a-css-selector-1" class="slide level2 center">
+<h2>Solution: be more specific with a CSS selector</h2>
+<div style="text-align: center;">
+<p><img data-src="week9_figs/css_example.png" style="width:60.0%"></p>
+</div>
+</section>
+<section id="solution-be-more-specific-with-a-css-selector-2" class="slide level2 center">
+<h2>Solution: be more specific with a CSS selector</h2>
+<div id="d6f5a9bf" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># use a css selector to target specific content</span></span>
+<span id="cb53-2"><a aria-hidden="true" tabindex="-1"></a>cnn_par <span class="op">=</span> soup.select(<span class="st">".vossi-paragraph_elevate"</span>)</span>
+<span id="cb53-3"><a aria-hidden="true" tabindex="-1"></a>cnn_par[<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="169">
+<pre><code>&lt;p class="paragraph-elevate inline-placeholder vossi-paragraph_elevate" data-article-gutter="true" data-component-name="paragraph" data-editable="text" data-uri="cms.cnn.com/_components/paragraph/instances/cmv8qpbof000x3b6rqc3cpk6o@published"&gt;
+            At the end of the day, however, I don’t particularly care whether a parent calls themselves pro- or anti-vaccine. Viruses and bacteria don’t care either. What matters is the protection against measles, mumps, rubella, influenza, chicken pox and more — not the label. For every child to be protected, they need to get their shots, today.
+    &lt;/p&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="cleaning-the-story-text" class="slide level2 center">
+<h2>Cleaning the story text</h2>
+<div id="71e93513" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a aria-hidden="true" tabindex="-1"></a>story_content <span class="op">=</span> [i.get_text() <span class="cf">for</span> i <span class="kw">in</span> cnn_par]</span>
+<span id="cb55-2"><a aria-hidden="true" tabindex="-1"></a>story_content[<span class="dv">0</span>].strip()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="170">
+<pre><code>'Vaccine refusal doesn’t always sound like vaccine refusal in my pediatric office anymore. More and more parents are delaying vaccines and citing logistics, outsourcing the decision to the parent who isn’t in the room or simply wanting more time. I hear countless variations, but the result is often the same: Children leave my office unvaccinated.'</code></pre>
+</div>
+</div>
+<div id="e641c5d7" class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># clean and join together with string methods</span></span>
+<span id="cb57-2"><a aria-hidden="true" tabindex="-1"></a>story_text <span class="op">=</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>.join([i.strip() <span class="cf">for</span> i <span class="kw">in</span> story_content])</span>
+<span id="cb57-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(story_text[<span class="dv">0</span>:<span class="dv">1000</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Vaccine refusal doesn’t always sound like vaccine refusal in my pediatric office anymore. More and more parents are delaying vaccines and citing logistics, outsourcing the decision to the parent who isn’t in the room or simply wanting more time. I hear countless variations, but the result is often the same: Children leave my office unvaccinated.
+“Oh, we’re definitely not anti-vaccine. We’re just waiting for Dad.”
+Dad comes to the next visit. “I think Mom should be here when we do them.”
+“We are definitely going to vaccinate but we have a birthday party coming up, doctor; wouldn’t want her to be under the weather!”
+Another parent agrees to the vaccines, then slips out of the office before the nurse returns with them because the child is “beside himself.” Minutes earlier the kid was happily playing in the exam room.
+Vaccination has become so socially and politically loaded that some parents don’t want to identify with either camp. Rather than explicitly refusing, they postpone.
+This is a</code></pre>
+</div>
+</div>
+</section>
+<section id="what-else-can-we-collect-from-this-story-title-date-and-author" class="slide level2 center">
+<h2>What else can we collect from this story? Title, date, and author</h2>
+<div id="72d3a8ea" class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># title</span></span>
+<span id="cb59-2"><a aria-hidden="true" tabindex="-1"></a>css_loc <span class="op">=</span> <span class="st">"#maincontent"</span></span>
+<span id="cb59-3"><a aria-hidden="true" tabindex="-1"></a>story_title <span class="op">=</span> soup.select(css_loc)[<span class="dv">0</span>].get_text()</span>
+<span id="cb59-4"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(story_title.strip())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>For more parents, ‘vaccine refusal’ is becoming vaccine delay, but it’s no less dangerous</code></pre>
+</div>
+</div>
+<div id="78fb8a36" class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># story date</span></span>
+<span id="cb61-2"><a aria-hidden="true" tabindex="-1"></a>story_date <span class="op">=</span> soup.select(<span class="st">".vossi-timestamp_elevate"</span>)[<span class="dv">0</span>].get_text()</span>
+<span id="cb61-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(story_date.strip())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Updated Oct 15, 2026, 7:00 AM ET
+Published Oct 15, 2026, 7:00 AM ET
+
+
+
+
+
+PUBLISHED Oct 15, 2026, 7:00 AM ET</code></pre>
+</div>
+</div>
+<div id="38344ae2" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># story authors</span></span>
+<span id="cb63-2"><a aria-hidden="true" tabindex="-1"></a>story_author <span class="op">=</span> soup.select(<span class="st">".vossi-byline_elevate__authors"</span>)[<span class="dv">0</span>].get_text()</span>
+<span id="cb63-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(story_author.strip())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis by Dr. Edith Braco-Sanchez</code></pre>
+</div>
+</div>
+</section>
+<section id="step-4-build-a-scraper" class="slide level2 smaller center">
+<h2>Step 4: build a scraper</h2>
+<p>Once your scraper works for a single case, generalize it by creating a function — and build in good practices that imitate human behavior</p>
+<div id="89abe99a" class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cnn_scraper(url<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb65-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="co">'''</span></span>
+<span id="cb65-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">    this function scrapes relevant content from the cnn website</span></span>
+<span id="cb65-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">    input: str, url from cnn</span></span>
+<span id="cb65-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">    '''</span></span>
+<span id="cb65-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># get access to the website</span></span>
+<span id="cb65-7"><a aria-hidden="true" tabindex="-1"></a>    page <span class="op">=</span> requests.get(url)</span>
+<span id="cb65-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># create a bs object</span></span>
+<span id="cb65-9"><a aria-hidden="true" tabindex="-1"></a>    soup <span class="op">=</span> BeautifulSoup(page.content, <span class="st">'html.parser'</span>)</span>
+<span id="cb65-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># check if you got a connection</span></span>
+<span id="cb65-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> page.status_code <span class="op">==</span> <span class="dv">200</span>:</span>
+<span id="cb65-12"><a aria-hidden="true" tabindex="-1"></a>        <span class="co"># parse text</span></span>
+<span id="cb65-13"><a aria-hidden="true" tabindex="-1"></a>        cnn_par <span class="op">=</span> soup.select(<span class="st">".vossi-paragraph_elevate"</span>)</span>
+<span id="cb65-14"><a aria-hidden="true" tabindex="-1"></a>        story_content <span class="op">=</span> [i.get_text() <span class="cf">for</span> i <span class="kw">in</span> cnn_par]</span>
+<span id="cb65-15"><a aria-hidden="true" tabindex="-1"></a>        story_text <span class="op">=</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>.join([i.strip() <span class="cf">for</span> i <span class="kw">in</span> story_content])</span>
+<span id="cb65-16"><a aria-hidden="true" tabindex="-1"></a>        <span class="co"># parse title</span></span>
+<span id="cb65-17"><a aria-hidden="true" tabindex="-1"></a>        story_title <span class="op">=</span> soup.select(<span class="st">"#maincontent"</span>)[<span class="dv">0</span>].get_text()</span>
+<span id="cb65-18"><a aria-hidden="true" tabindex="-1"></a>        <span class="co"># story date</span></span>
+<span id="cb65-19"><a aria-hidden="true" tabindex="-1"></a>        story_date <span class="op">=</span> soup.select(<span class="st">".vossi-timestamp_elevate"</span>)[<span class="dv">0</span>].get_text()</span>
+<span id="cb65-20"><a aria-hidden="true" tabindex="-1"></a>        <span class="co"># nest all in a dictionary</span></span>
+<span id="cb65-21"><a aria-hidden="true" tabindex="-1"></a>        entry <span class="op">=</span> {<span class="st">"url"</span>: url, <span class="st">"story_title"</span>: story_title.strip(),</span>
+<span id="cb65-22"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"story_date"</span>: story_date.strip(), <span class="st">"text"</span>: story_text}</span>
+<span id="cb65-23"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> entry</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="testing-the-scraper" class="slide level2 center">
+<h2>Testing the scraper</h2>
+<div id="0e3aad62" class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># test on the same case</span></span>
+<span id="cb66-2"><a aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://www.cnn.com/2026/10/15/health/parents-vaccine-delays-wellness?source=sub_web_wall-met"</span></span>
+<span id="cb66-3"><a aria-hidden="true" tabindex="-1"></a>scrape_news <span class="op">=</span> cnn_scraper(url<span class="op">=</span>url)</span>
+<span id="cb66-4"><a aria-hidden="true" tabindex="-1"></a>scrape_news[<span class="st">'story_title'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="176">
+<pre><code>'For more parents, ‘vaccine refusal’ is becoming vaccine delay, but it’s no less dangerous'</code></pre>
+</div>
+</div>
+</section>
+<section id="iterating-the-scraper-over-a-list-of-urls" class="slide level2 center">
+<h2>Iterating the scraper over a list of urls</h2>
+<div id="dc8a8ce2" class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># create a list of urls</span></span>
+<span id="cb68-2"><a aria-hidden="true" tabindex="-1"></a>urls <span class="op">=</span> [<span class="st">"https://www.cnn.com/2026/10/15/health/parents-vaccine-delays-wellness?source=sub_web_wall-met"</span>,</span>
+<span id="cb68-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="st">"https://www.cnn.com/2026/10/16/health/roller-coaster-safety-health-risks-wellness"</span>,</span>
+<span id="cb68-4"><a aria-hidden="true" tabindex="-1"></a>        <span class="st">"https://www.cnn.com/2026/10/19/health/headphone-overuse-dangers-loneliness-wellness"</span>]</span>
+<span id="cb68-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-6"><a aria-hidden="true" tabindex="-1"></a><span class="co"># then loop through and collect</span></span>
+<span id="cb68-7"><a aria-hidden="true" tabindex="-1"></a>scraped_data <span class="op">=</span> []</span>
+<span id="cb68-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-9"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> url <span class="kw">in</span> urls:</span>
+<span id="cb68-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># scrape the content</span></span>
+<span id="cb68-12"><a aria-hidden="true" tabindex="-1"></a>    scraped_data.append(cnn_scraper(url))</span>
+<span id="cb68-13"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-14"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># put the system to sleep for a random draw of time</span></span>
+<span id="cb68-15"><a aria-hidden="true" tabindex="-1"></a>    time.sleep(random.uniform(<span class="fl">.5</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="iterating-the-scraper-over-a-list-of-urls-1" class="slide level2 center">
+<h2>Iterating the scraper over a list of urls</h2>
+<div id="03b3cbb0" class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># organize as a pandas data frame</span></span>
+<span id="cb69-2"><a aria-hidden="true" tabindex="-1"></a>dat <span class="op">=</span> pd.DataFrame(scraped_data)</span>
+<span id="cb69-3"><a aria-hidden="true" tabindex="-1"></a>dat.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="178">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">url</th>
+<th data-quarto-table-cell-role="th">story_title</th>
+<th data-quarto-table-cell-role="th">story_date</th>
+<th data-quarto-table-cell-role="th">text</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>https://www.cnn.com/2026/10/15/health/parents-...</td>
+<td>For more parents, ‘vaccine refusal’ is becomin...</td>
+<td>Updated Oct 15, 2026, 7:00 AM ET\nPublished Oc...</td>
+<td>Vaccine refusal doesn’t always sound like vacc...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>https://www.cnn.com/2026/10/16/health/roller-c...</td>
+<td>Roller coaster death and injuries leave fans a...</td>
+<td>Updated Oct 16, 2026, 7:00 AM ET\nPublished Oc...</td>
+<td>The death of a 42-year-old man on a roller coa...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>https://www.cnn.com/2026/10/19/health/headphon...</td>
+<td>Gen Zers love using headphones — but do they k...</td>
+<td>Updated Oct 19, 2026, 8:12 AM ET\nPublished Oc...</td>
+<td>Atira Gali had already listened to 33,500 minu...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="summary-of-the-scraping-steps" class="slide level2 center">
+<h2>Summary of the scraping steps</h2>
+<ul>
+<li><strong>Step 1:</strong> Find a website with information you want to collect</li>
+<li><strong>Step 2:</strong> Understand the website</li>
+<li><strong>Step 3:</strong> Write code to collect one realization of the data</li>
+<li><strong>Step 4:</strong> Build a scraper — generalize your code into a function</li>
+<li><strong>Step 5:</strong> Save</li>
+</ul>
+</section>
+<section id="collecting-multiple-urls" class="slide level2 center">
+<h2>Collecting multiple urls</h2>
+<p>It’s unlikely you’ll ever have a complete list of urls you want to scrape — collecting the list of sources is usually a step in the scraping task. Urls usually come embedded as tag attributes</p>
+<div id="e05edb05" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># step 1: find a website with information you want to collect</span></span>
+<span id="cb70-2"><a aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://www.cnn.com/health"</span></span>
+<span id="cb70-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># step 2: understand the website</span></span>
+<span id="cb70-5"><a aria-hidden="true" tabindex="-1"></a><span class="co"># links are embedded across multiple headline cards</span></span>
+<span id="cb70-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-7"><a aria-hidden="true" tabindex="-1"></a><span class="co"># step 3: write code to collect one realization of the data</span></span>
+<span id="cb70-8"><a aria-hidden="true" tabindex="-1"></a>page <span class="op">=</span> requests.get(url)</span>
+<span id="cb70-9"><a aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(page.content, <span class="st">'html.parser'</span>)</span>
+<span id="cb70-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-11"><a aria-hidden="true" tabindex="-1"></a><span class="co"># with a css selector</span></span>
+<span id="cb70-12"><a aria-hidden="true" tabindex="-1"></a>links <span class="op">=</span> soup.select(<span class="st">".container_lead-plus-headlines__item--type-section"</span>)</span>
+<span id="cb70-13"><a aria-hidden="true" tabindex="-1"></a>links[<span class="dv">0</span>].attrs[<span class="st">"data-open-link"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="179">
+<pre><code>'/2026/10/20/health/blood-clots-jalen-hurts'</code></pre>
+</div>
+</div>
+<div id="723a888f" class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># grab links</span></span>
+<span id="cb72-2"><a aria-hidden="true" tabindex="-1"></a>links_from_cnn <span class="op">=</span> [link[<span class="st">"data-open-link"</span>] <span class="cf">for</span> link <span class="kw">in</span> links]</span>
+<span id="cb72-3"><a aria-hidden="true" tabindex="-1"></a>links_from_cnn[<span class="dv">0</span>:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="180">
+<pre><code>['/2026/10/20/health/blood-clots-jalen-hurts',
+ '/2026/10/19/sport/eagles-jalen-hurts-analysis',
+ '/2026/10/16/health/roller-coaster-safety-health-risks-wellness',
+ '/2026/10/15/health/parents-vaccine-delays-wellness',
+ 'https://edition.cnn.com/interactive/2026/10/health/philly-joy-bank-cnnphotos/']</code></pre>
+</div>
+</div>
+</section>
+<section id="step-4-generalize-into-a-function" class="slide level2 smaller center">
+<h2>Step 4: generalize into a function</h2>
+<div id="b37601a3" class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> collect_links_cnn(url<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb74-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Collect story links from a CNN page.</span></span>
+<span id="cb74-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb74-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">        url (str): valid CNN page to collect links from.</span></span>
+<span id="cb74-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb74-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">        list: story urls</span></span>
+<span id="cb74-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb74-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># get access to the website</span></span>
+<span id="cb74-10"><a aria-hidden="true" tabindex="-1"></a>    page <span class="op">=</span> requests.get(url)</span>
+<span id="cb74-11"><a aria-hidden="true" tabindex="-1"></a>    soup <span class="op">=</span> BeautifulSoup(page.content, <span class="st">'html.parser'</span>)</span>
+<span id="cb74-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># extract links from href attributes</span></span>
+<span id="cb74-13"><a aria-hidden="true" tabindex="-1"></a>    links_from_cnn <span class="op">=</span> [link[<span class="st">"data-open-link"</span>] <span class="cf">for</span> link <span class="kw">in</span> links]</span>
+<span id="cb74-14"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># keep only stories that start with "/" and four digits</span></span>
+<span id="cb74-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># combine with the base url</span></span>
+<span id="cb74-16"><a aria-hidden="true" tabindex="-1"></a>    links_from_cnn_reduced <span class="op">=</span> [<span class="st">"https://www.cnn.com"</span> <span class="op">+</span> l <span class="cf">for</span> l <span class="kw">in</span> links_from_cnn</span>
+<span id="cb74-17"><a aria-hidden="true" tabindex="-1"></a>                              <span class="cf">if</span> re.match(<span class="vs">r'^/(\d</span><span class="sc">{4}</span><span class="vs">)'</span>, <span class="bu">str</span>(l))]</span>
+<span id="cb74-18"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> links_from_cnn_reduced</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="5615cbbf" class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a aria-hidden="true" tabindex="-1"></a>links_cnn <span class="op">=</span> collect_links_cnn(<span class="st">"https://www.cnn.com/politics"</span>)</span>
+<span id="cb75-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(links_cnn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="182">
+<pre><code>20</code></pre>
+</div>
+</div>
+</section>
+<section id="applying-the-scraper-to-the-collected-links" class="slide level2 center">
+<h2>Applying the scraper to the collected links</h2>
+<div id="07b5a4a6" class="cell" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># let's get some cases</span></span>
+<span id="cb77-2"><a aria-hidden="true" tabindex="-1"></a>links_cnn_ <span class="op">=</span> links_cnn[<span class="dv">15</span>:<span class="dv">20</span>]</span>
+<span id="cb77-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># then loop through and collect</span></span>
+<span id="cb77-5"><a aria-hidden="true" tabindex="-1"></a>scraped_data <span class="op">=</span> []</span>
+<span id="cb77-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-7"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> url <span class="kw">in</span> links_cnn_:</span>
+<span id="cb77-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># check what is going on</span></span>
+<span id="cb77-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(url)</span>
+<span id="cb77-11"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># scrape the content</span></span>
+<span id="cb77-13"><a aria-hidden="true" tabindex="-1"></a>    scraped_data.append(cnn_scraper(url))</span>
+<span id="cb77-14"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># put the system to sleep for a random draw of time (be kind)</span></span>
+<span id="cb77-16"><a aria-hidden="true" tabindex="-1"></a>    time.sleep(random.uniform(<span class="fl">.5</span>, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>https://www.cnn.com/2026/10/11/health/living-without-a-smartphone-wellness
+https://www.cnn.com/2026/10/05/health/strong-is-new-skinny-wellness
+https://www.cnn.com/2026/10/04/health/digital-media-kids-risks-coping-wellness
+https://www.cnn.com/2026/10/03/sport/parent-drive-home-criticism-wellness
+https://www.cnn.com/2026/10/17/health/ai-online-dating-game-wellness</code></pre>
+</div>
+</div>
+</section>
+<section id="applying-the-scraper-to-the-collected-links-1" class="slide level2 center">
+<h2>Applying the scraper to the collected links</h2>
+<div id="8075d212" class="cell" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># organize as a pandas data frame</span></span>
+<span id="cb79-2"><a aria-hidden="true" tabindex="-1"></a>dat <span class="op">=</span> pd.DataFrame(scraped_data)</span>
+<span id="cb79-3"><a aria-hidden="true" tabindex="-1"></a>dat.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="184">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">url</th>
+<th data-quarto-table-cell-role="th">story_title</th>
+<th data-quarto-table-cell-role="th">story_date</th>
+<th data-quarto-table-cell-role="th">text</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>https://www.cnn.com/2026/10/11/health/living-w...</td>
+<td>Think you can’t live without a smartphone? Why...</td>
+<td>Updated Oct 11, 2026, 6:30 AM ET\nPublished Oc...</td>
+<td>A lot of us dream of not being tethered to our...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>https://www.cnn.com/2026/10/05/health/strong-i...</td>
+<td>Strength training is good, especially as women...</td>
+<td>Updated Oct 5, 2026, 7:42 AM ET\nPublished Oct...</td>
+<td>Like the rest of my Gen X peers, I grew up wit...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>https://www.cnn.com/2026/10/04/health/digital-...</td>
+<td>Digital media can be toxic, but your kid will ...</td>
+<td>Updated Oct 4, 2026, 6:30 PM ET\nPublished Oct...</td>
+<td>In case you hadn’t heard from everyone that di...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>https://www.cnn.com/2026/10/03/sport/parent-dr...</td>
+<td>Stop criticizing your child’s athletic perform...</td>
+<td>Updated Oct 4, 2026, 5:08 PM ET\nPublished Oct...</td>
+<td>As soon as my son pressed play, the video made...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>https://www.cnn.com/2026/10/17/health/ai-onlin...</td>
+<td>AI enters the chaotic world of online dating. ...</td>
+<td>Updated Oct 20, 2026, 3:47 PM ET\nPublished Oc...</td>
+<td>Jack is on the search for the love of his life...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="in-class-activity-3" class="slide level2 center" data-background-color="#449998">
+<h2>In-class activity</h2>
+<p>See Activity 4 in notebook</p>
+</section></section>
+<section id="see-you-next-week" class="title-slide slide level1 center" data-background-color="#447099">
+<h1>See you next week!</h1>
+
+<div class="quarto-auto-generated-content">
+<div class="footer footer-default">
+<p>Data science I: Foundations</p>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

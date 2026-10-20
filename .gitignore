@@ -20,6 +20,8 @@ client_secret*.json
 !docs/**/*.json
 
 # Environments and keys
+creds.yaml
+creds.yml
 .env
 *.pem
 *.key
