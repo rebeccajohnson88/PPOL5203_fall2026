@@ -912,7 +912,7 @@
     "href": "slides/week-5.html#the-full-library-and-its-functions",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "The full library and its functions",
-    "text": "The full library and its functions\n\n\n# import library\nimport math\n\n# access methods from the library\nmath.pi\n\n3.141592653589793\n\n\n\n\n# this will throw you an error\npi\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_56293/767399446.py in &lt;module&gt;\n      1 # this will throw you an error\n----&gt; 2 pi\n\nNameError: name 'pi' is not defined"
+    "text": "The full library and its functions\n\n\n# import library\nimport math\n\n# access methods from the library\nmath.pi\n\n3.141592653589793\n\n\n\n\n# this will throw you an error\npi\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_78275/767399446.py in &lt;module&gt;\n      1 # this will throw you an error\n----&gt; 2 pi\n\nNameError: name 'pi' is not defined"
   },
   {
     "objectID": "slides/week-5.html#the-full-library-with-an-alias",
@@ -1045,14 +1045,14 @@
     "href": "slides/week-5.html#creating-arrays-not-using-lists",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Creating arrays not using lists",
-    "text": "Creating arrays not using lists\n\nCan also create arrays with certain content. Some examples:\n\n\n## creating a 3x3 array filled with 1s\nnp.ones((3,3))\n\n## creating a 3x3 array filled with random numbers between 0 and 1\nnp.random.random((3, 3))\n\n## creating a 3x3 array filled with random integers\n## from a pre-defined interval (in this case, 1 through 10)\nnp.random.randint(1, 10, (3, 3))\n\narray([[1., 1., 1.],\n       [1., 1., 1.],\n       [1., 1., 1.]])\n\n\narray([[0.96201241, 0.04464865, 0.56200785],\n       [0.58108053, 0.11035887, 0.59831673],\n       [0.91514444, 0.21510191, 0.67069139]])\n\n\narray([[2, 3, 6],\n       [7, 6, 3],\n       [8, 5, 9]])"
+    "text": "Creating arrays not using lists\n\nCan also create arrays with certain content. Some examples:\n\n\n## creating a 3x3 array filled with 1s\nnp.ones((3,3))\n\n## creating a 3x3 array filled with random numbers between 0 and 1\nnp.random.random((3, 3))\n\n## creating a 3x3 array filled with random integers\n## from a pre-defined interval (in this case, 1 through 10)\nnp.random.randint(1, 10, (3, 3))\n\narray([[1., 1., 1.],\n       [1., 1., 1.],\n       [1., 1., 1.]])\n\n\narray([[0.22919272, 0.24838976, 0.72756295],\n       [0.27456234, 0.25539029, 0.29672139],\n       [0.89272398, 0.72139157, 0.70744345]])\n\n\narray([[5, 7, 6],\n       [2, 4, 1],\n       [6, 3, 5]])"
   },
   {
     "objectID": "slides/week-5.html#what-are-some-attributes-of-arrays",
     "href": "slides/week-5.html#what-are-some-attributes-of-arrays",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "What are some attributes of arrays?",
-    "text": "What are some attributes of arrays?\n\nnumpy.dim: tells us the number of dimensions\nnumpy.shape: tells us the size of each dimension\nnumpy.size: tells us the full size of a array\n\n\n# generate an array\nX = np.random.randint(0, 100, (5, 5))\nX\n\n# information\nprint(\"ndim: \", X.ndim)\nprint(\"shape:\", X.shape)\nprint(\"size: \", X.size)\n\narray([[71, 29, 74, 44, 22],\n       [67, 55, 15, 92, 41],\n       [75, 55, 55, 61, 79],\n       [ 8, 11, 42, 37, 13],\n       [96, 93,  6, 13, 17]])\n\n\nndim:  2\nshape: (5, 5)\nsize:  25"
+    "text": "What are some attributes of arrays?\n\nnumpy.dim: tells us the number of dimensions\nnumpy.shape: tells us the size of each dimension\nnumpy.size: tells us the full size of a array\n\n\n# generate an array\nX = np.random.randint(0, 100, (5, 5))\nX\n\n# information\nprint(\"ndim: \", X.ndim)\nprint(\"shape:\", X.shape)\nprint(\"size: \", X.size)\n\narray([[66, 48, 49, 16, 73],\n       [51, 13, 70, 91,  2],\n       [23,  1, 28, 19, 23],\n       [ 0, 71, 38, 31, 37],\n       [ 2, 23, 88,  3, 94]])\n\n\nndim:  2\nshape: (5, 5)\nsize:  25"
   },
   {
     "objectID": "slides/week-5.html#array-indexing-and-slicing",
@@ -1066,7 +1066,7 @@
     "href": "slides/week-5.html#example-indexing",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Example indexing",
-    "text": "Example indexing\n\nX\n# index first row \nX[0] \n\n# index first column\nX[:,0]\n\n# index a specific cell \nX[0,0] \n\n# slice rows and columns\nX[0:3,0:3] \n\n# last row\nX[-1,:] \n\narray([[71, 29, 74, 44, 22],\n       [67, 55, 15, 92, 41],\n       [75, 55, 55, 61, 79],\n       [ 8, 11, 42, 37, 13],\n       [96, 93,  6, 13, 17]])\n\n\narray([71, 29, 74, 44, 22])\n\n\narray([71, 67, 75,  8, 96])\n\n\n71\n\n\narray([[71, 29, 74],\n       [67, 55, 15],\n       [75, 55, 55]])\n\n\narray([96, 93,  6, 13, 17])"
+    "text": "Example indexing\n\nX\n# index first row \nX[0] \n\n# index first column\nX[:,0]\n\n# index a specific cell \nX[0,0] \n\n# slice rows and columns\nX[0:3,0:3] \n\n# last row\nX[-1,:] \n\narray([[66, 48, 49, 16, 73],\n       [51, 13, 70, 91,  2],\n       [23,  1, 28, 19, 23],\n       [ 0, 71, 38, 31, 37],\n       [ 2, 23, 88,  3, 94]])\n\n\narray([66, 48, 49, 16, 73])\n\n\narray([66, 51, 23,  0,  2])\n\n\n66\n\n\narray([[66, 48, 49],\n       [51, 13, 70],\n       [23,  1, 28]])\n\n\narray([ 2, 23, 88,  3, 94])"
   },
   {
     "objectID": "slides/week-5.html#reassignment",
@@ -1094,35 +1094,35 @@
     "href": "slides/week-5.html#reassignment-based-on-conditional-statements",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Reassignment based on conditional statements",
-    "text": "Reassignment based on conditional statements\n\nD = np.random.randn(50).reshape(10,5).round(1)\nD\n\nD[D &gt; 0] = 1\nprint(D)\n\narray([[-0.2,  0.1,  0.5, -0.4, -0.2],\n       [ 1.2, -0.7, -0. ,  0.2, -0.8],\n       [-0.8,  0.3, -2.2, -0. , -0.2],\n       [-1.4,  1.2, -0.9,  0.9, -0.4],\n       [ 1.3,  0.3,  1.5, -0.1,  1. ],\n       [-0.5,  1.1,  1.3,  0.1, -1.4],\n       [ 0.8,  1. , -1. , -1.5, -1.7],\n       [ 0.6, -1. ,  1.1, -0.5,  0. ],\n       [ 0.9, -1.8,  0.8, -0.3, -0.6],\n       [ 0.2, -0.2,  0.8,  0.1, -2.7]])\n\n\n[[-0.2  1.   1.  -0.4 -0.2]\n [ 1.  -0.7 -0.   1.  -0.8]\n [-0.8  1.  -2.2 -0.  -0.2]\n [-1.4  1.  -0.9  1.  -0.4]\n [ 1.   1.   1.  -0.1  1. ]\n [-0.5  1.   1.   1.  -1.4]\n [ 1.   1.  -1.  -1.5 -1.7]\n [ 1.  -1.   1.  -0.5  0. ]\n [ 1.  -1.8  1.  -0.3 -0.6]\n [ 1.  -0.2  1.   1.  -2.7]]"
+    "text": "Reassignment based on conditional statements\n\nD = np.random.randn(50).reshape(10,5).round(1)\nD\n\nD[D &gt; 0] = 1\nprint(D)\n\narray([[ 0.5,  0.1, -0.2, -0.7,  0.6],\n       [ 1.1, -0.9, -1.8, -1.3, -0.1],\n       [-1.3, -0.2,  0.6, -1.1,  0. ],\n       [-0.1,  0.3, -1.5,  0.1,  1.2],\n       [-1.3,  1.7, -0.6,  0.3,  0.3],\n       [ 0.3, -1.1,  0.2, -0.4,  1. ],\n       [ 0.9,  0.4, -0.1, -1.4, -0.1],\n       [ 1.1, -0.4,  0.6,  0.8,  0.9],\n       [ 0.8,  0.3, -1. , -1.9, -0.5],\n       [ 0.1, -0.3,  1.7,  0.7,  0.5]])\n\n\n[[ 1.   1.  -0.2 -0.7  1. ]\n [ 1.  -0.9 -1.8 -1.3 -0.1]\n [-1.3 -0.2  1.  -1.1  0. ]\n [-0.1  1.  -1.5  1.   1. ]\n [-1.3  1.  -0.6  1.   1. ]\n [ 1.  -1.1  1.  -0.4  1. ]\n [ 1.   1.  -0.1 -1.4 -0.1]\n [ 1.  -0.4  1.   1.   1. ]\n [ 1.   1.  -1.  -1.9 -0.5]\n [ 1.  -0.3  1.   1.   1. ]]"
   },
   {
     "objectID": "slides/week-5.html#reassignment-based-on-conditional-statements-1",
     "href": "slides/week-5.html#reassignment-based-on-conditional-statements-1",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Reassignment based on conditional statements",
-    "text": "Reassignment based on conditional statements\n\nD[D &lt;=0 ] =0\nprint(D)\n\n[[0. 1. 1. 0. 0.]\n [1. 0. 0. 1. 0.]\n [0. 1. 0. 0. 0.]\n [0. 1. 0. 1. 0.]\n [1. 1. 1. 0. 1.]\n [0. 1. 1. 1. 0.]\n [1. 1. 0. 0. 0.]\n [1. 0. 1. 0. 0.]\n [1. 0. 1. 0. 0.]\n [1. 0. 1. 1. 0.]]"
+    "text": "Reassignment based on conditional statements\n\nD[D &lt;=0 ] =0\nprint(D)\n\n[[1. 1. 0. 0. 1.]\n [1. 0. 0. 0. 0.]\n [0. 0. 1. 0. 0.]\n [0. 1. 0. 1. 1.]\n [0. 1. 0. 1. 1.]\n [1. 0. 1. 0. 1.]\n [1. 1. 0. 0. 0.]\n [1. 0. 1. 1. 1.]\n [1. 1. 0. 0. 0.]\n [1. 0. 1. 1. 1.]]"
   },
   {
     "objectID": "slides/week-5.html#np.where-streamlines-this-conditional-reassignment",
     "href": "slides/week-5.html#np.where-streamlines-this-conditional-reassignment",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "np.where streamlines this conditional reassignment",
-    "text": "np.where streamlines this conditional reassignment\n\nD = np.random.randn(50).reshape(10,5).round(1) # Generate some random numbers again\nD # Before \nnp.where(D&gt;0,1,0) # After\n\narray([[ 0.8, -1.3, -1.1,  0.3,  2.2],\n       [-0.4, -1.4, -1. ,  0.6,  0.2],\n       [ 0.7,  0.8, -0. , -0.6, -0.8],\n       [-0.7,  0.1, -1.5, -0.6, -0.4],\n       [-0.2, -2.1,  0.1,  0.3,  0.5],\n       [ 1.5, -0.5,  0.4,  0.5,  0.1],\n       [ 0.4,  0.6,  1.2,  0.2,  1.2],\n       [-0.2,  1. ,  0.5, -0.6, -0.6],\n       [ 0.7,  2.3, -1.7,  1.3, -0.3],\n       [-0.7, -1.5, -1.1,  3.1, -1. ]])\n\n\narray([[1, 0, 0, 1, 1],\n       [0, 0, 0, 1, 1],\n       [1, 1, 0, 0, 0],\n       [0, 1, 0, 0, 0],\n       [0, 0, 1, 1, 1],\n       [1, 0, 1, 1, 1],\n       [1, 1, 1, 1, 1],\n       [0, 1, 1, 0, 0],\n       [1, 1, 0, 1, 0],\n       [0, 0, 0, 1, 0]])"
+    "text": "np.where streamlines this conditional reassignment\n\nD = np.random.randn(50).reshape(10,5).round(1) # Generate some random numbers again\nD # Before \nnp.where(D&gt;0,1,0) # After\n\narray([[ 0. ,  1.4, -1. ,  0.7, -2.3],\n       [-0.8, -0.8, -0.9, -0.1, -1.2],\n       [ 2. , -0.4, -0.8,  0.1,  0.8],\n       [-0. ,  1.7, -0.3, -0.3,  0.9],\n       [ 0.4,  1. , -0.7, -1.5, -0.2],\n       [-0.6, -0.3, -1.9, -1.2,  0.7],\n       [ 2. , -0.9, -0. , -0.9, -0.7],\n       [-0.7, -0.8, -0.3,  1. ,  1.1],\n       [ 0.5, -0.8,  0.7, -0.2, -0.3],\n       [-2. , -0. , -0.5, -0.2, -0.2]])\n\n\narray([[0, 1, 0, 1, 0],\n       [0, 0, 0, 0, 0],\n       [1, 0, 0, 1, 1],\n       [0, 1, 0, 0, 1],\n       [1, 1, 0, 0, 0],\n       [0, 0, 0, 0, 1],\n       [1, 0, 0, 0, 0],\n       [0, 0, 0, 1, 1],\n       [1, 0, 1, 0, 0],\n       [0, 0, 0, 0, 0]])"
   },
   {
     "objectID": "slides/week-5.html#one-warning-with-slicing-and-reassignment-need-to-explicitly-copy-array-to-avoid-modifying-original",
     "href": "slides/week-5.html#one-warning-with-slicing-and-reassignment-need-to-explicitly-copy-array-to-avoid-modifying-original",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "One warning with slicing and reassignment: need to explicitly copy array to avoid modifying original",
-    "text": "One warning with slicing and reassignment: need to explicitly copy array to avoid modifying original\n\nX = np.random.randint(0, 100, (1, 5))\n\n# slice\nX_sub = X[:3]\n\n# modify\nX_sub[0][0] = 3000\n\n# print\nprint(X, X_sub)\n\n[[3000   19   10   20   62]] [[3000   19   10   20   62]]"
+    "text": "One warning with slicing and reassignment: need to explicitly copy array to avoid modifying original\n\nX = np.random.randint(0, 100, (1, 5))\n\n# slice\nX_sub = X[:3]\n\n# modify\nX_sub[0][0] = 3000\n\n# print\nprint(X, X_sub)\n\n[[3000   20   60   43   88]] [[3000   20   60   43   88]]"
   },
   {
     "objectID": "slides/week-5.html#how-to-avoid-add-an-explicit-copy",
     "href": "slides/week-5.html#how-to-avoid-add-an-explicit-copy",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "How to avoid: add an explicit copy",
-    "text": "How to avoid: add an explicit copy\n\nX = np.random.randint(0, 100, (1, 5))\n\n# slice.copy()\nX_sub = X[:3].copy()\n\n# modify\nX_sub[0][0] = 1000\n\n# print\nprint(X, X_sub)\n\n[[23 26 21  0 60]] [[1000   26   21    0   60]]"
+    "text": "How to avoid: add an explicit copy\n\nX = np.random.randint(0, 100, (1, 5))\n\n# slice.copy()\nX_sub = X[:3].copy()\n\n# modify\nX_sub[0][0] = 1000\n\n# print\nprint(X, X_sub)\n\n[[85 25 42 98 73]] [[1000   25   42   98   73]]"
   },
   {
     "objectID": "slides/week-5.html#concatenating-and-splitting-arrays",
@@ -1136,21 +1136,21 @@
     "href": "slides/week-5.html#example-applications",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Example applications",
-    "text": "Example applications\n\n# create arrays\nX = np.random.randint(0, 100, (5, 2))\nY = np.random.randint(0, 100, (5, 2))\n\nX\nY\n\narray([[14, 27],\n       [21, 62],\n       [97, 11],\n       [77, 33],\n       [38, 54]])\n\n\narray([[ 1, 51],\n       [37, 91],\n       [14, 50],\n       [49,  0],\n       [76, 44]])"
+    "text": "Example applications\n\n# create arrays\nX = np.random.randint(0, 100, (5, 2))\nY = np.random.randint(0, 100, (5, 2))\n\nX\nY\n\narray([[49, 80],\n       [32, 81],\n       [66, 54],\n       [14, 69],\n       [40, 54]])\n\n\narray([[99, 60],\n       [12, 21],\n       [49, 24],\n       [ 1, 39],\n       [11, 21]])"
   },
   {
     "objectID": "slides/week-5.html#rowbind-vertically-stack",
     "href": "slides/week-5.html#rowbind-vertically-stack",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Rowbind / vertically stack",
-    "text": "Rowbind / vertically stack\n\nnp.concatenate([X,Y],axis=0)\n\narray([[14, 27],\n       [21, 62],\n       [97, 11],\n       [77, 33],\n       [38, 54],\n       [ 1, 51],\n       [37, 91],\n       [14, 50],\n       [49,  0],\n       [76, 44]])"
+    "text": "Rowbind / vertically stack\n\nnp.concatenate([X,Y],axis=0)\n\narray([[49, 80],\n       [32, 81],\n       [66, 54],\n       [14, 69],\n       [40, 54],\n       [99, 60],\n       [12, 21],\n       [49, 24],\n       [ 1, 39],\n       [11, 21]])"
   },
   {
     "objectID": "slides/week-5.html#column-bind-horizontally-combine",
     "href": "slides/week-5.html#column-bind-horizontally-combine",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Column bind / horizontally combine",
-    "text": "Column bind / horizontally combine\n\n# cbind\nnp.concatenate([X,Y],axis=1)\n\narray([[14, 27,  1, 51],\n       [21, 62, 37, 91],\n       [97, 11, 14, 50],\n       [77, 33, 49,  0],\n       [38, 54, 76, 44]])"
+    "text": "Column bind / horizontally combine\n\n# cbind\nnp.concatenate([X,Y],axis=1)\n\narray([[49, 80, 99, 60],\n       [32, 81, 12, 21],\n       [66, 54, 49, 24],\n       [14, 69,  1, 39],\n       [40, 54, 11, 21]])"
   },
   {
     "objectID": "slides/week-5.html#broadcasting",
@@ -1416,7 +1416,7 @@
     "href": "slides/week-6.html#subsetting-rows-and-columns-simultaneously-1",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Subsetting rows and columns simultaneously",
-    "text": "Subsetting rows and columns simultaneously\nThis is where value of loc comes in; see error without\n\n## throws error\ndf[(df.Year == 2021) & (df.State == \"California\"),\n[\"State\", \"Year\", \"Race\"]]\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)\n   3628             try:\n-&gt; 3629                 return self._engine.get_loc(casted_key)\n   3630             except KeyError as err:\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()\n\nTypeError: '(0       False\n1       False\n2       False\n3       False\n4       False\n        ...  \n1709    False\n1710    False\n1711    False\n1712    False\n1713    False\nLength: 1714, dtype: bool, ['State', 'Year', 'Race'])' is an invalid key\n\nDuring handling of the above exception, another exception occurred:\n\nInvalidIndexError                         Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_56205/2067952100.py in &lt;module&gt;\n      1 ## throws error\n----&gt; 2 df[(df.Year == 2021) & (df.State == \"California\"),\n      3 [\"State\", \"Year\", \"Race\"]]\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py in __getitem__(self, key)\n   3503             if self.columns.nlevels &gt; 1:\n   3504                 return self._getitem_multilevel(key)\n-&gt; 3505             indexer = self.columns.get_loc(key)\n   3506             if is_integer(indexer):\n   3507                 indexer = [indexer]\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)\n   3634                 #  InvalidIndexError. Otherwise we fall through and re-raise\n   3635                 #  the TypeError.\n-&gt; 3636                 self._check_indexing_error(key)\n   3637                 raise\n   3638 \n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in _check_indexing_error(self, key)\n   5649             # if key is not a scalar, directly raise an error (the code below\n   5650             # would convert to numpy arrays and raise later any way) - GH29926\n-&gt; 5651             raise InvalidIndexError(key)\n   5652 \n   5653     @cache_readonly\n\nInvalidIndexError: (0       False\n1       False\n2       False\n3       False\n4       False\n        ...  \n1709    False\n1710    False\n1711    False\n1712    False\n1713    False\nLength: 1714, dtype: bool, ['State', 'Year', 'Race'])"
+    "text": "Subsetting rows and columns simultaneously\nThis is where value of loc comes in; see error without\n\n## throws error\ndf[(df.Year == 2021) & (df.State == \"California\"),\n[\"State\", \"Year\", \"Race\"]]\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)\n   3628             try:\n-&gt; 3629                 return self._engine.get_loc(casted_key)\n   3630             except KeyError as err:\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()\n\nTypeError: '(0       False\n1       False\n2       False\n3       False\n4       False\n        ...  \n1709    False\n1710    False\n1711    False\n1712    False\n1713    False\nLength: 1714, dtype: bool, ['State', 'Year', 'Race'])' is an invalid key\n\nDuring handling of the above exception, another exception occurred:\n\nInvalidIndexError                         Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_78208/2067952100.py in &lt;module&gt;\n      1 ## throws error\n----&gt; 2 df[(df.Year == 2021) & (df.State == \"California\"),\n      3 [\"State\", \"Year\", \"Race\"]]\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py in __getitem__(self, key)\n   3503             if self.columns.nlevels &gt; 1:\n   3504                 return self._getitem_multilevel(key)\n-&gt; 3505             indexer = self.columns.get_loc(key)\n   3506             if is_integer(indexer):\n   3507                 indexer = [indexer]\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)\n   3634                 #  InvalidIndexError. Otherwise we fall through and re-raise\n   3635                 #  the TypeError.\n-&gt; 3636                 self._check_indexing_error(key)\n   3637                 raise\n   3638 \n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in _check_indexing_error(self, key)\n   5649             # if key is not a scalar, directly raise an error (the code below\n   5650             # would convert to numpy arrays and raise later any way) - GH29926\n-&gt; 5651             raise InvalidIndexError(key)\n   5652 \n   5653     @cache_readonly\n\nInvalidIndexError: (0       False\n1       False\n2       False\n3       False\n4       False\n        ...  \n1709    False\n1710    False\n1711    False\n1712    False\n1713    False\nLength: 1714, dtype: bool, ['State', 'Year', 'Race'])"
   },
   {
     "objectID": "slides/week-6.html#query-offers-similarities-to-dplyrs-filter",
@@ -1472,7 +1472,7 @@
     "href": "slides/week-6.html#creating-variables-assign-method-as-similar-to-mutate-in-dplyr",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Creating variables: assign method as similar to mutate in dplyr",
-    "text": "Creating variables: assign method as similar to mutate in dplyr\nKey advantage is we can create multiple variables in the same assign statement\n\ndf = (df.assign(state_lower = df.State.str.lower(),\n        year_category = np.where(df.Year &lt; 2020, \n        \"Pre Covid\", \"During or post COVID\")))\ndf[['State', 'state_lower', 'Year', 'year_category']].sample(n = 5)\n\n\n\n\n\n\n\n\nState\nstate_lower\nYear\nyear_category\n\n\n\n\n30\nUtah\nutah\n2018\nPre Covid\n\n\n969\nVirginia\nvirginia\n2024\nDuring or post COVID\n\n\n1139\nKentucky\nkentucky\n2019\nPre Covid\n\n\n930\nOregon\noregon\n2024\nDuring or post COVID\n\n\n59\nOregon\noregon\n2018\nPre Covid"
+    "text": "Creating variables: assign method as similar to mutate in dplyr\nKey advantage is we can create multiple variables in the same assign statement\n\ndf = (df.assign(state_lower = df.State.str.lower(),\n        year_category = np.where(df.Year &lt; 2020, \n        \"Pre Covid\", \"During or post COVID\")))\ndf[['State', 'state_lower', 'Year', 'year_category']].sample(n = 5)\n\n\n\n\n\n\n\n\nState\nstate_lower\nYear\nyear_category\n\n\n\n\n808\nIllinois\nillinois\n2024\nDuring or post COVID\n\n\n833\nLouisiana\nlouisiana\n2024\nDuring or post COVID\n\n\n1069\nNew York\nnew york\n2019\nPre Covid\n\n\n1590\nMissouri\nmissouri\n2023\nDuring or post COVID\n\n\n1024\nSouth Dakota\nsouth dakota\n2019\nPre Covid"
   },
   {
     "objectID": "slides/week-6.html#recoding-variables",
@@ -1535,7 +1535,7 @@
     "href": "slides/week-6.html#illustration-grouping-by-raceethnicity-across-all-states",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Illustration: grouping by race/ethnicity (across all states)",
-    "text": "Illustration: grouping by race/ethnicity (across all states)\n\ndf_raceeth = df.groupby(\"Race\")\ndf_raceeth\n\n&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f8bf8dd8b20&gt;"
+    "text": "Illustration: grouping by race/ethnicity (across all states)\n\ndf_raceeth = df.groupby(\"Race\")\ndf_raceeth\n\n&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f79da0953a0&gt;"
   },
   {
     "objectID": "slides/week-6.html#iterating-over-groups",
@@ -1633,7 +1633,7 @@
     "href": "slides/week-6.html#what-if-we-want-to-keep-the-shape-of-the-dataframe-and-add-a-grouped-aggregation-result-as-a-new-column",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "What if we want to keep the shape of the dataframe and add a grouped aggregation result as a new column?",
-    "text": "What if we want to keep the shape of the dataframe and add a grouped aggregation result as a new column?\nCan use the assign function we learned earlier for variable creation and combine it with the transform function\nExample: keep all rows in the data; add the average nationwide uninsurance rate for each racial/ethnic group as an additional column\n\ndf_wavg = (df.assign(raceeth_avg = \n        df.groupby('Race')['uninsured_rate'].transform(\"mean\")))\ndf_wavg[['State', 'Year', \n        'Race', 'uninsured_rate', 'raceeth_avg']].sample(n = 5)\n\n\n\n\n\n\n\n\nState\nYear\nRace\nuninsured_rate\nraceeth_avg\n\n\n\n\n857\nMissouri\n2024\nAsian and Pacific Islander\n0.07\n0.042774\n\n\n877\nNevada\n2024\nHispanic or Latino\n0.12\n0.082812\n\n\n274\nCalifornia\n2017\nNon-Hispanic White\n0.02\n0.040200\n\n\n1349\nMinnesota\n2021\nNon-Hispanic White\n0.03\n0.040200\n\n\n9\nWisconsin\n2018\nAmerican Indian or Alaska Native\n0.14\n0.084444"
+    "text": "What if we want to keep the shape of the dataframe and add a grouped aggregation result as a new column?\nCan use the assign function we learned earlier for variable creation and combine it with the transform function\nExample: keep all rows in the data; add the average nationwide uninsurance rate for each racial/ethnic group as an additional column\n\ndf_wavg = (df.assign(raceeth_avg = \n        df.groupby('Race')['uninsured_rate'].transform(\"mean\")))\ndf_wavg[['State', 'Year', \n        'Race', 'uninsured_rate', 'raceeth_avg']].sample(n = 5)\n\n\n\n\n\n\n\n\nState\nYear\nRace\nuninsured_rate\nraceeth_avg\n\n\n\n\n172\nKansas\n2018\nAsian and Pacific Islander\n0.02\n0.042774\n\n\n728\nCalifornia\n2022\nTwo or more races\n0.03\n0.048389\n\n\n870\nMinnesota\n2024\nTwo or more races\n0.05\n0.048389\n\n\n1290\nIndiana\n2021\nNon-Hispanic White\n0.06\n0.040200\n\n\n149\nMaryland\n2018\nNon-Hispanic White\n0.02\n0.040200"
   },
   {
     "objectID": "slides/week-6.html#in-class-activity-3",
@@ -1724,245 +1724,25 @@
     "text": "Code\nYou will use the same code block for any language. You just need to change language inside of the brackets {}\n\nlibrary(reticulate)\n\nWarning: package 'reticulate' was built under R version 4.2.3\n\nreticulate::py_config()\n\npython:         /Users/rj545/.virtualenvs/r-reticulate/bin/python\nlibpython:      /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/config-3.9-darwin/libpython3.9.dylib\npythonhome:     /Users/rj545/.virtualenvs/r-reticulate:/Users/rj545/.virtualenvs/r-reticulate\nversion:        3.9.6 (default, Sep 26 2022, 11:37:49)  [Clang 14.0.0 (clang-1400.0.29.202)]\nnumpy:          /Users/rj545/.virtualenvs/r-reticulate/lib/python3.9/site-packages/numpy\nnumpy_version:  2.0.2\n\nuse_python(\"/Users/rj545/.virtualenvs/r-reticulate/bin/python\")\n\nusethis::edit_r_environ()\n\n• Edit '/Users/rj545/.Renviron'\n• Restart R for changes to take effect\n\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport scipy.stats as stats\nimport math\n\n## generate normal distribution \nmu = 0\nvariance = 1\nsigma = math.sqrt(variance)\nx = np.linspace(mu - 3*sigma, mu + 3*sigma, 100)\ny = stats.norm.pdf(x, mu, sigma)\n\n## plot using Georgetown Blue colors\nGU_BLUE = '#041E42'\nplt.plot(x, y, color = GU_BLUE)\nplt.fill_between(x, y, color= GU_BLUE, alpha=0.4)\n\n\n\n\n\n\n\n\n\nplt.show()"
   },
   {
-    "objectID": "weeks/week-03.html",
-    "href": "weeks/week-03.html",
-    "title": "Week 03",
+    "objectID": "weeks/week-01.html",
+    "href": "weeks/week-01.html",
+    "title": "Week 01",
     "section": "",
-    "text": "Week 3 - Intro to Python",
+    "text": "Slides\nWeek 01:Introduction, Installations, IDEs, Command line\n\n\nHandouts\n\nInstructions for setting up the course infrastructure.\nUsing Jupyter Notebooks: web page,  .ipynb file \nUsing Quarto for Python and R web page,  .qmd file \nBasics of Command Line: web page,  .ipynb file \nPractice Notebook to Check Installations:  .ipynb file \n\n\n\nReadings\nRequired Readings\n\nJupyter Notebook for Beginners: A tutorial Pryke, Benjamin - www.dataquest.io\n\n\n\nDataCamp\n\nOptional (but highly recommended) module: Introduction to Shell &gt; Manipulating Files and Directories",
     "crumbs": [
       "Materials",
-      "Week 3: Intro to Python"
+      "Week 1: Intro to Course and Tools"
     ]
   },
   {
-    "objectID": "weeks/week-03.html#slides",
-    "href": "weeks/week-03.html#slides",
-    "title": "Week 03",
+    "objectID": "weeks/week-02.html",
+    "href": "weeks/week-02.html",
+    "title": "Week 02",
     "section": "",
-    "text": "Week 3 - Intro to Python",
+    "text": "Slides\nWeek 01: Git and GitHub\n\n\nIn-class activity\nClassroom 50 link\nDownload from this website:\n\nBlank activity:  .ipynb file \nActivity solutions:  .ipynb file \n\n\n\nResources (optional)\nGitHub Cheatsheet\nAnother GitHub Cheatsheet",
     "crumbs": [
       "Materials",
-      "Week 3: Intro to Python"
-    ]
-  },
-  {
-    "objectID": "weeks/week-03.html#in-class-exercise",
-    "href": "weeks/week-03.html#in-class-exercise",
-    "title": "Week 03",
-    "section": "In-Class Exercise",
-    "text": "In-Class Exercise\n\nBlank activity (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html to view): html",
-    "crumbs": [
-      "Materials",
-      "Week 3: Intro to Python"
-    ]
-  },
-  {
-    "objectID": "weeks/week-03.html#optional-readings",
-    "href": "weeks/week-03.html#optional-readings",
-    "title": "Week 03",
-    "section": "Optional Readings",
-    "text": "Optional Readings\nFrom Wes McKinney, Python for Data Analysis\n\nChapter 2: Python Language Basics, IPython, and Jupyter Notebooks\n\nFrom Data Carpentry:\n\nPython Fundamentals\nStoring Multiple Values in Lists",
-    "crumbs": [
-      "Materials",
-      "Week 3: Intro to Python"
-    ]
-  },
-  {
-    "objectID": "weeks/week-06.html",
-    "href": "weeks/week-06.html",
-    "title": "Week 06",
-    "section": "",
-    "text": "Week 6",
-    "crumbs": [
-      "Materials",
-      "Week 6: Intro to Pandas and Data Wrangling"
-    ]
-  },
-  {
-    "objectID": "weeks/week-06.html#slides",
-    "href": "weeks/week-06.html#slides",
-    "title": "Week 06",
-    "section": "",
-    "text": "Week 6",
-    "crumbs": [
-      "Materials",
-      "Week 6: Intro to Pandas and Data Wrangling"
-    ]
-  },
-  {
-    "objectID": "weeks/week-06.html#in-class-activity",
-    "href": "weeks/week-06.html#in-class-activity",
-    "title": "Week 06",
-    "section": "In-class activity",
-    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file",
-    "crumbs": [
-      "Materials",
-      "Week 6: Intro to Pandas and Data Wrangling"
-    ]
-  },
-  {
-    "objectID": "weeks/week-06.html#data-for-in-class-activity",
-    "href": "weeks/week-06.html#data-for-in-class-activity",
-    "title": "Week 06",
-    "section": "Data for in-class activity",
-    "text": "Data for in-class activity\n\nRates of children without health insurance by state, year, and race/ethnicity (csv to download):  .csv file \n\nAdapted from: Kids Count aggregation of American Community Survey (ACS) table C27001",
-    "crumbs": [
-      "Materials",
-      "Week 6: Intro to Pandas and Data Wrangling"
-    ]
-  },
-  {
-    "objectID": "weeks/week-06.html#optional-readings",
-    "href": "weeks/week-06.html#optional-readings",
-    "title": "Week 06",
-    "section": "Optional Readings",
-    "text": "Optional Readings\n\nPandas cheat sheet",
-    "crumbs": [
-      "Materials",
-      "Week 6: Intro to Pandas and Data Wrangling"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html",
-    "href": "weeks/week-05.html",
-    "title": "Week 05",
-    "section": "",
-    "text": "Week 5",
-    "crumbs": [
-      "Materials",
-      "Week 5: Libraries and Numpy"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html#slides",
-    "href": "weeks/week-05.html#slides",
-    "title": "Week 05",
-    "section": "",
-    "text": "Week 5",
-    "crumbs": [
-      "Materials",
-      "Week 5: Libraries and Numpy"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html#in-class-activity",
-    "href": "weeks/week-05.html#in-class-activity",
-    "title": "Week 05",
-    "section": "In-class activity",
-    "text": "In-class activity\n\nProblem set 2 (see Classroom 50 assignment)",
-    "crumbs": [
-      "Materials",
-      "Week 5: Libraries and Numpy"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html#optional-readings",
-    "href": "weeks/week-05.html#optional-readings",
-    "title": "Week 05",
-    "section": "Optional Readings",
-    "text": "Optional Readings\n\nPDS VanderPlas\n\nCh. 2: Introduction to Numpy - Python Data Science Handbook - VanderPlas, Jake",
-    "crumbs": [
-      "Materials",
-      "Week 5: Libraries and Numpy"
-    ]
-  },
-  {
-    "objectID": "weeks/week-08.html",
-    "href": "weeks/week-08.html",
-    "title": "Week 08",
-    "section": "",
-    "text": "Week 8",
-    "crumbs": [
-      "Materials",
-      "Week 8: Data Visualization"
-    ]
-  },
-  {
-    "objectID": "weeks/week-08.html#slides",
-    "href": "weeks/week-08.html#slides",
-    "title": "Week 08",
-    "section": "",
-    "text": "Week 8",
-    "crumbs": [
-      "Materials",
-      "Week 8: Data Visualization"
-    ]
-  },
-  {
-    "objectID": "weeks/week-08.html#in-class-activity",
-    "href": "weeks/week-08.html#in-class-activity",
-    "title": "Week 08",
-    "section": "In-class activity",
-    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html file to view): html",
-    "crumbs": [
-      "Materials",
-      "Week 8: Data Visualization"
-    ]
-  },
-  {
-    "objectID": "weeks/week-08.html#data-for-in-class-activity",
-    "href": "weeks/week-08.html#data-for-in-class-activity",
-    "title": "Week 08",
-    "section": "Data for in-class activity",
-    "text": "Data for in-class activity\n\nRates of child uninsurance by state, year, and race/ethnicity (csv to download):  .csv file \nMerged data with child poverty (csv to download):  .csv file \n\nDatasets page with more details",
-    "crumbs": [
-      "Materials",
-      "Week 8: Data Visualization"
-    ]
-  },
-  {
-    "objectID": "weeks/week-08.html#optional-readings",
-    "href": "weeks/week-08.html#optional-readings",
-    "title": "Week 08",
-    "section": "Optional Readings",
-    "text": "Optional Readings\n\nTutorial on plotnine",
-    "crumbs": [
-      "Materials",
-      "Week 8: Data Visualization"
-    ]
-  },
-  {
-    "objectID": "weeks/week-04.html",
-    "href": "weeks/week-04.html",
-    "title": "Week 04",
-    "section": "",
-    "text": "Week 4 - Python part II",
-    "crumbs": [
-      "Materials",
-      "Week 4: Python - Iteration, Comprehension, and Functions"
-    ]
-  },
-  {
-    "objectID": "weeks/week-04.html#slides",
-    "href": "weeks/week-04.html#slides",
-    "title": "Week 04",
-    "section": "",
-    "text": "Week 4 - Python part II",
-    "crumbs": [
-      "Materials",
-      "Week 4: Python - Iteration, Comprehension, and Functions"
-    ]
-  },
-  {
-    "objectID": "weeks/week-04.html#in-class-exercise",
-    "href": "weeks/week-04.html#in-class-exercise",
-    "title": "Week 04",
-    "section": "In-Class Exercise",
-    "text": "In-Class Exercise\n\nBlank activity (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html to view): html",
-    "crumbs": [
-      "Materials",
-      "Week 4: Python - Iteration, Comprehension, and Functions"
-    ]
-  },
-  {
-    "objectID": "weeks/week-04.html#optional-readings",
-    "href": "weeks/week-04.html#optional-readings",
-    "title": "Week 04",
-    "section": "Optional Readings",
-    "text": "Optional Readings\n\nPDA Wes McKinney, Chapter 3\n\nList, Set, and Dictionary Comprehensions\n\nfor-loop-vs-list-comprehension-vs-high-order-functions",
-    "crumbs": [
-      "Materials",
-      "Week 4: Python - Iteration, Comprehension, and Functions"
+      "Week 2: Git and GitHub"
     ]
   },
   {
@@ -2021,26 +1801,325 @@
     ]
   },
   {
-    "objectID": "weeks/week-02.html",
-    "href": "weeks/week-02.html",
-    "title": "Week 02",
+    "objectID": "weeks/week-04.html",
+    "href": "weeks/week-04.html",
+    "title": "Week 04",
     "section": "",
-    "text": "Slides\nWeek 01: Git and GitHub\n\n\nIn-class activity\nClassroom 50 link\nDownload from this website:\n\nBlank activity:  .ipynb file \nActivity solutions:  .ipynb file \n\n\n\nResources (optional)\nGitHub Cheatsheet\nAnother GitHub Cheatsheet",
+    "text": "Week 4 - Python part II",
     "crumbs": [
       "Materials",
-      "Week 2: Git and GitHub"
+      "Week 4: Python - Iteration, Comprehension, and Functions"
     ]
   },
   {
-    "objectID": "weeks/week-01.html",
-    "href": "weeks/week-01.html",
-    "title": "Week 01",
+    "objectID": "weeks/week-04.html#slides",
+    "href": "weeks/week-04.html#slides",
+    "title": "Week 04",
     "section": "",
-    "text": "Slides\nWeek 01:Introduction, Installations, IDEs, Command line\n\n\nHandouts\n\nInstructions for setting up the course infrastructure.\nUsing Jupyter Notebooks: web page,  .ipynb file \nUsing Quarto for Python and R web page,  .qmd file \nBasics of Command Line: web page,  .ipynb file \nPractice Notebook to Check Installations:  .ipynb file \n\n\n\nReadings\nRequired Readings\n\nJupyter Notebook for Beginners: A tutorial Pryke, Benjamin - www.dataquest.io\n\n\n\nDataCamp\n\nOptional (but highly recommended) module: Introduction to Shell &gt; Manipulating Files and Directories",
+    "text": "Week 4 - Python part II",
     "crumbs": [
       "Materials",
-      "Week 1: Intro to Course and Tools"
+      "Week 4: Python - Iteration, Comprehension, and Functions"
     ]
+  },
+  {
+    "objectID": "weeks/week-04.html#in-class-exercise",
+    "href": "weeks/week-04.html#in-class-exercise",
+    "title": "Week 04",
+    "section": "In-Class Exercise",
+    "text": "In-Class Exercise\n\nBlank activity (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html to view): html",
+    "crumbs": [
+      "Materials",
+      "Week 4: Python - Iteration, Comprehension, and Functions"
+    ]
+  },
+  {
+    "objectID": "weeks/week-04.html#optional-readings",
+    "href": "weeks/week-04.html#optional-readings",
+    "title": "Week 04",
+    "section": "Optional Readings",
+    "text": "Optional Readings\n\nPDA Wes McKinney, Chapter 3\n\nList, Set, and Dictionary Comprehensions\n\nfor-loop-vs-list-comprehension-vs-high-order-functions",
+    "crumbs": [
+      "Materials",
+      "Week 4: Python - Iteration, Comprehension, and Functions"
+    ]
+  },
+  {
+    "objectID": "weeks/week-08.html",
+    "href": "weeks/week-08.html",
+    "title": "Week 08",
+    "section": "",
+    "text": "Week 8",
+    "crumbs": [
+      "Materials",
+      "Week 8: Data Visualization"
+    ]
+  },
+  {
+    "objectID": "weeks/week-08.html#slides",
+    "href": "weeks/week-08.html#slides",
+    "title": "Week 08",
+    "section": "",
+    "text": "Week 8",
+    "crumbs": [
+      "Materials",
+      "Week 8: Data Visualization"
+    ]
+  },
+  {
+    "objectID": "weeks/week-08.html#in-class-activity",
+    "href": "weeks/week-08.html#in-class-activity",
+    "title": "Week 08",
+    "section": "In-class activity",
+    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html file to view): html",
+    "crumbs": [
+      "Materials",
+      "Week 8: Data Visualization"
+    ]
+  },
+  {
+    "objectID": "weeks/week-08.html#data-for-in-class-activity",
+    "href": "weeks/week-08.html#data-for-in-class-activity",
+    "title": "Week 08",
+    "section": "Data for in-class activity",
+    "text": "Data for in-class activity\n\nRates of child uninsurance by state, year, and race/ethnicity (csv to download):  .csv file \nMerged data with child poverty (csv to download):  .csv file \n\nDatasets page with more details",
+    "crumbs": [
+      "Materials",
+      "Week 8: Data Visualization"
+    ]
+  },
+  {
+    "objectID": "weeks/week-08.html#optional-readings",
+    "href": "weeks/week-08.html#optional-readings",
+    "title": "Week 08",
+    "section": "Optional Readings",
+    "text": "Optional Readings\n\nTutorial on plotnine",
+    "crumbs": [
+      "Materials",
+      "Week 8: Data Visualization"
+    ]
+  },
+  {
+    "objectID": "weeks/week-09.html",
+    "href": "weeks/week-09.html",
+    "title": "Week 09",
+    "section": "",
+    "text": "Week 9",
+    "crumbs": [
+      "Materials",
+      "Week 9: APIs and Web Scraping"
+    ]
+  },
+  {
+    "objectID": "weeks/week-09.html#slides",
+    "href": "weeks/week-09.html#slides",
+    "title": "Week 09",
+    "section": "",
+    "text": "Week 9",
+    "crumbs": [
+      "Materials",
+      "Week 9: APIs and Web Scraping"
+    ]
+  },
+  {
+    "objectID": "weeks/week-09.html#in-class-activity",
+    "href": "weeks/week-09.html#in-class-activity",
+    "title": "Week 09",
+    "section": "In-class activity",
+    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html file to view): html",
+    "crumbs": [
+      "Materials",
+      "Week 9: APIs and Web Scraping"
+    ]
+  },
+  {
+    "objectID": "weeks/week-09.html#optional-readings",
+    "href": "weeks/week-09.html#optional-readings",
+    "title": "Week 09",
+    "section": "Optional Readings",
+    "text": "Optional Readings\n\nTutorial: A Practical Introduction to Web Scraping in Python\nTutorial: Python Web Scraping Using BeautifulSoup - dataquest.io\nUltimate Guide to Web Scraping with Python Part 1: Requests and BeautifulSoup\nWeb scraping using Selenium",
+    "crumbs": [
+      "Materials",
+      "Week 9: APIs and Web Scraping"
+    ]
+  },
+  {
+    "objectID": "weeks/week-05.html",
+    "href": "weeks/week-05.html",
+    "title": "Week 05",
+    "section": "",
+    "text": "Week 5",
+    "crumbs": [
+      "Materials",
+      "Week 5: Libraries and Numpy"
+    ]
+  },
+  {
+    "objectID": "weeks/week-05.html#slides",
+    "href": "weeks/week-05.html#slides",
+    "title": "Week 05",
+    "section": "",
+    "text": "Week 5",
+    "crumbs": [
+      "Materials",
+      "Week 5: Libraries and Numpy"
+    ]
+  },
+  {
+    "objectID": "weeks/week-05.html#in-class-activity",
+    "href": "weeks/week-05.html#in-class-activity",
+    "title": "Week 05",
+    "section": "In-class activity",
+    "text": "In-class activity\n\nProblem set 2 (see Classroom 50 assignment)",
+    "crumbs": [
+      "Materials",
+      "Week 5: Libraries and Numpy"
+    ]
+  },
+  {
+    "objectID": "weeks/week-05.html#optional-readings",
+    "href": "weeks/week-05.html#optional-readings",
+    "title": "Week 05",
+    "section": "Optional Readings",
+    "text": "Optional Readings\n\nPDS VanderPlas\n\nCh. 2: Introduction to Numpy - Python Data Science Handbook - VanderPlas, Jake",
+    "crumbs": [
+      "Materials",
+      "Week 5: Libraries and Numpy"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html",
+    "href": "weeks/week-06.html",
+    "title": "Week 06",
+    "section": "",
+    "text": "Week 6",
+    "crumbs": [
+      "Materials",
+      "Week 6: Intro to Pandas and Data Wrangling"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html#slides",
+    "href": "weeks/week-06.html#slides",
+    "title": "Week 06",
+    "section": "",
+    "text": "Week 6",
+    "crumbs": [
+      "Materials",
+      "Week 6: Intro to Pandas and Data Wrangling"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html#in-class-activity",
+    "href": "weeks/week-06.html#in-class-activity",
+    "title": "Week 06",
+    "section": "In-class activity",
+    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file",
+    "crumbs": [
+      "Materials",
+      "Week 6: Intro to Pandas and Data Wrangling"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html#data-for-in-class-activity",
+    "href": "weeks/week-06.html#data-for-in-class-activity",
+    "title": "Week 06",
+    "section": "Data for in-class activity",
+    "text": "Data for in-class activity\n\nRates of children without health insurance by state, year, and race/ethnicity (csv to download):  .csv file \n\nAdapted from: Kids Count aggregation of American Community Survey (ACS) table C27001",
+    "crumbs": [
+      "Materials",
+      "Week 6: Intro to Pandas and Data Wrangling"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html#optional-readings",
+    "href": "weeks/week-06.html#optional-readings",
+    "title": "Week 06",
+    "section": "Optional Readings",
+    "text": "Optional Readings\n\nPandas cheat sheet",
+    "crumbs": [
+      "Materials",
+      "Week 6: Intro to Pandas and Data Wrangling"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html",
+    "href": "weeks/week-03.html",
+    "title": "Week 03",
+    "section": "",
+    "text": "Week 3 - Intro to Python",
+    "crumbs": [
+      "Materials",
+      "Week 3: Intro to Python"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#slides",
+    "href": "weeks/week-03.html#slides",
+    "title": "Week 03",
+    "section": "",
+    "text": "Week 3 - Intro to Python",
+    "crumbs": [
+      "Materials",
+      "Week 3: Intro to Python"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#in-class-exercise",
+    "href": "weeks/week-03.html#in-class-exercise",
+    "title": "Week 03",
+    "section": "In-Class Exercise",
+    "text": "In-Class Exercise\n\nBlank activity (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html to view): html",
+    "crumbs": [
+      "Materials",
+      "Week 3: Intro to Python"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#optional-readings",
+    "href": "weeks/week-03.html#optional-readings",
+    "title": "Week 03",
+    "section": "Optional Readings",
+    "text": "Optional Readings\nFrom Wes McKinney, Python for Data Analysis\n\nChapter 2: Python Language Basics, IPython, and Jupyter Notebooks\n\nFrom Data Carpentry:\n\nPython Fundamentals\nStoring Multiple Values in Lists",
+    "crumbs": [
+      "Materials",
+      "Week 3: Intro to Python"
+    ]
+  },
+  {
+    "objectID": "weeks/week-08 copy.html",
+    "href": "weeks/week-08 copy.html",
+    "title": "Week 08",
+    "section": "",
+    "text": "Week 8"
+  },
+  {
+    "objectID": "weeks/week-08 copy.html#slides",
+    "href": "weeks/week-08 copy.html#slides",
+    "title": "Week 08",
+    "section": "",
+    "text": "Week 8"
+  },
+  {
+    "objectID": "weeks/week-08 copy.html#in-class-activity",
+    "href": "weeks/week-08 copy.html#in-class-activity",
+    "title": "Week 08",
+    "section": "In-class activity",
+    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html file to view): html"
+  },
+  {
+    "objectID": "weeks/week-08 copy.html#data-for-in-class-activity",
+    "href": "weeks/week-08 copy.html#data-for-in-class-activity",
+    "title": "Week 08",
+    "section": "Data for in-class activity",
+    "text": "Data for in-class activity\n\nRates of child uninsurance by state, year, and race/ethnicity (csv to download):  .csv file \nMerged data with child poverty (csv to download):  .csv file \n\nDatasets page with more details"
+  },
+  {
+    "objectID": "weeks/week-08 copy.html#optional-readings",
+    "href": "weeks/week-08 copy.html#optional-readings",
+    "title": "Week 08",
+    "section": "Optional Readings",
+    "text": "Optional Readings\n\nTutorial on plotnine"
   },
   {
     "objectID": "lecture_notes/week-1/intro_to_quarto.html",
@@ -2524,7 +2603,7 @@
     "href": "slides/week-4.html#zip-function-example",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Zip function: example",
-    "text": "Zip function: example\n\nteams =  [\"Giants\", \"Commanders\", \"Eagles\", \"Jets\"]\nresults = [1, 0, 1, 1]\nteam_w_results = zip(teams, results)\nteam_w_results\n\n## list comprehension over the combined zip\n[item for item in team_w_results]\n\n&lt;zip at 0x7fbf521019c0&gt;\n\n\n[('Giants', 1), ('Commanders', 0), ('Eagles', 1), ('Jets', 1)]"
+    "text": "Zip function: example\n\nteams =  [\"Giants\", \"Commanders\", \"Eagles\", \"Jets\"]\nresults = [1, 0, 1, 1]\nteam_w_results = zip(teams, results)\nteam_w_results\n\n## list comprehension over the combined zip\n[item for item in team_w_results]\n\n&lt;zip at 0x7fd03a2d2980&gt;\n\n\n[('Giants', 1), ('Commanders', 0), ('Eagles', 1), ('Jets', 1)]"
   },
   {
     "objectID": "slides/week-4.html#zip-function-example-1",
@@ -2615,7 +2694,7 @@
     "href": "slides/week-3.html#what-happens-upon-assignment",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "What happens upon assignment?",
-    "text": "What happens upon assignment?\n\nAction 1: A reference is assigned to an object, with an id number in memory\n\nid(x)\n\n140685009414544"
+    "text": "What happens upon assignment?\n\nAction 1: A reference is assigned to an object, with an id number in memory\n\nid(x)\n\n140390669937040"
   },
   {
     "objectID": "slides/week-3.html#section-2",
@@ -2749,6 +2828,13 @@
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Terminology",
     "text": "Terminology\n\nAPI: application programming interface; a way to ask an app or website for something and get something in return\nCall the API: sending a request for something to the API\nResponse: a message back telling us whether we got something back or whether the call returned an error\nJSON: if we get something back, it’s often stored in json format — a text string with a structure similar to the data structure of a dictionary; pretty easy to convert to a pandas DataFrame\nWrapper: a language-specific module or package that simplifies calling an API from that language (e.g., census is a Python wrapper for the Census Bureau’s API)"
+  },
+  {
+    "objectID": "slides/week-9.html#three-examples-well-walk-through",
+    "href": "slides/week-9.html#three-examples-well-walk-through",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Three examples we’ll walk through",
+    "text": "Three examples we’ll walk through\n\nAPI with no credentials and no wrapper (NAEP data API)\nAPI with credentials and no wrapper (Yelp API)\nAPI with credentials and a wrapper (Census API via the census package)"
   },
   {
     "objectID": "slides/week-9.html#naep-in-the-news",
@@ -2912,6 +2998,13 @@
     "text": "Without a wrapper: same structure as NAEP\n\n## construct the query\ncensus_query = (\n    'https://api.census.gov/data/2024/acs/acs5?'\n    'get=NAME,B19013_001E&'\n    'for=county:*&in=state:24&'\n    f'key={CENSUS_KEY}')\n\n## call the API\ncensus_resp = requests.get(census_query)\n\n## the json is a list of lists; the first list is the column names\ncensus_json = census_resp.json()\nmd_income_raw = pd.DataFrame(census_json[1:], columns = census_json[0])\nmd_income_raw.head()\n\n\n\n\n\n\n\n\nNAME\nB19013_001E\nstate\ncounty\n\n\n\n\n0\nAllegany County, Maryland\n59603\n24\n001\n\n\n1\nAnne Arundel County, Maryland\n124911\n24\n003\n\n\n2\nBaltimore County, Maryland\n91768\n24\n005\n\n\n3\nCalvert County, Maryland\n133922\n24\n009\n\n\n4\nCaroline County, Maryland\n68457\n24\n011"
   },
   {
+    "objectID": "slides/week-9.html#without-a-wrapper-same-structure-as-naep-1",
+    "href": "slides/week-9.html#without-a-wrapper-same-structure-as-naep-1",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Without a wrapper: same structure as NAEP",
+    "text": "Without a wrapper: same structure as NAEP\n## construct the query\ncensus_query = (\n    'https://api.census.gov/data/2024/acs/acs5?'\n    'get=NAME,B19013_001E&'\n    'for=county:*&in=state:24&'\n    f'key={CENSUS_KEY}')\n\nNotice that the query has to encode the dataset (2024/acs/acs5), the variables (get=), and the geography (for= and in=)\nValues come back as strings, so we’d still need to convert them to numbers"
+  },
+  {
     "objectID": "slides/week-9.html#with-a-wrapper-install-and-connect",
     "href": "slides/week-9.html#with-a-wrapper-install-and-connect",
     "title": " PPOL 5203 - Data Science I: Foundations ",
@@ -2924,6 +3017,13 @@
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Same query as before, using the wrapper",
     "text": "Same query as before, using the wrapper\n\nmd_income = c.acs5.state_county(fields = ('NAME', 'B19013_001E'),\n                                state_fips = states.MD.fips,\n                                county_fips = Census.ALL)\n\nBreaking things down:\n\nc.acs5: the dataset (ACS 5-year; defaults to the most recent year)\n.state_county(): the geography (counties within a state)\nfields: tuple of variables we want\nstate_fips: which state\ncounty_fips = Census.ALL: all counties in that state (Census.ALL is the wrapper’s version of * in the raw query)"
+  },
+  {
+    "objectID": "slides/week-9.html#same-query-as-before-using-the-wrapper-1",
+    "href": "slides/week-9.html#same-query-as-before-using-the-wrapper-1",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Same query as before, using the wrapper",
+    "text": "Same query as before, using the wrapper\n\nmd_income_df = pd.DataFrame(md_income)\nmd_income_df.head()\n\n\n\n\n\n\n\n\nNAME\nB19013_001E\nstate\ncounty\n\n\n\n\n0\nAllegany County, Maryland\n59603.0\n24\n001\n\n\n1\nAnne Arundel County, Maryland\n124911.0\n24\n003\n\n\n2\nBaltimore County, Maryland\n91768.0\n24\n005\n\n\n3\nCalvert County, Maryland\n133922.0\n24\n009\n\n\n4\nCaroline County, Maryland\n68457.0\n24\n011\n\n\n\n\n\n\n\n\nReturns a list of dictionaries (one per county) that converts directly to a DataFrame"
   },
   {
     "objectID": "slides/week-9.html#examples-of-three-things-we-can-do",
@@ -3073,6 +3173,13 @@
     "text": "Here comes BeautifulSoup\nA BeautifulSoup object is a parser: it lets us easily access elements from the raw html\n\n# create a bs object\n# input 1: request content; input 2: tell it you need an html parser\nsoup = BeautifulSoup(page.content, 'html.parser')\n\n# look at the raw code of the downloaded website\nprint(soup.prettify()[:1000])\n\n&lt;!DOCTYPE html&gt;\n&lt;html data-layout-uri=\"cms.cnn.com/_layouts/layout-article-elevate/instances/health-article-elevate_medium-v1@published\" data-site=\"cnn\" data-uri=\"cms.cnn.com/_pages/cmv8qiku4000028p7fj6e79gw@published\" lang=\"en\"&gt;\n &lt;head&gt;\n  &lt;link as=\"font\" crossorigin=\"anonymous\" href=\"/fonts/cnn/cnn_sans_display-v1.woff2\" rel=\"preload\" type=\"font/woff2\"/&gt;\n  &lt;link as=\"font\" crossorigin=\"anonymous\" href=\"/fonts/cnn/cnn_sans_display-medium-v1.woff2\" rel=\"preload\" type=\"font/woff2\"/&gt;\n  &lt;link as=\"font\" crossorigin=\"anonymous\" href=\"/fonts/cnn/cnn_sans_display-bold-v1.woff2\" rel=\"preload\" type=\"font/woff2\"/&gt;\n  &lt;link as=\"font\" crossorigin=\"anonymous\" href=\"/fonts/cnn/noto_serif_display-v1.woff2\" rel=\"preload\" type=\"font/woff2\"/&gt;\n  &lt;link href=\"//tpc.googlesyndication.com\" rel=\"dns-prefetch\"/&gt;\n  &lt;link href=\"//tpc.googlesyndication.com\" rel=\"preconnect\"/&gt;\n  &lt;link href=\"//pagead2.googlesyndication.com\" rel=\"dns-prefetch\"/&gt;\n  &lt;link href=\"//pagead2.googlesyndication.com\" rel=\"preconnect\"/&gt;\n  &lt;link"
   },
   {
+    "objectID": "slides/week-9.html#here-comes-beautifulsoup-1",
+    "href": "slides/week-9.html#here-comes-beautifulsoup-1",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Here comes BeautifulSoup",
+    "text": "Here comes BeautifulSoup\nThe functions we’ll use the most:\n\n.find_all(): to find tags by their names\n.select(): to select tags using a CSS selector\n.get_text(): to access the text in the tag\n[\"attr\"]: to access attributes of a tag"
+  },
+  {
     "objectID": "slides/week-9.html#grabbing-the-text-of-the-story",
     "href": "slides/week-9.html#grabbing-the-text-of-the-story",
     "title": " PPOL 5203 - Data Science I: Foundations ",
@@ -3092,6 +3199,20 @@
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Solution: be more specific with a CSS selector",
     "text": "Solution: be more specific with a CSS selector\n\nA CSS selector is a pattern used to select and style one or more elements in an HTML document — a way to chain multiple styles and attributes of an html file\nAnother option is XPATH, which can be super useful to learn but is a bit more complicated for beginners\nSee this tutorial to understand the concept of a CSS selector"
+  },
+  {
+    "objectID": "slides/week-9.html#solution-be-more-specific-with-a-css-selector-1",
+    "href": "slides/week-9.html#solution-be-more-specific-with-a-css-selector-1",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Solution: be more specific with a CSS selector",
+    "text": "Solution: be more specific with a CSS selector"
+  },
+  {
+    "objectID": "slides/week-9.html#solution-be-more-specific-with-a-css-selector-2",
+    "href": "slides/week-9.html#solution-be-more-specific-with-a-css-selector-2",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Solution: be more specific with a CSS selector",
+    "text": "Solution: be more specific with a CSS selector\n\n# use a css selector to target specific content\ncnn_par = soup.select(\".vossi-paragraph_elevate\")\ncnn_par[-1]\n\n&lt;p class=\"paragraph-elevate inline-placeholder vossi-paragraph_elevate\" data-article-gutter=\"true\" data-component-name=\"paragraph\" data-editable=\"text\" data-uri=\"cms.cnn.com/_components/paragraph/instances/cmv8qpbof000x3b6rqc3cpk6o@published\"&gt;\n            At the end of the day, however, I don’t particularly care whether a parent calls themselves pro- or anti-vaccine. Viruses and bacteria don’t care either. What matters is the protection against measles, mumps, rubella, influenza, chicken pox and more — not the label. For every child to be protected, they need to get their shots, today.\n    &lt;/p&gt;"
   },
   {
     "objectID": "slides/week-9.html#cleaning-the-story-text",
@@ -3129,6 +3250,13 @@
     "text": "Iterating the scraper over a list of urls\n\n# create a list of urls\nurls = [\"https://www.cnn.com/2026/10/15/health/parents-vaccine-delays-wellness?source=sub_web_wall-met\",\n        \"https://www.cnn.com/2026/10/16/health/roller-coaster-safety-health-risks-wellness\",\n        \"https://www.cnn.com/2026/10/19/health/headphone-overuse-dangers-loneliness-wellness\"]\n\n# then loop through and collect\nscraped_data = []\n\nfor url in urls:\n\n    # scrape the content\n    scraped_data.append(cnn_scraper(url))\n\n    # put the system to sleep for a random draw of time\n    time.sleep(random.uniform(.5, 1))"
   },
   {
+    "objectID": "slides/week-9.html#iterating-the-scraper-over-a-list-of-urls-1",
+    "href": "slides/week-9.html#iterating-the-scraper-over-a-list-of-urls-1",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Iterating the scraper over a list of urls",
+    "text": "Iterating the scraper over a list of urls\n\n# organize as a pandas data frame\ndat = pd.DataFrame(scraped_data)\ndat.head()\n\n\n\n\n\n\n\n\nurl\nstory_title\nstory_date\ntext\n\n\n\n\n0\nhttps://www.cnn.com/2026/10/15/health/parents-...\nFor more parents, ‘vaccine refusal’ is becomin...\nUpdated Oct 15, 2026, 7:00 AM ET\\nPublished Oc...\nVaccine refusal doesn’t always sound like vacc...\n\n\n1\nhttps://www.cnn.com/2026/10/16/health/roller-c...\nRoller coaster death and injuries leave fans a...\nUpdated Oct 16, 2026, 7:00 AM ET\\nPublished Oc...\nThe death of a 42-year-old man on a roller coa...\n\n\n2\nhttps://www.cnn.com/2026/10/19/health/headphon...\nGen Zers love using headphones — but do they k...\nUpdated Oct 19, 2026, 8:12 AM ET\\nPublished Oc...\nAtira Gali had already listened to 33,500 minu..."
+  },
+  {
     "objectID": "slides/week-9.html#summary-of-the-scraping-steps",
     "href": "slides/week-9.html#summary-of-the-scraping-steps",
     "title": " PPOL 5203 - Data Science I: Foundations ",
@@ -3155,6 +3283,13 @@
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Applying the scraper to the collected links",
     "text": "Applying the scraper to the collected links\n\n# let's get some cases\nlinks_cnn_ = links_cnn[15:20]\n\n# then loop through and collect\nscraped_data = []\n\nfor url in links_cnn_:\n\n    # check what is going on\n    print(url)\n\n    # scrape the content\n    scraped_data.append(cnn_scraper(url))\n\n    # put the system to sleep for a random draw of time (be kind)\n    time.sleep(random.uniform(.5, 3))\n\nhttps://www.cnn.com/2026/10/11/health/living-without-a-smartphone-wellness\nhttps://www.cnn.com/2026/10/05/health/strong-is-new-skinny-wellness\nhttps://www.cnn.com/2026/10/04/health/digital-media-kids-risks-coping-wellness\nhttps://www.cnn.com/2026/10/03/sport/parent-drive-home-criticism-wellness\nhttps://www.cnn.com/2026/10/17/health/ai-online-dating-game-wellness"
+  },
+  {
+    "objectID": "slides/week-9.html#applying-the-scraper-to-the-collected-links-1",
+    "href": "slides/week-9.html#applying-the-scraper-to-the-collected-links-1",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "Applying the scraper to the collected links",
+    "text": "Applying the scraper to the collected links\n\n# organize as a pandas data frame\ndat = pd.DataFrame(scraped_data)\ndat.head()\n\n\n\n\n\n\n\n\nurl\nstory_title\nstory_date\ntext\n\n\n\n\n0\nhttps://www.cnn.com/2026/10/11/health/living-w...\nThink you can’t live without a smartphone? Why...\nUpdated Oct 11, 2026, 6:30 AM ET\\nPublished Oc...\nA lot of us dream of not being tethered to our...\n\n\n1\nhttps://www.cnn.com/2026/10/05/health/strong-i...\nStrength training is good, especially as women...\nUpdated Oct 5, 2026, 7:42 AM ET\\nPublished Oct...\nLike the rest of my Gen X peers, I grew up wit...\n\n\n2\nhttps://www.cnn.com/2026/10/04/health/digital-...\nDigital media can be toxic, but your kid will ...\nUpdated Oct 4, 2026, 6:30 PM ET\\nPublished Oct...\nIn case you hadn’t heard from everyone that di...\n\n\n3\nhttps://www.cnn.com/2026/10/03/sport/parent-dr...\nStop criticizing your child’s athletic perform...\nUpdated Oct 4, 2026, 5:08 PM ET\\nPublished Oct...\nAs soon as my son pressed play, the video made...\n\n\n4\nhttps://www.cnn.com/2026/10/17/health/ai-onlin...\nAI enters the chaotic world of online dating. ...\nUpdated Oct 20, 2026, 3:47 PM ET\\nPublished Oc...\nJack is on the search for the love of his life..."
   },
   {
     "objectID": "slides/week-9.html#in-class-activity-3",
@@ -3289,61 +3424,5 @@
     "crumbs": [
       "Syllabus"
     ]
-  },
-  {
-    "objectID": "slides/week-9.html#three-examples-well-walk-through",
-    "href": "slides/week-9.html#three-examples-well-walk-through",
-    "title": " PPOL 5203 - Data Science I: Foundations ",
-    "section": "Three examples we’ll walk through",
-    "text": "Three examples we’ll walk through\n\nAPI with no credentials and no wrapper (NAEP data API)\nAPI with credentials and no wrapper (Yelp API)\nAPI with credentials and a wrapper (Census API via the census package)"
-  },
-  {
-    "objectID": "slides/week-9.html#without-a-wrapper-same-structure-as-naep-1",
-    "href": "slides/week-9.html#without-a-wrapper-same-structure-as-naep-1",
-    "title": " PPOL 5203 - Data Science I: Foundations ",
-    "section": "Without a wrapper: same structure as NAEP",
-    "text": "Without a wrapper: same structure as NAEP\n## construct the query\ncensus_query = (\n    'https://api.census.gov/data/2024/acs/acs5?'\n    'get=NAME,B19013_001E&'\n    'for=county:*&in=state:24&'\n    f'key={CENSUS_KEY}')\n\nNotice that the query has to encode the dataset (2024/acs/acs5), the variables (get=), and the geography (for= and in=)\nValues come back as strings, so we’d still need to convert them to numbers"
-  },
-  {
-    "objectID": "slides/week-9.html#same-query-as-before-using-the-wrapper-1",
-    "href": "slides/week-9.html#same-query-as-before-using-the-wrapper-1",
-    "title": " PPOL 5203 - Data Science I: Foundations ",
-    "section": "Same query as before, using the wrapper",
-    "text": "Same query as before, using the wrapper\n\nmd_income_df = pd.DataFrame(md_income)\nmd_income_df.head()\n\n\n\n\n\n\n\n\nNAME\nB19013_001E\nstate\ncounty\n\n\n\n\n0\nAllegany County, Maryland\n59603.0\n24\n001\n\n\n1\nAnne Arundel County, Maryland\n124911.0\n24\n003\n\n\n2\nBaltimore County, Maryland\n91768.0\n24\n005\n\n\n3\nCalvert County, Maryland\n133922.0\n24\n009\n\n\n4\nCaroline County, Maryland\n68457.0\n24\n011\n\n\n\n\n\n\n\n\nReturns a list of dictionaries (one per county) that converts directly to a DataFrame"
-  },
-  {
-    "objectID": "slides/week-9.html#here-comes-beautifulsoup-1",
-    "href": "slides/week-9.html#here-comes-beautifulsoup-1",
-    "title": " PPOL 5203 - Data Science I: Foundations ",
-    "section": "Here comes BeautifulSoup",
-    "text": "Here comes BeautifulSoup\nThe functions we’ll use the most:\n\n.find_all(): to find tags by their names\n.select(): to select tags using a CSS selector\n.get_text(): to access the text in the tag\n[\"attr\"]: to access attributes of a tag"
-  },
-  {
-    "objectID": "slides/week-9.html#solution-be-more-specific-with-a-css-selector-1",
-    "href": "slides/week-9.html#solution-be-more-specific-with-a-css-selector-1",
-    "title": " PPOL 5203 - Data Science I: Foundations ",
-    "section": "Solution: be more specific with a CSS selector",
-    "text": "Solution: be more specific with a CSS selector"
-  },
-  {
-    "objectID": "slides/week-9.html#solution-be-more-specific-with-a-css-selector-2",
-    "href": "slides/week-9.html#solution-be-more-specific-with-a-css-selector-2",
-    "title": " PPOL 5203 - Data Science I: Foundations ",
-    "section": "Solution: be more specific with a CSS selector",
-    "text": "Solution: be more specific with a CSS selector\n\n# use a css selector to target specific content\ncnn_par = soup.select(\".vossi-paragraph_elevate\")\ncnn_par[-1]\n\n&lt;p class=\"paragraph-elevate inline-placeholder vossi-paragraph_elevate\" data-article-gutter=\"true\" data-component-name=\"paragraph\" data-editable=\"text\" data-uri=\"cms.cnn.com/_components/paragraph/instances/cmv8qpbof000x3b6rqc3cpk6o@published\"&gt;\n            At the end of the day, however, I don’t particularly care whether a parent calls themselves pro- or anti-vaccine. Viruses and bacteria don’t care either. What matters is the protection against measles, mumps, rubella, influenza, chicken pox and more — not the label. For every child to be protected, they need to get their shots, today.\n    &lt;/p&gt;"
-  },
-  {
-    "objectID": "slides/week-9.html#iterating-the-scraper-over-a-list-of-urls-1",
-    "href": "slides/week-9.html#iterating-the-scraper-over-a-list-of-urls-1",
-    "title": " PPOL 5203 - Data Science I: Foundations ",
-    "section": "Iterating the scraper over a list of urls",
-    "text": "Iterating the scraper over a list of urls\n\n# organize as a pandas data frame\ndat = pd.DataFrame(scraped_data)\ndat.head()\n\n\n\n\n\n\n\n\nurl\nstory_title\nstory_date\ntext\n\n\n\n\n0\nhttps://www.cnn.com/2026/10/15/health/parents-...\nFor more parents, ‘vaccine refusal’ is becomin...\nUpdated Oct 15, 2026, 7:00 AM ET\\nPublished Oc...\nVaccine refusal doesn’t always sound like vacc...\n\n\n1\nhttps://www.cnn.com/2026/10/16/health/roller-c...\nRoller coaster death and injuries leave fans a...\nUpdated Oct 16, 2026, 7:00 AM ET\\nPublished Oc...\nThe death of a 42-year-old man on a roller coa...\n\n\n2\nhttps://www.cnn.com/2026/10/19/health/headphon...\nGen Zers love using headphones — but do they k...\nUpdated Oct 19, 2026, 8:12 AM ET\\nPublished Oc...\nAtira Gali had already listened to 33,500 minu..."
-  },
-  {
-    "objectID": "slides/week-9.html#applying-the-scraper-to-the-collected-links-1",
-    "href": "slides/week-9.html#applying-the-scraper-to-the-collected-links-1",
-    "title": " PPOL 5203 - Data Science I: Foundations ",
-    "section": "Applying the scraper to the collected links",
-    "text": "Applying the scraper to the collected links\n\n# organize as a pandas data frame\ndat = pd.DataFrame(scraped_data)\ndat.head()\n\n\n\n\n\n\n\n\nurl\nstory_title\nstory_date\ntext\n\n\n\n\n0\nhttps://www.cnn.com/2026/10/11/health/living-w...\nThink you can’t live without a smartphone? Why...\nUpdated Oct 11, 2026, 6:30 AM ET\\nPublished Oc...\nA lot of us dream of not being tethered to our...\n\n\n1\nhttps://www.cnn.com/2026/10/05/health/strong-i...\nStrength training is good, especially as women...\nUpdated Oct 5, 2026, 7:42 AM ET\\nPublished Oct...\nLike the rest of my Gen X peers, I grew up wit...\n\n\n2\nhttps://www.cnn.com/2026/10/04/health/digital-...\nDigital media can be toxic, but your kid will ...\nUpdated Oct 4, 2026, 6:30 PM ET\\nPublished Oct...\nIn case you hadn’t heard from everyone that di...\n\n\n3\nhttps://www.cnn.com/2026/10/03/sport/parent-dr...\nStop criticizing your child’s athletic perform...\nUpdated Oct 4, 2026, 5:08 PM ET\\nPublished Oct...\nAs soon as my son pressed play, the video made...\n\n\n4\nhttps://www.cnn.com/2026/10/17/health/ai-onlin...\nAI enters the chaotic world of online dating. ...\nUpdated Oct 20, 2026, 3:47 PM ET\\nPublished Oc...\nJack is on the search for the love of his life..."
   }
 ]

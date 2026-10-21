@@ -40,6 +40,8 @@ website:
             text: "Week 7: Reshaping and Joining Data"
           - href: weeks/week-08.qmd
             text: "Week 8: Data Visualization"
+          - href: weeks/week-09.qmd
+            text: "Week 9: APIs and Web Scraping"
       - href: datasets.qmd
         text: Datasets for Class 
 
