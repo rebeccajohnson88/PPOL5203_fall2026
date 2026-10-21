@@ -1724,267 +1724,47 @@
     "text": "Code\nYou will use the same code block for any language. You just need to change language inside of the brackets {}\n\nlibrary(reticulate)\n\nWarning: package 'reticulate' was built under R version 4.2.3\n\nreticulate::py_config()\n\npython:         /Users/rj545/.virtualenvs/r-reticulate/bin/python\nlibpython:      /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/config-3.9-darwin/libpython3.9.dylib\npythonhome:     /Users/rj545/.virtualenvs/r-reticulate:/Users/rj545/.virtualenvs/r-reticulate\nversion:        3.9.6 (default, Sep 26 2022, 11:37:49)  [Clang 14.0.0 (clang-1400.0.29.202)]\nnumpy:          /Users/rj545/.virtualenvs/r-reticulate/lib/python3.9/site-packages/numpy\nnumpy_version:  2.0.2\n\nuse_python(\"/Users/rj545/.virtualenvs/r-reticulate/bin/python\")\n\nusethis::edit_r_environ()\n\n• Edit '/Users/rj545/.Renviron'\n• Restart R for changes to take effect\n\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport scipy.stats as stats\nimport math\n\n## generate normal distribution \nmu = 0\nvariance = 1\nsigma = math.sqrt(variance)\nx = np.linspace(mu - 3*sigma, mu + 3*sigma, 100)\ny = stats.norm.pdf(x, mu, sigma)\n\n## plot using Georgetown Blue colors\nGU_BLUE = '#041E42'\nplt.plot(x, y, color = GU_BLUE)\nplt.fill_between(x, y, color= GU_BLUE, alpha=0.4)\n\n\n\n\n\n\n\n\n\nplt.show()"
   },
   {
-    "objectID": "weeks/week-01.html",
-    "href": "weeks/week-01.html",
-    "title": "Week 01",
+    "objectID": "weeks/week-03.html",
+    "href": "weeks/week-03.html",
+    "title": "Week 03",
     "section": "",
-    "text": "Slides\nWeek 01:Introduction, Installations, IDEs, Command line\n\n\nHandouts\n\nInstructions for setting up the course infrastructure.\nUsing Jupyter Notebooks: web page,  .ipynb file \nUsing Quarto for Python and R web page,  .qmd file \nBasics of Command Line: web page,  .ipynb file \nPractice Notebook to Check Installations:  .ipynb file \n\n\n\nReadings\nRequired Readings\n\nJupyter Notebook for Beginners: A tutorial Pryke, Benjamin - www.dataquest.io\n\n\n\nDataCamp\n\nOptional (but highly recommended) module: Introduction to Shell &gt; Manipulating Files and Directories",
+    "text": "Week 3 - Intro to Python",
     "crumbs": [
       "Materials",
-      "Week 1: Intro to Course and Tools"
+      "Week 3: Intro to Python"
     ]
   },
   {
-    "objectID": "weeks/week-02.html",
-    "href": "weeks/week-02.html",
-    "title": "Week 02",
+    "objectID": "weeks/week-03.html#slides",
+    "href": "weeks/week-03.html#slides",
+    "title": "Week 03",
     "section": "",
-    "text": "Slides\nWeek 01: Git and GitHub\n\n\nIn-class activity\nClassroom 50 link\nDownload from this website:\n\nBlank activity:  .ipynb file \nActivity solutions:  .ipynb file \n\n\n\nResources (optional)\nGitHub Cheatsheet\nAnother GitHub Cheatsheet",
+    "text": "Week 3 - Intro to Python",
     "crumbs": [
       "Materials",
-      "Week 2: Git and GitHub"
+      "Week 3: Intro to Python"
     ]
   },
   {
-    "objectID": "weeks/week-07.html",
-    "href": "weeks/week-07.html",
-    "title": "Week 07",
-    "section": "",
-    "text": "Week 7",
-    "crumbs": [
-      "Materials",
-      "Week 7: Reshaping and Joining Data"
-    ]
-  },
-  {
-    "objectID": "weeks/week-07.html#slides",
-    "href": "weeks/week-07.html#slides",
-    "title": "Week 07",
-    "section": "",
-    "text": "Week 7",
-    "crumbs": [
-      "Materials",
-      "Week 7: Reshaping and Joining Data"
-    ]
-  },
-  {
-    "objectID": "weeks/week-07.html#in-class-activity",
-    "href": "weeks/week-07.html#in-class-activity",
-    "title": "Week 07",
-    "section": "In-class activity",
-    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html file to view): html",
-    "crumbs": [
-      "Materials",
-      "Week 7: Reshaping and Joining Data"
-    ]
-  },
-  {
-    "objectID": "weeks/week-07.html#data-for-in-class-activity",
-    "href": "weeks/week-07.html#data-for-in-class-activity",
-    "title": "Week 07",
-    "section": "Data for in-class activity",
-    "text": "Data for in-class activity\n\nRates of child poverty by state, year, and race/ethnicity (csv to download):  .csv file \n\nDatasets page with more details",
-    "crumbs": [
-      "Materials",
-      "Week 7: Reshaping and Joining Data"
-    ]
-  },
-  {
-    "objectID": "weeks/week-07.html#optional-readings",
-    "href": "weeks/week-07.html#optional-readings",
-    "title": "Week 07",
-    "section": "Optional Readings",
-    "text": "Optional Readings\n\nReshaping data in pandas\nJoining data in pandas",
-    "crumbs": [
-      "Materials",
-      "Week 7: Reshaping and Joining Data"
-    ]
-  },
-  {
-    "objectID": "weeks/week-04.html",
-    "href": "weeks/week-04.html",
-    "title": "Week 04",
-    "section": "",
-    "text": "Week 4 - Python part II",
-    "crumbs": [
-      "Materials",
-      "Week 4: Python - Iteration, Comprehension, and Functions"
-    ]
-  },
-  {
-    "objectID": "weeks/week-04.html#slides",
-    "href": "weeks/week-04.html#slides",
-    "title": "Week 04",
-    "section": "",
-    "text": "Week 4 - Python part II",
-    "crumbs": [
-      "Materials",
-      "Week 4: Python - Iteration, Comprehension, and Functions"
-    ]
-  },
-  {
-    "objectID": "weeks/week-04.html#in-class-exercise",
-    "href": "weeks/week-04.html#in-class-exercise",
-    "title": "Week 04",
+    "objectID": "weeks/week-03.html#in-class-exercise",
+    "href": "weeks/week-03.html#in-class-exercise",
+    "title": "Week 03",
     "section": "In-Class Exercise",
     "text": "In-Class Exercise\n\nBlank activity (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html to view): html",
     "crumbs": [
       "Materials",
-      "Week 4: Python - Iteration, Comprehension, and Functions"
+      "Week 3: Intro to Python"
     ]
   },
   {
-    "objectID": "weeks/week-04.html#optional-readings",
-    "href": "weeks/week-04.html#optional-readings",
-    "title": "Week 04",
+    "objectID": "weeks/week-03.html#optional-readings",
+    "href": "weeks/week-03.html#optional-readings",
+    "title": "Week 03",
     "section": "Optional Readings",
-    "text": "Optional Readings\n\nPDA Wes McKinney, Chapter 3\n\nList, Set, and Dictionary Comprehensions\n\nfor-loop-vs-list-comprehension-vs-high-order-functions",
+    "text": "Optional Readings\nFrom Wes McKinney, Python for Data Analysis\n\nChapter 2: Python Language Basics, IPython, and Jupyter Notebooks\n\nFrom Data Carpentry:\n\nPython Fundamentals\nStoring Multiple Values in Lists",
     "crumbs": [
       "Materials",
-      "Week 4: Python - Iteration, Comprehension, and Functions"
-    ]
-  },
-  {
-    "objectID": "weeks/week-08.html",
-    "href": "weeks/week-08.html",
-    "title": "Week 08",
-    "section": "",
-    "text": "Week 8",
-    "crumbs": [
-      "Materials",
-      "Week 8: Data Visualization"
-    ]
-  },
-  {
-    "objectID": "weeks/week-08.html#slides",
-    "href": "weeks/week-08.html#slides",
-    "title": "Week 08",
-    "section": "",
-    "text": "Week 8",
-    "crumbs": [
-      "Materials",
-      "Week 8: Data Visualization"
-    ]
-  },
-  {
-    "objectID": "weeks/week-08.html#in-class-activity",
-    "href": "weeks/week-08.html#in-class-activity",
-    "title": "Week 08",
-    "section": "In-class activity",
-    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html file to view): html",
-    "crumbs": [
-      "Materials",
-      "Week 8: Data Visualization"
-    ]
-  },
-  {
-    "objectID": "weeks/week-08.html#data-for-in-class-activity",
-    "href": "weeks/week-08.html#data-for-in-class-activity",
-    "title": "Week 08",
-    "section": "Data for in-class activity",
-    "text": "Data for in-class activity\n\nRates of child uninsurance by state, year, and race/ethnicity (csv to download):  .csv file \nMerged data with child poverty (csv to download):  .csv file \n\nDatasets page with more details",
-    "crumbs": [
-      "Materials",
-      "Week 8: Data Visualization"
-    ]
-  },
-  {
-    "objectID": "weeks/week-08.html#optional-readings",
-    "href": "weeks/week-08.html#optional-readings",
-    "title": "Week 08",
-    "section": "Optional Readings",
-    "text": "Optional Readings\n\nTutorial on plotnine",
-    "crumbs": [
-      "Materials",
-      "Week 8: Data Visualization"
-    ]
-  },
-  {
-    "objectID": "weeks/week-09.html",
-    "href": "weeks/week-09.html",
-    "title": "Week 09",
-    "section": "",
-    "text": "Week 9",
-    "crumbs": [
-      "Materials",
-      "Week 9: APIs and Web Scraping"
-    ]
-  },
-  {
-    "objectID": "weeks/week-09.html#slides",
-    "href": "weeks/week-09.html#slides",
-    "title": "Week 09",
-    "section": "",
-    "text": "Week 9",
-    "crumbs": [
-      "Materials",
-      "Week 9: APIs and Web Scraping"
-    ]
-  },
-  {
-    "objectID": "weeks/week-09.html#in-class-activity",
-    "href": "weeks/week-09.html#in-class-activity",
-    "title": "Week 09",
-    "section": "In-class activity",
-    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html file to view): html",
-    "crumbs": [
-      "Materials",
-      "Week 9: APIs and Web Scraping"
-    ]
-  },
-  {
-    "objectID": "weeks/week-09.html#optional-readings",
-    "href": "weeks/week-09.html#optional-readings",
-    "title": "Week 09",
-    "section": "Optional Readings",
-    "text": "Optional Readings\n\nTutorial: A Practical Introduction to Web Scraping in Python\nTutorial: Python Web Scraping Using BeautifulSoup - dataquest.io\nUltimate Guide to Web Scraping with Python Part 1: Requests and BeautifulSoup\nWeb scraping using Selenium",
-    "crumbs": [
-      "Materials",
-      "Week 9: APIs and Web Scraping"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html",
-    "href": "weeks/week-05.html",
-    "title": "Week 05",
-    "section": "",
-    "text": "Week 5",
-    "crumbs": [
-      "Materials",
-      "Week 5: Libraries and Numpy"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html#slides",
-    "href": "weeks/week-05.html#slides",
-    "title": "Week 05",
-    "section": "",
-    "text": "Week 5",
-    "crumbs": [
-      "Materials",
-      "Week 5: Libraries and Numpy"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html#in-class-activity",
-    "href": "weeks/week-05.html#in-class-activity",
-    "title": "Week 05",
-    "section": "In-class activity",
-    "text": "In-class activity\n\nProblem set 2 (see Classroom 50 assignment)",
-    "crumbs": [
-      "Materials",
-      "Week 5: Libraries and Numpy"
-    ]
-  },
-  {
-    "objectID": "weeks/week-05.html#optional-readings",
-    "href": "weeks/week-05.html#optional-readings",
-    "title": "Week 05",
-    "section": "Optional Readings",
-    "text": "Optional Readings\n\nPDS VanderPlas\n\nCh. 2: Introduction to Numpy - Python Data Science Handbook - VanderPlas, Jake",
-    "crumbs": [
-      "Materials",
-      "Week 5: Libraries and Numpy"
+      "Week 3: Intro to Python"
     ]
   },
   {
@@ -2043,83 +1823,268 @@
     ]
   },
   {
-    "objectID": "weeks/week-03.html",
-    "href": "weeks/week-03.html",
-    "title": "Week 03",
+    "objectID": "weeks/week-05.html",
+    "href": "weeks/week-05.html",
+    "title": "Week 05",
     "section": "",
-    "text": "Week 3 - Intro to Python",
+    "text": "Week 5",
     "crumbs": [
       "Materials",
-      "Week 3: Intro to Python"
+      "Week 5: Libraries and Numpy"
     ]
   },
   {
-    "objectID": "weeks/week-03.html#slides",
-    "href": "weeks/week-03.html#slides",
-    "title": "Week 03",
+    "objectID": "weeks/week-05.html#slides",
+    "href": "weeks/week-05.html#slides",
+    "title": "Week 05",
     "section": "",
-    "text": "Week 3 - Intro to Python",
+    "text": "Week 5",
     "crumbs": [
       "Materials",
-      "Week 3: Intro to Python"
+      "Week 5: Libraries and Numpy"
     ]
   },
   {
-    "objectID": "weeks/week-03.html#in-class-exercise",
-    "href": "weeks/week-03.html#in-class-exercise",
-    "title": "Week 03",
+    "objectID": "weeks/week-05.html#in-class-activity",
+    "href": "weeks/week-05.html#in-class-activity",
+    "title": "Week 05",
+    "section": "In-class activity",
+    "text": "In-class activity\n\nProblem set 2 (see Classroom 50 assignment)",
+    "crumbs": [
+      "Materials",
+      "Week 5: Libraries and Numpy"
+    ]
+  },
+  {
+    "objectID": "weeks/week-05.html#optional-readings",
+    "href": "weeks/week-05.html#optional-readings",
+    "title": "Week 05",
+    "section": "Optional Readings",
+    "text": "Optional Readings\n\nPDS VanderPlas\n\nCh. 2: Introduction to Numpy - Python Data Science Handbook - VanderPlas, Jake",
+    "crumbs": [
+      "Materials",
+      "Week 5: Libraries and Numpy"
+    ]
+  },
+  {
+    "objectID": "weeks/week-09.html",
+    "href": "weeks/week-09.html",
+    "title": "Week 09",
+    "section": "",
+    "text": "Week 9",
+    "crumbs": [
+      "Materials",
+      "Week 9: APIs and Web Scraping"
+    ]
+  },
+  {
+    "objectID": "weeks/week-09.html#slides",
+    "href": "weeks/week-09.html#slides",
+    "title": "Week 09",
+    "section": "",
+    "text": "Week 9",
+    "crumbs": [
+      "Materials",
+      "Week 9: APIs and Web Scraping"
+    ]
+  },
+  {
+    "objectID": "weeks/week-09.html#in-class-activity",
+    "href": "weeks/week-09.html#in-class-activity",
+    "title": "Week 09",
+    "section": "In-class activity",
+    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html file to view): html",
+    "crumbs": [
+      "Materials",
+      "Week 9: APIs and Web Scraping"
+    ]
+  },
+  {
+    "objectID": "weeks/week-09.html#optional-readings",
+    "href": "weeks/week-09.html#optional-readings",
+    "title": "Week 09",
+    "section": "Optional Readings",
+    "text": "Optional Readings\n\nTutorial: A Practical Introduction to Web Scraping in Python\nTutorial: Python Web Scraping Using BeautifulSoup - dataquest.io\nUltimate Guide to Web Scraping with Python Part 1: Requests and BeautifulSoup\nWeb scraping using Selenium",
+    "crumbs": [
+      "Materials",
+      "Week 9: APIs and Web Scraping"
+    ]
+  },
+  {
+    "objectID": "weeks/week-08.html",
+    "href": "weeks/week-08.html",
+    "title": "Week 08",
+    "section": "",
+    "text": "Week 8",
+    "crumbs": [
+      "Materials",
+      "Week 8: Data Visualization"
+    ]
+  },
+  {
+    "objectID": "weeks/week-08.html#slides",
+    "href": "weeks/week-08.html#slides",
+    "title": "Week 08",
+    "section": "",
+    "text": "Week 8",
+    "crumbs": [
+      "Materials",
+      "Week 8: Data Visualization"
+    ]
+  },
+  {
+    "objectID": "weeks/week-08.html#in-class-activity",
+    "href": "weeks/week-08.html#in-class-activity",
+    "title": "Week 08",
+    "section": "In-class activity",
+    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html file to view): html",
+    "crumbs": [
+      "Materials",
+      "Week 8: Data Visualization"
+    ]
+  },
+  {
+    "objectID": "weeks/week-08.html#data-for-in-class-activity",
+    "href": "weeks/week-08.html#data-for-in-class-activity",
+    "title": "Week 08",
+    "section": "Data for in-class activity",
+    "text": "Data for in-class activity\n\nRates of child uninsurance by state, year, and race/ethnicity (csv to download):  .csv file \nMerged data with child poverty (csv to download):  .csv file \n\nDatasets page with more details",
+    "crumbs": [
+      "Materials",
+      "Week 8: Data Visualization"
+    ]
+  },
+  {
+    "objectID": "weeks/week-08.html#optional-readings",
+    "href": "weeks/week-08.html#optional-readings",
+    "title": "Week 08",
+    "section": "Optional Readings",
+    "text": "Optional Readings\n\nTutorial on plotnine",
+    "crumbs": [
+      "Materials",
+      "Week 8: Data Visualization"
+    ]
+  },
+  {
+    "objectID": "weeks/week-04.html",
+    "href": "weeks/week-04.html",
+    "title": "Week 04",
+    "section": "",
+    "text": "Week 4 - Python part II",
+    "crumbs": [
+      "Materials",
+      "Week 4: Python - Iteration, Comprehension, and Functions"
+    ]
+  },
+  {
+    "objectID": "weeks/week-04.html#slides",
+    "href": "weeks/week-04.html#slides",
+    "title": "Week 04",
+    "section": "",
+    "text": "Week 4 - Python part II",
+    "crumbs": [
+      "Materials",
+      "Week 4: Python - Iteration, Comprehension, and Functions"
+    ]
+  },
+  {
+    "objectID": "weeks/week-04.html#in-class-exercise",
+    "href": "weeks/week-04.html#in-class-exercise",
+    "title": "Week 04",
     "section": "In-Class Exercise",
     "text": "In-Class Exercise\n\nBlank activity (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html to view): html",
     "crumbs": [
       "Materials",
-      "Week 3: Intro to Python"
+      "Week 4: Python - Iteration, Comprehension, and Functions"
     ]
   },
   {
-    "objectID": "weeks/week-03.html#optional-readings",
-    "href": "weeks/week-03.html#optional-readings",
-    "title": "Week 03",
+    "objectID": "weeks/week-04.html#optional-readings",
+    "href": "weeks/week-04.html#optional-readings",
+    "title": "Week 04",
     "section": "Optional Readings",
-    "text": "Optional Readings\nFrom Wes McKinney, Python for Data Analysis\n\nChapter 2: Python Language Basics, IPython, and Jupyter Notebooks\n\nFrom Data Carpentry:\n\nPython Fundamentals\nStoring Multiple Values in Lists",
+    "text": "Optional Readings\n\nPDA Wes McKinney, Chapter 3\n\nList, Set, and Dictionary Comprehensions\n\nfor-loop-vs-list-comprehension-vs-high-order-functions",
     "crumbs": [
       "Materials",
-      "Week 3: Intro to Python"
+      "Week 4: Python - Iteration, Comprehension, and Functions"
     ]
   },
   {
-    "objectID": "weeks/week-08 copy.html",
-    "href": "weeks/week-08 copy.html",
-    "title": "Week 08",
+    "objectID": "weeks/week-07.html",
+    "href": "weeks/week-07.html",
+    "title": "Week 07",
     "section": "",
-    "text": "Week 8"
+    "text": "Week 7",
+    "crumbs": [
+      "Materials",
+      "Week 7: Reshaping and Joining Data"
+    ]
   },
   {
-    "objectID": "weeks/week-08 copy.html#slides",
-    "href": "weeks/week-08 copy.html#slides",
-    "title": "Week 08",
+    "objectID": "weeks/week-07.html#slides",
+    "href": "weeks/week-07.html#slides",
+    "title": "Week 07",
     "section": "",
-    "text": "Week 8"
+    "text": "Week 7",
+    "crumbs": [
+      "Materials",
+      "Week 7: Reshaping and Joining Data"
+    ]
   },
   {
-    "objectID": "weeks/week-08 copy.html#in-class-activity",
-    "href": "weeks/week-08 copy.html#in-class-activity",
-    "title": "Week 08",
+    "objectID": "weeks/week-07.html#in-class-activity",
+    "href": "weeks/week-07.html#in-class-activity",
+    "title": "Week 07",
     "section": "In-class activity",
-    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html file to view): html"
+    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html file to view): html",
+    "crumbs": [
+      "Materials",
+      "Week 7: Reshaping and Joining Data"
+    ]
   },
   {
-    "objectID": "weeks/week-08 copy.html#data-for-in-class-activity",
-    "href": "weeks/week-08 copy.html#data-for-in-class-activity",
-    "title": "Week 08",
+    "objectID": "weeks/week-07.html#data-for-in-class-activity",
+    "href": "weeks/week-07.html#data-for-in-class-activity",
+    "title": "Week 07",
     "section": "Data for in-class activity",
-    "text": "Data for in-class activity\n\nRates of child uninsurance by state, year, and race/ethnicity (csv to download):  .csv file \nMerged data with child poverty (csv to download):  .csv file \n\nDatasets page with more details"
+    "text": "Data for in-class activity\n\nRates of child poverty by state, year, and race/ethnicity (csv to download):  .csv file \n\nDatasets page with more details",
+    "crumbs": [
+      "Materials",
+      "Week 7: Reshaping and Joining Data"
+    ]
   },
   {
-    "objectID": "weeks/week-08 copy.html#optional-readings",
-    "href": "weeks/week-08 copy.html#optional-readings",
-    "title": "Week 08",
+    "objectID": "weeks/week-07.html#optional-readings",
+    "href": "weeks/week-07.html#optional-readings",
+    "title": "Week 07",
     "section": "Optional Readings",
-    "text": "Optional Readings\n\nTutorial on plotnine"
+    "text": "Optional Readings\n\nReshaping data in pandas\nJoining data in pandas",
+    "crumbs": [
+      "Materials",
+      "Week 7: Reshaping and Joining Data"
+    ]
+  },
+  {
+    "objectID": "weeks/week-02.html",
+    "href": "weeks/week-02.html",
+    "title": "Week 02",
+    "section": "",
+    "text": "Slides\nWeek 01: Git and GitHub\n\n\nIn-class activity\nClassroom 50 link\nDownload from this website:\n\nBlank activity:  .ipynb file \nActivity solutions:  .ipynb file \n\n\n\nResources (optional)\nGitHub Cheatsheet\nAnother GitHub Cheatsheet",
+    "crumbs": [
+      "Materials",
+      "Week 2: Git and GitHub"
+    ]
+  },
+  {
+    "objectID": "weeks/week-01.html",
+    "href": "weeks/week-01.html",
+    "title": "Week 01",
+    "section": "",
+    "text": "Slides\nWeek 01:Introduction, Installations, IDEs, Command line\n\n\nHandouts\n\nInstructions for setting up the course infrastructure.\nUsing Jupyter Notebooks: web page,  .ipynb file \nUsing Quarto for Python and R web page,  .qmd file \nBasics of Command Line: web page,  .ipynb file \nPractice Notebook to Check Installations:  .ipynb file \n\n\n\nReadings\nRequired Readings\n\nJupyter Notebook for Beginners: A tutorial Pryke, Benjamin - www.dataquest.io\n\n\n\nDataCamp\n\nOptional (but highly recommended) module: Introduction to Shell &gt; Manipulating Files and Directories",
+    "crumbs": [
+      "Materials",
+      "Week 1: Intro to Course and Tools"
+    ]
   },
   {
     "objectID": "lecture_notes/week-1/intro_to_quarto.html",
