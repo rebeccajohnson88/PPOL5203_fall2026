@@ -1,6 +1,6 @@
 ---
-title: "Week 09"
-subtitle: "Data Visualization in Python"
+title: "Week 09 and Week 10"
+subtitle: "APIs and Scraping"
 description: ""
 author: "Rebecca A. Johnson"
 date: "10/22/2026"

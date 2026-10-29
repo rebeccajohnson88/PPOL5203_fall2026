@@ -1,0 +1,3 @@
+year,sample,yearSampleLabel,Cohort,CohortLabel,stattype,subject,grade,scale,jurisdiction,jurisLabel,variable,variableLabel,varValue,varValueLabel,value,isStatDisplayable,errorFlag
+2011,R3,2011,2,Grade 8,MN:MN,WRI,8,WRIRP,NP,National public,GENDER,Sex,1,Male,139.099504632971,1,0
+2011,R3,2011,2,Grade 8,MN:MN,WRI,8,WRIRP,NP,National public,GENDER,Sex,2,Female,158.567104984955,1,0
