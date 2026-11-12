@@ -115,7 +115,7 @@
     "href": "datasets.html",
     "title": "Datasets for Class",
     "section": "",
-    "text": "Dataset Name\nLink to Download\nDescription/\nsource\nUsed for\n\n\n\n\ngapminder.csv\n gapminder.csv \nhttps://www.gapminder.org/data/documentation/\nNumpy nested lists/arrays\n\n\nchildnoinsur_complete.csv\n childnoinsure_complete.csv \nKids Count aggregation of American Community Survey (ACS) table C27001\nPandas data wrangling\n\n\nchild_poverty.csv\n child_poverty.csv \nKids Count Aggregation of American Community Survey data Table C17001\nReshaping and joining\n\n\nchildpov_insur_2324.csv\n childpov_insur_2324.csv \nMerged data of the previous two datasets focusing on 2023 and 2024\nData visualization",
+    "text": "Dataset Name\nLink to Download\nDescription/\nsource\nUsed for\n\n\n\n\ngapminder.csv\n gapminder.csv \nhttps://www.gapminder.org/data/documentation/\nNumpy nested lists/arrays\n\n\nchildnoinsur_complete.csv\n childnoinsure_complete.csv \nKids Count aggregation of American Community Survey (ACS) table C27001\nPandas data wrangling\n\n\nchild_poverty.csv\n child_poverty.csv \nKids Count Aggregation of American Community Survey data Table C17001\nReshaping and joining\n\n\nchildpov_insur_2324.csv\n childpov_insur_2324.csv \nMerged data of the previous two datasets focusing on 2023 and 2024\nData visualization\n\n\nairbnb_text.zip\n airbnb_text.zip \nSample of Airbnb listings for New York City\nText as Data/LLMs",
     "crumbs": [
       "Datasets for Class"
     ]
@@ -125,7 +125,7 @@
     "href": "datasets.html#weekly-schedule",
     "title": "Datasets for Class",
     "section": "",
-    "text": "Dataset Name\nLink to Download\nDescription/\nsource\nUsed for\n\n\n\n\ngapminder.csv\n gapminder.csv \nhttps://www.gapminder.org/data/documentation/\nNumpy nested lists/arrays\n\n\nchildnoinsur_complete.csv\n childnoinsure_complete.csv \nKids Count aggregation of American Community Survey (ACS) table C27001\nPandas data wrangling\n\n\nchild_poverty.csv\n child_poverty.csv \nKids Count Aggregation of American Community Survey data Table C17001\nReshaping and joining\n\n\nchildpov_insur_2324.csv\n childpov_insur_2324.csv \nMerged data of the previous two datasets focusing on 2023 and 2024\nData visualization",
+    "text": "Dataset Name\nLink to Download\nDescription/\nsource\nUsed for\n\n\n\n\ngapminder.csv\n gapminder.csv \nhttps://www.gapminder.org/data/documentation/\nNumpy nested lists/arrays\n\n\nchildnoinsur_complete.csv\n childnoinsure_complete.csv \nKids Count aggregation of American Community Survey (ACS) table C27001\nPandas data wrangling\n\n\nchild_poverty.csv\n child_poverty.csv \nKids Count Aggregation of American Community Survey data Table C17001\nReshaping and joining\n\n\nchildpov_insur_2324.csv\n childpov_insur_2324.csv \nMerged data of the previous two datasets focusing on 2023 and 2024\nData visualization\n\n\nairbnb_text.zip\n airbnb_text.zip \nSample of Airbnb listings for New York City\nText as Data/LLMs",
     "crumbs": [
       "Datasets for Class"
     ]
