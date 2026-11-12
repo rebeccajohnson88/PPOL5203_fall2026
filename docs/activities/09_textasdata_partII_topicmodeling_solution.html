@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Notebook for topic modeling</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Notebook for topic modeling</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/mccourt.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course_infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Technology Tools</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Materials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1: Intro to Course and Tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2: Git and GitHub</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3: Intro to Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4: Python - Iteration, Comprehension, and Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 5: Libraries and Numpy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 6: Intro to Pandas and Data Wrangling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 7: Reshaping and Joining Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 8: Data Visualization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Weeks 9 and 10: APIs and Web Scraping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 12: Text as Data and LLMs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets for Class</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#imports" id="toc-imports" class="nav-link active" data-scroll-target="#imports">0. Imports</a></li>
+  <li><a href="#load-data" id="toc-load-data" class="nav-link" data-scroll-target="#load-data">0. Load data</a></li>
+  <li><a href="#preprocess-documents" id="toc-preprocess-documents" class="nav-link" data-scroll-target="#preprocess-documents">1. Preprocess documents</a>
+  <ul class="collapse">
+  <li><a href="#load-stopwords-list-and-augment-with-our-own-custom-ones" id="toc-load-stopwords-list-and-augment-with-our-own-custom-ones" class="nav-link" data-scroll-target="#load-stopwords-list-and-augment-with-our-own-custom-ones">1.1 Load stopwords list and augment with our own custom ones</a></li>
+  <li><a href="#remove-stopwords-from-lowercase-version-of-corpus" id="toc-remove-stopwords-from-lowercase-version-of-corpus" class="nav-link" data-scroll-target="#remove-stopwords-from-lowercase-version-of-corpus">1.2 Remove stopwords from lowercase version of corpus</a></li>
+  <li><a href="#stem-and-remove-non-alpha" id="toc-stem-and-remove-non-alpha" class="nav-link" data-scroll-target="#stem-and-remove-non-alpha">1.3 stem and remove non-alpha</a></li>
+  <li><a href="#activity-1" id="toc-activity-1" class="nav-link" data-scroll-target="#activity-1">1.4 Activity 1</a></li>
+  </ul></li>
+  <li><a href="#create-a-document-term-matrix-and-do-some-basic-diagnostics-more-manual-approach" id="toc-create-a-document-term-matrix-and-do-some-basic-diagnostics-more-manual-approach" class="nav-link" data-scroll-target="#create-a-document-term-matrix-and-do-some-basic-diagnostics-more-manual-approach">2. Create a document-term matrix and do some basic diagnostics (more manual approach)</a>
+  <ul class="collapse">
+  <li><a href="#define-the-dtm-function-and-select-data-to-transform-into-a-document-term-matrix" id="toc-define-the-dtm-function-and-select-data-to-transform-into-a-document-term-matrix" class="nav-link" data-scroll-target="#define-the-dtm-function-and-select-data-to-transform-into-a-document-term-matrix">2.1 Define the dtm function and select data to transform into a document-term matrix</a></li>
+  <li><a href="#execute-the-dtm-function-to-create-the-document-term-matrix" id="toc-execute-the-dtm-function-to-create-the-document-term-matrix" class="nav-link" data-scroll-target="#execute-the-dtm-function-to-create-the-document-term-matrix">2.2 Execute the dtm function to create the document-term matrix</a></li>
+  <li><a href="#use-that-matrixcolumn-sums-to-get-basic-summary-stats-of-top-words" id="toc-use-that-matrixcolumn-sums-to-get-basic-summary-stats-of-top-words" class="nav-link" data-scroll-target="#use-that-matrixcolumn-sums-to-get-basic-summary-stats-of-top-words">2.3 Use that matrix/column sums to get basic summary stats of top words</a></li>
+  <li><a href="#activity-2-repeat-the-above-but-using-the-preprocessed-text-data" id="toc-activity-2-repeat-the-above-but-using-the-preprocessed-text-data" class="nav-link" data-scroll-target="#activity-2-repeat-the-above-but-using-the-preprocessed-text-data">2.4 Activity 2: repeat the above but using the preprocessed text data</a></li>
+  </ul></li>
+  <li><a href="#use-gensim-to-more-automatically-preprocessestimate-a-topic-model" id="toc-use-gensim-to-more-automatically-preprocessestimate-a-topic-model" class="nav-link" data-scroll-target="#use-gensim-to-more-automatically-preprocessestimate-a-topic-model">3. Use gensim to more automatically preprocess/estimate a topic model</a>
+  <ul class="collapse">
+  <li><a href="#creating-the-objects-to-feed-the-lda-modeling-function" id="toc-creating-the-objects-to-feed-the-lda-modeling-function" class="nav-link" data-scroll-target="#creating-the-objects-to-feed-the-lda-modeling-function">3.1 Creating the objects to feed the LDA modeling function</a></li>
+  <li><a href="#estimating-the-model" id="toc-estimating-the-model" class="nav-link" data-scroll-target="#estimating-the-model">3.2 Estimating the model</a></li>
+  <li><a href="#seeing-what-topics-the-estimated-model-discovers" id="toc-seeing-what-topics-the-estimated-model-discovers" class="nav-link" data-scroll-target="#seeing-what-topics-the-estimated-model-discovers">3.3 Seeing what topics the estimated model discovers</a>
+  <ul class="collapse">
+  <li><a href="#visualizing" id="toc-visualizing" class="nav-link" data-scroll-target="#visualizing">Visualizing</a></li>
+  </ul></li>
+  <li><a href="#activity-3" id="toc-activity-3" class="nav-link" data-scroll-target="#activity-3">3.4 Activity 3</a></li>
+  </ul></li>
+  <li><a href="#additional-summaries-of-topics-and-documents" id="toc-additional-summaries-of-topics-and-documents" class="nav-link" data-scroll-target="#additional-summaries-of-topics-and-documents">Additional summaries of topics and documents</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Notebook for topic modeling</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="imports" class="level1">
+<h1>0. Imports</h1>
+<div id="cell-3" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## load packages </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">## nltk imports</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">"stopwords"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize, wordpunct_tokenize</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem.porter <span class="im">import</span> PorterStemmer</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">## sklearn imports</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">## lda </span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gensim <span class="im">import</span> corpora</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> gensim</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">## visualization - if you have issues installing comment out</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyLDAvis.gensim <span class="im">as</span> gensimvis</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># alternate: import pyLDAvis.gensim_models as gensimvis </span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyLDAvis</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">#pyLDAvis.enable_notebook()</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">## print mult things</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.core.interactiveshell <span class="im">import</span> InteractiveShell</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>InteractiveShell.ast_node_interactivity <span class="op">=</span> <span class="st">"all"</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">## random</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>[nltk_data] Downloading package stopwords to
+[nltk_data]     /Users/rebeccajohnson/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!</code></pre>
+</div>
+</div>
+</section>
+<section id="load-data" class="level1">
+<h1>0. Load data</h1>
+<div id="cell-5" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ab <span class="op">=</span> pd.read_csv(<span class="st">"../../../public_data/airbnb_text.zip"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ab.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">name_upper</th>
+<th data-quarto-table-cell-role="th">neighbourhood_group</th>
+<th data-quarto-table-cell-role="th">price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2539</td>
+<td>Clean &amp; quiet apt home by the park</td>
+<td>CLEAN &amp; QUIET APT HOME BY THE PARK</td>
+<td>Brooklyn</td>
+<td>149</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2595</td>
+<td>Skylit Midtown Castle</td>
+<td>SKYLIT MIDTOWN CASTLE</td>
+<td>Manhattan</td>
+<td>225</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3647</td>
+<td>THE VILLAGE OF HARLEM....NEW YORK !</td>
+<td>THE VILLAGE OF HARLEM....NEW YORK !</td>
+<td>Manhattan</td>
+<td>150</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>3831</td>
+<td>Cozy Entire Floor of Brownstone</td>
+<td>COZY ENTIRE FLOOR OF BROWNSTONE</td>
+<td>Brooklyn</td>
+<td>89</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5022</td>
+<td>Entire Apt: Spacious Studio/Loft by central park</td>
+<td>ENTIRE APT: SPACIOUS STUDIO/LOFT BY CENTRAL PARK</td>
+<td>Manhattan</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="preprocess-documents" class="level1">
+<h1>1. Preprocess documents</h1>
+<p>In this case, each name/name_upper, or listing title, we’re treating as a document</p>
+<section id="load-stopwords-list-and-augment-with-our-own-custom-ones" class="level2">
+<h2 class="anchored" data-anchor-id="load-stopwords-list-and-augment-with-our-own-custom-ones">1.1 Load stopwords list and augment with our own custom ones</h2>
+<div id="cell-8" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>list_stopwords <span class="op">=</span> stopwords.words(<span class="st">"english"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>custom_words_toadd <span class="op">=</span> [<span class="st">'apartment'</span>, <span class="st">'new york'</span>, <span class="st">'nyc'</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">'bronx'</span>, <span class="st">'brooklyn'</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'manhattan'</span>, <span class="st">'queens'</span>, </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                      <span class="st">'staten island'</span>]</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>list_stopwords_new <span class="op">=</span> list_stopwords <span class="op">+</span> custom_words_toadd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="remove-stopwords-from-lowercase-version-of-corpus" class="level2">
+<h2 class="anchored" data-anchor-id="remove-stopwords-from-lowercase-version-of-corpus">1.2 Remove stopwords from lowercase version of corpus</h2>
+<div id="cell-10" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">## convert to lowercase and a list</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>corpus_lower <span class="op">=</span> ab.name.<span class="bu">str</span>.lower().to_list()</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">## use wordpunct tokenize and filter out with one</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>example_listing <span class="op">=</span> corpus_lower[<span class="dv">3</span>]</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>wordpunct_tokenize(example_listing)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>nostop_listing <span class="op">=</span> [word </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> word <span class="kw">in</span> wordpunct_tokenize(example_listing) </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> word <span class="kw">not</span> <span class="kw">in</span> list_stopwords_new]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>['cozy', 'entire', 'floor', 'of', 'brownstone']</code></pre>
+</div>
+</div>
+</section>
+<section id="stem-and-remove-non-alpha" class="level2">
+<h2 class="anchored" data-anchor-id="stem-and-remove-non-alpha">1.3 stem and remove non-alpha</h2>
+<p>Other contexts we may want to leave digits in</p>
+<div id="cell-12" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">## initialize stemmer</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>porter <span class="op">=</span> PorterStemmer()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">## apply to one by iterating</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">## over the tokens in the list</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>example_listing_preprocess <span class="op">=</span> [porter.stem(token) </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                            <span class="cf">for</span> token <span class="kw">in</span> nostop_listing </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                            <span class="cf">if</span> token.isalpha() <span class="kw">and</span> </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                            <span class="bu">len</span>(token) <span class="op">&gt;</span> <span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="activity-1" class="level2">
+<h2 class="anchored" data-anchor-id="activity-1">1.4 Activity 1</h2>
+<p>The above example performed preprocessing on a single Airbnb listing. We want to generalize this preprocessing across all listings.</p>
+<ul>
+<li>Embed step two (remove stopwords) and step three (stem) into one or two functions that take in a raw string (eg the raw text of an Airbnb review) and return a preprocessed string</li>
+<li>Apply the function to all the texts in <code>corpus_lower</code></li>
+</ul>
+<div id="cell-14" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_step1(one_str):   </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        nostop_listing1 <span class="op">=</span> [word <span class="cf">for</span> word <span class="kw">in</span> wordpunct_tokenize(one_str)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                          <span class="cf">if</span> word <span class="kw">not</span> <span class="kw">in</span> list_stopwords_new]</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        clean_listing <span class="op">=</span> [porter.stem(word) <span class="cf">for</span> word <span class="kw">in</span> nostop_listing1</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">if</span> word.isalpha() </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">and</span> <span class="bu">len</span>(word) <span class="op">&gt;</span> <span class="dv">3</span>]</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        clean_listing_str <span class="op">=</span> <span class="st">" "</span>.join(clean_listing)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(clean_listing_str)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="st">""</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>cleaned_listings <span class="op">=</span> [process_step1(one_listing) <span class="cf">for</span> one_listing <span class="kw">in</span> </span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>                   corpus_lower]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-15" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ab[<span class="st">'proc_name'</span>] <span class="op">=</span> cleaned_listings</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="create-a-document-term-matrix-and-do-some-basic-diagnostics-more-manual-approach" class="level1">
+<h1>2. Create a document-term matrix and do some basic diagnostics (more manual approach)</h1>
+<p>Here we’ll create a DTM first using the raw documents; in the activity, you’ll create one using the preprocessed docs that you created in activity 1</p>
+<section id="define-the-dtm-function-and-select-data-to-transform-into-a-document-term-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="define-the-dtm-function-and-select-data-to-transform-into-a-document-term-matrix">2.1 Define the dtm function and select data to transform into a document-term matrix</h2>
+<div id="cell-18" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">## function I'm providing</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_dtm(list_of_strings, metadata):</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    vectorizer <span class="op">=</span> CountVectorizer(lowercase <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    dtm_sparse <span class="op">=</span> vectorizer.fit_transform(list_of_strings)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    dtm_dense_named <span class="op">=</span> pd.DataFrame(dtm_sparse.todense(),</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                columns<span class="op">=</span>vectorizer.get_feature_names())</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    metadata.columns <span class="op">=</span> [<span class="st">"metadata_"</span> <span class="op">+</span> col <span class="cf">for</span> col <span class="kw">in</span> metadata.columns]</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    dtm_dense_named_withid <span class="op">=</span> pd.concat([metadata.reset_index(), </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>                                        dtm_dense_named], axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(dtm_dense_named_withid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-19" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">## filter out na's</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">## for shorter runtime, random sampling of 1000</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">## get metadata for those</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">## and also renaming price col since it's likely to be corpus word</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>ab_small <span class="op">=</span> ab.loc[<span class="op">~</span>ab.name.isnull(),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>           [<span class="st">'id'</span>, <span class="st">'neighbourhood_group'</span>, <span class="st">'price'</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">'name'</span>]].copy().rename(columns <span class="op">=</span> {<span class="st">'price'</span>:</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">'price_rawdata'</span>}).sample(n <span class="op">=</span> <span class="dv">1000</span>, random_state <span class="op">=</span> <span class="dv">9899</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>ab_small[<span class="st">'name_lower'</span>] <span class="op">=</span> ab_small[<span class="st">'name'</span>].<span class="bu">str</span>.lower()</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>ab_small.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">neighbourhood_group</th>
+<th data-quarto-table-cell-role="th">price_rawdata</th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">name_lower</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">22540</td>
+<td>18227529</td>
+<td>Manhattan</td>
+<td>140</td>
+<td>Live in New York Near Central Park and Columbi...</td>
+<td>live in new york near central park and columbi...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">47531</td>
+<td>35794273</td>
+<td>Brooklyn</td>
+<td>130</td>
+<td>Hope Garden</td>
+<td>hope garden</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">33906</td>
+<td>26858196</td>
+<td>Brooklyn</td>
+<td>75</td>
+<td>AWESOME 2 BEDS - QUEEN + SOFA - NEXT TO METRO</td>
+<td>awesome 2 beds - queen + sofa - next to metro</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">12047</td>
+<td>9369514</td>
+<td>Brooklyn</td>
+<td>25</td>
+<td>STARTUP CHEAP PLACE BROOKLYN</td>
+<td>startup cheap place brooklyn</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2908</td>
+<td>1669149</td>
+<td>Manhattan</td>
+<td>250</td>
+<td>Beautiful Modern Midtown Apartment</td>
+<td>beautiful modern midtown apartment</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="execute-the-dtm-function-to-create-the-document-term-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="execute-the-dtm-function-to-create-the-document-term-matrix">2.2 Execute the dtm function to create the document-term matrix</h2>
+<div id="cell-21" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">## example application on raw lowercase texts; </span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>dtm_nopre <span class="op">=</span> create_dtm(list_of_strings<span class="op">=</span> ab_small.name_lower,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                metadata <span class="op">=</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                ab_small[[<span class="st">'id'</span>, <span class="st">'neighbourhood_group'</span>, <span class="st">'price_rawdata'</span>]])</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>dtm_nopre.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">index</th>
+<th data-quarto-table-cell-role="th">metadata_id</th>
+<th data-quarto-table-cell-role="th">metadata_neighbourhood_group</th>
+<th data-quarto-table-cell-role="th">metadata_price_rawdata</th>
+<th data-quarto-table-cell-role="th">10</th>
+<th data-quarto-table-cell-role="th">100</th>
+<th data-quarto-table-cell-role="th">1000</th>
+<th data-quarto-table-cell-role="th">1000sq</th>
+<th data-quarto-table-cell-role="th">10292</th>
+<th data-quarto-table-cell-role="th">10ft</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">交通便利</th>
+<th data-quarto-table-cell-role="th">位于北上远离开辆</th>
+<th data-quarto-table-cell-role="th">家庭式獨立衛生間套房g</th>
+<th data-quarto-table-cell-role="th">温馨小筑</th>
+<th data-quarto-table-cell-role="th">简单的四房一厅两卫生间</th>
+<th data-quarto-table-cell-role="th">纽约之家</th>
+<th data-quarto-table-cell-role="th">走路四分钟到地铁站</th>
+<th data-quarto-table-cell-role="th">건물</th>
+<th data-quarto-table-cell-role="th">따뜻한</th>
+<th data-quarto-table-cell-role="th">작은</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>22540</td>
+<td>18227529</td>
+<td>Manhattan</td>
+<td>140</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>47531</td>
+<td>35794273</td>
+<td>Brooklyn</td>
+<td>130</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>33906</td>
+<td>26858196</td>
+<td>Brooklyn</td>
+<td>75</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>12047</td>
+<td>9369514</td>
+<td>Brooklyn</td>
+<td>25</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2908</td>
+<td>1669149</td>
+<td>Manhattan</td>
+<td>250</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 983 columns</p>
+</div>
+</div>
+</div>
+</section>
+<section id="use-that-matrixcolumn-sums-to-get-basic-summary-stats-of-top-words" class="level2">
+<h2 class="anchored" data-anchor-id="use-that-matrixcolumn-sums-to-get-basic-summary-stats-of-top-words">2.3 Use that matrix/column sums to get basic summary stats of top words</h2>
+<div id="cell-23" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">## summing each col</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>top_terms <span class="op">=</span> dtm_nopre[[col <span class="cf">for</span> col <span class="kw">in</span> dtm_nopre.columns</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                      <span class="cf">if</span> <span class="st">"metadata"</span> <span class="kw">not</span> <span class="kw">in</span> col <span class="kw">and</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                      col <span class="op">!=</span> <span class="st">"index"</span>]].<span class="bu">sum</span>(axis <span class="op">=</span> <span class="dv">0</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">## sorting from most frequent to least frequent</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>top_terms.sort_values(ascending <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>in            357
+room          204
+bedroom       164
+private       146
+cozy          134
+             ... 
+fitness         1
+fl              1
+flatbushbk      1
+flatiron        1
+작은              1
+Length: 979, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="activity-2-repeat-the-above-but-using-the-preprocessed-text-data" class="level2">
+<h2 class="anchored" data-anchor-id="activity-2-repeat-the-above-but-using-the-preprocessed-text-data">2.4 Activity 2: repeat the above but using the preprocessed text data</h2>
+<ul>
+<li>Stick with the same random sample of 1000 <code>ab_small</code></li>
+<li>Apply the preprocessing steps from activity 1 to create a new column in <code>ab_small</code> with the preprocessed text (if you got stuck on that, try just removing stopwords)</li>
+<li>Use the <code>create_dtm</code> function to create a document-term matrix from the preprocessed data</li>
+<li>Take the sum of each of the term columns to find the top words</li>
+</ul>
+<div id="cell-25" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ab_small[<span class="st">'processed'</span>] <span class="op">=</span> [process_step1(one_list)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                         <span class="cf">for</span> one_list <span class="kw">in</span> ab_small.name_lower.to_list()]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-26" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>metadata_list <span class="op">=</span> [<span class="st">'id'</span>, <span class="st">'neighbourhood_group'</span>, <span class="st">'price_rawdata'</span>]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>dtm_pre <span class="op">=</span> create_dtm(list_of_strings<span class="op">=</span> ab_small.processed,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                metadata <span class="op">=</span> </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                ab_small[metadata_list])</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>dtm_pre_termsonly <span class="op">=</span> dtm_pre[[col <span class="cf">for</span> col <span class="kw">in</span> dtm_pre.columns <span class="cf">if</span> </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"metadata"</span> <span class="kw">not</span> <span class="kw">in</span> col <span class="kw">and</span> col <span class="op">!=</span> <span class="st">"index"</span>]]</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>dtm_pre_termsonly.<span class="bu">sum</span>().sort_values(ascending <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>room         208
+bedroom      167
+privat       146
+cozi         134
+studio        94
+            ... 
+industri       1
+indoor         1
+independ       1
+incred         1
+走路四分钟到地铁站      1
+Length: 642, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="use-gensim-to-more-automatically-preprocessestimate-a-topic-model" class="level1">
+<h1>3. Use gensim to more automatically preprocess/estimate a topic model</h1>
+<section id="creating-the-objects-to-feed-the-lda-modeling-function" class="level2">
+<h2 class="anchored" data-anchor-id="creating-the-objects-to-feed-the-lda-modeling-function">3.1 Creating the objects to feed the LDA modeling function</h2>
+<p>Different outputs described below: - Tokenized and preprocessed text - Dictionary - Corpus</p>
+<div id="cell-29" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Step 1: re-tokenize and store in list</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">## here, i'm doing with the raw random sample of text</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">## in activity, you should do with the preprocessed texts</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>text_raw_tokens <span class="op">=</span> [wordpunct_tokenize(one_text) </span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> one_text <span class="kw">in</span> </span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                ab_small.name_lower]</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co">## Step 2: use gensim create dictionary - gets all unique words across documents</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>text_raw_dict <span class="op">=</span> corpora.Dictionary(text_raw_tokens)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co">## Step 3: filter out very rare and very common words</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="co">## here, i'm using the threshold that a word needs to appear in at least</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co">## 5% of docs but not more than 95%</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="co">## this is an integer count of docs so i round</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>lower_bound <span class="op">=</span> <span class="bu">round</span>(ab_small.shape[<span class="dv">0</span>]<span class="op">*</span><span class="fl">0.05</span>)</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>upper_bound <span class="op">=</span> <span class="bu">round</span>(ab_small.shape[<span class="dv">0</span>]<span class="op">*</span><span class="fl">0.95</span>)</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="co">### apply filtering to dictionary</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>text_raw_dict.filter_extremes(no_below <span class="op">=</span> lower_bound,</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>                             no_above <span class="op">=</span> upper_bound)</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: apply dictionary to TOKENIZED texts</span></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="co">## this creates a mapping between each word </span></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="co">## in a specific listing and the key in the dictionary</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="co">## for words that remain in the filtered dictionary</span></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a><span class="co">## output is a list where len(list) == n documents</span></span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a><span class="co">## and each element in the list is a list of tuples</span></span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="co">## containing the mappings</span></span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>corpus_fromdict <span class="op">=</span> [text_raw_dict.doc2bow(one_text) </span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>                   <span class="cf">for</span> one_text <span class="kw">in</span> text_raw_tokens]</span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="estimating-the-model" class="level2">
+<h2 class="anchored" data-anchor-id="estimating-the-model">3.2 Estimating the model</h2>
+<div id="cell-31" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Step 5: we're finally ready to estimate the model!</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">## full documentation here - https://radimrehurek.com/gensim/models/ldamodel.html</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">## here, we're feed the lda function (1) the corpus we created from the dictionary</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">## (2) a parameter we decide on for the number of topics,</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co">## (3) the dictionary itself,</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co">## (4) parameter for number of passes through training data</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co">## (5) parameter that returns, for each word remaining in dict, the </span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co">## topic probabilities</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co">## see documentation for many other arguments you can vary</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>ldamod <span class="op">=</span> gensim.models.ldamodel.LdaModel(corpus_fromdict, </span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>                                num_topics <span class="op">=</span> <span class="dv">4</span>, id2word<span class="op">=</span>text_raw_dict, </span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>                                passes<span class="op">=</span><span class="dv">6</span>, alpha <span class="op">=</span> <span class="st">'auto'</span>,</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>                                per_word_topics <span class="op">=</span> <span class="va">True</span>, random_state <span class="op">=</span> <span class="dv">91988</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="seeing-what-topics-the-estimated-model-discovers" class="level2">
+<h2 class="anchored" data-anchor-id="seeing-what-topics-the-estimated-model-discovers">3.3 Seeing what topics the estimated model discovers</h2>
+<div id="cell-33" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Post-model 1: explore corpus-wide summary of topics</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">### getting the topics and top words; can retrieve diff top words</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>topics <span class="op">=</span> ldamod.print_topics(num_words <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> topic <span class="kw">in</span> topics:</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(topic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(0, '0.218*"in" + 0.122*"apartment" + 0.101*"room" + 0.089*"the" + 0.076*"of" + 0.055*"manhattan" + 0.044*"apt" + 0.044*"near" + 0.038*"to" + 0.036*"park"')
+(1, '0.134*"bedroom" + 0.110*"in" + 0.110*"," + 0.104*"-" + 0.086*"1" + 0.077*"spacious" + 0.070*"east" + 0.046*"to" + 0.040*"apartment" + 0.039*"sunny"')
+(2, '0.168*"cozy" + 0.109*"," + 0.094*"/" + 0.081*"park" + 0.077*"room" + 0.065*"with" + 0.058*"2" + 0.047*"!" + 0.039*"-" + 0.039*"and"')
+(3, '0.156*"private" + 0.124*"." + 0.099*"studio" + 0.092*"in" + 0.083*"room" + 0.057*"!" + 0.044*"to" + 0.043*"brooklyn" + 0.039*"manhattan" + 0.037*"/"')</code></pre>
+</div>
+</div>
+<div id="cell-34" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Post-model 2: explore topics associated with each document</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">### for each item in our original dictionary, get list of topic probabilities</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>l<span class="op">=</span>[ldamod.get_document_topics(item) <span class="cf">for</span> item <span class="kw">in</span> corpus_fromdict]</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co">### print result</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>text_raw_tokens[<span class="dv">0</span>:<span class="dv">5</span>]</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>l[<span class="dv">0</span>:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>[['live',
+  'in',
+  'new',
+  'york',
+  'near',
+  'central',
+  'park',
+  'and',
+  'columbia',
+  'u',
+  '.'],
+ ['hope', 'garden'],
+ ['awesome',
+  '2',
+  'beds',
+  '-',
+  'queen',
+  '+',
+  'sofa',
+  '-',
+  'next',
+  'to',
+  'metro'],
+ ['startup', 'cheap', 'place', 'brooklyn'],
+ ['beautiful', 'modern', 'midtown', 'apartment']]</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>[[(0, 0.7291896), (1, 0.041319154), (2, 0.031489335), (3, 0.19800192)],
+ [(0, 0.24624164), (1, 0.2782907), (2, 0.212672), (3, 0.2627957)],
+ [(0, 0.043327797), (1, 0.8722155), (2, 0.03763539), (3, 0.04682137)],
+ [(0, 0.11719994), (1, 0.13181882), (2, 0.09832003), (3, 0.6526612)],
+ [(0, 0.65151316), (1, 0.13048814), (2, 0.0974924), (3, 0.12050633)]]</code></pre>
+</div>
+</div>
+<section id="visualizing" class="level3">
+<h3 class="anchored" data-anchor-id="visualizing">Visualizing</h3>
+<div id="cell-36" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>lda_display <span class="op">=</span> gensimvis.prepare(ldamod, corpus_fromdict, text_raw_dict)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>pyLDAvis.display(lda_display)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.css">
+
+
+<div id="ldavis_el652811406803464185289133716546"></div>
+<script type="text/javascript">
+
+var ldavis_el652811406803464185289133716546_data = {"mdsDat": {"x": [0.05972154396903794, -0.007370810907208663, -0.18478383622243008, 0.13243310316060078], "y": [0.1658358767607158, -0.12678505088287417, 0.017864308257189373, -0.05691513413503116], "topics": [1, 2, 3, 4], "cluster": [1, 1, 1, 1], "Freq": [28.88279554806171, 27.22114448407657, 23.433641702115803, 20.46241826574591]}, "tinfo": {"Term": ["cozy", "private", ".", "apartment", "1", "studio", ",", "the", "east", "bedroom", "in", "of", "park", "/", "spacious", "with", "room", "2", "-", "manhattan", "near", "!", "to", "sunny", "&", "and", "apt", "brooklyn", "east", "1", "spacious", "bedroom", "-", "sunny", ",", "to", "2", "and", "apt", "in", "apartment", "brooklyn", "!", "&", "/", "manhattan", "studio", "room", "with", "near", ".", "the", "cozy", "park", "private", "of", "private", ".", "studio", "!", "manhattan", "brooklyn", "with", "room", "to", "/", "in", "cozy", "&", "bedroom", "-", "and", "2", "apt", ",", "near", "of", "sunny", "the", "spacious", "apartment", "park", "1", "east", "of", "the", "apartment", "near", "manhattan", "in", "&", "room", "apt", "park", "sunny", "brooklyn", "to", "and", ".", "!", "private", "-", "spacious", "bedroom", ",", "/", "with", "east", "studio", "cozy", "1", "2", "cozy", "park", "/", "with", "2", ",", "and", "near", "!", "&", "room", "apt", "-", "sunny", "brooklyn", "the", "spacious", "bedroom", "in", "studio", "1", "private", "apartment", "manhattan", "of", "east", "to", "."], "Freq": [137.0, 143.0, 114.0, 129.0, 81.0, 93.0, 192.0, 76.0, 64.0, 163.0, 352.0, 61.0, 79.0, 100.0, 83.0, 75.0, 202.0, 68.0, 148.0, 79.0, 56.0, 100.0, 106.0, 66.0, 65.0, 68.0, 97.0, 92.0, 62.61389587734908, 77.43791780554712, 68.67748115142214, 119.73392713544821, 93.60748743968499, 34.61117081640259, 98.87323008600103, 41.15901196961803, 22.71882140020294, 22.165560677566177, 31.159416197609584, 99.02107566755797, 36.230684578207516, 18.496544970099325, 16.518747230035785, 9.417541853595802, 8.368749530523292, 5.740897985872817, 4.880236344105819, 10.48122741044118, 3.1759065633286636, 1.6749398915924765, 2.510430962491324, 1.3896310268554317, 2.4322479539705038, 1.2256562559178639, 1.4560359397580984, 0.4546691614709404, 131.52269614984647, 104.43640600328828, 83.44399778272998, 48.19696830982645, 33.093415817823406, 36.60489025345642, 29.555537851905726, 70.46989268283646, 36.83710035009412, 30.9191475598606, 77.83262298744756, 26.7520373751974, 12.597042171278195, 27.562000515815154, 23.315335182251705, 9.38382677776705, 8.417155019063944, 11.59260748003472, 20.919130636062526, 5.823429032876096, 5.125680109305953, 2.003340917168214, 2.1302078977972583, 2.148764669241886, 2.127446123457285, 0.8415095734073994, 0.7116146807807889, 0.3083442482692865, 55.51459068022474, 65.02793511856959, 88.94255526008133, 32.07097911553554, 39.644316701182824, 158.8313875243632, 25.921873688287494, 73.37734424956697, 32.33341594194771, 26.075020076863687, 19.390796203357105, 25.70759172514331, 27.409208031522635, 12.78139426582154, 6.756865201673652, 5.767375809812227, 7.5967181708743645, 7.309581559234461, 3.809142597352126, 3.608596093146919, 2.9733288316441557, 1.5235099156348233, 1.1177903956204955, 0.9066442413074165, 1.0682482730089107, 1.0320082812560105, 0.3862902706208081, 0.2614228141555173, 106.93608807392529, 51.64077775814869, 59.927691043513114, 41.50113736479422, 37.130385343255, 69.42622662283694, 24.587102172775317, 17.054475413227177, 29.88300431414314, 17.58751126001546, 48.66587240993988, 22.209251376450542, 24.6904948060079, 10.434397271516222, 11.912051405592575, 8.2416625985795, 8.70577100878304, 12.384073748276222, 16.520944021686716, 3.6913923944594362, 2.654112560594728, 3.282649874809667, 2.449822758156015, 0.8817373245588913, 0.6339639136236529, 0.46542902514123796, 0.7293362467003586, 0.7214523248362104], "Total": [137.0, 143.0, 114.0, 129.0, 81.0, 93.0, 192.0, 76.0, 64.0, 163.0, 352.0, 61.0, 79.0, 100.0, 83.0, 75.0, 202.0, 68.0, 148.0, 79.0, 56.0, 100.0, 106.0, 66.0, 65.0, 68.0, 97.0, 92.0, 64.29431339206702, 81.18993531754343, 83.3411594267992, 163.2885974926865, 148.92289898717905, 66.43970520844414, 192.19191617654465, 106.13465659793515, 68.5277845766774, 68.91788389393008, 97.29469099604256, 352.20603020105546, 129.75050871990214, 92.72107835429163, 100.36609566381759, 65.52396897317695, 100.73909804953183, 79.36036782943795, 93.08387479430415, 202.99433675278448, 75.35037217564911, 56.623823453231296, 114.42515449228947, 76.78943664180177, 137.1523816843492, 79.78296366433764, 143.8581001352886, 61.72890386462529, 143.8581001352886, 114.42515449228947, 93.08387479430415, 100.36609566381759, 79.36036782943795, 92.72107835429163, 75.35037217564911, 202.99433675278448, 106.13465659793515, 100.73909804953183, 352.20603020105546, 137.1523816843492, 65.52396897317695, 163.2885974926865, 148.92289898717905, 68.91788389393008, 68.5277845766774, 97.29469099604256, 192.19191617654465, 56.623823453231296, 61.72890386462529, 66.43970520844414, 76.78943664180177, 83.3411594267992, 129.75050871990214, 79.78296366433764, 81.18993531754343, 64.29431339206702, 61.72890386462529, 76.78943664180177, 129.75050871990214, 56.623823453231296, 79.36036782943795, 352.20603020105546, 65.52396897317695, 202.99433675278448, 97.29469099604256, 79.78296366433764, 66.43970520844414, 92.72107835429163, 106.13465659793515, 68.91788389393008, 114.42515449228947, 100.36609566381759, 143.8581001352886, 148.92289898717905, 83.3411594267992, 163.2885974926865, 192.19191617654465, 100.73909804953183, 75.35037217564911, 64.29431339206702, 93.08387479430415, 137.1523816843492, 81.18993531754343, 68.5277845766774, 137.1523816843492, 79.78296366433764, 100.73909804953183, 75.35037217564911, 68.5277845766774, 192.19191617654465, 68.91788389393008, 56.623823453231296, 100.36609566381759, 65.52396897317695, 202.99433675278448, 97.29469099604256, 148.92289898717905, 66.43970520844414, 92.72107835429163, 76.78943664180177, 83.3411594267992, 163.2885974926865, 352.20603020105546, 93.08387479430415, 81.18993531754343, 143.8581001352886, 129.75050871990214, 79.36036782943795, 61.72890386462529, 64.29431339206702, 106.13465659793515, 114.42515449228947], "Category": ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4"], "logprob": [28.0, 27.0, 26.0, 25.0, 24.0, 23.0, 22.0, 21.0, 20.0, 19.0, 18.0, 17.0, 16.0, 15.0, 14.0, 13.0, 12.0, 11.0, 10.0, 9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0, -2.6612000465393066, -2.448699951171875, -2.5687999725341797, -2.0129001140594482, -2.2590999603271484, -3.253999948501587, -2.204400062561035, -3.0808000564575195, -3.674999952316284, -3.699700117111206, -3.359100103378296, -2.202899932861328, -3.2083001136779785, -3.8805999755859375, -3.9937000274658203, -4.555600166320801, -4.673699855804443, -5.050600051879883, -5.2129998207092285, -4.448599815368652, -5.642600059509277, -6.282400131225586, -5.877699851989746, -6.469200134277344, -5.90939998626709, -6.594699859619141, -6.422500133514404, -7.586400032043457, -1.8597999811172485, -2.090399980545044, -2.3148000240325928, -2.8636999130249023, -3.2395999431610107, -3.1387999057769775, -3.3526999950408936, -2.483799934387207, -3.1324000358581543, -3.3076000213623047, -2.384399890899658, -3.4523000717163086, -4.20550012588501, -3.422499895095825, -3.5897998809814453, -4.5, -4.608699798583984, -4.288599967956543, -3.6982998847961426, -4.977099895477295, -5.104700088500977, -6.044099807739258, -5.982699871063232, -5.974100112915039, -5.984000205993652, -6.911499977111816, -7.07919979095459, -7.915500164031982, -2.572499990463257, -2.414299964904785, -2.101099967956543, -3.1212000846862793, -2.9091999530792236, -1.521299958229065, -3.3340001106262207, -2.2934999465942383, -3.11299991607666, -3.3280999660491943, -3.624300003051758, -3.3422999382019043, -3.2781999111175537, -4.041100025177002, -4.678599834442139, -4.836900234222412, -4.561399936676025, -4.599899768829346, -5.251699924468994, -5.305799961090088, -5.4994001388549805, -6.168099880218506, -6.477799892425537, -6.687099933624268, -6.523099899291992, -6.557600021362305, -7.540299892425537, -7.930699825286865, -1.7812999486923218, -2.509200096130371, -2.3603999614715576, -2.727799892425537, -2.839099884033203, -2.2132999897003174, -3.251300096511841, -3.6171000003814697, -3.056299924850464, -3.586400032043457, -2.5685999393463135, -3.3529999256134033, -3.2471001148223877, -4.108399868011475, -3.9760000705718994, -4.344299793243408, -4.289599895477295, -3.9370999336242676, -3.648900032043457, -5.147500038146973, -5.477399826049805, -5.264900207519531, -5.557499885559082, -6.579400062561035, -6.909299850463867, -7.218299865722656, -6.769199848175049, -6.78000020980835], "loglift": [28.0, 27.0, 26.0, 25.0, 24.0, 23.0, 22.0, 21.0, 20.0, 19.0, 18.0, 17.0, 16.0, 15.0, 14.0, 13.0, 12.0, 11.0, 10.0, 9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0, 1.2154, 1.1946, 1.0484, 0.9317, 0.7776, 0.5898, 0.5773, 0.2947, 0.1379, 0.1075, 0.1033, -0.027, -0.0338, -0.3701, -0.5624, -0.6979, -1.2461, -1.3845, -1.7064, -1.7217, -1.9246, -2.2787, -2.5775, -2.7701, -2.7904, -2.9339, -3.3512, -3.669, 1.2115, 1.2098, 1.1919, 0.5676, 0.4265, 0.3718, 0.3653, 0.2432, 0.243, 0.12, -0.2085, -0.3333, -0.3478, -0.4779, -0.5531, -0.6928, -0.7958, -0.8262, -0.9167, -0.9734, -1.1873, -2.2003, -2.2837, -2.3569, -2.8095, -3.2507, -3.4358, -4.0388, 1.3449, 1.2847, 1.0734, 0.8825, 0.7569, 0.6546, 0.5237, 0.4334, 0.3494, 0.3327, 0.2195, 0.1682, 0.0972, -0.2339, -1.3784, -1.4056, -1.4901, -1.5632, -1.6345, -2.3612, -2.7178, -2.7405, -2.7598, -2.8105, -3.0165, -3.4386, -3.897, -4.1179, 1.3377, 1.1516, 1.0672, 0.9902, 0.9738, 0.5684, 0.5559, 0.3866, 0.375, 0.2714, 0.1584, 0.1093, -0.2104, -0.2646, -0.4655, -0.6453, -0.6724, -0.9925, -1.473, -1.6409, -1.8341, -2.1936, -2.383, -2.9133, -2.9919, -3.3417, -3.3937, -3.4798]}, "token.table": {"Topic": [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 4, 1, 2, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 3, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4], "Freq": [0.16937990750325235, 0.4782491505974184, 0.0597811438246773, 0.2989057191233865, 0.1373543169169783, 0.19840067999119088, 0.39680135998238175, 0.2747086338339566, 0.5151101147722574, 0.10926578192138794, 0.015609397417341134, 0.3590161405988461, 0.6311991012751677, 0.1544423332907325, 0.04700418839283164, 0.16787210140297013, 0.026218011356953466, 0.9088910603743868, 0.06117535983289142, 0.008739337118984489, 0.07941305962523633, 0.30772560604779076, 0.019853264906309082, 0.5955979471892725, 0.9483934147606339, 0.012316797594293947, 0.03695039278288184, 0.3356302869278481, 0.11674096936620804, 0.5399269833187121, 0.31922048033076134, 0.13059019649894782, 0.18863028383181352, 0.3627505458304106, 0.27745555955942114, 0.015414197753301174, 0.6859318000219022, 0.015414197753301174, 0.3186196459708261, 0.1233366371499972, 0.32889769906665917, 0.2261171681083282, 0.7348951601190319, 0.17147553736110743, 0.024496505337301064, 0.07348951601190319, 0.19413061538414325, 0.39904626495629447, 0.2804108888882069, 0.1294204102560955, 0.014582320594351189, 0.19686132802374104, 0.0072911602971755946, 0.7801541517977886, 0.9798689289335077, 0.015553475062436631, 0.2810854769961952, 0.22146128490609318, 0.4514403115393438, 0.048267203120558766, 0.0756044882868393, 0.41582468557761615, 0.504029921912262, 0.01260074804780655, 0.03532082219159766, 0.10596246657479298, 0.5651331550655626, 0.3002269886285801, 0.08099933235434184, 0.9071925223686286, 0.01619986647086837, 0.012534004179227953, 0.012534004179227953, 0.3258841086599268, 0.6517682173198536, 0.006951294359230166, 0.9175708554183819, 0.055610354873841326, 0.020853883077690497, 0.04926245805654393, 0.34483720639580756, 0.35961594381277073, 0.24138604447706527, 0.8279222472373279, 0.02399774629673414, 0.04799549259346828, 0.10798985833530364, 0.053714996405649765, 0.8916689403337861, 0.010742999281129952, 0.04297199712451981, 0.5267934270658335, 0.03010248154661906, 0.2859735746928811, 0.1505124077330953, 0.013022624513638262, 0.026045249027276524, 0.8464705933864871, 0.1041809961091061, 0.3863017162746222, 0.3486137439551468, 0.2543938131564585, 0.009421993079868834, 0.039814003745153446, 0.3981400374515345, 0.013271334581717815, 0.5573960524321483], "Term": ["!", "!", "!", "!", "&", "&", "&", "&", ",", ",", ",", ",", "-", "-", "-", "-", ".", ".", ".", ".", "/", "/", "/", "/", "1", "1", "1", "2", "2", "2", "and", "and", "and", "and", "apartment", "apartment", "apartment", "apartment", "apt", "apt", "apt", "apt", "bedroom", "bedroom", "bedroom", "bedroom", "brooklyn", "brooklyn", "brooklyn", "brooklyn", "cozy", "cozy", "cozy", "cozy", "east", "east", "in", "in", "in", "in", "manhattan", "manhattan", "manhattan", "manhattan", "near", "near", "near", "near", "of", "of", "of", "park", "park", "park", "park", "private", "private", "private", "private", "room", "room", "room", "room", "spacious", "spacious", "spacious", "spacious", "studio", "studio", "studio", "studio", "sunny", "sunny", "sunny", "sunny", "the", "the", "the", "the", "to", "to", "to", "to", "with", "with", "with", "with"]}, "R": 28, "lambda.step": 0.01, "plot.opts": {"xlab": "PC1", "ylab": "PC2"}, "topic.order": [2, 4, 1, 3]};
+
+function LDAvis_load_lib(url, callback){
+  var s = document.createElement('script');
+  s.src = url;
+  s.async = true;
+  s.onreadystatechange = s.onload = callback;
+  s.onerror = function(){console.warn("failed to load library " + url);};
+  document.getElementsByTagName("head")[0].appendChild(s);
+}
+
+if(typeof(LDAvis) !== "undefined"){
+   // already loaded: just create the visualization
+   !function(LDAvis){
+       new LDAvis("#" + "ldavis_el652811406803464185289133716546", ldavis_el652811406803464185289133716546_data);
+   }(LDAvis);
+}else if(typeof define === "function" && define.amd){
+   // require.js is available: use it to load d3/LDAvis
+   require.config({paths: {d3: "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min"}});
+   require(["d3"], function(d3){
+      window.d3 = d3;
+      LDAvis_load_lib("https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.js", function(){
+        new LDAvis("#" + "ldavis_el652811406803464185289133716546", ldavis_el652811406803464185289133716546_data);
+      });
+    });
+}else{
+    // require.js not available: dynamically load d3 & LDAvis
+    LDAvis_load_lib("https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js", function(){
+         LDAvis_load_lib("https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.js", function(){
+                 new LDAvis("#" + "ldavis_el652811406803464185289133716546", ldavis_el652811406803464185289133716546_data);
+            })
+         });
+}
+</script>
+</div>
+</div>
+</section>
+</section>
+<section id="activity-3" class="level2">
+<h2 class="anchored" data-anchor-id="activity-3">3.4 Activity 3</h2>
+<ul>
+<li>Preprocess the texts</li>
+<li>Repeat the preprocessing steps and running of the topic model with preprocessed texts (can also play around with other parameters like n_topics)- what seems to produce useful topics?</li>
+</ul>
+<div id="cell-38" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>ab_small <span class="op">=</span> ab_small[ab_small.processed <span class="op">!=</span> <span class="st">""</span>].copy()</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>tokenized_text <span class="op">=</span> [wordpunct_tokenize(one_text) </span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> one_text <span class="kw">in</span> </span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>                ab_small.processed]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-39" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">## preprocess and estimate topicmod</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">### create dictionary</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>text_proc_dict <span class="op">=</span> corpora.Dictionary(tokenized_text)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co">### filter dictionary- using 2% as bounds</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>text_proc_dict.filter_extremes(no_below <span class="op">=</span> <span class="bu">round</span>(ab_small.shape[<span class="dv">0</span>]<span class="op">*</span><span class="fl">0.02</span>),</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>                             no_above <span class="op">=</span> <span class="bu">round</span>(ab_small.shape[<span class="dv">0</span>]<span class="op">*</span><span class="fl">0.98</span>))</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co">### create corpus from dictionary</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>corpus_fromdict_proc <span class="op">=</span> [text_proc_dict.doc2bow(one_text) </span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>                       <span class="cf">for</span> one_text <span class="kw">in</span> tokenized_text]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-40" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">### estimate model</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>n_topics <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>ldamod_proc <span class="op">=</span> gensim.models.ldamodel.LdaModel(corpus_fromdict_proc, </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>                                         num_topics <span class="op">=</span> n_topics, id2word<span class="op">=</span>text_proc_dict, </span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>                                         passes<span class="op">=</span><span class="dv">6</span>, alpha <span class="op">=</span> <span class="st">'auto'</span>,</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>                                        per_word_topics <span class="op">=</span> <span class="va">True</span>, random_state <span class="op">=</span> <span class="dv">91988</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co">### print topics and words</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>topics <span class="op">=</span> ldamod_proc.print_topics(num_words <span class="op">=</span> <span class="dv">15</span>)</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> topic <span class="kw">in</span> topics:</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(topic)</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(0, '0.161*"room" + 0.122*"bedroom" + 0.113*"privat" + 0.072*"cozi" + 0.063*"spaciou" + 0.048*"park" + 0.037*"near" + 0.036*"home" + 0.031*"larg" + 0.030*"beauti" + 0.028*"view" + 0.028*"central" + 0.025*"charm" + 0.024*"luxuri" + 0.024*"bushwick"')
+(1, '0.132*"east" + 0.099*"villag" + 0.098*"modern" + 0.093*"williamsburg" + 0.072*"brownston" + 0.062*"quiet" + 0.058*"garden" + 0.047*"harlem" + 0.043*"suit" + 0.035*"bright" + 0.031*"beauti" + 0.026*"loft" + 0.026*"near" + 0.025*"cozi" + 0.021*"studio"')
+(2, '0.112*"studio" + 0.089*"sunni" + 0.062*"cozi" + 0.060*"heart" + 0.053*"locat" + 0.051*"west" + 0.044*"side" + 0.041*"upper" + 0.040*"close" + 0.039*"train" + 0.039*"prime" + 0.036*"midtown" + 0.033*"time" + 0.033*"park" + 0.031*"loft"')</code></pre>
+</div>
+</div>
+<div id="cell-41" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">### visualize</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>pyLDAvis.enable_notebook()</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>lda_display_proc <span class="op">=</span> gensimvis.prepare(ldamod_proc, corpus_fromdict_proc, text_proc_dict)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>pyLDAvis.display(lda_display_proc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.css">
+
+
+<div id="ldavis_el652811406803464187527151880908"></div>
+<script type="text/javascript">
+
+var ldavis_el652811406803464187527151880908_data = {"mdsDat": {"x": [0.1991746528078695, 0.010279971484483277, -0.20945462429235284], "y": [0.10291739885873552, -0.1913902640046349, 0.08847286514589921], "topics": [1, 2, 3], "cluster": [1, 1, 1], "Freq": [54.58627663404663, 27.64609303249007, 17.7676303334633]}, "tinfo": {"Term": ["east", "modern", "villag", "williamsburg", "sunni", "studio", "room", "brownston", "quiet", "garden", "privat", "west", "heart", "locat", "harlem", "side", "suit", "close", "train", "prime", "bedroom", "upper", "midtown", "time", "loft", "spaciou", "clean", "home", "bright", "near", "home", "larg", "room", "privat", "citi", "view", "spaciou", "charm", "great", "bedroom", "huge", "bushwick", "near", "park", "luxuri", "central", "beauti", "cozi", "bright", "subway", "suit", "harlem", "studio", "williamsburg", "loft", "sunni", "locat", "garden", "close", "train", "heart", "villag", "east", "west", "train", "prime", "close", "side", "time", "heart", "upper", "locat", "clean", "sunni", "midtown", "studio", "loft", "subway", "cozi", "luxuri", "central", "park", "east", "villag", "bedroom", "bright", "modern", "beauti", "huge", "williamsburg", "spaciou", "citi", "privat", "room", "near", "quiet", "brownston", "garden", "modern", "villag", "east", "williamsburg", "harlem", "suit", "bright", "loft", "beauti", "near", "midtown", "clean", "subway", "upper", "bushwick", "heart", "studio", "great", "time", "cozi", "side", "view", "locat", "charm", "central", "huge", "larg", "luxuri", "room", "bedroom", "privat"], "Freq": [66.0, 41.0, 46.0, 48.0, 65.0, 93.0, 201.0, 28.0, 24.0, 23.0, 141.0, 31.0, 40.0, 37.0, 26.0, 28.0, 26.0, 25.0, 24.0, 24.0, 162.0, 28.0, 26.0, 21.0, 34.0, 80.0, 20.0, 43.0, 42.0, 55.0, 42.10604994026524, 36.72693848920475, 189.34280454260875, 132.49090375679077, 23.195602106524486, 33.00403414025893, 74.36016103853048, 29.80889782398275, 22.4453612085728, 143.08667815116115, 22.980200988280505, 28.167215643093833, 43.28126644617816, 56.368777266532526, 28.633416072753146, 32.68452313916338, 35.733542167600206, 84.53498892322108, 24.595023244663068, 13.024002103890167, 9.306308400545559, 7.708009173704059, 18.594358716441363, 9.515846720446907, 6.493069989508384, 11.46533074657153, 3.9276759255321347, 1.211431808107357, 1.1695631910874453, 0.9338210041171993, 1.3124519118361269, 1.4001106937578227, 1.4601268308765787, 30.46591730481617, 23.25302683395093, 23.11821392201913, 24.008633287816735, 26.46398733212827, 19.717102247404863, 35.602346093153095, 24.632273457432927, 31.61527986906472, 17.140898643875616, 53.138203225640716, 21.34992078044294, 66.63534849187141, 18.304936217758804, 10.974658992566944, 37.09112793002238, 10.732461381218371, 12.040509005769428, 19.690556667107984, 14.584048555851814, 7.025559831724176, 16.98448067161018, 4.419811641257442, 3.535566815184685, 4.288200075238901, 2.124777747310403, 3.6756436013357487, 5.567838877329413, 1.4700478292603534, 7.610957046137264, 8.689825051885588, 2.3657954625711235, 23.585646619920077, 27.454675986844123, 22.160822594965055, 37.362611612498654, 37.76666294925904, 50.47984832721154, 35.656262537520625, 17.987498210266054, 16.529235611460226, 13.415185652856799, 10.000515323442647, 11.911767707811892, 9.946204754835017, 4.68914456839944, 3.2491970522346465, 3.4231673261857103, 3.290516138395439, 3.1680612040263014, 3.571347286637342, 8.220366493996602, 1.975650215655525, 1.611150923656529, 9.73804206926272, 1.5841372738036659, 1.945754822030471, 1.842471555483058, 1.366602633044297, 1.8375248741740753, 0.9780970151327267, 1.4158611864093327, 1.362804278911636, 3.3919681464120375, 2.0112851937816, 1.5418320979138316], "Total": [66.0, 41.0, 46.0, 48.0, 65.0, 93.0, 201.0, 28.0, 24.0, 23.0, 141.0, 31.0, 40.0, 37.0, 26.0, 28.0, 26.0, 25.0, 24.0, 24.0, 162.0, 28.0, 26.0, 21.0, 34.0, 80.0, 20.0, 43.0, 42.0, 55.0, 43.33383856251651, 38.57852113155707, 201.42459774090636, 141.64369290084187, 25.064446349005458, 35.74029588755734, 80.97889748473392, 32.832437192983434, 25.163396505435752, 162.08244401655293, 26.083075750723633, 31.979853927256396, 55.593266663584295, 77.4756274262109, 40.72868173288316, 46.56255701910688, 51.933509950651, 131.3641589225062, 42.43002053877731, 27.42182842264282, 26.21946623250861, 26.331754275600936, 93.45007370230938, 48.847752859303284, 34.798521530709834, 65.70089165456903, 37.385427350079915, 23.74620249786883, 25.569196531014104, 24.591632231221695, 40.48614529162656, 46.19233347474104, 66.52402371393993, 31.495696539771355, 24.591632231221695, 24.60561077991241, 25.569196531014104, 28.59641483042115, 21.715648922570555, 40.48614529162656, 28.680104021907546, 37.385427350079915, 20.81602322786297, 65.70089165456903, 26.785460532219417, 93.45007370230938, 34.798521530709834, 27.42182842264282, 131.3641589225062, 40.72868173288316, 46.56255701910688, 77.4756274262109, 66.52402371393993, 46.19233347474104, 162.08244401655293, 42.43002053877731, 41.27638348377232, 51.933509950651, 26.083075750723633, 48.847752859303284, 80.97889748473392, 25.064446349005458, 141.64369290084187, 201.42459774090636, 55.593266663584295, 24.817974228291373, 28.952090169942853, 23.74620249786883, 41.27638348377232, 46.19233347474104, 66.52402371393993, 48.847752859303284, 26.331754275600936, 26.21946623250861, 42.43002053877731, 34.798521530709834, 51.933509950651, 55.593266663584295, 26.785460532219417, 20.81602322786297, 27.42182842264282, 28.680104021907546, 31.979853927256396, 40.48614529162656, 93.45007370230938, 25.163396505435752, 21.715648922570555, 131.3641589225062, 28.59641483042115, 35.74029588755734, 37.385427350079915, 32.832437192983434, 46.56255701910688, 26.083075750723633, 38.57852113155707, 40.72868173288316, 201.42459774090636, 162.08244401655293, 141.64369290084187], "Category": ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3"], "logprob": [30.0, 29.0, 28.0, 27.0, 26.0, 25.0, 24.0, 23.0, 22.0, 21.0, 20.0, 19.0, 18.0, 17.0, 16.0, 15.0, 14.0, 13.0, 12.0, 11.0, 10.0, 9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0, -3.330399990081787, -3.467099905014038, -1.8271000385284424, -2.1840999126434326, -3.9267001152038574, -3.5739998817443848, -2.761699914932251, -3.675800085067749, -3.9595000743865967, -2.1071999073028564, -3.936000108718872, -3.7325000762939453, -3.3029000759124756, -3.0387001037597656, -3.7160000801086426, -3.583699941635132, -3.494499921798706, -2.633500099182129, -3.8680999279022217, -4.503799915313721, -4.839900016784668, -5.02839994430542, -4.147799968719482, -4.817699909210205, -5.199900150299072, -4.63129997253418, -5.702600002288818, -6.878799915313721, -6.914000034332275, -7.139100074768066, -6.798699855804443, -6.734099864959717, -6.6921000480651855, -2.9737000465393066, -3.2439000606536865, -3.2497000694274902, -3.211899995803833, -3.114500045776367, -3.408799886703491, -2.8178999423980713, -3.186300039291382, -2.9367001056671143, -3.5488998889923096, -2.4173998832702637, -3.3292999267578125, -2.1910998821258545, -3.4832000732421875, -3.9946999549865723, -2.776900053024292, -4.017099857330322, -3.9019999504089355, -3.4102001190185547, -3.710400104522705, -4.440800189971924, -3.558000087738037, -4.904200077056885, -5.127500057220459, -4.934500217437744, -5.63670015335083, -5.088600158691406, -4.673299789428711, -6.005000114440918, -4.3607001304626465, -4.2281999588012695, -5.529200077056885, -2.787600040435791, -2.635699987411499, -2.849900007247925, -2.327500104904175, -2.316800117492676, -2.026599884033203, -2.374300003051758, -3.058500051498413, -3.1431000232696533, -3.351799964904785, -3.6456000804901123, -3.4707000255584717, -3.6510000228881836, -4.4029998779296875, -4.769800186157227, -4.717700004577637, -4.757199764251709, -4.795100212097168, -4.675300121307373, -3.841599941253662, -5.267300128936768, -5.47130012512207, -3.6721999645233154, -5.4882001876831055, -5.282599925994873, -5.337100028991699, -5.635900020599365, -5.339799880981445, -5.970399856567383, -5.600500106811523, -5.638700008392334, -4.726799964904785, -5.2494001388549805, -5.515200138092041], "loglift": [30.0, 29.0, 28.0, 27.0, 26.0, 25.0, 24.0, 23.0, 22.0, 21.0, 20.0, 19.0, 18.0, 17.0, 16.0, 15.0, 14.0, 13.0, 12.0, 11.0, 10.0, 9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0, 0.5766, 0.5562, 0.5435, 0.5386, 0.5279, 0.5257, 0.5201, 0.5088, 0.4911, 0.4807, 0.4787, 0.4784, 0.355, 0.2873, 0.253, 0.2515, 0.2315, 0.1646, 0.0601, -0.1392, -0.4304, -0.6231, -1.0092, -1.0304, -1.0735, -1.1404, -1.6478, -2.3702, -2.4794, -2.6655, -2.8237, -2.8909, -3.2137, 1.2524, 1.2297, 1.2233, 1.2227, 1.2082, 1.1891, 1.1571, 1.1335, 1.118, 1.0914, 1.0735, 1.0589, 0.9475, 0.6433, 0.3699, 0.0211, -0.048, -0.0668, -0.0841, -0.2319, -0.5976, -0.9701, -0.9761, -1.1717, -1.2084, -1.2219, -1.3013, -1.3915, -1.5505, -1.638, -1.8576, -1.8713, 1.6769, 1.6747, 1.6587, 1.6282, 1.5264, 1.4518, 1.413, 1.3467, 1.2664, 0.5763, 0.4809, 0.2554, 0.0069, -0.0148, -0.1295, -0.353, -0.4374, -0.5842, -0.7002, -0.703, -0.8167, -0.8733, -0.8741, -1.1654, -1.1828, -1.2824, -1.4513, -1.5046, -1.5556, -1.5772, -1.6696, -2.3562, -2.6615, -2.7926]}, "token.table": {"Topic": [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 2, 3, 1, 2, 1, 2, 3, 1, 2, 3, 1, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 3, 1, 2, 3, 2, 3, 1, 2, 1, 2, 3, 1, 2, 3, 1, 2, 3, 2, 3, 1, 2, 3], "Freq": [0.6931940482014105, 0.07702156091126783, 0.23106468273380348, 0.8822670516085993, 0.10488489424717613, 0.012339399323197192, 0.5892054654357802, 0.09427287446972483, 0.3063868420266057, 0.03453982058394418, 0.03453982058394418, 0.9325751557664927, 0.8755512162028867, 0.03126968629296024, 0.09380905887888072, 0.7087239643316516, 0.25771780521150967, 0.04295296753525161, 0.9137305227651894, 0.06091536818434596, 0.03045768409217298, 0.9176344723414418, 0.039897150971367035, 0.8166785660214343, 0.144119746944959, 0.03910955898778642, 0.9386294157068741, 0.6470562495676073, 0.28165977922354674, 0.07612426465501262, 0.015032163482775814, 0.2254824522416372, 0.7516081741387907, 0.04211199664829557, 0.9264639262625025, 0.8742857902846144, 0.039740263194755196, 0.07948052638951039, 0.30381568642438755, 0.037976960803048444, 0.6835852944548719, 0.024699807620529937, 0.8891930743390777, 0.09879923048211975, 0.9692194689701393, 0.023076654023098556, 0.023076654023098556, 0.8817978454616074, 0.07667807351840066, 0.03833903675920033, 0.9590829019553618, 0.025921159512307074, 0.10699356095474591, 0.8559484876379673, 0.053496780477372954, 0.17242111837150828, 0.5172633551145248, 0.2873685306191805, 0.7120289379900612, 0.2700799419962301, 0.02455272199965728, 0.03733368701266608, 0.7840074272659877, 0.18666843506333042, 0.09690771483341284, 0.8963963622090688, 0.7734749652365119, 0.035975579778442415, 0.1798778988922121, 0.7228079572938644, 0.25814569903352297, 0.012907284951676149, 0.04064113705384556, 0.9347461522384478, 0.04064113705384556, 0.9319158325842791, 0.056479747429350254, 0.014119936857337563, 0.04029337732408655, 0.04029337732408655, 0.9670410557780772, 0.9383163830025953, 0.044681732523933114, 0.014893910841311038, 0.03496941857677173, 0.9092048829960651, 0.06993883715354346, 0.9138183193214062, 0.07409337724227617, 0.01234889620704603, 0.20331712161646442, 0.7169603762264798, 0.08560720910166923, 0.4740748793127743, 0.40114028249542444, 0.10940189522602484, 0.34325641567947757, 0.6483732296167909, 0.1674254294421745, 0.8066861600395681, 0.015220493585652228, 0.9209948121427141, 0.0920994812142714, 0.040664238575038286, 0.9352774872258806, 0.03486737702332395, 0.8716844255830988, 0.10460213106997185, 0.9233275545289666, 0.02797962286451414, 0.05595924572902828, 0.02164861406161309, 0.15154029843129163, 0.8226473343412974, 0.9525110823352436, 0.03175036941117479, 0.20471770787088422, 0.08188708314835369, 0.7369837483351832], "Term": ["beauti", "beauti", "beauti", "bedroom", "bedroom", "bedroom", "bright", "bright", "bright", "brownston", "brownston", "brownston", "bushwick", "bushwick", "bushwick", "central", "central", "central", "charm", "charm", "charm", "citi", "citi", "clean", "clean", "close", "close", "cozi", "cozi", "cozi", "east", "east", "east", "garden", "garden", "great", "great", "great", "harlem", "harlem", "harlem", "heart", "heart", "heart", "home", "home", "home", "huge", "huge", "huge", "larg", "larg", "locat", "locat", "locat", "loft", "loft", "loft", "luxuri", "luxuri", "luxuri", "midtown", "midtown", "midtown", "modern", "modern", "near", "near", "near", "park", "park", "park", "prime", "prime", "prime", "privat", "privat", "privat", "quiet", "quiet", "quiet", "room", "room", "room", "side", "side", "side", "spaciou", "spaciou", "spaciou", "studio", "studio", "studio", "subway", "subway", "subway", "suit", "suit", "sunni", "sunni", "sunni", "time", "time", "train", "train", "upper", "upper", "upper", "view", "view", "view", "villag", "villag", "villag", "west", "west", "williamsburg", "williamsburg", "williamsburg"]}, "R": 30, "lambda.step": 0.01, "plot.opts": {"xlab": "PC1", "ylab": "PC2"}, "topic.order": [1, 3, 2]};
+
+function LDAvis_load_lib(url, callback){
+  var s = document.createElement('script');
+  s.src = url;
+  s.async = true;
+  s.onreadystatechange = s.onload = callback;
+  s.onerror = function(){console.warn("failed to load library " + url);};
+  document.getElementsByTagName("head")[0].appendChild(s);
+}
+
+if(typeof(LDAvis) !== "undefined"){
+   // already loaded: just create the visualization
+   !function(LDAvis){
+       new LDAvis("#" + "ldavis_el652811406803464187527151880908", ldavis_el652811406803464187527151880908_data);
+   }(LDAvis);
+}else if(typeof define === "function" && define.amd){
+   // require.js is available: use it to load d3/LDAvis
+   require.config({paths: {d3: "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min"}});
+   require(["d3"], function(d3){
+      window.d3 = d3;
+      LDAvis_load_lib("https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.js", function(){
+        new LDAvis("#" + "ldavis_el652811406803464187527151880908", ldavis_el652811406803464187527151880908_data);
+      });
+    });
+}else{
+    // require.js not available: dynamically load d3 & LDAvis
+    LDAvis_load_lib("https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js", function(){
+         LDAvis_load_lib("https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.js", function(){
+                 new LDAvis("#" + "ldavis_el652811406803464187527151880908", ldavis_el652811406803464187527151880908_data);
+            })
+         });
+}
+</script>
+</div>
+</div>
+</section>
+</section>
+<section id="additional-summaries-of-topics-and-documents" class="level1">
+<h1>Additional summaries of topics and documents</h1>
+<p>What if we want to find which topics are associated with higher listing prices?</p>
+<div id="cell-43" class="cell" data-scrolled="true" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">## get topic probabilities by doc and find mean listing by topic</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co">### get document topics - list of list tuples</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>topic_probs_bydoc <span class="op">=</span>[ldamod_proc.get_document_topics(item) <span class="cf">for</span> item <span class="kw">in</span> corpus_fromdict_proc]</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co">## each document has a list containing topic, probability</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="co">## tuples- example w/ first document</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>one_list_tup <span class="op">=</span> topic_probs_bydoc[<span class="dv">0</span>]</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co">## create a long for dataframe by flattening the list</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>topic_probs_bydoc_long <span class="op">=</span> pd.DataFrame([t <span class="cf">for</span> lst <span class="kw">in</span> topic_probs_bydoc <span class="cf">for</span> t <span class="kw">in</span> lst],</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>                                     columns <span class="op">=</span> [<span class="st">'topic'</span>, <span class="st">'probability'</span>])</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co">## add id var- we're repeating each id in the original data k times</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="co">## for the number of topics</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>topic_probs_bydoc_long[<span class="st">'doc_id'</span>] <span class="op">=</span> <span class="bu">list</span>(np.concatenate([[one_id] <span class="op">*</span> </span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>                                    n_topics <span class="cf">for</span> one_id <span class="kw">in</span> ab_small.<span class="bu">id</span>]).flat)</span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="co">## pivot to wide format</span></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>topic_probs_bydoc_wide <span class="op">=</span> pd.pivot_table(topic_probs_bydoc_long, index <span class="op">=</span> [<span class="st">'doc_id'</span>],</span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>                        columns <span class="op">=</span> [<span class="st">'topic'</span>]).reset_index().reset_index(drop <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>topic_probs_bydoc_wide.columns <span class="op">=</span> [<span class="st">'doc_id'</span>] <span class="op">+</span> [<span class="st">"topic_"</span> <span class="op">+</span> <span class="bu">str</span>(i) <span class="cf">for</span> i <span class="kw">in</span> np.arange(<span class="dv">0</span>, n_topics)]</span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a><span class="co">## merge with original data using doc id</span></span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>topic_wmeta <span class="op">=</span> pd.merge(topic_probs_bydoc_wide,</span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>                      ab_small,</span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a>                      left_on <span class="op">=</span> <span class="st">'doc_id'</span>,</span>
+<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>                      right_on <span class="op">=</span> <span class="st">'id'</span>)</span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a><span class="co">## create indicator for listing's top topic</span></span>
+<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a>topic_wmeta[<span class="st">'toptopic'</span>] <span class="op">=</span> topic_wmeta[[col <span class="cf">for</span> col <span class="kw">in</span> topic_wmeta.columns <span class="cf">if</span> </span>
+<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"topic_"</span> <span class="kw">in</span> col]].idxmax(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a>topic_wmeta.sample(n <span class="op">=</span> <span class="dv">5</span>, random_state <span class="op">=</span> <span class="dv">555</span>)</span>
+<span id="cb31-33"><a href="#cb31-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-34"><a href="#cb31-34" aria-hidden="true" tabindex="-1"></a><span class="co">## group by topic and find mean price</span></span>
+<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a>topic_wmeta.groupby(<span class="st">'toptopic'</span>).agg({<span class="st">'price_rawdata'</span>: np.mean})</span>
+<span id="cb31-36"><a href="#cb31-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-37"><a href="#cb31-37" aria-hidden="true" tabindex="-1"></a><span class="co">## group by borough and topic -- higher price for some also reflects</span></span>
+<span id="cb31-38"><a href="#cb31-38" aria-hidden="true" tabindex="-1"></a><span class="co">## diff borough composition</span></span>
+<span id="cb31-39"><a href="#cb31-39" aria-hidden="true" tabindex="-1"></a>topic_wmeta.groupby([<span class="st">'toptopic'</span>, </span>
+<span id="cb31-40"><a href="#cb31-40" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'neighbourhood_group'</span>]).agg({<span class="st">'price_rawdata'</span>: np.mean})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">doc_id</th>
+<th data-quarto-table-cell-role="th">topic_0</th>
+<th data-quarto-table-cell-role="th">topic_1</th>
+<th data-quarto-table-cell-role="th">topic_2</th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">neighbourhood_group</th>
+<th data-quarto-table-cell-role="th">price_rawdata</th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">name_lower</th>
+<th data-quarto-table-cell-role="th">processed</th>
+<th data-quarto-table-cell-role="th">toptopic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">487</td>
+<td>19691179</td>
+<td>0.362415</td>
+<td>0.252236</td>
+<td>0.385349</td>
+<td>19691179</td>
+<td>Manhattan</td>
+<td>125</td>
+<td>Sun-filled Lower East Side Guest Room</td>
+<td>sun-filled lower east side guest room</td>
+<td>fill lower east side guest room</td>
+<td>topic_2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">635</td>
+<td>24712037</td>
+<td>0.288124</td>
+<td>0.128003</td>
+<td>0.583873</td>
+<td>24712037</td>
+<td>Brooklyn</td>
+<td>198</td>
+<td>Stylish Design Apartment in the Heart of Brooklyn</td>
+<td>stylish design apartment in the heart of brooklyn</td>
+<td>stylish design heart</td>
+<td>topic_2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">713</td>
+<td>28165121</td>
+<td>0.561971</td>
+<td>0.056605</td>
+<td>0.381424</td>
+<td>28165121</td>
+<td>Brooklyn</td>
+<td>70</td>
+<td>Large, Sunny Retreat- B/Q subway, Prospect Park!</td>
+<td>large, sunny retreat- b/q subway, prospect park!</td>
+<td>larg sunni retreat subway prospect park</td>
+<td>topic_0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">262</td>
+<td>10105477</td>
+<td>0.287589</td>
+<td>0.130877</td>
+<td>0.581534</td>
+<td>10105477</td>
+<td>Manhattan</td>
+<td>97</td>
+<td>Midtown Manhattan</td>
+<td>midtown manhattan</td>
+<td>midtown</td>
+<td>topic_2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">941</td>
+<td>35009512</td>
+<td>0.528191</td>
+<td>0.351617</td>
+<td>0.120192</td>
+<td>35009512</td>
+<td>Brooklyn</td>
+<td>123</td>
+<td>One bedroom in Williamsburg, Brooklyn</td>
+<td>one bedroom in williamsburg, brooklyn</td>
+<td>bedroom williamsburg</td>
+<td>topic_0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">price_rawdata</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">toptopic</th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">topic_0</td>
+<td>146.550432</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">topic_1</td>
+<td>203.549020</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">topic_2</td>
+<td>156.869347</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">price_rawdata</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">toptopic</th>
+<th data-quarto-table-cell-role="th">neighbourhood_group</th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">topic_0</td>
+<td data-quarto-table-cell-role="th">Bronx</td>
+<td>49.200000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Brooklyn</td>
+<td>122.790000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Manhattan</td>
+<td>199.262963</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Queens</td>
+<td>91.196262</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Staten Island</td>
+<td>116.857143</td>
+</tr>
+<tr class="even">
+<td rowspan="4" data-quarto-table-cell-role="th" data-valign="top">topic_1</td>
+<td data-quarto-table-cell-role="th">Bronx</td>
+<td>82.500000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Brooklyn</td>
+<td>147.976744</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Manhattan</td>
+<td>256.592593</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Queens</td>
+<td>126.000000</td>
+</tr>
+<tr class="even">
+<td rowspan="4" data-quarto-table-cell-role="th" data-valign="top">topic_2</td>
+<td data-quarto-table-cell-role="th">Bronx</td>
+<td>200.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Brooklyn</td>
+<td>133.063492</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Manhattan</td>
+<td>177.933333</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Queens</td>
+<td>85.466667</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

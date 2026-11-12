@@ -1,0 +1,52 @@
+---
+title: "Week 12"
+subtitle: "Text as Data and LLMs"
+description: ""
+author: "Rebecca A. Johnson"
+date: "11/12/2026"
+#listing:
+  # - id: slides
+  #   contents:
+  #     - ../slides/week-01/*.qmd
+  #   type: table
+  #   fields: [title, date]
+  #   date-format: "ddd, MMM DD"
+  #   field-display-names:
+  #     title: "Topic"
+  #     date: "Date"
+  #   sort: [filename]
+  #   sort-ui: false
+  #   filter-ui: false
+  # - id: assignments
+  #   contents:
+  #     - ../hw/w1-*.qmd
+  #     - ../labs/w1-*.qmd
+  #   type: table
+  #   fields: [categories, title, date]
+  #   date-format: "ddd, MMM DD"
+  #   field-display-names:
+  #     categories: "Assignment"
+  #     title: "Title"
+  #     date: "Due"
+  #   sort: [date]
+  #   sort-ui: false
+  #   filter-ui: false
+tbl-colwidths: [10,50,40]
+---
+
+
+## Slides
+
+[Week 12](/slides/week-12.qmd)
+
+## In-class activity
+
+- Blank notebook (ipynb file to download): <a href="/activities/_week12_activity.ipynb" download> .ipynb file </a>
+- Activity solutions (ipynb file to download): <a href="/activities/_week12_activity_solutions.ipynb" download> .ipynb file </a>
+- Activity solutions (html file to view): [html](/activities/_week12_activity_solutions.html)
+
+## Optional Readings
+
+- [David Blei, Probabilistic Topic Models](https://www.cs.columbia.edu/~blei/papers/Blei2012.pdf)
+- [Thomas Davidson, Start Generating: Harnessing Generative Artificial Intelligence for Sociological Research](https://osf.io/preprints/socarxiv/u9nft_v1)
+
