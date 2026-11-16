@@ -166,7 +166,6 @@ The follow schedule lays out when each assignment will be assigned.
 |   No. 1    |    Week 2     | Wednesday September 16th 11:59 PM   |
 |   No. 2    |    Thursday September 23rd     | Wednesday October 7th 11:59 PM  |
 |   No. 3    |    Thursday October 8th    | Wednesday October 21st at 11:59 PM  |
-|   No. 4    |    TBD     | TBD |
 
 **In-class Python Exam (15%):** for problem sets and the final project, as noted below, LLMs can be used as a resource similar to Google. To ensure mastery of the material without the assistance of LLMs, we will have a short, in-class Python exam following the Week 11 conclusion of the Python content. This will either be by hand or on a computer without LLM use. This exam will be easily completed if you have engaged with the material and written code yourself throughout the semester.
 
@@ -190,8 +189,6 @@ Due dates and breakdowns for the project are as follows:
 
 -   For the project proposal, I encourage you to come to office hours either before or after submission to talk through any questions and my feedback
 
--   For the presentation, You will have 10-15 minutes in our last class of the semester to present you project.
-
 -   **Take the final project seriously**. After you finish your Masters, in any path you take, you will need to show concrete examples of your portfolio. This is a good opportunity to start building it.
 
 **Example final projects**
@@ -208,25 +205,7 @@ Here you can download some examples from projects from previous cohorts of DSPP 
 
 **Submission of the Final Project**
 
-The end product should be a github repository that contains:
-
--   The raw source data you used for the project. If the data is too large for GitHub, talk with me, and we will find a solution
-
--   Your proposal
-
--   A README for the repository that, for each file, describes in detail:
-
-    -   Inputs to the file: e.g., raw data; a file containing credentials needed to access an API
-
-    -   What the file does: describe major transformations.
-
-    -   Output: if the file produces any outputs (e.g., a cleaned dataset; a figure or graph).
-
-    -   A set of code files that transform that data into a form usable to answer the question you have posed in your descriptive research proposal.
-
-    -   Your final 10 pages report (I will share a template later in the semester)
-
-Of course, no commits after the due date will be considered in the assessment.
+See final project instructions distributed via Canvas
 
 ## Grading
 
