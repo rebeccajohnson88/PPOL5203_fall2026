@@ -23,9 +23,16 @@ client_secret*.json
 creds.yaml
 creds.yml
 .env
+.env.local
+.env.*
+.env*.local
 *.pem
 *.key
 
 # Data pulled from the intro survey - contains student names and emails
 policy_area_counts.csv
 *Form Responses*.csv
+
+# Large datasets 
+init_fordb.csv
+divert.csv

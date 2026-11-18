@@ -1,0 +1,614 @@
+---
+title: "<span style = 'font-size: 100%;'> PPOL 5203 - Data Science I: Foundations </span>"
+subtitle: "<span style = 'font-size: 100%;'> Week 13: Intro to SQL</span>"
+author: "Professor: Rebecca Johnson"
+execute:
+  echo: true
+  error: true
+format:
+  revealjs:
+    transition: slide
+    background-transition: fade
+    code-line-numbers: false
+    width: 1600
+    height: 900
+    center: true
+    slide-number: true
+    incremental: false
+    scrollable: true
+    chalkboard:
+      buttons: false
+    preview-links: auto
+    footer: "Data science I: Foundations"
+    theme: [simple, custom.scss]
+jupyter: python3
+ipynb-shell-interactivity: all
+---
+
+# Plans for Today
+
+1.  SQL: ways of interacting with a database and starting a connection
+
+2.  Basics of rows and columns: selecting columns, selecting rows using logical conditions, and creating new columns based on conditions
+
+3.  Subqueries, aggregations, and joins: one table
+
+4.  Subqueries, aggregations, and joins: two tables
+
+```{python}
+#| include: false
+import pandas as pd
+import numpy as np
+import yaml
+
+
+pd.set_option('display.max_columns', None)
+
+import warnings
+warnings.filterwarnings("ignore")
+```
+
+# SQL: ways of interacting with a database and starting a connection {background-color="#447099"}
+
+## What is SQL and why might it be useful?
+
+-   **S**tructured **Q**uery **L**anguage
+-   While relatively uncommon in academia, many companies and governments expect data scientists to be able to write SQL queries
+-   A particular data warehouse or database might use different database engines to store data: Amazon Redshift; MySQL; PostgreSQL; Microsoft SQL Server; SQLite
+-   Nearly identical syntax but some small differences on the margins; here, we're using **PostgreSQL** but the syntax is similar across engines
+
+## What is SQL and why might it be useful?
+
+::: {style="text-align: center;"}
+![](week13_figs/sql_skills.png){width=60%}
+:::
+
+**Source:** Dataquest
+
+## One way of writing SQL queries / viewing parts of a database
+
+IDEs similar to RStudio, PyCharm, or Jupyter notebooks let you preview tables in a database and write and execute queries in a console or a `.sql` script:
+
+::: {style="text-align: center;"}
+![](week13_figs/dbeaver.png){width=70%}
+:::
+
+**Source:** StackOverflow
+
+## Another way: connecting via another scripting language and sending queries through the connection
+
+1.  Use an R or Python package that helps you connect with a specific type of database (`Python`: `sqlalchemy`; MySQL connector; `pyodbc`; etc.; similar ones in `R`)
+2.  Establish a connection between your local computer and the database
+3.  Write a SQL query
+4.  Execute the query
+5.  Pull the result and work with the result in that language
+
+## Way of connecting here
+
+-   The class database is a PostgreSQL database hosted on [Neon](https://neon.com), a cloud hosting service for Postgres
+-   We connect from Python with two packages:
+    -   `sqlalchemy`: creates the connection (an "engine")
+    -   `psycopg2`: the driver `sqlalchemy` uses to talk to Postgres
+    -   Install or update once from a terminal: `pip install --upgrade pandas sqlalchemy psycopg2-binary`. You need **pandas 2.2 or newer**; older versions give `AttributeError: 'Engine' object has no attribute 'cursor'`
+-   I shared the yaml entry with the connection string for the class database on Slack
+-   Once you've established a connection, pandas has a command `pd.read_sql_query(query_string, engine)` that executes a SQL query and reads the result in as a pandas dataframe
+
+## Preliminary step: store the connection string
+
+Same approach as API keys in Week 9: add the connection string to your `creds.yaml` file
+
+``` yaml
+class_database:
+  connection_string: "postgresql://student:PASSWORD@HOST/ppol5203_classdb?sslmode=require&channel_binding=require"
+```
+
+-   Paste the full string from Slack in place of the example
+-   Keep `creds.yaml` out of GitHub (it should be in your `.gitignore`)
+
+## Preliminary step: load credentials and establish a connection
+
+```{python}
+from sqlalchemy import create_engine
+
+## load creds
+with open("../creds.yaml", 'r') as stream:
+    creds = yaml.safe_load(stream)
+
+## create the connection to the class database
+engine = create_engine(creds['class_database']['connection_string'])
+```
+
+-   The first query after the database has been idle can take a few seconds while it wakes up; after that, queries are fast
+
+## Working example: two tables from Chicago felony prosecution datasets
+
+| Desc.       | Table      | Main columns                                                                                  |
+|-------------|------------|-----------------------------------------------------------------------------------------------|
+| Initiations | `caseinit` | case_id; case_participant_id; race; gender; updated_offense_category; is_in_diversion          |
+| Diversions  | `divert`   | case_id; case_participant_id; race; diversion_program; offense_category                        |
+
+-   Column names are stored in lowercase. SQL isn't case-sensitive about unquoted column names, so `CASE_ID` and `case_id` both work in a query
+
+# Basics of rows and columns {background-color="#447099"}
+
+## Basic syntax of a SQL query
+
+-   Select [specific]{style="color:#9932CC;"} columns and rows that meet a condition:
+
+``` sql
+select col1, col2
+from tablename
+where somecondition holds
+```
+
+-   Select [all]{style="color:#9932CC;"} columns and rows that meet a condition:
+
+``` sql
+select *
+from tablename
+where somecondition holds
+```
+
+## Examining structure of data: selecting first 5 rows from case initiations table
+
+```{python}
+## define a query
+sample_case_q = """
+select *
+from caseinit
+limit 5
+"""
+## feed read sql query the query and my db connection
+read_sample_d = pd.read_sql_query(sample_case_q, engine)
+read_sample_d
+```
+
+Breaking things down:
+
+-   `select *`: select all columns
+-   `from caseinit`: which table in the database to pull from (if our database was more complicated, it might be structured as something like `sentencing_schema.caseinit`, indicating the case initiations table in the sentencing schema)
+-   Feed the (1) query and (2) database connection (`engine`) to pandas `read_sql_query`
+
+## Activity 1: installing packages and connecting to the database {background-color="#449998"}
+
+See Activity 1 in notebook
+
+
+## [Columns:]{style="color:#9932CC;"} selecting specific columns with no transformations/additions
+
+```{python}
+q = """
+select CASE_ID, CASE_PARTICIPANT_ID
+from caseinit
+"""
+pd.read_sql_query(q, engine).head()
+```
+
+**What this does:** selects those two columns from the case initiations table
+
+## [Rows:]{style="color:#9932CC;"} filtering to specific rows using where
+
+```{python}
+q = """
+select CASE_ID, CASE_PARTICIPANT_ID,
+AGE_AT_INCIDENT
+from caseinit
+where AGE_AT_INCIDENT > 40
+"""
+pd.read_sql_query(q, engine).head()
+```
+
+Other logical operators:
+
+-   Equals: `=`
+-   Not equals: `!=` (in other languages: `<>`)
+
+## [Rows:]{style="color:#9932CC;"} filtering to specific rows using in or like
+
+-   Specify categories:
+
+```{python}
+q = """
+select CASE_ID, CASE_PARTICIPANT_ID,
+RACE
+from caseinit
+where race in ('Black', 'HISPANIC')
+"""
+pd.read_sql_query(q, engine).race.value_counts()
+```
+
+## [Rows:]{style="color:#9932CC;"} filtering to specific rows using in or like
+
+-   If contains Black anywhere in the `race` string:
+
+```{python}
+q = """
+select CASE_ID, CASE_PARTICIPANT_ID,
+RACE
+from caseinit
+where race like '%%Black%%'
+"""
+pd.read_sql_query(q, engine).race.value_counts()
+```
+
+## [Columns:]{style="color:#9932CC;"} creating new columns based on conditions
+
+`CASE, WHEN, ELSE` syntax works similarly to `np.where` and `np.select`
+
+```{python}
+q = """
+select *,
+CASE
+    WHEN OFFENSE_CATEGORY = UPDATED_OFFENSE_CATEGORY
+    THEN 'Same offense'
+    ELSE 'Diff offense'
+END as charge_update
+from caseinit
+"""
+pd.read_sql_query(q, engine)[['case_id', 'offense_category', 
+                  'updated_offense_category', 'charge_update']].head()
+```
+
+## What if we want to create a new col and then filter using that same column as part of the same query? Query
+
+If we try this query (create the `charge_update` column and then row filter):
+
+``` sql
+select *,
+CASE
+    WHEN OFFENSE_CATEGORY = UPDATED_OFFENSE_CATEGORY
+    THEN 'Same offense'
+    ELSE 'Diff offense'
+END as charge_update
+from caseinit
+where charge_update = 'Diff offense'
+```
+
+## What if we want to create a new col and then filter using that same column as part of the same query? Error
+
+We get this SQL error telling us that it doesn't recognize the new column, because we can't simultaneously create a new column and filter on it:
+
+::: {style="text-align: center;"}
+![](week13_figs/sql_errors.png){width=70%}
+:::
+
+## Approach one: direct row filtering using where without the case when
+
+```{python}
+q = """
+select *
+from caseinit
+where offense_category != updated_offense_category
+"""
+pd.read_sql_query(q, engine)[['case_id', 'offense_category', 
+                  'updated_offense_category', 'charge_update']].head()
+```
+
+# Subqueries, aggregations, and joins: one table {background-color="#447099"}
+
+## Approach two: using subqueries. In words
+
+1.  Write a [subquery]{style="color:#9932CC;"} to create the column indicating whether the charge has been updated (`charge_update`)
+2.  Use the output of that subquery
+3.  Then, in the main select, we can select or do whatever we want with the `charge_update` column we created in the subquery
+
+## Approach using subqueries: in code
+
+```{python .small-code}
+q = """
+select *
+from caseinit
+inner join
+    (select CASE_ID as cid,
+    CASE_PARTICIPANT_ID as cpid,
+    CASE
+        WHEN OFFENSE_CATEGORY = UPDATED_OFFENSE_CATEGORY
+        THEN 'Same offense'
+        ELSE 'Diff offense'
+    END as charge_update
+    from caseinit) as tmp
+    on tmp.cid = caseinit.CASE_ID and
+    tmp.cpid = caseinit.CASE_PARTICIPANT_ID
+where charge_update = 'Diff offense'
+"""
+pd.read_sql_query(q, engine).head(2)
+```
+
+Breaking it down:
+
+-   [Use "as" to alias]{style="color:#9932CC;"} `CASE_ID` as `cid`, similar with `cpid`
+-   Execute our case when statement
+-   [Alias]{style="color:#9932CC;"} the newly created table as `tmp` and join back with our main data
+
+## Subqueries are most powerful in the context of aggregations
+
+General workflow:
+
+1.  Construct a [subquery]{style="color:#9932CC;"} that does some transformation or aggregation of the table
+2.  Join the result to the main table
+3.  Do operations like row and column filtering in the outer part of the query that uses the output of the subquery
+
+## Example: disparities in who receives leniency through diversion
+
+Want to:
+
+1.  Find the five most common offenses in the `caseinit` table
+2.  For those five most common offenses, find the percent of Black defendants whose cases are diverted and the percent of White defendants whose cases are diverted
+3.  Create a new column, `diff_diversion`, that's the White diversion rate for the offense minus the Black diversion rate
+
+Rather than creating a complex query all at once, let's build the query incrementally
+
+## Step 1: finding five most common offenses 
+
+```{python .small-code}
+q = """
+select updated_offense_category,
+count(*) as count_offense
+from caseinit
+where race in ('Black', 'White')
+group by updated_offense_category
+order by count_offense desc
+limit 5
+"""
+pd.read_sql_query(q, engine).head(2)
+```
+
+Breaking it down:
+
+-   Grouping by offense category
+-   Using `count(*)` to get the number of rows in that group
+-   Using [as]{style="color:#9932CC;"} to call that column `count_offense`
+-   Order from highest to lowest count of rows; take top 5
+
+## Step 2: nest that in a subquery to filter to rows where offense is in top 5
+
+```{python .small-code}
+q = """
+select *
+from caseinit
+inner join(
+    select UPDATED_OFFENSE_CATEGORY as tmp_oc,
+    count(*) as count_offense
+    from caseinit
+    where RACE in ('Black', 'White')
+    group by UPDATED_OFFENSE_CATEGORY
+    order by count_offense desc
+    limit 5
+    ) as top5
+    on caseinit.UPDATED_OFFENSE_CATEGORY = top5.tmp_oc
+"""
+```
+
+Breaking it down:
+
+-   Put the query we wrote in the previous step into a subquery
+-   The `inner join` means that the only rows from the `caseinit` table retained are ones where the `UPDATED_OFFENSE_CATEGORY` is in that top 5
+
+## Step 3: shift to writing code for the proportion sent to diversion outcome
+
+```{python .small-code}
+q = """
+select
+avg(cast(is_in_diversion as INTEGER)) as prop_divert,
+RACE, UPDATED_OFFENSE_CATEGORY
+from caseinit
+where race in ('Black', 'White')
+group by race, UPDATED_OFFENSE_CATEGORY
+order by prop_divert desc
+"""
+pd.read_sql_query(q, engine).head(2)
+```
+
+Logic:
+
+-   Filtering to Black and White defendants and grouping by race and offense type
+-   Recasting `is_in_diversion` as an integer
+-   Similar to how, in pandas, we take the mean of a True/False column to get the proportion true, we can take the mean of that binary indicator using `avg` to find the proportion diverted in each race/ethnicity $\times$ type of offense group
+
+## Putting it together
+
+```{python .small-code}
+q = """
+select
+avg(cast(is_in_diversion as INTEGER)) as prop_divert,
+RACE, UPDATED_OFFENSE_CATEGORY
+from caseinit
+inner join (
+    select UPDATED_OFFENSE_CATEGORY as tmp_oc_t5, count(*) as count_offense
+    from caseinit
+    where RACE in ('Black', 'White')
+    group by UPDATED_OFFENSE_CATEGORY
+    order by count_offense desc
+    limit 5
+    ) as top5 on caseinit.UPDATED_OFFENSE_CATEGORY = top5.tmp_oc_t5
+where race in ('Black', 'White')
+group by race, UPDATED_OFFENSE_CATEGORY
+order by prop_divert desc
+"""
+pd.read_sql_query(q, engine)
+```
+
+## After all that code, some disparities
+
+::: {style="text-align: center;"}
+![](week13_figs/narcotics_diversion.png){width=70%}
+:::
+
+## Activity 2: variable creation and subquery practice {background-color="#449998"}
+
+See Activity 2 in notebook 
+
+# Subqueries, aggregations, and joins: two tables {background-color="#447099"}
+
+## Overview of diversion programs
+
+::: {style="text-align: center;"}
+![](week13_figs/divert_example.png){width=40%}
+:::
+
+**Source:** Cook County SAO data documentation
+
+## Can merge with the case initiations data to explore things like
+
+-   How use of diversions differs across police departments (e.g., Chicago PD versus suburban PD)
+-   How bond/probation is related to diversion
+-   Age patterns (most demographic variables are available in `caseinit` but not in `divert`)
+
+## Left join of some cols from caseinit onto diversions: no aliasing
+
+```{python .small-code}
+q = """
+select divert.*,
+age_at_incident
+from divert
+LEFT JOIN caseinit
+ON divert.case_id = caseinit.case_id
+AND divert.case_participant_id = caseinit.case_participant_id
+"""
+pd.read_sql_query(q, engine)[['case_id', 'case_participant_id', 'age_at_incident']].head(2)
+```
+
+Breaking it down:
+
+-   Selected all cols from divert using the syntax `tablename.*`
+-   Selected only age from caseinit
+
+## What happens if we select cols available in both tables?
+
+``` sql
+select divert.*,
+RACE
+from divert
+LEFT JOIN caseinit
+ON divert.CASE_ID = caseinit.CASE_ID
+AND divert.CASE_PARTICIPANT_ID = caseinit.CASE_PARTICIPANT_ID
+```
+
+**Error:**
+
+::: {style="text-align: center;"}
+![](week13_figs/race_needalias.png){width=55%}
+:::
+
+## How to fix: aliasing the col
+
+```{python .small-code}
+q = """
+select divert.*,
+age_at_incident,
+caseinit.race as caseinit_race
+from divert
+LEFT JOIN caseinit
+ON divert.case_id = caseinit.case_id
+AND divert.case_participant_id = caseinit.case_participant_id
+"""
+pd.read_sql_query(q, engine)[['case_id', 'case_participant_id', 
+                            'race', 'caseinit_race']].head(2)
+```
+
+Breaking it down:
+
+-   Use the syntax `tablename.colname as something` to alias the RACE variable from the case initiations table as something else so that we know which table it's from
+
+## Simplifying the query by aliasing the table names
+
+```{python}
+q = """
+select d.*,
+age_at_incident,
+c.race as caseinit_race
+from divert as d
+LEFT JOIN caseinit as c
+ON d.case_id = c.case_id
+AND d.case_participant_id = c.case_participant_id
+"""
+```
+
+Breaking it down:
+
+-   Rename caseinit as `c`
+-   Rename diversions as `d`
+
+## Other joins
+
+-   `INNER`, `OUTER`, `CROSS` (the latter takes all rows from the LHS data and repeats each for all rows of the RHS data, and vice versa)
+-   Good discussion here: <https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-joins/>
+
+## Combining aggregation of one table and join
+
+**Goal:** among the cases that are diverted, for each of the charges (`UPDATED_OFFENSE_CATEGORY`) in the case initiations, find the percentage of defendants with that charge going to each `DIVERSION_PROGRAM`
+
+## Step 1 (get the numerator): find the count of offenses by diversion program
+
+```{python .small-code}
+q = """
+select count(*) as count_offenses_byprogram,
+UPDATED_OFFENSE_CATEGORY, DIVERSION_PROGRAM
+from divert
+INNER JOIN caseinit
+ON divert.CASE_ID = caseinit.CASE_ID
+AND divert.CASE_PARTICIPANT_ID = caseinit.CASE_PARTICIPANT_ID
+group by UPDATED_OFFENSE_CATEGORY, DIVERSION_PROGRAM
+order by count_offenses_byprogram desc
+"""
+pd.read_sql_query(q, engine).head(3)
+```
+
+Breaking it down:
+
+-   Joining divert to caseinit (inner join to only keep diverted cases)
+-   Grouping by both offense and diversion program
+-   Aggregating using `count(*)`
+-   Ordering from highest to lowest count
+
+## Step 2 (get the denominator): find the count of offenses in general
+
+```{python .small-code}
+q = """
+select count(*) as count_offenses_total,
+UPDATED_OFFENSE_CATEGORY
+from divert as d
+INNER JOIN caseinit as c
+ON d.CASE_ID = c.CASE_ID
+AND d.CASE_PARTICIPANT_ID = c.CASE_PARTICIPANT_ID
+group by UPDATED_OFFENSE_CATEGORY
+order by count_offenses_total desc
+"""
+pd.read_sql_query(q, engine).head(3)
+```
+
+Similar logic to the previous query, but we're finding the total count of offenses aggregated across all diversion programs (so the denominator for the program-specific counts)
+
+## Step 3: combine into one query
+
+```{python}
+q = """
+select
+count(*) as count_offenses,
+count_offenses_byprogram,
+DIVERSION_PROGRAM,
+caseinit.UPDATED_OFFENSE_CATEGORY
+from caseinit
+inner join (select count(*) as count_offenses_byprogram,
+UPDATED_OFFENSE_CATEGORY, DIVERSION_PROGRAM
+from divert
+INNER JOIN caseinit
+ON divert.CASE_ID = caseinit.CASE_ID
+AND divert.CASE_PARTICIPANT_ID = caseinit.CASE_PARTICIPANT_ID
+group by UPDATED_OFFENSE_CATEGORY, DIVERSION_PROGRAM) as num
+on num.UPDATED_OFFENSE_CATEGORY = caseinit.UPDATED_OFFENSE_CATEGORY
+inner join (select CASE_ID as cid,
+CASE_PARTICIPANT_ID as cpid
+from divert
+) as ppl_divert
+on caseinit.CASE_ID = ppl_divert.cid
+and caseinit.CASE_PARTICIPANT_ID = ppl_divert.cpid
+group by caseinit.UPDATED_OFFENSE_CATEGORY, DIVERSION_PROGRAM,
+count_offenses_byprogram
+"""
+pd.read_sql_query(q, engine).head()
+```
+
+## Activity 3: join and subquery practice {background-color="#449998"}
+
+See Activity 3 in notebook
