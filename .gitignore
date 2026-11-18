@@ -36,3 +36,4 @@ policy_area_counts.csv
 # Large datasets 
 init_fordb.csv
 divert.csv
+combined.json
