@@ -2615,21 +2615,33 @@
     "href": "weeks/week-13.html",
     "title": "Week 13",
     "section": "",
-    "text": "Week 13"
+    "text": "Week 13",
+    "crumbs": [
+      "Materials",
+      "Week 13: SQL"
+    ]
   },
   {
     "objectID": "weeks/week-13.html#slides",
     "href": "weeks/week-13.html#slides",
     "title": "Week 13",
     "section": "",
-    "text": "Week 13"
+    "text": "Week 13",
+    "crumbs": [
+      "Materials",
+      "Week 13: SQL"
+    ]
   },
   {
     "objectID": "weeks/week-13.html#in-class-activity",
     "href": "weeks/week-13.html#in-class-activity",
     "title": "Week 13",
     "section": "In-class activity",
-    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html file to view): html"
+    "text": "In-class activity\n\nBlank notebook (ipynb file to download):  .ipynb file \nActivity solutions (ipynb file to download):  .ipynb file \nActivity solutions (html file to view): html",
+    "crumbs": [
+      "Materials",
+      "Week 13: SQL"
+    ]
   },
   {
     "objectID": "weeks/week-06.html",

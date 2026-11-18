@@ -44,6 +44,8 @@ website:
             text: "Weeks 9 and 10: APIs and Web Scraping"
           - href: weeks/week-12.qmd 
             text: "Week 12: Text as Data and LLMs"
+          - href: weeks/week-13.qmd
+            text: "Week 13: SQL"
       - href: datasets.qmd
         text: Datasets for Class 
 
