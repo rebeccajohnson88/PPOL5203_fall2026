@@ -149,7 +149,7 @@ from tablename
 where somecondition holds
 ```
 
-## Examining structure of data: selecting first 5 rows from case initiations table
+## Examining structure of data: selecting first 5 rows from case initiations table {.smaller .scrollable}
 
 ```{python .small-code}
 ## define a query
@@ -166,7 +166,7 @@ pd.read_sql_query(sample_case_q, engine).head(2)
 Breaking things down:
 
 -   `select *`: select all columns
--   `from caseinit`: which table in the database to pull from (if our database was more complicated, it might be structured as something like `sentencing_schema.caseinit`, indicating the case initiations table in the sentencing schema)
+-   `from caseinit`: which table in the database to pull from 
 -   Feed the (1) query and (2) database connection (`engine`) to pandas `read_sql_query`
 
 ## Activity 1: installing packages and connecting to the database {background-color="#449998"}
@@ -424,7 +424,7 @@ where race in ('Black', 'White')
 group by race, UPDATED_OFFENSE_CATEGORY
 order by prop_divert desc
 """
-pd.read_sql_query(q, engine)
+pd.read_sql_query(q, engine).head(6)
 ```
 
 ## After all that code, some disparities

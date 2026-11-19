@@ -1,6 +1,6 @@
 ---
 title: "Week 13"
-subtitle: "SQL"
+subtitle: "Intro to SQL"
 description: ""
 author: "Rebecca A. Johnson"
 date: "11/19/2026"
