@@ -462,7 +462,7 @@ Professor: Rebecca Johnson
 </section>
 <section id="our-working-example-nyc-airbnb-listings" class="slide level2 center">
 <h2>Our working example: NYC Airbnb listings</h2>
-<div id="e9269473" class="cell" data-execution_count="2">
+<div id="3fe9ae00" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## path relative to the slides folder</span></span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>ab <span class="op">=</span> pd.read_csv(<span class="st">"../datasets/airbnb_text.zip"</span>)</span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>ab.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -610,7 +610,7 @@ Professor: Rebecca Johnson
 </section>
 <section id="manual-approach-1-looking-for-a-single-word" class="slide level2 smaller center">
 <h2>Manual approach 1: looking for a single word</h2>
-<div id="d4075e84" class="cell" data-execution_count="3">
+<div id="c629370a" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## using the `name_upper` var, flag listings that mention cozy</span></span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## (na = False treats missing listing names as not mentioning cozy)</span></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>ab[<span class="st">'is_cozy'</span>] <span class="op">=</span> np.where(ab.name_upper.<span class="bu">str</span>.contains(<span class="st">"COZY"</span>, na <span class="op">=</span> <span class="va">False</span>),</span>
@@ -631,7 +631,7 @@ Professor: Rebecca Johnson
 </section>
 <section id="result-within-the-same-borough-higher-prices-for-listings-that-dont-describe-the-place-as-cozy" class="slide level2 center">
 <h2>Result: within the same borough, higher prices for listings that <em>don’t</em> describe the place as cozy</h2>
-<div id="7064ed83" class="cell" data-execution_count="4">
+<div id="4c178af2" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>mp_wide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
@@ -697,7 +697,7 @@ Professor: Rebecca Johnson
 </section>
 <section id="manual-approach-2-create-a-dictionary-of-words-summarizing-a-concept" class="slide level2 center">
 <h2>Manual approach 2: create a dictionary of words summarizing a concept</h2>
-<div id="d1defa6b" class="cell" data-execution_count="5">
+<div id="b881d4d7" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## construct dictionary</span></span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>space_indicators <span class="op">=</span> {<span class="st">'small'</span>: [<span class="st">'COZY'</span>, <span class="st">'COMFY'</span>, <span class="st">'LITTLE'</span>, <span class="st">'SMALL'</span>],</span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">'large'</span>: [<span class="st">'SPACIOUS'</span>, <span class="st">'LARGE'</span>, <span class="st">'HUGE'</span>, <span class="st">'GIANT'</span>]}</span>
@@ -718,7 +718,7 @@ Professor: Rebecca Johnson
 <section id="counting-the-number-of-appearances-in-one-listing" class="slide level2 smaller center">
 <h2>Counting the number of appearances in one listing</h2>
 <p>Double counts if a word appears twice</p>
-<div id="80a16ae2" class="cell" data-execution_count="6">
+<div id="0076cfb6" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">### split at space and look at overlap with each key in the dictionary</span></span>
 <span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>words_overlap_small <span class="op">=</span> [word <span class="cf">for</span> word <span class="kw">in</span> practice_listing.split(<span class="st">" "</span>)</span>
 <span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>                       <span class="cf">if</span> word <span class="kw">in</span> space_indicators[<span class="st">'small'</span>]]</span>
@@ -762,7 +762,7 @@ Professor: Rebecca Johnson
 </section>
 <section id="part-of-speech-tagging-with-an-example" class="slide level2 center">
 <h2>Part-of-speech tagging with an example</h2>
-<div id="cf99f468" class="cell" data-execution_count="7">
+<div id="b423af2f" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## specify example</span></span>
 <span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>example_for_tag <span class="op">=</span> <span class="st">"This is a chill apt next to the subway in LES Chinatown"</span></span>
 <span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -873,7 +873,7 @@ Professor: Rebecca Johnson
 <section id="after-tagging-extract-words-with-a-specific-part-of-speech" class="slide level2 center">
 <h2>After tagging, extract words with a specific part of speech</h2>
 <p><strong>Example:</strong> extract the proper nouns (LES and Chinatown)</p>
-<div id="4ac51dba" class="cell" data-execution_count="8">
+<div id="ac9218b8" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## check if the second element in the tuple is equal to NNP;</span></span>
 <span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## if so, return the first element of the tuple (the actual word)</span></span>
 <span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>all_prop_noun <span class="op">=</span> [one_tok[<span class="dv">0</span>] <span class="cf">for</span> one_tok <span class="kw">in</span> tokens_pos</span>
@@ -883,7 +883,7 @@ Professor: Rebecca Johnson
 <pre><code>['LES', 'Chinatown']</code></pre>
 </div>
 </div>
-<div id="68df1052" class="cell" data-execution_count="9">
+<div id="46d850ea" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## same idea for adjectives or singular nouns</span></span>
 <span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>all_adj_noun <span class="op">=</span> [one_tok[<span class="dv">0</span>] <span class="cf">for</span> one_tok <span class="kw">in</span> tokens_pos</span>
 <span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> one_tok[<span class="dv">1</span>] <span class="op">==</span> <span class="st">"JJ"</span> <span class="kw">or</span> one_tok[<span class="dv">1</span>] <span class="op">==</span> <span class="st">"NN"</span>]</span>
@@ -918,7 +918,7 @@ Professor: Rebecca Johnson
 <p>When AOL was founded in the year 2000 I remember raising my hand and asking ‘well…if you’re using my data - where is my $50’ and no one had a good answer…and there still isn’t one.</p>
 </blockquote>
 <p><span style="color:#9932CC;"><strong>Which words do we think will be tagged as named entities?</strong></span></p>
-<div id="584fc2df" class="cell" data-execution_count="10">
+<div id="9a4cdd98" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## modified from a real tweet</span></span>
 <span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>m_tweet <span class="op">=</span> <span class="st">"""When AOL was founded in the year 2000 I remember raising my hand</span></span>
 <span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">and asking 'well...if you're using my data - where is my $50'</span></span>
@@ -928,7 +928,7 @@ Professor: Rebecca Johnson
 </section>
 <section id="code-to-get-named-entities-from-that-tweet" class="slide level2 center">
 <h2>Code to get named entities from that tweet</h2>
-<div id="b33ed109" class="cell" data-execution_count="11">
+<div id="2469f8e3" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>spacy_dtweet <span class="op">=</span> nlp(m_tweet)</span>
 <span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(spacy_dtweet)</span>
 <span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -955,7 +955,7 @@ Entity: 50; NER tag: MONEY</code></pre>
 </section>
 <section id="generalizing-to-a-column-of-strings" class="slide level2 smaller center">
 <h2>Generalizing to a column of strings</h2>
-<div id="0231c5ce" class="cell" data-execution_count="12">
+<div id="f2524190" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## for runtime purposes, just taking a few airbnb listings</span></span>
 <span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a>ab_name_examples <span class="op">=</span> ab.name[<span class="dv">10</span>:<span class="dv">15</span>]</span>
 <span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a>ab_name_examples</span>
@@ -991,7 +991,7 @@ Name: name, dtype: object</code></pre>
 </section>
 <section id="one-variation-lowercase-aol" class="slide level2 center">
 <h2>One variation: lowercase “aol”</h2>
-<div id="a95f7886" class="cell" data-execution_count="13">
+<div id="9f8fb178" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a>m_tweet_lower <span class="op">=</span> m_tweet.replace(<span class="st">"AOL"</span>, <span class="st">"aol"</span>)</span>
 <span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> one_tok <span class="kw">in</span> nlp(m_tweet_lower).ents:</span>
@@ -1021,7 +1021,7 @@ Entity: 50; NER tag: MONEY</code></pre>
 </section>
 <section id="vader-sentiment-scoring-calculating-sentiment" class="slide level2 center">
 <h2>VADER sentiment scoring: calculating sentiment</h2>
-<div id="1bdbe794" class="cell" data-execution_count="14">
+<div id="2216581d" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## initialize a scorer</span></span>
 <span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a>sent_obj <span class="op">=</span> SentimentIntensityAnalyzer()</span>
 <span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -1045,7 +1045,7 @@ Entity: 50; NER tag: MONEY</code></pre>
 </section>
 <section id="scoring-a-few-more-examples" class="slide level2 center">
 <h2>Scoring a few more examples</h2>
-<div id="37b23664" class="cell" data-execution_count="15">
+<div id="5da97904" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## adding phrase with word terrible</span></span>
 <span id="cb29-2"><a aria-hidden="true" tabindex="-1"></a>practice_listing_2 <span class="op">=</span> <span class="st">"NICE AND COZY LITTLE APT AVAILABLE. REALLY TERRIBLE VIEW."</span></span>
 <span id="cb29-3"><a aria-hidden="true" tabindex="-1"></a>sentiment_example_2 <span class="op">=</span> sent_obj.polarity_scores(practice_listing_2)</span>
@@ -1075,7 +1075,7 @@ String: NICE AND COZY LITTLE APT AVAILABLE. HAS RATS THOUGH. scored as:
 </section>
 <section id="one-way-to-improve-augment-the-default-vader-dictionary" class="slide level2 smaller center">
 <h2>One way to improve: augment the default VADER dictionary</h2>
-<div id="83e07546" class="cell" data-execution_count="16">
+<div id="4a953e82" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## the lexicon is a dictionary: key is the word; value is the score</span></span>
 <span id="cb31-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## here, benchmarking the negativity of rodents to the word aversion</span></span>
 <span id="cb31-3"><a aria-hidden="true" tabindex="-1"></a>sent_obj.lexicon[<span class="st">'aversion'</span>]</span>
@@ -1204,7 +1204,7 @@ String: NICE AND COZY LITTLE APT AVAILABLE. HAS RATS THOUGH. scored as:
 <ul>
 <li>Represent each document as a “bag of words,” where order doesn’t matter</li>
 </ul>
-<div id="a065360f" class="cell" data-execution_count="17">
+<div id="9e89c25e" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## convert to lowercase and a list</span></span>
 <span id="cb34-2"><a aria-hidden="true" tabindex="-1"></a>corpus_lower <span class="op">=</span> ab.name.<span class="bu">str</span>.lower().to_list()</span>
 <span id="cb34-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -1236,7 +1236,7 @@ String: NICE AND COZY LITTLE APT AVAILABLE. HAS RATS THOUGH. scored as:
 <section id="step-one-create-a-stopword-list-to-filter-out" class="slide level2 center">
 <h2>Step one: create a stopword list to filter out</h2>
 <p><strong>Why do this early?</strong> If you want to create your own list of stopwords for your context, it’s easier to do that before preprocessing that alters the words (e.g., stemming <em>apartment</em> to <em>apart</em>)</p>
-<div id="4ef40bcd" class="cell" data-execution_count="18">
+<div id="6f50620c" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## call a specific set of stopwords from nltk</span></span>
 <span id="cb36-2"><a aria-hidden="true" tabindex="-1"></a>list_stopwords <span class="op">=</span> stopwords.words(<span class="st">"english"</span>)</span>
 <span id="cb36-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -1254,7 +1254,7 @@ String: NICE AND COZY LITTLE APT AVAILABLE. HAS RATS THOUGH. scored as:
 </section>
 <section id="step-two-convert-text-to-lowercase-and-filter-out-stopwords" class="slide level2 center">
 <h2>Step two: convert text to lowercase and filter out stopwords</h2>
-<div id="e6a01908" class="cell" data-execution_count="19">
+<div id="048eac2b" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## use wordpunct tokenize on one listing</span></span>
 <span id="cb38-2"><a aria-hidden="true" tabindex="-1"></a>example_listing <span class="op">=</span> corpus_lower[<span class="dv">3</span>]</span>
 <span id="cb38-3"><a aria-hidden="true" tabindex="-1"></a>wordpunct_tokenize(example_listing)</span>
@@ -1273,7 +1273,7 @@ String: NICE AND COZY LITTLE APT AVAILABLE. HAS RATS THOUGH. scored as:
 </section>
 <section id="step-three-stem-and-additional-preprocessing" class="slide level2 center">
 <h2>Step three: stem and additional preprocessing</h2>
-<div id="24339113" class="cell" data-execution_count="20">
+<div id="74804356" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## initialize stemmer</span></span>
 <span id="cb41-2"><a aria-hidden="true" tabindex="-1"></a>porter <span class="op">=</span> PorterStemmer()</span>
 <span id="cb41-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -1307,7 +1307,7 @@ String: NICE AND COZY LITTLE APT AVAILABLE. HAS RATS THOUGH. scored as:
 </section>
 <section id="code-for-more-automatic-document-term-matrix-creation" class="slide level2 smaller center">
 <h2>Code for more automatic document-term matrix creation</h2>
-<div id="06bfb94a" class="cell" data-execution_count="21">
+<div id="639d6be8" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_dtm(list_of_strings, metadata):</span>
 <span id="cb43-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="co">## init tokenizer and apply to list of documents</span></span>
 <span id="cb43-3"><a aria-hidden="true" tabindex="-1"></a>    vectorizer <span class="op">=</span> CountVectorizer(lowercase <span class="op">=</span> <span class="va">True</span>)</span>
@@ -1332,7 +1332,7 @@ String: NICE AND COZY LITTLE APT AVAILABLE. HAS RATS THOUGH. scored as:
 </section>
 <section id="select-a-sample-of-listings-to-work-with" class="slide level2 center">
 <h2>Select a sample of listings to work with</h2>
-<div id="fb599d53" class="cell" data-execution_count="22">
+<div id="618f1cf3" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## filter out NAs; for shorter runtime, random sample of 1000;</span></span>
 <span id="cb44-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## rename price since it's likely to be a corpus word</span></span>
 <span id="cb44-3"><a aria-hidden="true" tabindex="-1"></a>ab_small <span class="op">=</span> (ab.loc[<span class="op">~</span>ab.name.isnull(),</span>
@@ -1420,7 +1420,7 @@ String: NICE AND COZY LITTLE APT AVAILABLE. HAS RATS THOUGH. scored as:
 </section>
 <section id="create-the-document-term-matrix-from-the-raw-lowercase-text" class="slide level2 center">
 <h2>Create the document-term matrix from the raw (lowercase) text</h2>
-<div id="f58e46b4" class="cell" data-execution_count="23">
+<div id="ff2a5d24" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a aria-hidden="true" tabindex="-1"></a>metadata_list <span class="op">=</span> [<span class="st">'id'</span>, <span class="st">'neighbourhood_group'</span>, <span class="st">'price_rawdata'</span>]</span>
 <span id="cb45-2"><a aria-hidden="true" tabindex="-1"></a>dtm_nopre <span class="op">=</span> create_dtm(list_of_strings <span class="op">=</span> ab_small.name_lower,</span>
 <span id="cb45-3"><a aria-hidden="true" tabindex="-1"></a>                       metadata <span class="op">=</span> ab_small[metadata_list])</span>
@@ -1549,7 +1549,7 @@ String: NICE AND COZY LITTLE APT AVAILABLE. HAS RATS THOUGH. scored as:
 </section>
 <section id="use-column-sums-to-find-the-top-words" class="slide level2 center">
 <h2>Use column sums to find the top words</h2>
-<div id="3455ee60" class="cell" data-execution_count="24">
+<div id="acbda2e4" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## sum each term column</span></span>
 <span id="cb47-2"><a aria-hidden="true" tabindex="-1"></a>top_terms <span class="op">=</span> dtm_nopre[[col <span class="cf">for</span> col <span class="kw">in</span> dtm_nopre.columns</span>
 <span id="cb47-3"><a aria-hidden="true" tabindex="-1"></a>                       <span class="cf">if</span> <span class="st">"metadata"</span> <span class="kw">not</span> <span class="kw">in</span> col <span class="kw">and</span></span>
@@ -1710,7 +1710,7 @@ dtype: int64</code></pre>
 </section>
 <section id="steps-for-topic-modeling-using-gensim-preprocessing" class="slide level2 smaller center">
 <h2>Steps for topic modeling using <code>gensim</code>: preprocessing</h2>
-<div id="e64f5745" class="cell" data-execution_count="25">
+<div id="156f40af" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## Step 1: tokenize documents and store in list</span></span>
 <span id="cb49-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## (here using raw text; in the activity you'll use the preprocessed texts)</span></span>
 <span id="cb49-3"><a aria-hidden="true" tabindex="-1"></a>text_raw_tokens <span class="op">=</span> [wordpunct_tokenize(one_text)</span>
@@ -1740,7 +1740,7 @@ dtype: int64</code></pre>
 <section id="steps-for-topic-modeling-using-gensim-estimation" class="slide level2 center">
 <h2>Steps for topic modeling using <code>gensim</code>: estimation</h2>
 <p><strong>See the <a href="https://radimrehurek.com/gensim/models/ldamodel.html">documentation</a> for many parameters you can vary!</strong></p>
-<div id="5da54422" class="cell" data-execution_count="26">
+<div id="d4ad61d0" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## Step 5: estimate a model by feeding it: (1) the corpus</span></span>
 <span id="cb51-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## mapped to the dictionary, (2) the number of topics (often k</span></span>
 <span id="cb51-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">## in notation), (3) the dictionary itself, and other arguments</span></span>
@@ -1759,7 +1759,7 @@ dtype: int64</code></pre>
 </section>
 <section id="interacting-with-the-model-output-top-words-for-each-topic" class="slide level2 center">
 <h2>Interacting with the model output: top words for each topic</h2>
-<div id="b152fc24" class="cell" data-execution_count="27">
+<div id="f2872fee" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## corpus-wide summary of topics and their top words</span></span>
 <span id="cb53-2"><a aria-hidden="true" tabindex="-1"></a>topics <span class="op">=</span> ldamod.print_topics(num_words <span class="op">=</span> <span class="dv">10</span>)</span>
 <span id="cb53-3"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> topic <span class="kw">in</span> topics:</span>
@@ -1778,7 +1778,7 @@ dtype: int64</code></pre>
 </section>
 <section id="interacting-with-the-model-output-topic-probabilities-for-each-document" class="slide level2 center">
 <h2>Interacting with the model output: topic probabilities for each document</h2>
-<div id="41b425e3" class="cell" data-execution_count="28">
+<div id="e29c1b22" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## for each document, get list of (topic, probability) tuples</span></span>
 <span id="cb55-2"><a aria-hidden="true" tabindex="-1"></a>doc_topics <span class="op">=</span> [ldamod.get_document_topics(item) <span class="cf">for</span> item <span class="kw">in</span> corpus_fromdict]</span>
 <span id="cb55-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -1800,7 +1800,7 @@ startup cheap place brooklyn
 </section>
 <section id="visualizing-topics-with-pyldavis" class="slide level2 center">
 <h2>Visualizing topics with <code>pyLDAvis</code></h2>
-<div id="757d9e2e" class="cell" data-execution_count="29">
+<div id="01a50103" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a aria-hidden="true" tabindex="-1"></a>lda_display <span class="op">=</span> gensimvis.prepare(ldamod, corpus_fromdict, text_raw_dict)</span>
 <span id="cb57-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb57-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">## save as a standalone html page and embed below</span></span>
@@ -1812,7 +1812,7 @@ startup cheap place brooklyn
 </section>
 <section id="which-topics-are-associated-with-higher-listing-prices" class="slide level2 smaller center">
 <h2>Which topics are associated with higher listing prices?</h2>
-<div id="d15018cc" class="cell" data-execution_count="30">
+<div id="291498ab" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## long dataframe: one row per document x topic</span></span>
 <span id="cb58-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## (minimum_probability = 0 so every doc gets all k topics)</span></span>
 <span id="cb58-3"><a aria-hidden="true" tabindex="-1"></a>n_topics <span class="op">=</span> ldamod.num_topics</span>
@@ -1918,7 +1918,7 @@ startup cheap place brooklyn
 </section>
 <section id="mean-price-by-top-topic" class="slide level2 center">
 <h2>Mean price by top topic</h2>
-<div id="27b28e56" class="cell" data-execution_count="31">
+<div id="0a1ab43b" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## group by topic and find mean price</span></span>
 <span id="cb59-2"><a aria-hidden="true" tabindex="-1"></a>topic_wmeta.groupby(<span class="st">'toptopic'</span>).agg({<span class="st">'price_rawdata'</span>: <span class="st">'mean'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
@@ -1974,7 +1974,7 @@ startup cheap place brooklyn
 </section>
 <section id="mean-price-by-top-topic-1" class="slide level2 center">
 <h2>Mean price by top topic</h2>
-<div id="be2ef846" class="cell" data-execution_count="32">
+<div id="2defa574" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## group by topic and borough -- higher prices for some topics</span></span>
 <span id="cb60-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## also reflect different borough composition</span></span>
 <span id="cb60-3"><a aria-hidden="true" tabindex="-1"></a>(topic_wmeta.groupby([<span class="st">'toptopic'</span>, <span class="st">'neighbourhood_group'</span>])</span>
@@ -2143,31 +2143,6 @@ startup cheap place brooklyn
 </ul></li>
 </ul>
 </section>
-<section id="llms-synthetic-survey-data" class="slide level2 center">
-<h2>LLMs: synthetic survey data</h2>
-<p><a href="https://doi.org/10.1017/pan.2024.5">Bisbee et al., “Synthetic Replacements for Human Survey Data? The Perils of Large Language Models”</a></p>
-<ul>
-<li><p>Can LLMs be used for public opinion research, or to generate synthetic survey responses?</p></li>
-<li><p>Prompt LLMs to:</p>
-<ul>
-<li>Adopt <strong>personas</strong> defined by demographic and political characteristics</li>
-<li>Answer questions about their feelings toward social and political groups (0-100 “feeling thermometers”)</li>
-<li>Using features taken from the American National Election Study (ANES)</li>
-</ul></li>
-<li><p>Compare the synthetic responses to real ANES respondents</p></li>
-</ul>
-</section>
-<section id="prompts" class="slide level2 center">
-<h2>Prompts</h2>
-<p><strong>Persona template:</strong></p>
-<blockquote>
-<p>It is [YEAR]. You are a [AGE] year-old, [MARST], [RACETH] [GENDER] with [EDUCATION] making [INCOME] per year, living in the United States. You are [IDEO], [REGIS] [PID] who [INTEREST] pays attention to what’s going on in government and politics.</p>
-</blockquote>
-<ul>
-<li>Each bracket is filled in with an ANES respondent’s actual characteristics</li>
-<li>The model then answers the feeling thermometer questions <em>as that person</em></li>
-</ul>
-</section>
 <section id="getting-a-free-gemini-api-key" class="slide level2 center scrollable">
 <h2>Getting a free Gemini API key</h2>
 <p>We’ll use Google’s <strong>Gemini API</strong>, which has a free tier (no credit card needed):</p>
@@ -2187,7 +2162,7 @@ startup cheap place brooklyn
 <section id="sentiment-classification-with-an-llm-setup" class="slide level2 center">
 <h2>Sentiment classification with an LLM: setup</h2>
 <p>Same steps as the APIs in week 9: (1) credentials, (2) construct a query, (3) call the API, (4) extract the content</p>
-<div id="ec19a6d1" class="cell" data-execution_count="33">
+<div id="cab36583" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## load creds</span></span>
 <span id="cb62-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"../creds.yaml"</span>, <span class="st">'r'</span>) <span class="im">as</span> stream:</span>
 <span id="cb62-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
@@ -2208,7 +2183,7 @@ startup cheap place brooklyn
 </section>
 <section id="a-function-to-prompt-the-model" class="slide level2 smaller center">
 <h2>A function to prompt the model</h2>
-<div id="872b7604" class="cell" data-execution_count="34">
+<div id="76b1b47b" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ask_llm(question_text, api_key, model <span class="op">=</span> gemini_model, url <span class="op">=</span> gemini_url,</span>
 <span id="cb63-2"><a aria-hidden="true" tabindex="-1"></a>            max_tries <span class="op">=</span> <span class="dv">5</span>):</span>
 <span id="cb63-3"><a aria-hidden="true" tabindex="-1"></a>    headers <span class="op">=</span> {</span>
@@ -2251,7 +2226,7 @@ startup cheap place brooklyn
 </section>
 <section id="zero-shot-sentiment-classification-of-airbnb-listings" class="slide level2 smaller center">
 <h2>Zero-shot sentiment classification of Airbnb listings</h2>
-<div id="44f77ae9" class="cell" data-execution_count="35">
+<div id="1cd98ca0" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## sample a few listings to keep costs low</span></span>
 <span id="cb65-2"><a aria-hidden="true" tabindex="-1"></a>ab_llm <span class="op">=</span> ab.loc[<span class="op">~</span>ab.name.isnull(), [<span class="st">'id'</span>, <span class="st">'name'</span>, <span class="st">'neighbourhood_group'</span>, <span class="st">'price'</span>]].sample(n <span class="op">=</span> <span class="dv">10</span>,</span>
 <span id="cb65-3"><a aria-hidden="true" tabindex="-1"></a>                                                        random_state <span class="op">=</span> <span class="dv">5203</span>).reset_index(drop <span class="op">=</span> <span class="va">True</span>)</span>
@@ -2278,7 +2253,7 @@ startup cheap place brooklyn
 </section>
 <section id="comparing-the-llm-to-vader" class="slide level2 center">
 <h2>Comparing the LLM to VADER</h2>
-<div id="0b0ae6ce" class="cell" data-execution_count="36">
+<div id="9333bae9" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## VADER compound score for the same listings, recoded to -1/0/1</span></span>
 <span id="cb66-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## (using VADER's standard +/- 0.05 cutoffs)</span></span>
 <span id="cb66-3"><a aria-hidden="true" tabindex="-1"></a>ab_llm[<span class="st">'vader_compound'</span>] <span class="op">=</span> [sent_obj.polarity_scores(one_listing)[<span class="st">'compound'</span>]</span>

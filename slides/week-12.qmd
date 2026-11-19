@@ -913,28 +913,6 @@ See Activity 4 in notebook
     -   The model compares, e.g., $P(\text{positive} \mid \text{"I love this class"})$ vs. $P(\text{negative} \mid \text{"I love this class"})$
     -   *Positive* doesn't need to be the most likely next word overall --- just more likely than the other labels
 
-## LLMs: synthetic survey data
-
-[Bisbee et al., "Synthetic Replacements for Human Survey Data? The Perils of Large Language Models"](https://doi.org/10.1017/pan.2024.5)
-
--   Can LLMs be used for public opinion research, or to generate synthetic survey responses?
-
--   Prompt LLMs to:
-
-    -   Adopt **personas** defined by demographic and political characteristics
-    -   Answer questions about their feelings toward social and political groups (0-100 "feeling thermometers")
-    -   Using features taken from the American National Election Study (ANES)
-
--   Compare the synthetic responses to real ANES respondents
-
-## Prompts
-
-**Persona template:**
-
-> It is \[YEAR\]. You are a \[AGE\] year-old, \[MARST\], \[RACETH\] \[GENDER\] with \[EDUCATION\] making \[INCOME\] per year, living in the United States. You are \[IDEO\], \[REGIS\] \[PID\] who \[INTEREST\] pays attention to what's going on in government and politics.
-
--   Each bracket is filled in with an ANES respondent's actual characteristics
--   The model then answers the feeling thermometer questions *as that person*
 
 ## Getting a free Gemini API key
 

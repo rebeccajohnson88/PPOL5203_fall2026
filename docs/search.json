@@ -915,20 +915,6 @@
     "text": "LLMs: classification\nRathje et al., “GPT is an effective tool for multilingual psychological text analysis”\n\nUse zero-shot prompting (no labeled examples) to measure psychological concepts like sentiment in tweets, news headlines, and Reddit comments\nExample prompt: “Is the sentiment of this text positive, neutral, or negative? Answer only with a number: 1 if positive, 2 if neutral, and 3 if negative. Here is the text: [TEXT]”\nWhy it works — back to next-word prediction:\n\nThe model compares, e.g., \\(P(\\text{positive} \\mid \\text{\"I love this class\"})\\) vs. \\(P(\\text{negative} \\mid \\text{\"I love this class\"})\\)\nPositive doesn’t need to be the most likely next word overall — just more likely than the other labels"
   },
   {
-    "objectID": "slides/week-12.html#llms-synthetic-survey-data",
-    "href": "slides/week-12.html#llms-synthetic-survey-data",
-    "title": " PPOL 5203 - Data Science I: Foundations ",
-    "section": "LLMs: synthetic survey data",
-    "text": "LLMs: synthetic survey data\nBisbee et al., “Synthetic Replacements for Human Survey Data? The Perils of Large Language Models”\n\nCan LLMs be used for public opinion research, or to generate synthetic survey responses?\nPrompt LLMs to:\n\nAdopt personas defined by demographic and political characteristics\nAnswer questions about their feelings toward social and political groups (0-100 “feeling thermometers”)\nUsing features taken from the American National Election Study (ANES)\n\nCompare the synthetic responses to real ANES respondents"
-  },
-  {
-    "objectID": "slides/week-12.html#prompts",
-    "href": "slides/week-12.html#prompts",
-    "title": " PPOL 5203 - Data Science I: Foundations ",
-    "section": "Prompts",
-    "text": "Prompts\nPersona template:\n\nIt is [YEAR]. You are a [AGE] year-old, [MARST], [RACETH] [GENDER] with [EDUCATION] making [INCOME] per year, living in the United States. You are [IDEO], [REGIS] [PID] who [INTEREST] pays attention to what’s going on in government and politics.\n\n\nEach bracket is filled in with an ANES respondent’s actual characteristics\nThe model then answers the feeling thermometer questions as that person"
-  },
-  {
     "objectID": "slides/week-12.html#getting-a-free-gemini-api-key",
     "href": "slides/week-12.html#getting-a-free-gemini-api-key",
     "title": " PPOL 5203 - Data Science I: Foundations ",
@@ -3468,7 +3454,7 @@
     "href": "slides/week-13.html#examining-structure-of-data-selecting-first-5-rows-from-case-initiations-table",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Examining structure of data: selecting first 5 rows from case initiations table",
-    "text": "Examining structure of data: selecting first 5 rows from case initiations table\n\n## define a query\nsample_case_q = \"\"\"\nselect *\nfrom caseinit\nlimit 5\n\"\"\"\n## feed read sql query the query and my db connection\nread_sample_d = pd.read_sql_query(sample_case_q, engine)\nread_sample_d\n\n\n\n\n\n\n\n\ncase_id\ncase_participant_id\noffense_category\nupdated_offense_category\nrace\ngender\nage_at_incident\nis_in_diversion\n\n\n\n\n0\n588837642829\n442420671352\nSex Crimes\nHuman Trafficking\nBlack\nMale\n26.0\nFalse\n\n\n1\n580726027874\n432312003079\nNarcotics\nNarcotics\nWhite [Hispanic or Latino]\nMale\n27.0\nTrue\n\n\n2\n508318872311\n350031230404\nUUW - Unlawful Use of Weapon\nUUW - Unlawful Use of Weapon\nBlack\nMale\n29.0\nTrue\n\n\n3\n565190677205\n414462877324\nArmed Robbery\nArmed Robbery\nBlack\nMale\n31.0\nFalse\n\n\n4\n570518536922\n420717727182\nDUI\nAggravated DUI\nWhite [Hispanic or Latino]\nMale\n41.0\nTrue\n\n\n\n\n\n\n\nBreaking things down:\n\nselect *: select all columns\nfrom caseinit: which table in the database to pull from (if our database was more complicated, it might be structured as something like sentencing_schema.caseinit, indicating the case initiations table in the sentencing schema)\nFeed the (1) query and (2) database connection (engine) to pandas read_sql_query"
+    "text": "Examining structure of data: selecting first 5 rows from case initiations table\n\n## define a query\nsample_case_q = \"\"\"\nselect *\nfrom caseinit\nlimit 5\n\"\"\"\n## feed read sql query the query and my db connection\npd.read_sql_query(sample_case_q, engine).head(2)\n\n\n\n\n\n\n\n\ncase_id\ncase_participant_id\noffense_category\nupdated_offense_category\nrace\ngender\nage_at_incident\nis_in_diversion\n\n\n\n\n0\n588837642829\n442420671352\nSex Crimes\nHuman Trafficking\nBlack\nMale\n26.0\nFalse\n\n\n1\n580726027874\n432312003079\nNarcotics\nNarcotics\nWhite [Hispanic or Latino]\nMale\n27.0\nTrue\n\n\n\n\n\n\n\nBreaking things down:\n\nselect *: select all columns\nfrom caseinit: which table in the database to pull from (if our database was more complicated, it might be structured as something like sentencing_schema.caseinit, indicating the case initiations table in the sentencing schema)\nFeed the (1) query and (2) database connection (engine) to pandas read_sql_query"
   },
   {
     "objectID": "slides/week-13.html#activity-1-installing-packages-and-connecting-to-the-database",
@@ -3531,7 +3517,7 @@
     "href": "slides/week-13.html#approach-one-direct-row-filtering-using-where-without-the-case-when",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Approach one: direct row filtering using where without the case when",
-    "text": "Approach one: direct row filtering using where without the case when\n\nq = \"\"\"\nselect *\nfrom caseinit\nwhere offense_category != updated_offense_category\n\"\"\"\npd.read_sql_query(q, engine)[['case_id', 'offense_category', \n                  'updated_offense_category', 'charge_update']].head()\n\n\n---------------------------------------------------------------------------\nKeyError                                  Traceback (most recent call last)\n/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_64566/3911353992.py in &lt;module&gt;\n      4 where offense_category != updated_offense_category\n      5 \"\"\"\n----&gt; 6 pd.read_sql_query(q, engine)[['case_id', 'offense_category', \n      7                   'updated_offense_category', 'charge_update']].head()\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py in __getitem__(self, key)\n   4117             if is_iterator(key):\n   4118                 key = list(key)\n-&gt; 4119             indexer = self.columns._get_indexer_strict(key, \"columns\")[1]\n   4120 \n   4121         # take() does not accept boolean indexers\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in _get_indexer_strict(self, key, axis_name)\n   6210             keyarr, indexer, new_indexer = self._reindex_non_unique(keyarr)\n   6211 \n-&gt; 6212         self._raise_if_missing(keyarr, indexer, axis_name)\n   6213 \n   6214         keyarr = self.take(indexer)\n\n~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py in _raise_if_missing(self, key, indexer, axis_name)\n   6262 \n   6263             not_found = list(ensure_index(key)[missing_mask.nonzero()[0]].unique())\n-&gt; 6264             raise KeyError(f\"{not_found} not in index\")\n   6265 \n   6266     @overload\n\nKeyError: \"['charge_update'] not in index\""
+    "text": "Approach one: direct row filtering using where without the case when\n\nq = \"\"\"\nselect *\nfrom caseinit\nwhere offense_category != updated_offense_category\n\"\"\"\npd.read_sql_query(q, engine)[['case_id', 'offense_category', \n                  'updated_offense_category']].head()\n\n\n\n\n\n\n\n\ncase_id\noffense_category\nupdated_offense_category\n\n\n\n\n0\n588837642829\nSex Crimes\nHuman Trafficking\n\n\n1\n570518536922\nDUI\nAggravated DUI\n\n\n2\n571716790712\nRobbery\nAttempt Armed Robbery\n\n\n3\n556323404957\nDUI\nAggravated DUI\n\n\n4\n597578098266\nAggravated Battery With A Firearm\nAttempt Homicide"
   },
   {
     "objectID": "slides/week-13.html#approach-two-using-subqueries.-in-words",
@@ -3580,7 +3566,7 @@
     "href": "slides/week-13.html#step-3-shift-to-writing-code-for-the-proportion-sent-to-diversion-outcome",
     "title": " PPOL 5203 - Data Science I: Foundations ",
     "section": "Step 3: shift to writing code for the proportion sent to diversion outcome",
-    "text": "Step 3: shift to writing code for the proportion sent to diversion outcome\n\nq = \"\"\"\nselect\navg(cast(is_in_diversion as INTEGER)) as prop_divert,\nRACE, UPDATED_OFFENSE_CATEGORY\nfrom caseinit\nwhere race in ('Black', 'White')\ngroup by race, UPDATED_OFFENSE_CATEGORY\norder by prop_divert desc\n\"\"\"\npd.read_sql_query(q, engine).head(2)\n\n\n\n\n\n\n\n\nprop_divert\nrace\nupdated_offense_category\n\n\n\n\n0\n1.0\nWhite\nAttempt Vehicular Hijacking\n\n\n1\n1.0\nWhite\nPandering\n\n\n\n\n\n\n\nLogic:\n\nFiltering to Black and White defendants and grouping by race and offense type\nRecasting is_in_diversion as an integer\nSimilar to how, in pandas, we take the mean of a True/False column to get the proportion true, we can take the mean of that binary indicator using avg to find the proportion diverted in each race/ethnicity \\(\\times\\) type of offense group"
+    "text": "Step 3: shift to writing code for the proportion sent to diversion outcome\n\nq = \"\"\"\nselect\navg(cast(is_in_diversion as INTEGER)) as prop_divert,\nRACE, UPDATED_OFFENSE_CATEGORY\nfrom caseinit\nwhere race in ('Black', 'White')\ngroup by race, UPDATED_OFFENSE_CATEGORY\n\"\"\"\npd.read_sql_query(q, engine).head(2)\n\n\n\n\n\n\n\n\nprop_divert\nrace\nupdated_offense_category\n\n\n\n\n0\n0.000000\nWhite\nMajor Accidents\n\n\n1\n0.007092\nBlack\nVehicular Hijacking\n\n\n\n\n\n\n\nLogic:\n\nFiltering to Black and White defendants and grouping by race and offense type\nRecasting is_in_diversion as an integer\nSimilar to how, in pandas, we take the mean of a True/False column to get the proportion true, we can take the mean of that binary indicator using avg to find the proportion diverted in each race/ethnicity \\(\\times\\) type of offense group"
   },
   {
     "objectID": "slides/week-13.html#putting-it-together",
@@ -3618,25 +3604,32 @@
     "text": "Can merge with the case initiations data to explore things like\n\nHow use of diversions differs across police departments (e.g., Chicago PD versus suburban PD)\nHow bond/probation is related to diversion\nAge patterns (most demographic variables are available in caseinit but not in divert)"
   },
   {
-    "objectID": "slides/week-13.html#left-join-of-some-cols-from-caseinit-onto-diversions-no-aliasing",
-    "href": "slides/week-13.html#left-join-of-some-cols-from-caseinit-onto-diversions-no-aliasing",
+    "objectID": "slides/week-13.html#structure-of-the-diversions-table",
+    "href": "slides/week-13.html#structure-of-the-diversions-table",
     "title": " PPOL 5203 - Data Science I: Foundations ",
-    "section": "Left join of some cols from caseinit onto diversions: no aliasing",
-    "text": "Left join of some cols from caseinit onto diversions: no aliasing\n\nq = \"\"\"\nselect divert.*,\nage_at_incident\nfrom divert\nLEFT JOIN caseinit\nON divert.case_id = caseinit.case_id\nAND divert.case_participant_id = caseinit.case_participant_id\n\"\"\"\npd.read_sql_query(q, engine)[['case_id', 'case_participant_id', 'age_at_incident']].head(2)\n\n\n\n\n\n\n\n\ncase_id\ncase_participant_id\nage_at_incident\n\n\n\n\n0\n580726027874\n432312003079\n27.0\n\n\n1\n508318872311\n350031230404\n29.0\n\n\n\n\n\n\n\nBreaking it down:\n\nSelected all cols from divert using the syntax tablename.*\nSelected only age from caseinit"
+    "section": "Structure of the diversions table",
+    "text": "Structure of the diversions table\n\nq = \"\"\"\nselect *\nfrom divert\nlimit 5\n\"\"\"\ndv = pd.read_sql_query(q, engine)\ndv.head(2)\ndv.columns\n\n\n\n\n\n\n\n\ncase_id\ncase_participant_id\nreceived_date\noffense_category\ndiversion_program\nreferral_date\ndiversion_count\nprimary_charge_offense_title\nstatute\nrace\ngender\ndiversion_result\ndiversion_closed_date\nis_in_initiations\n\n\n\n\n0\n506061999169\n347644693595\n2011-01-01\nRetail Theft\nDS\n2013-06-17\n2\nRETAIL THEFT\n720 ILCS 5/16A-3(a)\nBlack\nMale\nGraduated\n2013-06-17\nTrue\n\n\n1\n506061999169\n347644693595\n2011-01-01\nRetail Theft\nVC\n2011-08-11\n1\nRETAIL THEFT\n720 ILCS 5/16A-3(a)\nBlack\nMale\nNone\nNaT\nTrue\n\n\n\n\n\n\n\nIndex(['case_id', 'case_participant_id', 'received_date', 'offense_category',\n       'diversion_program', 'referral_date', 'diversion_count',\n       'primary_charge_offense_title', 'statute', 'race', 'gender',\n       'diversion_result', 'diversion_closed_date', 'is_in_initiations'],\n      dtype='object')"
   },
   {
-    "objectID": "slides/week-13.html#what-happens-if-we-select-cols-available-in-both-tables",
-    "href": "slides/week-13.html#what-happens-if-we-select-cols-available-in-both-tables",
+    "objectID": "slides/week-13.html#left-join-of-some-columns-from-caseinit-onto-diversions-no-aliasing",
+    "href": "slides/week-13.html#left-join-of-some-columns-from-caseinit-onto-diversions-no-aliasing",
     "title": " PPOL 5203 - Data Science I: Foundations ",
-    "section": "What happens if we select cols available in both tables?",
-    "text": "What happens if we select cols available in both tables?\nselect divert.*,\nRACE\nfrom divert\nLEFT JOIN caseinit\nON divert.CASE_ID = caseinit.CASE_ID\nAND divert.CASE_PARTICIPANT_ID = caseinit.CASE_PARTICIPANT_ID\nError:"
+    "section": "Left join of some columns from caseinit onto diversions: no aliasing",
+    "text": "Left join of some columns from caseinit onto diversions: no aliasing\n\nq = \"\"\"\nselect divert.*,\nage_at_incident\nfrom divert\nLEFT JOIN caseinit\nON divert.case_id = caseinit.case_id\nAND divert.case_participant_id = caseinit.case_participant_id\n\"\"\"\npd.read_sql_query(q, engine)[['case_id', 'case_participant_id', 'age_at_incident']].head(2)\n\n\n\n\n\n\n\n\ncase_id\ncase_participant_id\nage_at_incident\n\n\n\n\n0\n580726027874\n432312003079\n27.0\n\n\n1\n508318872311\n350031230404\n29.0\n\n\n\n\n\n\n\nBreaking it down:\n\nSelected all cols from divert using the syntax tablename.*\nSelected only age from caseinit"
   },
   {
-    "objectID": "slides/week-13.html#how-to-fix-aliasing-the-col",
-    "href": "slides/week-13.html#how-to-fix-aliasing-the-col",
+    "objectID": "slides/week-13.html#what-happens-if-we-select-columns-available-in-both-tables",
+    "href": "slides/week-13.html#what-happens-if-we-select-columns-available-in-both-tables",
     "title": " PPOL 5203 - Data Science I: Foundations ",
-    "section": "How to fix: aliasing the col",
-    "text": "How to fix: aliasing the col\n\nq = \"\"\"\nselect divert.*,\nage_at_incident,\ncaseinit.race as caseinit_race\nfrom divert\nLEFT JOIN caseinit\nON divert.case_id = caseinit.case_id\nAND divert.case_participant_id = caseinit.case_participant_id\n\"\"\"\npd.read_sql_query(q, engine)[['case_id', 'case_participant_id', \n                            'race', 'caseinit_race']].head(2)\n\n\n\n\n\n\n\n\ncase_id\ncase_participant_id\nrace\ncaseinit_race\n\n\n\n\n0\n580726027874\n432312003079\nLatinx\nWhite [Hispanic or Latino]\n\n\n1\n508318872311\n350031230404\nBlack\nBlack\n\n\n\n\n\n\n\nBreaking it down:\n\nUse the syntax tablename.colname as something to alias the RACE variable from the case initiations table as something else so that we know which table it’s from"
+    "section": "What happens if we select columns available in both tables?",
+    "text": "What happens if we select columns available in both tables?\nselect divert.*,\nRACE\nfrom divert\nLEFT JOIN caseinit\nON divert.CASE_ID = caseinit.CASE_ID\nAND divert.CASE_PARTICIPANT_ID = caseinit.CASE_PARTICIPANT_ID\nError:"
+  },
+  {
+    "objectID": "slides/week-13.html#how-to-fix-aliasing-the-column",
+    "href": "slides/week-13.html#how-to-fix-aliasing-the-column",
+    "title": " PPOL 5203 - Data Science I: Foundations ",
+    "section": "How to fix: aliasing the column",
+    "text": "How to fix: aliasing the column\n\nq = \"\"\"\nselect divert.*,\nage_at_incident,\ncaseinit.race as caseinit_race\nfrom divert\nLEFT JOIN caseinit\nON divert.case_id = caseinit.case_id\nAND divert.case_participant_id = caseinit.case_participant_id\n\"\"\"\npd.read_sql_query(q, engine)[['case_id', 'case_participant_id', \n                            'race', 'caseinit_race']].head(2)\n\n\n\n\n\n\n\n\ncase_id\ncase_participant_id\nrace\ncaseinit_race\n\n\n\n\n0\n580726027874\n432312003079\nLatinx\nWhite [Hispanic or Latino]\n\n\n1\n508318872311\n350031230404\nBlack\nBlack\n\n\n\n\n\n\n\nBreaking it down:\n\nUse the syntax tablename.colname as something to alias (temporarily rename) the RACE variable from the case initiations table as something else so that we know which table it’s from"
   },
   {
     "objectID": "slides/week-13.html#simplifying-the-query-by-aliasing-the-table-names",

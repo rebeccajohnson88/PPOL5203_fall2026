@@ -484,7 +484,7 @@ Professor: Rebecca Johnson
 </section>
 <section id="preliminary-step-load-credentials-and-establish-a-connection" class="slide level2 center">
 <h2>Preliminary step: load credentials and establish a connection</h2>
-<div id="938a95df" class="cell" data-execution_count="2">
+<div id="2b45b09c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sqlalchemy <span class="im">import</span> create_engine</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">## load creds</span></span>
@@ -552,7 +552,7 @@ Professor: Rebecca Johnson
 </section>
 <section id="examining-structure-of-data-selecting-first-5-rows-from-case-initiations-table" class="slide level2 center">
 <h2>Examining structure of data: selecting first 5 rows from case initiations table</h2>
-<div id="0a08e7cf" class="cell" data-execution_count="3">
+<div id="2d6d440e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">## define a query</span></span>
 <span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>sample_case_q <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">select *</span></span>
@@ -560,8 +560,7 @@ Professor: Rebecca Johnson
 <span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a><span class="st">limit 5</span></span>
 <span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
 <span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">## feed read sql query the query and my db connection</span></span>
-<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a>read_sample_d <span class="op">=</span> pd.read_sql_query(sample_case_q, engine)</span>
-<span id="cb5-9"><a aria-hidden="true" tabindex="-1"></a>read_sample_d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a>pd.read_sql_query(sample_case_q, engine).head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 <style scoped="">
@@ -615,39 +614,6 @@ Professor: Rebecca Johnson
 <td>27.0</td>
 <td>True</td>
 </tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>508318872311</td>
-<td>350031230404</td>
-<td>UUW - Unlawful Use of Weapon</td>
-<td>UUW - Unlawful Use of Weapon</td>
-<td>Black</td>
-<td>Male</td>
-<td>29.0</td>
-<td>True</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>565190677205</td>
-<td>414462877324</td>
-<td>Armed Robbery</td>
-<td>Armed Robbery</td>
-<td>Black</td>
-<td>Male</td>
-<td>31.0</td>
-<td>False</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>570518536922</td>
-<td>420717727182</td>
-<td>DUI</td>
-<td>Aggravated DUI</td>
-<td>White [Hispanic or Latino]</td>
-<td>Male</td>
-<td>41.0</td>
-<td>True</td>
-</tr>
 </tbody>
 </table>
 
@@ -667,7 +633,7 @@ Professor: Rebecca Johnson
 </section>
 <section id="columns-selecting-specific-columns-with-no-transformationsadditions" class="slide level2 center">
 <h2><span style="color:#9932CC;">Columns:</span> selecting specific columns with no transformations/additions</h2>
-<div id="2cacfcc2" class="cell" data-execution_count="4">
+<div id="894bc21d" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select CASE_ID, CASE_PARTICIPANT_ID</span></span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">from caseinit</span></span>
@@ -733,7 +699,7 @@ Professor: Rebecca Johnson
 </section>
 <section id="rows-filtering-to-specific-rows-using-where" class="slide level2 center">
 <h2><span style="color:#9932CC;">Rows:</span> filtering to specific rows using where</h2>
-<div id="3ad6defb" class="cell" data-execution_count="5">
+<div id="f23225f6" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select CASE_ID, CASE_PARTICIPANT_ID,</span></span>
 <span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">AGE_AT_INCIDENT</span></span>
@@ -814,7 +780,7 @@ Professor: Rebecca Johnson
 <ul>
 <li>Specify categories:</li>
 </ul>
-<div id="d3ed44ab" class="cell" data-execution_count="6">
+<div id="bfe62d68" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select CASE_ID, CASE_PARTICIPANT_ID,</span></span>
 <span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">RACE</span></span>
@@ -835,7 +801,7 @@ Name: count, dtype: int64</code></pre>
 <ul>
 <li>If contains Black anywhere in the <code>race</code> string:</li>
 </ul>
-<div id="7cdb13ff" class="cell" data-execution_count="7">
+<div id="7bd18a87" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select CASE_ID, CASE_PARTICIPANT_ID,</span></span>
 <span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">RACE</span></span>
@@ -854,7 +820,7 @@ Name: count, dtype: int64</code></pre>
 <section id="columns-creating-new-columns-based-on-conditions" class="slide level2 center">
 <h2><span style="color:#9932CC;">Columns:</span> creating new columns based on conditions</h2>
 <p><code>CASE, WHEN, ELSE</code> syntax works similarly to <code>np.where</code> and <code>np.select</code></p>
-<div id="a478f1a3" class="cell" data-execution_count="8">
+<div id="c38ed095" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select *,</span></span>
 <span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">CASE</span></span>
@@ -956,46 +922,73 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="approach-one-direct-row-filtering-using-where-without-the-case-when" class="slide level2 center">
 <h2>Approach one: direct row filtering using where without the case when</h2>
-<div id="7b9ea178" class="cell" data-execution_count="9">
+<div id="deb8a83f" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select *</span></span>
 <span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">from caseinit</span></span>
 <span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="st">where offense_category != updated_offense_category</span></span>
 <span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
 <span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a>pd.read_sql_query(q, engine)[[<span class="st">'case_id'</span>, <span class="st">'offense_category'</span>, </span>
-<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a>                  <span class="st">'updated_offense_category'</span>, <span class="st">'charge_update'</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
-<span class="ansi-green-fg">/var/folders/mb/h311n7mj5dl4l2h43n8bnzs00000gp/T/ipykernel_64566/3911353992.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg ansi-bold">      4</span> where offense_category <span class="ansi-blue-fg">!=</span> updated_offense_category
-<span class="ansi-green-fg ansi-bold">      5</span> """
-<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg"> pd.read_sql_query(q, engine)[['case_id', 'offense_category', 
-</span><span class="ansi-green-fg ansi-bold">      7</span>                   'updated_offense_category', 'charge_update']].head()
+<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a>                  <span class="st">'updated_offense_category'</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ansi-green-fg">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py</span> in <span class="ansi-cyan-fg">__getitem__</span><span class="ansi-blue-fg">(self, key)</span>
-<span class="ansi-green-fg ansi-bold">   4117</span>             <span class="ansi-green-fg">if</span> is_iterator<span class="ansi-blue-fg">(</span>key<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg ansi-bold">   4118</span>                 key <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>key<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">-&gt; 4119</span><span class="ansi-red-fg">             </span>indexer <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>columns<span class="ansi-blue-fg">.</span>_get_indexer_strict<span class="ansi-blue-fg">(</span>key<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">"columns"</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-fg ansi-bold">   4120</span> 
-<span class="ansi-green-fg ansi-bold">   4121</span>         <span class="ansi-red-fg"># take() does not accept boolean indexers</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="ansi-green-fg">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py</span> in <span class="ansi-cyan-fg">_get_indexer_strict</span><span class="ansi-blue-fg">(self, key, axis_name)</span>
-<span class="ansi-green-fg ansi-bold">   6210</span>             keyarr<span class="ansi-blue-fg">,</span> indexer<span class="ansi-blue-fg">,</span> new_indexer <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_reindex_non_unique<span class="ansi-blue-fg">(</span>keyarr<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg ansi-bold">   6211</span> 
-<span class="ansi-green-fg">-&gt; 6212</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>_raise_if_missing<span class="ansi-blue-fg">(</span>keyarr<span class="ansi-blue-fg">,</span> indexer<span class="ansi-blue-fg">,</span> axis_name<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg ansi-bold">   6213</span> 
-<span class="ansi-green-fg ansi-bold">   6214</span>         keyarr <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>take<span class="ansi-blue-fg">(</span>indexer<span class="ansi-blue-fg">)</span>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 
-<span class="ansi-green-fg">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py</span> in <span class="ansi-cyan-fg">_raise_if_missing</span><span class="ansi-blue-fg">(self, key, indexer, axis_name)</span>
-<span class="ansi-green-fg ansi-bold">   6262</span> 
-<span class="ansi-green-fg ansi-bold">   6263</span>             not_found <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>ensure_index<span class="ansi-blue-fg">(</span>key<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span>missing_mask<span class="ansi-blue-fg">.</span>nonzero<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>unique<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">-&gt; 6264</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> KeyError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f"{not_found} not in index"</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg ansi-bold">   6265</span> 
-<span class="ansi-green-fg ansi-bold">   6266</span>     <span class="ansi-blue-fg">@</span>overload
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">case_id</th>
+<th data-quarto-table-cell-role="th">offense_category</th>
+<th data-quarto-table-cell-role="th">updated_offense_category</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>588837642829</td>
+<td>Sex Crimes</td>
+<td>Human Trafficking</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>570518536922</td>
+<td>DUI</td>
+<td>Aggravated DUI</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>571716790712</td>
+<td>Robbery</td>
+<td>Attempt Armed Robbery</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>556323404957</td>
+<td>DUI</td>
+<td>Aggravated DUI</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>597578098266</td>
+<td>Aggravated Battery With A Firearm</td>
+<td>Attempt Homicide</td>
+</tr>
+</tbody>
+</table>
 
-<span class="ansi-red-fg">KeyError</span>: "['charge_update'] not in index"</pre>
 </div>
 </div>
 </div>
@@ -1013,9 +1006,9 @@ Name: count, dtype: int64</code></pre>
 <li>Then, in the main select, we can select or do whatever we want with the <code>charge_update</code> column we created in the subquery</li>
 </ol>
 </section>
-<section id="approach-using-subqueries-in-code" class="slide level2 center">
+<section id="approach-using-subqueries-in-code" class="slide level2 smaller scrollable center">
 <h2>Approach using subqueries: in code</h2>
-<div id="34803a31" class="cell" data-execution_count="10">
+<div id="8a7740f1" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select *</span></span>
 <span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">from caseinit</span></span>
@@ -1129,7 +1122,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="step-1-finding-five-most-common-offenses" class="slide level2 center">
 <h2>Step 1: finding five most common offenses</h2>
-<div id="cdd308e3" class="cell" data-execution_count="11">
+<div id="c5f7acc1" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select updated_offense_category,</span></span>
 <span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">count(*) as count_offense</span></span>
@@ -1191,7 +1184,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="step-2-nest-that-in-a-subquery-to-filter-to-rows-where-offense-is-in-top-5" class="slide level2 center">
 <h2>Step 2: nest that in a subquery to filter to rows where offense is in top 5</h2>
-<div id="3fc186bb" class="cell" data-execution_count="12">
+<div id="206968a8" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select *</span></span>
 <span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">from caseinit</span></span>
@@ -1215,7 +1208,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="step-3-shift-to-writing-code-for-the-proportion-sent-to-diversion-outcome" class="slide level2 center">
 <h2>Step 3: shift to writing code for the proportion sent to diversion outcome</h2>
-<div id="850fbb99" class="cell" data-execution_count="13">
+<div id="4d1bc96d" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select</span></span>
 <span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">avg(cast(is_in_diversion as INTEGER)) as prop_divert,</span></span>
@@ -1223,9 +1216,8 @@ Name: count, dtype: int64</code></pre>
 <span id="cb18-5"><a aria-hidden="true" tabindex="-1"></a><span class="st">from caseinit</span></span>
 <span id="cb18-6"><a aria-hidden="true" tabindex="-1"></a><span class="st">where race in ('Black', 'White')</span></span>
 <span id="cb18-7"><a aria-hidden="true" tabindex="-1"></a><span class="st">group by race, UPDATED_OFFENSE_CATEGORY</span></span>
-<span id="cb18-8"><a aria-hidden="true" tabindex="-1"></a><span class="st">order by prop_divert desc</span></span>
-<span id="cb18-9"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
-<span id="cb18-10"><a aria-hidden="true" tabindex="-1"></a>pd.read_sql_query(q, engine).head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-8"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb18-9"><a aria-hidden="true" tabindex="-1"></a>pd.read_sql_query(q, engine).head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 <style scoped="">
@@ -1254,15 +1246,15 @@ Name: count, dtype: int64</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>1.0</td>
+<td>0.000000</td>
 <td>White</td>
-<td>Attempt Vehicular Hijacking</td>
+<td>Major Accidents</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>1.0</td>
-<td>White</td>
-<td>Pandering</td>
+<td>0.007092</td>
+<td>Black</td>
+<td>Vehicular Hijacking</td>
 </tr>
 </tbody>
 </table>
@@ -1277,9 +1269,9 @@ Name: count, dtype: int64</code></pre>
 <li>Similar to how, in pandas, we take the mean of a True/False column to get the proportion true, we can take the mean of that binary indicator using <code>avg</code> to find the proportion diverted in each race/ethnicity <span class="math inline">\(\times\)</span> type of offense group</li>
 </ul>
 </section>
-<section id="putting-it-together" class="slide level2 center">
+<section id="putting-it-together" class="slide level2 smaller scrollable center">
 <h2>Putting it together</h2>
-<div id="4e98cb61" class="cell" data-execution_count="14">
+<div id="390434d6" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select</span></span>
 <span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">avg(cast(is_in_diversion as INTEGER)) as prop_divert,</span></span>
@@ -1421,19 +1413,115 @@ Name: count, dtype: int64</code></pre>
 <li>Age patterns (most demographic variables are available in <code>caseinit</code> but not in <code>divert</code>)</li>
 </ul>
 </section>
-<section id="left-join-of-some-cols-from-caseinit-onto-diversions-no-aliasing" class="slide level2 center">
-<h2>Left join of some cols from caseinit onto diversions: no aliasing</h2>
-<div id="f3fe31bf" class="cell" data-execution_count="15">
+<section id="structure-of-the-diversions-table" class="slide level2 center">
+<h2>Structure of the diversions table</h2>
+<div id="c6532b25" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
-<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select divert.*,</span></span>
-<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">age_at_incident</span></span>
-<span id="cb20-4"><a aria-hidden="true" tabindex="-1"></a><span class="st">from divert</span></span>
-<span id="cb20-5"><a aria-hidden="true" tabindex="-1"></a><span class="st">LEFT JOIN caseinit</span></span>
-<span id="cb20-6"><a aria-hidden="true" tabindex="-1"></a><span class="st">ON divert.case_id = caseinit.case_id</span></span>
-<span id="cb20-7"><a aria-hidden="true" tabindex="-1"></a><span class="st">AND divert.case_participant_id = caseinit.case_participant_id</span></span>
-<span id="cb20-8"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
-<span id="cb20-9"><a aria-hidden="true" tabindex="-1"></a>pd.read_sql_query(q, engine)[[<span class="st">'case_id'</span>, <span class="st">'case_participant_id'</span>, <span class="st">'age_at_incident'</span>]].head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select *</span></span>
+<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">from divert</span></span>
+<span id="cb20-4"><a aria-hidden="true" tabindex="-1"></a><span class="st">limit 5</span></span>
+<span id="cb20-5"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb20-6"><a aria-hidden="true" tabindex="-1"></a>dv <span class="op">=</span> pd.read_sql_query(q, engine)</span>
+<span id="cb20-7"><a aria-hidden="true" tabindex="-1"></a>dv.head(<span class="dv">2</span>)</span>
+<span id="cb20-8"><a aria-hidden="true" tabindex="-1"></a>dv.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">case_id</th>
+<th data-quarto-table-cell-role="th">case_participant_id</th>
+<th data-quarto-table-cell-role="th">received_date</th>
+<th data-quarto-table-cell-role="th">offense_category</th>
+<th data-quarto-table-cell-role="th">diversion_program</th>
+<th data-quarto-table-cell-role="th">referral_date</th>
+<th data-quarto-table-cell-role="th">diversion_count</th>
+<th data-quarto-table-cell-role="th">primary_charge_offense_title</th>
+<th data-quarto-table-cell-role="th">statute</th>
+<th data-quarto-table-cell-role="th">race</th>
+<th data-quarto-table-cell-role="th">gender</th>
+<th data-quarto-table-cell-role="th">diversion_result</th>
+<th data-quarto-table-cell-role="th">diversion_closed_date</th>
+<th data-quarto-table-cell-role="th">is_in_initiations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>506061999169</td>
+<td>347644693595</td>
+<td>2011-01-01</td>
+<td>Retail Theft</td>
+<td>DS</td>
+<td>2013-06-17</td>
+<td>2</td>
+<td>RETAIL THEFT</td>
+<td>720 ILCS 5/16A-3(a)</td>
+<td>Black</td>
+<td>Male</td>
+<td>Graduated</td>
+<td>2013-06-17</td>
+<td>True</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>506061999169</td>
+<td>347644693595</td>
+<td>2011-01-01</td>
+<td>Retail Theft</td>
+<td>VC</td>
+<td>2011-08-11</td>
+<td>1</td>
+<td>RETAIL THEFT</td>
+<td>720 ILCS 5/16A-3(a)</td>
+<td>Black</td>
+<td>Male</td>
+<td>None</td>
+<td>NaT</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>Index(['case_id', 'case_participant_id', 'received_date', 'offense_category',
+       'diversion_program', 'referral_date', 'diversion_count',
+       'primary_charge_offense_title', 'statute', 'race', 'gender',
+       'diversion_result', 'diversion_closed_date', 'is_in_initiations'],
+      dtype='object')</code></pre>
+</div>
+</div>
+</section>
+<section id="left-join-of-some-columns-from-caseinit-onto-diversions-no-aliasing" class="slide level2 center">
+<h2>Left join of some columns from caseinit onto diversions: no aliasing</h2>
+<div id="142df4b1" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select divert.*,</span></span>
+<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">age_at_incident</span></span>
+<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a><span class="st">from divert</span></span>
+<span id="cb22-5"><a aria-hidden="true" tabindex="-1"></a><span class="st">LEFT JOIN caseinit</span></span>
+<span id="cb22-6"><a aria-hidden="true" tabindex="-1"></a><span class="st">ON divert.case_id = caseinit.case_id</span></span>
+<span id="cb22-7"><a aria-hidden="true" tabindex="-1"></a><span class="st">AND divert.case_participant_id = caseinit.case_participant_id</span></span>
+<span id="cb22-8"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb22-9"><a aria-hidden="true" tabindex="-1"></a>pd.read_sql_query(q, engine)[[<span class="st">'case_id'</span>, <span class="st">'case_participant_id'</span>, <span class="st">'age_at_incident'</span>]].head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1483,34 +1571,34 @@ Name: count, dtype: int64</code></pre>
 <li>Selected only age from caseinit</li>
 </ul>
 </section>
-<section id="what-happens-if-we-select-cols-available-in-both-tables" class="slide level2 center">
-<h2>What happens if we select cols available in both tables?</h2>
-<div class="sourceCode" id="cb21"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> divert.<span class="op">*</span>,</span>
-<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a>RACE</span>
-<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> divert</span>
-<span id="cb21-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">LEFT</span> <span class="kw">JOIN</span> caseinit</span>
-<span id="cb21-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> divert.CASE_ID <span class="op">=</span> caseinit.CASE_ID</span>
-<span id="cb21-6"><a aria-hidden="true" tabindex="-1"></a><span class="kw">AND</span> divert.CASE_PARTICIPANT_ID <span class="op">=</span> caseinit.CASE_PARTICIPANT_ID</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="what-happens-if-we-select-columns-available-in-both-tables" class="slide level2 center">
+<h2>What happens if we select columns available in both tables?</h2>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> divert.<span class="op">*</span>,</span>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>RACE</span>
+<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> divert</span>
+<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">LEFT</span> <span class="kw">JOIN</span> caseinit</span>
+<span id="cb23-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> divert.CASE_ID <span class="op">=</span> caseinit.CASE_ID</span>
+<span id="cb23-6"><a aria-hidden="true" tabindex="-1"></a><span class="kw">AND</span> divert.CASE_PARTICIPANT_ID <span class="op">=</span> caseinit.CASE_PARTICIPANT_ID</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Error:</strong></p>
 <div style="text-align: center;">
 <p><img data-src="week13_figs/race_needalias.png" style="width:55.0%"></p>
 </div>
 </section>
-<section id="how-to-fix-aliasing-the-col" class="slide level2 center">
-<h2>How to fix: aliasing the col</h2>
-<div id="83041bc6" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
-<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select divert.*,</span></span>
-<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">age_at_incident,</span></span>
-<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a><span class="st">caseinit.race as caseinit_race</span></span>
-<span id="cb22-5"><a aria-hidden="true" tabindex="-1"></a><span class="st">from divert</span></span>
-<span id="cb22-6"><a aria-hidden="true" tabindex="-1"></a><span class="st">LEFT JOIN caseinit</span></span>
-<span id="cb22-7"><a aria-hidden="true" tabindex="-1"></a><span class="st">ON divert.case_id = caseinit.case_id</span></span>
-<span id="cb22-8"><a aria-hidden="true" tabindex="-1"></a><span class="st">AND divert.case_participant_id = caseinit.case_participant_id</span></span>
-<span id="cb22-9"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
-<span id="cb22-10"><a aria-hidden="true" tabindex="-1"></a>pd.read_sql_query(q, engine)[[<span class="st">'case_id'</span>, <span class="st">'case_participant_id'</span>, </span>
-<span id="cb22-11"><a aria-hidden="true" tabindex="-1"></a>                            <span class="st">'race'</span>, <span class="st">'caseinit_race'</span>]].head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<section id="how-to-fix-aliasing-the-column" class="slide level2 center">
+<h2>How to fix: aliasing the column</h2>
+<div id="3d3fe764" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select divert.*,</span></span>
+<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">age_at_incident,</span></span>
+<span id="cb24-4"><a aria-hidden="true" tabindex="-1"></a><span class="st">caseinit.race as caseinit_race</span></span>
+<span id="cb24-5"><a aria-hidden="true" tabindex="-1"></a><span class="st">from divert</span></span>
+<span id="cb24-6"><a aria-hidden="true" tabindex="-1"></a><span class="st">LEFT JOIN caseinit</span></span>
+<span id="cb24-7"><a aria-hidden="true" tabindex="-1"></a><span class="st">ON divert.case_id = caseinit.case_id</span></span>
+<span id="cb24-8"><a aria-hidden="true" tabindex="-1"></a><span class="st">AND divert.case_participant_id = caseinit.case_participant_id</span></span>
+<span id="cb24-9"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb24-10"><a aria-hidden="true" tabindex="-1"></a>pd.read_sql_query(q, engine)[[<span class="st">'case_id'</span>, <span class="st">'case_participant_id'</span>, </span>
+<span id="cb24-11"><a aria-hidden="true" tabindex="-1"></a>                            <span class="st">'race'</span>, <span class="st">'caseinit_race'</span>]].head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1559,21 +1647,21 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p>Breaking it down:</p>
 <ul>
-<li>Use the syntax <code>tablename.colname as something</code> to alias the RACE variable from the case initiations table as something else so that we know which table it’s from</li>
+<li>Use the syntax <code>tablename.colname as something</code> to alias (temporarily rename) the RACE variable from the case initiations table as something else so that we know which table it’s from</li>
 </ul>
 </section>
 <section id="simplifying-the-query-by-aliasing-the-table-names" class="slide level2 center">
 <h2>Simplifying the query by aliasing the table names</h2>
-<div id="b14b0245" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
-<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select d.*,</span></span>
-<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">age_at_incident,</span></span>
-<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a><span class="st">c.race as caseinit_race</span></span>
-<span id="cb23-5"><a aria-hidden="true" tabindex="-1"></a><span class="st">from divert as d</span></span>
-<span id="cb23-6"><a aria-hidden="true" tabindex="-1"></a><span class="st">LEFT JOIN caseinit as c</span></span>
-<span id="cb23-7"><a aria-hidden="true" tabindex="-1"></a><span class="st">ON d.case_id = c.case_id</span></span>
-<span id="cb23-8"><a aria-hidden="true" tabindex="-1"></a><span class="st">AND d.case_participant_id = c.case_participant_id</span></span>
-<span id="cb23-9"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="249f0a51" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select d.*,</span></span>
+<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">age_at_incident,</span></span>
+<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a><span class="st">c.race as caseinit_race</span></span>
+<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a><span class="st">from divert as d</span></span>
+<span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a><span class="st">LEFT JOIN caseinit as c</span></span>
+<span id="cb25-7"><a aria-hidden="true" tabindex="-1"></a><span class="st">ON d.case_id = c.case_id</span></span>
+<span id="cb25-8"><a aria-hidden="true" tabindex="-1"></a><span class="st">AND d.case_participant_id = c.case_participant_id</span></span>
+<span id="cb25-9"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Breaking it down:</p>
 <ul>
@@ -1592,21 +1680,21 @@ Name: count, dtype: int64</code></pre>
 <h2>Combining aggregation of one table and join</h2>
 <p><strong>Goal:</strong> among the cases that are diverted, for each of the charges (<code>UPDATED_OFFENSE_CATEGORY</code>) in the case initiations, find the percentage of defendants with that charge going to each <code>DIVERSION_PROGRAM</code></p>
 </section>
-<section id="step-1-get-the-numerator-find-the-count-of-offenses-by-diversion-program" class="slide level2 center">
+<section id="step-1-get-the-numerator-find-the-count-of-offenses-by-diversion-program" class="slide level2 smaller scrollable center">
 <h2>Step 1 (get the numerator): find the count of offenses by diversion program</h2>
-<div id="ea032389" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
-<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select count(*) as count_offenses_byprogram,</span></span>
-<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">UPDATED_OFFENSE_CATEGORY, DIVERSION_PROGRAM</span></span>
-<span id="cb24-4"><a aria-hidden="true" tabindex="-1"></a><span class="st">from divert</span></span>
-<span id="cb24-5"><a aria-hidden="true" tabindex="-1"></a><span class="st">INNER JOIN caseinit</span></span>
-<span id="cb24-6"><a aria-hidden="true" tabindex="-1"></a><span class="st">ON divert.CASE_ID = caseinit.CASE_ID</span></span>
-<span id="cb24-7"><a aria-hidden="true" tabindex="-1"></a><span class="st">AND divert.CASE_PARTICIPANT_ID = caseinit.CASE_PARTICIPANT_ID</span></span>
-<span id="cb24-8"><a aria-hidden="true" tabindex="-1"></a><span class="st">group by UPDATED_OFFENSE_CATEGORY, DIVERSION_PROGRAM</span></span>
-<span id="cb24-9"><a aria-hidden="true" tabindex="-1"></a><span class="st">order by count_offenses_byprogram desc</span></span>
-<span id="cb24-10"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
-<span id="cb24-11"><a aria-hidden="true" tabindex="-1"></a>pd.read_sql_query(q, engine).head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div id="b141aa11" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select count(*) as count_offenses_byprogram,</span></span>
+<span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">UPDATED_OFFENSE_CATEGORY, DIVERSION_PROGRAM</span></span>
+<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a><span class="st">from divert</span></span>
+<span id="cb26-5"><a aria-hidden="true" tabindex="-1"></a><span class="st">INNER JOIN caseinit</span></span>
+<span id="cb26-6"><a aria-hidden="true" tabindex="-1"></a><span class="st">ON divert.CASE_ID = caseinit.CASE_ID</span></span>
+<span id="cb26-7"><a aria-hidden="true" tabindex="-1"></a><span class="st">AND divert.CASE_PARTICIPANT_ID = caseinit.CASE_PARTICIPANT_ID</span></span>
+<span id="cb26-8"><a aria-hidden="true" tabindex="-1"></a><span class="st">group by UPDATED_OFFENSE_CATEGORY, DIVERSION_PROGRAM</span></span>
+<span id="cb26-9"><a aria-hidden="true" tabindex="-1"></a><span class="st">order by count_offenses_byprogram desc</span></span>
+<span id="cb26-10"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb26-11"><a aria-hidden="true" tabindex="-1"></a>pd.read_sql_query(q, engine).head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1666,19 +1754,19 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="step-2-get-the-denominator-find-the-count-of-offenses-in-general" class="slide level2 center">
 <h2>Step 2 (get the denominator): find the count of offenses in general</h2>
-<div id="68dccb6f" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
-<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select count(*) as count_offenses_total,</span></span>
-<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">UPDATED_OFFENSE_CATEGORY</span></span>
-<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a><span class="st">from divert as d</span></span>
-<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a><span class="st">INNER JOIN caseinit as c</span></span>
-<span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a><span class="st">ON d.CASE_ID = c.CASE_ID</span></span>
-<span id="cb25-7"><a aria-hidden="true" tabindex="-1"></a><span class="st">AND d.CASE_PARTICIPANT_ID = c.CASE_PARTICIPANT_ID</span></span>
-<span id="cb25-8"><a aria-hidden="true" tabindex="-1"></a><span class="st">group by UPDATED_OFFENSE_CATEGORY</span></span>
-<span id="cb25-9"><a aria-hidden="true" tabindex="-1"></a><span class="st">order by count_offenses_total desc</span></span>
-<span id="cb25-10"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
-<span id="cb25-11"><a aria-hidden="true" tabindex="-1"></a>pd.read_sql_query(q, engine).head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div id="088fdb99" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select count(*) as count_offenses_total,</span></span>
+<span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">UPDATED_OFFENSE_CATEGORY</span></span>
+<span id="cb27-4"><a aria-hidden="true" tabindex="-1"></a><span class="st">from divert as d</span></span>
+<span id="cb27-5"><a aria-hidden="true" tabindex="-1"></a><span class="st">INNER JOIN caseinit as c</span></span>
+<span id="cb27-6"><a aria-hidden="true" tabindex="-1"></a><span class="st">ON d.CASE_ID = c.CASE_ID</span></span>
+<span id="cb27-7"><a aria-hidden="true" tabindex="-1"></a><span class="st">AND d.CASE_PARTICIPANT_ID = c.CASE_PARTICIPANT_ID</span></span>
+<span id="cb27-8"><a aria-hidden="true" tabindex="-1"></a><span class="st">group by UPDATED_OFFENSE_CATEGORY</span></span>
+<span id="cb27-9"><a aria-hidden="true" tabindex="-1"></a><span class="st">order by count_offenses_total desc</span></span>
+<span id="cb27-10"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb27-11"><a aria-hidden="true" tabindex="-1"></a>pd.read_sql_query(q, engine).head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1728,33 +1816,33 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="step-3-combine-into-one-query" class="slide level2 center">
 <h2>Step 3: combine into one query</h2>
-<div id="3eb1cb61" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
-<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select</span></span>
-<span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">count(*) as count_offenses,</span></span>
-<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a><span class="st">count_offenses_byprogram,</span></span>
-<span id="cb26-5"><a aria-hidden="true" tabindex="-1"></a><span class="st">DIVERSION_PROGRAM,</span></span>
-<span id="cb26-6"><a aria-hidden="true" tabindex="-1"></a><span class="st">caseinit.UPDATED_OFFENSE_CATEGORY</span></span>
-<span id="cb26-7"><a aria-hidden="true" tabindex="-1"></a><span class="st">from caseinit</span></span>
-<span id="cb26-8"><a aria-hidden="true" tabindex="-1"></a><span class="st">inner join (select count(*) as count_offenses_byprogram,</span></span>
-<span id="cb26-9"><a aria-hidden="true" tabindex="-1"></a><span class="st">UPDATED_OFFENSE_CATEGORY, DIVERSION_PROGRAM</span></span>
-<span id="cb26-10"><a aria-hidden="true" tabindex="-1"></a><span class="st">from divert</span></span>
-<span id="cb26-11"><a aria-hidden="true" tabindex="-1"></a><span class="st">INNER JOIN caseinit</span></span>
-<span id="cb26-12"><a aria-hidden="true" tabindex="-1"></a><span class="st">ON divert.CASE_ID = caseinit.CASE_ID</span></span>
-<span id="cb26-13"><a aria-hidden="true" tabindex="-1"></a><span class="st">AND divert.CASE_PARTICIPANT_ID = caseinit.CASE_PARTICIPANT_ID</span></span>
-<span id="cb26-14"><a aria-hidden="true" tabindex="-1"></a><span class="st">group by UPDATED_OFFENSE_CATEGORY, DIVERSION_PROGRAM) as num</span></span>
-<span id="cb26-15"><a aria-hidden="true" tabindex="-1"></a><span class="st">on num.UPDATED_OFFENSE_CATEGORY = caseinit.UPDATED_OFFENSE_CATEGORY</span></span>
-<span id="cb26-16"><a aria-hidden="true" tabindex="-1"></a><span class="st">inner join (select CASE_ID as cid,</span></span>
-<span id="cb26-17"><a aria-hidden="true" tabindex="-1"></a><span class="st">CASE_PARTICIPANT_ID as cpid</span></span>
-<span id="cb26-18"><a aria-hidden="true" tabindex="-1"></a><span class="st">from divert</span></span>
-<span id="cb26-19"><a aria-hidden="true" tabindex="-1"></a><span class="st">) as ppl_divert</span></span>
-<span id="cb26-20"><a aria-hidden="true" tabindex="-1"></a><span class="st">on caseinit.CASE_ID = ppl_divert.cid</span></span>
-<span id="cb26-21"><a aria-hidden="true" tabindex="-1"></a><span class="st">and caseinit.CASE_PARTICIPANT_ID = ppl_divert.cpid</span></span>
-<span id="cb26-22"><a aria-hidden="true" tabindex="-1"></a><span class="st">group by caseinit.UPDATED_OFFENSE_CATEGORY, DIVERSION_PROGRAM,</span></span>
-<span id="cb26-23"><a aria-hidden="true" tabindex="-1"></a><span class="st">count_offenses_byprogram</span></span>
-<span id="cb26-24"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
-<span id="cb26-25"><a aria-hidden="true" tabindex="-1"></a>pd.read_sql_query(q, engine).head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div id="ad571ed3" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a><span class="st">select</span></span>
+<span id="cb28-3"><a aria-hidden="true" tabindex="-1"></a><span class="st">count(*) as count_offenses,</span></span>
+<span id="cb28-4"><a aria-hidden="true" tabindex="-1"></a><span class="st">count_offenses_byprogram,</span></span>
+<span id="cb28-5"><a aria-hidden="true" tabindex="-1"></a><span class="st">DIVERSION_PROGRAM,</span></span>
+<span id="cb28-6"><a aria-hidden="true" tabindex="-1"></a><span class="st">caseinit.UPDATED_OFFENSE_CATEGORY</span></span>
+<span id="cb28-7"><a aria-hidden="true" tabindex="-1"></a><span class="st">from caseinit</span></span>
+<span id="cb28-8"><a aria-hidden="true" tabindex="-1"></a><span class="st">inner join (select count(*) as count_offenses_byprogram,</span></span>
+<span id="cb28-9"><a aria-hidden="true" tabindex="-1"></a><span class="st">UPDATED_OFFENSE_CATEGORY, DIVERSION_PROGRAM</span></span>
+<span id="cb28-10"><a aria-hidden="true" tabindex="-1"></a><span class="st">from divert</span></span>
+<span id="cb28-11"><a aria-hidden="true" tabindex="-1"></a><span class="st">INNER JOIN caseinit</span></span>
+<span id="cb28-12"><a aria-hidden="true" tabindex="-1"></a><span class="st">ON divert.CASE_ID = caseinit.CASE_ID</span></span>
+<span id="cb28-13"><a aria-hidden="true" tabindex="-1"></a><span class="st">AND divert.CASE_PARTICIPANT_ID = caseinit.CASE_PARTICIPANT_ID</span></span>
+<span id="cb28-14"><a aria-hidden="true" tabindex="-1"></a><span class="st">group by UPDATED_OFFENSE_CATEGORY, DIVERSION_PROGRAM) as num</span></span>
+<span id="cb28-15"><a aria-hidden="true" tabindex="-1"></a><span class="st">on num.UPDATED_OFFENSE_CATEGORY = caseinit.UPDATED_OFFENSE_CATEGORY</span></span>
+<span id="cb28-16"><a aria-hidden="true" tabindex="-1"></a><span class="st">inner join (select CASE_ID as cid,</span></span>
+<span id="cb28-17"><a aria-hidden="true" tabindex="-1"></a><span class="st">CASE_PARTICIPANT_ID as cpid</span></span>
+<span id="cb28-18"><a aria-hidden="true" tabindex="-1"></a><span class="st">from divert</span></span>
+<span id="cb28-19"><a aria-hidden="true" tabindex="-1"></a><span class="st">) as ppl_divert</span></span>
+<span id="cb28-20"><a aria-hidden="true" tabindex="-1"></a><span class="st">on caseinit.CASE_ID = ppl_divert.cid</span></span>
+<span id="cb28-21"><a aria-hidden="true" tabindex="-1"></a><span class="st">and caseinit.CASE_PARTICIPANT_ID = ppl_divert.cpid</span></span>
+<span id="cb28-22"><a aria-hidden="true" tabindex="-1"></a><span class="st">group by caseinit.UPDATED_OFFENSE_CATEGORY, DIVERSION_PROGRAM,</span></span>
+<span id="cb28-23"><a aria-hidden="true" tabindex="-1"></a><span class="st">count_offenses_byprogram</span></span>
+<span id="cb28-24"><a aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb28-25"><a aria-hidden="true" tabindex="-1"></a>pd.read_sql_query(q, engine).head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {

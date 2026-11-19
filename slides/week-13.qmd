@@ -151,7 +151,7 @@ where somecondition holds
 
 ## Examining structure of data: selecting first 5 rows from case initiations table
 
-```{python}
+```{python .small-code}
 ## define a query
 sample_case_q = """
 select *
@@ -159,8 +159,8 @@ from caseinit
 limit 5
 """
 ## feed read sql query the query and my db connection
-read_sample_d = pd.read_sql_query(sample_case_q, engine)
-read_sample_d
+pd.read_sql_query(sample_case_q, engine).head(2)
+
 ```
 
 Breaking things down:
@@ -281,7 +281,7 @@ from caseinit
 where offense_category != updated_offense_category
 """
 pd.read_sql_query(q, engine)[['case_id', 'offense_category', 
-                  'updated_offense_category', 'charge_update']].head()
+                  'updated_offense_category']].head()
 ```
 
 # Subqueries, aggregations, and joins: one table {background-color="#447099"}
@@ -292,7 +292,7 @@ pd.read_sql_query(q, engine)[['case_id', 'offense_category',
 2.  Use the output of that subquery
 3.  Then, in the main select, we can select or do whatever we want with the `charge_update` column we created in the subquery
 
-## Approach using subqueries: in code
+## Approach using subqueries: in code {.smaller .scrollable}
 
 ```{python .small-code}
 q = """
@@ -394,7 +394,6 @@ RACE, UPDATED_OFFENSE_CATEGORY
 from caseinit
 where race in ('Black', 'White')
 group by race, UPDATED_OFFENSE_CATEGORY
-order by prop_divert desc
 """
 pd.read_sql_query(q, engine).head(2)
 ```
@@ -405,7 +404,7 @@ Logic:
 -   Recasting `is_in_diversion` as an integer
 -   Similar to how, in pandas, we take the mean of a True/False column to get the proportion true, we can take the mean of that binary indicator using `avg` to find the proportion diverted in each race/ethnicity $\times$ type of offense group
 
-## Putting it together
+## Putting it together {.smaller .scrollable}
 
 ```{python .small-code}
 q = """
@@ -454,7 +453,20 @@ See Activity 2 in notebook
 -   How bond/probation is related to diversion
 -   Age patterns (most demographic variables are available in `caseinit` but not in `divert`)
 
-## Left join of some cols from caseinit onto diversions: no aliasing
+## Structure of the diversions table
+
+```{python}
+q = """
+select *
+from divert
+limit 5
+"""
+dv = pd.read_sql_query(q, engine)
+dv.head(2)
+dv.columns
+```
+
+## Left join of some columns from caseinit onto diversions: no aliasing
 
 ```{python .small-code}
 q = """
@@ -473,7 +485,7 @@ Breaking it down:
 -   Selected all cols from divert using the syntax `tablename.*`
 -   Selected only age from caseinit
 
-## What happens if we select cols available in both tables?
+## What happens if we select columns available in both tables?
 
 ``` sql
 select divert.*,
@@ -490,7 +502,7 @@ AND divert.CASE_PARTICIPANT_ID = caseinit.CASE_PARTICIPANT_ID
 ![](week13_figs/race_needalias.png){width=55%}
 :::
 
-## How to fix: aliasing the col
+## How to fix: aliasing the column
 
 ```{python .small-code}
 q = """
@@ -508,7 +520,7 @@ pd.read_sql_query(q, engine)[['case_id', 'case_participant_id',
 
 Breaking it down:
 
--   Use the syntax `tablename.colname as something` to alias the RACE variable from the case initiations table as something else so that we know which table it's from
+-   Use the syntax `tablename.colname as something` to alias (temporarily rename) the RACE variable from the case initiations table as something else so that we know which table it's from
 
 ## Simplifying the query by aliasing the table names
 
@@ -538,7 +550,7 @@ Breaking it down:
 
 **Goal:** among the cases that are diverted, for each of the charges (`UPDATED_OFFENSE_CATEGORY`) in the case initiations, find the percentage of defendants with that charge going to each `DIVERSION_PROGRAM`
 
-## Step 1 (get the numerator): find the count of offenses by diversion program
+## Step 1 (get the numerator): find the count of offenses by diversion program {.smaller .scrollable}
 
 ```{python .small-code}
 q = """
